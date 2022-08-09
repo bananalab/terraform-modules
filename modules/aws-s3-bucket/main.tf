@@ -41,19 +41,6 @@ resource "aws_s3_bucket_logging" "this" {
   expected_bucket_owner = var.expected_bucket_owner
   target_bucket         = var.logging_target_bucket
   target_prefix         = var.logging_target_prefix
-  /*dynamic "target_grant" {
-    for_each = var.target_grant
-    content {
-      dynamic "grantee" {
-        for_each = var.target_grant.grantee
-        content {
-          grantee = var.target_grant.grantee.type
-          id      = var.target_grant.grantee.id
-        }
-      }
-      permission = for_each.permission
-    }
-  }*/
   lifecycle {
     precondition {
       condition     = var.logging_target_bucket != null

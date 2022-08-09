@@ -65,6 +65,11 @@ jobs:
         run: |
             tfenv install ${{matrix.terraform-versions}}
             tfenv use ${{matrix.terraform-versions}}
+      - name: Authenticate AWS
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
       - name: Run Go Tests
         if: steps.check-tests.outputs.tests-exist == 'true'
         working-directory: ${{ matrix.changed-modules }}/test
