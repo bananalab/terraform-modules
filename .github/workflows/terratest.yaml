@@ -63,14 +63,8 @@ jobs:
       - name: Setup Terraform.
         if: steps.check-tests.outputs.tests-exist == 'true'
         run: |
-          if [[ ${{matrix.terraform-versions}} == 'latest' ]]; then
-            _latest=$(tfenv  list-remote | head -n 1)
-            tfenv install $_latest
-            tfenv use $_latest
-          else
             tfenv install ${{matrix.terraform-versions}}
             tfenv use ${{matrix.terraform-versions}}
-          fi
       - name: Run Go Tests
         if: steps.check-tests.outputs.tests-exist == 'true'
         working-directory: ${{ matrix.changed-modules }}/test
