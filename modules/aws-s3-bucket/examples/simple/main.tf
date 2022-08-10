@@ -28,8 +28,6 @@ variable "enable_replication" { default = false }
 variable "replication_role" { default = null }
 variable "replication_target_bucket" { default = null }
 
-
-
 module "this" {
   source                        = "../../"
   bucket                        = var.bucket
