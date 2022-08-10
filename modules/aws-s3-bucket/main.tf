@@ -2,7 +2,7 @@
   * <!-- This will become the header in README.md
   *      Add a description of the module here.
   *      Do not include Variable or Output descriptions. -->
-  * L1 Module to create an S3 bucket.
+  * L1 Module to create an S3 bucket
   */
 
 resource "aws_s3_bucket" "this" {

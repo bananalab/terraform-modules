@@ -5,7 +5,7 @@
 <!-- This will become the header in README.md
      Add a description of the module here.
      Do not include Variable or Output descriptions. -->
-L1 Module to create an S3 bucket.
+L1 Module to create an S3 bucket
 
 ## Example
 
@@ -30,7 +30,7 @@ variable "ignore_public_acls" { default = true }
 variable "restrict_public_buckets" { default = true }
 variable "versioning_enabled" { default = true }
 variable "expected_bucket_owner" { default = null }
-variable "logging_enabled" { default = true }
+variable "logging_enabled" { default = false }
 variable "logging_target_bucket" { default = null }
 variable "logging_target_prefix" { default = null }
 variable "logging_target_grant" { default = null }
@@ -39,8 +39,6 @@ variable "kms_master_key_id" { default = null }
 variable "enable_replication" { default = false }
 variable "replication_role" { default = null }
 variable "replication_target_bucket" { default = null }
-
-
 
 module "this" {
   source                        = "../../"
