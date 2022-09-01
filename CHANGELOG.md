@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/bananalab/terraform-modules/compare/v0.1.0...v0.2.0) (2022-08-11)
+
+
+### Features
+
+* **aws-organization-account:** New module. ([1855683](https://github.com/bananalab/terraform-modules/commit/18556837b1062b5a3901782ebadb4159c3feb726))
+* **aws-organization:** New module. ([99451d6](https://github.com/bananalab/terraform-modules/commit/99451d66a4a045ebb03f6471e33bbff785fbf185))
+
 ## 0.1.0 (2022-08-09)
 
 
