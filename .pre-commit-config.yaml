@@ -6,6 +6,7 @@ repos:
       args:
           - --args=--quiet
           - --args=--directory=modules
+          - --args=--download-external-modules=true
     - id: terraform_docs
       exclude: (\.template\/.*$|.*\/examples\/.*|.*\/test\/.*)
       args:
