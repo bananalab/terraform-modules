@@ -1,7 +1,8 @@
+<!-- markdownlint-disable -->
 # aws-s3-bucket
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
+<!-- markdownlint-disable -->
 <!-- This will become the header in README.md
      Add a description of the module here.
      Do not include Variable or Output descriptions. -->
@@ -30,7 +31,7 @@ variable "ignore_public_acls" { default = true }
 variable "restrict_public_buckets" { default = true }
 variable "versioning_enabled" { default = true }
 variable "expected_bucket_owner" { default = null }
-variable "logging_enabled" { default = true }
+variable "logging_enabled" { default = false }
 variable "logging_target_bucket" { default = null }
 variable "logging_target_prefix" { default = null }
 variable "logging_target_grant" { default = null }
@@ -73,7 +74,6 @@ output "result" {
   value       = module.this.result
 }
 ```
-<!-- markdownlint-disable -->
 
 ## Modules
 
