@@ -2,7 +2,7 @@ variable "cluster_identifier" {
   type        = string
   description = <<-EOT
     Unique ID of the Aurora global cluster.
-  EOT 
+  EOT
 }
 
 variable "master_username" {
