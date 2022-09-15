@@ -5,7 +5,7 @@ sort:
   by: required
 
 content: |-
-
+  <!-- markdownlint-disable -->
   {{ .Header }}
 
   ## Example
@@ -13,7 +13,6 @@ content: |-
   ```hcl
   {{ include "examples/simple/main.tf" }}
   ```
-  <!-- markdownlint-disable -->
 
   {{ .Modules }}
 
