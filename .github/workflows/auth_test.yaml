@@ -13,6 +13,7 @@ permissions:
   id-token: write
 jobs:
   auth:
+    runs-on: ubuntu-latest
     steps:
     - name: Authenticate AWS
       uses: aws-actions/configure-aws-credentials@v1
