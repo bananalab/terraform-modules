@@ -32,6 +32,7 @@ locals {
 }
 
 resource "aws_rds_global_cluster" "this" {
+  provider                  = aws.primary
   global_cluster_identifier = var.cluster_identifier
   engine                    = var.engine
   engine_version            = var.engine_version
@@ -39,6 +40,7 @@ resource "aws_rds_global_cluster" "this" {
 }
 
 resource "aws_db_subnet_group" "primary" {
+  provider   = aws.primary
   name       = "${var.cluster_identifier}-primary"
   subnet_ids = local.primary_region_subnet_ids
 }
@@ -52,6 +54,7 @@ resource "aws_rds_cluster" "primary" {
   master_password           = var.master_password
   database_name             = var.database_name
   global_cluster_identifier = aws_rds_global_cluster.this.id
+  skip_final_snapshot       = true
   db_subnet_group_name      = aws_db_subnet_group.primary.id
 }
 
@@ -66,6 +69,7 @@ resource "aws_rds_cluster_instance" "primary" {
 }
 
 resource "aws_db_subnet_group" "secondary" {
+  provider   = aws.secondary
   name       = "${var.cluster_identifier}-secondary"
   subnet_ids = local.secondary_region_subnet_ids
 }

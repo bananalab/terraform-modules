@@ -5,7 +5,7 @@ variable "engine" { default = "aurora-postgresql" }
 variable "engine_version" { default = "11.9" }
 variable "database_name" { default = "postgres" }
 variable "db_subnet_group_name" { default = "default" }
-variable "instance_class" { default = "db.t2" }
+variable "instance_class" { default = "db.r5.large" }
 
 
 provider "aws" {
@@ -48,8 +48,7 @@ module "this" {
   engine             = var.engine
   engine_version     = var.engine_version
   database_name      = var.database_name
-  //db_subnet_group_name = var.db_subnet_group_name
-  instance_class = var.instance_class
+  instance_class     = var.instance_class
 }
 
 output "result" {
