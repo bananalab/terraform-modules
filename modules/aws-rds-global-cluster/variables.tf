@@ -48,7 +48,7 @@ variable "instance_class" {
   description = <<-EOT
     Class of cluster instances.
   EOT
-  default     = "db.t2"
+  default     = "db.r5.large"
 }
 
 variable "primary_region_subnet_ids" {
