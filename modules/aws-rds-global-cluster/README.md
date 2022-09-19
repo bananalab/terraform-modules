@@ -14,7 +14,7 @@ variable "engine" { default = "aurora-postgresql" }
 variable "engine_version" { default = "11.9" }
 variable "database_name" { default = "postgres" }
 variable "db_subnet_group_name" { default = "default" }
-variable "instance_class" { default = "db.t2" }
+variable "instance_class" { default = "db.r5.large" }
 
 
 provider "aws" {
@@ -57,8 +57,7 @@ module "this" {
   engine             = var.engine
   engine_version     = var.engine_version
   database_name      = var.database_name
-  //db_subnet_group_name = var.db_subnet_group_name
-  instance_class = var.instance_class
+  instance_class     = var.instance_class
 }
 
 output "result" {
@@ -78,9 +77,8 @@ No modules.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.0 |
-| <a name="provider_aws.primary"></a> [aws.primary](#provider\_aws.primary) | ~> 4.0 |
-| <a name="provider_aws.secondary"></a> [aws.secondary](#provider\_aws.secondary) | ~> 4.0 |
+| <a name="provider_aws.primary"></a> [aws.primary](#provider\_aws.primary) | 4.30.0 |
+| <a name="provider_aws.secondary"></a> [aws.secondary](#provider\_aws.secondary) | 4.30.0 |
 
 ## Requirements
 
@@ -114,7 +112,7 @@ No modules.
 | <a name="input_database_name"></a> [database\_name](#input\_database\_name) | Name of the default database on cluster creation. | `string` | `"postgres"` | no |
 | <a name="input_engine"></a> [engine](#input\_engine) | Supported Aurora DB engine. | `string` | `"aurora-postgresql"` | no |
 | <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | Supported Aurora DB engine version. | `string` | `"11.9"` | no |
-| <a name="input_instance_class"></a> [instance\_class](#input\_instance\_class) | Class of cluster instances. | `string` | `"db.t2"` | no |
+| <a name="input_instance_class"></a> [instance\_class](#input\_instance\_class) | Class of cluster instances. | `string` | `"db.r5.large"` | no |
 | <a name="input_primary_region_subnet_ids"></a> [primary\_region\_subnet\_ids](#input\_primary\_region\_subnet\_ids) | List of subnet IDs that can host DB instances.<br>If omited default subnets will be used. | `list(string)` | `null` | no |
 | <a name="input_secondary_region_subnet_ids"></a> [secondary\_region\_subnet\_ids](#input\_secondary\_region\_subnet\_ids) | List of subnet IDs that can host DB instances.<br>If omited default subnets will be used. | `list(string)` | `null` | no |
 
