@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.0](https://github.com/bananalab/terraform-modules/compare/v0.2.0...v0.3.0) (2022-09-19)
+
+
+### Features
+
+* **aws-github-oidc:** New module. ([869616f](https://github.com/bananalab/terraform-modules/commit/869616f1350faca9a9f72d41435aa8e23ee2eb09))
+* **aws-rds-global-cluster:** New module. ([51910a6](https://github.com/bananalab/terraform-modules/commit/51910a67086c180bc185cfa403b99c4b1a37b711))
+* **eks-cluster:** New module. ([ac6975a](https://github.com/bananalab/terraform-modules/commit/ac6975a1466b7ea52d5ae06b2417e6c9b9d00b08))
+
 ## [0.2.0](https://github.com/bananalab/terraform-modules/compare/v0.1.0...v0.2.0) (2022-08-11)
 
 
