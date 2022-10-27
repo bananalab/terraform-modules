@@ -13,7 +13,7 @@
     "ghcr.io/bananalab/devcontainer-features/direnv:latest": {},
     "ghcr.io/bananalab/devcontainer-features/pre-commit:latest": {},
     "ghcr.io/bananalab/devcontainer-features/terraform-docs:latest": {},
-    "ghcr.io/bananalab/devcontainer-features/tflint:0.1.1": {},
+    "ghcr.io/bananalab/devcontainer-features/tfenv:0.1.1": {},
     "ghcr.io/bananalab/devcontainer-features/tflint:latest": {}
   },
   "image": "mcr.microsoft.com/devcontainers/universal:2"
