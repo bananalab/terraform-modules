@@ -1,21 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Repository": {
-      "operation": "ListRepositories",
-      "resourceIdentifier": {
-        "repositoryName": "repositories[].repositoryName"
-      }
-    }
-  },
   "operations": {
     "BatchGetRepositories": {
       "repositoryNames": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -25,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -36,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -47,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -58,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -69,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -80,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -91,8 +82,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -102,8 +93,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -113,8 +104,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -124,8 +115,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -135,8 +126,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -146,8 +137,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -157,8 +148,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -168,8 +159,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -179,8 +170,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -190,8 +181,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -201,8 +192,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -212,8 +203,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -223,8 +214,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -234,8 +225,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -245,8 +236,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -256,8 +247,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -267,8 +258,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
@@ -278,11 +269,20 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Repository",
-            "resourceIdentifier": "repositoryName"
+            "resourceIdentifier": "repositoryName",
+            "resourceName": "Repository"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Repository": {
+      "operation": "ListRepositories",
+      "resourceIdentifier": {
+        "repositoryName": "repositories[].repositoryName"
+      }
+    }
+  },
+  "version": "1.0"
 }

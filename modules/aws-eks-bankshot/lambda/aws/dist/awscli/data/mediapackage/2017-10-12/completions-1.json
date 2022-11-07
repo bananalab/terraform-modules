@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Channel": {
-      "operation": "ListChannels",
-      "resourceIdentifier": {
-        "Description": "Channels[].Description",
-        "Id": "Channels[].Id"
-      }
-    }
-  },
   "operations": {
     "DeleteChannel": {
       "Id": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "Channel"
           }
         ]
       }
@@ -26,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "Channel"
           }
         ]
       }
@@ -37,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "Channel"
           }
         ]
       }
@@ -48,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "Channel"
           }
         ]
       }
@@ -59,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "Channel"
           }
         ]
       }
@@ -70,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "Channel"
           }
         ]
       }
@@ -81,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Channel"
           }
         ]
       },
@@ -90,8 +80,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "Channel"
           }
         ]
       }
@@ -101,8 +91,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Channel"
           }
         ]
       },
@@ -110,11 +100,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "Channel"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Channel": {
+      "operation": "ListChannels",
+      "resourceIdentifier": {
+        "Description": "Channels[].Description",
+        "Id": "Channels[].Id"
+      }
+    }
+  },
+  "version": "1.0"
 }

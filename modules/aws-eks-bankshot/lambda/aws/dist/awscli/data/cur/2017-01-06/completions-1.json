@@ -1,5 +1,17 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteReportDefinition": {
+      "ReportName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ReportName",
+            "resourceName": "ReportDefinition"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "ReportDefinition": {
       "operation": "DescribeReportDefinitions",
@@ -8,17 +20,5 @@
       }
     }
   },
-  "operations": {
-    "DeleteReportDefinition": {
-      "ReportName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ReportDefinition",
-            "resourceIdentifier": "ReportName"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

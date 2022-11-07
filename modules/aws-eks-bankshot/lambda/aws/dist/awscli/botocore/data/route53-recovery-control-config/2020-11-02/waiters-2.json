@@ -2,151 +2,151 @@
   "version": 2,
   "waiters": {
     "ClusterCreated": {
-      "description": "Wait until a cluster is created",
-      "operation": "DescribeCluster",
-      "delay": 5,
-      "maxAttempts": 26,
       "acceptors": [
         {
-          "state": "success",
-          "matcher": "path",
           "argument": "Cluster.Status",
-          "expected": "DEPLOYED"
+          "expected": "DEPLOYED",
+          "matcher": "path",
+          "state": "success"
         },
         {
-          "state": "retry",
-          "matcher": "path",
           "argument": "Cluster.Status",
-          "expected": "PENDING"
+          "expected": "PENDING",
+          "matcher": "path",
+          "state": "retry"
         },
         {
-          "state": "retry",
+          "expected": 500,
           "matcher": "status",
-          "expected": 500
+          "state": "retry"
         }
-      ]
+      ],
+      "delay": 5,
+      "description": "Wait until a cluster is created",
+      "maxAttempts": 26,
+      "operation": "DescribeCluster"
     },
     "ClusterDeleted": {
-      "description": "Wait for a cluster to be deleted",
-      "operation": "DescribeCluster",
-      "delay": 5,
-      "maxAttempts": 26,
       "acceptors": [
         {
-          "state": "success",
+          "expected": 404,
           "matcher": "status",
-          "expected": 404
+          "state": "success"
         },
         {
-          "state": "retry",
-          "matcher": "path",
           "argument": "Cluster.Status",
-          "expected": "PENDING_DELETION"
+          "expected": "PENDING_DELETION",
+          "matcher": "path",
+          "state": "retry"
         },
         {
-          "state": "retry",
+          "expected": 500,
           "matcher": "status",
-          "expected": 500
+          "state": "retry"
         }
-      ]
+      ],
+      "delay": 5,
+      "description": "Wait for a cluster to be deleted",
+      "maxAttempts": 26,
+      "operation": "DescribeCluster"
     },
     "ControlPanelCreated": {
-      "description": "Wait until a control panel is created",
-      "operation": "DescribeControlPanel",
-      "delay": 5,
-      "maxAttempts": 26,
       "acceptors": [
         {
-          "state": "success",
-          "matcher": "path",
           "argument": "ControlPanel.Status",
-          "expected": "DEPLOYED"
+          "expected": "DEPLOYED",
+          "matcher": "path",
+          "state": "success"
         },
         {
-          "state": "retry",
-          "matcher": "path",
           "argument": "ControlPanel.Status",
-          "expected": "PENDING"
+          "expected": "PENDING",
+          "matcher": "path",
+          "state": "retry"
         },
         {
-          "state": "retry",
+          "expected": 500,
           "matcher": "status",
-          "expected": 500
+          "state": "retry"
         }
-      ]
+      ],
+      "delay": 5,
+      "description": "Wait until a control panel is created",
+      "maxAttempts": 26,
+      "operation": "DescribeControlPanel"
     },
     "ControlPanelDeleted": {
-      "description": "Wait until a control panel is deleted",
-      "operation": "DescribeControlPanel",
-      "delay": 5,
-      "maxAttempts": 26,
       "acceptors": [
         {
-          "state": "success",
+          "expected": 404,
           "matcher": "status",
-          "expected": 404
+          "state": "success"
         },
         {
-          "state": "retry",
-          "matcher": "path",
           "argument": "ControlPanel.Status",
-          "expected": "PENDING_DELETION"
+          "expected": "PENDING_DELETION",
+          "matcher": "path",
+          "state": "retry"
         },
         {
-          "state": "retry",
+          "expected": 500,
           "matcher": "status",
-          "expected": 500
+          "state": "retry"
         }
-      ]
+      ],
+      "delay": 5,
+      "description": "Wait until a control panel is deleted",
+      "maxAttempts": 26,
+      "operation": "DescribeControlPanel"
     },
     "RoutingControlCreated": {
-      "description": "Wait until a routing control is created",
-      "operation": "DescribeRoutingControl",
-      "delay": 5,
-      "maxAttempts": 26,
       "acceptors": [
         {
-          "state": "success",
-          "matcher": "path",
           "argument": "RoutingControl.Status",
-          "expected": "DEPLOYED"
+          "expected": "DEPLOYED",
+          "matcher": "path",
+          "state": "success"
         },
         {
-          "state": "retry",
-          "matcher": "path",
           "argument": "RoutingControl.Status",
-          "expected": "PENDING"
+          "expected": "PENDING",
+          "matcher": "path",
+          "state": "retry"
         },
         {
-          "state": "retry",
+          "expected": 500,
           "matcher": "status",
-          "expected": 500
+          "state": "retry"
         }
-      ]
+      ],
+      "delay": 5,
+      "description": "Wait until a routing control is created",
+      "maxAttempts": 26,
+      "operation": "DescribeRoutingControl"
     },
     "RoutingControlDeleted": {
-      "description": "Wait for a routing control to be deleted",
-      "operation": "DescribeRoutingControl",
-      "delay": 5,
-      "maxAttempts": 26,
       "acceptors": [
         {
-          "state": "success",
+          "expected": 404,
           "matcher": "status",
-          "expected": 404
+          "state": "success"
         },
         {
-          "state": "retry",
-          "matcher": "path",
           "argument": "RoutingControl.Status",
-          "expected": "PENDING_DELETION"
+          "expected": "PENDING_DELETION",
+          "matcher": "path",
+          "state": "retry"
         },
         {
-          "state": "retry",
+          "expected": 500,
           "matcher": "status",
-          "expected": 500
+          "state": "retry"
         }
-      ]
+      ],
+      "delay": 5,
+      "description": "Wait for a routing control to be deleted",
+      "maxAttempts": 26,
+      "operation": "DescribeRoutingControl"
     }
   }
 }

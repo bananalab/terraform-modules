@@ -10,5 +10,3 @@ For more information, see `Creating a Role`_ and `Instance Profiles`_ in the *Us
 
 .. _`Creating a Role`: http://docs.aws.amazon.com/IAM/latest/UserGuide/creating-role.html
 .. _Instance Profiles: http://docs.aws.amazon.com/IAM/latest/UserGuide/instance-profiles.html
-
-

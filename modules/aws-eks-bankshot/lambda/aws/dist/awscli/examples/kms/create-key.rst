@@ -12,7 +12,7 @@ Because this command doesn't specify a key policy, the KMS key gets the `default
         --tags TagKey=Purpose,TagValue=Test \
         --description "Test key"
 
-The ``create-key`` command returns the key metadata, including the key ID and ARN of the new KMS key. You can use these values to identify the KMS key in other AWS KMS operations. The output does not include the tags. To view the tags for a KMS key, use the ``list-resource-tags command``. 
+The ``create-key`` command returns the key metadata, including the key ID and ARN of the new KMS key. You can use these values to identify the KMS key in other AWS KMS operations. The output does not include the tags. To view the tags for a KMS key, use the ``list-resource-tags command``.
 
 Output::
 

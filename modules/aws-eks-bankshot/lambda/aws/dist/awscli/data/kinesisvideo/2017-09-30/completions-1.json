@@ -1,64 +1,52 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Stream": {
-      "operation": "ListStreams",
-      "resourceIdentifier": {
-        "DeviceName": "StreamInfoList[].DeviceName",
-        "StreamName": "StreamInfoList[].StreamName",
-        "StreamARN": "StreamInfoList[].StreamARN",
-        "MediaType": "StreamInfoList[].MediaType"
-      }
-    }
-  },
   "operations": {
     "DeleteStream": {
       "StreamARN": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamARN"
+            "resourceIdentifier": "StreamARN",
+            "resourceName": "Stream"
           }
         ]
       }
     },
     "DescribeStream": {
-      "StreamName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamName"
-          }
-        ]
-      },
       "StreamARN": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamARN"
+            "resourceIdentifier": "StreamARN",
+            "resourceName": "Stream"
+          }
+        ]
+      },
+      "StreamName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StreamName",
+            "resourceName": "Stream"
           }
         ]
       }
     },
     "GetDataEndpoint": {
-      "StreamName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamName"
-          }
-        ]
-      },
       "StreamARN": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamARN"
+            "resourceIdentifier": "StreamARN",
+            "resourceName": "Stream"
+          }
+        ]
+      },
+      "StreamName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StreamName",
+            "resourceName": "Stream"
           }
         ]
       }
@@ -68,8 +56,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamARN"
+            "resourceIdentifier": "StreamARN",
+            "resourceName": "Stream"
           }
         ]
       },
@@ -77,8 +65,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamName"
+            "resourceIdentifier": "StreamName",
+            "resourceName": "Stream"
           }
         ]
       }
@@ -88,8 +76,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamARN"
+            "resourceIdentifier": "StreamARN",
+            "resourceName": "Stream"
           }
         ]
       },
@@ -97,8 +85,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamName"
+            "resourceIdentifier": "StreamName",
+            "resourceName": "Stream"
           }
         ]
       }
@@ -108,8 +96,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamARN"
+            "resourceIdentifier": "StreamARN",
+            "resourceName": "Stream"
           }
         ]
       },
@@ -117,57 +105,39 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamName"
+            "resourceIdentifier": "StreamName",
+            "resourceName": "Stream"
           }
         ]
       }
     },
     "UpdateDataRetention": {
-      "StreamName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamName"
-          }
-        ]
-      },
       "StreamARN": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamARN"
+            "resourceIdentifier": "StreamARN",
+            "resourceName": "Stream"
+          }
+        ]
+      },
+      "StreamName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StreamName",
+            "resourceName": "Stream"
           }
         ]
       }
     },
     "UpdateStream": {
-      "StreamName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamName"
-          }
-        ]
-      },
-      "StreamARN": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamARN"
-          }
-        ]
-      },
       "DeviceName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "DeviceName"
+            "resourceIdentifier": "DeviceName",
+            "resourceName": "Stream"
           }
         ]
       },
@@ -175,11 +145,41 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "MediaType"
+            "resourceIdentifier": "MediaType",
+            "resourceName": "Stream"
+          }
+        ]
+      },
+      "StreamARN": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StreamARN",
+            "resourceName": "Stream"
+          }
+        ]
+      },
+      "StreamName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StreamName",
+            "resourceName": "Stream"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Stream": {
+      "operation": "ListStreams",
+      "resourceIdentifier": {
+        "DeviceName": "StreamInfoList[].DeviceName",
+        "MediaType": "StreamInfoList[].MediaType",
+        "StreamARN": "StreamInfoList[].StreamARN",
+        "StreamName": "StreamInfoList[].StreamName"
+      }
+    }
+  },
+  "version": "1.0"
 }

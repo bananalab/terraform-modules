@@ -45,4 +45,4 @@ The following ``describe-target-groups`` example displays details for all target
 
 The following ``describe-target-groups`` example dislplays details for all of your target groups. ::
 
-    aws elbv2 describe-target-groups 
+    aws elbv2 describe-target-groups

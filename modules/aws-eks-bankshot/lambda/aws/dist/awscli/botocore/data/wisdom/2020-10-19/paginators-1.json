@@ -2,44 +2,44 @@
   "pagination": {
     "ListAssistantAssociations": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "assistantAssociationSummaries"
     },
     "ListAssistants": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "assistantSummaries"
     },
     "ListContents": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "contentSummaries"
     },
     "ListKnowledgeBases": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "knowledgeBaseSummaries"
     },
     "QueryAssistant": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "results"
     },
     "SearchContent": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "contentSummaries"
     },
     "SearchSessions": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "sessionSummaries"
     }
   }

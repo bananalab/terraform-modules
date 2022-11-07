@@ -1,21 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "IdentityPoolUsage": {
-      "operation": "ListIdentityPoolUsage",
-      "resourceIdentifier": {
-        "IdentityPoolId": "IdentityPoolUsages[].IdentityPoolId"
-      }
-    }
-  },
   "operations": {
     "BulkPublish": {
       "IdentityPoolId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -25,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -36,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -47,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -58,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -69,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -80,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -91,8 +82,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -102,8 +93,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -113,8 +104,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -124,8 +115,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -135,8 +126,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -146,8 +137,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -157,8 +148,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -168,8 +159,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
@@ -179,11 +170,20 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "IdentityPoolUsage",
-            "resourceIdentifier": "IdentityPoolId"
+            "resourceIdentifier": "IdentityPoolId",
+            "resourceName": "IdentityPoolUsage"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "IdentityPoolUsage": {
+      "operation": "ListIdentityPoolUsage",
+      "resourceIdentifier": {
+        "IdentityPoolId": "IdentityPoolUsages[].IdentityPoolId"
+      }
+    }
+  },
+  "version": "1.0"
 }

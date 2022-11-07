@@ -60,14 +60,14 @@ This command produces no output.
 
 **Example 6: [EC2-VPC] To add one rule for RDP and another rule for ping/ICMP**
 
-The following example uses the ``ip-permissions`` parameter to add two rules, one that enables inbound access on TCP port 3389 (RDP) and the other that enables ping/ICMP.  
+The following example uses the ``ip-permissions`` parameter to add two rules, one that enables inbound access on TCP port 3389 (RDP) and the other that enables ping/ICMP.
 
 Windows::
 
     aws ec2 authorize-security-group-ingress ^
         --group-id sg-1234567890abcdef0 ^
         --ip-permissions IpProtocol=tcp,FromPort=3389,ToPort=3389,IpRanges=[{CidrIp=172.31.0.0/16}] IpProtocol=icmp,FromPort=-1,ToPort=-1,IpRanges=[{CidrIp=172.31.0.0/16}]
-  
+
 **Example 7: [EC2-VPC] To add a rule for ICMP traffic**
 
 The following example uses the ``ip-permissions`` parameter to add an inbound rule that allows the ICMP message ``Destination Unreachable: Fragmentation Needed and Don't Fragment was Set`` (Type 3, Code 4) from anywhere.
@@ -84,11 +84,11 @@ Windows::
         --group-id sg-1234567890abcdef0 ^
         --ip-permissions IpProtocol=icmp,FromPort=3,ToPort=4,IpRanges=[{CidrIp=0.0.0.0/0}]
 
-This command produces no output. 
+This command produces no output.
 
 **Example 8: [EC2-VPC] To add a rule for IPv6 traffic**
 
-The following example grants SSH access (port 22) from the IPv6 range ``2001:db8:1234:1a00::/64``.  
+The following example grants SSH access (port 22) from the IPv6 range ``2001:db8:1234:1a00::/64``.
 
 Linux::
 
@@ -104,46 +104,46 @@ Windows::
 
 **Example 9: [EC2-VPC] To add a rule for ICMPv6 traffic**
 
-The following example uses the ``ip-permissions`` parameter to add an inbound rule that allows ICMPv6 traffic from anywhere.  
+The following example uses the ``ip-permissions`` parameter to add an inbound rule that allows ICMPv6 traffic from anywhere.
 
 Linux::
 
     aws ec2 authorize-security-group-ingress \
         --group-id sg-1234567890abcdef0 \
-        --ip-permissions IpProtocol=icmpv6,Ipv6Ranges='[{CidrIpv6=::/0}]'   
-    
+        --ip-permissions IpProtocol=icmpv6,Ipv6Ranges='[{CidrIpv6=::/0}]'
+
 Windows::
 
     aws ec2 authorize-security-group-ingress ^
         --group-id sg-1234567890abcdef0 ^
         --ip-permissions IpProtocol=icmpv6,Ipv6Ranges=[{CidrIpv6=::/0}]
-		
+
 **Example 10: [EC2-VPC] To add an inbound rule that uses a prefix list**
 
-A prefix list is a set of one or more CIDR blocks. You can use prefix lists with security group rules to allow connections from IP addresses that fall within the CIDR block ranges in a prefix list. The following example uses the ``ip-permissions`` parameter to add an inbound rule for all CIDR ranges in a specific prefix list on port 22.  
+A prefix list is a set of one or more CIDR blocks. You can use prefix lists with security group rules to allow connections from IP addresses that fall within the CIDR block ranges in a prefix list. The following example uses the ``ip-permissions`` parameter to add an inbound rule for all CIDR ranges in a specific prefix list on port 22.
 
 Linux::
 
     aws ec2 authorize-security-group-ingress \
         --group-id sg-04a351bfe432d4e71 \
         --ip-permissions IpProtocol=all,FromPort=22,ToPort=22,PrefixListIds=[{PrefixListId=pl-002dc3ec097de1514}]
-        
+
 Windows::
 
     aws ec2 authorize-security-group-ingress ^
         --group-id sg-04a351bfe432d4e71 ^
         --ip-permissions IpProtocol=all,FromPort=22,ToPort=22,PrefixListIds=[{PrefixListId=pl-002dc3ec097de1514}]
-        
+
 **Example 11: Add a rule with a description**
 
-The following example uses the ``ip-permissions`` parameter to add an inbound rule that allows RDP traffic from a specific IPv4 address range. The rule includes a description to help you identify it later.  
+The following example uses the ``ip-permissions`` parameter to add an inbound rule that allows RDP traffic from a specific IPv4 address range. The rule includes a description to help you identify it later.
 
 Linux::
 
     aws ec2 authorize-security-group-ingress \
         --group-id sg-1234567890abcdef0 \
         --ip-permissions IpProtocol=tcp,FromPort=3389,ToPort=3389,IpRanges='[{CidrIp=203.0.113.0/24,Description="RDP access from NY office"}]'
-        
+
 Windows::
 
     aws ec2 authorize-security-group-ingress ^

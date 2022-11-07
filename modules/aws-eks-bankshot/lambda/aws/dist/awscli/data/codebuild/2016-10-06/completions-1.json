@@ -1,5 +1,17 @@
 {
-  "version": "1.0",
+  "operations": {
+    "StopBuild": {
+      "id": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "id",
+            "resourceName": "Build"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Build": {
       "operation": "ListBuilds",
@@ -8,17 +20,5 @@
       }
     }
   },
-  "operations": {
-    "StopBuild": {
-      "id": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Build",
-            "resourceIdentifier": "id"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

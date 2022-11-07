@@ -257,7 +257,7 @@ in the AWS CLI config file:
   This is an optional parameter.  If you do not provide this value, a
   session name will be automatically generated.
 * ``duration_seconds`` - The  duration,  in seconds, of the role session.
-  The value can range from 900 seconds (15 minutes) up to  the  maximum 
+  The value can range from 900 seconds (15 minutes) up to  the  maximum
   session  duration setting  for  the role.  This is an optional parameter
   and by default, the value is set to 3600 seconds.
 
@@ -363,8 +363,8 @@ Sourcing Credentials From External Processes
     credential providers should be preferred if at all possible. If using
     this option, you should make sure that the config file is as locked down
     as possible using security best practices for your operating system.
-    Ensure that your custom credential tool does not write any secret 
-    information to StdErr because the SDKs and CLI can capture and log such 
+    Ensure that your custom credential tool does not write any secret
+    information to StdErr because the SDKs and CLI can capture and log such
     information, potentially exposing it to unauthorized users.
 
 If you have a method of sourcing credentials that isn't built in to the AWS

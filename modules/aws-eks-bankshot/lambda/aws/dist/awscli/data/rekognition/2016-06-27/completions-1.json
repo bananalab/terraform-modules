@@ -1,21 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "StreamProcessor": {
-      "operation": "ListStreamProcessors",
-      "resourceIdentifier": {
-        "Name": "StreamProcessors[].Name"
-      }
-    }
-  },
   "operations": {
     "DeleteStreamProcessor": {
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StreamProcessor",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "StreamProcessor"
           }
         ]
       }
@@ -25,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StreamProcessor",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "StreamProcessor"
           }
         ]
       }
@@ -36,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StreamProcessor",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "StreamProcessor"
           }
         ]
       }
@@ -47,11 +38,20 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StreamProcessor",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "StreamProcessor"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "StreamProcessor": {
+      "operation": "ListStreamProcessors",
+      "resourceIdentifier": {
+        "Name": "StreamProcessors[].Name"
+      }
+    }
+  },
+  "version": "1.0"
 }

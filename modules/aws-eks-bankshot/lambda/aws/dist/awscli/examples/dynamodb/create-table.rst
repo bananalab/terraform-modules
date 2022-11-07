@@ -15,33 +15,33 @@ Output::
         "TableDescription": {
             "AttributeDefinitions": [
                 {
-                    "AttributeName": "Artist", 
+                    "AttributeName": "Artist",
                     "AttributeType": "S"
-                }, 
+                },
                 {
-                    "AttributeName": "SongTitle", 
+                    "AttributeName": "SongTitle",
                     "AttributeType": "S"
                 }
-            ], 
+            ],
             "ProvisionedThroughput": {
-                "NumberOfDecreasesToday": 0, 
-                "WriteCapacityUnits": 5, 
+                "NumberOfDecreasesToday": 0,
+                "WriteCapacityUnits": 5,
                 "ReadCapacityUnits": 5
-            }, 
-            "TableSizeBytes": 0, 
-            "TableName": "MusicCollection", 
-            "TableStatus": "CREATING", 
+            },
+            "TableSizeBytes": 0,
+            "TableName": "MusicCollection",
+            "TableStatus": "CREATING",
             "KeySchema": [
                 {
-                    "KeyType": "HASH", 
+                    "KeyType": "HASH",
                     "AttributeName": "Artist"
-                }, 
+                },
                 {
-                    "KeyType": "RANGE", 
+                    "KeyType": "RANGE",
                     "AttributeName": "SongTitle"
                 }
-            ], 
-            "ItemCount": 0, 
+            ],
+            "ItemCount": 0,
             "CreationDateTime": "2020-05-26T16:04:41.627000-07:00",
             "TableArn": "arn:aws:dynamodb:us-west-2:123456789012:table/MusicCollection",
             "TableId": "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
@@ -183,7 +183,7 @@ The following example uses the specified attributes and key schema to create a t
                         \"NonKeyAttributes\": [\"Genre\", \"Year\"]
                     }
                 }
-            ]" 
+            ]"
 
 Output::
 

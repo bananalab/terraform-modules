@@ -1,234 +1,275 @@
 {
-  "version" : 2,
-  "waiters" : {
-    "LaunchProfileDeleted" : {
-      "description" : "Wait until a LaunchProfile is Deleted. Use this after invoking DeleteLaunchProfile",
-      "delay" : 5,
-      "maxAttempts" : 150,
-      "operation" : "GetLaunchProfile",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "launchProfile.state",
-        "state" : "success",
-        "expected" : "DELETED"
-      }, {
-        "matcher" : "path",
-        "argument" : "launchProfile.state",
-        "state" : "failure",
-        "expected" : "DELETE_FAILED"
-      } ]
+  "version": 2,
+  "waiters": {
+    "LaunchProfileDeleted": {
+      "acceptors": [
+        {
+          "argument": "launchProfile.state",
+          "expected": "DELETED",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "launchProfile.state",
+          "expected": "DELETE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 5,
+      "description": "Wait until a LaunchProfile is Deleted. Use this after invoking DeleteLaunchProfile",
+      "maxAttempts": 150,
+      "operation": "GetLaunchProfile"
     },
-    "LaunchProfileReady" : {
-      "description" : "Wait until a LaunchProfile is Ready. Use this after invoking CreateLaunchProfile or UpdateLaunchProfile",
-      "delay" : 5,
-      "maxAttempts" : 150,
-      "operation" : "GetLaunchProfile",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "launchProfile.state",
-        "state" : "success",
-        "expected" : "READY"
-      }, {
-        "matcher" : "path",
-        "argument" : "launchProfile.state",
-        "state" : "failure",
-        "expected" : "CREATE_FAILED"
-      }, {
-        "matcher" : "path",
-        "argument" : "launchProfile.state",
-        "state" : "failure",
-        "expected" : "UPDATE_FAILED"
-      } ]
+    "LaunchProfileReady": {
+      "acceptors": [
+        {
+          "argument": "launchProfile.state",
+          "expected": "READY",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "launchProfile.state",
+          "expected": "CREATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "argument": "launchProfile.state",
+          "expected": "UPDATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 5,
+      "description": "Wait until a LaunchProfile is Ready. Use this after invoking CreateLaunchProfile or UpdateLaunchProfile",
+      "maxAttempts": 150,
+      "operation": "GetLaunchProfile"
     },
-    "StreamingImageDeleted" : {
-      "description" : "Wait until a StreamingImage Deleted. Use this after invoking DeleteStreamingImage",
-      "delay" : 2,
-      "maxAttempts" : 60,
-      "operation" : "GetStreamingImage",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "streamingImage.state",
-        "state" : "success",
-        "expected" : "DELETED"
-      }, {
-        "matcher" : "path",
-        "argument" : "streamingImage.state",
-        "state" : "failure",
-        "expected" : "DELETE_FAILED"
-      } ]
+    "StreamingImageDeleted": {
+      "acceptors": [
+        {
+          "argument": "streamingImage.state",
+          "expected": "DELETED",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "streamingImage.state",
+          "expected": "DELETE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 2,
+      "description": "Wait until a StreamingImage Deleted. Use this after invoking DeleteStreamingImage",
+      "maxAttempts": 60,
+      "operation": "GetStreamingImage"
     },
-    "StreamingImageReady" : {
-      "description" : "Wait until a StreamingImage is Ready. Use this after invoking CreateStreamingImage or UpdateStreamingImage",
-      "delay" : 2,
-      "maxAttempts" : 60,
-      "operation" : "GetStreamingImage",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "streamingImage.state",
-        "state" : "success",
-        "expected" : "READY"
-      }, {
-        "matcher" : "path",
-        "argument" : "streamingImage.state",
-        "state" : "failure",
-        "expected" : "CREATE_FAILED"
-      }, {
-        "matcher" : "path",
-        "argument" : "streamingImage.state",
-        "state" : "failure",
-        "expected" : "UPDATE_FAILED"
-      } ]
+    "StreamingImageReady": {
+      "acceptors": [
+        {
+          "argument": "streamingImage.state",
+          "expected": "READY",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "streamingImage.state",
+          "expected": "CREATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "argument": "streamingImage.state",
+          "expected": "UPDATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 2,
+      "description": "Wait until a StreamingImage is Ready. Use this after invoking CreateStreamingImage or UpdateStreamingImage",
+      "maxAttempts": 60,
+      "operation": "GetStreamingImage"
     },
-    "StreamingSessionDeleted" : {
-      "description" : "Wait until a StreamingSessionDeleted. Use this after invoking DeleteStreamingSession",
-      "delay" : 5,
-      "maxAttempts" : 180,
-      "operation" : "GetStreamingSession",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "session.state",
-        "state" : "success",
-        "expected" : "DELETED"
-      }, {
-        "matcher" : "path",
-        "argument" : "session.state",
-        "state" : "failure",
-        "expected" : "DELETE_FAILED"
-      } ]
+    "StreamingSessionDeleted": {
+      "acceptors": [
+        {
+          "argument": "session.state",
+          "expected": "DELETED",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "session.state",
+          "expected": "DELETE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 5,
+      "description": "Wait until a StreamingSessionDeleted. Use this after invoking DeleteStreamingSession",
+      "maxAttempts": 180,
+      "operation": "GetStreamingSession"
     },
-    "StreamingSessionReady" : {
-      "description" : "Wait until a StreamingSession is ready. Use this after invoking CreateStreamingSession, StartStreamingSession",
-      "delay" : 10,
-      "maxAttempts" : 180,
-      "operation" : "GetStreamingSession",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "session.state",
-        "state" : "success",
-        "expected" : "READY"
-      }, {
-        "matcher" : "path",
-        "argument" : "session.state",
-        "state" : "failure",
-        "expected" : "CREATE_FAILED"
-      }, {
-        "matcher" : "path",
-        "argument" : "session.state",
-        "state" : "failure",
-        "expected" : "START_FAILED"
-      } ]
+    "StreamingSessionReady": {
+      "acceptors": [
+        {
+          "argument": "session.state",
+          "expected": "READY",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "session.state",
+          "expected": "CREATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "argument": "session.state",
+          "expected": "START_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 10,
+      "description": "Wait until a StreamingSession is ready. Use this after invoking CreateStreamingSession, StartStreamingSession",
+      "maxAttempts": 180,
+      "operation": "GetStreamingSession"
     },
-    "StreamingSessionStopped" : {
-      "description" : "Wait until a StreamingSessionStopped. Use this after invoking StopStreamingSession",
-      "delay" : 5,
-      "maxAttempts" : 180,
-      "operation" : "GetStreamingSession",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "session.state",
-        "state" : "success",
-        "expected" : "STOPPED"
-      }, {
-        "matcher" : "path",
-        "argument" : "session.state",
-        "state" : "failure",
-        "expected" : "STOP_FAILED"
-      } ]
+    "StreamingSessionStopped": {
+      "acceptors": [
+        {
+          "argument": "session.state",
+          "expected": "STOPPED",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "session.state",
+          "expected": "STOP_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 5,
+      "description": "Wait until a StreamingSessionStopped. Use this after invoking StopStreamingSession",
+      "maxAttempts": 180,
+      "operation": "GetStreamingSession"
     },
-    "StreamingSessionStreamReady" : {
-      "description" : "Wait until a StreamingSessionStream is ready. Use this after invoking CreateStreamingSessionStream",
-      "delay" : 5,
-      "maxAttempts" : 30,
-      "operation" : "GetStreamingSessionStream",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "stream.state",
-        "state" : "success",
-        "expected" : "READY"
-      }, {
-        "matcher" : "path",
-        "argument" : "stream.state",
-        "state" : "failure",
-        "expected" : "CREATE_FAILED"
-      } ]
+    "StreamingSessionStreamReady": {
+      "acceptors": [
+        {
+          "argument": "stream.state",
+          "expected": "READY",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "stream.state",
+          "expected": "CREATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 5,
+      "description": "Wait until a StreamingSessionStream is ready. Use this after invoking CreateStreamingSessionStream",
+      "maxAttempts": 30,
+      "operation": "GetStreamingSessionStream"
     },
-    "StudioComponentDeleted" : {
-      "description" : "Wait until a StudioComponent Deleted. Use this after invoking DeleteStudioComponent",
-      "delay" : 1,
-      "maxAttempts" : 120,
-      "operation" : "GetStudioComponent",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "studioComponent.state",
-        "state" : "success",
-        "expected" : "DELETED"
-      }, {
-        "matcher" : "path",
-        "argument" : "studioComponent.state",
-        "state" : "failure",
-        "expected" : "DELETE_FAILED"
-      } ]
+    "StudioComponentDeleted": {
+      "acceptors": [
+        {
+          "argument": "studioComponent.state",
+          "expected": "DELETED",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "studioComponent.state",
+          "expected": "DELETE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 1,
+      "description": "Wait until a StudioComponent Deleted. Use this after invoking DeleteStudioComponent",
+      "maxAttempts": 120,
+      "operation": "GetStudioComponent"
     },
-    "StudioComponentReady" : {
-      "description" : "Wait until a StudioComponent is Ready. Use this after invoking CreateStudioComponent or UpdateStudioComponent",
-      "delay" : 2,
-      "maxAttempts" : 60,
-      "operation" : "GetStudioComponent",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "studioComponent.state",
-        "state" : "success",
-        "expected" : "READY"
-      }, {
-        "matcher" : "path",
-        "argument" : "studioComponent.state",
-        "state" : "failure",
-        "expected" : "CREATE_FAILED"
-      }, {
-        "matcher" : "path",
-        "argument" : "studioComponent.state",
-        "state" : "failure",
-        "expected" : "UPDATE_FAILED"
-      } ]
+    "StudioComponentReady": {
+      "acceptors": [
+        {
+          "argument": "studioComponent.state",
+          "expected": "READY",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "studioComponent.state",
+          "expected": "CREATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "argument": "studioComponent.state",
+          "expected": "UPDATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 2,
+      "description": "Wait until a StudioComponent is Ready. Use this after invoking CreateStudioComponent or UpdateStudioComponent",
+      "maxAttempts": 60,
+      "operation": "GetStudioComponent"
     },
-    "StudioDeleted" : {
-      "description" : "Wait until a Studio is Deleted. Use this after invoking DeleteStudio.",
-      "delay" : 2,
-      "maxAttempts" : 60,
-      "operation" : "GetStudio",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "studio.state",
-        "state" : "success",
-        "expected" : "DELETED"
-      }, {
-        "matcher" : "path",
-        "argument" : "studio.state",
-        "state" : "failure",
-        "expected" : "DELETE_FAILED"
-      } ]
+    "StudioDeleted": {
+      "acceptors": [
+        {
+          "argument": "studio.state",
+          "expected": "DELETED",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "studio.state",
+          "expected": "DELETE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 2,
+      "description": "Wait until a Studio is Deleted. Use this after invoking DeleteStudio.",
+      "maxAttempts": 60,
+      "operation": "GetStudio"
     },
-    "StudioReady" : {
-      "description" : "Wait until a Studio is Ready. Use this after invoking CreateStudio, UpdateStudio, or StartStudioSSOConfigurationRepair",
-      "delay" : 2,
-      "maxAttempts" : 60,
-      "operation" : "GetStudio",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "studio.state",
-        "state" : "success",
-        "expected" : "READY"
-      }, {
-        "matcher" : "path",
-        "argument" : "studio.state",
-        "state" : "failure",
-        "expected" : "CREATE_FAILED"
-      }, {
-        "matcher" : "path",
-        "argument" : "studio.state",
-        "state" : "failure",
-        "expected" : "UPDATE_FAILED"
-      } ]
+    "StudioReady": {
+      "acceptors": [
+        {
+          "argument": "studio.state",
+          "expected": "READY",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "studio.state",
+          "expected": "CREATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "argument": "studio.state",
+          "expected": "UPDATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 2,
+      "description": "Wait until a Studio is Ready. Use this after invoking CreateStudio, UpdateStudio, or StartStudioSSOConfigurationRepair",
+      "maxAttempts": 60,
+      "operation": "GetStudio"
     }
   }
 }

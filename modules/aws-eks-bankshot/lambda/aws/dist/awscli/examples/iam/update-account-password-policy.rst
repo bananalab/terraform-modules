@@ -11,4 +11,3 @@ policy changes do not affect existing passwords.
 For more information, see `Setting an Account Password Policy for IAM Users`_ in the *Using IAM* guide.
 
 .. _`Setting an Account Password Policy for IAM Users`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html
-

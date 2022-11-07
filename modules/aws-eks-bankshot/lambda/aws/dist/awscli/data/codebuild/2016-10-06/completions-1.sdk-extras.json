@@ -1,21 +1,13 @@
 {
   "merge": {
-    "resources": {
-      "Project": {
-        "operation": "ListProjects",
-        "resourceIdentifier": {
-          "name": "projects[]"
-        }
-      }
-    },
     "operations": {
       "BatchDeleteBuilds": {
         "ids": {
           "completions": [
             {
               "parameters": {},
-              "resourceName": "Build",
-              "resourceIdentifier": "id"
+              "resourceIdentifier": "id",
+              "resourceName": "Build"
             }
           ]
         }
@@ -25,19 +17,8 @@
           "completions": [
             {
               "parameters": {},
-              "resourceName": "Build",
-              "resourceIdentifier": "id"
-            }
-          ]
-        }
-      },
-      "StartBuild": {
-        "projectName": {
-          "completions": [
-            {
-              "parameters": {},
-              "resourceName": "Project",
-              "resourceIdentifier": "name"
+              "resourceIdentifier": "id",
+              "resourceName": "Build"
             }
           ]
         }
@@ -47,8 +28,8 @@
           "completions": [
             {
               "parameters": {},
-              "resourceName": "Project",
-              "resourceIdentifier": "name"
+              "resourceIdentifier": "name",
+              "resourceName": "Project"
             }
           ]
         }
@@ -58,19 +39,8 @@
           "completions": [
             {
               "parameters": {},
-              "resourceName": "Project",
-              "resourceIdentifier": "name"
-            }
-          ]
-        }
-      },
-      "UpdateProject": {
-        "name": {
-          "completions": [
-            {
-              "parameters": {},
-              "resourceName": "Project",
-              "resourceIdentifier": "name"
+              "resourceIdentifier": "name",
+              "resourceName": "Project"
             }
           ]
         }
@@ -80,19 +50,8 @@
           "completions": [
             {
               "parameters": {},
-              "resourceName": "Project",
-              "resourceIdentifier": "name"
-            }
-          ]
-        }
-      },
-      "ListBuildsForProject": {
-        "projectName": {
-          "completions": [
-            {
-              "parameters": {},
-              "resourceName": "Project",
-              "resourceIdentifier": "name"
+              "resourceIdentifier": "name",
+              "resourceName": "Project"
             }
           ]
         }
@@ -102,10 +61,51 @@
           "completions": [
             {
               "parameters": {},
-              "resourceName": "Project",
-              "resourceIdentifier": "name"
+              "resourceIdentifier": "name",
+              "resourceName": "Project"
             }
           ]
+        }
+      },
+      "ListBuildsForProject": {
+        "projectName": {
+          "completions": [
+            {
+              "parameters": {},
+              "resourceIdentifier": "name",
+              "resourceName": "Project"
+            }
+          ]
+        }
+      },
+      "StartBuild": {
+        "projectName": {
+          "completions": [
+            {
+              "parameters": {},
+              "resourceIdentifier": "name",
+              "resourceName": "Project"
+            }
+          ]
+        }
+      },
+      "UpdateProject": {
+        "name": {
+          "completions": [
+            {
+              "parameters": {},
+              "resourceIdentifier": "name",
+              "resourceName": "Project"
+            }
+          ]
+        }
+      }
+    },
+    "resources": {
+      "Project": {
+        "operation": "ListProjects",
+        "resourceIdentifier": {
+          "name": "projects[]"
         }
       }
     }

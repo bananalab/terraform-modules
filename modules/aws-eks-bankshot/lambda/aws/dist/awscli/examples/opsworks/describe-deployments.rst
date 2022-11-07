@@ -49,4 +49,3 @@ The following ``describe-deployments`` commmand describes the deployments in a s
 For more information, see `Deploying Apps`_ in the *AWS OpsWorks User Guide*.
 
 .. _`Deploying Apps`: http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html
-

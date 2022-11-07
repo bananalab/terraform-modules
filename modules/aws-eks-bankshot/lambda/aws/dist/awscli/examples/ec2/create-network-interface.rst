@@ -24,7 +24,7 @@ Output::
           ],
           "RequesterManaged": false,
           "AvailabilityZone": "us-east-1d",
-          "Ipv6Addresses": [], 
+          "Ipv6Addresses": [],
           "Groups": [
               {
                   "GroupName": "default",
@@ -35,5 +35,5 @@ Output::
           "OwnerId": "123456789012",
           "TagSet": [],
           "PrivateIpAddress": "10.0.2.17"
-      }  
+      }
   }

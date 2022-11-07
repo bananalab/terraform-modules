@@ -1,5 +1,4 @@
 {
-  "version": 1.0,
   "merge": {
     "pagination": {
       "ListAnalyses": {
@@ -9,6 +8,36 @@
         ]
       },
       "ListDashboardVersions": {
+        "non_aggregate_keys": [
+          "Status",
+          "RequestId"
+        ]
+      },
+      "ListDashboards": {
+        "non_aggregate_keys": [
+          "Status",
+          "RequestId"
+        ]
+      },
+      "ListDataSets": {
+        "non_aggregate_keys": [
+          "Status",
+          "RequestId"
+        ]
+      },
+      "ListDataSources": {
+        "non_aggregate_keys": [
+          "Status",
+          "RequestId"
+        ]
+      },
+      "ListIngestions": {
+        "non_aggregate_keys": [
+          "Status",
+          "RequestId"
+        ]
+      },
+      "ListNamespaces": {
         "non_aggregate_keys": [
           "Status",
           "RequestId"
@@ -55,37 +84,8 @@
           "Status",
           "RequestId"
         ]
-      },
-      "ListNamespaces": {
-        "non_aggregate_keys": [
-          "Status",
-          "RequestId"
-        ]
-      },
-      "ListIngestions": {
-        "non_aggregate_keys": [
-          "Status",
-          "RequestId"
-        ]
-      },
-      "ListDataSources": {
-        "non_aggregate_keys": [
-          "Status",
-          "RequestId"
-        ]
-      },
-      "ListDataSets": {
-        "non_aggregate_keys": [
-          "Status",
-          "RequestId"
-        ]
-      },
-      "ListDashboards": {
-        "non_aggregate_keys": [
-          "Status",
-          "RequestId"
-        ]
       }
     }
-  }
+  },
+  "version": 1.0
 }

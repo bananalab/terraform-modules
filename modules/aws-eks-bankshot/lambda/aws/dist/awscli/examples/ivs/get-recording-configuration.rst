@@ -19,7 +19,7 @@ Output::
             "recordingReconnectWindowSeconds": 60,
             "state": "ACTIVE",
             "tags": { "key1" : "value1" },
-            "thumbnailConfiguration": { 
+            "thumbnailConfiguration": {
                 "recordingMode": "INTERVAL",
                 "targetIntervalSeconds": 30
             }

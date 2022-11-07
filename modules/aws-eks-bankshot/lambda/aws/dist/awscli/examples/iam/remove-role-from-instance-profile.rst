@@ -8,4 +8,3 @@ profile named ``ExampleInstanceProfile``::
 For more information, see `Instance Profiles`_ in the *Using IAM* guide.
 
 .. _`Instance Profiles`: http://docs.aws.amazon.com/IAM/latest/UserGuide/instance-profiles.html
-

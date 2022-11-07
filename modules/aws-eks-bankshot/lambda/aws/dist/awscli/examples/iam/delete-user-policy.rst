@@ -9,8 +9,3 @@ To get a list of policies for an IAM user, use the ``list-user-policies`` comman
 For more information, see `Adding a New User to Your AWS Account`_ in the *Using IAM* guide.
 
 .. _`Adding a New User to Your AWS Account`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_SettingUpUser.html
-
-
-
-
-

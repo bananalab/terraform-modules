@@ -1,32 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "SentimentDetectionJob": {
-      "operation": "ListSentimentDetectionJobs",
-      "resourceIdentifier": {
-        "LanguageCode": "SentimentDetectionJobPropertiesList[].LanguageCode",
-        "DataAccessRoleArn": "SentimentDetectionJobPropertiesList[].DataAccessRoleArn"
-      }
-    },
-    "TopicsDetectionJob": {
-      "operation": "ListTopicsDetectionJobs",
-      "resourceIdentifier": {
-        "JobId": "TopicsDetectionJobPropertiesList[].JobId",
-        "JobName": "TopicsDetectionJobPropertiesList[].JobName",
-        "InputDataConfig": "TopicsDetectionJobPropertiesList[].InputDataConfig",
-        "OutputDataConfig": "TopicsDetectionJobPropertiesList[].OutputDataConfig",
-        "NumberOfTopics": "TopicsDetectionJobPropertiesList[].NumberOfTopics"
-      }
-    }
-  },
   "operations": {
     "BatchDetectEntities": {
       "LanguageCode": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       }
@@ -36,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       }
@@ -47,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       }
@@ -58,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       }
@@ -69,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -80,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -91,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -102,8 +82,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -113,8 +93,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -124,8 +104,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       }
@@ -135,8 +115,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       }
@@ -146,8 +126,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       }
@@ -157,37 +137,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       }
     },
     "StartDominantLanguageDetectionJob": {
-      "InputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "InputDataConfig"
-          }
-        ]
-      },
-      "OutputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "OutputDataConfig"
-          }
-        ]
-      },
       "DataAccessRoleArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "DataAccessRoleArn"
+            "resourceIdentifier": "DataAccessRoleArn",
+            "resourceName": "SentimentDetectionJob"
+          }
+        ]
+      },
+      "InputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -195,37 +166,37 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobName"
+            "resourceIdentifier": "JobName",
+            "resourceName": "TopicsDetectionJob"
+          }
+        ]
+      },
+      "OutputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OutputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
     },
     "StartEntitiesDetectionJob": {
-      "InputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "InputDataConfig"
-          }
-        ]
-      },
-      "OutputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "OutputDataConfig"
-          }
-        ]
-      },
       "DataAccessRoleArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "DataAccessRoleArn"
+            "resourceIdentifier": "DataAccessRoleArn",
+            "resourceName": "SentimentDetectionJob"
+          }
+        ]
+      },
+      "InputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -233,8 +204,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobName"
+            "resourceIdentifier": "JobName",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -242,37 +213,37 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
+          }
+        ]
+      },
+      "OutputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OutputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
     },
     "StartKeyPhrasesDetectionJob": {
-      "InputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "InputDataConfig"
-          }
-        ]
-      },
-      "OutputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "OutputDataConfig"
-          }
-        ]
-      },
       "DataAccessRoleArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "DataAccessRoleArn"
+            "resourceIdentifier": "DataAccessRoleArn",
+            "resourceName": "SentimentDetectionJob"
+          }
+        ]
+      },
+      "InputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -280,8 +251,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobName"
+            "resourceIdentifier": "JobName",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -289,37 +260,37 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
+          }
+        ]
+      },
+      "OutputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OutputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
     },
     "StartSentimentDetectionJob": {
-      "InputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "InputDataConfig"
-          }
-        ]
-      },
-      "OutputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "OutputDataConfig"
-          }
-        ]
-      },
       "DataAccessRoleArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "DataAccessRoleArn"
+            "resourceIdentifier": "DataAccessRoleArn",
+            "resourceName": "SentimentDetectionJob"
+          }
+        ]
+      },
+      "InputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -327,8 +298,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobName"
+            "resourceIdentifier": "JobName",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -336,19 +307,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "LanguageCode"
-          }
-        ]
-      }
-    },
-    "StartTopicsDetectionJob": {
-      "InputDataConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "InputDataConfig"
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SentimentDetectionJob"
           }
         ]
       },
@@ -356,17 +316,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "OutputDataConfig"
+            "resourceIdentifier": "OutputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
-      },
+      }
+    },
+    "StartTopicsDetectionJob": {
       "DataAccessRoleArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SentimentDetectionJob",
-            "resourceIdentifier": "DataAccessRoleArn"
+            "resourceIdentifier": "DataAccessRoleArn",
+            "resourceName": "SentimentDetectionJob"
+          }
+        ]
+      },
+      "InputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -374,8 +345,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobName"
+            "resourceIdentifier": "JobName",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       },
@@ -383,8 +354,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "NumberOfTopics"
+            "resourceIdentifier": "NumberOfTopics",
+            "resourceName": "TopicsDetectionJob"
+          }
+        ]
+      },
+      "OutputDataConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OutputDataConfig",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -394,8 +374,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -405,8 +385,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -416,8 +396,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
@@ -427,11 +407,31 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TopicsDetectionJob",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "TopicsDetectionJob"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "SentimentDetectionJob": {
+      "operation": "ListSentimentDetectionJobs",
+      "resourceIdentifier": {
+        "DataAccessRoleArn": "SentimentDetectionJobPropertiesList[].DataAccessRoleArn",
+        "LanguageCode": "SentimentDetectionJobPropertiesList[].LanguageCode"
+      }
+    },
+    "TopicsDetectionJob": {
+      "operation": "ListTopicsDetectionJobs",
+      "resourceIdentifier": {
+        "InputDataConfig": "TopicsDetectionJobPropertiesList[].InputDataConfig",
+        "JobId": "TopicsDetectionJobPropertiesList[].JobId",
+        "JobName": "TopicsDetectionJobPropertiesList[].JobName",
+        "NumberOfTopics": "TopicsDetectionJobPropertiesList[].NumberOfTopics",
+        "OutputDataConfig": "TopicsDetectionJobPropertiesList[].OutputDataConfig"
+      }
+    }
+  },
+  "version": "1.0"
 }

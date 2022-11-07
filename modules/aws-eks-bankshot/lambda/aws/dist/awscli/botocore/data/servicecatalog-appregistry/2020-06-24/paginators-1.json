@@ -2,32 +2,32 @@
   "pagination": {
     "ListApplications": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "applications"
     },
     "ListAssociatedAttributeGroups": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "attributeGroups"
     },
     "ListAssociatedResources": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "resources"
     },
     "ListAttributeGroups": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "attributeGroups"
     },
     "ListAttributeGroupsForApplication": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "attributeGroupsDetails"
     }
   }

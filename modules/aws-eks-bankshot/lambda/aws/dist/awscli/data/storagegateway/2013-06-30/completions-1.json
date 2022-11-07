@@ -1,42 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "TapeArchive": {
-      "operation": "DescribeTapeArchives",
-      "resourceIdentifier": {
-        "TapeARN": "TapeArchives[].TapeARN",
-        "KMSKey": "TapeArchives[].KMSKey"
-      }
-    },
-    "FileShare": {
-      "operation": "ListFileShares",
-      "resourceIdentifier": {
-        "FileShareARN": "FileShareInfoList[].FileShareARN"
-      }
-    },
-    "Gateway": {
-      "operation": "ListGateways",
-      "resourceIdentifier": {
-        "GatewayType": "Gateways[].GatewayType",
-        "GatewayName": "Gateways[].GatewayName"
-      }
-    },
-    "Volume": {
-      "operation": "ListVolumes",
-      "resourceIdentifier": {
-        "VolumeARN": "VolumeInfos[].VolumeARN",
-        "GatewayARN": "VolumeInfos[].GatewayARN"
-      }
-    }
-  },
   "operations": {
     "ActivateGateway": {
       "GatewayName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Gateway",
-            "resourceIdentifier": "GatewayName"
+            "resourceIdentifier": "GatewayName",
+            "resourceName": "Gateway"
           }
         ]
       },
@@ -44,8 +14,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Gateway",
-            "resourceIdentifier": "GatewayType"
+            "resourceIdentifier": "GatewayType",
+            "resourceName": "Gateway"
           }
         ]
       }
@@ -55,8 +25,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -66,8 +36,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -77,8 +47,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -88,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       },
@@ -97,8 +67,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -108,8 +78,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       },
@@ -117,8 +87,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -128,8 +98,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -139,8 +109,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "FileShare",
-            "resourceIdentifier": "FileShareARN"
+            "resourceIdentifier": "FileShareARN",
+            "resourceName": "FileShare"
           }
         ]
       }
@@ -150,8 +120,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -161,8 +131,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "VolumeARN"
+            "resourceIdentifier": "VolumeARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -172,8 +142,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       },
@@ -181,8 +151,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -192,8 +162,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -203,8 +173,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "VolumeARN"
+            "resourceIdentifier": "VolumeARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -214,8 +184,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -225,8 +195,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -236,8 +206,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "VolumeARN"
+            "resourceIdentifier": "VolumeARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -247,8 +217,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -258,8 +228,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -269,8 +239,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -280,8 +250,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "VolumeARN"
+            "resourceIdentifier": "VolumeARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -291,8 +261,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "VolumeARN"
+            "resourceIdentifier": "VolumeARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -302,8 +272,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -313,8 +283,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -324,8 +294,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       },
@@ -333,8 +303,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -344,8 +314,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -355,8 +325,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -366,8 +336,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -377,8 +347,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -388,8 +358,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -399,8 +369,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -410,8 +380,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -421,8 +391,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -432,8 +402,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "VolumeARN"
+            "resourceIdentifier": "VolumeARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -443,8 +413,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -454,8 +424,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -465,8 +435,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "FileShare",
-            "resourceIdentifier": "FileShareARN"
+            "resourceIdentifier": "FileShareARN",
+            "resourceName": "FileShare"
           }
         ]
       }
@@ -476,8 +446,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "FileShare",
-            "resourceIdentifier": "FileShareARN"
+            "resourceIdentifier": "FileShareARN",
+            "resourceName": "FileShare"
           }
         ]
       }
@@ -487,48 +457,48 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
     },
     "RetrieveTapeArchive": {
-      "TapeARN": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
-          }
-        ]
-      },
       "GatewayARN": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
+          }
+        ]
+      },
+      "TapeARN": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
     },
     "RetrieveTapeRecoveryPoint": {
-      "TapeARN": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "TapeARN"
-          }
-        ]
-      },
       "GatewayARN": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
+          }
+        ]
+      },
+      "TapeARN": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TapeARN",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -538,8 +508,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -549,8 +519,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -560,8 +530,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -571,8 +541,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -582,8 +552,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -593,8 +563,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       },
@@ -602,8 +572,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Gateway",
-            "resourceIdentifier": "GatewayName"
+            "resourceIdentifier": "GatewayName",
+            "resourceName": "Gateway"
           }
         ]
       }
@@ -613,8 +583,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -624,8 +594,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "GatewayARN"
+            "resourceIdentifier": "GatewayARN",
+            "resourceName": "Volume"
           }
         ]
       }
@@ -635,8 +605,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "FileShare",
-            "resourceIdentifier": "FileShareARN"
+            "resourceIdentifier": "FileShareARN",
+            "resourceName": "FileShare"
           }
         ]
       },
@@ -644,8 +614,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "KMSKey"
+            "resourceIdentifier": "KMSKey",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -655,8 +625,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "FileShare",
-            "resourceIdentifier": "FileShareARN"
+            "resourceIdentifier": "FileShareARN",
+            "resourceName": "FileShare"
           }
         ]
       },
@@ -664,8 +634,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TapeArchive",
-            "resourceIdentifier": "KMSKey"
+            "resourceIdentifier": "KMSKey",
+            "resourceName": "TapeArchive"
           }
         ]
       }
@@ -675,11 +645,41 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Volume",
-            "resourceIdentifier": "VolumeARN"
+            "resourceIdentifier": "VolumeARN",
+            "resourceName": "Volume"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "FileShare": {
+      "operation": "ListFileShares",
+      "resourceIdentifier": {
+        "FileShareARN": "FileShareInfoList[].FileShareARN"
+      }
+    },
+    "Gateway": {
+      "operation": "ListGateways",
+      "resourceIdentifier": {
+        "GatewayName": "Gateways[].GatewayName",
+        "GatewayType": "Gateways[].GatewayType"
+      }
+    },
+    "TapeArchive": {
+      "operation": "DescribeTapeArchives",
+      "resourceIdentifier": {
+        "KMSKey": "TapeArchives[].KMSKey",
+        "TapeARN": "TapeArchives[].TapeARN"
+      }
+    },
+    "Volume": {
+      "operation": "ListVolumes",
+      "resourceIdentifier": {
+        "GatewayARN": "VolumeInfos[].GatewayARN",
+        "VolumeARN": "VolumeInfos[].VolumeARN"
+      }
+    }
+  },
+  "version": "1.0"
 }

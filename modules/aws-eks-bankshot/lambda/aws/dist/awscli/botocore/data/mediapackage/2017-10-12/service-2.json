@@ -1779,6 +1779,14 @@
           "locationName": "adMarkers",
           "shape": "AdMarkers"
         },
+        "AdTriggers": {
+          "locationName": "adTriggers",
+          "shape": "AdTriggers"
+        },
+        "AdsOnDeliveryRestrictions": {
+          "locationName": "adsOnDeliveryRestrictions",
+          "shape": "AdsOnDeliveryRestrictions"
+        },
         "Id": {
           "documentation": "The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.",
           "locationName": "id",
@@ -1813,14 +1821,6 @@
           "documentation": "The URL of the packaged OriginEndpoint for consumption.",
           "locationName": "url",
           "shape": "__string"
-        },
-        "AdTriggers": {
-          "locationName": "adTriggers",
-          "shape": "AdTriggers"
-        },
-        "AdsOnDeliveryRestrictions": {
-          "locationName": "adsOnDeliveryRestrictions",
-          "shape": "AdsOnDeliveryRestrictions"
         }
       },
       "required": [

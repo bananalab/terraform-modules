@@ -1,33 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "ContainerInstance": {
-      "operation": "ListContainerInstances",
-      "resourceIdentifier": {
-        "containerInstanceArn": "containerInstanceArns[]"
-      }
-    },
-    "TaskDefinitionFamily": {
-      "operation": "ListTaskDefinitionFamilies",
-      "resourceIdentifier": {
-        "family": "families[]"
-      }
-    },
-    "TaskDefinition": {
-      "operation": "ListTaskDefinitions",
-      "resourceIdentifier": {
-        "taskDefinitionArn": "taskDefinitionArns[]"
-      }
-    }
-  },
   "operations": {
     "DeregisterContainerInstance": {
       "containerInstance": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "ContainerInstance",
-            "resourceIdentifier": "containerInstanceArn"
+            "resourceIdentifier": "containerInstanceArn",
+            "resourceName": "ContainerInstance"
           }
         ]
       }
@@ -37,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TaskDefinition",
-            "resourceIdentifier": "taskDefinitionArn"
+            "resourceIdentifier": "taskDefinitionArn",
+            "resourceName": "TaskDefinition"
           }
         ]
       }
@@ -48,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TaskDefinition",
-            "resourceIdentifier": "taskDefinitionArn"
+            "resourceIdentifier": "taskDefinitionArn",
+            "resourceName": "TaskDefinition"
           }
         ]
       }
@@ -59,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "ContainerInstance",
-            "resourceIdentifier": "containerInstanceArn"
+            "resourceIdentifier": "containerInstanceArn",
+            "resourceName": "ContainerInstance"
           }
         ]
       }
@@ -70,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "ContainerInstance",
-            "resourceIdentifier": "containerInstanceArn"
+            "resourceIdentifier": "containerInstanceArn",
+            "resourceName": "ContainerInstance"
           }
         ]
       },
@@ -79,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TaskDefinitionFamily",
-            "resourceIdentifier": "family"
+            "resourceIdentifier": "family",
+            "resourceName": "TaskDefinitionFamily"
           }
         ]
       }
@@ -90,8 +69,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "ContainerInstance",
-            "resourceIdentifier": "containerInstanceArn"
+            "resourceIdentifier": "containerInstanceArn",
+            "resourceName": "ContainerInstance"
           }
         ]
       }
@@ -101,8 +80,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TaskDefinitionFamily",
-            "resourceIdentifier": "family"
+            "resourceIdentifier": "family",
+            "resourceName": "TaskDefinitionFamily"
           }
         ]
       }
@@ -112,8 +91,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TaskDefinition",
-            "resourceIdentifier": "taskDefinitionArn"
+            "resourceIdentifier": "taskDefinitionArn",
+            "resourceName": "TaskDefinition"
           }
         ]
       }
@@ -123,8 +102,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TaskDefinition",
-            "resourceIdentifier": "taskDefinitionArn"
+            "resourceIdentifier": "taskDefinitionArn",
+            "resourceName": "TaskDefinition"
           }
         ]
       }
@@ -134,8 +113,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "ContainerInstance",
-            "resourceIdentifier": "containerInstanceArn"
+            "resourceIdentifier": "containerInstanceArn",
+            "resourceName": "ContainerInstance"
           }
         ]
       }
@@ -145,11 +124,32 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TaskDefinition",
-            "resourceIdentifier": "taskDefinitionArn"
+            "resourceIdentifier": "taskDefinitionArn",
+            "resourceName": "TaskDefinition"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "ContainerInstance": {
+      "operation": "ListContainerInstances",
+      "resourceIdentifier": {
+        "containerInstanceArn": "containerInstanceArns[]"
+      }
+    },
+    "TaskDefinition": {
+      "operation": "ListTaskDefinitions",
+      "resourceIdentifier": {
+        "taskDefinitionArn": "taskDefinitionArns[]"
+      }
+    },
+    "TaskDefinitionFamily": {
+      "operation": "ListTaskDefinitionFamilies",
+      "resourceIdentifier": {
+        "family": "families[]"
+      }
+    }
+  },
+  "version": "1.0"
 }

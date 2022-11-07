@@ -7,4 +7,3 @@ The following ``remove-user-from-group`` command removes the user named ``Bob`` 
 For more information, see `Adding Users to and Removing Users from a Group`_ in the *Using IAM* guide.
 
 .. _`Adding Users to and Removing Users from a Group`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_AddOrRemoveUsersFromGroup.html
-

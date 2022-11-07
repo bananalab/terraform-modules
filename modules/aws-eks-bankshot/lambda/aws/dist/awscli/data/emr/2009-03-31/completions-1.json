@@ -1,38 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "JobFlow": {
-      "operation": "DescribeJobFlows",
-      "resourceIdentifier": {
-        "JobFlowId": "JobFlows[].JobFlowId",
-        "LogUri": "JobFlows[].LogUri",
-        "AmiVersion": "JobFlows[].AmiVersion",
-        "Instances": "JobFlows[].Instances",
-        "Steps": "JobFlows[].Steps",
-        "BootstrapActions": "JobFlows[].BootstrapActions",
-        "SupportedProducts": "JobFlows[].SupportedProducts",
-        "VisibleToAllUsers": "JobFlows[].VisibleToAllUsers",
-        "JobFlowRole": "JobFlows[].JobFlowRole",
-        "ServiceRole": "JobFlows[].ServiceRole",
-        "AutoScalingRole": "JobFlows[].AutoScalingRole",
-        "ScaleDownBehavior": "JobFlows[].ScaleDownBehavior"
-      }
-    },
-    "SecurityConfiguration": {
-      "operation": "ListSecurityConfigurations",
-      "resourceIdentifier": {
-        "Name": "SecurityConfigurations[].Name"
-      }
-    }
-  },
   "operations": {
     "AddInstanceGroups": {
       "JobFlowId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "JobFlowId"
+            "resourceIdentifier": "JobFlowId",
+            "resourceName": "JobFlow"
           }
         ]
       }
@@ -42,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "JobFlowId"
+            "resourceIdentifier": "JobFlowId",
+            "resourceName": "JobFlow"
           }
         ]
       },
@@ -51,8 +25,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "Steps"
+            "resourceIdentifier": "Steps",
+            "resourceName": "JobFlow"
           }
         ]
       }
@@ -62,8 +36,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SecurityConfiguration",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SecurityConfiguration"
           }
         ]
       }
@@ -73,8 +47,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "JobFlowId"
+            "resourceIdentifier": "JobFlowId",
+            "resourceName": "JobFlow"
           }
         ]
       }
@@ -84,109 +58,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SecurityConfiguration",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SecurityConfiguration"
           }
         ]
       }
     },
     "RunJobFlow": {
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SecurityConfiguration",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      },
-      "LogUri": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "LogUri"
-          }
-        ]
-      },
       "AmiVersion": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "AmiVersion"
-          }
-        ]
-      },
-      "Instances": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "Instances"
-          }
-        ]
-      },
-      "Steps": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "Steps"
-          }
-        ]
-      },
-      "BootstrapActions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "BootstrapActions"
-          }
-        ]
-      },
-      "SupportedProducts": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "SupportedProducts"
-          }
-        ]
-      },
-      "NewSupportedProducts": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "SupportedProducts"
-          }
-        ]
-      },
-      "VisibleToAllUsers": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "VisibleToAllUsers"
-          }
-        ]
-      },
-      "JobFlowRole": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "JobFlowRole"
-          }
-        ]
-      },
-      "ServiceRole": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "ServiceRole"
+            "resourceIdentifier": "AmiVersion",
+            "resourceName": "JobFlow"
           }
         ]
       },
@@ -194,8 +78,62 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "AutoScalingRole"
+            "resourceIdentifier": "AutoScalingRole",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "BootstrapActions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BootstrapActions",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "Instances": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Instances",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "JobFlowRole": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "JobFlowRole",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "LogUri": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LogUri",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "SecurityConfiguration"
+          }
+        ]
+      },
+      "NewSupportedProducts": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SupportedProducts",
+            "resourceName": "JobFlow"
           }
         ]
       },
@@ -203,8 +141,44 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "ScaleDownBehavior"
+            "resourceIdentifier": "ScaleDownBehavior",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "ServiceRole": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServiceRole",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "Steps": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Steps",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "SupportedProducts": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SupportedProducts",
+            "resourceName": "JobFlow"
+          }
+        ]
+      },
+      "VisibleToAllUsers": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VisibleToAllUsers",
+            "resourceName": "JobFlow"
           }
         ]
       }
@@ -214,8 +188,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "JobFlowId"
+            "resourceIdentifier": "JobFlowId",
+            "resourceName": "JobFlow"
           }
         ]
       }
@@ -225,8 +199,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "JobFlowId"
+            "resourceIdentifier": "JobFlowId",
+            "resourceName": "JobFlow"
           }
         ]
       },
@@ -234,8 +208,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "VisibleToAllUsers"
+            "resourceIdentifier": "VisibleToAllUsers",
+            "resourceName": "JobFlow"
           }
         ]
       }
@@ -245,11 +219,37 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "JobFlow",
-            "resourceIdentifier": "JobFlowId"
+            "resourceIdentifier": "JobFlowId",
+            "resourceName": "JobFlow"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "JobFlow": {
+      "operation": "DescribeJobFlows",
+      "resourceIdentifier": {
+        "AmiVersion": "JobFlows[].AmiVersion",
+        "AutoScalingRole": "JobFlows[].AutoScalingRole",
+        "BootstrapActions": "JobFlows[].BootstrapActions",
+        "Instances": "JobFlows[].Instances",
+        "JobFlowId": "JobFlows[].JobFlowId",
+        "JobFlowRole": "JobFlows[].JobFlowRole",
+        "LogUri": "JobFlows[].LogUri",
+        "ScaleDownBehavior": "JobFlows[].ScaleDownBehavior",
+        "ServiceRole": "JobFlows[].ServiceRole",
+        "Steps": "JobFlows[].Steps",
+        "SupportedProducts": "JobFlows[].SupportedProducts",
+        "VisibleToAllUsers": "JobFlows[].VisibleToAllUsers"
+      }
+    },
+    "SecurityConfiguration": {
+      "operation": "ListSecurityConfigurations",
+      "resourceIdentifier": {
+        "Name": "SecurityConfigurations[].Name"
+      }
+    }
+  },
+  "version": "1.0"
 }

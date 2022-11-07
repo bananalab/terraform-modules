@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Device": {
-      "operation": "ListDevices",
-      "resourceIdentifier": {
-        "DeviceId": "Devices[].DeviceId",
-        "Enabled": "Devices[].Enabled"
-      }
-    }
-  },
   "operations": {
     "DescribeDevice": {
       "DeviceId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "DeviceId"
+            "resourceIdentifier": "DeviceId",
+            "resourceName": "Device"
           }
         ]
       }
@@ -26,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "DeviceId"
+            "resourceIdentifier": "DeviceId",
+            "resourceName": "Device"
           }
         ]
       }
@@ -37,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "DeviceId"
+            "resourceIdentifier": "DeviceId",
+            "resourceName": "Device"
           }
         ]
       }
@@ -48,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "DeviceId"
+            "resourceIdentifier": "DeviceId",
+            "resourceName": "Device"
           }
         ]
       }
@@ -59,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "DeviceId"
+            "resourceIdentifier": "DeviceId",
+            "resourceName": "Device"
           }
         ]
       }
@@ -70,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "DeviceId"
+            "resourceIdentifier": "DeviceId",
+            "resourceName": "Device"
           }
         ]
       }
@@ -81,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "DeviceId"
+            "resourceIdentifier": "DeviceId",
+            "resourceName": "Device"
           }
         ]
       }
@@ -92,8 +82,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "DeviceId"
+            "resourceIdentifier": "DeviceId",
+            "resourceName": "Device"
           }
         ]
       },
@@ -101,11 +91,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Device",
-            "resourceIdentifier": "Enabled"
+            "resourceIdentifier": "Enabled",
+            "resourceName": "Device"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Device": {
+      "operation": "ListDevices",
+      "resourceIdentifier": {
+        "DeviceId": "Devices[].DeviceId",
+        "Enabled": "Devices[].Enabled"
+      }
+    }
+  },
+  "version": "1.0"
 }

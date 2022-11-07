@@ -9,4 +9,3 @@ To see the policies attached to a group, use the ``list-group-policies`` command
 For more information, see `Managing IAM Policies`_ in the *Using IAM* guide.
 
 .. _`Managing IAM Policies`: http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html
-

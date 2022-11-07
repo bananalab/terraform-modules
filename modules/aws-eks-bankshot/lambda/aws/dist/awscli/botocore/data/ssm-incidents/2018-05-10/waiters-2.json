@@ -1,53 +1,62 @@
 {
-  "version" : 2,
-  "waiters" : {
-    "WaitForReplicationSetActive" : {
-      "description" : "Wait for a replication set to become ACTIVE",
-      "delay" : 30,
-      "maxAttempts" : 5,
-      "operation" : "GetReplicationSet",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "replicationSet.status",
-        "state" : "success",
-        "expected" : "ACTIVE"
-      }, {
-        "matcher" : "path",
-        "argument" : "replicationSet.status",
-        "state" : "retry",
-        "expected" : "CREATING"
-      }, {
-        "matcher" : "path",
-        "argument" : "replicationSet.status",
-        "state" : "retry",
-        "expected" : "UPDATING"
-      }, {
-        "matcher" : "path",
-        "argument" : "replicationSet.status",
-        "state" : "failure",
-        "expected" : "FAILED"
-      } ]
+  "version": 2,
+  "waiters": {
+    "WaitForReplicationSetActive": {
+      "acceptors": [
+        {
+          "argument": "replicationSet.status",
+          "expected": "ACTIVE",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "replicationSet.status",
+          "expected": "CREATING",
+          "matcher": "path",
+          "state": "retry"
+        },
+        {
+          "argument": "replicationSet.status",
+          "expected": "UPDATING",
+          "matcher": "path",
+          "state": "retry"
+        },
+        {
+          "argument": "replicationSet.status",
+          "expected": "FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 30,
+      "description": "Wait for a replication set to become ACTIVE",
+      "maxAttempts": 5,
+      "operation": "GetReplicationSet"
     },
-    "WaitForReplicationSetDeleted" : {
-      "description" : "Wait for a replication set to be deleted",
-      "delay" : 30,
-      "maxAttempts" : 5,
-      "operation" : "GetReplicationSet",
-      "acceptors" : [ {
-        "matcher" : "error",
-        "state" : "success",
-        "expected" : "ResourceNotFoundException"
-      }, {
-        "matcher" : "path",
-        "argument" : "replicationSet.status",
-        "state" : "retry",
-        "expected" : "DELETING"
-      }, {
-        "matcher" : "path",
-        "argument" : "replicationSet.status",
-        "state" : "failure",
-        "expected" : "FAILED"
-      } ]
+    "WaitForReplicationSetDeleted": {
+      "acceptors": [
+        {
+          "expected": "ResourceNotFoundException",
+          "matcher": "error",
+          "state": "success"
+        },
+        {
+          "argument": "replicationSet.status",
+          "expected": "DELETING",
+          "matcher": "path",
+          "state": "retry"
+        },
+        {
+          "argument": "replicationSet.status",
+          "expected": "FAILED",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 30,
+      "description": "Wait for a replication set to be deleted",
+      "maxAttempts": 5,
+      "operation": "GetReplicationSet"
     }
   }
 }

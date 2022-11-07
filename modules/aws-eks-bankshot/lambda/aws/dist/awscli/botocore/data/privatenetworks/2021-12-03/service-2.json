@@ -1,533 +1,841 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2021-12-03",
-    "endpointPrefix":"private-networks",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"AWS Private 5G",
-    "serviceId":"PrivateNetworks",
-    "signatureVersion":"v4",
-    "signingName":"private-networks",
-    "uid":"privatenetworks-2021-12-03"
+  "documentation": "<p>Amazon Web Services Private 5G is a managed service that makes it easy to deploy, operate, and scale your own private mobile network at your on-premises location. Private 5G provides the pre-configured hardware and software for mobile networks, helps automate setup, and scales capacity on demand to support additional devices as needed.</p>",
+  "metadata": {
+    "apiVersion": "2021-12-03",
+    "endpointPrefix": "private-networks",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "AWS Private 5G",
+    "serviceId": "PrivateNetworks",
+    "signatureVersion": "v4",
+    "signingName": "private-networks",
+    "uid": "privatenetworks-2021-12-03"
   },
-  "operations":{
-    "AcknowledgeOrderReceipt":{
-      "name":"AcknowledgeOrderReceipt",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/orders/acknowledge",
-        "responseCode":200
-      },
-      "input":{"shape":"AcknowledgeOrderReceiptRequest"},
-      "output":{"shape":"AcknowledgeOrderReceiptResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+  "operations": {
+    "AcknowledgeOrderReceipt": {
+      "documentation": "<p>Acknowledges that the specified network order was received.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Acknowledges that the specified network order was received.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/orders/acknowledge",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "AcknowledgeOrderReceiptRequest"
+      },
+      "name": "AcknowledgeOrderReceipt",
+      "output": {
+        "shape": "AcknowledgeOrderReceiptResponse"
+      }
     },
-    "ActivateDeviceIdentifier":{
-      "name":"ActivateDeviceIdentifier",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/device-identifiers/activate",
-        "responseCode":200
-      },
-      "input":{"shape":"ActivateDeviceIdentifierRequest"},
-      "output":{"shape":"ActivateDeviceIdentifierResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ActivateDeviceIdentifier": {
+      "documentation": "<p>Activates the specified device identifier.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Activates the specified device identifier.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/device-identifiers/activate",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ActivateDeviceIdentifierRequest"
+      },
+      "name": "ActivateDeviceIdentifier",
+      "output": {
+        "shape": "ActivateDeviceIdentifierResponse"
+      }
     },
-    "ActivateNetworkSite":{
-      "name":"ActivateNetworkSite",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/network-sites/activate",
-        "responseCode":200
-      },
-      "input":{"shape":"ActivateNetworkSiteRequest"},
-      "output":{"shape":"ActivateNetworkSiteResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ActivateNetworkSite": {
+      "documentation": "<p>Activates the specified network site.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Activates the specified network site.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/network-sites/activate",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ActivateNetworkSiteRequest"
+      },
+      "name": "ActivateNetworkSite",
+      "output": {
+        "shape": "ActivateNetworkSiteResponse"
+      }
     },
-    "ConfigureAccessPoint":{
-      "name":"ConfigureAccessPoint",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/network-resources/configure",
-        "responseCode":200
-      },
-      "input":{"shape":"ConfigureAccessPointRequest"},
-      "output":{"shape":"ConfigureAccessPointResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ConfigureAccessPoint": {
+      "documentation": "<p>Configures the specified network resource. </p> <p> Use this action to specify the geographic position of the hardware. You must provide Certified Professional Installer (CPI) credentials in the request so that we can obtain spectrum grants. For more information, see <a href=\"https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html\">Radio units</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Configures the specified network resource. </p> <p> Use this action to specify the geographic position of the hardware. You must provide Certified Professional Installer (CPI) credentials in the request so that we can obtain spectrum grants. For more information, see <a href=\"https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html\">Radio units</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/network-resources/configure",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ConfigureAccessPointRequest"
+      },
+      "name": "ConfigureAccessPoint",
+      "output": {
+        "shape": "ConfigureAccessPointResponse"
+      }
     },
-    "CreateNetwork":{
-      "name":"CreateNetwork",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/networks",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateNetworkRequest"},
-      "output":{"shape":"CreateNetworkResponse"},
-      "errors":[
-        {"shape":"LimitExceededException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "CreateNetwork": {
+      "documentation": "<p>Creates a network.</p>",
+      "errors": [
+        {
+          "shape": "LimitExceededException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Creates a network.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/networks",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateNetworkRequest"
+      },
+      "name": "CreateNetwork",
+      "output": {
+        "shape": "CreateNetworkResponse"
+      }
     },
-    "CreateNetworkSite":{
-      "name":"CreateNetworkSite",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/network-sites",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateNetworkSiteRequest"},
-      "output":{"shape":"CreateNetworkSiteResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "CreateNetworkSite": {
+      "documentation": "<p>Creates a network site.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Creates a network site.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/network-sites",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateNetworkSiteRequest"
+      },
+      "name": "CreateNetworkSite",
+      "output": {
+        "shape": "CreateNetworkSiteResponse"
+      }
     },
-    "DeactivateDeviceIdentifier":{
-      "name":"DeactivateDeviceIdentifier",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/device-identifiers/deactivate",
-        "responseCode":200
-      },
-      "input":{"shape":"DeactivateDeviceIdentifierRequest"},
-      "output":{"shape":"DeactivateDeviceIdentifierResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "DeactivateDeviceIdentifier": {
+      "documentation": "<p>Deactivates the specified device identifier.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deactivates the specified device identifier.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/device-identifiers/deactivate",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeactivateDeviceIdentifierRequest"
+      },
+      "name": "DeactivateDeviceIdentifier",
+      "output": {
+        "shape": "DeactivateDeviceIdentifierResponse"
+      }
     },
-    "DeleteNetwork":{
-      "name":"DeleteNetwork",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/v1/networks/{networkArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteNetworkRequest"},
-      "output":{"shape":"DeleteNetworkResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "DeleteNetwork": {
+      "documentation": "<p>Deletes the specified network. You must delete network sites before you delete the network. For more information, see <a href=\"https://docs.aws.amazon.com/private-networks/latest/APIReference/API_DeleteNetworkSite.html\">DeleteNetworkSite</a> in the <i>API Reference for Amazon Web Services Private 5G</i>.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deletes the specified network. You must delete network sites before you delete the network. For more information, see <a href=\"https://docs.aws.amazon.com/private-networks/latest/APIReference/API_DeleteNetworkSite.html\">DeleteNetworkSite</a> in the <i>API Reference for Amazon Web Services Private 5G</i>.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/networks/{networkArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteNetworkRequest"
+      },
+      "name": "DeleteNetwork",
+      "output": {
+        "shape": "DeleteNetworkResponse"
+      }
     },
-    "DeleteNetworkSite":{
-      "name":"DeleteNetworkSite",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/v1/network-sites/{networkSiteArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteNetworkSiteRequest"},
-      "output":{"shape":"DeleteNetworkSiteResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "DeleteNetworkSite": {
+      "documentation": "<p>Deletes the specified network site. Return the hardware after you delete the network site. You are responsible for minimum charges. For more information, see <a href=\"https://docs.aws.amazon.com/private-networks/latest/userguide/hardware-maintenance.html\">Hardware returns</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deletes the specified network site. Return the hardware after you delete the network site. You are responsible for minimum charges. For more information, see <a href=\"https://docs.aws.amazon.com/private-networks/latest/userguide/hardware-maintenance.html\">Hardware returns</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/network-sites/{networkSiteArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteNetworkSiteRequest"
+      },
+      "name": "DeleteNetworkSite",
+      "output": {
+        "shape": "DeleteNetworkSiteResponse"
+      }
     },
-    "GetDeviceIdentifier":{
-      "name":"GetDeviceIdentifier",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/device-identifiers/{deviceIdentifierArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetDeviceIdentifierRequest"},
-      "output":{"shape":"GetDeviceIdentifierResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "GetDeviceIdentifier": {
+      "documentation": "<p>Gets the specified device identifier.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Gets the specified device identifier.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/device-identifiers/{deviceIdentifierArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetDeviceIdentifierRequest"
+      },
+      "name": "GetDeviceIdentifier",
+      "output": {
+        "shape": "GetDeviceIdentifierResponse"
+      }
     },
-    "GetNetwork":{
-      "name":"GetNetwork",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/networks/{networkArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetNetworkRequest"},
-      "output":{"shape":"GetNetworkResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "GetNetwork": {
+      "documentation": "<p>Gets the specified network.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Gets the specified network.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/networks/{networkArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetNetworkRequest"
+      },
+      "name": "GetNetwork",
+      "output": {
+        "shape": "GetNetworkResponse"
+      }
     },
-    "GetNetworkResource":{
-      "name":"GetNetworkResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/network-resources/{networkResourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetNetworkResourceRequest"},
-      "output":{"shape":"GetNetworkResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "GetNetworkResource": {
+      "documentation": "<p>Gets the specified network resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Gets the specified network resource.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/network-resources/{networkResourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetNetworkResourceRequest"
+      },
+      "name": "GetNetworkResource",
+      "output": {
+        "shape": "GetNetworkResourceResponse"
+      }
     },
-    "GetNetworkSite":{
-      "name":"GetNetworkSite",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/network-sites/{networkSiteArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetNetworkSiteRequest"},
-      "output":{"shape":"GetNetworkSiteResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "GetNetworkSite": {
+      "documentation": "<p>Gets the specified network site.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Gets the specified network site.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/network-sites/{networkSiteArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetNetworkSiteRequest"
+      },
+      "name": "GetNetworkSite",
+      "output": {
+        "shape": "GetNetworkSiteResponse"
+      }
     },
-    "GetOrder":{
-      "name":"GetOrder",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/orders/{orderArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetOrderRequest"},
-      "output":{"shape":"GetOrderResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "GetOrder": {
+      "documentation": "<p>Gets the specified order.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Gets the specified order.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/orders/{orderArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetOrderRequest"
+      },
+      "name": "GetOrder",
+      "output": {
+        "shape": "GetOrderResponse"
+      }
     },
-    "ListDeviceIdentifiers":{
-      "name":"ListDeviceIdentifiers",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/device-identifiers/list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListDeviceIdentifiersRequest"},
-      "output":{"shape":"ListDeviceIdentifiersResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListDeviceIdentifiers": {
+      "documentation": "<p>Lists device identifiers. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order, the status of device identifiers, or the ARN of the traffic group.</p> <pre><code> &lt;p&gt;If you specify multiple filters, filters are joined with an OR, and the request </code></pre> <p>returns results that match all of the specified filters.</p></p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists device identifiers. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order, the status of device identifiers, or the ARN of the traffic group.</p> <pre><code> &lt;p&gt;If you specify multiple filters, filters are joined with an OR, and the request </code></pre> <p>returns results that match all of the specified filters.</p></p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/device-identifiers/list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListDeviceIdentifiersRequest"
+      },
+      "name": "ListDeviceIdentifiers",
+      "output": {
+        "shape": "ListDeviceIdentifiersResponse"
+      }
     },
-    "ListNetworkResources":{
-      "name":"ListNetworkResources",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/network-resources",
-        "responseCode":200
-      },
-      "input":{"shape":"ListNetworkResourcesRequest"},
-      "output":{"shape":"ListNetworkResourcesResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListNetworkResources": {
+      "documentation": "<p>Lists network resources. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order or the status of network resources.</p> <p>If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of the specified filters.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists network resources. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order or the status of network resources.</p> <p>If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of the specified filters.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/network-resources",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListNetworkResourcesRequest"
+      },
+      "name": "ListNetworkResources",
+      "output": {
+        "shape": "ListNetworkResourcesResponse"
+      }
     },
-    "ListNetworkSites":{
-      "name":"ListNetworkSites",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/network-sites/list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListNetworkSitesRequest"},
-      "output":{"shape":"ListNetworkSitesResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListNetworkSites": {
+      "documentation": "<p>Lists network sites. Add filters to your request to return a more specific list of results. Use filters to match the status of the network site.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists network sites. Add filters to your request to return a more specific list of results. Use filters to match the status of the network site.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/network-sites/list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListNetworkSitesRequest"
+      },
+      "name": "ListNetworkSites",
+      "output": {
+        "shape": "ListNetworkSitesResponse"
+      }
     },
-    "ListNetworks":{
-      "name":"ListNetworks",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/networks/list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListNetworksRequest"},
-      "output":{"shape":"ListNetworksResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListNetworks": {
+      "documentation": "<p>Lists networks. Add filters to your request to return a more specific list of results. Use filters to match the status of the network.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists networks. Add filters to your request to return a more specific list of results. Use filters to match the status of the network.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/networks/list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListNetworksRequest"
+      },
+      "name": "ListNetworks",
+      "output": {
+        "shape": "ListNetworksResponse"
+      }
     },
-    "ListOrders":{
-      "name":"ListOrders",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/orders/list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListOrdersRequest"},
-      "output":{"shape":"ListOrdersResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListOrders": {
+      "documentation": "<p>Lists orders. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of the network site or the status of the order.</p> <p>If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of the specified filters.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists orders. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of the network site or the status of the order.</p> <p>If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of the specified filters.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/orders/list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListOrdersRequest"
+      },
+      "name": "ListOrders",
+      "output": {
+        "shape": "ListOrdersResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ThrottlingException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Lists the tags for the specified resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Lists the tags for the specified resource.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "Ping":{
-      "name":"Ping",
-      "http":{
-        "method":"GET",
-        "requestUri":"/ping",
-        "responseCode":200
-      },
-      "output":{"shape":"PingResponse"},
-      "errors":[
-        {"shape":"InternalServerException"}
+    "Ping": {
+      "documentation": "<p>Checks the health of the service.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Checks the health of the service.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/ping",
+        "responseCode": 200
+      },
+      "name": "Ping",
+      "output": {
+        "shape": "PingResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ThrottlingException"}
+    "TagResource": {
+      "documentation": "<p> Adds tags to the specified resource. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p> Adds tags to the specified resource. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ThrottlingException"}
+    "UntagResource": {
+      "documentation": "<p>Removes tags from the specified resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Removes tags from the specified resource.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
     },
-    "UpdateNetworkSite":{
-      "name":"UpdateNetworkSite",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/v1/network-sites/site",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateNetworkSiteRequest"},
-      "output":{"shape":"UpdateNetworkSiteResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "UpdateNetworkSite": {
+      "documentation": "<p>Updates the specified network site.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Updates the specified network site.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/network-sites/site",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateNetworkSiteRequest"
+      },
+      "name": "UpdateNetworkSite",
+      "output": {
+        "shape": "UpdateNetworkSiteResponse"
+      }
     },
-    "UpdateNetworkSitePlan":{
-      "name":"UpdateNetworkSitePlan",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/v1/network-sites/plan",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateNetworkSitePlanRequest"},
-      "output":{"shape":"UpdateNetworkSiteResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "UpdateNetworkSitePlan": {
+      "documentation": "<p>Updates the specified network site plan.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Updates the specified network site plan.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/network-sites/plan",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateNetworkSitePlanRequest"
+      },
+      "name": "UpdateNetworkSitePlan",
+      "output": {
+        "shape": "UpdateNetworkSiteResponse"
+      }
     }
   },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>You do not have permission to perform this operation.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
       },
-      "documentation":"<p>You do not have permission to perform this operation.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
       },
-      "exception":true
+      "type": "structure"
     },
-    "AcknowledgeOrderReceiptRequest":{
-      "type":"structure",
-      "required":["orderArn"],
-      "members":{
-        "orderArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the order.</p>"
+    "AcknowledgeOrderReceiptRequest": {
+      "members": {
+        "orderArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the order.</p>",
+          "shape": "Arn"
         }
-      }
+      },
+      "required": [
+        "orderArn"
+      ],
+      "type": "structure"
     },
-    "AcknowledgeOrderReceiptResponse":{
-      "type":"structure",
-      "required":["order"],
-      "members":{
-        "order":{
-          "shape":"Order",
-          "documentation":"<p>Information about the order.</p>"
+    "AcknowledgeOrderReceiptResponse": {
+      "members": {
+        "order": {
+          "documentation": "<p>Information about the order.</p>",
+          "shape": "Order"
         }
-      }
+      },
+      "required": [
+        "order"
+      ],
+      "type": "structure"
     },
-    "AcknowledgmentStatus":{
-      "type":"string",
-      "enum":[
+    "AcknowledgmentStatus": {
+      "enum": [
         "ACKNOWLEDGING",
         "ACKNOWLEDGED",
         "UNACKNOWLEDGED"
-      ]
+      ],
+      "type": "string"
     },
-    "ActivateDeviceIdentifierRequest":{
-      "type":"structure",
-      "required":["deviceIdentifierArn"],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>"
+    "ActivateDeviceIdentifierRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "shape": "ClientToken"
         },
-        "deviceIdentifierArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the device identifier.</p>"
+        "deviceIdentifierArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the device identifier.</p>",
+          "shape": "Arn"
         }
-      }
+      },
+      "required": [
+        "deviceIdentifierArn"
+      ],
+      "type": "structure"
     },
-    "ActivateDeviceIdentifierResponse":{
-      "type":"structure",
-      "required":["deviceIdentifier"],
-      "members":{
-        "deviceIdentifier":{
-          "shape":"DeviceIdentifier",
-          "documentation":"<p>Information about the device identifier.</p>"
+    "ActivateDeviceIdentifierResponse": {
+      "members": {
+        "deviceIdentifier": {
+          "documentation": "<p>Information about the device identifier.</p>",
+          "shape": "DeviceIdentifier"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The tags on the device identifier. </p>"
+        "tags": {
+          "documentation": "<p> The tags on the device identifier. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "required": [
+        "deviceIdentifier"
+      ],
+      "type": "structure"
     },
-    "ActivateNetworkSiteRequest":{
-      "type":"structure",
-      "required":[
+    "ActivateNetworkSiteRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "shape": "ClientToken"
+        },
+        "networkSiteArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network site.</p>",
+          "shape": "Arn"
+        },
+        "shippingAddress": {
+          "documentation": "<p>The shipping address of the network site.</p>",
+          "shape": "Address"
+        }
+      },
+      "required": [
         "networkSiteArn",
         "shippingAddress"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>"
-        },
-        "networkSiteArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network site.</p>"
-        },
-        "shippingAddress":{
-          "shape":"Address",
-          "documentation":"<p>The shipping address of the network site.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "ActivateNetworkSiteResponse":{
-      "type":"structure",
-      "members":{
-        "networkSite":{
-          "shape":"NetworkSite",
-          "documentation":"<p>Information about the network site.</p>"
+    "ActivateNetworkSiteResponse": {
+      "members": {
+        "networkSite": {
+          "documentation": "<p>Information about the network site.</p>",
+          "shape": "NetworkSite"
         }
-      }
+      },
+      "type": "structure"
     },
-    "Address":{
-      "type":"structure",
-      "required":[
+    "Address": {
+      "documentation": "<p>Information about an address.</p>",
+      "members": {
+        "city": {
+          "documentation": "<p>The city for this address.</p>",
+          "shape": "AddressContent"
+        },
+        "company": {
+          "documentation": "<p>The company name for this address.</p>",
+          "shape": "AddressContent"
+        },
+        "country": {
+          "documentation": "<p>The country for this address.</p>",
+          "shape": "AddressContent"
+        },
+        "name": {
+          "documentation": "<p>The recipient's name for this address.</p>",
+          "shape": "AddressContent"
+        },
+        "phoneNumber": {
+          "documentation": "<p>The phone number for this address.</p>",
+          "shape": "AddressContent"
+        },
+        "postalCode": {
+          "documentation": "<p>The postal code for this address.</p>",
+          "shape": "AddressContent"
+        },
+        "stateOrProvince": {
+          "documentation": "<p>The state or province for this address.</p>",
+          "shape": "AddressContent"
+        },
+        "street1": {
+          "documentation": "<p>The first line of the street address.</p>",
+          "shape": "AddressContent"
+        },
+        "street2": {
+          "documentation": "<p>The second line of the street address.</p>",
+          "shape": "AddressContent"
+        },
+        "street3": {
+          "documentation": "<p>The third line of the street address.</p>",
+          "shape": "AddressContent"
+        }
+      },
+      "required": [
         "city",
         "country",
         "name",
@@ -535,997 +843,1042 @@
         "stateOrProvince",
         "street1"
       ],
-      "members":{
-        "city":{
-          "shape":"AddressContent",
-          "documentation":"<p>The city for this address.</p>"
+      "type": "structure"
+    },
+    "AddressContent": {
+      "max": 1024,
+      "min": 1,
+      "sensitive": true,
+      "type": "string"
+    },
+    "Arn": {
+      "pattern": "^arn:aws:private-networks:[a-z0-9-]+:[^:]*:.*$",
+      "type": "string"
+    },
+    "ClientToken": {
+      "max": 100,
+      "min": 1,
+      "type": "string"
+    },
+    "ConfigureAccessPointRequest": {
+      "members": {
+        "accessPointArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network resource.</p>",
+          "shape": "Arn"
         },
-        "company":{
-          "shape":"AddressContent",
-          "documentation":"<p>The company name for this address.</p>"
+        "cpiSecretKey": {
+          "documentation": "<p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>",
+          "shape": "ConfigureAccessPointRequestCpiSecretKeyString"
         },
-        "country":{
-          "shape":"AddressContent",
-          "documentation":"<p>The country for this address.</p>"
+        "cpiUserId": {
+          "documentation": "<p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>",
+          "shape": "ConfigureAccessPointRequestCpiUserIdString"
         },
-        "name":{
-          "shape":"AddressContent",
-          "documentation":"<p>The recipient's name for this address.</p>"
+        "cpiUserPassword": {
+          "documentation": "<p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>",
+          "shape": "ConfigureAccessPointRequestCpiUserPasswordString"
         },
-        "phoneNumber":{
-          "shape":"AddressContent",
-          "documentation":"<p>The phone number for this address.</p>"
+        "cpiUsername": {
+          "documentation": "<p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>",
+          "shape": "ConfigureAccessPointRequestCpiUsernameString"
         },
-        "postalCode":{
-          "shape":"AddressContent",
-          "documentation":"<p>The postal code for this address.</p>"
-        },
-        "stateOrProvince":{
-          "shape":"AddressContent",
-          "documentation":"<p>The state or province for this address.</p>"
-        },
-        "street1":{
-          "shape":"AddressContent",
-          "documentation":"<p>The first line of the street address.</p>"
-        },
-        "street2":{
-          "shape":"AddressContent",
-          "documentation":"<p>The second line of the street address.</p>"
-        },
-        "street3":{
-          "shape":"AddressContent",
-          "documentation":"<p>The third line of the street address.</p>"
+        "position": {
+          "documentation": "<p>The position of the network resource.</p>",
+          "shape": "Position"
         }
       },
-      "documentation":"<p>Information about an address.</p>"
+      "required": [
+        "accessPointArn"
+      ],
+      "type": "structure"
     },
-    "AddressContent":{
-      "type":"string",
-      "max":1024,
-      "min":1,
-      "sensitive":true
+    "ConfigureAccessPointRequestCpiSecretKeyString": {
+      "max": 100000,
+      "min": 1,
+      "sensitive": true,
+      "type": "string"
     },
-    "Arn":{
-      "type":"string",
-      "pattern":"^arn:aws:private-networks:[a-z0-9-]+:[^:]*:.*$"
+    "ConfigureAccessPointRequestCpiUserIdString": {
+      "max": 4096,
+      "min": 1,
+      "sensitive": true,
+      "type": "string"
     },
-    "ClientToken":{
-      "type":"string",
-      "max":100,
-      "min":1
+    "ConfigureAccessPointRequestCpiUserPasswordString": {
+      "max": 4096,
+      "min": 1,
+      "sensitive": true,
+      "type": "string"
     },
-    "ConfigureAccessPointRequest":{
-      "type":"structure",
-      "required":["accessPointArn"],
-      "members":{
-        "accessPointArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network resource.</p>"
-        },
-        "cpiSecretKey":{
-          "shape":"ConfigureAccessPointRequestCpiSecretKeyString",
-          "documentation":"<p>A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. </p>"
-        },
-        "cpiUserId":{
-          "shape":"ConfigureAccessPointRequestCpiUserIdString",
-          "documentation":"<p>The CPI user ID of the CPI user who is certifying the coordinates of the network resource. </p>"
-        },
-        "cpiUserPassword":{
-          "shape":"ConfigureAccessPointRequestCpiUserPasswordString",
-          "documentation":"<p>The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.</p>"
-        },
-        "cpiUsername":{
-          "shape":"ConfigureAccessPointRequestCpiUsernameString",
-          "documentation":"<p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>"
-        },
-        "position":{
-          "shape":"Position",
-          "documentation":"<p>The position of the network resource.</p>"
+    "ConfigureAccessPointRequestCpiUsernameString": {
+      "max": 4096,
+      "min": 1,
+      "sensitive": true,
+      "type": "string"
+    },
+    "ConfigureAccessPointResponse": {
+      "members": {
+        "accessPoint": {
+          "documentation": "<p>Information about the network resource.</p>",
+          "shape": "NetworkResource"
         }
-      }
+      },
+      "required": [
+        "accessPoint"
+      ],
+      "type": "structure"
     },
-    "ConfigureAccessPointRequestCpiSecretKeyString":{
-      "type":"string",
-      "max":100000,
-      "min":1,
-      "sensitive":true
-    },
-    "ConfigureAccessPointRequestCpiUserIdString":{
-      "type":"string",
-      "max":4096,
-      "min":1,
-      "sensitive":true
-    },
-    "ConfigureAccessPointRequestCpiUserPasswordString":{
-      "type":"string",
-      "max":4096,
-      "min":1,
-      "sensitive":true
-    },
-    "ConfigureAccessPointRequestCpiUsernameString":{
-      "type":"string",
-      "max":4096,
-      "min":1,
-      "sensitive":true
-    },
-    "ConfigureAccessPointResponse":{
-      "type":"structure",
-      "required":["accessPoint"],
-      "members":{
-        "accessPoint":{
-          "shape":"NetworkResource",
-          "documentation":"<p>Information about the network resource.</p>"
+    "CreateNetworkRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "shape": "ClientToken"
+        },
+        "description": {
+          "documentation": "<p>The description of the network.</p>",
+          "shape": "Description"
+        },
+        "networkName": {
+          "documentation": "<p>The name of the network. You can't change the name after you create the network.</p>",
+          "shape": "Name"
+        },
+        "tags": {
+          "documentation": "<p> The tags to apply to the network. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "required": [
+        "networkName"
+      ],
+      "type": "structure"
     },
-    "CreateNetworkRequest":{
-      "type":"structure",
-      "required":["networkName"],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>"
+    "CreateNetworkResponse": {
+      "members": {
+        "network": {
+          "documentation": "<p>Information about the network.</p>",
+          "shape": "Network"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the network.</p>"
-        },
-        "networkName":{
-          "shape":"Name",
-          "documentation":"<p>The name of the network. You can't change the name after you create the network.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The tags to apply to the network. </p>"
+        "tags": {
+          "documentation": "<p> The network tags. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "required": [
+        "network"
+      ],
+      "type": "structure"
     },
-    "CreateNetworkResponse":{
-      "type":"structure",
-      "required":["network"],
-      "members":{
-        "network":{
-          "shape":"Network",
-          "documentation":"<p>Information about the network.</p>"
+    "CreateNetworkSiteRequest": {
+      "members": {
+        "availabilityZone": {
+          "documentation": "<p>The Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>",
+          "shape": "String"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The network tags. </p>"
+        "availabilityZoneId": {
+          "documentation": "<p>The ID of the Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>",
+          "shape": "String"
+        },
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "shape": "ClientToken"
+        },
+        "description": {
+          "documentation": "<p>The description of the site.</p>",
+          "shape": "Description"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network.</p>",
+          "shape": "Arn"
+        },
+        "networkSiteName": {
+          "documentation": "<p>The name of the site. You can't change the name after you create the site.</p>",
+          "shape": "Name"
+        },
+        "pendingPlan": {
+          "documentation": "<p>Information about the pending plan for this site.</p>",
+          "shape": "SitePlan"
+        },
+        "tags": {
+          "documentation": "<p> The tags to apply to the network site. </p>",
+          "shape": "TagMap"
         }
-      }
-    },
-    "CreateNetworkSiteRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "networkArn",
         "networkSiteName"
       ],
-      "members":{
-        "availabilityZone":{
-          "shape":"String",
-          "documentation":"<p>The Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>"
-        },
-        "availabilityZoneId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the Availability Zone that is the parent of this site. You can't change the Availability Zone after you create the site.</p>"
-        },
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the site.</p>"
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network.</p>"
-        },
-        "networkSiteName":{
-          "shape":"Name",
-          "documentation":"<p>The name of the site. You can't change the name after you create the site.</p>"
-        },
-        "pendingPlan":{
-          "shape":"SitePlan",
-          "documentation":"<p>Information about the pending plan for this site.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The tags to apply to the network site. </p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateNetworkSiteResponse":{
-      "type":"structure",
-      "members":{
-        "networkSite":{
-          "shape":"NetworkSite",
-          "documentation":"<p>Information about the network site.</p>"
+    "CreateNetworkSiteResponse": {
+      "members": {
+        "networkSite": {
+          "documentation": "<p>Information about the network site.</p>",
+          "shape": "NetworkSite"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The network site tags. </p>"
-        }
-      }
-    },
-    "DeactivateDeviceIdentifierRequest":{
-      "type":"structure",
-      "required":["deviceIdentifierArn"],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>"
-        },
-        "deviceIdentifierArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the device identifier.</p>"
-        }
-      }
-    },
-    "DeactivateDeviceIdentifierResponse":{
-      "type":"structure",
-      "required":["deviceIdentifier"],
-      "members":{
-        "deviceIdentifier":{
-          "shape":"DeviceIdentifier",
-          "documentation":"<p>Information about the device identifier.</p>"
-        }
-      }
-    },
-    "DeleteNetworkRequest":{
-      "type":"structure",
-      "required":["networkArn"],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
-          "location":"querystring",
-          "locationName":"clientToken"
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network.</p>",
-          "location":"uri",
-          "locationName":"networkArn"
-        }
-      }
-    },
-    "DeleteNetworkResponse":{
-      "type":"structure",
-      "required":["network"],
-      "members":{
-        "network":{
-          "shape":"Network",
-          "documentation":"<p>Information about the network.</p>"
-        }
-      }
-    },
-    "DeleteNetworkSiteRequest":{
-      "type":"structure",
-      "required":["networkSiteArn"],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
-          "location":"querystring",
-          "locationName":"clientToken"
-        },
-        "networkSiteArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network site.</p>",
-          "location":"uri",
-          "locationName":"networkSiteArn"
-        }
-      }
-    },
-    "DeleteNetworkSiteResponse":{
-      "type":"structure",
-      "members":{
-        "networkSite":{
-          "shape":"NetworkSite",
-          "documentation":"<p>Information about the network site.</p>"
-        }
-      }
-    },
-    "Description":{
-      "type":"string",
-      "max":100,
-      "min":0
-    },
-    "DeviceIdentifier":{
-      "type":"structure",
-      "members":{
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The creation time of this device identifier.</p>"
-        },
-        "deviceIdentifierArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the device identifier.</p>"
-        },
-        "iccid":{
-          "shape":"String",
-          "documentation":"<p>The Integrated Circuit Card Identifier of the device identifier.</p>"
-        },
-        "imsi":{
-          "shape":"DeviceIdentifierImsiString",
-          "documentation":"<p>The International Mobile Subscriber Identity of the device identifier.</p>"
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>"
-        },
-        "orderArn":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>"
-        },
-        "status":{
-          "shape":"DeviceIdentifierStatus",
-          "documentation":"<p>The status of the device identifier.</p>"
-        },
-        "trafficGroupArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>"
-        },
-        "vendor":{
-          "shape":"String",
-          "documentation":"<p>The vendor of the device identifier.</p>"
+        "tags": {
+          "documentation": "<p> The network site tags. </p>",
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>Information about a subscriber of a device that can use a network.</p>"
+      "type": "structure"
     },
-    "DeviceIdentifierFilterKeys":{
-      "type":"string",
-      "enum":[
+    "DeactivateDeviceIdentifierRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "shape": "ClientToken"
+        },
+        "deviceIdentifierArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the device identifier.</p>",
+          "shape": "Arn"
+        }
+      },
+      "required": [
+        "deviceIdentifierArn"
+      ],
+      "type": "structure"
+    },
+    "DeactivateDeviceIdentifierResponse": {
+      "members": {
+        "deviceIdentifier": {
+          "documentation": "<p>Information about the device identifier.</p>",
+          "shape": "DeviceIdentifier"
+        }
+      },
+      "required": [
+        "deviceIdentifier"
+      ],
+      "type": "structure"
+    },
+    "DeleteNetworkRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "location": "querystring",
+          "locationName": "clientToken",
+          "shape": "ClientToken"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network.</p>",
+          "location": "uri",
+          "locationName": "networkArn",
+          "shape": "Arn"
+        }
+      },
+      "required": [
+        "networkArn"
+      ],
+      "type": "structure"
+    },
+    "DeleteNetworkResponse": {
+      "members": {
+        "network": {
+          "documentation": "<p>Information about the network.</p>",
+          "shape": "Network"
+        }
+      },
+      "required": [
+        "network"
+      ],
+      "type": "structure"
+    },
+    "DeleteNetworkSiteRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "location": "querystring",
+          "locationName": "clientToken",
+          "shape": "ClientToken"
+        },
+        "networkSiteArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network site.</p>",
+          "location": "uri",
+          "locationName": "networkSiteArn",
+          "shape": "Arn"
+        }
+      },
+      "required": [
+        "networkSiteArn"
+      ],
+      "type": "structure"
+    },
+    "DeleteNetworkSiteResponse": {
+      "members": {
+        "networkSite": {
+          "documentation": "<p>Information about the network site.</p>",
+          "shape": "NetworkSite"
+        }
+      },
+      "type": "structure"
+    },
+    "Description": {
+      "max": 100,
+      "min": 0,
+      "type": "string"
+    },
+    "DeviceIdentifier": {
+      "documentation": "<p>Information about a subscriber of a device that can use a network.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The creation time of this device identifier.</p>",
+          "shape": "Timestamp"
+        },
+        "deviceIdentifierArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the device identifier.</p>",
+          "shape": "Arn"
+        },
+        "iccid": {
+          "documentation": "<p>The Integrated Circuit Card Identifier of the device identifier.</p>",
+          "shape": "String"
+        },
+        "imsi": {
+          "documentation": "<p>The International Mobile Subscriber Identity of the device identifier.</p>",
+          "shape": "DeviceIdentifierImsiString"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>",
+          "shape": "Arn"
+        },
+        "orderArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>",
+          "shape": "String"
+        },
+        "status": {
+          "documentation": "<p>The status of the device identifier.</p>",
+          "shape": "DeviceIdentifierStatus"
+        },
+        "trafficGroupArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>",
+          "shape": "Arn"
+        },
+        "vendor": {
+          "documentation": "<p>The vendor of the device identifier.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "DeviceIdentifierFilterKeys": {
+      "enum": [
         "STATUS",
         "ORDER",
         "TRAFFIC_GROUP"
-      ]
+      ],
+      "type": "string"
     },
-    "DeviceIdentifierFilterValues":{
-      "type":"list",
-      "member":{"shape":"String"}
+    "DeviceIdentifierFilterValues": {
+      "member": {
+        "shape": "String"
+      },
+      "type": "list"
     },
-    "DeviceIdentifierFilters":{
-      "type":"map",
-      "key":{"shape":"DeviceIdentifierFilterKeys"},
-      "value":{"shape":"DeviceIdentifierFilterValues"}
+    "DeviceIdentifierFilters": {
+      "key": {
+        "shape": "DeviceIdentifierFilterKeys"
+      },
+      "type": "map",
+      "value": {
+        "shape": "DeviceIdentifierFilterValues"
+      }
     },
-    "DeviceIdentifierImsiString":{
-      "type":"string",
-      "pattern":"^[0-9]{15}$",
-      "sensitive":true
+    "DeviceIdentifierImsiString": {
+      "pattern": "^[0-9]{15}$",
+      "sensitive": true,
+      "type": "string"
     },
-    "DeviceIdentifierList":{
-      "type":"list",
-      "member":{"shape":"DeviceIdentifier"}
+    "DeviceIdentifierList": {
+      "member": {
+        "shape": "DeviceIdentifier"
+      },
+      "type": "list"
     },
-    "DeviceIdentifierStatus":{
-      "type":"string",
-      "enum":[
+    "DeviceIdentifierStatus": {
+      "enum": [
         "ACTIVE",
         "INACTIVE"
-      ]
+      ],
+      "type": "string"
     },
-    "Double":{
-      "type":"double",
-      "box":true
+    "Double": {
+      "box": true,
+      "type": "double"
     },
-    "ElevationReference":{
-      "type":"string",
-      "enum":[
+    "ElevationReference": {
+      "enum": [
         "AGL",
         "AMSL"
-      ]
+      ],
+      "type": "string"
     },
-    "ElevationUnit":{
-      "type":"string",
-      "enum":["FEET"]
+    "ElevationUnit": {
+      "enum": [
+        "FEET"
+      ],
+      "type": "string"
     },
-    "GetDeviceIdentifierRequest":{
-      "type":"structure",
-      "required":["deviceIdentifierArn"],
-      "members":{
-        "deviceIdentifierArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the device identifier.</p>",
-          "location":"uri",
-          "locationName":"deviceIdentifierArn"
+    "GetDeviceIdentifierRequest": {
+      "members": {
+        "deviceIdentifierArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the device identifier.</p>",
+          "location": "uri",
+          "locationName": "deviceIdentifierArn",
+          "shape": "Arn"
         }
-      }
+      },
+      "required": [
+        "deviceIdentifierArn"
+      ],
+      "type": "structure"
     },
-    "GetDeviceIdentifierResponse":{
-      "type":"structure",
-      "members":{
-        "deviceIdentifier":{
-          "shape":"DeviceIdentifier",
-          "documentation":"<p>Information about the device identifier.</p>"
+    "GetDeviceIdentifierResponse": {
+      "members": {
+        "deviceIdentifier": {
+          "documentation": "<p>Information about the device identifier.</p>",
+          "shape": "DeviceIdentifier"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The device identifier tags. </p>"
+        "tags": {
+          "documentation": "<p> The device identifier tags. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "type": "structure"
     },
-    "GetNetworkRequest":{
-      "type":"structure",
-      "required":["networkArn"],
-      "members":{
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network.</p>",
-          "location":"uri",
-          "locationName":"networkArn"
+    "GetNetworkRequest": {
+      "members": {
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network.</p>",
+          "location": "uri",
+          "locationName": "networkArn",
+          "shape": "Arn"
         }
-      }
+      },
+      "required": [
+        "networkArn"
+      ],
+      "type": "structure"
     },
-    "GetNetworkResourceRequest":{
-      "type":"structure",
-      "required":["networkResourceArn"],
-      "members":{
-        "networkResourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network resource.</p>",
-          "location":"uri",
-          "locationName":"networkResourceArn"
+    "GetNetworkResourceRequest": {
+      "members": {
+        "networkResourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network resource.</p>",
+          "location": "uri",
+          "locationName": "networkResourceArn",
+          "shape": "Arn"
         }
-      }
+      },
+      "required": [
+        "networkResourceArn"
+      ],
+      "type": "structure"
     },
-    "GetNetworkResourceResponse":{
-      "type":"structure",
-      "required":["networkResource"],
-      "members":{
-        "networkResource":{
-          "shape":"NetworkResource",
-          "documentation":"<p>Information about the network resource.</p>"
+    "GetNetworkResourceResponse": {
+      "members": {
+        "networkResource": {
+          "documentation": "<p>Information about the network resource.</p>",
+          "shape": "NetworkResource"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The network resource tags. </p>"
+        "tags": {
+          "documentation": "<p> The network resource tags. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "required": [
+        "networkResource"
+      ],
+      "type": "structure"
     },
-    "GetNetworkResponse":{
-      "type":"structure",
-      "required":["network"],
-      "members":{
-        "network":{
-          "shape":"Network",
-          "documentation":"<p>Information about the network.</p>"
+    "GetNetworkResponse": {
+      "members": {
+        "network": {
+          "documentation": "<p>Information about the network.</p>",
+          "shape": "Network"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The network tags. </p>"
+        "tags": {
+          "documentation": "<p> The network tags. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "required": [
+        "network"
+      ],
+      "type": "structure"
     },
-    "GetNetworkSiteRequest":{
-      "type":"structure",
-      "required":["networkSiteArn"],
-      "members":{
-        "networkSiteArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network site.</p>",
-          "location":"uri",
-          "locationName":"networkSiteArn"
+    "GetNetworkSiteRequest": {
+      "members": {
+        "networkSiteArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network site.</p>",
+          "location": "uri",
+          "locationName": "networkSiteArn",
+          "shape": "Arn"
         }
-      }
+      },
+      "required": [
+        "networkSiteArn"
+      ],
+      "type": "structure"
     },
-    "GetNetworkSiteResponse":{
-      "type":"structure",
-      "members":{
-        "networkSite":{
-          "shape":"NetworkSite",
-          "documentation":"<p>Information about the network site.</p>"
+    "GetNetworkSiteResponse": {
+      "members": {
+        "networkSite": {
+          "documentation": "<p>Information about the network site.</p>",
+          "shape": "NetworkSite"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The network site tags. </p>"
+        "tags": {
+          "documentation": "<p> The network site tags. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "type": "structure"
     },
-    "GetOrderRequest":{
-      "type":"structure",
-      "required":["orderArn"],
-      "members":{
-        "orderArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the order.</p>",
-          "location":"uri",
-          "locationName":"orderArn"
+    "GetOrderRequest": {
+      "members": {
+        "orderArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the order.</p>",
+          "location": "uri",
+          "locationName": "orderArn",
+          "shape": "Arn"
         }
-      }
+      },
+      "required": [
+        "orderArn"
+      ],
+      "type": "structure"
     },
-    "GetOrderResponse":{
-      "type":"structure",
-      "required":["order"],
-      "members":{
-        "order":{
-          "shape":"Order",
-          "documentation":"<p>Information about the order.</p>"
+    "GetOrderResponse": {
+      "members": {
+        "order": {
+          "documentation": "<p>Information about the order.</p>",
+          "shape": "Order"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The order tags. </p>"
+        "tags": {
+          "documentation": "<p> The order tags. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "required": [
+        "order"
+      ],
+      "type": "structure"
     },
-    "HealthStatus":{
-      "type":"string",
-      "enum":[
+    "HealthStatus": {
+      "enum": [
         "INITIAL",
         "HEALTHY",
         "UNHEALTHY"
-      ]
+      ],
+      "type": "string"
     },
-    "Integer":{
-      "type":"integer",
-      "box":true
+    "Integer": {
+      "box": true,
+      "type": "integer"
     },
-    "InternalServerException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
+    "InternalServerException": {
+      "documentation": "<p>Information about an internal error.</p>",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
         },
-        "retryAfterSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>Advice to clients on when the call can be safely retried.</p>",
-          "location":"header",
-          "locationName":"Retry-After"
+        "retryAfterSeconds": {
+          "documentation": "<p>Advice to clients on when the call can be safely retried.</p>",
+          "location": "header",
+          "locationName": "Retry-After",
+          "shape": "Integer"
         }
       },
-      "documentation":"<p>Information about an internal error.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true,
-      "retryable":{"throttling":false}
-    },
-    "LimitExceededException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
       },
-      "documentation":"<p>The limit was exceeded.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
+      "type": "structure"
+    },
+    "LimitExceededException": {
+      "documentation": "<p>The limit was exceeded.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
       },
-      "exception":true
-    },
-    "ListDeviceIdentifiersRequest":{
-      "type":"structure",
-      "required":["networkArn"],
-      "members":{
-        "filters":{
-          "shape":"DeviceIdentifierFilters",
-          "documentation":"<p>The filters.</p> <ul> <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li> <li> <p> <code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p> </li> <li> <p> <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>"
-        },
-        "maxResults":{
-          "shape":"ListDeviceIdentifiersRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return.</p>",
-          "box":true
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network.</p>"
-        },
-        "startToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListDeviceIdentifiersRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":20,
-      "min":1
-    },
-    "ListDeviceIdentifiersResponse":{
-      "type":"structure",
-      "members":{
-        "deviceIdentifiers":{
-          "shape":"DeviceIdentifierList",
-          "documentation":"<p>Information about the device identifiers.</p>"
-        },
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListNetworkResourcesRequest":{
-      "type":"structure",
-      "required":["networkArn"],
-      "members":{
-        "filters":{
-          "shape":"NetworkResourceFilters",
-          "documentation":"<p>The filters.</p> <ul> <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li> <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>"
-        },
-        "maxResults":{
-          "shape":"ListNetworkResourcesRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return.</p>",
-          "box":true
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network.</p>"
-        },
-        "startToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListNetworkResourcesRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":20,
-      "min":1
-    },
-    "ListNetworkResourcesResponse":{
-      "type":"structure",
-      "members":{
-        "networkResources":{
-          "shape":"NetworkResourceList",
-          "documentation":"<p>Information about network resources.</p>"
-        },
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListNetworkSitesRequest":{
-      "type":"structure",
-      "required":["networkArn"],
-      "members":{
-        "filters":{
-          "shape":"NetworkSiteFilters",
-          "documentation":"<p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p> <ul> <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>"
-        },
-        "maxResults":{
-          "shape":"ListNetworkSitesRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return.</p>",
-          "box":true
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network.</p>"
-        },
-        "startToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListNetworkSitesRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":20,
-      "min":1
-    },
-    "ListNetworkSitesResponse":{
-      "type":"structure",
-      "members":{
-        "networkSites":{
-          "shape":"NetworkSiteList",
-          "documentation":"<p>Information about the network sites.</p>"
-        },
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListNetworksRequest":{
-      "type":"structure",
-      "members":{
-        "filters":{
-          "shape":"NetworkFilters",
-          "documentation":"<p>The filters.</p> <ul> <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>"
-        },
-        "maxResults":{
-          "shape":"ListNetworksRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return.</p>",
-          "box":true
-        },
-        "startToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListNetworksRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":20,
-      "min":1
-    },
-    "ListNetworksResponse":{
-      "type":"structure",
-      "members":{
-        "networks":{
-          "shape":"NetworkList",
-          "documentation":"<p>The networks.</p>"
-        },
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListOrdersRequest":{
-      "type":"structure",
-      "required":["networkArn"],
-      "members":{
-        "filters":{
-          "shape":"OrderFilters",
-          "documentation":"<p>The filters.</p> <ul> <li> <p> <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p> </li> <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>"
-        },
-        "maxResults":{
-          "shape":"ListOrdersRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return.</p>",
-          "box":true
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network.</p>"
-        },
-        "startToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        }
-      }
-    },
-    "ListOrdersRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":20,
-      "min":1
-    },
-    "ListOrdersResponse":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        },
-        "orders":{
-          "shape":"OrderList",
-          "documentation":"<p>Information about the orders.</p>"
-        }
-      }
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["resourceArn"],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The resource tags.</p>"
-        }
-      }
-    },
-    "Name":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"^[0-9a-zA-Z-]*$"
-    },
-    "NameValuePair":{
-      "type":"structure",
-      "required":["name"],
-      "members":{
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the pair.</p>"
-        },
-        "value":{
-          "shape":"String",
-          "documentation":"<p>The value of the pair.</p>"
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>Information about a name/value pair.</p>"
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "NameValuePairs":{
-      "type":"list",
-      "member":{"shape":"NameValuePair"}
+    "ListDeviceIdentifiersRequest": {
+      "members": {
+        "filters": {
+          "documentation": "<p>The filters.</p> <ul> <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li> <li> <p> <code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p> </li> <li> <p> <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "shape": "DeviceIdentifierFilters"
+        },
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The maximum number of results to return.</p>",
+          "shape": "ListDeviceIdentifiersRequestMaxResultsInteger"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network.</p>",
+          "shape": "Arn"
+        },
+        "startToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "required": [
+        "networkArn"
+      ],
+      "type": "structure"
     },
-    "Network":{
-      "type":"structure",
-      "required":[
+    "ListDeviceIdentifiersRequestMaxResultsInteger": {
+      "box": true,
+      "max": 20,
+      "min": 1,
+      "type": "integer"
+    },
+    "ListDeviceIdentifiersResponse": {
+      "members": {
+        "deviceIdentifiers": {
+          "documentation": "<p>Information about the device identifiers.</p>",
+          "shape": "DeviceIdentifierList"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListNetworkResourcesRequest": {
+      "members": {
+        "filters": {
+          "documentation": "<p>The filters.</p> <ul> <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li> <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code> | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code> | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "shape": "NetworkResourceFilters"
+        },
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The maximum number of results to return.</p>",
+          "shape": "ListNetworkResourcesRequestMaxResultsInteger"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network.</p>",
+          "shape": "Arn"
+        },
+        "startToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "required": [
+        "networkArn"
+      ],
+      "type": "structure"
+    },
+    "ListNetworkResourcesRequestMaxResultsInteger": {
+      "box": true,
+      "max": 20,
+      "min": 1,
+      "type": "integer"
+    },
+    "ListNetworkResourcesResponse": {
+      "members": {
+        "networkResources": {
+          "documentation": "<p>Information about network resources.</p>",
+          "shape": "NetworkResourceList"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListNetworkSitesRequest": {
+      "members": {
+        "filters": {
+          "documentation": "<p>The filters. Add filters to your request to return a more specific list of results. Use filters to match the status of the network sites.</p> <ul> <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "shape": "NetworkSiteFilters"
+        },
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The maximum number of results to return.</p>",
+          "shape": "ListNetworkSitesRequestMaxResultsInteger"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network.</p>",
+          "shape": "Arn"
+        },
+        "startToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "required": [
+        "networkArn"
+      ],
+      "type": "structure"
+    },
+    "ListNetworkSitesRequestMaxResultsInteger": {
+      "box": true,
+      "max": 20,
+      "min": 1,
+      "type": "integer"
+    },
+    "ListNetworkSitesResponse": {
+      "members": {
+        "networkSites": {
+          "documentation": "<p>Information about the network sites.</p>",
+          "shape": "NetworkSiteList"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListNetworksRequest": {
+      "members": {
+        "filters": {
+          "documentation": "<p>The filters.</p> <ul> <li> <p> <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "shape": "NetworkFilters"
+        },
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The maximum number of results to return.</p>",
+          "shape": "ListNetworksRequestMaxResultsInteger"
+        },
+        "startToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListNetworksRequestMaxResultsInteger": {
+      "box": true,
+      "max": 20,
+      "min": 1,
+      "type": "integer"
+    },
+    "ListNetworksResponse": {
+      "members": {
+        "networks": {
+          "documentation": "<p>The networks.</p>",
+          "shape": "NetworkList"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListOrdersRequest": {
+      "members": {
+        "filters": {
+          "documentation": "<p>The filters.</p> <ul> <li> <p> <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p> </li> <li> <p> <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code> | <code>UNACKNOWLEDGED</code>).</p> </li> </ul> <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>",
+          "shape": "OrderFilters"
+        },
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The maximum number of results to return.</p>",
+          "shape": "ListOrdersRequestMaxResultsInteger"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network.</p>",
+          "shape": "Arn"
+        },
+        "startToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        }
+      },
+      "required": [
+        "networkArn"
+      ],
+      "type": "structure"
+    },
+    "ListOrdersRequestMaxResultsInteger": {
+      "box": true,
+      "max": 20,
+      "min": 1,
+      "type": "integer"
+    },
+    "ListOrdersResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "PaginationToken"
+        },
+        "orders": {
+          "documentation": "<p>Information about the orders.</p>",
+          "shape": "OrderList"
+        }
+      },
+      "type": "structure"
+    },
+    "ListTagsForResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
+        }
+      },
+      "required": [
+        "resourceArn"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "documentation": "<p>The resource tags.</p>",
+          "shape": "TagMap"
+        }
+      },
+      "type": "structure"
+    },
+    "Name": {
+      "max": 64,
+      "min": 1,
+      "pattern": "^[0-9a-zA-Z-]*$",
+      "type": "string"
+    },
+    "NameValuePair": {
+      "documentation": "<p>Information about a name/value pair.</p>",
+      "members": {
+        "name": {
+          "documentation": "<p>The name of the pair.</p>",
+          "shape": "String"
+        },
+        "value": {
+          "documentation": "<p>The value of the pair.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "structure"
+    },
+    "NameValuePairs": {
+      "member": {
+        "shape": "NameValuePair"
+      },
+      "type": "list"
+    },
+    "Network": {
+      "documentation": "<p>Information about a network.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The creation time of the network.</p>",
+          "shape": "Timestamp"
+        },
+        "description": {
+          "documentation": "<p>The description of the network.</p>",
+          "shape": "Description"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network.</p>",
+          "shape": "Arn"
+        },
+        "networkName": {
+          "documentation": "<p>The name of the network.</p>",
+          "shape": "Name"
+        },
+        "status": {
+          "documentation": "<p>The status of the network.</p>",
+          "shape": "NetworkStatus"
+        },
+        "statusReason": {
+          "documentation": "<p>The status reason of the network.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "networkArn",
         "networkName",
         "status"
       ],
-      "members":{
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The creation time of the network.</p>"
+      "type": "structure"
+    },
+    "NetworkFilterKeys": {
+      "enum": [
+        "STATUS"
+      ],
+      "type": "string"
+    },
+    "NetworkFilterValues": {
+      "member": {
+        "shape": "String"
+      },
+      "type": "list"
+    },
+    "NetworkFilters": {
+      "key": {
+        "shape": "NetworkFilterKeys"
+      },
+      "type": "map",
+      "value": {
+        "shape": "NetworkFilterValues"
+      }
+    },
+    "NetworkList": {
+      "member": {
+        "shape": "Network"
+      },
+      "type": "list"
+    },
+    "NetworkResource": {
+      "documentation": "<p>Information about a network resource.</p>",
+      "members": {
+        "attributes": {
+          "documentation": "<p>The attributes of the network resource.</p>",
+          "shape": "NameValuePairs"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the network.</p>"
+        "createdAt": {
+          "documentation": "<p>The creation time of the network resource.</p>",
+          "shape": "Timestamp"
         },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network.</p>"
+        "description": {
+          "documentation": "<p>The description of the network resource.</p>",
+          "shape": "Description"
         },
-        "networkName":{
-          "shape":"Name",
-          "documentation":"<p>The name of the network.</p>"
+        "health": {
+          "documentation": "<p>The health of the network resource.</p>",
+          "shape": "HealthStatus"
         },
-        "status":{
-          "shape":"NetworkStatus",
-          "documentation":"<p>The status of the network.</p>"
+        "model": {
+          "documentation": "<p>The model of the network resource.</p>",
+          "shape": "String"
         },
-        "statusReason":{
-          "shape":"String",
-          "documentation":"<p>The status reason of the network.</p>"
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>",
+          "shape": "Arn"
+        },
+        "networkResourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network resource.</p>",
+          "shape": "Arn"
+        },
+        "networkSiteArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>",
+          "shape": "Arn"
+        },
+        "orderArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>",
+          "shape": "Arn"
+        },
+        "position": {
+          "documentation": "<p>The position of the network resource.</p>",
+          "shape": "Position"
+        },
+        "serialNumber": {
+          "documentation": "<p>The serial number of the network resource.</p>",
+          "shape": "String"
+        },
+        "status": {
+          "documentation": "<p>The status of the network resource.</p>",
+          "shape": "NetworkResourceStatus"
+        },
+        "statusReason": {
+          "documentation": "<p>The status reason of the network resource.</p>",
+          "shape": "String"
+        },
+        "type": {
+          "documentation": "<p>The type of the network resource.</p>",
+          "shape": "NetworkResourceType"
+        },
+        "vendor": {
+          "documentation": "<p>The vendor of the network resource.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Information about a network.</p>"
+      "type": "structure"
     },
-    "NetworkFilterKeys":{
-      "type":"string",
-      "enum":["STATUS"]
-    },
-    "NetworkFilterValues":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "NetworkFilters":{
-      "type":"map",
-      "key":{"shape":"NetworkFilterKeys"},
-      "value":{"shape":"NetworkFilterValues"}
-    },
-    "NetworkList":{
-      "type":"list",
-      "member":{"shape":"Network"}
-    },
-    "NetworkResource":{
-      "type":"structure",
-      "members":{
-        "attributes":{
-          "shape":"NameValuePairs",
-          "documentation":"<p>The attributes of the network resource.</p>"
+    "NetworkResourceDefinition": {
+      "documentation": "<p>Information about a network resource definition.</p>",
+      "members": {
+        "count": {
+          "documentation": "<p>The count in the network resource definition.</p>",
+          "shape": "NetworkResourceDefinitionCountInteger"
         },
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The creation time of the network resource.</p>"
+        "options": {
+          "documentation": "<p>The options in the network resource definition.</p>",
+          "shape": "Options"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the network resource.</p>"
-        },
-        "health":{
-          "shape":"HealthStatus",
-          "documentation":"<p>The health of the network resource.</p>"
-        },
-        "model":{
-          "shape":"String",
-          "documentation":"<p>The model of the network resource.</p>"
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>"
-        },
-        "networkResourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network resource.</p>"
-        },
-        "networkSiteArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>"
-        },
-        "orderArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>"
-        },
-        "position":{
-          "shape":"Position",
-          "documentation":"<p>The position of the network resource.</p>"
-        },
-        "serialNumber":{
-          "shape":"String",
-          "documentation":"<p>The serial number of the network resource.</p>"
-        },
-        "status":{
-          "shape":"NetworkResourceStatus",
-          "documentation":"<p>The status of the network resource.</p>"
-        },
-        "statusReason":{
-          "shape":"String",
-          "documentation":"<p>The status reason of the network resource.</p>"
-        },
-        "type":{
-          "shape":"NetworkResourceType",
-          "documentation":"<p>The type of the network resource.</p>"
-        },
-        "vendor":{
-          "shape":"String",
-          "documentation":"<p>The vendor of the network resource.</p>"
+        "type": {
+          "documentation": "<p>The type in the network resource definition.</p>",
+          "shape": "NetworkResourceDefinitionType"
         }
       },
-      "documentation":"<p>Information about a network resource.</p>"
-    },
-    "NetworkResourceDefinition":{
-      "type":"structure",
-      "required":[
+      "required": [
         "count",
         "type"
       ],
-      "members":{
-        "count":{
-          "shape":"NetworkResourceDefinitionCountInteger",
-          "documentation":"<p>The count in the network resource definition.</p>"
-        },
-        "options":{
-          "shape":"Options",
-          "documentation":"<p>The options in the network resource definition.</p>"
-        },
-        "type":{
-          "shape":"NetworkResourceDefinitionType",
-          "documentation":"<p>The type in the network resource definition.</p>"
-        }
-      },
-      "documentation":"<p>Information about a network resource definition.</p>"
+      "type": "structure"
     },
-    "NetworkResourceDefinitionCountInteger":{
-      "type":"integer",
-      "box":true,
-      "min":0
+    "NetworkResourceDefinitionCountInteger": {
+      "box": true,
+      "min": 0,
+      "type": "integer"
     },
-    "NetworkResourceDefinitionType":{
-      "type":"string",
-      "enum":[
+    "NetworkResourceDefinitionType": {
+      "enum": [
         "RADIO_UNIT",
         "DEVICE_IDENTIFIER"
-      ]
+      ],
+      "type": "string"
     },
-    "NetworkResourceDefinitions":{
-      "type":"list",
-      "member":{"shape":"NetworkResourceDefinition"}
+    "NetworkResourceDefinitions": {
+      "member": {
+        "shape": "NetworkResourceDefinition"
+      },
+      "type": "list"
     },
-    "NetworkResourceFilterKeys":{
-      "type":"string",
-      "enum":[
+    "NetworkResourceFilterKeys": {
+      "enum": [
         "ORDER",
         "STATUS"
-      ]
+      ],
+      "type": "string"
     },
-    "NetworkResourceFilterValues":{
-      "type":"list",
-      "member":{"shape":"String"}
+    "NetworkResourceFilterValues": {
+      "member": {
+        "shape": "String"
+      },
+      "type": "list"
     },
-    "NetworkResourceFilters":{
-      "type":"map",
-      "key":{"shape":"NetworkResourceFilterKeys"},
-      "value":{"shape":"NetworkResourceFilterValues"}
+    "NetworkResourceFilters": {
+      "key": {
+        "shape": "NetworkResourceFilterKeys"
+      },
+      "type": "map",
+      "value": {
+        "shape": "NetworkResourceFilterValues"
+      }
     },
-    "NetworkResourceList":{
-      "type":"list",
-      "member":{"shape":"NetworkResource"}
+    "NetworkResourceList": {
+      "member": {
+        "shape": "NetworkResource"
+      },
+      "type": "list"
     },
-    "NetworkResourceStatus":{
-      "type":"string",
-      "enum":[
+    "NetworkResourceStatus": {
+      "enum": [
         "PENDING",
         "SHIPPED",
         "PROVISIONING",
@@ -1534,461 +1887,502 @@
         "DELETING",
         "PENDING_RETURN",
         "DELETED"
-      ]
+      ],
+      "type": "string"
     },
-    "NetworkResourceType":{
-      "type":"string",
-      "enum":["RADIO_UNIT"]
+    "NetworkResourceType": {
+      "enum": [
+        "RADIO_UNIT"
+      ],
+      "type": "string"
     },
-    "NetworkSite":{
-      "type":"structure",
-      "required":[
+    "NetworkSite": {
+      "documentation": "<p>Information about a network site.</p>",
+      "members": {
+        "availabilityZone": {
+          "documentation": "<p> The parent Availability Zone for the network site. </p>",
+          "shape": "String"
+        },
+        "availabilityZoneId": {
+          "documentation": "<p> The parent Availability Zone ID for the network site. </p>",
+          "shape": "String"
+        },
+        "createdAt": {
+          "documentation": "<p>The creation time of the network site.</p>",
+          "shape": "Timestamp"
+        },
+        "currentPlan": {
+          "documentation": "<p>The current plan of the network site.</p>",
+          "shape": "SitePlan"
+        },
+        "description": {
+          "documentation": "<p>The description of the network site.</p>",
+          "shape": "Description"
+        },
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>",
+          "shape": "Arn"
+        },
+        "networkSiteArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network site.</p>",
+          "shape": "Arn"
+        },
+        "networkSiteName": {
+          "documentation": "<p>The name of the network site.</p>",
+          "shape": "Name"
+        },
+        "pendingPlan": {
+          "documentation": "<p>The pending plan of the network site.</p>",
+          "shape": "SitePlan"
+        },
+        "status": {
+          "documentation": "<p>The status of the network site.</p>",
+          "shape": "NetworkSiteStatus"
+        },
+        "statusReason": {
+          "documentation": "<p>The status reason of the network site.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "networkArn",
         "networkSiteArn",
         "networkSiteName",
         "status"
       ],
-      "members":{
-        "availabilityZone":{
-          "shape":"String",
-          "documentation":"<p> The parent Availability Zone for the network site. </p>"
-        },
-        "availabilityZoneId":{
-          "shape":"String",
-          "documentation":"<p> The parent Availability Zone ID for the network site. </p>"
-        },
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The creation time of the network site.</p>"
-        },
-        "currentPlan":{
-          "shape":"SitePlan",
-          "documentation":"<p>The current plan of the network site.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the network site.</p>"
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>"
-        },
-        "networkSiteArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network site.</p>"
-        },
-        "networkSiteName":{
-          "shape":"Name",
-          "documentation":"<p>The name of the network site.</p>"
-        },
-        "pendingPlan":{
-          "shape":"SitePlan",
-          "documentation":"<p>The pending plan of the network site.</p>"
-        },
-        "status":{
-          "shape":"NetworkSiteStatus",
-          "documentation":"<p>The status of the network site.</p>"
-        },
-        "statusReason":{
-          "shape":"String",
-          "documentation":"<p>The status reason of the network site.</p>"
-        }
+      "type": "structure"
+    },
+    "NetworkSiteFilterKeys": {
+      "enum": [
+        "STATUS"
+      ],
+      "type": "string"
+    },
+    "NetworkSiteFilterValues": {
+      "member": {
+        "shape": "String"
       },
-      "documentation":"<p>Information about a network site.</p>"
+      "type": "list"
     },
-    "NetworkSiteFilterKeys":{
-      "type":"string",
-      "enum":["STATUS"]
-    },
-    "NetworkSiteFilterValues":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "NetworkSiteFilters":{
-      "type":"map",
-      "key":{"shape":"NetworkSiteFilterKeys"},
-      "value":{"shape":"NetworkSiteFilterValues"}
-    },
-    "NetworkSiteList":{
-      "type":"list",
-      "member":{"shape":"NetworkSite"}
-    },
-    "NetworkSiteStatus":{
-      "type":"string",
-      "enum":[
-        "CREATED",
-        "PROVISIONING",
-        "AVAILABLE",
-        "DEPROVISIONING",
-        "DELETED"
-      ]
-    },
-    "NetworkStatus":{
-      "type":"string",
-      "enum":[
-        "CREATED",
-        "PROVISIONING",
-        "AVAILABLE",
-        "DEPROVISIONING",
-        "DELETED"
-      ]
-    },
-    "Options":{
-      "type":"list",
-      "member":{"shape":"NameValuePair"}
-    },
-    "Order":{
-      "type":"structure",
-      "members":{
-        "acknowledgmentStatus":{
-          "shape":"AcknowledgmentStatus",
-          "documentation":"<p>The acknowledgement status of the order.</p>"
-        },
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The creation time of the order.</p>"
-        },
-        "networkArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network associated with this order.</p>"
-        },
-        "networkSiteArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>"
-        },
-        "orderArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the order.</p>"
-        },
-        "shippingAddress":{
-          "shape":"Address",
-          "documentation":"<p>The shipping address of the order.</p>"
-        },
-        "trackingInformation":{
-          "shape":"TrackingInformationList",
-          "documentation":"<p>The tracking information of the order.</p>"
-        }
+    "NetworkSiteFilters": {
+      "key": {
+        "shape": "NetworkSiteFilterKeys"
       },
-      "documentation":"<p>Information about an order.</p>"
-    },
-    "OrderFilterKeys":{
-      "type":"string",
-      "enum":[
-        "STATUS",
-        "NETWORK_SITE"
-      ]
-    },
-    "OrderFilterValues":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "OrderFilters":{
-      "type":"map",
-      "key":{"shape":"OrderFilterKeys"},
-      "value":{"shape":"OrderFilterValues"}
-    },
-    "OrderList":{
-      "type":"list",
-      "member":{"shape":"Order"}
-    },
-    "PaginationToken":{"type":"string"},
-    "PingResponse":{
-      "type":"structure",
-      "members":{
-        "status":{
-          "shape":"String",
-          "documentation":"<p>Information about the health of the service.</p>"
-        }
+      "type": "map",
+      "value": {
+        "shape": "NetworkSiteFilterValues"
       }
     },
-    "Position":{
-      "type":"structure",
-      "members":{
-        "elevation":{
-          "shape":"Double",
-          "documentation":"<p>The elevation of the equipment at this position.</p>"
+    "NetworkSiteList": {
+      "member": {
+        "shape": "NetworkSite"
+      },
+      "type": "list"
+    },
+    "NetworkSiteStatus": {
+      "enum": [
+        "CREATED",
+        "PROVISIONING",
+        "AVAILABLE",
+        "DEPROVISIONING",
+        "DELETED"
+      ],
+      "type": "string"
+    },
+    "NetworkStatus": {
+      "enum": [
+        "CREATED",
+        "PROVISIONING",
+        "AVAILABLE",
+        "DEPROVISIONING",
+        "DELETED"
+      ],
+      "type": "string"
+    },
+    "Options": {
+      "member": {
+        "shape": "NameValuePair"
+      },
+      "type": "list"
+    },
+    "Order": {
+      "documentation": "<p>Information about an order.</p>",
+      "members": {
+        "acknowledgmentStatus": {
+          "documentation": "<p>The acknowledgement status of the order.</p>",
+          "shape": "AcknowledgmentStatus"
         },
-        "elevationReference":{
-          "shape":"ElevationReference",
-          "documentation":"<p>The reference point from which elevation is reported.</p>"
+        "createdAt": {
+          "documentation": "<p>The creation time of the order.</p>",
+          "shape": "Timestamp"
         },
-        "elevationUnit":{
-          "shape":"ElevationUnit",
-          "documentation":"<p>The units used to measure the elevation of the position.</p>"
+        "networkArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network associated with this order.</p>",
+          "shape": "Arn"
         },
-        "latitude":{
-          "shape":"Double",
-          "documentation":"<p>The latitude of the position.</p>"
+        "networkSiteArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>",
+          "shape": "Arn"
         },
-        "longitude":{
-          "shape":"Double",
-          "documentation":"<p>The longitude of the position.</p>"
+        "orderArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the order.</p>",
+          "shape": "Arn"
+        },
+        "shippingAddress": {
+          "documentation": "<p>The shipping address of the order.</p>",
+          "shape": "Address"
+        },
+        "trackingInformation": {
+          "documentation": "<p>The tracking information of the order.</p>",
+          "shape": "TrackingInformationList"
         }
       },
-      "documentation":"<p>Information about a position.</p>"
+      "type": "structure"
     },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "required":[
+    "OrderFilterKeys": {
+      "enum": [
+        "STATUS",
+        "NETWORK_SITE"
+      ],
+      "type": "string"
+    },
+    "OrderFilterValues": {
+      "member": {
+        "shape": "String"
+      },
+      "type": "list"
+    },
+    "OrderFilters": {
+      "key": {
+        "shape": "OrderFilterKeys"
+      },
+      "type": "map",
+      "value": {
+        "shape": "OrderFilterValues"
+      }
+    },
+    "OrderList": {
+      "member": {
+        "shape": "Order"
+      },
+      "type": "list"
+    },
+    "PaginationToken": {
+      "type": "string"
+    },
+    "PingResponse": {
+      "members": {
+        "status": {
+          "documentation": "<p>Information about the health of the service.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "Position": {
+      "documentation": "<p>Information about a position.</p>",
+      "members": {
+        "elevation": {
+          "documentation": "<p>The elevation of the equipment at this position.</p>",
+          "shape": "Double"
+        },
+        "elevationReference": {
+          "documentation": "<p>The reference point from which elevation is reported.</p>",
+          "shape": "ElevationReference"
+        },
+        "elevationUnit": {
+          "documentation": "<p>The units used to measure the elevation of the position.</p>",
+          "shape": "ElevationUnit"
+        },
+        "latitude": {
+          "documentation": "<p>The latitude of the position.</p>",
+          "shape": "Double"
+        },
+        "longitude": {
+          "documentation": "<p>The longitude of the position.</p>",
+          "shape": "Double"
+        }
+      },
+      "type": "structure"
+    },
+    "ResourceNotFoundException": {
+      "documentation": "<p>The resource was not found.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
+        },
+        "resourceId": {
+          "documentation": "<p>Identifier of the affected resource.</p>",
+          "shape": "String"
+        },
+        "resourceType": {
+          "documentation": "<p>Type of the affected resource.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "message",
         "resourceId",
         "resourceType"
       ],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
+      "type": "structure"
+    },
+    "SitePlan": {
+      "documentation": "<p>Information about a site plan.</p>",
+      "members": {
+        "options": {
+          "documentation": "<p>The options of the plan.</p>",
+          "shape": "Options"
         },
-        "resourceId":{
-          "shape":"String",
-          "documentation":"<p>Identifier of the affected resource.</p>"
-        },
-        "resourceType":{
-          "shape":"String",
-          "documentation":"<p>Type of the affected resource.</p>"
+        "resourceDefinitions": {
+          "documentation": "<p>The resource definitions of the plan.</p>",
+          "shape": "NetworkResourceDefinitions"
         }
       },
-      "documentation":"<p>The resource was not found.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "structure"
     },
-    "SitePlan":{
-      "type":"structure",
-      "members":{
-        "options":{
-          "shape":"Options",
-          "documentation":"<p>The options of the plan.</p>"
+    "String": {
+      "type": "string"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "^(?!aws:)[^\\x00-\\x1f\\x22]+$",
+      "type": "string"
+    },
+    "TagKeyList": {
+      "max": 50,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 1,
+      "sensitive": true,
+      "type": "list"
+    },
+    "TagMap": {
+      "key": {
+        "shape": "TagKey"
+      },
+      "max": 50,
+      "min": 1,
+      "sensitive": true,
+      "type": "map",
+      "value": {
+        "shape": "TagValue"
+      }
+    },
+    "TagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p> The Amazon Resource Name (ARN) of the resource. </p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
         },
-        "resourceDefinitions":{
-          "shape":"NetworkResourceDefinitions",
-          "documentation":"<p>The resource definitions of the plan.</p>"
+        "tags": {
+          "documentation": "<p>The tags to add to the resource.</p>",
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>Information about a site plan.</p>"
-    },
-    "String":{"type":"string"},
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"^(?!aws:)[^\\x00-\\x1f\\x22]+$"
-    },
-    "TagKeyList":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "max":50,
-      "min":1,
-      "sensitive":true
-    },
-    "TagMap":{
-      "type":"map",
-      "key":{"shape":"TagKey"},
-      "value":{"shape":"TagValue"},
-      "max":50,
-      "min":1,
-      "sensitive":true
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "resourceArn",
         "tags"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the resource. </p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "TagValue": {
+      "max": 256,
+      "min": 0,
+      "pattern": "^[^\\x00-\\x1f\\x22]*$",
+      "type": "string"
+    },
+    "ThrottlingException": {
+      "documentation": "<p> The request was denied due to request throttling. </p>",
+      "error": {
+        "httpStatusCode": 429,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "retryable": {
+        "throttling": true
+      },
+      "type": "structure"
+    },
+    "Timestamp": {
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
+    },
+    "TrackingInformation": {
+      "documentation": "<p>Information about tracking a shipment.</p>",
+      "members": {
+        "trackingNumber": {
+          "documentation": "<p>The tracking number of the shipment.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "TrackingInformationList": {
+      "member": {
+        "shape": "TrackingInformation"
+      },
+      "type": "list"
+    },
+    "UntagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags to add to the resource.</p>"
-        }
-      }
-    },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "min":0,
-      "pattern":"^[^\\x00-\\x1f\\x22]*$"
-    },
-    "ThrottlingException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p> The request was denied due to request throttling. </p>",
-      "error":{
-        "httpStatusCode":429,
-        "senderFault":true
-      },
-      "exception":true,
-      "retryable":{"throttling":true}
-    },
-    "Timestamp":{
-      "type":"timestamp",
-      "timestampFormat":"iso8601"
-    },
-    "TrackingInformation":{
-      "type":"structure",
-      "members":{
-        "trackingNumber":{
-          "shape":"String",
-          "documentation":"<p>The tracking number of the shipment.</p>"
+        "tagKeys": {
+          "documentation": "<p>The tag keys.</p>",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeyList"
         }
       },
-      "documentation":"<p>Information about tracking a shipment.</p>"
-    },
-    "TrackingInformationList":{
-      "type":"list",
-      "member":{"shape":"TrackingInformation"}
-    },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "resourceArn",
         "tagKeys"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateNetworkSitePlanRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "shape": "ClientToken"
         },
-        "tagKeys":{
-          "shape":"TagKeyList",
-          "documentation":"<p>The tag keys.</p>",
-          "location":"querystring",
-          "locationName":"tagKeys"
+        "networkSiteArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network site.</p>",
+          "shape": "Arn"
+        },
+        "pendingPlan": {
+          "documentation": "<p>The pending plan.</p>",
+          "shape": "SitePlan"
         }
-      }
-    },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateNetworkSitePlanRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "networkSiteArn",
         "pendingPlan"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>"
-        },
-        "networkSiteArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network site.</p>"
-        },
-        "pendingPlan":{
-          "shape":"SitePlan",
-          "documentation":"<p>The pending plan.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "UpdateNetworkSiteRequest":{
-      "type":"structure",
-      "required":["networkSiteArn"],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>"
+    "UpdateNetworkSiteRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to ensure idempotency</a>.</p>",
+          "shape": "ClientToken"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description.</p>"
+        "description": {
+          "documentation": "<p>The description.</p>",
+          "shape": "Description"
         },
-        "networkSiteArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the network site.</p>"
+        "networkSiteArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the network site.</p>",
+          "shape": "Arn"
         }
-      }
+      },
+      "required": [
+        "networkSiteArn"
+      ],
+      "type": "structure"
     },
-    "UpdateNetworkSiteResponse":{
-      "type":"structure",
-      "members":{
-        "networkSite":{
-          "shape":"NetworkSite",
-          "documentation":"<p>Information about the network site.</p>"
+    "UpdateNetworkSiteResponse": {
+      "members": {
+        "networkSite": {
+          "documentation": "<p>Information about the network site.</p>",
+          "shape": "NetworkSite"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p> The network site tags. </p>"
+        "tags": {
+          "documentation": "<p> The network site tags. </p>",
+          "shape": "TagMap"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ValidationException":{
-      "type":"structure",
-      "required":[
+    "ValidationException": {
+      "documentation": "<p>The request failed validation.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "fieldList": {
+          "documentation": "<p>The list of fields that caused the error, if applicable.</p>",
+          "shape": "ValidationExceptionFieldList"
+        },
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
+        },
+        "reason": {
+          "documentation": "<p>Reason the request failed validation.</p>",
+          "shape": "ValidationExceptionReason"
+        }
+      },
+      "required": [
         "message",
         "reason"
       ],
-      "members":{
-        "fieldList":{
-          "shape":"ValidationExceptionFieldList",
-          "documentation":"<p>The list of fields that caused the error, if applicable.</p>"
+      "type": "structure"
+    },
+    "ValidationExceptionField": {
+      "documentation": "<p>Information about a field that failed validation.</p>",
+      "members": {
+        "message": {
+          "documentation": "<p>The message about the validation failure.</p>",
+          "shape": "String"
         },
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
-        },
-        "reason":{
-          "shape":"ValidationExceptionReason",
-          "documentation":"<p>Reason the request failed validation.</p>"
+        "name": {
+          "documentation": "<p>The field name that failed validation.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The request failed validation.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "ValidationExceptionField":{
-      "type":"structure",
-      "required":[
+      "required": [
         "message",
         "name"
       ],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>The message about the validation failure.</p>"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The field name that failed validation.</p>"
-        }
+      "type": "structure"
+    },
+    "ValidationExceptionFieldList": {
+      "member": {
+        "shape": "ValidationExceptionField"
       },
-      "documentation":"<p>Information about a field that failed validation.</p>"
+      "type": "list"
     },
-    "ValidationExceptionFieldList":{
-      "type":"list",
-      "member":{"shape":"ValidationExceptionField"}
-    },
-    "ValidationExceptionReason":{
-      "type":"string",
-      "enum":[
+    "ValidationExceptionReason": {
+      "enum": [
         "UNKNOWN_OPERATION",
         "CANNOT_PARSE",
         "CANNOT_ASSUME_ROLE",
         "FIELD_VALIDATION_FAILED",
         "OTHER"
-      ]
+      ],
+      "type": "string"
     }
   },
-  "documentation":"<p>Amazon Web Services Private 5G is a managed service that makes it easy to deploy, operate, and scale your own private mobile network at your on-premises location. Private 5G provides the pre-configured hardware and software for mobile networks, helps automate setup, and scales capacity on demand to support additional devices as needed.</p>"
+  "version": "2.0"
 }

@@ -24,6 +24,6 @@ Output::
                 "MaxCapacity": 10
             }
         ]
-    }    
+    }
 
 For more information, see `What Is Application Auto Scaling? <https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html>`__ in the *Application Auto Scaling User Guide*.

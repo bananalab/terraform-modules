@@ -1,70 +1,10 @@
 {
   "pagination": {
-    "ListCACertificates": {
-      "input_token": "marker",
-      "output_token": "nextMarker",
-      "limit_key": "pageSize",
-      "result_key": "certificates"
-    },
-    "ListCertificates": {
-      "input_token": "marker",
-      "output_token": "nextMarker",
-      "limit_key": "pageSize",
-      "result_key": "certificates"
-    },
-    "ListCertificatesByCA": {
-      "input_token": "marker",
-      "output_token": "nextMarker",
-      "limit_key": "pageSize",
-      "result_key": "certificates"
-    },
-    "ListOutgoingCertificates": {
-      "input_token": "marker",
-      "output_token": "nextMarker",
-      "limit_key": "pageSize",
-      "result_key": "outgoingCertificates"
-    },
-    "ListPolicies": {
-      "input_token": "marker",
-      "output_token": "nextMarker",
-      "limit_key": "pageSize",
-      "result_key": "policies"
-    },
-    "ListPolicyPrincipals": {
-      "input_token": "marker",
-      "output_token": "nextMarker",
-      "limit_key": "pageSize",
-      "result_key": "principals"
-    },
-    "ListPrincipalPolicies": {
-      "input_token": "marker",
-      "output_token": "nextMarker",
-      "limit_key": "pageSize",
-      "result_key": "policies"
-    },
-    "ListPrincipalThings": {
+    "GetBehaviorModelTrainingSummaries": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
-      "result_key": "things"
-    },
-    "ListThingTypes": {
-      "input_token": "nextToken",
       "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "thingTypes"
-    },
-    "ListThings": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "things"
-    },
-    "ListTopicRules": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "rules"
+      "result_key": "summaries"
     },
     "ListActiveViolations": {
       "input_token": "nextToken",
@@ -84,6 +24,24 @@
       "output_token": "nextToken",
       "result_key": "findings"
     },
+    "ListAuditMitigationActionsExecutions": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "actionsExecutions"
+    },
+    "ListAuditMitigationActionsTasks": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "tasks"
+    },
+    "ListAuditSuppressions": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "suppressions"
+    },
     "ListAuditTasks": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
@@ -101,6 +59,60 @@
       "limit_key": "maxResults",
       "output_token": "nextToken",
       "result_key": "billingGroups"
+    },
+    "ListCACertificates": {
+      "input_token": "marker",
+      "limit_key": "pageSize",
+      "output_token": "nextMarker",
+      "result_key": "certificates"
+    },
+    "ListCertificates": {
+      "input_token": "marker",
+      "limit_key": "pageSize",
+      "output_token": "nextMarker",
+      "result_key": "certificates"
+    },
+    "ListCertificatesByCA": {
+      "input_token": "marker",
+      "limit_key": "pageSize",
+      "output_token": "nextMarker",
+      "result_key": "certificates"
+    },
+    "ListCustomMetrics": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "metricNames"
+    },
+    "ListDetectMitigationActionsExecutions": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "actionsExecutions"
+    },
+    "ListDetectMitigationActionsTasks": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "tasks"
+    },
+    "ListDimensions": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "dimensionNames"
+    },
+    "ListDomainConfigurations": {
+      "input_token": "marker",
+      "limit_key": "pageSize",
+      "output_token": "nextMarker",
+      "result_key": "domainConfigurations"
+    },
+    "ListFleetMetrics": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "fleetMetrics"
     },
     "ListIndices": {
       "input_token": "nextToken",
@@ -120,17 +132,77 @@
       "output_token": "nextToken",
       "result_key": "executionSummaries"
     },
+    "ListJobTemplates": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "jobTemplates"
+    },
     "ListJobs": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
       "output_token": "nextToken",
       "result_key": "jobs"
     },
+    "ListMetricValues": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "metricDatumList"
+    },
+    "ListMitigationActions": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "actionIdentifiers"
+    },
     "ListOTAUpdates": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
       "output_token": "nextToken",
       "result_key": "otaUpdates"
+    },
+    "ListOutgoingCertificates": {
+      "input_token": "marker",
+      "limit_key": "pageSize",
+      "output_token": "nextMarker",
+      "result_key": "outgoingCertificates"
+    },
+    "ListPolicies": {
+      "input_token": "marker",
+      "limit_key": "pageSize",
+      "output_token": "nextMarker",
+      "result_key": "policies"
+    },
+    "ListPolicyPrincipals": {
+      "input_token": "marker",
+      "limit_key": "pageSize",
+      "output_token": "nextMarker",
+      "result_key": "principals"
+    },
+    "ListPrincipalPolicies": {
+      "input_token": "marker",
+      "limit_key": "pageSize",
+      "output_token": "nextMarker",
+      "result_key": "policies"
+    },
+    "ListPrincipalThings": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "things"
+    },
+    "ListProvisioningTemplateVersions": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "versions"
+    },
+    "ListProvisioningTemplates": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "templates"
     },
     "ListRoleAliases": {
       "input_token": "marker",
@@ -191,11 +263,38 @@
       "output_token": "nextToken",
       "result_key": "thingGroups"
     },
+    "ListThingPrincipals": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "principals"
+    },
+    "ListThingRegistrationTaskReports": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "non_aggregate_keys": [
+        "reportType"
+      ],
+      "output_token": "nextToken",
+      "result_key": "resourceLinks"
+    },
     "ListThingRegistrationTasks": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
       "output_token": "nextToken",
       "result_key": "taskIds"
+    },
+    "ListThingTypes": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "thingTypes"
+    },
+    "ListThings": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "things"
     },
     "ListThingsInBillingGroup": {
       "input_token": "nextToken",
@@ -209,6 +308,18 @@
       "output_token": "nextToken",
       "result_key": "things"
     },
+    "ListTopicRuleDestinations": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "destinationSummaries"
+    },
+    "ListTopicRules": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "rules"
+    },
     "ListV2LoggingLevels": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
@@ -220,117 +331,6 @@
       "limit_key": "maxResults",
       "output_token": "nextToken",
       "result_key": "violationEvents"
-    },
-    "ListAuditMitigationActionsExecutions": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "actionsExecutions"
-    },
-    "ListAuditMitigationActionsTasks": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "tasks"
-    },
-    "ListAuditSuppressions": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "suppressions"
-    },
-    "ListDimensions": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "dimensionNames"
-    },
-    "ListDomainConfigurations": {
-      "input_token": "marker",
-      "limit_key": "pageSize",
-      "output_token": "nextMarker",
-      "result_key": "domainConfigurations"
-    },
-    "ListMitigationActions": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "actionIdentifiers"
-    },
-    "ListProvisioningTemplateVersions": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "versions"
-    },
-    "ListProvisioningTemplates": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "templates"
-    },
-    "ListThingRegistrationTaskReports": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "non_aggregate_keys": [
-        "reportType"
-      ],
-      "output_token": "nextToken",
-      "result_key": "resourceLinks"
-    },
-    "ListTopicRuleDestinations": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "destinationSummaries"
-    },
-    "ListThingPrincipals": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "principals"
-    },
-    "GetBehaviorModelTrainingSummaries": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "summaries"
-    },
-    "ListCustomMetrics": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "metricNames"
-    },
-    "ListDetectMitigationActionsExecutions": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "actionsExecutions"
-    },
-    "ListDetectMitigationActionsTasks": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "tasks"
-    },
-    "ListFleetMetrics": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "fleetMetrics"
-    },
-    "ListJobTemplates": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "jobTemplates"
-    },
-    "ListMetricValues": {
-      "input_token": "nextToken",
-      "limit_key": "maxResults",
-      "output_token": "nextToken",
-      "result_key": "metricDatumList"
     }
   }
 }

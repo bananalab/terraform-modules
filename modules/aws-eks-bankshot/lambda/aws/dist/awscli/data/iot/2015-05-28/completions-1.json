@@ -1,11 +1,1164 @@
 {
-  "version": "1.0",
+  "operations": {
+    "AcceptCertificateTransfer": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "AddThingToThingGroup": {
+      "thingArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingArn",
+            "resourceName": "Thing"
+          }
+        ]
+      },
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "AssociateTargetsWithJob": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "AttachPolicy": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "AttachPrincipalPolicy": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "AttachSecurityProfile": {
+      "securityProfileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "securityProfileName",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      }
+    },
+    "AttachThingPrincipal": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "CancelAuditTask": {
+      "taskId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "taskId",
+            "resourceName": "ThingRegistrationTask"
+          }
+        ]
+      }
+    },
+    "CancelCertificateTransfer": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "CancelJob": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "CancelJobExecution": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      },
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DeleteAuthorizer": {
+      "authorizerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "authorizerName",
+            "resourceName": "Authorizer"
+          }
+        ]
+      }
+    },
+    "DeleteCACertificate": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "DeleteCertificate": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "DeleteJob": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "DeleteJobExecution": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      },
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DeleteOTAUpdate": {
+      "otaUpdateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "otaUpdateId",
+            "resourceName": "OTAUpdate"
+          }
+        ]
+      }
+    },
+    "DeletePolicy": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "DeletePolicyVersion": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "DeleteRoleAlias": {
+      "roleAlias": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "roleAliase",
+            "resourceName": "RoleAliase"
+          }
+        ]
+      }
+    },
+    "DeleteSecurityProfile": {
+      "securityProfileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "securityProfileName",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      }
+    },
+    "DeleteStream": {
+      "streamId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "streamId",
+            "resourceName": "Stream"
+          }
+        ]
+      }
+    },
+    "DeleteThing": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DeleteThingType": {
+      "thingTypeName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingTypeName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DeleteTopicRule": {
+      "ruleName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ruleName",
+            "resourceName": "TopicRule"
+          }
+        ]
+      }
+    },
+    "DeprecateThingType": {
+      "thingTypeName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingTypeName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DescribeAuditTask": {
+      "taskId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "taskId",
+            "resourceName": "ThingRegistrationTask"
+          }
+        ]
+      }
+    },
+    "DescribeAuthorizer": {
+      "authorizerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "authorizerName",
+            "resourceName": "Authorizer"
+          }
+        ]
+      }
+    },
+    "DescribeCACertificate": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "DescribeCertificate": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "DescribeIndex": {
+      "indexName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "indexName",
+            "resourceName": "Indice"
+          }
+        ]
+      }
+    },
+    "DescribeJob": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "DescribeJobExecution": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      },
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DescribeRoleAlias": {
+      "roleAlias": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "roleAliase",
+            "resourceName": "RoleAliase"
+          }
+        ]
+      }
+    },
+    "DescribeSecurityProfile": {
+      "securityProfileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "securityProfileName",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      }
+    },
+    "DescribeStream": {
+      "streamId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "streamId",
+            "resourceName": "Stream"
+          }
+        ]
+      }
+    },
+    "DescribeThing": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DescribeThingRegistrationTask": {
+      "taskId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "taskId",
+            "resourceName": "ThingRegistrationTask"
+          }
+        ]
+      }
+    },
+    "DescribeThingType": {
+      "thingTypeName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingTypeName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DetachPolicy": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "DetachPrincipalPolicy": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "DetachSecurityProfile": {
+      "securityProfileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "securityProfileName",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      }
+    },
+    "DetachThingPrincipal": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "DisableTopicRule": {
+      "ruleName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ruleName",
+            "resourceName": "TopicRule"
+          }
+        ]
+      }
+    },
+    "EnableTopicRule": {
+      "ruleName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ruleName",
+            "resourceName": "TopicRule"
+          }
+        ]
+      }
+    },
+    "GetEffectivePolicies": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "GetJobDocument": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "GetOTAUpdate": {
+      "otaUpdateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "otaUpdateId",
+            "resourceName": "OTAUpdate"
+          }
+        ]
+      }
+    },
+    "GetPolicy": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "GetPolicyVersion": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "GetTopicRule": {
+      "ruleName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ruleName",
+            "resourceName": "TopicRule"
+          }
+        ]
+      }
+    },
+    "ListActiveViolations": {
+      "securityProfileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "securityProfileName",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      },
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "ListAuditFindings": {
+      "checkName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "checkName",
+            "resourceName": "AuditFinding"
+          }
+        ]
+      },
+      "taskId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "taskId",
+            "resourceName": "ThingRegistrationTask"
+          }
+        ]
+      }
+    },
+    "ListAuthorizers": {
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "ListCertificatesByCA": {
+      "caCertificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "ListJobExecutionsForJob": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "Job"
+          }
+        ]
+      },
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "ListJobExecutionsForThing": {
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "Job"
+          }
+        ]
+      },
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "ListJobs": {
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "Job"
+          }
+        ]
+      },
+      "targetSelection": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "targetSelection",
+            "resourceName": "Job"
+          }
+        ]
+      },
+      "thingGroupId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingGroupId",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "ListPolicyPrincipals": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "ListPolicyVersions": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "ListTargetsForPolicy": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "ListTargetsForSecurityProfile": {
+      "securityProfileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "securityProfileName",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      }
+    },
+    "ListThingGroupsForThing": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "ListThingPrincipals": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "ListThingRegistrationTaskReports": {
+      "taskId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "taskId",
+            "resourceName": "ThingRegistrationTask"
+          }
+        ]
+      }
+    },
+    "ListThingRegistrationTasks": {
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "ListThingTypes": {
+      "thingTypeName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingTypeName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "ListThings": {
+      "thingTypeName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingTypeName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "ListTopicRules": {
+      "ruleDisabled": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ruleDisabled",
+            "resourceName": "TopicRule"
+          }
+        ]
+      }
+    },
+    "ListViolationEvents": {
+      "securityProfileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "securityProfileName",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      },
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "RegisterCertificate": {
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "RejectCertificateTransfer": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "RemoveThingFromThingGroup": {
+      "thingArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingArn",
+            "resourceName": "Thing"
+          }
+        ]
+      },
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "ReplaceTopicRule": {
+      "ruleName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ruleName",
+            "resourceName": "TopicRule"
+          }
+        ]
+      }
+    },
+    "SearchIndex": {
+      "indexName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "indexName",
+            "resourceName": "Indice"
+          }
+        ]
+      }
+    },
+    "SetDefaultAuthorizer": {
+      "authorizerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "authorizerName",
+            "resourceName": "Authorizer"
+          }
+        ]
+      }
+    },
+    "SetDefaultPolicyVersion": {
+      "policyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "policyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "SetV2LoggingLevel": {
+      "logLevel": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "logLevel",
+            "resourceName": "V2LoggingLevel"
+          }
+        ]
+      },
+      "logTarget": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "logTarget",
+            "resourceName": "V2LoggingLevel"
+          }
+        ]
+      }
+    },
+    "StopThingRegistrationTask": {
+      "taskId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "taskId",
+            "resourceName": "ThingRegistrationTask"
+          }
+        ]
+      }
+    },
+    "TestInvokeAuthorizer": {
+      "authorizerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "authorizerName",
+            "resourceName": "Authorizer"
+          }
+        ]
+      }
+    },
+    "TransferCertificate": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      },
+      "transferMessage": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "transferMessage",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "UpdateAuthorizer": {
+      "authorizerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "authorizerName",
+            "resourceName": "Authorizer"
+          }
+        ]
+      },
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "Job"
+          }
+        ]
+      }
+    },
+    "UpdateCACertificate": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "UpdateCertificate": {
+      "certificateId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "certificateId",
+            "resourceName": "OutgoingCertificate"
+          }
+        ]
+      }
+    },
+    "UpdateRoleAlias": {
+      "roleAlias": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "roleAliase",
+            "resourceName": "RoleAliase"
+          }
+        ]
+      }
+    },
+    "UpdateSecurityProfile": {
+      "behaviors": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "behavior",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      },
+      "securityProfileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "securityProfileName",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      }
+    },
+    "UpdateStream": {
+      "description": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "description",
+            "resourceName": "Stream"
+          }
+        ]
+      },
+      "streamId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "streamId",
+            "resourceName": "Stream"
+          }
+        ]
+      }
+    },
+    "UpdateThing": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      },
+      "thingTypeName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingTypeName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "UpdateThingGroupsForThing": {
+      "thingName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "thingName",
+            "resourceName": "Thing"
+          }
+        ]
+      }
+    },
+    "ValidateSecurityProfileBehaviors": {
+      "behaviors": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "behavior",
+            "resourceName": "ActiveViolation"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "ActiveViolation": {
       "operation": "ListActiveViolations",
       "resourceIdentifier": {
-        "securityProfileName": "activeViolations[].securityProfileName",
-        "behavior": "activeViolations[].behavior"
+        "behavior": "activeViolations[].behavior",
+        "securityProfileName": "activeViolations[].securityProfileName"
       }
     },
     "AuditFinding": {
@@ -30,9 +1183,9 @@
       "operation": "ListJobs",
       "resourceIdentifier": {
         "jobId": "jobs[].jobId",
-        "thingGroupId": "jobs[].thingGroupId",
+        "status": "jobs[].status",
         "targetSelection": "jobs[].targetSelection",
-        "status": "jobs[].status"
+        "thingGroupId": "jobs[].thingGroupId"
       }
     },
     "OTAUpdate": {
@@ -63,8 +1216,16 @@
     "Stream": {
       "operation": "ListStreams",
       "resourceIdentifier": {
-        "streamId": "streams[].streamId",
-        "description": "streams[].description"
+        "description": "streams[].description",
+        "streamId": "streams[].streamId"
+      }
+    },
+    "Thing": {
+      "operation": "ListThings",
+      "resourceIdentifier": {
+        "thingArn": "things[].thingArn",
+        "thingName": "things[].thingName",
+        "thingTypeName": "things[].thingTypeName"
       }
     },
     "ThingRegistrationTask": {
@@ -73,1181 +1234,20 @@
         "taskId": "taskIds[]"
       }
     },
-    "Thing": {
-      "operation": "ListThings",
-      "resourceIdentifier": {
-        "thingName": "things[].thingName",
-        "thingTypeName": "things[].thingTypeName",
-        "thingArn": "things[].thingArn"
-      }
-    },
     "TopicRule": {
       "operation": "ListTopicRules",
       "resourceIdentifier": {
-        "ruleName": "rules[].ruleName",
-        "ruleDisabled": "rules[].ruleDisabled"
+        "ruleDisabled": "rules[].ruleDisabled",
+        "ruleName": "rules[].ruleName"
       }
     },
     "V2LoggingLevel": {
       "operation": "ListV2LoggingLevels",
       "resourceIdentifier": {
-        "logTarget": "logTargetConfigurations[].logTarget",
-        "logLevel": "logTargetConfigurations[].logLevel"
+        "logLevel": "logTargetConfigurations[].logLevel",
+        "logTarget": "logTargetConfigurations[].logTarget"
       }
     }
   },
-  "operations": {
-    "AcceptCertificateTransfer": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "AddThingToThingGroup": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      },
-      "thingArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingArn"
-          }
-        ]
-      }
-    },
-    "AssociateTargetsWithJob": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      }
-    },
-    "AttachPolicy": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "AttachPrincipalPolicy": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "AttachSecurityProfile": {
-      "securityProfileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "securityProfileName"
-          }
-        ]
-      }
-    },
-    "AttachThingPrincipal": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "CancelAuditTask": {
-      "taskId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ThingRegistrationTask",
-            "resourceIdentifier": "taskId"
-          }
-        ]
-      }
-    },
-    "CancelCertificateTransfer": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "CancelJob": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      }
-    },
-    "CancelJobExecution": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      },
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "DeleteAuthorizer": {
-      "authorizerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Authorizer",
-            "resourceIdentifier": "authorizerName"
-          }
-        ]
-      }
-    },
-    "DeleteCACertificate": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "DeleteCertificate": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "DeleteJob": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      }
-    },
-    "DeleteJobExecution": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      },
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "DeleteOTAUpdate": {
-      "otaUpdateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OTAUpdate",
-            "resourceIdentifier": "otaUpdateId"
-          }
-        ]
-      }
-    },
-    "DeletePolicy": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "DeletePolicyVersion": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "DeleteRoleAlias": {
-      "roleAlias": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RoleAliase",
-            "resourceIdentifier": "roleAliase"
-          }
-        ]
-      }
-    },
-    "DeleteSecurityProfile": {
-      "securityProfileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "securityProfileName"
-          }
-        ]
-      }
-    },
-    "DeleteStream": {
-      "streamId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "streamId"
-          }
-        ]
-      }
-    },
-    "DeleteThing": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "DeleteThingType": {
-      "thingTypeName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingTypeName"
-          }
-        ]
-      }
-    },
-    "DeleteTopicRule": {
-      "ruleName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicRule",
-            "resourceIdentifier": "ruleName"
-          }
-        ]
-      }
-    },
-    "DeprecateThingType": {
-      "thingTypeName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingTypeName"
-          }
-        ]
-      }
-    },
-    "DescribeAuditTask": {
-      "taskId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ThingRegistrationTask",
-            "resourceIdentifier": "taskId"
-          }
-        ]
-      }
-    },
-    "DescribeAuthorizer": {
-      "authorizerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Authorizer",
-            "resourceIdentifier": "authorizerName"
-          }
-        ]
-      }
-    },
-    "DescribeCACertificate": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "DescribeCertificate": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "DescribeIndex": {
-      "indexName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Indice",
-            "resourceIdentifier": "indexName"
-          }
-        ]
-      }
-    },
-    "DescribeJob": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      }
-    },
-    "DescribeJobExecution": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      },
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "DescribeRoleAlias": {
-      "roleAlias": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RoleAliase",
-            "resourceIdentifier": "roleAliase"
-          }
-        ]
-      }
-    },
-    "DescribeSecurityProfile": {
-      "securityProfileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "securityProfileName"
-          }
-        ]
-      }
-    },
-    "DescribeStream": {
-      "streamId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "streamId"
-          }
-        ]
-      }
-    },
-    "DescribeThing": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "DescribeThingRegistrationTask": {
-      "taskId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ThingRegistrationTask",
-            "resourceIdentifier": "taskId"
-          }
-        ]
-      }
-    },
-    "DescribeThingType": {
-      "thingTypeName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingTypeName"
-          }
-        ]
-      }
-    },
-    "DetachPolicy": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "DetachPrincipalPolicy": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "DetachSecurityProfile": {
-      "securityProfileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "securityProfileName"
-          }
-        ]
-      }
-    },
-    "DetachThingPrincipal": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "DisableTopicRule": {
-      "ruleName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicRule",
-            "resourceIdentifier": "ruleName"
-          }
-        ]
-      }
-    },
-    "EnableTopicRule": {
-      "ruleName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicRule",
-            "resourceIdentifier": "ruleName"
-          }
-        ]
-      }
-    },
-    "GetEffectivePolicies": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "GetJobDocument": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      }
-    },
-    "GetOTAUpdate": {
-      "otaUpdateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OTAUpdate",
-            "resourceIdentifier": "otaUpdateId"
-          }
-        ]
-      }
-    },
-    "GetPolicy": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "GetPolicyVersion": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "GetTopicRule": {
-      "ruleName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicRule",
-            "resourceIdentifier": "ruleName"
-          }
-        ]
-      }
-    },
-    "ListActiveViolations": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      },
-      "securityProfileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "securityProfileName"
-          }
-        ]
-      }
-    },
-    "ListAuditFindings": {
-      "taskId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ThingRegistrationTask",
-            "resourceIdentifier": "taskId"
-          }
-        ]
-      },
-      "checkName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AuditFinding",
-            "resourceIdentifier": "checkName"
-          }
-        ]
-      }
-    },
-    "ListAuthorizers": {
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "status"
-          }
-        ]
-      }
-    },
-    "ListCertificatesByCA": {
-      "caCertificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "ListJobExecutionsForJob": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      },
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "status"
-          }
-        ]
-      }
-    },
-    "ListJobExecutionsForThing": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      },
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "status"
-          }
-        ]
-      }
-    },
-    "ListJobs": {
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "status"
-          }
-        ]
-      },
-      "targetSelection": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "targetSelection"
-          }
-        ]
-      },
-      "thingGroupId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "thingGroupId"
-          }
-        ]
-      }
-    },
-    "ListPolicyPrincipals": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "ListPolicyVersions": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "ListTargetsForPolicy": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "ListTargetsForSecurityProfile": {
-      "securityProfileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "securityProfileName"
-          }
-        ]
-      }
-    },
-    "ListThingGroupsForThing": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "ListThingPrincipals": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "ListThingRegistrationTaskReports": {
-      "taskId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ThingRegistrationTask",
-            "resourceIdentifier": "taskId"
-          }
-        ]
-      }
-    },
-    "ListThingRegistrationTasks": {
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "status"
-          }
-        ]
-      }
-    },
-    "ListThingTypes": {
-      "thingTypeName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingTypeName"
-          }
-        ]
-      }
-    },
-    "ListThings": {
-      "thingTypeName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingTypeName"
-          }
-        ]
-      }
-    },
-    "ListTopicRules": {
-      "ruleDisabled": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicRule",
-            "resourceIdentifier": "ruleDisabled"
-          }
-        ]
-      }
-    },
-    "ListViolationEvents": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      },
-      "securityProfileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "securityProfileName"
-          }
-        ]
-      }
-    },
-    "RegisterCertificate": {
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "status"
-          }
-        ]
-      }
-    },
-    "RejectCertificateTransfer": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "RemoveThingFromThingGroup": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      },
-      "thingArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingArn"
-          }
-        ]
-      }
-    },
-    "ReplaceTopicRule": {
-      "ruleName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TopicRule",
-            "resourceIdentifier": "ruleName"
-          }
-        ]
-      }
-    },
-    "SearchIndex": {
-      "indexName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Indice",
-            "resourceIdentifier": "indexName"
-          }
-        ]
-      }
-    },
-    "SetDefaultAuthorizer": {
-      "authorizerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Authorizer",
-            "resourceIdentifier": "authorizerName"
-          }
-        ]
-      }
-    },
-    "SetDefaultPolicyVersion": {
-      "policyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "policyName"
-          }
-        ]
-      }
-    },
-    "SetV2LoggingLevel": {
-      "logTarget": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "V2LoggingLevel",
-            "resourceIdentifier": "logTarget"
-          }
-        ]
-      },
-      "logLevel": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "V2LoggingLevel",
-            "resourceIdentifier": "logLevel"
-          }
-        ]
-      }
-    },
-    "StopThingRegistrationTask": {
-      "taskId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ThingRegistrationTask",
-            "resourceIdentifier": "taskId"
-          }
-        ]
-      }
-    },
-    "TestInvokeAuthorizer": {
-      "authorizerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Authorizer",
-            "resourceIdentifier": "authorizerName"
-          }
-        ]
-      }
-    },
-    "TransferCertificate": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      },
-      "transferMessage": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "transferMessage"
-          }
-        ]
-      }
-    },
-    "UpdateAuthorizer": {
-      "authorizerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Authorizer",
-            "resourceIdentifier": "authorizerName"
-          }
-        ]
-      },
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "status"
-          }
-        ]
-      }
-    },
-    "UpdateCACertificate": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "UpdateCertificate": {
-      "certificateId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OutgoingCertificate",
-            "resourceIdentifier": "certificateId"
-          }
-        ]
-      }
-    },
-    "UpdateRoleAlias": {
-      "roleAlias": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RoleAliase",
-            "resourceIdentifier": "roleAliase"
-          }
-        ]
-      }
-    },
-    "UpdateSecurityProfile": {
-      "securityProfileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "securityProfileName"
-          }
-        ]
-      },
-      "behaviors": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "behavior"
-          }
-        ]
-      }
-    },
-    "UpdateStream": {
-      "streamId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "streamId"
-          }
-        ]
-      },
-      "description": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "description"
-          }
-        ]
-      }
-    },
-    "UpdateThing": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      },
-      "thingTypeName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingTypeName"
-          }
-        ]
-      }
-    },
-    "UpdateThingGroupsForThing": {
-      "thingName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Thing",
-            "resourceIdentifier": "thingName"
-          }
-        ]
-      }
-    },
-    "ValidateSecurityProfileBehaviors": {
-      "behaviors": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveViolation",
-            "resourceIdentifier": "behavior"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

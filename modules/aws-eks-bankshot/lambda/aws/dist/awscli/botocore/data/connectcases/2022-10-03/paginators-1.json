@@ -2,14 +2,14 @@
   "pagination": {
     "SearchCases": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "cases"
     },
     "SearchRelatedItems": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "relatedItems"
     }
   }

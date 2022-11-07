@@ -3,7 +3,7 @@
 The following ``describe-instance-types`` example displays details for the specified instance type. ::
 
     aws ec2 describe-instance-types \
-        --instance-types t2.micro 
+        --instance-types t2.micro
 
 Output::
 

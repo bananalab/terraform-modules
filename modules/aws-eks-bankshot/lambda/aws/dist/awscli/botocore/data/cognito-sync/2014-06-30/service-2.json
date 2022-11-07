@@ -1,1473 +1,1823 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2014-06-30",
-    "endpointPrefix":"cognito-sync",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"Amazon Cognito Sync",
-    "serviceId":"Cognito Sync",
-    "signatureVersion":"v4",
-    "uid":"cognito-sync-2014-06-30"
+  "documentation": "<fullname>Amazon Cognito Sync</fullname> <p>Amazon Cognito Sync provides an AWS service and client library that enable cross-device syncing of application-related user data. High-level client libraries are available for both iOS and Android. You can use these libraries to persist data locally so that it's available even if the device is offline. Developer credentials don't need to be stored on the mobile device to access the service. You can use Amazon Cognito to obtain a normalized user ID and credentials. User data is persisted in a dataset that can store up to 1 MB of key-value pairs, and you can have up to 20 datasets per user identity.</p> <p>With Amazon Cognito Sync, the data stored for each identity is accessible only to credentials assigned to that identity. In order to use the Cognito Sync service, you need to make API calls using credentials retrieved with <a href=\"http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html\">Amazon Cognito Identity service</a>.</p> <p>If you want to use Cognito Sync in an Android or iOS application, you will probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a href=\"http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html\">Developer Guide for Android</a> and the <a href=\"http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html\">Developer Guide for iOS</a>.</p>",
+  "metadata": {
+    "apiVersion": "2014-06-30",
+    "endpointPrefix": "cognito-sync",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "Amazon Cognito Sync",
+    "serviceId": "Cognito Sync",
+    "signatureVersion": "v4",
+    "uid": "cognito-sync-2014-06-30"
   },
-  "operations":{
-    "BulkPublish":{
-      "name":"BulkPublish",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identitypools/{IdentityPoolId}/bulkpublish",
-        "responseCode":200
-      },
-      "input":{"shape":"BulkPublishRequest"},
-      "output":{"shape":"BulkPublishResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"DuplicateRequestException"},
-        {"shape":"AlreadyStreamedException"}
+  "operations": {
+    "BulkPublish": {
+      "documentation": "<p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "DuplicateRequestException"
+        },
+        {
+          "shape": "AlreadyStreamedException"
+        }
       ],
-      "documentation":"<p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/identitypools/{IdentityPoolId}/bulkpublish",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "BulkPublishRequest"
+      },
+      "name": "BulkPublish",
+      "output": {
+        "shape": "BulkPublishResponse"
+      }
     },
-    "DeleteDataset":{
-      "name":"DeleteDataset",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteDatasetRequest"},
-      "output":{"shape":"DeleteDatasetResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"ResourceConflictException"}
+    "DeleteDataset": {
+      "documentation": "<p>Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "ResourceConflictException"
+        }
       ],
-      "documentation":"<p>Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteDatasetRequest"
+      },
+      "name": "DeleteDataset",
+      "output": {
+        "shape": "DeleteDatasetResponse"
+      }
     },
-    "DescribeDataset":{
-      "name":"DescribeDataset",
-      "http":{
-        "method":"GET",
-        "requestUri":"/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeDatasetRequest"},
-      "output":{"shape":"DescribeDatasetResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"}
+    "DescribeDataset": {
+      "documentation": "<p>Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeDatasetRequest"
+      },
+      "name": "DescribeDataset",
+      "output": {
+        "shape": "DescribeDatasetResponse"
+      }
     },
-    "DescribeIdentityPoolUsage":{
-      "name":"DescribeIdentityPoolUsage",
-      "http":{
-        "method":"GET",
-        "requestUri":"/identitypools/{IdentityPoolId}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeIdentityPoolUsageRequest"},
-      "output":{"shape":"DescribeIdentityPoolUsageResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"}
+    "DescribeIdentityPoolUsage": {
+      "documentation": "<p>Gets usage details (for example, data storage) about a particular identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Gets usage details (for example, data storage) about a particular identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/identitypools/{IdentityPoolId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeIdentityPoolUsageRequest"
+      },
+      "name": "DescribeIdentityPoolUsage",
+      "output": {
+        "shape": "DescribeIdentityPoolUsageResponse"
+      }
     },
-    "DescribeIdentityUsage":{
-      "name":"DescribeIdentityUsage",
-      "http":{
-        "method":"GET",
-        "requestUri":"/identitypools/{IdentityPoolId}/identities/{IdentityId}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeIdentityUsageRequest"},
-      "output":{"shape":"DescribeIdentityUsageResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"}
+    "DescribeIdentityUsage": {
+      "documentation": "<p>Gets usage information for an identity, including number of datasets and data usage.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Gets usage information for an identity, including number of datasets and data usage.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/identitypools/{IdentityPoolId}/identities/{IdentityId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeIdentityUsageRequest"
+      },
+      "name": "DescribeIdentityUsage",
+      "output": {
+        "shape": "DescribeIdentityUsageResponse"
+      }
     },
-    "GetBulkPublishDetails":{
-      "name":"GetBulkPublishDetails",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identitypools/{IdentityPoolId}/getBulkPublishDetails",
-        "responseCode":200
-      },
-      "input":{"shape":"GetBulkPublishDetailsRequest"},
-      "output":{"shape":"GetBulkPublishDetailsResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"}
+    "GetBulkPublishDetails": {
+      "documentation": "<p>Get the status of the last BulkPublish operation for an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        }
       ],
-      "documentation":"<p>Get the status of the last BulkPublish operation for an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/identitypools/{IdentityPoolId}/getBulkPublishDetails",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetBulkPublishDetailsRequest"
+      },
+      "name": "GetBulkPublishDetails",
+      "output": {
+        "shape": "GetBulkPublishDetailsResponse"
+      }
     },
-    "GetCognitoEvents":{
-      "name":"GetCognitoEvents",
-      "http":{
-        "method":"GET",
-        "requestUri":"/identitypools/{IdentityPoolId}/events",
-        "responseCode":200
-      },
-      "input":{"shape":"GetCognitoEventsRequest"},
-      "output":{"shape":"GetCognitoEventsResponse"},
-      "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"}
+    "GetCognitoEvents": {
+      "documentation": "<p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "errors": [
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/identitypools/{IdentityPoolId}/events",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetCognitoEventsRequest"
+      },
+      "name": "GetCognitoEvents",
+      "output": {
+        "shape": "GetCognitoEventsResponse"
+      }
     },
-    "GetIdentityPoolConfiguration":{
-      "name":"GetIdentityPoolConfiguration",
-      "http":{
-        "method":"GET",
-        "requestUri":"/identitypools/{IdentityPoolId}/configuration",
-        "responseCode":200
-      },
-      "input":{"shape":"GetIdentityPoolConfigurationRequest"},
-      "output":{"shape":"GetIdentityPoolConfigurationResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"}
+    "GetIdentityPoolConfiguration": {
+      "documentation": "<p>Gets the configuration settings of an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Gets the configuration settings of an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/identitypools/{IdentityPoolId}/configuration",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetIdentityPoolConfigurationRequest"
+      },
+      "name": "GetIdentityPoolConfiguration",
+      "output": {
+        "shape": "GetIdentityPoolConfigurationResponse"
+      }
     },
-    "ListDatasets":{
-      "name":"ListDatasets",
-      "http":{
-        "method":"GET",
-        "requestUri":"/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets",
-        "responseCode":200
-      },
-      "input":{"shape":"ListDatasetsRequest"},
-      "output":{"shape":"ListDatasetsResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"}
+    "ListDatasets": {
+      "documentation": "<p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListDatasetsRequest"
+      },
+      "name": "ListDatasets",
+      "output": {
+        "shape": "ListDatasetsResponse"
+      }
     },
-    "ListIdentityPoolUsage":{
-      "name":"ListIdentityPoolUsage",
-      "http":{
-        "method":"GET",
-        "requestUri":"/identitypools",
-        "responseCode":200
-      },
-      "input":{"shape":"ListIdentityPoolUsageRequest"},
-      "output":{"shape":"ListIdentityPoolUsageResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"}
+    "ListIdentityPoolUsage": {
+      "documentation": "<p>Gets a list of identity pools registered with Cognito.</p> <p>ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Gets a list of identity pools registered with Cognito.</p> <p>ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/identitypools",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListIdentityPoolUsageRequest"
+      },
+      "name": "ListIdentityPoolUsage",
+      "output": {
+        "shape": "ListIdentityPoolUsageResponse"
+      }
     },
-    "ListRecords":{
-      "name":"ListRecords",
-      "http":{
-        "method":"GET",
-        "requestUri":"/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records",
-        "responseCode":200
-      },
-      "input":{"shape":"ListRecordsRequest"},
-      "output":{"shape":"ListRecordsResponse"},
-      "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"NotAuthorizedException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"InternalErrorException"}
+    "ListRecords": {
+      "documentation": "<p>Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>",
+      "errors": [
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "InternalErrorException"
+        }
       ],
-      "documentation":"<p>Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListRecordsRequest"
+      },
+      "name": "ListRecords",
+      "output": {
+        "shape": "ListRecordsResponse"
+      }
     },
-    "RegisterDevice":{
-      "name":"RegisterDevice",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identitypools/{IdentityPoolId}/identity/{IdentityId}/device",
-        "responseCode":200
-      },
-      "input":{"shape":"RegisterDeviceRequest"},
-      "output":{"shape":"RegisterDeviceResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"InvalidConfigurationException"},
-        {"shape":"TooManyRequestsException"}
+    "RegisterDevice": {
+      "documentation": "<p>Registers a device to receive push sync notifications.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "InvalidConfigurationException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Registers a device to receive push sync notifications.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/identitypools/{IdentityPoolId}/identity/{IdentityId}/device",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "RegisterDeviceRequest"
+      },
+      "name": "RegisterDevice",
+      "output": {
+        "shape": "RegisterDeviceResponse"
+      }
     },
-    "SetCognitoEvents":{
-      "name":"SetCognitoEvents",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identitypools/{IdentityPoolId}/events",
-        "responseCode":200
-      },
-      "input":{"shape":"SetCognitoEventsRequest"},
-      "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"}
+    "SetCognitoEvents": {
+      "documentation": "<p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "errors": [
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/identitypools/{IdentityPoolId}/events",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SetCognitoEventsRequest"
+      },
+      "name": "SetCognitoEvents"
     },
-    "SetIdentityPoolConfiguration":{
-      "name":"SetIdentityPoolConfiguration",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identitypools/{IdentityPoolId}/configuration",
-        "responseCode":200
-      },
-      "input":{"shape":"SetIdentityPoolConfigurationRequest"},
-      "output":{"shape":"SetIdentityPoolConfigurationResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"ConcurrentModificationException"}
+    "SetIdentityPoolConfiguration": {
+      "documentation": "<p>Sets the necessary configuration for push sync.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "ConcurrentModificationException"
+        }
       ],
-      "documentation":"<p>Sets the necessary configuration for push sync.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/identitypools/{IdentityPoolId}/configuration",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SetIdentityPoolConfigurationRequest"
+      },
+      "name": "SetIdentityPoolConfiguration",
+      "output": {
+        "shape": "SetIdentityPoolConfigurationResponse"
+      }
     },
-    "SubscribeToDataset":{
-      "name":"SubscribeToDataset",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}",
-        "responseCode":200
-      },
-      "input":{"shape":"SubscribeToDatasetRequest"},
-      "output":{"shape":"SubscribeToDatasetResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"InvalidConfigurationException"},
-        {"shape":"TooManyRequestsException"}
+    "SubscribeToDataset": {
+      "documentation": "<p>Subscribes to receive notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "InvalidConfigurationException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Subscribes to receive notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SubscribeToDatasetRequest"
+      },
+      "name": "SubscribeToDataset",
+      "output": {
+        "shape": "SubscribeToDatasetResponse"
+      }
     },
-    "UnsubscribeFromDataset":{
-      "name":"UnsubscribeFromDataset",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UnsubscribeFromDatasetRequest"},
-      "output":{"shape":"UnsubscribeFromDatasetResponse"},
-      "errors":[
-        {"shape":"NotAuthorizedException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"InvalidConfigurationException"},
-        {"shape":"TooManyRequestsException"}
+    "UnsubscribeFromDataset": {
+      "documentation": "<p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+      "errors": [
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalErrorException"
+        },
+        {
+          "shape": "InvalidConfigurationException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UnsubscribeFromDatasetRequest"
+      },
+      "name": "UnsubscribeFromDataset",
+      "output": {
+        "shape": "UnsubscribeFromDatasetResponse"
+      }
     },
-    "UpdateRecords":{
-      "name":"UpdateRecords",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateRecordsRequest"},
-      "output":{"shape":"UpdateRecordsResponse"},
-      "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"LimitExceededException"},
-        {"shape":"NotAuthorizedException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ResourceConflictException"},
-        {"shape":"InvalidLambdaFunctionOutputException"},
-        {"shape":"LambdaThrottledException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"InternalErrorException"}
+    "UpdateRecords": {
+      "documentation": "<p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p><p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
+      "errors": [
+        {
+          "shape": "InvalidParameterException"
+        },
+        {
+          "shape": "LimitExceededException"
+        },
+        {
+          "shape": "NotAuthorizedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ResourceConflictException"
+        },
+        {
+          "shape": "InvalidLambdaFunctionOutputException"
+        },
+        {
+          "shape": "LambdaThrottledException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "InternalErrorException"
+        }
       ],
-      "documentation":"<p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p><p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateRecordsRequest"
+      },
+      "name": "UpdateRecords",
+      "output": {
+        "shape": "UpdateRecordsResponse"
+      }
     }
   },
-  "shapes":{
-    "AlreadyStreamedException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"The message associated with the AlreadyStreamedException exception."
+  "shapes": {
+    "AlreadyStreamedException": {
+      "documentation": "An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.",
+      "error": {
+        "httpStatusCode": 400
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "The message associated with the AlreadyStreamedException exception.",
+          "shape": "ExceptionMessage"
         }
       },
-      "documentation":"An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.",
-      "error":{"httpStatusCode":400},
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "ApplicationArn":{
-      "type":"string",
-      "pattern":"arn:aws:sns:[-0-9a-z]+:\\d+:app/[A-Z_]+/[a-zA-Z0-9_.-]+"
+    "ApplicationArn": {
+      "pattern": "arn:aws:sns:[-0-9a-z]+:\\d+:app/[A-Z_]+/[a-zA-Z0-9_.-]+",
+      "type": "string"
     },
-    "ApplicationArnList":{
-      "type":"list",
-      "member":{"shape":"ApplicationArn"}
+    "ApplicationArnList": {
+      "member": {
+        "shape": "ApplicationArn"
+      },
+      "type": "list"
     },
-    "AssumeRoleArn":{
-      "type":"string",
-      "max":2048,
-      "min":20,
-      "pattern":"arn:aws:iam::\\d+:role/.*"
+    "AssumeRoleArn": {
+      "max": 2048,
+      "min": 20,
+      "pattern": "arn:aws:iam::\\d+:role/.*",
+      "type": "string"
     },
-    "Boolean":{"type":"boolean"},
-    "BulkPublishRequest":{
-      "type":"structure",
-      "required":["IdentityPoolId"],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+    "Boolean": {
+      "type": "boolean"
+    },
+    "BulkPublishRequest": {
+      "documentation": "The input for the BulkPublish operation.",
+      "members": {
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
         }
       },
-      "documentation":"The input for the BulkPublish operation."
+      "required": [
+        "IdentityPoolId"
+      ],
+      "type": "structure"
     },
-    "BulkPublishResponse":{
-      "type":"structure",
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region."
+    "BulkPublishResponse": {
+      "documentation": "The output for the BulkPublish operation.",
+      "members": {
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "shape": "IdentityPoolId"
         }
       },
-      "documentation":"The output for the BulkPublish operation."
+      "type": "structure"
     },
-    "BulkPublishStatus":{
-      "type":"string",
-      "enum":[
+    "BulkPublishStatus": {
+      "enum": [
         "NOT_STARTED",
         "IN_PROGRESS",
         "FAILED",
         "SUCCEEDED"
-      ]
+      ],
+      "type": "string"
     },
-    "ClientContext":{"type":"string"},
-    "CognitoEventType":{"type":"string"},
-    "CognitoStreams":{
-      "type":"structure",
-      "members":{
-        "StreamName":{
-          "shape":"StreamName",
-          "documentation":"The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool."
+    "ClientContext": {
+      "type": "string"
+    },
+    "CognitoEventType": {
+      "type": "string"
+    },
+    "CognitoStreams": {
+      "documentation": "Configuration options for configure Cognito streams.",
+      "members": {
+        "RoleArn": {
+          "documentation": "The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.",
+          "shape": "AssumeRoleArn"
         },
-        "RoleArn":{
-          "shape":"AssumeRoleArn",
-          "documentation":"The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream."
+        "StreamName": {
+          "documentation": "The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.",
+          "shape": "StreamName"
         },
-        "StreamingStatus":{
-          "shape":"StreamingStatus",
-          "documentation":"Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>"
+        "StreamingStatus": {
+          "documentation": "Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>",
+          "shape": "StreamingStatus"
         }
       },
-      "documentation":"Configuration options for configure Cognito streams."
+      "type": "structure"
     },
-    "ConcurrentModificationException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>The message returned by a ConcurrentModicationException.</p>"
+    "ConcurrentModificationException": {
+      "documentation": "<p>Thrown if there are parallel requests to modify a resource.</p>",
+      "error": {
+        "httpStatusCode": 400
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>The message returned by a ConcurrentModicationException.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Thrown if there are parallel requests to modify a resource.</p>",
-      "error":{"httpStatusCode":400},
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "Dataset":{
-      "type":"structure",
-      "members":{
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region."
+    "Dataset": {
+      "documentation": "A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.",
+      "members": {
+        "CreationDate": {
+          "documentation": "Date on which the dataset was created.",
+          "shape": "Date"
         },
-        "DatasetName":{
-          "shape":"DatasetName",
-          "documentation":"A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot)."
+        "DataStorage": {
+          "documentation": "Total size in bytes of the records in this dataset.",
+          "shape": "Long"
         },
-        "CreationDate":{
-          "shape":"Date",
-          "documentation":"Date on which the dataset was created."
+        "DatasetName": {
+          "documentation": "A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
+          "shape": "DatasetName"
         },
-        "LastModifiedDate":{
-          "shape":"Date",
-          "documentation":"Date when the dataset was last modified."
+        "IdentityId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "shape": "IdentityId"
         },
-        "LastModifiedBy":{
-          "shape":"String",
-          "documentation":"The device that made the last change to this dataset."
+        "LastModifiedBy": {
+          "documentation": "The device that made the last change to this dataset.",
+          "shape": "String"
         },
-        "DataStorage":{
-          "shape":"Long",
-          "documentation":"Total size in bytes of the records in this dataset."
+        "LastModifiedDate": {
+          "documentation": "Date when the dataset was last modified.",
+          "shape": "Date"
         },
-        "NumRecords":{
-          "shape":"Long",
-          "documentation":"Number of records in this dataset."
+        "NumRecords": {
+          "documentation": "Number of records in this dataset.",
+          "shape": "Long"
         }
       },
-      "documentation":"A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs."
+      "type": "structure"
     },
-    "DatasetList":{
-      "type":"list",
-      "member":{"shape":"Dataset"}
+    "DatasetList": {
+      "member": {
+        "shape": "Dataset"
+      },
+      "type": "list"
     },
-    "DatasetName":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"[a-zA-Z0-9_.:-]+"
+    "DatasetName": {
+      "max": 128,
+      "min": 1,
+      "pattern": "[a-zA-Z0-9_.:-]+",
+      "type": "string"
     },
-    "Date":{"type":"timestamp"},
-    "DeleteDatasetRequest":{
-      "type":"structure",
-      "required":[
+    "Date": {
+      "type": "timestamp"
+    },
+    "DeleteDatasetRequest": {
+      "documentation": "A request to delete the specific dataset.",
+      "members": {
+        "DatasetName": {
+          "documentation": "A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
+          "location": "uri",
+          "locationName": "DatasetName",
+          "shape": "DatasetName"
+        },
+        "IdentityId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
+        },
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        }
+      },
+      "required": [
         "IdentityPoolId",
         "IdentityId",
         "DatasetName"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
-        },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityId"
-        },
-        "DatasetName":{
-          "shape":"DatasetName",
-          "documentation":"A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
-          "location":"uri",
-          "locationName":"DatasetName"
+      "type": "structure"
+    },
+    "DeleteDatasetResponse": {
+      "documentation": "Response to a successful DeleteDataset request.",
+      "members": {
+        "Dataset": {
+          "documentation": "A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.",
+          "shape": "Dataset"
         }
       },
-      "documentation":"A request to delete the specific dataset."
+      "type": "structure"
     },
-    "DeleteDatasetResponse":{
-      "type":"structure",
-      "members":{
-        "Dataset":{
-          "shape":"Dataset",
-          "documentation":"A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs."
+    "DescribeDatasetRequest": {
+      "documentation": "A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.",
+      "members": {
+        "DatasetName": {
+          "documentation": "A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
+          "location": "uri",
+          "locationName": "DatasetName",
+          "shape": "DatasetName"
+        },
+        "IdentityId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
+        },
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
         }
       },
-      "documentation":"Response to a successful DeleteDataset request."
-    },
-    "DescribeDatasetRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityPoolId",
         "IdentityId",
         "DatasetName"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+      "type": "structure"
+    },
+    "DescribeDatasetResponse": {
+      "documentation": "Response to a successful DescribeDataset request.",
+      "members": {
+        "Dataset": {
+          "documentation": "Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.",
+          "shape": "Dataset"
+        }
+      },
+      "type": "structure"
+    },
+    "DescribeIdentityPoolUsageRequest": {
+      "documentation": "A request for usage information about the identity pool.",
+      "members": {
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        }
+      },
+      "required": [
+        "IdentityPoolId"
+      ],
+      "type": "structure"
+    },
+    "DescribeIdentityPoolUsageResponse": {
+      "documentation": "Response to a successful DescribeIdentityPoolUsage request.",
+      "members": {
+        "IdentityPoolUsage": {
+          "documentation": "Information about the usage of the identity pool.",
+          "shape": "IdentityPoolUsage"
+        }
+      },
+      "type": "structure"
+    },
+    "DescribeIdentityUsageRequest": {
+      "documentation": "A request for information about the usage of an identity pool.",
+      "members": {
+        "IdentityId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
         },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityId"
-        },
-        "DatasetName":{
-          "shape":"DatasetName",
-          "documentation":"A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
-          "location":"uri",
-          "locationName":"DatasetName"
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
         }
       },
-      "documentation":"A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name."
-    },
-    "DescribeDatasetResponse":{
-      "type":"structure",
-      "members":{
-        "Dataset":{
-          "shape":"Dataset",
-          "documentation":"Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs."
-        }
-      },
-      "documentation":"Response to a successful DescribeDataset request."
-    },
-    "DescribeIdentityPoolUsageRequest":{
-      "type":"structure",
-      "required":["IdentityPoolId"],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
-        }
-      },
-      "documentation":"A request for usage information about the identity pool."
-    },
-    "DescribeIdentityPoolUsageResponse":{
-      "type":"structure",
-      "members":{
-        "IdentityPoolUsage":{
-          "shape":"IdentityPoolUsage",
-          "documentation":"Information about the usage of the identity pool."
-        }
-      },
-      "documentation":"Response to a successful DescribeIdentityPoolUsage request."
-    },
-    "DescribeIdentityUsageRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityPoolId",
         "IdentityId"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+      "type": "structure"
+    },
+    "DescribeIdentityUsageResponse": {
+      "documentation": "The response to a successful DescribeIdentityUsage request.",
+      "members": {
+        "IdentityUsage": {
+          "documentation": "Usage information for the identity.",
+          "shape": "IdentityUsage"
+        }
+      },
+      "type": "structure"
+    },
+    "DeviceId": {
+      "max": 256,
+      "min": 1,
+      "type": "string"
+    },
+    "DuplicateRequestException": {
+      "documentation": "An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.",
+      "error": {
+        "httpStatusCode": 400
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "The message associated with the DuplicateRequestException exception.",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "Events": {
+      "key": {
+        "shape": "CognitoEventType"
+      },
+      "max": 1,
+      "type": "map",
+      "value": {
+        "shape": "LambdaFunctionArn"
+      }
+    },
+    "ExceptionMessage": {
+      "type": "string"
+    },
+    "GetBulkPublishDetailsRequest": {
+      "documentation": "The input for the GetBulkPublishDetails operation.",
+      "members": {
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        }
+      },
+      "required": [
+        "IdentityPoolId"
+      ],
+      "type": "structure"
+    },
+    "GetBulkPublishDetailsResponse": {
+      "documentation": "The output for the GetBulkPublishDetails operation.",
+      "members": {
+        "BulkPublishCompleteTime": {
+          "documentation": "If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.",
+          "shape": "Date"
         },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityId"
-        }
-      },
-      "documentation":"A request for information about the usage of an identity pool."
-    },
-    "DescribeIdentityUsageResponse":{
-      "type":"structure",
-      "members":{
-        "IdentityUsage":{
-          "shape":"IdentityUsage",
-          "documentation":"Usage information for the identity."
-        }
-      },
-      "documentation":"The response to a successful DescribeIdentityUsage request."
-    },
-    "DeviceId":{
-      "type":"string",
-      "max":256,
-      "min":1
-    },
-    "DuplicateRequestException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"The message associated with the DuplicateRequestException exception."
-        }
-      },
-      "documentation":"An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.",
-      "error":{"httpStatusCode":400},
-      "exception":true
-    },
-    "Events":{
-      "type":"map",
-      "key":{"shape":"CognitoEventType"},
-      "value":{"shape":"LambdaFunctionArn"},
-      "max":1
-    },
-    "ExceptionMessage":{"type":"string"},
-    "GetBulkPublishDetailsRequest":{
-      "type":"structure",
-      "required":["IdentityPoolId"],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
-        }
-      },
-      "documentation":"The input for the GetBulkPublishDetails operation."
-    },
-    "GetBulkPublishDetailsResponse":{
-      "type":"structure",
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region."
+        "BulkPublishStartTime": {
+          "documentation": "The date/time at which the last bulk publish was initiated.",
+          "shape": "Date"
         },
-        "BulkPublishStartTime":{
-          "shape":"Date",
-          "documentation":"The date/time at which the last bulk publish was initiated."
+        "BulkPublishStatus": {
+          "documentation": "Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>",
+          "shape": "BulkPublishStatus"
         },
-        "BulkPublishCompleteTime":{
-          "shape":"Date",
-          "documentation":"If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed."
+        "FailureMessage": {
+          "documentation": "If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.",
+          "shape": "String"
         },
-        "BulkPublishStatus":{
-          "shape":"BulkPublishStatus",
-          "documentation":"Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>"
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "shape": "IdentityPoolId"
+        }
+      },
+      "type": "structure"
+    },
+    "GetCognitoEventsRequest": {
+      "documentation": "<p>A request for a list of the configured Cognito Events</p>",
+      "members": {
+        "IdentityPoolId": {
+          "documentation": "<p>The Cognito Identity Pool ID for the request</p>",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        }
+      },
+      "required": [
+        "IdentityPoolId"
+      ],
+      "type": "structure"
+    },
+    "GetCognitoEventsResponse": {
+      "documentation": "<p>The response from the GetCognitoEvents request</p>",
+      "members": {
+        "Events": {
+          "documentation": "<p>The Cognito Events returned from the GetCognitoEvents request</p>",
+          "shape": "Events"
+        }
+      },
+      "type": "structure"
+    },
+    "GetIdentityPoolConfigurationRequest": {
+      "documentation": "<p>The input for the GetIdentityPoolConfiguration operation.</p>",
+      "members": {
+        "IdentityPoolId": {
+          "documentation": "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        }
+      },
+      "required": [
+        "IdentityPoolId"
+      ],
+      "type": "structure"
+    },
+    "GetIdentityPoolConfigurationResponse": {
+      "documentation": "<p>The output for the GetIdentityPoolConfiguration operation.</p>",
+      "members": {
+        "CognitoStreams": {
+          "documentation": "Options to apply to this identity pool for Amazon Cognito streams.",
+          "shape": "CognitoStreams"
         },
-        "FailureMessage":{
-          "shape":"String",
-          "documentation":"If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail."
-        }
-      },
-      "documentation":"The output for the GetBulkPublishDetails operation."
-    },
-    "GetCognitoEventsRequest":{
-      "type":"structure",
-      "required":["IdentityPoolId"],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>The Cognito Identity Pool ID for the request</p>",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
-        }
-      },
-      "documentation":"<p>A request for a list of the configured Cognito Events</p>"
-    },
-    "GetCognitoEventsResponse":{
-      "type":"structure",
-      "members":{
-        "Events":{
-          "shape":"Events",
-          "documentation":"<p>The Cognito Events returned from the GetCognitoEvents request</p>"
-        }
-      },
-      "documentation":"<p>The response from the GetCognitoEvents request</p>"
-    },
-    "GetIdentityPoolConfigurationRequest":{
-      "type":"structure",
-      "required":["IdentityPoolId"],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
-        }
-      },
-      "documentation":"<p>The input for the GetIdentityPoolConfiguration operation.</p>"
-    },
-    "GetIdentityPoolConfigurationResponse":{
-      "type":"structure",
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>"
+        "IdentityPoolId": {
+          "documentation": "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>",
+          "shape": "IdentityPoolId"
         },
-        "PushSync":{
-          "shape":"PushSync",
-          "documentation":"<p>Options to apply to this identity pool for push synchronization.</p>"
+        "PushSync": {
+          "documentation": "<p>Options to apply to this identity pool for push synchronization.</p>",
+          "shape": "PushSync"
+        }
+      },
+      "type": "structure"
+    },
+    "IdentityId": {
+      "max": 55,
+      "min": 1,
+      "pattern": "[\\w-]+:[0-9a-f-]+",
+      "type": "string"
+    },
+    "IdentityPoolId": {
+      "max": 55,
+      "min": 1,
+      "pattern": "[\\w-]+:[0-9a-f-]+",
+      "type": "string"
+    },
+    "IdentityPoolUsage": {
+      "documentation": "Usage information for the identity pool.",
+      "members": {
+        "DataStorage": {
+          "documentation": "Data storage information for the identity pool.",
+          "shape": "Long"
         },
-        "CognitoStreams":{
-          "shape":"CognitoStreams",
-          "documentation":"Options to apply to this identity pool for Amazon Cognito streams."
-        }
-      },
-      "documentation":"<p>The output for the GetIdentityPoolConfiguration operation.</p>"
-    },
-    "IdentityId":{
-      "type":"string",
-      "max":55,
-      "min":1,
-      "pattern":"[\\w-]+:[0-9a-f-]+"
-    },
-    "IdentityPoolId":{
-      "type":"string",
-      "max":55,
-      "min":1,
-      "pattern":"[\\w-]+:[0-9a-f-]+"
-    },
-    "IdentityPoolUsage":{
-      "type":"structure",
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region."
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "shape": "IdentityPoolId"
         },
-        "SyncSessionsCount":{
-          "shape":"Long",
-          "documentation":"Number of sync sessions for the identity pool."
+        "LastModifiedDate": {
+          "documentation": "Date on which the identity pool was last modified.",
+          "shape": "Date"
         },
-        "DataStorage":{
-          "shape":"Long",
-          "documentation":"Data storage information for the identity pool."
+        "SyncSessionsCount": {
+          "documentation": "Number of sync sessions for the identity pool.",
+          "shape": "Long"
+        }
+      },
+      "type": "structure"
+    },
+    "IdentityPoolUsageList": {
+      "member": {
+        "shape": "IdentityPoolUsage"
+      },
+      "type": "list"
+    },
+    "IdentityUsage": {
+      "documentation": "Usage information for the identity.",
+      "members": {
+        "DataStorage": {
+          "documentation": "Total data storage for this identity.",
+          "shape": "Long"
         },
-        "LastModifiedDate":{
-          "shape":"Date",
-          "documentation":"Date on which the identity pool was last modified."
-        }
-      },
-      "documentation":"Usage information for the identity pool."
-    },
-    "IdentityPoolUsageList":{
-      "type":"list",
-      "member":{"shape":"IdentityPoolUsage"}
-    },
-    "IdentityUsage":{
-      "type":"structure",
-      "members":{
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region."
+        "DatasetCount": {
+          "documentation": "Number of datasets for the identity.",
+          "shape": "Integer"
         },
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region."
+        "IdentityId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "shape": "IdentityId"
         },
-        "LastModifiedDate":{
-          "shape":"Date",
-          "documentation":"Date on which the identity was last modified."
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "shape": "IdentityPoolId"
         },
-        "DatasetCount":{
-          "shape":"Integer",
-          "documentation":"Number of datasets for the identity."
+        "LastModifiedDate": {
+          "documentation": "Date on which the identity was last modified.",
+          "shape": "Date"
+        }
+      },
+      "type": "structure"
+    },
+    "Integer": {
+      "type": "integer"
+    },
+    "IntegerString": {
+      "type": "integer"
+    },
+    "InternalErrorException": {
+      "documentation": "Indicates an internal service error.",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "documentation": "Message returned by InternalErrorException.",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "InvalidConfigurationException": {
+      "error": {
+        "httpStatusCode": 400
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "Message returned by InvalidConfigurationException.",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "InvalidLambdaFunctionOutputException": {
+      "documentation": "<p>The AWS Lambda function returned invalid output or an exception.</p>",
+      "error": {
+        "httpStatusCode": 400
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>A message returned when an InvalidLambdaFunctionOutputException occurs</p>",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "InvalidParameterException": {
+      "documentation": "Thrown when a request parameter does not comply with the associated constraints.",
+      "error": {
+        "httpStatusCode": 400
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "Message returned by InvalidParameterException.",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "LambdaFunctionArn": {
+      "type": "string"
+    },
+    "LambdaThrottledException": {
+      "documentation": "<p>AWS Lambda throttled your account, please contact AWS Support</p>",
+      "error": {
+        "httpStatusCode": 429
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>A message returned when an LambdaThrottledException is thrown</p>",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "LimitExceededException": {
+      "documentation": "Thrown when the limit on the number of objects or operations has been exceeded.",
+      "error": {
+        "httpStatusCode": 400
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "Message returned by LimitExceededException.",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "ListDatasetsRequest": {
+      "documentation": "Request for a list of datasets for an identity.",
+      "members": {
+        "IdentityId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
         },
-        "DataStorage":{
-          "shape":"Long",
-          "documentation":"Total data storage for this identity."
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        },
+        "MaxResults": {
+          "documentation": "The maximum number of results to be returned.",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "IntegerString"
+        },
+        "NextToken": {
+          "documentation": "A pagination token for obtaining the next page of results.",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "String"
         }
       },
-      "documentation":"Usage information for the identity."
-    },
-    "Integer":{"type":"integer"},
-    "IntegerString":{"type":"integer"},
-    "InternalErrorException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"Message returned by InternalErrorException."
-        }
-      },
-      "documentation":"Indicates an internal service error.",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true
-    },
-    "InvalidConfigurationException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"Message returned by InvalidConfigurationException."
-        }
-      },
-      "error":{"httpStatusCode":400},
-      "exception":true
-    },
-    "InvalidLambdaFunctionOutputException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"<p>A message returned when an InvalidLambdaFunctionOutputException occurs</p>"
-        }
-      },
-      "documentation":"<p>The AWS Lambda function returned invalid output or an exception.</p>",
-      "error":{"httpStatusCode":400},
-      "exception":true
-    },
-    "InvalidParameterException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"Message returned by InvalidParameterException."
-        }
-      },
-      "documentation":"Thrown when a request parameter does not comply with the associated constraints.",
-      "error":{"httpStatusCode":400},
-      "exception":true
-    },
-    "LambdaFunctionArn":{"type":"string"},
-    "LambdaThrottledException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"<p>A message returned when an LambdaThrottledException is thrown</p>"
-        }
-      },
-      "documentation":"<p>AWS Lambda throttled your account, please contact AWS Support</p>",
-      "error":{"httpStatusCode":429},
-      "exception":true
-    },
-    "LimitExceededException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"Message returned by LimitExceededException."
-        }
-      },
-      "documentation":"Thrown when the limit on the number of objects or operations has been exceeded.",
-      "error":{"httpStatusCode":400},
-      "exception":true
-    },
-    "ListDatasetsRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityId",
         "IdentityPoolId"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+      "type": "structure"
+    },
+    "ListDatasetsResponse": {
+      "documentation": "Returned for a successful ListDatasets request.",
+      "members": {
+        "Count": {
+          "documentation": "Number of datasets returned.",
+          "shape": "Integer"
         },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityId"
+        "Datasets": {
+          "documentation": "A set of datasets.",
+          "shape": "DatasetList"
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"A pagination token for obtaining the next page of results.",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "MaxResults":{
-          "shape":"IntegerString",
-          "documentation":"The maximum number of results to be returned.",
-          "location":"querystring",
-          "locationName":"maxResults"
+        "NextToken": {
+          "documentation": "A pagination token for obtaining the next page of results.",
+          "shape": "String"
         }
       },
-      "documentation":"Request for a list of datasets for an identity."
+      "type": "structure"
     },
-    "ListDatasetsResponse":{
-      "type":"structure",
-      "members":{
-        "Datasets":{
-          "shape":"DatasetList",
-          "documentation":"A set of datasets."
+    "ListIdentityPoolUsageRequest": {
+      "documentation": "A request for usage information on an identity pool.",
+      "members": {
+        "MaxResults": {
+          "documentation": "The maximum number of results to be returned.",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "IntegerString"
         },
-        "Count":{
-          "shape":"Integer",
-          "documentation":"Number of datasets returned."
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"A pagination token for obtaining the next page of results."
+        "NextToken": {
+          "documentation": "A pagination token for obtaining the next page of results.",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "String"
         }
       },
-      "documentation":"Returned for a successful ListDatasets request."
+      "type": "structure"
     },
-    "ListIdentityPoolUsageRequest":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"String",
-          "documentation":"A pagination token for obtaining the next page of results.",
-          "location":"querystring",
-          "locationName":"nextToken"
+    "ListIdentityPoolUsageResponse": {
+      "documentation": "Returned for a successful ListIdentityPoolUsage request.",
+      "members": {
+        "Count": {
+          "documentation": "Total number of identities for the identity pool.",
+          "shape": "Integer"
         },
-        "MaxResults":{
-          "shape":"IntegerString",
-          "documentation":"The maximum number of results to be returned.",
-          "location":"querystring",
-          "locationName":"maxResults"
+        "IdentityPoolUsages": {
+          "documentation": "Usage information for the identity pools.",
+          "shape": "IdentityPoolUsageList"
+        },
+        "MaxResults": {
+          "documentation": "The maximum number of results to be returned.",
+          "shape": "Integer"
+        },
+        "NextToken": {
+          "documentation": "A pagination token for obtaining the next page of results.",
+          "shape": "String"
         }
       },
-      "documentation":"A request for usage information on an identity pool."
+      "type": "structure"
     },
-    "ListIdentityPoolUsageResponse":{
-      "type":"structure",
-      "members":{
-        "IdentityPoolUsages":{
-          "shape":"IdentityPoolUsageList",
-          "documentation":"Usage information for the identity pools."
+    "ListRecordsRequest": {
+      "documentation": "A request for a list of records.",
+      "members": {
+        "DatasetName": {
+          "documentation": "A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
+          "location": "uri",
+          "locationName": "DatasetName",
+          "shape": "DatasetName"
         },
-        "MaxResults":{
-          "shape":"Integer",
-          "documentation":"The maximum number of results to be returned."
+        "IdentityId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
         },
-        "Count":{
-          "shape":"Integer",
-          "documentation":"Total number of identities for the identity pool."
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"A pagination token for obtaining the next page of results."
+        "LastSyncCount": {
+          "documentation": "The last server sync count for this record.",
+          "location": "querystring",
+          "locationName": "lastSyncCount",
+          "shape": "Long"
+        },
+        "MaxResults": {
+          "documentation": "The maximum number of results to be returned.",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "IntegerString"
+        },
+        "NextToken": {
+          "documentation": "A pagination token for obtaining the next page of results.",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "String"
+        },
+        "SyncSessionToken": {
+          "documentation": "A token containing a session ID, identity ID, and expiration.",
+          "location": "querystring",
+          "locationName": "syncSessionToken",
+          "shape": "SyncSessionToken"
         }
       },
-      "documentation":"Returned for a successful ListIdentityPoolUsage request."
-    },
-    "ListRecordsRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityPoolId",
         "IdentityId",
         "DatasetName"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+      "type": "structure"
+    },
+    "ListRecordsResponse": {
+      "documentation": "Returned for a successful ListRecordsRequest.",
+      "members": {
+        "Count": {
+          "documentation": "Total number of records.",
+          "shape": "Integer"
         },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityId"
+        "DatasetDeletedAfterRequestedSyncCount": {
+          "documentation": "A boolean value specifying whether to delete the dataset locally.",
+          "shape": "Boolean"
         },
-        "DatasetName":{
-          "shape":"DatasetName",
-          "documentation":"A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
-          "location":"uri",
-          "locationName":"DatasetName"
+        "DatasetExists": {
+          "documentation": "Indicates whether the dataset exists.",
+          "shape": "Boolean"
         },
-        "LastSyncCount":{
-          "shape":"Long",
-          "documentation":"The last server sync count for this record.",
-          "location":"querystring",
-          "locationName":"lastSyncCount"
+        "DatasetSyncCount": {
+          "documentation": "Server sync count for this dataset.",
+          "shape": "Long"
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"A pagination token for obtaining the next page of results.",
-          "location":"querystring",
-          "locationName":"nextToken"
+        "LastModifiedBy": {
+          "documentation": "The user/device that made the last change to this record.",
+          "shape": "String"
         },
-        "MaxResults":{
-          "shape":"IntegerString",
-          "documentation":"The maximum number of results to be returned.",
-          "location":"querystring",
-          "locationName":"maxResults"
+        "MergedDatasetNames": {
+          "documentation": "Names of merged datasets.",
+          "shape": "MergedDatasetNameList"
         },
-        "SyncSessionToken":{
-          "shape":"SyncSessionToken",
-          "documentation":"A token containing a session ID, identity ID, and expiration.",
-          "location":"querystring",
-          "locationName":"syncSessionToken"
+        "NextToken": {
+          "documentation": "A pagination token for obtaining the next page of results.",
+          "shape": "String"
+        },
+        "Records": {
+          "documentation": "A list of all records.",
+          "shape": "RecordList"
+        },
+        "SyncSessionToken": {
+          "documentation": "A token containing a session ID, identity ID, and expiration.",
+          "shape": "String"
         }
       },
-      "documentation":"A request for a list of records."
+      "type": "structure"
     },
-    "ListRecordsResponse":{
-      "type":"structure",
-      "members":{
-        "Records":{
-          "shape":"RecordList",
-          "documentation":"A list of all records."
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"A pagination token for obtaining the next page of results."
-        },
-        "Count":{
-          "shape":"Integer",
-          "documentation":"Total number of records."
-        },
-        "DatasetSyncCount":{
-          "shape":"Long",
-          "documentation":"Server sync count for this dataset."
-        },
-        "LastModifiedBy":{
-          "shape":"String",
-          "documentation":"The user/device that made the last change to this record."
-        },
-        "MergedDatasetNames":{
-          "shape":"MergedDatasetNameList",
-          "documentation":"Names of merged datasets."
-        },
-        "DatasetExists":{
-          "shape":"Boolean",
-          "documentation":"Indicates whether the dataset exists."
-        },
-        "DatasetDeletedAfterRequestedSyncCount":{
-          "shape":"Boolean",
-          "documentation":"A boolean value specifying whether to delete the dataset locally."
-        },
-        "SyncSessionToken":{
-          "shape":"String",
-          "documentation":"A token containing a session ID, identity ID, and expiration."
+    "Long": {
+      "type": "long"
+    },
+    "MergedDatasetNameList": {
+      "member": {
+        "shape": "String"
+      },
+      "type": "list"
+    },
+    "NotAuthorizedException": {
+      "documentation": "Thrown when a user is not authorized to access the requested resource.",
+      "error": {
+        "httpStatusCode": 403
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "The message returned by a NotAuthorizedException.",
+          "shape": "ExceptionMessage"
         }
       },
-      "documentation":"Returned for a successful ListRecordsRequest."
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "Long":{"type":"long"},
-    "MergedDatasetNameList":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "NotAuthorizedException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"The message returned by a NotAuthorizedException."
-        }
-      },
-      "documentation":"Thrown when a user is not authorized to access the requested resource.",
-      "error":{"httpStatusCode":403},
-      "exception":true
-    },
-    "Operation":{
-      "type":"string",
-      "enum":[
+    "Operation": {
+      "enum": [
         "replace",
         "remove"
-      ]
+      ],
+      "type": "string"
     },
-    "Platform":{
-      "type":"string",
-      "enum":[
+    "Platform": {
+      "enum": [
         "APNS",
         "APNS_SANDBOX",
         "GCM",
         "ADM"
-      ]
+      ],
+      "type": "string"
     },
-    "PushSync":{
-      "type":"structure",
-      "members":{
-        "ApplicationArns":{
-          "shape":"ApplicationArnList",
-          "documentation":"<p>List of SNS platform application ARNs that could be used by clients.</p>"
+    "PushSync": {
+      "documentation": "<p>Configuration options to be applied to the identity pool.</p>",
+      "members": {
+        "ApplicationArns": {
+          "documentation": "<p>List of SNS platform application ARNs that could be used by clients.</p>",
+          "shape": "ApplicationArnList"
         },
-        "RoleArn":{
-          "shape":"AssumeRoleArn",
-          "documentation":"<p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>"
+        "RoleArn": {
+          "documentation": "<p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>",
+          "shape": "AssumeRoleArn"
         }
       },
-      "documentation":"<p>Configuration options to be applied to the identity pool.</p>"
+      "type": "structure"
     },
-    "PushToken":{"type":"string"},
-    "Record":{
-      "type":"structure",
-      "members":{
-        "Key":{
-          "shape":"RecordKey",
-          "documentation":"The key for the record."
+    "PushToken": {
+      "type": "string"
+    },
+    "Record": {
+      "documentation": "The basic data structure of a dataset.",
+      "members": {
+        "DeviceLastModifiedDate": {
+          "documentation": "The last modified date of the client device.",
+          "shape": "Date"
         },
-        "Value":{
-          "shape":"RecordValue",
-          "documentation":"The value for the record."
+        "Key": {
+          "documentation": "The key for the record.",
+          "shape": "RecordKey"
         },
-        "SyncCount":{
-          "shape":"Long",
-          "documentation":"The server sync count for this record."
+        "LastModifiedBy": {
+          "documentation": "The user/device that made the last change to this record.",
+          "shape": "String"
         },
-        "LastModifiedDate":{
-          "shape":"Date",
-          "documentation":"The date on which the record was last modified."
+        "LastModifiedDate": {
+          "documentation": "The date on which the record was last modified.",
+          "shape": "Date"
         },
-        "LastModifiedBy":{
-          "shape":"String",
-          "documentation":"The user/device that made the last change to this record."
+        "SyncCount": {
+          "documentation": "The server sync count for this record.",
+          "shape": "Long"
         },
-        "DeviceLastModifiedDate":{
-          "shape":"Date",
-          "documentation":"The last modified date of the client device."
+        "Value": {
+          "documentation": "The value for the record.",
+          "shape": "RecordValue"
         }
       },
-      "documentation":"The basic data structure of a dataset."
+      "type": "structure"
     },
-    "RecordKey":{
-      "type":"string",
-      "max":1024,
-      "min":1
+    "RecordKey": {
+      "max": 1024,
+      "min": 1,
+      "type": "string"
     },
-    "RecordList":{
-      "type":"list",
-      "member":{"shape":"Record"}
+    "RecordList": {
+      "member": {
+        "shape": "Record"
+      },
+      "type": "list"
     },
-    "RecordPatch":{
-      "type":"structure",
-      "required":[
+    "RecordPatch": {
+      "documentation": "An update operation for a record.",
+      "members": {
+        "DeviceLastModifiedDate": {
+          "documentation": "The last modified date of the client device.",
+          "shape": "Date"
+        },
+        "Key": {
+          "documentation": "The key associated with the record patch.",
+          "shape": "RecordKey"
+        },
+        "Op": {
+          "documentation": "An operation, either replace or remove.",
+          "shape": "Operation"
+        },
+        "SyncCount": {
+          "documentation": "Last known server sync count for this record. Set to 0 if unknown.",
+          "shape": "Long"
+        },
+        "Value": {
+          "documentation": "The value associated with the record patch.",
+          "shape": "RecordValue"
+        }
+      },
+      "required": [
         "Op",
         "Key",
         "SyncCount"
       ],
-      "members":{
-        "Op":{
-          "shape":"Operation",
-          "documentation":"An operation, either replace or remove."
+      "type": "structure"
+    },
+    "RecordPatchList": {
+      "member": {
+        "shape": "RecordPatch"
+      },
+      "type": "list"
+    },
+    "RecordValue": {
+      "max": 1048575,
+      "type": "string"
+    },
+    "RegisterDeviceRequest": {
+      "documentation": "<p>A request to RegisterDevice.</p>",
+      "members": {
+        "IdentityId": {
+          "documentation": "<p>The unique ID for this identity.</p>",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
         },
-        "Key":{
-          "shape":"RecordKey",
-          "documentation":"The key associated with the record patch."
+        "IdentityPoolId": {
+          "documentation": "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
         },
-        "Value":{
-          "shape":"RecordValue",
-          "documentation":"The value associated with the record patch."
+        "Platform": {
+          "documentation": "<p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>",
+          "shape": "Platform"
         },
-        "SyncCount":{
-          "shape":"Long",
-          "documentation":"Last known server sync count for this record. Set to 0 if unknown."
-        },
-        "DeviceLastModifiedDate":{
-          "shape":"Date",
-          "documentation":"The last modified date of the client device."
+        "Token": {
+          "documentation": "<p>The push token.</p>",
+          "shape": "PushToken"
         }
       },
-      "documentation":"An update operation for a record."
-    },
-    "RecordPatchList":{
-      "type":"list",
-      "member":{"shape":"RecordPatch"}
-    },
-    "RecordValue":{
-      "type":"string",
-      "max":1048575
-    },
-    "RegisterDeviceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityPoolId",
         "IdentityId",
         "Platform",
         "Token"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+      "type": "structure"
+    },
+    "RegisterDeviceResponse": {
+      "documentation": "<p>Response to a RegisterDevice request.</p>",
+      "members": {
+        "DeviceId": {
+          "documentation": "<p>The unique ID generated for this device by Cognito.</p>",
+          "shape": "DeviceId"
+        }
+      },
+      "type": "structure"
+    },
+    "ResourceConflictException": {
+      "documentation": "Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.",
+      "error": {
+        "httpStatusCode": 409
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "The message returned by a ResourceConflictException.",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "ResourceNotFoundException": {
+      "documentation": "Thrown if the resource doesn't exist.",
+      "error": {
+        "httpStatusCode": 404
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "Message returned by a ResourceNotFoundException.",
+          "shape": "ExceptionMessage"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "SetCognitoEventsRequest": {
+      "documentation": "<p>A request to configure Cognito Events\"</p>\"",
+      "members": {
+        "Events": {
+          "documentation": "<p>The events to configure</p>",
+          "shape": "Events"
         },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"<p>The unique ID for this identity.</p>",
-          "location":"uri",
-          "locationName":"IdentityId"
-        },
-        "Platform":{
-          "shape":"Platform",
-          "documentation":"<p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>"
-        },
-        "Token":{
-          "shape":"PushToken",
-          "documentation":"<p>The push token.</p>"
+        "IdentityPoolId": {
+          "documentation": "<p>The Cognito Identity Pool to use when configuring Cognito Events</p>",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
         }
       },
-      "documentation":"<p>A request to RegisterDevice.</p>"
-    },
-    "RegisterDeviceResponse":{
-      "type":"structure",
-      "members":{
-        "DeviceId":{
-          "shape":"DeviceId",
-          "documentation":"<p>The unique ID generated for this device by Cognito.</p>"
-        }
-      },
-      "documentation":"<p>Response to a RegisterDevice request.</p>"
-    },
-    "ResourceConflictException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"The message returned by a ResourceConflictException."
-        }
-      },
-      "documentation":"Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.",
-      "error":{"httpStatusCode":409},
-      "exception":true
-    },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"Message returned by a ResourceNotFoundException."
-        }
-      },
-      "documentation":"Thrown if the resource doesn't exist.",
-      "error":{"httpStatusCode":404},
-      "exception":true
-    },
-    "SetCognitoEventsRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityPoolId",
         "Events"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>The Cognito Identity Pool to use when configuring Cognito Events</p>",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+      "type": "structure"
+    },
+    "SetIdentityPoolConfigurationRequest": {
+      "documentation": "<p>The input for the SetIdentityPoolConfiguration operation.</p>",
+      "members": {
+        "CognitoStreams": {
+          "documentation": "Options to apply to this identity pool for Amazon Cognito streams.",
+          "shape": "CognitoStreams"
         },
-        "Events":{
-          "shape":"Events",
-          "documentation":"<p>The events to configure</p>"
+        "IdentityPoolId": {
+          "documentation": "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        },
+        "PushSync": {
+          "documentation": "<p>Options to apply to this identity pool for push synchronization.</p>",
+          "shape": "PushSync"
         }
       },
-      "documentation":"<p>A request to configure Cognito Events\"</p>\""
+      "required": [
+        "IdentityPoolId"
+      ],
+      "type": "structure"
     },
-    "SetIdentityPoolConfigurationRequest":{
-      "type":"structure",
-      "required":["IdentityPoolId"],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+    "SetIdentityPoolConfigurationResponse": {
+      "documentation": "<p>The output for the SetIdentityPoolConfiguration operation</p>",
+      "members": {
+        "CognitoStreams": {
+          "documentation": "Options to apply to this identity pool for Amazon Cognito streams.",
+          "shape": "CognitoStreams"
         },
-        "PushSync":{
-          "shape":"PushSync",
-          "documentation":"<p>Options to apply to this identity pool for push synchronization.</p>"
+        "IdentityPoolId": {
+          "documentation": "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>",
+          "shape": "IdentityPoolId"
         },
-        "CognitoStreams":{
-          "shape":"CognitoStreams",
-          "documentation":"Options to apply to this identity pool for Amazon Cognito streams."
+        "PushSync": {
+          "documentation": "<p>Options to apply to this identity pool for push synchronization.</p>",
+          "shape": "PushSync"
         }
       },
-      "documentation":"<p>The input for the SetIdentityPoolConfiguration operation.</p>"
+      "type": "structure"
     },
-    "SetIdentityPoolConfigurationResponse":{
-      "type":"structure",
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>"
-        },
-        "PushSync":{
-          "shape":"PushSync",
-          "documentation":"<p>Options to apply to this identity pool for push synchronization.</p>"
-        },
-        "CognitoStreams":{
-          "shape":"CognitoStreams",
-          "documentation":"Options to apply to this identity pool for Amazon Cognito streams."
-        }
-      },
-      "documentation":"<p>The output for the SetIdentityPoolConfiguration operation</p>"
+    "StreamName": {
+      "max": 128,
+      "min": 1,
+      "type": "string"
     },
-    "StreamName":{
-      "type":"string",
-      "max":128,
-      "min":1
-    },
-    "StreamingStatus":{
-      "type":"string",
-      "enum":[
+    "StreamingStatus": {
+      "enum": [
         "ENABLED",
         "DISABLED"
-      ]
+      ],
+      "type": "string"
     },
-    "String":{"type":"string"},
-    "SubscribeToDatasetRequest":{
-      "type":"structure",
-      "required":[
+    "String": {
+      "type": "string"
+    },
+    "SubscribeToDatasetRequest": {
+      "documentation": "<p>A request to SubscribeToDatasetRequest.</p>",
+      "members": {
+        "DatasetName": {
+          "documentation": "<p>The name of the dataset to subcribe to.</p>",
+          "location": "uri",
+          "locationName": "DatasetName",
+          "shape": "DatasetName"
+        },
+        "DeviceId": {
+          "documentation": "<p>The unique ID generated for this device by Cognito.</p>",
+          "location": "uri",
+          "locationName": "DeviceId",
+          "shape": "DeviceId"
+        },
+        "IdentityId": {
+          "documentation": "<p>Unique ID for this identity.</p>",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
+        },
+        "IdentityPoolId": {
+          "documentation": "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        }
+      },
+      "required": [
         "IdentityPoolId",
         "IdentityId",
         "DatasetName",
         "DeviceId"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
-        },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"<p>Unique ID for this identity.</p>",
-          "location":"uri",
-          "locationName":"IdentityId"
-        },
-        "DatasetName":{
-          "shape":"DatasetName",
-          "documentation":"<p>The name of the dataset to subcribe to.</p>",
-          "location":"uri",
-          "locationName":"DatasetName"
-        },
-        "DeviceId":{
-          "shape":"DeviceId",
-          "documentation":"<p>The unique ID generated for this device by Cognito.</p>",
-          "location":"uri",
-          "locationName":"DeviceId"
+      "type": "structure"
+    },
+    "SubscribeToDatasetResponse": {
+      "documentation": "<p>Response to a SubscribeToDataset request.</p>",
+      "members": {},
+      "type": "structure"
+    },
+    "SyncSessionToken": {
+      "type": "string"
+    },
+    "TooManyRequestsException": {
+      "documentation": "Thrown if the request is throttled.",
+      "error": {
+        "httpStatusCode": 429
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "Message returned by a TooManyRequestsException.",
+          "shape": "ExceptionMessage"
         }
       },
-      "documentation":"<p>A request to SubscribeToDatasetRequest.</p>"
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "SubscribeToDatasetResponse":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>Response to a SubscribeToDataset request.</p>"
-    },
-    "SyncSessionToken":{"type":"string"},
-    "TooManyRequestsException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"ExceptionMessage",
-          "documentation":"Message returned by a TooManyRequestsException."
+    "UnsubscribeFromDatasetRequest": {
+      "documentation": "<p>A request to UnsubscribeFromDataset.</p>",
+      "members": {
+        "DatasetName": {
+          "documentation": "<p>The name of the dataset from which to unsubcribe.</p>",
+          "location": "uri",
+          "locationName": "DatasetName",
+          "shape": "DatasetName"
+        },
+        "DeviceId": {
+          "documentation": "<p>The unique ID generated for this device by Cognito.</p>",
+          "location": "uri",
+          "locationName": "DeviceId",
+          "shape": "DeviceId"
+        },
+        "IdentityId": {
+          "documentation": "<p>Unique ID for this identity.</p>",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
+        },
+        "IdentityPoolId": {
+          "documentation": "<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
         }
       },
-      "documentation":"Thrown if the request is throttled.",
-      "error":{"httpStatusCode":429},
-      "exception":true
-    },
-    "UnsubscribeFromDatasetRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityPoolId",
         "IdentityId",
         "DatasetName",
         "DeviceId"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
+      "type": "structure"
+    },
+    "UnsubscribeFromDatasetResponse": {
+      "documentation": "<p>Response to an UnsubscribeFromDataset request.</p>",
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateRecordsRequest": {
+      "documentation": "A request to post updates to records or add and delete records for a dataset and user.",
+      "members": {
+        "ClientContext": {
+          "documentation": "Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.",
+          "location": "header",
+          "locationName": "x-amz-Client-Context",
+          "shape": "ClientContext"
         },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"<p>Unique ID for this identity.</p>",
-          "location":"uri",
-          "locationName":"IdentityId"
+        "DatasetName": {
+          "documentation": "A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
+          "location": "uri",
+          "locationName": "DatasetName",
+          "shape": "DatasetName"
         },
-        "DatasetName":{
-          "shape":"DatasetName",
-          "documentation":"<p>The name of the dataset from which to unsubcribe.</p>",
-          "location":"uri",
-          "locationName":"DatasetName"
+        "DeviceId": {
+          "documentation": "<p>The unique ID generated for this device by Cognito.</p>",
+          "shape": "DeviceId"
         },
-        "DeviceId":{
-          "shape":"DeviceId",
-          "documentation":"<p>The unique ID generated for this device by Cognito.</p>",
-          "location":"uri",
-          "locationName":"DeviceId"
+        "IdentityId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityId",
+          "shape": "IdentityId"
+        },
+        "IdentityPoolId": {
+          "documentation": "A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
+          "location": "uri",
+          "locationName": "IdentityPoolId",
+          "shape": "IdentityPoolId"
+        },
+        "RecordPatches": {
+          "documentation": "A list of patch operations.",
+          "shape": "RecordPatchList"
+        },
+        "SyncSessionToken": {
+          "documentation": "The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.",
+          "shape": "SyncSessionToken"
         }
       },
-      "documentation":"<p>A request to UnsubscribeFromDataset.</p>"
-    },
-    "UnsubscribeFromDatasetResponse":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>Response to an UnsubscribeFromDataset request.</p>"
-    },
-    "UpdateRecordsRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityPoolId",
         "IdentityId",
         "DatasetName",
         "SyncSessionToken"
       ],
-      "members":{
-        "IdentityPoolId":{
-          "shape":"IdentityPoolId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityPoolId"
-        },
-        "IdentityId":{
-          "shape":"IdentityId",
-          "documentation":"A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.",
-          "location":"uri",
-          "locationName":"IdentityId"
-        },
-        "DatasetName":{
-          "shape":"DatasetName",
-          "documentation":"A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).",
-          "location":"uri",
-          "locationName":"DatasetName"
-        },
-        "DeviceId":{
-          "shape":"DeviceId",
-          "documentation":"<p>The unique ID generated for this device by Cognito.</p>"
-        },
-        "RecordPatches":{
-          "shape":"RecordPatchList",
-          "documentation":"A list of patch operations."
-        },
-        "SyncSessionToken":{
-          "shape":"SyncSessionToken",
-          "documentation":"The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity."
-        },
-        "ClientContext":{
-          "shape":"ClientContext",
-          "documentation":"Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.",
-          "location":"header",
-          "locationName":"x-amz-Client-Context"
-        }
-      },
-      "documentation":"A request to post updates to records or add and delete records for a dataset and user."
+      "type": "structure"
     },
-    "UpdateRecordsResponse":{
-      "type":"structure",
-      "members":{
-        "Records":{
-          "shape":"RecordList",
-          "documentation":"A list of records that have been updated."
+    "UpdateRecordsResponse": {
+      "documentation": "Returned for a successful UpdateRecordsRequest.",
+      "members": {
+        "Records": {
+          "documentation": "A list of records that have been updated.",
+          "shape": "RecordList"
         }
       },
-      "documentation":"Returned for a successful UpdateRecordsRequest."
+      "type": "structure"
     }
   },
-  "documentation":"<fullname>Amazon Cognito Sync</fullname> <p>Amazon Cognito Sync provides an AWS service and client library that enable cross-device syncing of application-related user data. High-level client libraries are available for both iOS and Android. You can use these libraries to persist data locally so that it's available even if the device is offline. Developer credentials don't need to be stored on the mobile device to access the service. You can use Amazon Cognito to obtain a normalized user ID and credentials. User data is persisted in a dataset that can store up to 1 MB of key-value pairs, and you can have up to 20 datasets per user identity.</p> <p>With Amazon Cognito Sync, the data stored for each identity is accessible only to credentials assigned to that identity. In order to use the Cognito Sync service, you need to make API calls using credentials retrieved with <a href=\"http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html\">Amazon Cognito Identity service</a>.</p> <p>If you want to use Cognito Sync in an Android or iOS application, you will probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a href=\"http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html\">Developer Guide for Android</a> and the <a href=\"http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html\">Developer Guide for iOS</a>.</p>"
+  "version": "2.0"
 }

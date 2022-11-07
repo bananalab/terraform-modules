@@ -9,5 +9,3 @@ To list the access keys defined for an IAM user, use the ``list-access-keys`` co
 For more information, see `Creating, Modifying, and Viewing User Security Credentials`_ in the *Using IAM* guide.
 
 .. _`Creating, Modifying, and Viewing User Security Credentials`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_CreateAccessKey.html
-
-

@@ -1,1719 +1,2100 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2021-08-28",
-    "endpointPrefix":"migrationhub-orchestrator",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"AWS Migration Hub Orchestrator",
-    "serviceId":"MigrationHubOrchestrator",
-    "signatureVersion":"v4",
-    "signingName":"migrationhub-orchestrator",
-    "uid":"migrationhuborchestrator-2021-08-28"
+  "documentation": "<p>This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS Migration Hub Orchestrator. he topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're using.</p>",
+  "metadata": {
+    "apiVersion": "2021-08-28",
+    "endpointPrefix": "migrationhub-orchestrator",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "AWS Migration Hub Orchestrator",
+    "serviceId": "MigrationHubOrchestrator",
+    "signatureVersion": "v4",
+    "signingName": "migrationhub-orchestrator",
+    "uid": "migrationhuborchestrator-2021-08-28"
   },
-  "operations":{
-    "CreateWorkflow":{
-      "name":"CreateWorkflow",
-      "http":{
-        "method":"POST",
-        "requestUri":"/migrationworkflow/",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateMigrationWorkflowRequest"},
-      "output":{"shape":"CreateMigrationWorkflowResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+  "operations": {
+    "CreateWorkflow": {
+      "documentation": "<p>Create a workflow to orchestrate your migrations.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Create a workflow to orchestrate your migrations.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/migrationworkflow/",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateMigrationWorkflowRequest"
+      },
+      "name": "CreateWorkflow",
+      "output": {
+        "shape": "CreateMigrationWorkflowResponse"
+      }
     },
-    "CreateWorkflowStep":{
-      "name":"CreateWorkflowStep",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workflowstep",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateWorkflowStepRequest"},
-      "output":{"shape":"CreateWorkflowStepResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+    "CreateWorkflowStep": {
+      "documentation": "<p>Create a step in the migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Create a step in the migration workflow.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/workflowstep",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateWorkflowStepRequest"
+      },
+      "name": "CreateWorkflowStep",
+      "output": {
+        "shape": "CreateWorkflowStepResponse"
+      }
     },
-    "CreateWorkflowStepGroup":{
-      "name":"CreateWorkflowStepGroup",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workflowstepgroups",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateWorkflowStepGroupRequest"},
-      "output":{"shape":"CreateWorkflowStepGroupResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+    "CreateWorkflowStepGroup": {
+      "documentation": "<p>Create a step group in a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Create a step group in a migration workflow.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/workflowstepgroups",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateWorkflowStepGroupRequest"
+      },
+      "name": "CreateWorkflowStepGroup",
+      "output": {
+        "shape": "CreateWorkflowStepGroupResponse"
+      }
     },
-    "DeleteWorkflow":{
-      "name":"DeleteWorkflow",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/migrationworkflow/{id}",
-        "responseCode":202
-      },
-      "input":{"shape":"DeleteMigrationWorkflowRequest"},
-      "output":{"shape":"DeleteMigrationWorkflowResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "DeleteWorkflow": {
+      "documentation": "<p>Delete a migration workflow. You must pause a running workflow in Migration Hub Orchestrator console to delete it.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Delete a migration workflow. You must pause a running workflow in Migration Hub Orchestrator console to delete it.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/migrationworkflow/{id}",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteMigrationWorkflowRequest"
+      },
+      "name": "DeleteWorkflow",
+      "output": {
+        "shape": "DeleteMigrationWorkflowResponse"
+      }
     },
-    "DeleteWorkflowStep":{
-      "name":"DeleteWorkflowStep",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/workflowstep/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteWorkflowStepRequest"},
-      "output":{"shape":"DeleteWorkflowStepResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "DeleteWorkflowStep": {
+      "documentation": "<p>Delete a step in a migration workflow. Pause the workflow to delete a running step.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Delete a step in a migration workflow. Pause the workflow to delete a running step.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/workflowstep/{id}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteWorkflowStepRequest"
+      },
+      "name": "DeleteWorkflowStep",
+      "output": {
+        "shape": "DeleteWorkflowStepResponse"
+      }
     },
-    "DeleteWorkflowStepGroup":{
-      "name":"DeleteWorkflowStepGroup",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/workflowstepgroup/{id}",
-        "responseCode":202
-      },
-      "input":{"shape":"DeleteWorkflowStepGroupRequest"},
-      "output":{"shape":"DeleteWorkflowStepGroupResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "DeleteWorkflowStepGroup": {
+      "documentation": "<p>Delete a step group in a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Delete a step group in a migration workflow.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/workflowstepgroup/{id}",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteWorkflowStepGroupRequest"
+      },
+      "name": "DeleteWorkflowStepGroup",
+      "output": {
+        "shape": "DeleteWorkflowStepGroupResponse"
+      }
     },
-    "GetTemplate":{
-      "name":"GetTemplate",
-      "http":{
-        "method":"GET",
-        "requestUri":"/migrationworkflowtemplate/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetMigrationWorkflowTemplateRequest"},
-      "output":{"shape":"GetMigrationWorkflowTemplateResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetTemplate": {
+      "documentation": "<p>Get the template you want to use for creating a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Get the template you want to use for creating a migration workflow.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/migrationworkflowtemplate/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetMigrationWorkflowTemplateRequest"
+      },
+      "name": "GetTemplate",
+      "output": {
+        "shape": "GetMigrationWorkflowTemplateResponse"
+      }
     },
-    "GetTemplateStep":{
-      "name":"GetTemplateStep",
-      "http":{
-        "method":"GET",
-        "requestUri":"/templatestep/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetTemplateStepRequest"},
-      "output":{"shape":"GetTemplateStepResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetTemplateStep": {
+      "documentation": "<p>Get a specific step in a template.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Get a specific step in a template.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/templatestep/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetTemplateStepRequest"
+      },
+      "name": "GetTemplateStep",
+      "output": {
+        "shape": "GetTemplateStepResponse"
+      }
     },
-    "GetTemplateStepGroup":{
-      "name":"GetTemplateStepGroup",
-      "http":{
-        "method":"GET",
-        "requestUri":"/templates/{templateId}/stepgroups/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetTemplateStepGroupRequest"},
-      "output":{"shape":"GetTemplateStepGroupResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetTemplateStepGroup": {
+      "documentation": "<p>Get a step group in a template.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Get a step group in a template.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/templates/{templateId}/stepgroups/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetTemplateStepGroupRequest"
+      },
+      "name": "GetTemplateStepGroup",
+      "output": {
+        "shape": "GetTemplateStepGroupResponse"
+      }
     },
-    "GetWorkflow":{
-      "name":"GetWorkflow",
-      "http":{
-        "method":"GET",
-        "requestUri":"/migrationworkflow/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetMigrationWorkflowRequest"},
-      "output":{"shape":"GetMigrationWorkflowResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetWorkflow": {
+      "documentation": "<p>Get migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Get migration workflow.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/migrationworkflow/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetMigrationWorkflowRequest"
+      },
+      "name": "GetWorkflow",
+      "output": {
+        "shape": "GetMigrationWorkflowResponse"
+      }
     },
-    "GetWorkflowStep":{
-      "name":"GetWorkflowStep",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workflowstep/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetWorkflowStepRequest"},
-      "output":{"shape":"GetWorkflowStepResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetWorkflowStep": {
+      "documentation": "<p>Get a step in the migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Get a step in the migration workflow.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workflowstep/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetWorkflowStepRequest"
+      },
+      "name": "GetWorkflowStep",
+      "output": {
+        "shape": "GetWorkflowStepResponse"
+      }
     },
-    "GetWorkflowStepGroup":{
-      "name":"GetWorkflowStepGroup",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workflowstepgroup/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetWorkflowStepGroupRequest"},
-      "output":{"shape":"GetWorkflowStepGroupResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetWorkflowStepGroup": {
+      "documentation": "<p>Get the step group of a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Get the step group of a migration workflow.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workflowstepgroup/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetWorkflowStepGroupRequest"
+      },
+      "name": "GetWorkflowStepGroup",
+      "output": {
+        "shape": "GetWorkflowStepGroupResponse"
+      }
     },
-    "ListPlugins":{
-      "name":"ListPlugins",
-      "http":{
-        "method":"GET",
-        "requestUri":"/plugins",
-        "responseCode":200
-      },
-      "input":{"shape":"ListPluginsRequest"},
-      "output":{"shape":"ListPluginsResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+    "ListPlugins": {
+      "documentation": "<p>List AWS Migration Hub Orchestrator plugins.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>List AWS Migration Hub Orchestrator plugins.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/plugins",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListPluginsRequest"
+      },
+      "name": "ListPlugins",
+      "output": {
+        "shape": "ListPluginsResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "ListTagsForResource": {
+      "documentation": "<p>List the tags added to a resource.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>List the tags added to a resource.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "ListTemplateStepGroups":{
-      "name":"ListTemplateStepGroups",
-      "http":{
-        "method":"GET",
-        "requestUri":"/templatestepgroups/{templateId}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTemplateStepGroupsRequest"},
-      "output":{"shape":"ListTemplateStepGroupsResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"}
+    "ListTemplateStepGroups": {
+      "documentation": "<p>List the step groups in a template.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>List the step groups in a template.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/templatestepgroups/{templateId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTemplateStepGroupsRequest"
+      },
+      "name": "ListTemplateStepGroups",
+      "output": {
+        "shape": "ListTemplateStepGroupsResponse"
+      }
     },
-    "ListTemplateSteps":{
-      "name":"ListTemplateSteps",
-      "http":{
-        "method":"GET",
-        "requestUri":"/templatesteps",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTemplateStepsRequest"},
-      "output":{"shape":"ListTemplateStepsResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "ListTemplateSteps": {
+      "documentation": "<p>List the steps in a template.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>List the steps in a template.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/templatesteps",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTemplateStepsRequest"
+      },
+      "name": "ListTemplateSteps",
+      "output": {
+        "shape": "ListTemplateStepsResponse"
+      }
     },
-    "ListTemplates":{
-      "name":"ListTemplates",
-      "http":{
-        "method":"GET",
-        "requestUri":"/migrationworkflowtemplates",
-        "responseCode":200
-      },
-      "input":{"shape":"ListMigrationWorkflowTemplatesRequest"},
-      "output":{"shape":"ListMigrationWorkflowTemplatesResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "ListTemplates": {
+      "documentation": "<p>List the templates available in Migration Hub Orchestrator to create a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>List the templates available in Migration Hub Orchestrator to create a migration workflow.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/migrationworkflowtemplates",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListMigrationWorkflowTemplatesRequest"
+      },
+      "name": "ListTemplates",
+      "output": {
+        "shape": "ListMigrationWorkflowTemplatesResponse"
+      }
     },
-    "ListWorkflowStepGroups":{
-      "name":"ListWorkflowStepGroups",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workflowstepgroups",
-        "responseCode":200
-      },
-      "input":{"shape":"ListWorkflowStepGroupsRequest"},
-      "output":{"shape":"ListWorkflowStepGroupsResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "ListWorkflowStepGroups": {
+      "documentation": "<p>List the step groups in a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>List the step groups in a migration workflow.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workflowstepgroups",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListWorkflowStepGroupsRequest"
+      },
+      "name": "ListWorkflowStepGroups",
+      "output": {
+        "shape": "ListWorkflowStepGroupsResponse"
+      }
     },
-    "ListWorkflowSteps":{
-      "name":"ListWorkflowSteps",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workflow/{workflowId}/workflowstepgroups/{stepGroupId}/workflowsteps",
-        "responseCode":200
-      },
-      "input":{"shape":"ListWorkflowStepsRequest"},
-      "output":{"shape":"ListWorkflowStepsResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+    "ListWorkflowSteps": {
+      "documentation": "<p>List the steps in a workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>List the steps in a workflow.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workflow/{workflowId}/workflowstepgroups/{stepGroupId}/workflowsteps",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListWorkflowStepsRequest"
+      },
+      "name": "ListWorkflowSteps",
+      "output": {
+        "shape": "ListWorkflowStepsResponse"
+      }
     },
-    "ListWorkflows":{
-      "name":"ListWorkflows",
-      "http":{
-        "method":"GET",
-        "requestUri":"/migrationworkflows",
-        "responseCode":200
-      },
-      "input":{"shape":"ListMigrationWorkflowsRequest"},
-      "output":{"shape":"ListMigrationWorkflowsResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "ListWorkflows": {
+      "documentation": "<p>List the migration workflows.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>List the migration workflows.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/migrationworkflows",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListMigrationWorkflowsRequest"
+      },
+      "name": "ListWorkflows",
+      "output": {
+        "shape": "ListMigrationWorkflowsResponse"
+      }
     },
-    "RetryWorkflowStep":{
-      "name":"RetryWorkflowStep",
-      "http":{
-        "method":"POST",
-        "requestUri":"/retryworkflowstep/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"RetryWorkflowStepRequest"},
-      "output":{"shape":"RetryWorkflowStepResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"}
+    "RetryWorkflowStep": {
+      "documentation": "<p>Retry a failed step in a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Retry a failed step in a migration workflow.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/retryworkflowstep/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "RetryWorkflowStepRequest"
+      },
+      "name": "RetryWorkflowStep",
+      "output": {
+        "shape": "RetryWorkflowStepResponse"
+      }
     },
-    "StartWorkflow":{
-      "name":"StartWorkflow",
-      "http":{
-        "method":"POST",
-        "requestUri":"/migrationworkflow/{id}/start",
-        "responseCode":200
-      },
-      "input":{"shape":"StartMigrationWorkflowRequest"},
-      "output":{"shape":"StartMigrationWorkflowResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "StartWorkflow": {
+      "documentation": "<p>Start a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Start a migration workflow.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/migrationworkflow/{id}/start",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StartMigrationWorkflowRequest"
+      },
+      "name": "StartWorkflow",
+      "output": {
+        "shape": "StartMigrationWorkflowResponse"
+      }
     },
-    "StopWorkflow":{
-      "name":"StopWorkflow",
-      "http":{
-        "method":"POST",
-        "requestUri":"/migrationworkflow/{id}/stop",
-        "responseCode":200
-      },
-      "input":{"shape":"StopMigrationWorkflowRequest"},
-      "output":{"shape":"StopMigrationWorkflowResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "StopWorkflow": {
+      "documentation": "<p>Stop an ongoing migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Stop an ongoing migration workflow.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/migrationworkflow/{id}/stop",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StopMigrationWorkflowRequest"
+      },
+      "name": "StopWorkflow",
+      "output": {
+        "shape": "StopMigrationWorkflowResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "TagResource": {
+      "documentation": "<p>Tag a resource by specifying its Amazon Resource Name (ARN).</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Tag a resource by specifying its Amazon Resource Name (ARN).</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "UntagResource": {
+      "documentation": "<p>Deletes the tags for a resource.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Deletes the tags for a resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
     },
-    "UpdateWorkflow":{
-      "name":"UpdateWorkflow",
-      "http":{
-        "method":"POST",
-        "requestUri":"/migrationworkflow/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateMigrationWorkflowRequest"},
-      "output":{"shape":"UpdateMigrationWorkflowResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "UpdateWorkflow": {
+      "documentation": "<p>Update a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Update a migration workflow.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/migrationworkflow/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateMigrationWorkflowRequest"
+      },
+      "name": "UpdateWorkflow",
+      "output": {
+        "shape": "UpdateMigrationWorkflowResponse"
+      }
     },
-    "UpdateWorkflowStep":{
-      "name":"UpdateWorkflowStep",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workflowstep/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateWorkflowStepRequest"},
-      "output":{"shape":"UpdateWorkflowStepResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+    "UpdateWorkflowStep": {
+      "documentation": "<p>Update a step in a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Update a step in a migration workflow.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/workflowstep/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateWorkflowStepRequest"
+      },
+      "name": "UpdateWorkflowStep",
+      "output": {
+        "shape": "UpdateWorkflowStepResponse"
+      }
     },
-    "UpdateWorkflowStepGroup":{
-      "name":"UpdateWorkflowStepGroup",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workflowstepgroup/{id}",
-        "responseCode":202
-      },
-      "input":{"shape":"UpdateWorkflowStepGroupRequest"},
-      "output":{"shape":"UpdateWorkflowStepGroupResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "UpdateWorkflowStepGroup": {
+      "documentation": "<p>Update the step group in a migration workflow.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Update the step group in a migration workflow.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/workflowstepgroup/{id}",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateWorkflowStepGroupRequest"
+      },
+      "name": "UpdateWorkflowStepGroup",
+      "output": {
+        "shape": "UpdateWorkflowStepGroupResponse"
+      }
     }
   },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>You do not have sufficient access to perform this action.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
       },
-      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
       },
-      "exception":true,
-      "retryable":{"throttling":false}
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
+      },
+      "type": "structure"
     },
-    "ApplicationConfigurationName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
+    "ApplicationConfigurationName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
     },
-    "Boolean":{
-      "type":"boolean",
-      "box":true
+    "Boolean": {
+      "box": true,
+      "type": "boolean"
     },
-    "CreateMigrationWorkflowRequest":{
-      "type":"structure",
-      "required":[
+    "CreateMigrationWorkflowRequest": {
+      "members": {
+        "applicationConfigurationId": {
+          "documentation": "<p>The configuration ID of the application configured in Application Discovery Service.</p>",
+          "shape": "CreateMigrationWorkflowRequestApplicationConfigurationIdString"
+        },
+        "description": {
+          "documentation": "<p>The description of the migration workflow.</p>",
+          "shape": "CreateMigrationWorkflowRequestDescriptionString"
+        },
+        "inputParameters": {
+          "documentation": "<p>The input parameters required to create a migration workflow.</p>",
+          "shape": "StepInputParameters"
+        },
+        "name": {
+          "documentation": "<p>The name of the migration workflow.</p>",
+          "shape": "CreateMigrationWorkflowRequestNameString"
+        },
+        "stepTargets": {
+          "documentation": "<p>The servers on which a step will be run.</p>",
+          "shape": "StringList"
+        },
+        "tags": {
+          "documentation": "<p>The tags to add on a migration workflow.</p>",
+          "shape": "StringMap"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "CreateMigrationWorkflowRequestTemplateIdString"
+        }
+      },
+      "required": [
         "name",
         "templateId",
         "applicationConfigurationId",
         "inputParameters"
       ],
-      "members":{
-        "name":{
-          "shape":"CreateMigrationWorkflowRequestNameString",
-          "documentation":"<p>The name of the migration workflow.</p>"
+      "type": "structure"
+    },
+    "CreateMigrationWorkflowRequestApplicationConfigurationIdString": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
+    },
+    "CreateMigrationWorkflowRequestDescriptionString": {
+      "max": 500,
+      "min": 0,
+      "pattern": "[-a-zA-Z0-9_.+, ]*",
+      "type": "string"
+    },
+    "CreateMigrationWorkflowRequestNameString": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
+    },
+    "CreateMigrationWorkflowRequestTemplateIdString": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
+    },
+    "CreateMigrationWorkflowResponse": {
+      "members": {
+        "adsApplicationConfigurationId": {
+          "documentation": "<p>The configuration ID of the application configured in Application Discovery Service.</p>",
+          "shape": "String"
         },
-        "description":{
-          "shape":"CreateMigrationWorkflowRequestDescriptionString",
-          "documentation":"<p>The description of the migration workflow.</p>"
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the migration workflow.</p>",
+          "shape": "String"
         },
-        "templateId":{
-          "shape":"CreateMigrationWorkflowRequestTemplateIdString",
-          "documentation":"<p>The ID of the template.</p>"
+        "creationTime": {
+          "documentation": "<p>The time at which the migration workflow was created.</p>",
+          "shape": "Timestamp"
         },
-        "applicationConfigurationId":{
-          "shape":"CreateMigrationWorkflowRequestApplicationConfigurationIdString",
-          "documentation":"<p>The configuration ID of the application configured in Application Discovery Service.</p>"
+        "description": {
+          "documentation": "<p>The description of the migration workflow.</p>",
+          "shape": "String"
         },
-        "inputParameters":{
-          "shape":"StepInputParameters",
-          "documentation":"<p>The input parameters required to create a migration workflow.</p>"
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
         },
-        "stepTargets":{
-          "shape":"StringList",
-          "documentation":"<p>The servers on which a step will be run.</p>"
+        "name": {
+          "documentation": "<p>The name of the migration workflow.</p>",
+          "shape": "String"
         },
-        "tags":{
-          "shape":"StringMap",
-          "documentation":"<p>The tags to add on a migration workflow.</p>"
+        "status": {
+          "documentation": "<p>The status of the migration workflow.</p>",
+          "shape": "MigrationWorkflowStatusEnum"
+        },
+        "stepTargets": {
+          "documentation": "<p>The servers on which a step will be run.</p>",
+          "shape": "StringList"
+        },
+        "tags": {
+          "documentation": "<p>The tags to add on a migration workflow.</p>",
+          "shape": "StringMap"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "String"
+        },
+        "workflowInputs": {
+          "documentation": "<p>The inputs for creating a migration workflow.</p>",
+          "shape": "StepInputParameters"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateMigrationWorkflowRequestApplicationConfigurationIdString":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
-    },
-    "CreateMigrationWorkflowRequestDescriptionString":{
-      "type":"string",
-      "max":500,
-      "min":0,
-      "pattern":"[-a-zA-Z0-9_.+, ]*"
-    },
-    "CreateMigrationWorkflowRequestNameString":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
-    },
-    "CreateMigrationWorkflowRequestTemplateIdString":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
-    },
-    "CreateMigrationWorkflowResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
+    "CreateWorkflowStepGroupRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the step group.</p>",
+          "shape": "StepGroupDescription"
         },
-        "arn":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the migration workflow.</p>"
+        "name": {
+          "documentation": "<p>The name of the step group.</p>",
+          "shape": "StepGroupName"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the migration workflow.</p>"
+        "next": {
+          "documentation": "<p>The next step group.</p>",
+          "shape": "StringList"
         },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the migration workflow.</p>"
+        "previous": {
+          "documentation": "<p>The previous step group.</p>",
+          "shape": "StringList"
         },
-        "templateId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the template.</p>"
-        },
-        "adsApplicationConfigurationId":{
-          "shape":"String",
-          "documentation":"<p>The configuration ID of the application configured in Application Discovery Service.</p>"
-        },
-        "workflowInputs":{
-          "shape":"StepInputParameters",
-          "documentation":"<p>The inputs for creating a migration workflow.</p>"
-        },
-        "stepTargets":{
-          "shape":"StringList",
-          "documentation":"<p>The servers on which a step will be run.</p>"
-        },
-        "status":{
-          "shape":"MigrationWorkflowStatusEnum",
-          "documentation":"<p>The status of the migration workflow.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was created.</p>"
-        },
-        "tags":{
-          "shape":"StringMap",
-          "documentation":"<p>The tags to add on a migration workflow.</p>"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow that will contain the step group.</p>",
+          "shape": "MigrationWorkflowId"
         }
-      }
-    },
-    "CreateWorkflowStepGroupRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "workflowId",
         "name"
       ],
-      "members":{
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow that will contain the step group.</p>"
-        },
-        "name":{
-          "shape":"StepGroupName",
-          "documentation":"<p>The name of the step group.</p>"
-        },
-        "description":{
-          "shape":"StepGroupDescription",
-          "documentation":"<p>The description of the step group.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step group.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step group.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateWorkflowStepGroupResponse":{
-      "type":"structure",
-      "members":{
-        "workflowId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the migration workflow that contains the step group.</p>"
+    "CreateWorkflowStepGroupResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time at which the step group is created.</p>",
+          "shape": "Timestamp"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step group.</p>"
+        "description": {
+          "documentation": "<p>The description of the step group.</p>",
+          "shape": "String"
         },
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
         },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the step group.</p>"
+        "name": {
+          "documentation": "<p>The name of the step group.</p>",
+          "shape": "String"
         },
-        "tools":{
-          "shape":"ToolsList",
-          "documentation":"<p>List of AWS services utilized in a migration workflow.</p>"
+        "next": {
+          "documentation": "<p>The next step group.</p>",
+          "shape": "StringList"
         },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step group.</p>"
+        "previous": {
+          "documentation": "<p>The previous step group.</p>",
+          "shape": "StringList"
         },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step group.</p>"
+        "tools": {
+          "documentation": "<p>List of AWS services utilized in a migration workflow.</p>",
+          "shape": "ToolsList"
         },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step group is created.</p>"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow that contains the step group.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateWorkflowStepRequest":{
-      "type":"structure",
-      "required":[
+    "CreateWorkflowStepRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the step.</p>",
+          "shape": "MigrationWorkflowDescription"
+        },
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "MigrationWorkflowName"
+        },
+        "next": {
+          "documentation": "<p>The next step.</p>",
+          "shape": "StringList"
+        },
+        "outputs": {
+          "documentation": "<p>The key value pairs added for the expected output.</p>",
+          "shape": "WorkflowStepOutputList"
+        },
+        "previous": {
+          "documentation": "<p>The previous step.</p>",
+          "shape": "StringList"
+        },
+        "stepActionType": {
+          "documentation": "<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>",
+          "shape": "StepActionType"
+        },
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "StepGroupId"
+        },
+        "stepTarget": {
+          "documentation": "<p>The servers on which a step will be run.</p>",
+          "shape": "StringList"
+        },
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
+        },
+        "workflowStepAutomationConfiguration": {
+          "documentation": "<p>The custom script to run tests on source or target environments.</p>",
+          "shape": "WorkflowStepAutomationConfiguration"
+        }
+      },
+      "required": [
         "name",
         "stepGroupId",
         "workflowId",
         "stepActionType"
       ],
-      "members":{
-        "name":{
-          "shape":"MigrationWorkflowName",
-          "documentation":"<p>The name of the step.</p>"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>"
-        },
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
-        },
-        "stepActionType":{
-          "shape":"StepActionType",
-          "documentation":"<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>"
-        },
-        "description":{
-          "shape":"MigrationWorkflowDescription",
-          "documentation":"<p>The description of the step.</p>"
-        },
-        "workflowStepAutomationConfiguration":{
-          "shape":"WorkflowStepAutomationConfiguration",
-          "documentation":"<p>The custom script to run tests on source or target environments.</p>"
-        },
-        "stepTarget":{
-          "shape":"StringList",
-          "documentation":"<p>The servers on which a step will be run.</p>"
-        },
-        "outputs":{
-          "shape":"WorkflowStepOutputList",
-          "documentation":"<p>The key value pairs added for the expected output.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateWorkflowStepResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step.</p>"
+    "CreateWorkflowStepResponse": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "shape": "String"
         },
-        "stepGroupId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "String"
         },
-        "workflowId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the migration workflow.</p>"
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step.</p>"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "type": "structure"
     },
-    "DataType":{
-      "type":"string",
-      "enum":[
+    "DataType": {
+      "enum": [
         "STRING",
         "INTEGER",
         "STRINGLIST",
         "STRINGMAP"
-      ]
-    },
-    "DeleteMigrationWorkflowRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow you want to delete.</p>",
-          "location":"uri",
-          "locationName":"id"
-        }
-      }
-    },
-    "DeleteMigrationWorkflowResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
-        },
-        "arn":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the migration workflow.</p>"
-        },
-        "status":{
-          "shape":"MigrationWorkflowStatusEnum",
-          "documentation":"<p>The status of the migration workflow.</p>"
-        }
-      }
-    },
-    "DeleteWorkflowStepGroupRequest":{
-      "type":"structure",
-      "required":[
-        "workflowId",
-        "id"
       ],
-      "members":{
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"workflowId"
-        },
-        "id":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group you want to delete.</p>",
-          "location":"uri",
-          "locationName":"id"
+      "type": "string"
+    },
+    "DeleteMigrationWorkflowRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the migration workflow you want to delete.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "MigrationWorkflowId"
         }
-      }
-    },
-    "DeleteWorkflowStepGroupResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DeleteWorkflowStepRequest":{
-      "type":"structure",
-      "required":[
-        "id",
-        "stepGroupId",
-        "workflowId"
-      ],
-      "members":{
-        "id":{
-          "shape":"StepId",
-          "documentation":"<p>The ID of the step you want to delete.</p>",
-          "location":"uri",
-          "locationName":"id"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group that contains the step you want to delete.</p>",
-          "location":"querystring",
-          "locationName":"stepGroupId"
-        },
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"workflowId"
-        }
-      }
-    },
-    "DeleteWorkflowStepResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "GetMigrationWorkflowRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"uri",
-          "locationName":"id"
-        }
-      }
-    },
-    "GetMigrationWorkflowResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
-        },
-        "arn":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the migration workflow.</p>"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the migration workflow.</p>"
-        },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the migration workflow.</p>"
-        },
-        "templateId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the template.</p>"
-        },
-        "adsApplicationConfigurationId":{
-          "shape":"String",
-          "documentation":"<p>The configuration ID of the application configured in Application Discovery Service.</p>"
-        },
-        "adsApplicationName":{
-          "shape":"String",
-          "documentation":"<p>The name of the application configured in Application Discovery Service.</p>"
-        },
-        "status":{
-          "shape":"MigrationWorkflowStatusEnum",
-          "documentation":"<p>The status of the migration workflow.</p>"
-        },
-        "statusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message of the migration workflow.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was created.</p>"
-        },
-        "lastStartTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was last started.</p>"
-        },
-        "lastStopTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was last stopped.</p>"
-        },
-        "lastModifiedTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was last modified.</p>"
-        },
-        "endTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow ended.</p>"
-        },
-        "tools":{
-          "shape":"ToolsList",
-          "documentation":"<p>List of AWS services utilized in a migration workflow.</p>"
-        },
-        "totalSteps":{
-          "shape":"Integer",
-          "documentation":"<p>The total number of steps in the migration workflow.</p>"
-        },
-        "completedSteps":{
-          "shape":"Integer",
-          "documentation":"<p>Get a list of completed steps in the migration workflow.</p>"
-        },
-        "workflowInputs":{
-          "shape":"StepInputParameters",
-          "documentation":"<p>The inputs required for creating the migration workflow.</p>"
-        },
-        "tags":{
-          "shape":"StringMap",
-          "documentation":"<p>The tags added to the migration workflow.</p>"
-        },
-        "workflowBucket":{
-          "shape":"String",
-          "documentation":"<p>The Amazon S3 bucket where the migration logs are stored.</p>"
-        }
-      }
-    },
-    "GetMigrationWorkflowTemplateRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"TemplateId",
-          "documentation":"<p>The ID of the template.</p>",
-          "location":"uri",
-          "locationName":"id"
-        }
-      }
-    },
-    "GetMigrationWorkflowTemplateResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the template.</p>"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the template.</p>"
-        },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The time at which the template was last created.</p>"
-        },
-        "inputs":{
-          "shape":"TemplateInputList",
-          "documentation":"<p>The inputs provided for the creation of the migration workflow.</p>"
-        },
-        "tools":{
-          "shape":"ToolsList",
-          "documentation":"<p>List of AWS services utilized in a migration workflow.</p>"
-        },
-        "status":{
-          "shape":"TemplateStatus",
-          "documentation":"<p>The status of the template.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the template was last created.</p>"
-        }
-      }
-    },
-    "GetTemplateStepGroupRequest":{
-      "type":"structure",
-      "required":[
-        "templateId",
-        "id"
-      ],
-      "members":{
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>The ID of the template.</p>",
-          "location":"uri",
-          "locationName":"templateId"
-        },
-        "id":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>",
-          "location":"uri",
-          "locationName":"id"
-        }
-      }
-    },
-    "GetTemplateStepGroupResponse":{
-      "type":"structure",
-      "members":{
-        "templateId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the template.</p>"
-        },
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step group.</p>"
-        },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the step group.</p>"
-        },
-        "status":{
-          "shape":"StepGroupStatus",
-          "documentation":"<p>The status of the step group.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step group was created.</p>"
-        },
-        "lastModifiedTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step group was last modified.</p>"
-        },
-        "tools":{
-          "shape":"ToolsList",
-          "documentation":"<p>List of AWS services utilized in a migration workflow.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step group.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step group.</p>"
-        }
-      }
-    },
-    "GetTemplateStepRequest":{
-      "type":"structure",
-      "required":[
-        "id",
-        "templateId",
-        "stepGroupId"
-      ],
-      "members":{
-        "id":{
-          "shape":"StepId",
-          "documentation":"<p>The ID of the step.</p>",
-          "location":"uri",
-          "locationName":"id"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>The ID of the template.</p>",
-          "location":"querystring",
-          "locationName":"templateId"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>",
-          "location":"querystring",
-          "locationName":"stepGroupId"
-        }
-      }
-    },
-    "GetTemplateStepResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"StepId",
-          "documentation":"<p>The ID of the step.</p>"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>The ID of the template.</p>"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step.</p>"
-        },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the step.</p>"
-        },
-        "stepActionType":{
-          "shape":"StepActionType",
-          "documentation":"<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>"
-        },
-        "creationTime":{
-          "shape":"String",
-          "documentation":"<p>The time at which the step was created.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step.</p>"
-        },
-        "outputs":{
-          "shape":"StepOutputList",
-          "documentation":"<p>The outputs of the step.</p>"
-        },
-        "stepAutomationConfiguration":{
-          "shape":"StepAutomationConfiguration",
-          "documentation":"<p>The custom script to run tests on source or target environments.</p>"
-        }
-      }
-    },
-    "GetWorkflowStepGroupRequest":{
-      "type":"structure",
-      "required":[
-        "id",
-        "workflowId"
-      ],
-      "members":{
-        "id":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>",
-          "location":"uri",
-          "locationName":"id"
-        },
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"workflowId"
-        }
-      }
-    },
-    "GetWorkflowStepGroupResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>"
-        },
-        "workflowId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the migration workflow.</p>"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step group.</p>"
-        },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the step group.</p>"
-        },
-        "status":{
-          "shape":"StepGroupStatus",
-          "documentation":"<p>The status of the step group.</p>"
-        },
-        "owner":{
-          "shape":"Owner",
-          "documentation":"<p>The owner of the step group.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step group was created.</p>"
-        },
-        "lastModifiedTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step group was last modified.</p>"
-        },
-        "endTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step group ended.</p>"
-        },
-        "tools":{
-          "shape":"ToolsList",
-          "documentation":"<p>List of AWS services utilized in a migration workflow.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step group.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step group.</p>"
-        }
-      }
-    },
-    "GetWorkflowStepRequest":{
-      "type":"structure",
-      "required":[
-        "workflowId",
-        "stepGroupId",
-        "id"
-      ],
-      "members":{
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"workflowId"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>desThe ID of the step group.</p>",
-          "location":"querystring",
-          "locationName":"stepGroupId"
-        },
-        "id":{
-          "shape":"StepId",
-          "documentation":"<p>The ID of the step.</p>",
-          "location":"uri",
-          "locationName":"id"
-        }
-      }
-    },
-    "GetWorkflowStepResponse":{
-      "type":"structure",
-      "members":{
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step.</p>"
-        },
-        "stepGroupId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
-        },
-        "workflowId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the migration workflow.</p>"
-        },
-        "stepId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step.</p>"
-        },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the step.</p>"
-        },
-        "stepActionType":{
-          "shape":"StepActionType",
-          "documentation":"<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>"
-        },
-        "owner":{
-          "shape":"Owner",
-          "documentation":"<p>The owner of the step.</p>"
-        },
-        "workflowStepAutomationConfiguration":{
-          "shape":"WorkflowStepAutomationConfiguration",
-          "documentation":"<p>The custom script to run tests on source or target environments.</p>"
-        },
-        "stepTarget":{
-          "shape":"StringList",
-          "documentation":"<p>The servers on which a step will be run.</p>"
-        },
-        "outputs":{
-          "shape":"GetWorkflowStepResponseOutputsList",
-          "documentation":"<p>The outputs of the step.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step.</p>"
-        },
-        "status":{
-          "shape":"StepStatus",
-          "documentation":"<p>The status of the step.</p>"
-        },
-        "statusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message of the migration workflow.</p>"
-        },
-        "scriptOutputLocation":{
-          "shape":"String",
-          "documentation":"<p>The output location of the script.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step was created.</p>"
-        },
-        "lastStartTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the workflow was last started.</p>"
-        },
-        "endTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step ended.</p>"
-        },
-        "noOfSrvCompleted":{
-          "shape":"Integer",
-          "documentation":"<p>The number of servers that have been migrated.</p>"
-        },
-        "noOfSrvFailed":{
-          "shape":"Integer",
-          "documentation":"<p>The number of servers that have failed to migrate.</p>"
-        },
-        "totalNoOfSrv":{
-          "shape":"Integer",
-          "documentation":"<p>The total number of servers that have been migrated.</p>"
-        }
-      }
-    },
-    "GetWorkflowStepResponseOutputsList":{
-      "type":"list",
-      "member":{"shape":"WorkflowStepOutput"},
-      "max":5,
-      "min":0
-    },
-    "IPAddress":{
-      "type":"string",
-      "max":15,
-      "min":0,
-      "pattern":"(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])"
-    },
-    "Integer":{
-      "type":"integer",
-      "box":true
-    },
-    "InternalServerException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>An internal error has occurred.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "ListMigrationWorkflowTemplatesRequest":{
-      "type":"structure",
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results that can be returned.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+    "DeleteMigrationWorkflowResponse": {
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the migration workflow.</p>",
+          "shape": "String"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
         },
-        "name":{
-          "shape":"TemplateName",
-          "documentation":"<p>The name of the template.</p>",
-          "location":"querystring",
-          "locationName":"name"
+        "status": {
+          "documentation": "<p>The status of the migration workflow.</p>",
+          "shape": "MigrationWorkflowStatusEnum"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListMigrationWorkflowTemplatesResponse":{
-      "type":"structure",
-      "required":["templateSummary"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>"
+    "DeleteWorkflowStepGroupRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step group you want to delete.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepGroupId"
         },
-        "templateSummary":{
-          "shape":"TemplateSummaryList",
-          "documentation":"<p>The summary of the template.</p>"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "workflowId",
+          "shape": "MigrationWorkflowId"
         }
-      }
+      },
+      "required": [
+        "workflowId",
+        "id"
+      ],
+      "type": "structure"
     },
-    "ListMigrationWorkflowsRequest":{
-      "type":"structure",
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results that can be returned.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+    "DeleteWorkflowStepGroupResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "DeleteWorkflowStepRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step you want to delete.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepId"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group that contains the step you want to delete.</p>",
+          "location": "querystring",
+          "locationName": "stepGroupId",
+          "shape": "StepGroupId"
         },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>The ID of the template.</p>",
-          "location":"querystring",
-          "locationName":"templateId"
-        },
-        "adsApplicationConfigurationName":{
-          "shape":"ApplicationConfigurationName",
-          "documentation":"<p>The name of the application configured in Application Discovery Service.</p>",
-          "location":"querystring",
-          "locationName":"adsApplicationConfigurationName"
-        },
-        "status":{
-          "shape":"MigrationWorkflowStatusEnum",
-          "documentation":"<p>The status of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"status"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"name"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "workflowId",
+          "shape": "MigrationWorkflowId"
         }
-      }
+      },
+      "required": [
+        "id",
+        "stepGroupId",
+        "workflowId"
+      ],
+      "type": "structure"
     },
-    "ListMigrationWorkflowsResponse":{
-      "type":"structure",
-      "required":["migrationWorkflowSummary"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>"
+    "DeleteWorkflowStepResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "GetMigrationWorkflowRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "MigrationWorkflowId"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "structure"
+    },
+    "GetMigrationWorkflowResponse": {
+      "members": {
+        "adsApplicationConfigurationId": {
+          "documentation": "<p>The configuration ID of the application configured in Application Discovery Service.</p>",
+          "shape": "String"
         },
-        "migrationWorkflowSummary":{
-          "shape":"MigrationWorkflowSummaryList",
-          "documentation":"<p>The summary of the migration workflow.</p>"
-        }
-      }
-    },
-    "ListPluginsRequest":{
-      "type":"structure",
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of plugins that can be returned.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+        "adsApplicationName": {
+          "documentation": "<p>The name of the application configured in Application Discovery Service.</p>",
+          "shape": "String"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        }
-      }
-    },
-    "ListPluginsResponse":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>"
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the migration workflow.</p>",
+          "shape": "String"
         },
-        "plugins":{
-          "shape":"PluginSummaries",
-          "documentation":"<p>Migration Hub Orchestrator plugins.</p>"
-        }
-      }
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["resourceArn"],
-      "members":{
-        "resourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags added to a resource.</p>"
-        }
-      }
-    },
-    "ListTemplateStepGroupsRequest":{
-      "type":"structure",
-      "required":["templateId"],
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results that can be returned.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+        "completedSteps": {
+          "documentation": "<p>Get a list of completed steps in the migration workflow.</p>",
+          "shape": "Integer"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+        "creationTime": {
+          "documentation": "<p>The time at which the migration workflow was created.</p>",
+          "shape": "Timestamp"
         },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>The ID of the template.</p>",
-          "location":"uri",
-          "locationName":"templateId"
-        }
-      }
-    },
-    "ListTemplateStepGroupsResponse":{
-      "type":"structure",
-      "required":["templateStepGroupSummary"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>"
+        "description": {
+          "documentation": "<p>The description of the migration workflow.</p>",
+          "shape": "String"
         },
-        "templateStepGroupSummary":{
-          "shape":"TemplateStepGroupSummaryList",
-          "documentation":"<p>The summary of the step group in the template.</p>"
+        "endTime": {
+          "documentation": "<p>The time at which the migration workflow ended.</p>",
+          "shape": "Timestamp"
+        },
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
+        },
+        "lastModifiedTime": {
+          "documentation": "<p>The time at which the migration workflow was last modified.</p>",
+          "shape": "Timestamp"
+        },
+        "lastStartTime": {
+          "documentation": "<p>The time at which the migration workflow was last started.</p>",
+          "shape": "Timestamp"
+        },
+        "lastStopTime": {
+          "documentation": "<p>The time at which the migration workflow was last stopped.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The name of the migration workflow.</p>",
+          "shape": "String"
+        },
+        "status": {
+          "documentation": "<p>The status of the migration workflow.</p>",
+          "shape": "MigrationWorkflowStatusEnum"
+        },
+        "statusMessage": {
+          "documentation": "<p>The status message of the migration workflow.</p>",
+          "shape": "String"
+        },
+        "tags": {
+          "documentation": "<p>The tags added to the migration workflow.</p>",
+          "shape": "StringMap"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "String"
+        },
+        "tools": {
+          "documentation": "<p>List of AWS services utilized in a migration workflow.</p>",
+          "shape": "ToolsList"
+        },
+        "totalSteps": {
+          "documentation": "<p>The total number of steps in the migration workflow.</p>",
+          "shape": "Integer"
+        },
+        "workflowBucket": {
+          "documentation": "<p>The Amazon S3 bucket where the migration logs are stored.</p>",
+          "shape": "String"
+        },
+        "workflowInputs": {
+          "documentation": "<p>The inputs required for creating the migration workflow.</p>",
+          "shape": "StepInputParameters"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListTemplateStepsRequest":{
-      "type":"structure",
-      "required":[
+    "GetMigrationWorkflowTemplateRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the template.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "structure"
+    },
+    "GetMigrationWorkflowTemplateResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time at which the template was last created.</p>",
+          "shape": "Timestamp"
+        },
+        "description": {
+          "documentation": "<p>The time at which the template was last created.</p>",
+          "shape": "String"
+        },
+        "id": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "String"
+        },
+        "inputs": {
+          "documentation": "<p>The inputs provided for the creation of the migration workflow.</p>",
+          "shape": "TemplateInputList"
+        },
+        "name": {
+          "documentation": "<p>The name of the template.</p>",
+          "shape": "String"
+        },
+        "status": {
+          "documentation": "<p>The status of the template.</p>",
+          "shape": "TemplateStatus"
+        },
+        "tools": {
+          "documentation": "<p>List of AWS services utilized in a migration workflow.</p>",
+          "shape": "ToolsList"
+        }
+      },
+      "type": "structure"
+    },
+    "GetTemplateStepGroupRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepGroupId"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "location": "uri",
+          "locationName": "templateId",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
+        "templateId",
+        "id"
+      ],
+      "type": "structure"
+    },
+    "GetTemplateStepGroupResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time at which the step group was created.</p>",
+          "shape": "Timestamp"
+        },
+        "description": {
+          "documentation": "<p>The description of the step group.</p>",
+          "shape": "String"
+        },
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
+        },
+        "lastModifiedTime": {
+          "documentation": "<p>The time at which the step group was last modified.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The name of the step group.</p>",
+          "shape": "String"
+        },
+        "next": {
+          "documentation": "<p>The next step group.</p>",
+          "shape": "StringList"
+        },
+        "previous": {
+          "documentation": "<p>The previous step group.</p>",
+          "shape": "StringList"
+        },
+        "status": {
+          "documentation": "<p>The status of the step group.</p>",
+          "shape": "StepGroupStatus"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "String"
+        },
+        "tools": {
+          "documentation": "<p>List of AWS services utilized in a migration workflow.</p>",
+          "shape": "ToolsList"
+        }
+      },
+      "type": "structure"
+    },
+    "GetTemplateStepRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepId"
+        },
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "location": "querystring",
+          "locationName": "stepGroupId",
+          "shape": "StepGroupId"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "location": "querystring",
+          "locationName": "templateId",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
+        "id",
         "templateId",
         "stepGroupId"
       ],
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results that can be returned.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>The ID of the template.</p>",
-          "location":"querystring",
-          "locationName":"templateId"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>",
-          "location":"querystring",
-          "locationName":"stepGroupId"
-        }
-      }
+      "type": "structure"
     },
-    "ListTemplateStepsResponse":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>"
+    "GetTemplateStepResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time at which the step was created.</p>",
+          "shape": "String"
         },
-        "templateStepSummaryList":{
-          "shape":"TemplateStepSummaryList",
-          "documentation":"<p>The list of summaries of steps in a template.</p>"
+        "description": {
+          "documentation": "<p>The description of the step.</p>",
+          "shape": "String"
+        },
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "shape": "StepId"
+        },
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "String"
+        },
+        "next": {
+          "documentation": "<p>The next step.</p>",
+          "shape": "StringList"
+        },
+        "outputs": {
+          "documentation": "<p>The outputs of the step.</p>",
+          "shape": "StepOutputList"
+        },
+        "previous": {
+          "documentation": "<p>The previous step.</p>",
+          "shape": "StringList"
+        },
+        "stepActionType": {
+          "documentation": "<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>",
+          "shape": "StepActionType"
+        },
+        "stepAutomationConfiguration": {
+          "documentation": "<p>The custom script to run tests on source or target environments.</p>",
+          "shape": "StepAutomationConfiguration"
+        },
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "StepGroupId"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "TemplateId"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListWorkflowStepGroupsRequest":{
-      "type":"structure",
-      "required":["workflowId"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+    "GetWorkflowStepGroupRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepGroupId"
         },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results that can be returned.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"workflowId"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "workflowId",
+          "shape": "MigrationWorkflowId"
         }
-      }
+      },
+      "required": [
+        "id",
+        "workflowId"
+      ],
+      "type": "structure"
     },
-    "ListWorkflowStepGroupsResponse":{
-      "type":"structure",
-      "required":["workflowStepGroupsSummary"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>"
+    "GetWorkflowStepGroupResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time at which the step group was created.</p>",
+          "shape": "Timestamp"
         },
-        "workflowStepGroupsSummary":{
-          "shape":"WorkflowStepGroupsSummaryList",
-          "documentation":"<p>The summary of step groups in a migration workflow.</p>"
+        "description": {
+          "documentation": "<p>The description of the step group.</p>",
+          "shape": "String"
+        },
+        "endTime": {
+          "documentation": "<p>The time at which the step group ended.</p>",
+          "shape": "Timestamp"
+        },
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "StepGroupId"
+        },
+        "lastModifiedTime": {
+          "documentation": "<p>The time at which the step group was last modified.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The name of the step group.</p>",
+          "shape": "String"
+        },
+        "next": {
+          "documentation": "<p>The next step group.</p>",
+          "shape": "StringList"
+        },
+        "owner": {
+          "documentation": "<p>The owner of the step group.</p>",
+          "shape": "Owner"
+        },
+        "previous": {
+          "documentation": "<p>The previous step group.</p>",
+          "shape": "StringList"
+        },
+        "status": {
+          "documentation": "<p>The status of the step group.</p>",
+          "shape": "StepGroupStatus"
+        },
+        "tools": {
+          "documentation": "<p>List of AWS services utilized in a migration workflow.</p>",
+          "shape": "ToolsList"
+        },
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListWorkflowStepsRequest":{
-      "type":"structure",
-      "required":[
+    "GetWorkflowStepRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepId"
+        },
+        "stepGroupId": {
+          "documentation": "<p>desThe ID of the step group.</p>",
+          "location": "querystring",
+          "locationName": "stepGroupId",
+          "shape": "StepGroupId"
+        },
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "workflowId",
+          "shape": "MigrationWorkflowId"
+        }
+      },
+      "required": [
+        "workflowId",
+        "stepGroupId",
+        "id"
+      ],
+      "type": "structure"
+    },
+    "GetWorkflowStepResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time at which the step was created.</p>",
+          "shape": "Timestamp"
+        },
+        "description": {
+          "documentation": "<p>The description of the step.</p>",
+          "shape": "String"
+        },
+        "endTime": {
+          "documentation": "<p>The time at which the step ended.</p>",
+          "shape": "Timestamp"
+        },
+        "lastStartTime": {
+          "documentation": "<p>The time at which the workflow was last started.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "String"
+        },
+        "next": {
+          "documentation": "<p>The next step.</p>",
+          "shape": "StringList"
+        },
+        "noOfSrvCompleted": {
+          "documentation": "<p>The number of servers that have been migrated.</p>",
+          "shape": "Integer"
+        },
+        "noOfSrvFailed": {
+          "documentation": "<p>The number of servers that have failed to migrate.</p>",
+          "shape": "Integer"
+        },
+        "outputs": {
+          "documentation": "<p>The outputs of the step.</p>",
+          "shape": "GetWorkflowStepResponseOutputsList"
+        },
+        "owner": {
+          "documentation": "<p>The owner of the step.</p>",
+          "shape": "Owner"
+        },
+        "previous": {
+          "documentation": "<p>The previous step.</p>",
+          "shape": "StringList"
+        },
+        "scriptOutputLocation": {
+          "documentation": "<p>The output location of the script.</p>",
+          "shape": "String"
+        },
+        "status": {
+          "documentation": "<p>The status of the step.</p>",
+          "shape": "StepStatus"
+        },
+        "statusMessage": {
+          "documentation": "<p>The status message of the migration workflow.</p>",
+          "shape": "String"
+        },
+        "stepActionType": {
+          "documentation": "<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>",
+          "shape": "StepActionType"
+        },
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
+        },
+        "stepId": {
+          "documentation": "<p>The ID of the step.</p>",
+          "shape": "String"
+        },
+        "stepTarget": {
+          "documentation": "<p>The servers on which a step will be run.</p>",
+          "shape": "StringList"
+        },
+        "totalNoOfSrv": {
+          "documentation": "<p>The total number of servers that have been migrated.</p>",
+          "shape": "Integer"
+        },
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "String"
+        },
+        "workflowStepAutomationConfiguration": {
+          "documentation": "<p>The custom script to run tests on source or target environments.</p>",
+          "shape": "WorkflowStepAutomationConfiguration"
+        }
+      },
+      "type": "structure"
+    },
+    "GetWorkflowStepResponseOutputsList": {
+      "max": 5,
+      "member": {
+        "shape": "WorkflowStepOutput"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "IPAddress": {
+      "max": 15,
+      "min": 0,
+      "pattern": "(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])",
+      "type": "string"
+    },
+    "Integer": {
+      "box": true,
+      "type": "integer"
+    },
+    "InternalServerException": {
+      "documentation": "<p>An internal error has occurred.</p>",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "ListMigrationWorkflowTemplatesRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of results that can be returned.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "name": {
+          "documentation": "<p>The name of the template.</p>",
+          "location": "querystring",
+          "locationName": "name",
+          "shape": "TemplateName"
+        },
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListMigrationWorkflowTemplatesResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "shape": "NextToken"
+        },
+        "templateSummary": {
+          "documentation": "<p>The summary of the template.</p>",
+          "shape": "TemplateSummaryList"
+        }
+      },
+      "required": [
+        "templateSummary"
+      ],
+      "type": "structure"
+    },
+    "ListMigrationWorkflowsRequest": {
+      "members": {
+        "adsApplicationConfigurationName": {
+          "documentation": "<p>The name of the application configured in Application Discovery Service.</p>",
+          "location": "querystring",
+          "locationName": "adsApplicationConfigurationName",
+          "shape": "ApplicationConfigurationName"
+        },
+        "maxResults": {
+          "documentation": "<p>The maximum number of results that can be returned.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "name": {
+          "documentation": "<p>The name of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "name",
+          "shape": "String"
+        },
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "status": {
+          "documentation": "<p>The status of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "status",
+          "shape": "MigrationWorkflowStatusEnum"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "location": "querystring",
+          "locationName": "templateId",
+          "shape": "TemplateId"
+        }
+      },
+      "type": "structure"
+    },
+    "ListMigrationWorkflowsResponse": {
+      "members": {
+        "migrationWorkflowSummary": {
+          "documentation": "<p>The summary of the migration workflow.</p>",
+          "shape": "MigrationWorkflowSummaryList"
+        },
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "migrationWorkflowSummary"
+      ],
+      "type": "structure"
+    },
+    "ListPluginsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of plugins that can be returned.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListPluginsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "shape": "NextToken"
+        },
+        "plugins": {
+          "documentation": "<p>Migration Hub Orchestrator plugins.</p>",
+          "shape": "PluginSummaries"
+        }
+      },
+      "type": "structure"
+    },
+    "ListTagsForResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "ResourceArn"
+        }
+      },
+      "required": [
+        "resourceArn"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "documentation": "<p>The tags added to a resource.</p>",
+          "shape": "TagMap"
+        }
+      },
+      "type": "structure"
+    },
+    "ListTemplateStepGroupsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of results that can be returned.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "location": "uri",
+          "locationName": "templateId",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
+        "templateId"
+      ],
+      "type": "structure"
+    },
+    "ListTemplateStepGroupsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "shape": "NextToken"
+        },
+        "templateStepGroupSummary": {
+          "documentation": "<p>The summary of the step group in the template.</p>",
+          "shape": "TemplateStepGroupSummaryList"
+        }
+      },
+      "required": [
+        "templateStepGroupSummary"
+      ],
+      "type": "structure"
+    },
+    "ListTemplateStepsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of results that can be returned.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "location": "querystring",
+          "locationName": "stepGroupId",
+          "shape": "StepGroupId"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "location": "querystring",
+          "locationName": "templateId",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
+        "templateId",
+        "stepGroupId"
+      ],
+      "type": "structure"
+    },
+    "ListTemplateStepsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "shape": "NextToken"
+        },
+        "templateStepSummaryList": {
+          "documentation": "<p>The list of summaries of steps in a template.</p>",
+          "shape": "TemplateStepSummaryList"
+        }
+      },
+      "type": "structure"
+    },
+    "ListWorkflowStepGroupsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of results that can be returned.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "workflowId",
+          "shape": "MigrationWorkflowId"
+        }
+      },
+      "required": [
+        "workflowId"
+      ],
+      "type": "structure"
+    },
+    "ListWorkflowStepGroupsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "shape": "NextToken"
+        },
+        "workflowStepGroupsSummary": {
+          "documentation": "<p>The summary of step groups in a migration workflow.</p>",
+          "shape": "WorkflowStepGroupsSummaryList"
+        }
+      },
+      "required": [
+        "workflowStepGroupsSummary"
+      ],
+      "type": "structure"
+    },
+    "ListWorkflowStepsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of results that can be returned.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "location": "uri",
+          "locationName": "stepGroupId",
+          "shape": "StepGroupId"
+        },
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "uri",
+          "locationName": "workflowId",
+          "shape": "MigrationWorkflowId"
+        }
+      },
+      "required": [
         "workflowId",
         "stepGroupId"
       ],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+      "type": "structure"
+    },
+    "ListWorkflowStepsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The pagination token.</p>",
+          "shape": "NextToken"
         },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results that can be returned.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"uri",
-          "locationName":"workflowId"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>",
-          "location":"uri",
-          "locationName":"stepGroupId"
+        "workflowStepsSummary": {
+          "documentation": "<p>The summary of steps in a migration workflow.</p>",
+          "shape": "WorkflowStepsSummaryList"
         }
-      }
+      },
+      "required": [
+        "workflowStepsSummary"
+      ],
+      "type": "structure"
     },
-    "ListWorkflowStepsResponse":{
-      "type":"structure",
-      "required":["workflowStepsSummary"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The pagination token.</p>"
-        },
-        "workflowStepsSummary":{
-          "shape":"WorkflowStepsSummaryList",
-          "documentation":"<p>The summary of steps in a migration workflow.</p>"
-        }
-      }
+    "MaxResults": {
+      "max": 100,
+      "min": 0,
+      "type": "integer"
     },
-    "MaxResults":{
-      "type":"integer",
-      "max":100,
-      "min":0
+    "MigrationWorkflowDescription": {
+      "max": 500,
+      "min": 0,
+      "pattern": "[-a-zA-Z0-9_.+, ]*",
+      "type": "string"
     },
-    "MigrationWorkflowDescription":{
-      "type":"string",
-      "max":500,
-      "min":0,
-      "pattern":"[-a-zA-Z0-9_.+, ]*"
+    "MigrationWorkflowId": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[a-zA-Z0-9-]+",
+      "type": "string"
     },
-    "MigrationWorkflowId":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[a-zA-Z0-9-]+"
+    "MigrationWorkflowName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
     },
-    "MigrationWorkflowName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
-    },
-    "MigrationWorkflowStatusEnum":{
-      "type":"string",
-      "enum":[
+    "MigrationWorkflowStatusEnum": {
+      "enum": [
         "CREATING",
         "NOT_STARTED",
         "CREATION_FAILED",
@@ -1728,333 +2109,343 @@
         "DELETION_FAILED",
         "DELETED",
         "COMPLETED"
-      ]
+      ],
+      "type": "string"
     },
-    "MigrationWorkflowSummary":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
+    "MigrationWorkflowSummary": {
+      "documentation": "<p>The summary of a migration workflow.</p>",
+      "members": {
+        "adsApplicationConfigurationName": {
+          "documentation": "<p>The name of the application configured in Application Discovery Service.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the migration workflow.</p>"
+        "completedSteps": {
+          "documentation": "<p>The steps completed in the migration workflow.</p>",
+          "shape": "Integer"
         },
-        "templateId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the template.</p>"
+        "creationTime": {
+          "documentation": "<p>The time at which the migration workflow was created.</p>",
+          "shape": "Timestamp"
         },
-        "adsApplicationConfigurationName":{
-          "shape":"String",
-          "documentation":"<p>The name of the application configured in Application Discovery Service.</p>"
+        "endTime": {
+          "documentation": "<p>The time at which the migration workflow ended.</p>",
+          "shape": "Timestamp"
         },
-        "status":{
-          "shape":"MigrationWorkflowStatusEnum",
-          "documentation":"<p>The status of the migration workflow.</p>"
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
         },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was created.</p>"
+        "name": {
+          "documentation": "<p>The name of the migration workflow.</p>",
+          "shape": "String"
         },
-        "endTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow ended.</p>"
+        "status": {
+          "documentation": "<p>The status of the migration workflow.</p>",
+          "shape": "MigrationWorkflowStatusEnum"
         },
-        "statusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message of the migration workflow.</p>"
+        "statusMessage": {
+          "documentation": "<p>The status message of the migration workflow.</p>",
+          "shape": "String"
         },
-        "completedSteps":{
-          "shape":"Integer",
-          "documentation":"<p>The steps completed in the migration workflow.</p>"
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "String"
         },
-        "totalSteps":{
-          "shape":"Integer",
-          "documentation":"<p>All the steps in a migration workflow.</p>"
+        "totalSteps": {
+          "documentation": "<p>All the steps in a migration workflow.</p>",
+          "shape": "Integer"
         }
       },
-      "documentation":"<p>The summary of a migration workflow.</p>"
+      "type": "structure"
     },
-    "MigrationWorkflowSummaryList":{
-      "type":"list",
-      "member":{"shape":"MigrationWorkflowSummary"}
+    "MigrationWorkflowSummaryList": {
+      "member": {
+        "shape": "MigrationWorkflowSummary"
+      },
+      "type": "list"
     },
-    "NextToken":{
-      "type":"string",
-      "max":2048,
-      "min":0,
-      "pattern":".*\\S.*"
+    "NextToken": {
+      "max": 2048,
+      "min": 0,
+      "pattern": ".*\\S.*",
+      "type": "string"
     },
-    "Owner":{
-      "type":"string",
-      "enum":[
+    "Owner": {
+      "enum": [
         "AWS_MANAGED",
         "CUSTOM"
-      ]
+      ],
+      "type": "string"
     },
-    "PlatformCommand":{
-      "type":"structure",
-      "members":{
-        "linux":{
-          "shape":"String",
-          "documentation":"<p>Command for Linux.</p>"
+    "PlatformCommand": {
+      "documentation": "<p>Command to be run on a particular operating system.</p>",
+      "members": {
+        "linux": {
+          "documentation": "<p>Command for Linux.</p>",
+          "shape": "String"
         },
-        "windows":{
-          "shape":"String",
-          "documentation":"<p>Command for Windows.</p>"
+        "windows": {
+          "documentation": "<p>Command for Windows.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Command to be run on a particular operating system.</p>"
+      "type": "structure"
     },
-    "PlatformScriptKey":{
-      "type":"structure",
-      "members":{
-        "linux":{
-          "shape":"S3Key",
-          "documentation":"<p>The script location for Linux.</p>"
+    "PlatformScriptKey": {
+      "documentation": "<p>The script location for a particular operating system.</p>",
+      "members": {
+        "linux": {
+          "documentation": "<p>The script location for Linux.</p>",
+          "shape": "S3Key"
         },
-        "windows":{
-          "shape":"S3Key",
-          "documentation":"<p>The script location for Windows.</p>"
+        "windows": {
+          "documentation": "<p>The script location for Windows.</p>",
+          "shape": "S3Key"
         }
       },
-      "documentation":"<p>The script location for a particular operating system.</p>"
+      "type": "structure"
     },
-    "PluginHealth":{
-      "type":"string",
-      "enum":[
+    "PluginHealth": {
+      "enum": [
         "HEALTHY",
         "UNHEALTHY"
-      ]
+      ],
+      "type": "string"
     },
-    "PluginId":{
-      "type":"string",
-      "max":60,
-      "min":1,
-      "pattern":".*\\S.*"
+    "PluginId": {
+      "max": 60,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "type": "string"
     },
-    "PluginSummaries":{
-      "type":"list",
-      "member":{"shape":"PluginSummary"}
+    "PluginSummaries": {
+      "member": {
+        "shape": "PluginSummary"
+      },
+      "type": "list"
     },
-    "PluginSummary":{
-      "type":"structure",
-      "members":{
-        "pluginId":{
-          "shape":"PluginId",
-          "documentation":"<p>The ID of the plugin.</p>"
+    "PluginSummary": {
+      "documentation": "<p>The summary of the Migration Hub Orchestrator plugin.</p>",
+      "members": {
+        "hostname": {
+          "documentation": "<p>The name of the host.</p>",
+          "shape": "String"
         },
-        "hostname":{
-          "shape":"String",
-          "documentation":"<p>The name of the host.</p>"
+        "ipAddress": {
+          "documentation": "<p>The IP address at which the plugin is located.</p>",
+          "shape": "IPAddress"
         },
-        "status":{
-          "shape":"PluginHealth",
-          "documentation":"<p>The status of the plugin.</p>"
+        "pluginId": {
+          "documentation": "<p>The ID of the plugin.</p>",
+          "shape": "PluginId"
         },
-        "ipAddress":{
-          "shape":"IPAddress",
-          "documentation":"<p>The IP address at which the plugin is located.</p>"
+        "registeredTime": {
+          "documentation": "<p>The time at which the plugin was registered.</p>",
+          "shape": "String"
         },
-        "version":{
-          "shape":"PluginVersion",
-          "documentation":"<p>The version of the plugin.</p>"
+        "status": {
+          "documentation": "<p>The status of the plugin.</p>",
+          "shape": "PluginHealth"
         },
-        "registeredTime":{
-          "shape":"String",
-          "documentation":"<p>The time at which the plugin was registered.</p>"
+        "version": {
+          "documentation": "<p>The version of the plugin.</p>",
+          "shape": "PluginVersion"
         }
       },
-      "documentation":"<p>The summary of the Migration Hub Orchestrator plugin.</p>"
+      "type": "structure"
     },
-    "PluginVersion":{
-      "type":"string",
-      "max":1024,
-      "min":0,
-      "pattern":".*"
+    "PluginVersion": {
+      "max": 1024,
+      "min": 0,
+      "pattern": ".*",
+      "type": "string"
     },
-    "ResourceArn":{
-      "type":"string",
-      "pattern":"arn:aws:migrationhub-orchestrator:[a-z0-9-]+:[0-9]+:workflow/[.]*"
+    "ResourceArn": {
+      "pattern": "arn:aws:migrationhub-orchestrator:[a-z0-9-]+:[0-9]+:workflow/[.]*",
+      "type": "string"
     },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
+    "ResourceNotFoundException": {
+      "documentation": "<p>The resource is not available.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
       },
-      "documentation":"<p>The resource is not available.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
       },
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "RetryWorkflowStepRequest":{
-      "type":"structure",
-      "required":[
+    "RetryWorkflowStepRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepId"
+        },
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "location": "querystring",
+          "locationName": "stepGroupId",
+          "shape": "StepGroupId"
+        },
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "workflowId",
+          "shape": "MigrationWorkflowId"
+        }
+      },
+      "required": [
         "workflowId",
         "stepGroupId",
         "id"
       ],
-      "members":{
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"workflowId"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>",
-          "location":"querystring",
-          "locationName":"stepGroupId"
-        },
-        "id":{
-          "shape":"StepId",
-          "documentation":"<p>The ID of the step.</p>",
-          "location":"uri",
-          "locationName":"id"
-        }
-      }
+      "type": "structure"
     },
-    "RetryWorkflowStepResponse":{
-      "type":"structure",
-      "members":{
-        "stepGroupId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
+    "RetryWorkflowStepResponse": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "shape": "String"
         },
-        "workflowId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the migration workflow.</p>"
+        "status": {
+          "documentation": "<p>The status of the step.</p>",
+          "shape": "StepStatus"
         },
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step.</p>"
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
         },
-        "status":{
-          "shape":"StepStatus",
-          "documentation":"<p>The status of the step.</p>"
-        }
-      }
-    },
-    "RunEnvironment":{
-      "type":"string",
-      "enum":[
-        "AWS",
-        "ONPREMISE"
-      ]
-    },
-    "S3Bucket":{
-      "type":"string",
-      "max":63,
-      "min":0,
-      "pattern":"[0-9a-z]+[0-9a-z\\.\\-]*[0-9a-z]+"
-    },
-    "S3Key":{
-      "type":"string",
-      "max":1024,
-      "min":0
-    },
-    "StartMigrationWorkflowRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"uri",
-          "locationName":"id"
-        }
-      }
-    },
-    "StartMigrationWorkflowResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
-        },
-        "arn":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the migration workflow.</p>"
-        },
-        "status":{
-          "shape":"MigrationWorkflowStatusEnum",
-          "documentation":"<p>The status of the migration workflow.</p>"
-        },
-        "statusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message of the migration workflow.</p>"
-        },
-        "lastStartTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was last started.</p>"
-        }
-      }
-    },
-    "StepActionType":{
-      "type":"string",
-      "enum":[
-        "MANUAL",
-        "AUTOMATED"
-      ]
-    },
-    "StepAutomationConfiguration":{
-      "type":"structure",
-      "members":{
-        "scriptLocationS3Bucket":{
-          "shape":"String",
-          "documentation":"<p>The Amazon S3 bucket where the script is located.</p>"
-        },
-        "scriptLocationS3Key":{
-          "shape":"PlatformScriptKey",
-          "documentation":"<p>The Amazon S3 key for the script location.</p>"
-        },
-        "command":{
-          "shape":"PlatformCommand",
-          "documentation":"<p>The command to run the script.</p>"
-        },
-        "runEnvironment":{
-          "shape":"RunEnvironment",
-          "documentation":"<p>The source or target environment.</p>"
-        },
-        "targetType":{
-          "shape":"TargetType",
-          "documentation":"<p>The servers on which to run the script.</p>"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The custom script to run tests on source or target environments.</p>"
+      "type": "structure"
     },
-    "StepDescription":{
-      "type":"string",
-      "max":500,
-      "min":0,
-      "pattern":"[-a-zA-Z0-9_.+, ]*"
+    "RunEnvironment": {
+      "enum": [
+        "AWS",
+        "ONPREMISE"
+      ],
+      "type": "string"
     },
-    "StepGroupDescription":{
-      "type":"string",
-      "max":500,
-      "min":0,
-      "pattern":"[-a-zA-Z0-9_.+, ]*"
+    "S3Bucket": {
+      "max": 63,
+      "min": 0,
+      "pattern": "[0-9a-z]+[0-9a-z\\.\\-]*[0-9a-z]+",
+      "type": "string"
     },
-    "StepGroupId":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[a-zA-Z0-9-]+"
+    "S3Key": {
+      "max": 1024,
+      "min": 0,
+      "type": "string"
     },
-    "StepGroupName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
+    "StartMigrationWorkflowRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "MigrationWorkflowId"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "StepGroupStatus":{
-      "type":"string",
-      "enum":[
+    "StartMigrationWorkflowResponse": {
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the migration workflow.</p>",
+          "shape": "String"
+        },
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
+        },
+        "lastStartTime": {
+          "documentation": "<p>The time at which the migration workflow was last started.</p>",
+          "shape": "Timestamp"
+        },
+        "status": {
+          "documentation": "<p>The status of the migration workflow.</p>",
+          "shape": "MigrationWorkflowStatusEnum"
+        },
+        "statusMessage": {
+          "documentation": "<p>The status message of the migration workflow.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "StepActionType": {
+      "enum": [
+        "MANUAL",
+        "AUTOMATED"
+      ],
+      "type": "string"
+    },
+    "StepAutomationConfiguration": {
+      "documentation": "<p>The custom script to run tests on source or target environments.</p>",
+      "members": {
+        "command": {
+          "documentation": "<p>The command to run the script.</p>",
+          "shape": "PlatformCommand"
+        },
+        "runEnvironment": {
+          "documentation": "<p>The source or target environment.</p>",
+          "shape": "RunEnvironment"
+        },
+        "scriptLocationS3Bucket": {
+          "documentation": "<p>The Amazon S3 bucket where the script is located.</p>",
+          "shape": "String"
+        },
+        "scriptLocationS3Key": {
+          "documentation": "<p>The Amazon S3 key for the script location.</p>",
+          "shape": "PlatformScriptKey"
+        },
+        "targetType": {
+          "documentation": "<p>The servers on which to run the script.</p>",
+          "shape": "TargetType"
+        }
+      },
+      "type": "structure"
+    },
+    "StepDescription": {
+      "max": 500,
+      "min": 0,
+      "pattern": "[-a-zA-Z0-9_.+, ]*",
+      "type": "string"
+    },
+    "StepGroupDescription": {
+      "max": 500,
+      "min": 0,
+      "pattern": "[-a-zA-Z0-9_.+, ]*",
+      "type": "string"
+    },
+    "StepGroupId": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[a-zA-Z0-9-]+",
+      "type": "string"
+    },
+    "StepGroupName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
+    },
+    "StepGroupStatus": {
+      "enum": [
         "AWAITING_DEPENDENCIES",
         "READY",
         "IN_PROGRESS",
@@ -2063,81 +2454,87 @@
         "PAUSED",
         "PAUSING",
         "USER_ATTENTION_REQUIRED"
-      ]
+      ],
+      "type": "string"
     },
-    "StepId":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[a-zA-Z0-9-]+"
+    "StepId": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[a-zA-Z0-9-]+",
+      "type": "string"
     },
-    "StepInput":{
-      "type":"structure",
-      "members":{
-        "integerValue":{
-          "shape":"Integer",
-          "documentation":"<p>The value of the integer.</p>",
-          "box":true
+    "StepInput": {
+      "documentation": "<p>A map of key value pairs that is generated when you create a migration workflow. The key value pairs will differ based on your selection of the template.</p>",
+      "members": {
+        "integerValue": {
+          "box": true,
+          "documentation": "<p>The value of the integer.</p>",
+          "shape": "Integer"
         },
-        "stringValue":{
-          "shape":"StringValue",
-          "documentation":"<p>String value.</p>"
+        "listOfStringsValue": {
+          "documentation": "<p>List of string values.</p>",
+          "shape": "StringList"
         },
-        "listOfStringsValue":{
-          "shape":"StringList",
-          "documentation":"<p>List of string values.</p>"
+        "mapOfStringValue": {
+          "documentation": "<p>Map of string values.</p>",
+          "shape": "StringMap"
         },
-        "mapOfStringValue":{
-          "shape":"StringMap",
-          "documentation":"<p>Map of string values.</p>"
+        "stringValue": {
+          "documentation": "<p>String value.</p>",
+          "shape": "StringValue"
         }
       },
-      "documentation":"<p>A map of key value pairs that is generated when you create a migration workflow. The key value pairs will differ based on your selection of the template.</p>",
-      "union":true
+      "type": "structure",
+      "union": true
     },
-    "StepInputParameters":{
-      "type":"map",
-      "key":{"shape":"StepInputParametersKey"},
-      "value":{"shape":"StepInput"},
-      "sensitive":true
+    "StepInputParameters": {
+      "key": {
+        "shape": "StepInputParametersKey"
+      },
+      "sensitive": true,
+      "type": "map",
+      "value": {
+        "shape": "StepInput"
+      }
     },
-    "StepInputParametersKey":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[a-zA-Z0-9-_ ()]+"
+    "StepInputParametersKey": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[a-zA-Z0-9-_ ()]+",
+      "type": "string"
     },
-    "StepName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
+    "StepName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
     },
-    "StepOutput":{
-      "type":"structure",
-      "members":{
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step.</p>"
+    "StepOutput": {
+      "documentation": "<p>The output of the step.</p>",
+      "members": {
+        "dataType": {
+          "documentation": "<p>The data type of the step output.</p>",
+          "shape": "DataType"
         },
-        "dataType":{
-          "shape":"DataType",
-          "documentation":"<p>The data type of the step output.</p>"
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "String"
         },
-        "required":{
-          "shape":"Boolean",
-          "documentation":"<p>Determine if an output is required from a step.</p>"
+        "required": {
+          "documentation": "<p>Determine if an output is required from a step.</p>",
+          "shape": "Boolean"
         }
       },
-      "documentation":"<p>The output of the step.</p>"
+      "type": "structure"
     },
-    "StepOutputList":{
-      "type":"list",
-      "member":{"shape":"StepOutput"}
+    "StepOutputList": {
+      "member": {
+        "shape": "StepOutput"
+      },
+      "type": "list"
     },
-    "StepStatus":{
-      "type":"string",
-      "enum":[
+    "StepStatus": {
+      "enum": [
         "AWAITING_DEPENDENCIES",
         "READY",
         "IN_PROGRESS",
@@ -2145,766 +2542,813 @@
         "FAILED",
         "PAUSED",
         "USER_ATTENTION_REQUIRED"
-      ]
+      ],
+      "type": "string"
     },
-    "StopMigrationWorkflowRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"uri",
-          "locationName":"id"
+    "StopMigrationWorkflowRequest": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "MigrationWorkflowId"
         }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "structure"
+    },
+    "StopMigrationWorkflowResponse": {
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the migration workflow.</p>",
+          "shape": "String"
+        },
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
+        },
+        "lastStopTime": {
+          "documentation": "<p>The time at which the migration workflow was stopped.</p>",
+          "shape": "Timestamp"
+        },
+        "status": {
+          "documentation": "<p>The status of the migration workflow.</p>",
+          "shape": "MigrationWorkflowStatusEnum"
+        },
+        "statusMessage": {
+          "documentation": "<p>The status message of the migration workflow.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "String": {
+      "type": "string"
+    },
+    "StringList": {
+      "member": {
+        "shape": "StringListMember"
+      },
+      "type": "list"
+    },
+    "StringListMember": {
+      "max": 100,
+      "min": 0,
+      "type": "string"
+    },
+    "StringMap": {
+      "key": {
+        "shape": "StringMapKey"
+      },
+      "type": "map",
+      "value": {
+        "shape": "StringMapValue"
       }
     },
-    "StopMigrationWorkflowResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
-        },
-        "arn":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the migration workflow.</p>"
-        },
-        "status":{
-          "shape":"MigrationWorkflowStatusEnum",
-          "documentation":"<p>The status of the migration workflow.</p>"
-        },
-        "statusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message of the migration workflow.</p>"
-        },
-        "lastStopTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was stopped.</p>"
-        }
+    "StringMapKey": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[a-zA-Z0-9-_ ()]+",
+      "type": "string"
+    },
+    "StringMapValue": {
+      "max": 100,
+      "min": 0,
+      "type": "string"
+    },
+    "StringValue": {
+      "max": 100,
+      "min": 0,
+      "type": "string"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "(?!aws:)[a-zA-Z+-=._:/]+",
+      "type": "string"
+    },
+    "TagKeyList": {
+      "max": 50,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "TagMap": {
+      "key": {
+        "shape": "TagKey"
+      },
+      "type": "map",
+      "value": {
+        "shape": "TagValue"
       }
     },
-    "String":{"type":"string"},
-    "StringList":{
-      "type":"list",
-      "member":{"shape":"StringListMember"}
-    },
-    "StringListMember":{
-      "type":"string",
-      "max":100,
-      "min":0
-    },
-    "StringMap":{
-      "type":"map",
-      "key":{"shape":"StringMapKey"},
-      "value":{"shape":"StringMapValue"}
-    },
-    "StringMapKey":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[a-zA-Z0-9-_ ()]+"
-    },
-    "StringMapValue":{
-      "type":"string",
-      "max":100,
-      "min":0
-    },
-    "StringValue":{
-      "type":"string",
-      "max":100,
-      "min":0
-    },
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"(?!aws:)[a-zA-Z+-=._:/]+"
-    },
-    "TagKeyList":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "max":50,
-      "min":0
-    },
-    "TagMap":{
-      "type":"map",
-      "key":{"shape":"TagKey"},
-      "value":{"shape":"TagValue"}
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "TagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource to which you want to add tags.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "ResourceArn"
+        },
+        "tags": {
+          "documentation": "<p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>",
+          "shape": "TagMap"
+        }
+      },
+      "required": [
         "resourceArn",
         "tags"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the resource to which you want to add tags.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
     },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "min":0
+    "TagValue": {
+      "max": 256,
+      "min": 0,
+      "type": "string"
     },
-    "TargetType":{
-      "type":"string",
-      "enum":[
+    "TargetType": {
+      "enum": [
         "SINGLE",
         "ALL",
         "NONE"
-      ]
+      ],
+      "type": "string"
     },
-    "TemplateId":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
+    "TemplateId": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
     },
-    "TemplateInput":{
-      "type":"structure",
-      "members":{
-        "inputName":{
-          "shape":"TemplateInputName",
-          "documentation":"<p>The name of the template.</p>"
+    "TemplateInput": {
+      "documentation": "<p>The input parameters of a template.</p>",
+      "members": {
+        "dataType": {
+          "documentation": "<p>The data type of the template input.</p>",
+          "shape": "DataType"
         },
-        "dataType":{
-          "shape":"DataType",
-          "documentation":"<p>The data type of the template input.</p>"
+        "inputName": {
+          "documentation": "<p>The name of the template.</p>",
+          "shape": "TemplateInputName"
         },
-        "required":{
-          "shape":"Boolean",
-          "documentation":"<p>Determine if an input is required from the template.</p>"
+        "required": {
+          "documentation": "<p>Determine if an input is required from the template.</p>",
+          "shape": "Boolean"
         }
       },
-      "documentation":"<p>The input parameters of a template.</p>"
+      "type": "structure"
     },
-    "TemplateInputList":{
-      "type":"list",
-      "member":{"shape":"TemplateInput"}
+    "TemplateInputList": {
+      "member": {
+        "shape": "TemplateInput"
+      },
+      "type": "list"
     },
-    "TemplateInputName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
+    "TemplateInputName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
     },
-    "TemplateName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
+    "TemplateName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
     },
-    "TemplateStatus":{
-      "type":"string",
-      "enum":["CREATED"]
+    "TemplateStatus": {
+      "enum": [
+        "CREATED"
+      ],
+      "type": "string"
     },
-    "TemplateStepGroupSummary":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
+    "TemplateStepGroupSummary": {
+      "documentation": "<p>The summary of the step group in the template.</p>",
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step group.</p>"
+        "name": {
+          "documentation": "<p>The name of the step group.</p>",
+          "shape": "String"
         },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step group.</p>"
+        "next": {
+          "documentation": "<p>The next step group.</p>",
+          "shape": "StringList"
         },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step group.</p>"
+        "previous": {
+          "documentation": "<p>The previous step group.</p>",
+          "shape": "StringList"
         }
       },
-      "documentation":"<p>The summary of the step group in the template.</p>"
+      "type": "structure"
     },
-    "TemplateStepGroupSummaryList":{
-      "type":"list",
-      "member":{"shape":"TemplateStepGroupSummary"}
+    "TemplateStepGroupSummaryList": {
+      "member": {
+        "shape": "TemplateStepGroupSummary"
+      },
+      "type": "list"
     },
-    "TemplateStepSummary":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step.</p>"
+    "TemplateStepSummary": {
+      "documentation": "<p>The summary of the step.</p>",
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "shape": "String"
         },
-        "stepGroupId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "String"
         },
-        "templateId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the template.</p>"
+        "next": {
+          "documentation": "<p>The next step.</p>",
+          "shape": "StringList"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step.</p>"
+        "owner": {
+          "documentation": "<p>The owner of the step.</p>",
+          "shape": "Owner"
         },
-        "stepActionType":{
-          "shape":"StepActionType",
-          "documentation":"<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>"
+        "previous": {
+          "documentation": "<p>The previous step.</p>",
+          "shape": "StringList"
         },
-        "targetType":{
-          "shape":"TargetType",
-          "documentation":"<p>The servers on which to run the script.</p>"
+        "stepActionType": {
+          "documentation": "<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>",
+          "shape": "StepActionType"
         },
-        "owner":{
-          "shape":"Owner",
-          "documentation":"<p>The owner of the step.</p>"
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
         },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step.</p>"
+        "targetType": {
+          "documentation": "<p>The servers on which to run the script.</p>",
+          "shape": "TargetType"
         },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step.</p>"
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The summary of the step.</p>"
+      "type": "structure"
     },
-    "TemplateStepSummaryList":{
-      "type":"list",
-      "member":{"shape":"TemplateStepSummary"}
+    "TemplateStepSummaryList": {
+      "member": {
+        "shape": "TemplateStepSummary"
+      },
+      "type": "list"
     },
-    "TemplateSummary":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the template.</p>"
+    "TemplateSummary": {
+      "documentation": "<p>The summary of the template.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the template.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the template.</p>"
+        "description": {
+          "documentation": "<p>The description of the template.</p>",
+          "shape": "String"
         },
-        "arn":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the template.</p>"
+        "id": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "String"
         },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the template.</p>"
+        "name": {
+          "documentation": "<p>The name of the template.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The summary of the template.</p>"
+      "type": "structure"
     },
-    "TemplateSummaryList":{
-      "type":"list",
-      "member":{"shape":"TemplateSummary"}
-    },
-    "ThrottlingException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
+    "TemplateSummaryList": {
+      "member": {
+        "shape": "TemplateSummary"
       },
-      "documentation":"<p>The request was denied due to request throttling.</p>",
-      "error":{
-        "httpStatusCode":429,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "list"
     },
-    "Timestamp":{"type":"timestamp"},
-    "Tool":{
-      "type":"structure",
-      "members":{
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of an AWS service. </p>"
-        },
-        "url":{
-          "shape":"String",
-          "documentation":"<p>The URL of an AWS service.</p>"
+    "ThrottlingException": {
+      "documentation": "<p>The request was denied due to request throttling.</p>",
+      "error": {
+        "httpStatusCode": 429,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>List of AWS services utilized in a migration workflow.</p>"
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "ToolsList":{
-      "type":"list",
-      "member":{"shape":"Tool"}
+    "Timestamp": {
+      "type": "timestamp"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "Tool": {
+      "documentation": "<p>List of AWS services utilized in a migration workflow.</p>",
+      "members": {
+        "name": {
+          "documentation": "<p>The name of an AWS service. </p>",
+          "shape": "String"
+        },
+        "url": {
+          "documentation": "<p>The URL of an AWS service.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "ToolsList": {
+      "member": {
+        "shape": "Tool"
+      },
+      "type": "list"
+    },
+    "UntagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "ResourceArn"
+        },
+        "tagKeys": {
+          "documentation": "<p>One or more tag keys. Specify only the tag keys, not the tag values.</p>",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeyList"
+        }
+      },
+      "required": [
         "resourceArn",
         "tagKeys"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateMigrationWorkflowRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the migration workflow.</p>",
+          "shape": "UpdateMigrationWorkflowRequestDescriptionString"
         },
-        "tagKeys":{
-          "shape":"TagKeyList",
-          "documentation":"<p>One or more tag keys. Specify only the tag keys, not the tag values.</p>",
-          "location":"querystring",
-          "locationName":"tagKeys"
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "MigrationWorkflowId"
+        },
+        "inputParameters": {
+          "documentation": "<p>The input parameters required to update a migration workflow.</p>",
+          "shape": "StepInputParameters"
+        },
+        "name": {
+          "documentation": "<p>The name of the migration workflow.</p>",
+          "shape": "UpdateMigrationWorkflowRequestNameString"
+        },
+        "stepTargets": {
+          "documentation": "<p>The servers on which a step will be run.</p>",
+          "shape": "StringList"
         }
-      }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "UpdateMigrationWorkflowRequestDescriptionString": {
+      "max": 500,
+      "min": 0,
+      "pattern": "[-a-zA-Z0-9_.+, ]*",
+      "type": "string"
     },
-    "UpdateMigrationWorkflowRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"uri",
-          "locationName":"id"
+    "UpdateMigrationWorkflowRequestNameString": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
+    },
+    "UpdateMigrationWorkflowResponse": {
+      "members": {
+        "adsApplicationConfigurationId": {
+          "documentation": "<p>The ID of the application configured in Application Discovery Service.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"UpdateMigrationWorkflowRequestNameString",
-          "documentation":"<p>The name of the migration workflow.</p>"
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the migration workflow.</p>",
+          "shape": "String"
         },
-        "description":{
-          "shape":"UpdateMigrationWorkflowRequestDescriptionString",
-          "documentation":"<p>The description of the migration workflow.</p>"
+        "creationTime": {
+          "documentation": "<p>The time at which the migration workflow was created.</p>",
+          "shape": "Timestamp"
         },
-        "inputParameters":{
-          "shape":"StepInputParameters",
-          "documentation":"<p>The input parameters required to update a migration workflow.</p>"
+        "description": {
+          "documentation": "<p>The description of the migration workflow.</p>",
+          "shape": "String"
         },
-        "stepTargets":{
-          "shape":"StringList",
-          "documentation":"<p>The servers on which a step will be run.</p>"
+        "id": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
+        },
+        "lastModifiedTime": {
+          "documentation": "<p>The time at which the migration workflow was last modified.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The name of the migration workflow.</p>",
+          "shape": "String"
+        },
+        "status": {
+          "documentation": "<p>The status of the migration workflow.</p>",
+          "shape": "MigrationWorkflowStatusEnum"
+        },
+        "stepTargets": {
+          "documentation": "<p>The servers on which a step will be run.</p>",
+          "shape": "StringList"
+        },
+        "tags": {
+          "documentation": "<p>The tags added to the migration workflow.</p>",
+          "shape": "StringMap"
+        },
+        "templateId": {
+          "documentation": "<p>The ID of the template.</p>",
+          "shape": "String"
+        },
+        "workflowInputs": {
+          "documentation": "<p>The inputs required to update a migration workflow.</p>",
+          "shape": "StepInputParameters"
         }
-      }
+      },
+      "type": "structure"
     },
-    "UpdateMigrationWorkflowRequestDescriptionString":{
-      "type":"string",
-      "max":500,
-      "min":0,
-      "pattern":"[-a-zA-Z0-9_.+, ]*"
-    },
-    "UpdateMigrationWorkflowRequestNameString":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
-    },
-    "UpdateMigrationWorkflowResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
+    "UpdateWorkflowStepGroupRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the step group.</p>",
+          "shape": "StepGroupDescription"
         },
-        "arn":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the migration workflow.</p>"
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepGroupId"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the migration workflow.</p>"
+        "name": {
+          "documentation": "<p>The name of the step group.</p>",
+          "shape": "StepGroupName"
         },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the migration workflow.</p>"
+        "next": {
+          "documentation": "<p>The next step group.</p>",
+          "shape": "StringList"
         },
-        "templateId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the template.</p>"
+        "previous": {
+          "documentation": "<p>The previous step group.</p>",
+          "shape": "StringList"
         },
-        "adsApplicationConfigurationId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the application configured in Application Discovery Service.</p>"
-        },
-        "workflowInputs":{
-          "shape":"StepInputParameters",
-          "documentation":"<p>The inputs required to update a migration workflow.</p>"
-        },
-        "stepTargets":{
-          "shape":"StringList",
-          "documentation":"<p>The servers on which a step will be run.</p>"
-        },
-        "status":{
-          "shape":"MigrationWorkflowStatusEnum",
-          "documentation":"<p>The status of the migration workflow.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was created.</p>"
-        },
-        "lastModifiedTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the migration workflow was last modified.</p>"
-        },
-        "tags":{
-          "shape":"StringMap",
-          "documentation":"<p>The tags added to the migration workflow.</p>"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "location": "querystring",
+          "locationName": "workflowId",
+          "shape": "MigrationWorkflowId"
         }
-      }
-    },
-    "UpdateWorkflowStepGroupRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "workflowId",
         "id"
       ],
-      "members":{
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>",
-          "location":"querystring",
-          "locationName":"workflowId"
-        },
-        "id":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>",
-          "location":"uri",
-          "locationName":"id"
-        },
-        "name":{
-          "shape":"StepGroupName",
-          "documentation":"<p>The name of the step group.</p>"
-        },
-        "description":{
-          "shape":"StepGroupDescription",
-          "documentation":"<p>The description of the step group.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step group.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step group.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "UpdateWorkflowStepGroupResponse":{
-      "type":"structure",
-      "members":{
-        "workflowId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the migration workflow.</p>"
+    "UpdateWorkflowStepGroupResponse": {
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the step group.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step group.</p>"
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
         },
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
+        "lastModifiedTime": {
+          "documentation": "<p>The time at which the step group was last modified.</p>",
+          "shape": "Timestamp"
         },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the step group.</p>"
+        "name": {
+          "documentation": "<p>The name of the step group.</p>",
+          "shape": "String"
         },
-        "tools":{
-          "shape":"ToolsList",
-          "documentation":"<p>List of AWS services utilized in a migration workflow.</p>"
+        "next": {
+          "documentation": "<p>The next step group.</p>",
+          "shape": "StringList"
         },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step group.</p>"
+        "previous": {
+          "documentation": "<p>The previous step group.</p>",
+          "shape": "StringList"
         },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step group.</p>"
+        "tools": {
+          "documentation": "<p>List of AWS services utilized in a migration workflow.</p>",
+          "shape": "ToolsList"
         },
-        "lastModifiedTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time at which the step group was last modified.</p>"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "type": "structure"
     },
-    "UpdateWorkflowStepRequest":{
-      "type":"structure",
-      "required":[
+    "UpdateWorkflowStepRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the step.</p>",
+          "shape": "StepDescription"
+        },
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "StepId"
+        },
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "StepName"
+        },
+        "next": {
+          "documentation": "<p>The next step.</p>",
+          "shape": "StringList"
+        },
+        "outputs": {
+          "documentation": "<p>The outputs of a step.</p>",
+          "shape": "WorkflowStepOutputList"
+        },
+        "previous": {
+          "documentation": "<p>The previous step.</p>",
+          "shape": "StringList"
+        },
+        "status": {
+          "documentation": "<p>The status of the step.</p>",
+          "shape": "StepStatus"
+        },
+        "stepActionType": {
+          "documentation": "<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>",
+          "shape": "StepActionType"
+        },
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "StepGroupId"
+        },
+        "stepTarget": {
+          "documentation": "<p>The servers on which a step will be run.</p>",
+          "shape": "StringList"
+        },
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "MigrationWorkflowId"
+        },
+        "workflowStepAutomationConfiguration": {
+          "documentation": "<p>The custom script to run tests on the source and target environments.</p>",
+          "shape": "WorkflowStepAutomationConfiguration"
+        }
+      },
+      "required": [
         "id",
         "stepGroupId",
         "workflowId"
       ],
-      "members":{
-        "id":{
-          "shape":"StepId",
-          "documentation":"<p>The ID of the step.</p>",
-          "location":"uri",
-          "locationName":"id"
-        },
-        "stepGroupId":{
-          "shape":"StepGroupId",
-          "documentation":"<p>The ID of the step group.</p>"
-        },
-        "workflowId":{
-          "shape":"MigrationWorkflowId",
-          "documentation":"<p>The ID of the migration workflow.</p>"
-        },
-        "name":{
-          "shape":"StepName",
-          "documentation":"<p>The name of the step.</p>"
-        },
-        "description":{
-          "shape":"StepDescription",
-          "documentation":"<p>The description of the step.</p>"
-        },
-        "stepActionType":{
-          "shape":"StepActionType",
-          "documentation":"<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>"
-        },
-        "workflowStepAutomationConfiguration":{
-          "shape":"WorkflowStepAutomationConfiguration",
-          "documentation":"<p>The custom script to run tests on the source and target environments.</p>"
-        },
-        "stepTarget":{
-          "shape":"StringList",
-          "documentation":"<p>The servers on which a step will be run.</p>"
-        },
-        "outputs":{
-          "shape":"WorkflowStepOutputList",
-          "documentation":"<p>The outputs of a step.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step.</p>"
-        },
-        "status":{
-          "shape":"StepStatus",
-          "documentation":"<p>The status of the step.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "UpdateWorkflowStepResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"StepId",
-          "documentation":"<p>The ID of the step.</p>"
+    "UpdateWorkflowStepResponse": {
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step.</p>",
+          "shape": "StepId"
         },
-        "stepGroupId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "String"
         },
-        "workflowId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the migration workflow.</p>"
+        "stepGroupId": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step.</p>"
-        }
-      }
-    },
-    "ValidationException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true,
-      "retryable":{"throttling":false}
-    },
-    "WorkflowStepAutomationConfiguration":{
-      "type":"structure",
-      "members":{
-        "scriptLocationS3Bucket":{
-          "shape":"S3Bucket",
-          "documentation":"<p>The Amazon S3 bucket where the script is located.</p>"
-        },
-        "scriptLocationS3Key":{
-          "shape":"PlatformScriptKey",
-          "documentation":"<p>The Amazon S3 key for the script location.</p>"
-        },
-        "command":{
-          "shape":"PlatformCommand",
-          "documentation":"<p>The command required to run the script.</p>"
-        },
-        "runEnvironment":{
-          "shape":"RunEnvironment",
-          "documentation":"<p>The source or target environment.</p>"
-        },
-        "targetType":{
-          "shape":"TargetType",
-          "documentation":"<p>The servers on which to run the script.</p>"
+        "workflowId": {
+          "documentation": "<p>The ID of the migration workflow.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The custom script to run tests on source or target environments.</p>"
+      "type": "structure"
     },
-    "WorkflowStepGroupSummary":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step group.</p>"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step group.</p>"
-        },
-        "owner":{
-          "shape":"Owner",
-          "documentation":"<p>The owner of the step group.</p>"
-        },
-        "status":{
-          "shape":"StepGroupStatus",
-          "documentation":"<p>The status of the step group.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step group.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step group.</p>"
+    "ValidationException": {
+      "documentation": "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>The summary of a step group in a workflow.</p>"
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
+      },
+      "type": "structure"
     },
-    "WorkflowStepGroupsSummaryList":{
-      "type":"list",
-      "member":{"shape":"WorkflowStepGroupSummary"}
-    },
-    "WorkflowStepOutput":{
-      "type":"structure",
-      "members":{
-        "name":{
-          "shape":"WorkflowStepOutputName",
-          "documentation":"<p>The name of the step.</p>"
+    "WorkflowStepAutomationConfiguration": {
+      "documentation": "<p>The custom script to run tests on source or target environments.</p>",
+      "members": {
+        "command": {
+          "documentation": "<p>The command required to run the script.</p>",
+          "shape": "PlatformCommand"
         },
-        "dataType":{
-          "shape":"DataType",
-          "documentation":"<p>The data type of the output.</p>"
+        "runEnvironment": {
+          "documentation": "<p>The source or target environment.</p>",
+          "shape": "RunEnvironment"
         },
-        "required":{
-          "shape":"Boolean",
-          "documentation":"<p>Determine if an output is required from a step.</p>"
+        "scriptLocationS3Bucket": {
+          "documentation": "<p>The Amazon S3 bucket where the script is located.</p>",
+          "shape": "S3Bucket"
         },
-        "value":{
-          "shape":"WorkflowStepOutputUnion",
-          "documentation":"<p>The value of the output.</p>"
+        "scriptLocationS3Key": {
+          "documentation": "<p>The Amazon S3 key for the script location.</p>",
+          "shape": "PlatformScriptKey"
+        },
+        "targetType": {
+          "documentation": "<p>The servers on which to run the script.</p>",
+          "shape": "TargetType"
         }
       },
-      "documentation":"<p>The output of a step.</p>"
+      "type": "structure"
     },
-    "WorkflowStepOutputList":{
-      "type":"list",
-      "member":{"shape":"WorkflowStepOutput"}
-    },
-    "WorkflowStepOutputName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*"
-    },
-    "WorkflowStepOutputUnion":{
-      "type":"structure",
-      "members":{
-        "integerValue":{
-          "shape":"Integer",
-          "documentation":"<p>The integer value. </p>",
-          "box":true
+    "WorkflowStepGroupSummary": {
+      "documentation": "<p>The summary of a step group in a workflow.</p>",
+      "members": {
+        "id": {
+          "documentation": "<p>The ID of the step group.</p>",
+          "shape": "String"
         },
-        "stringValue":{
-          "shape":"StringValue",
-          "documentation":"<p>The string value.</p>"
+        "name": {
+          "documentation": "<p>The name of the step group.</p>",
+          "shape": "String"
         },
-        "listOfStringValue":{
-          "shape":"StringList",
-          "documentation":"<p>The list of string value.</p>"
+        "next": {
+          "documentation": "<p>The next step group.</p>",
+          "shape": "StringList"
+        },
+        "owner": {
+          "documentation": "<p>The owner of the step group.</p>",
+          "shape": "Owner"
+        },
+        "previous": {
+          "documentation": "<p>The previous step group.</p>",
+          "shape": "StringList"
+        },
+        "status": {
+          "documentation": "<p>The status of the step group.</p>",
+          "shape": "StepGroupStatus"
         }
       },
-      "documentation":"<p>A structure to hold multiple values of an output.</p>",
-      "union":true
+      "type": "structure"
     },
-    "WorkflowStepSummary":{
-      "type":"structure",
-      "members":{
-        "stepId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the step.</p>"
+    "WorkflowStepGroupsSummaryList": {
+      "member": {
+        "shape": "WorkflowStepGroupSummary"
+      },
+      "type": "list"
+    },
+    "WorkflowStepOutput": {
+      "documentation": "<p>The output of a step.</p>",
+      "members": {
+        "dataType": {
+          "documentation": "<p>The data type of the output.</p>",
+          "shape": "DataType"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the step.</p>"
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "WorkflowStepOutputName"
         },
-        "stepActionType":{
-          "shape":"StepActionType",
-          "documentation":"<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>"
+        "required": {
+          "documentation": "<p>Determine if an output is required from a step.</p>",
+          "shape": "Boolean"
         },
-        "owner":{
-          "shape":"Owner",
-          "documentation":"<p>The owner of the step.</p>"
-        },
-        "previous":{
-          "shape":"StringList",
-          "documentation":"<p>The previous step.</p>"
-        },
-        "next":{
-          "shape":"StringList",
-          "documentation":"<p>The next step.</p>"
-        },
-        "status":{
-          "shape":"StepStatus",
-          "documentation":"<p>The status of the step.</p>"
-        },
-        "statusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message of the migration workflow.</p>"
-        },
-        "noOfSrvCompleted":{
-          "shape":"Integer",
-          "documentation":"<p>The number of servers that have been migrated.</p>"
-        },
-        "noOfSrvFailed":{
-          "shape":"Integer",
-          "documentation":"<p>The number of servers that have failed to migrate.</p>"
-        },
-        "totalNoOfSrv":{
-          "shape":"Integer",
-          "documentation":"<p>The total number of servers that have been migrated.</p>"
-        },
-        "description":{
-          "shape":"String",
-          "documentation":"<p>The description of the step.</p>"
-        },
-        "scriptLocation":{
-          "shape":"String",
-          "documentation":"<p>The location of the script.</p>"
+        "value": {
+          "documentation": "<p>The value of the output.</p>",
+          "shape": "WorkflowStepOutputUnion"
         }
       },
-      "documentation":"<p>The summary of the step in a migration workflow.</p>"
+      "type": "structure"
     },
-    "WorkflowStepsSummaryList":{
-      "type":"list",
-      "member":{"shape":"WorkflowStepSummary"}
+    "WorkflowStepOutputList": {
+      "member": {
+        "shape": "WorkflowStepOutput"
+      },
+      "type": "list"
+    },
+    "WorkflowStepOutputName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "[-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*",
+      "type": "string"
+    },
+    "WorkflowStepOutputUnion": {
+      "documentation": "<p>A structure to hold multiple values of an output.</p>",
+      "members": {
+        "integerValue": {
+          "box": true,
+          "documentation": "<p>The integer value. </p>",
+          "shape": "Integer"
+        },
+        "listOfStringValue": {
+          "documentation": "<p>The list of string value.</p>",
+          "shape": "StringList"
+        },
+        "stringValue": {
+          "documentation": "<p>The string value.</p>",
+          "shape": "StringValue"
+        }
+      },
+      "type": "structure",
+      "union": true
+    },
+    "WorkflowStepSummary": {
+      "documentation": "<p>The summary of the step in a migration workflow.</p>",
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the step.</p>",
+          "shape": "String"
+        },
+        "name": {
+          "documentation": "<p>The name of the step.</p>",
+          "shape": "String"
+        },
+        "next": {
+          "documentation": "<p>The next step.</p>",
+          "shape": "StringList"
+        },
+        "noOfSrvCompleted": {
+          "documentation": "<p>The number of servers that have been migrated.</p>",
+          "shape": "Integer"
+        },
+        "noOfSrvFailed": {
+          "documentation": "<p>The number of servers that have failed to migrate.</p>",
+          "shape": "Integer"
+        },
+        "owner": {
+          "documentation": "<p>The owner of the step.</p>",
+          "shape": "Owner"
+        },
+        "previous": {
+          "documentation": "<p>The previous step.</p>",
+          "shape": "StringList"
+        },
+        "scriptLocation": {
+          "documentation": "<p>The location of the script.</p>",
+          "shape": "String"
+        },
+        "status": {
+          "documentation": "<p>The status of the step.</p>",
+          "shape": "StepStatus"
+        },
+        "statusMessage": {
+          "documentation": "<p>The status message of the migration workflow.</p>",
+          "shape": "String"
+        },
+        "stepActionType": {
+          "documentation": "<p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>",
+          "shape": "StepActionType"
+        },
+        "stepId": {
+          "documentation": "<p>The ID of the step.</p>",
+          "shape": "String"
+        },
+        "totalNoOfSrv": {
+          "documentation": "<p>The total number of servers that have been migrated.</p>",
+          "shape": "Integer"
+        }
+      },
+      "type": "structure"
+    },
+    "WorkflowStepsSummaryList": {
+      "member": {
+        "shape": "WorkflowStepSummary"
+      },
+      "type": "list"
     }
   },
-  "documentation":"<p>This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS Migration Hub Orchestrator. he topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're using.</p>"
+  "version": "2.0"
 }

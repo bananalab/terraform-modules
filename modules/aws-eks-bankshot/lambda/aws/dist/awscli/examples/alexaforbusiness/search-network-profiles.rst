@@ -29,6 +29,6 @@ Output::
             }
         ],
         "TotalCount": 3
-    }         
+    }
 
 For more information, see `Managing Network Profiles <https://docs.aws.amazon.com/a4b/latest/ag/manage-network-profiles.html>`__ in the *Alexa for Business Administration Guide*.

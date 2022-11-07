@@ -1,26 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "GraphqlApi": {
-      "operation": "ListGraphqlApis",
-      "resourceIdentifier": {
-        "name": "graphqlApis[].name",
-        "apiId": "graphqlApis[].apiId",
-        "authenticationType": "graphqlApis[].authenticationType",
-        "logConfig": "graphqlApis[].logConfig",
-        "userPoolConfig": "graphqlApis[].userPoolConfig",
-        "openIDConnectConfig": "graphqlApis[].openIDConnectConfig"
-      }
-    }
-  },
   "operations": {
     "DeleteApiKey": {
       "apiId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -30,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       },
@@ -39,8 +25,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "name"
+            "resourceIdentifier": "name",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -50,8 +36,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -61,8 +47,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -72,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -83,8 +69,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       },
@@ -92,8 +78,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "name"
+            "resourceIdentifier": "name",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -103,8 +89,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -114,8 +100,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -125,8 +111,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -136,8 +122,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -147,8 +133,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -158,8 +144,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -169,8 +155,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -180,8 +166,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -191,8 +177,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -202,8 +188,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -213,8 +199,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -224,8 +210,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       },
@@ -233,8 +219,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "name"
+            "resourceIdentifier": "name",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -244,26 +230,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
-          }
-        ]
-      },
-      "name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "name"
-          }
-        ]
-      },
-      "logConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "logConfig"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       },
@@ -271,17 +239,26 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "authenticationType"
+            "resourceIdentifier": "authenticationType",
+            "resourceName": "GraphqlApi"
           }
         ]
       },
-      "userPoolConfig": {
+      "logConfig": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "userPoolConfig"
+            "resourceIdentifier": "logConfig",
+            "resourceName": "GraphqlApi"
+          }
+        ]
+      },
+      "name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "name",
+            "resourceName": "GraphqlApi"
           }
         ]
       },
@@ -289,8 +266,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "openIDConnectConfig"
+            "resourceIdentifier": "openIDConnectConfig",
+            "resourceName": "GraphqlApi"
+          }
+        ]
+      },
+      "userPoolConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userPoolConfig",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -300,8 +286,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
@@ -311,11 +297,25 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "GraphqlApi",
-            "resourceIdentifier": "apiId"
+            "resourceIdentifier": "apiId",
+            "resourceName": "GraphqlApi"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "GraphqlApi": {
+      "operation": "ListGraphqlApis",
+      "resourceIdentifier": {
+        "apiId": "graphqlApis[].apiId",
+        "authenticationType": "graphqlApis[].authenticationType",
+        "logConfig": "graphqlApis[].logConfig",
+        "name": "graphqlApis[].name",
+        "openIDConnectConfig": "graphqlApis[].openIDConnectConfig",
+        "userPoolConfig": "graphqlApis[].userPoolConfig"
+      }
+    }
+  },
+  "version": "1.0"
 }

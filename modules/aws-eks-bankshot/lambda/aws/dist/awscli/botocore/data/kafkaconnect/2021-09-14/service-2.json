@@ -1,562 +1,839 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2021-09-14",
-    "endpointPrefix":"kafkaconnect",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceAbbreviation":"Kafka Connect",
-    "serviceFullName":"Managed Streaming for Kafka Connect",
-    "serviceId":"KafkaConnect",
-    "signatureVersion":"v4",
-    "signingName":"kafkaconnect",
-    "uid":"kafkaconnect-2021-09-14"
+  "documentation": "<p/>",
+  "metadata": {
+    "apiVersion": "2021-09-14",
+    "endpointPrefix": "kafkaconnect",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceAbbreviation": "Kafka Connect",
+    "serviceFullName": "Managed Streaming for Kafka Connect",
+    "serviceId": "KafkaConnect",
+    "signatureVersion": "v4",
+    "signingName": "kafkaconnect",
+    "uid": "kafkaconnect-2021-09-14"
   },
-  "operations":{
-    "CreateConnector":{
-      "name":"CreateConnector",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/connectors",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateConnectorRequest"},
-      "output":{"shape":"CreateConnectorResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"ConflictException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+  "operations": {
+    "CreateConnector": {
+      "documentation": "<p>Creates a connector using the specified properties.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Creates a connector using the specified properties.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/connectors",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateConnectorRequest"
+      },
+      "name": "CreateConnector",
+      "output": {
+        "shape": "CreateConnectorResponse"
+      }
     },
-    "CreateCustomPlugin":{
-      "name":"CreateCustomPlugin",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/custom-plugins",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateCustomPluginRequest"},
-      "output":{"shape":"CreateCustomPluginResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"ConflictException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "CreateCustomPlugin": {
+      "documentation": "<p>Creates a custom plugin using the specified properties.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Creates a custom plugin using the specified properties.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/custom-plugins",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateCustomPluginRequest"
+      },
+      "name": "CreateCustomPlugin",
+      "output": {
+        "shape": "CreateCustomPluginResponse"
+      }
     },
-    "CreateWorkerConfiguration":{
-      "name":"CreateWorkerConfiguration",
-      "http":{
-        "method":"POST",
-        "requestUri":"/v1/worker-configurations",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateWorkerConfigurationRequest"},
-      "output":{"shape":"CreateWorkerConfigurationResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"ConflictException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "CreateWorkerConfiguration": {
+      "documentation": "<p>Creates a worker configuration using the specified properties.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Creates a worker configuration using the specified properties.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/worker-configurations",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateWorkerConfigurationRequest"
+      },
+      "name": "CreateWorkerConfiguration",
+      "output": {
+        "shape": "CreateWorkerConfigurationResponse"
+      }
     },
-    "DeleteConnector":{
-      "name":"DeleteConnector",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/v1/connectors/{connectorArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteConnectorRequest"},
-      "output":{"shape":"DeleteConnectorResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "DeleteConnector": {
+      "documentation": "<p>Deletes the specified connector.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Deletes the specified connector.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/connectors/{connectorArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteConnectorRequest"
+      },
+      "name": "DeleteConnector",
+      "output": {
+        "shape": "DeleteConnectorResponse"
+      }
     },
-    "DeleteCustomPlugin":{
-      "name":"DeleteCustomPlugin",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/v1/custom-plugins/{customPluginArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteCustomPluginRequest"},
-      "output":{"shape":"DeleteCustomPluginResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "DeleteCustomPlugin": {
+      "documentation": "<p>Deletes a custom plugin.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Deletes a custom plugin.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/custom-plugins/{customPluginArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteCustomPluginRequest"
+      },
+      "name": "DeleteCustomPlugin",
+      "output": {
+        "shape": "DeleteCustomPluginResponse"
+      }
     },
-    "DescribeConnector":{
-      "name":"DescribeConnector",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/connectors/{connectorArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeConnectorRequest"},
-      "output":{"shape":"DescribeConnectorResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "DescribeConnector": {
+      "documentation": "<p>Returns summary information about the connector.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Returns summary information about the connector.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/connectors/{connectorArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeConnectorRequest"
+      },
+      "name": "DescribeConnector",
+      "output": {
+        "shape": "DescribeConnectorResponse"
+      }
     },
-    "DescribeCustomPlugin":{
-      "name":"DescribeCustomPlugin",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/custom-plugins/{customPluginArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeCustomPluginRequest"},
-      "output":{"shape":"DescribeCustomPluginResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "DescribeCustomPlugin": {
+      "documentation": "<p>A summary description of the custom plugin.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>A summary description of the custom plugin.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/custom-plugins/{customPluginArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeCustomPluginRequest"
+      },
+      "name": "DescribeCustomPlugin",
+      "output": {
+        "shape": "DescribeCustomPluginResponse"
+      }
     },
-    "DescribeWorkerConfiguration":{
-      "name":"DescribeWorkerConfiguration",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/worker-configurations/{workerConfigurationArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeWorkerConfigurationRequest"},
-      "output":{"shape":"DescribeWorkerConfigurationResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "DescribeWorkerConfiguration": {
+      "documentation": "<p>Returns information about a worker configuration.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Returns information about a worker configuration.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/worker-configurations/{workerConfigurationArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeWorkerConfigurationRequest"
+      },
+      "name": "DescribeWorkerConfiguration",
+      "output": {
+        "shape": "DescribeWorkerConfigurationResponse"
+      }
     },
-    "ListConnectors":{
-      "name":"ListConnectors",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/connectors",
-        "responseCode":200
-      },
-      "input":{"shape":"ListConnectorsRequest"},
-      "output":{"shape":"ListConnectorsResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "ListConnectors": {
+      "documentation": "<p>Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/connectors",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListConnectorsRequest"
+      },
+      "name": "ListConnectors",
+      "output": {
+        "shape": "ListConnectorsResponse"
+      }
     },
-    "ListCustomPlugins":{
-      "name":"ListCustomPlugins",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/custom-plugins",
-        "responseCode":200
-      },
-      "input":{"shape":"ListCustomPluginsRequest"},
-      "output":{"shape":"ListCustomPluginsResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "ListCustomPlugins": {
+      "documentation": "<p>Returns a list of all of the custom plugins in this account and Region.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Returns a list of all of the custom plugins in this account and Region.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/custom-plugins",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListCustomPluginsRequest"
+      },
+      "name": "ListCustomPlugins",
+      "output": {
+        "shape": "ListCustomPluginsResponse"
+      }
     },
-    "ListWorkerConfigurations":{
-      "name":"ListWorkerConfigurations",
-      "http":{
-        "method":"GET",
-        "requestUri":"/v1/worker-configurations",
-        "responseCode":200
-      },
-      "input":{"shape":"ListWorkerConfigurationsRequest"},
-      "output":{"shape":"ListWorkerConfigurationsResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "ListWorkerConfigurations": {
+      "documentation": "<p>Returns a list of all of the worker configurations in this account and Region.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Returns a list of all of the worker configurations in this account and Region.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/worker-configurations",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListWorkerConfigurationsRequest"
+      },
+      "name": "ListWorkerConfigurations",
+      "output": {
+        "shape": "ListWorkerConfigurationsResponse"
+      }
     },
-    "UpdateConnector":{
-      "name":"UpdateConnector",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/v1/connectors/{connectorArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateConnectorRequest"},
-      "output":{"shape":"UpdateConnectorResponse"},
-      "errors":[
-        {"shape":"NotFoundException"},
-        {"shape":"BadRequestException"},
-        {"shape":"ForbiddenException"},
-        {"shape":"ServiceUnavailableException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"UnauthorizedException"},
-        {"shape":"InternalServerErrorException"}
+    "UpdateConnector": {
+      "documentation": "<p>Updates the specified connector.</p>",
+      "errors": [
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "UnauthorizedException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        }
       ],
-      "documentation":"<p>Updates the specified connector.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/connectors/{connectorArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateConnectorRequest"
+      },
+      "name": "UpdateConnector",
+      "output": {
+        "shape": "UpdateConnectorResponse"
+      }
     }
   },
-  "shapes":{
-    "ApacheKafkaCluster":{
-      "type":"structure",
-      "required":[
+  "shapes": {
+    "ApacheKafkaCluster": {
+      "documentation": "<p>The details of the Apache Kafka cluster to which the connector is connected.</p>",
+      "members": {
+        "bootstrapServers": {
+          "documentation": "<p>The bootstrap servers of the cluster.</p>",
+          "shape": "__string"
+        },
+        "vpc": {
+          "documentation": "<p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>",
+          "shape": "Vpc"
+        }
+      },
+      "required": [
         "bootstrapServers",
         "vpc"
       ],
-      "members":{
-        "bootstrapServers":{
-          "shape":"__string",
-          "documentation":"<p>The bootstrap servers of the cluster.</p>"
+      "type": "structure"
+    },
+    "ApacheKafkaClusterDescription": {
+      "documentation": "<p>The description of the Apache Kafka cluster to which the connector is connected.</p>",
+      "members": {
+        "bootstrapServers": {
+          "documentation": "<p>The bootstrap servers of the cluster.</p>",
+          "shape": "__string"
         },
-        "vpc":{
-          "shape":"Vpc",
-          "documentation":"<p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>"
+        "vpc": {
+          "documentation": "<p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>",
+          "shape": "VpcDescription"
         }
       },
-      "documentation":"<p>The details of the Apache Kafka cluster to which the connector is connected.</p>"
+      "type": "structure"
     },
-    "ApacheKafkaClusterDescription":{
-      "type":"structure",
-      "members":{
-        "bootstrapServers":{
-          "shape":"__string",
-          "documentation":"<p>The bootstrap servers of the cluster.</p>"
+    "AutoScaling": {
+      "documentation": "<p>Specifies how the connector scales.</p>",
+      "members": {
+        "maxWorkerCount": {
+          "documentation": "<p>The maximum number of workers allocated to the connector.</p>",
+          "shape": "__integerMin1Max10"
         },
-        "vpc":{
-          "shape":"VpcDescription",
-          "documentation":"<p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>"
+        "mcuCount": {
+          "documentation": "<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>",
+          "shape": "__integerMin1Max8"
+        },
+        "minWorkerCount": {
+          "documentation": "<p>The minimum number of workers allocated to the connector.</p>",
+          "shape": "__integerMin1Max10"
+        },
+        "scaleInPolicy": {
+          "documentation": "<p>The sacle-in policy for the connector.</p>",
+          "shape": "ScaleInPolicy"
+        },
+        "scaleOutPolicy": {
+          "documentation": "<p>The sacle-out policy for the connector.</p>",
+          "shape": "ScaleOutPolicy"
         }
       },
-      "documentation":"<p>The description of the Apache Kafka cluster to which the connector is connected.</p>"
-    },
-    "AutoScaling":{
-      "type":"structure",
-      "required":[
+      "required": [
         "maxWorkerCount",
         "mcuCount",
         "minWorkerCount"
       ],
-      "members":{
-        "maxWorkerCount":{
-          "shape":"__integerMin1Max10",
-          "documentation":"<p>The maximum number of workers allocated to the connector.</p>"
+      "type": "structure"
+    },
+    "AutoScalingDescription": {
+      "documentation": "<p>Information about the auto scaling parameters for the connector.</p>",
+      "members": {
+        "maxWorkerCount": {
+          "documentation": "<p>The maximum number of workers allocated to the connector.</p>",
+          "shape": "__integer"
         },
-        "mcuCount":{
-          "shape":"__integerMin1Max8",
-          "documentation":"<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>"
+        "mcuCount": {
+          "documentation": "<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>",
+          "shape": "__integer"
         },
-        "minWorkerCount":{
-          "shape":"__integerMin1Max10",
-          "documentation":"<p>The minimum number of workers allocated to the connector.</p>"
+        "minWorkerCount": {
+          "documentation": "<p>The minimum number of workers allocated to the connector.</p>",
+          "shape": "__integer"
         },
-        "scaleInPolicy":{
-          "shape":"ScaleInPolicy",
-          "documentation":"<p>The sacle-in policy for the connector.</p>"
+        "scaleInPolicy": {
+          "documentation": "<p>The sacle-in policy for the connector.</p>",
+          "shape": "ScaleInPolicyDescription"
         },
-        "scaleOutPolicy":{
-          "shape":"ScaleOutPolicy",
-          "documentation":"<p>The sacle-out policy for the connector.</p>"
+        "scaleOutPolicy": {
+          "documentation": "<p>The sacle-out policy for the connector.&gt;</p>",
+          "shape": "ScaleOutPolicyDescription"
         }
       },
-      "documentation":"<p>Specifies how the connector scales.</p>"
+      "type": "structure"
     },
-    "AutoScalingDescription":{
-      "type":"structure",
-      "members":{
-        "maxWorkerCount":{
-          "shape":"__integer",
-          "documentation":"<p>The maximum number of workers allocated to the connector.</p>"
+    "AutoScalingUpdate": {
+      "documentation": "<p>The updates to the auto scaling parameters for the connector.</p>",
+      "members": {
+        "maxWorkerCount": {
+          "documentation": "<p>The target maximum number of workers allocated to the connector.</p>",
+          "shape": "__integerMin1Max10"
         },
-        "mcuCount":{
-          "shape":"__integer",
-          "documentation":"<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>"
+        "mcuCount": {
+          "documentation": "<p>The target number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>",
+          "shape": "__integerMin1Max8"
         },
-        "minWorkerCount":{
-          "shape":"__integer",
-          "documentation":"<p>The minimum number of workers allocated to the connector.</p>"
+        "minWorkerCount": {
+          "documentation": "<p>The target minimum number of workers allocated to the connector.</p>",
+          "shape": "__integerMin1Max10"
         },
-        "scaleInPolicy":{
-          "shape":"ScaleInPolicyDescription",
-          "documentation":"<p>The sacle-in policy for the connector.</p>"
+        "scaleInPolicy": {
+          "documentation": "<p>The target sacle-in policy for the connector.</p>",
+          "shape": "ScaleInPolicyUpdate"
         },
-        "scaleOutPolicy":{
-          "shape":"ScaleOutPolicyDescription",
-          "documentation":"<p>The sacle-out policy for the connector.&gt;</p>"
+        "scaleOutPolicy": {
+          "documentation": "<p>The target sacle-out policy for the connector.</p>",
+          "shape": "ScaleOutPolicyUpdate"
         }
       },
-      "documentation":"<p>Information about the auto scaling parameters for the connector.</p>"
-    },
-    "AutoScalingUpdate":{
-      "type":"structure",
-      "required":[
+      "required": [
         "maxWorkerCount",
         "mcuCount",
         "minWorkerCount",
         "scaleInPolicy",
         "scaleOutPolicy"
       ],
-      "members":{
-        "maxWorkerCount":{
-          "shape":"__integerMin1Max10",
-          "documentation":"<p>The target maximum number of workers allocated to the connector.</p>"
-        },
-        "mcuCount":{
-          "shape":"__integerMin1Max8",
-          "documentation":"<p>The target number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>"
-        },
-        "minWorkerCount":{
-          "shape":"__integerMin1Max10",
-          "documentation":"<p>The target minimum number of workers allocated to the connector.</p>"
-        },
-        "scaleInPolicy":{
-          "shape":"ScaleInPolicyUpdate",
-          "documentation":"<p>The target sacle-in policy for the connector.</p>"
-        },
-        "scaleOutPolicy":{
-          "shape":"ScaleOutPolicyUpdate",
-          "documentation":"<p>The target sacle-out policy for the connector.</p>"
+      "type": "structure"
+    },
+    "BadRequestException": {
+      "documentation": "<p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The updates to the auto scaling parameters for the connector.</p>"
+      "type": "structure"
     },
-    "BadRequestException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"__string"}
-      },
-      "documentation":"<p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "Capacity":{
-      "type":"structure",
-      "members":{
-        "autoScaling":{
-          "shape":"AutoScaling",
-          "documentation":"<p>Information about the auto scaling parameters for the connector.</p>"
+    "Capacity": {
+      "documentation": "<p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>",
+      "members": {
+        "autoScaling": {
+          "documentation": "<p>Information about the auto scaling parameters for the connector.</p>",
+          "shape": "AutoScaling"
         },
-        "provisionedCapacity":{
-          "shape":"ProvisionedCapacity",
-          "documentation":"<p>Details about a fixed capacity allocated to a connector.</p>"
+        "provisionedCapacity": {
+          "documentation": "<p>Details about a fixed capacity allocated to a connector.</p>",
+          "shape": "ProvisionedCapacity"
         }
       },
-      "documentation":"<p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>"
+      "type": "structure"
     },
-    "CapacityDescription":{
-      "type":"structure",
-      "members":{
-        "autoScaling":{
-          "shape":"AutoScalingDescription",
-          "documentation":"<p>Describes the connector's auto scaling capacity.</p>"
+    "CapacityDescription": {
+      "documentation": "<p>A description of the connector's capacity.</p>",
+      "members": {
+        "autoScaling": {
+          "documentation": "<p>Describes the connector's auto scaling capacity.</p>",
+          "shape": "AutoScalingDescription"
         },
-        "provisionedCapacity":{
-          "shape":"ProvisionedCapacityDescription",
-          "documentation":"<p>Describes a connector's provisioned capacity.</p>"
+        "provisionedCapacity": {
+          "documentation": "<p>Describes a connector's provisioned capacity.</p>",
+          "shape": "ProvisionedCapacityDescription"
         }
       },
-      "documentation":"<p>A description of the connector's capacity.</p>"
+      "type": "structure"
     },
-    "CapacityUpdate":{
-      "type":"structure",
-      "members":{
-        "autoScaling":{
-          "shape":"AutoScalingUpdate",
-          "documentation":"<p>The target auto scaling setting.</p>"
+    "CapacityUpdate": {
+      "documentation": "<p>The target capacity for the connector. The capacity can be auto scaled or provisioned.</p>",
+      "members": {
+        "autoScaling": {
+          "documentation": "<p>The target auto scaling setting.</p>",
+          "shape": "AutoScalingUpdate"
         },
-        "provisionedCapacity":{
-          "shape":"ProvisionedCapacityUpdate",
-          "documentation":"<p>The target settings for provisioned capacity.</p>"
+        "provisionedCapacity": {
+          "documentation": "<p>The target settings for provisioned capacity.</p>",
+          "shape": "ProvisionedCapacityUpdate"
         }
       },
-      "documentation":"<p>The target capacity for the connector. The capacity can be auto scaled or provisioned.</p>"
+      "type": "structure"
     },
-    "CloudWatchLogsLogDelivery":{
-      "type":"structure",
-      "required":["enabled"],
-      "members":{
-        "enabled":{
-          "shape":"__boolean",
-          "documentation":"<p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>"
+    "CloudWatchLogsLogDelivery": {
+      "documentation": "<p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>",
+      "members": {
+        "enabled": {
+          "documentation": "<p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>",
+          "shape": "__boolean"
         },
-        "logGroup":{
-          "shape":"__string",
-          "documentation":"<p>The name of the CloudWatch log group that is the destination for log delivery.</p>"
+        "logGroup": {
+          "documentation": "<p>The name of the CloudWatch log group that is the destination for log delivery.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>"
+      "required": [
+        "enabled"
+      ],
+      "type": "structure"
     },
-    "CloudWatchLogsLogDeliveryDescription":{
-      "type":"structure",
-      "members":{
-        "enabled":{
-          "shape":"__boolean",
-          "documentation":"<p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>"
+    "CloudWatchLogsLogDeliveryDescription": {
+      "documentation": "<p>A description of the log delivery settings.</p>",
+      "members": {
+        "enabled": {
+          "documentation": "<p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>",
+          "shape": "__boolean"
         },
-        "logGroup":{
-          "shape":"__string",
-          "documentation":"<p>The name of the CloudWatch log group that is the destination for log delivery.</p>"
+        "logGroup": {
+          "documentation": "<p>The name of the CloudWatch log group that is the destination for log delivery.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>A description of the log delivery settings.</p>"
+      "type": "structure"
     },
-    "ConflictException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"__string"}
+    "ConflictException": {
+      "documentation": "<p>HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your request with another name.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
       },
-      "documentation":"<p>HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your request with another name.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "__string"
+        }
       },
-      "exception":true
+      "type": "structure"
     },
-    "ConnectorState":{
-      "type":"string",
-      "enum":[
+    "ConnectorState": {
+      "enum": [
         "RUNNING",
         "CREATING",
         "UPDATING",
         "DELETING",
         "FAILED"
-      ]
+      ],
+      "type": "string"
     },
-    "ConnectorSummary":{
-      "type":"structure",
-      "members":{
-        "capacity":{
-          "shape":"CapacityDescription",
-          "documentation":"<p>The connector's compute capacity settings.</p>"
+    "ConnectorSummary": {
+      "documentation": "<p>Summary of a connector.</p>",
+      "members": {
+        "capacity": {
+          "documentation": "<p>The connector's compute capacity settings.</p>",
+          "shape": "CapacityDescription"
         },
-        "connectorArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the connector.</p>"
+        "connectorArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the connector.</p>",
+          "shape": "__string"
         },
-        "connectorDescription":{
-          "shape":"__string",
-          "documentation":"<p>The description of the connector.</p>"
+        "connectorDescription": {
+          "documentation": "<p>The description of the connector.</p>",
+          "shape": "__string"
         },
-        "connectorName":{
-          "shape":"__string",
-          "documentation":"<p>The name of the connector.</p>"
+        "connectorName": {
+          "documentation": "<p>The name of the connector.</p>",
+          "shape": "__string"
         },
-        "connectorState":{
-          "shape":"ConnectorState",
-          "documentation":"<p>The state of the connector.</p>"
+        "connectorState": {
+          "documentation": "<p>The state of the connector.</p>",
+          "shape": "ConnectorState"
         },
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that the connector was created.</p>"
+        "creationTime": {
+          "documentation": "<p>The time that the connector was created.</p>",
+          "shape": "__timestampIso8601"
         },
-        "currentVersion":{
-          "shape":"__string",
-          "documentation":"<p>The current version of the connector.</p>"
+        "currentVersion": {
+          "documentation": "<p>The current version of the connector.</p>",
+          "shape": "__string"
         },
-        "kafkaCluster":{
-          "shape":"KafkaClusterDescription",
-          "documentation":"<p>The details of the Apache Kafka cluster to which the connector is connected.</p>"
+        "kafkaCluster": {
+          "documentation": "<p>The details of the Apache Kafka cluster to which the connector is connected.</p>",
+          "shape": "KafkaClusterDescription"
         },
-        "kafkaClusterClientAuthentication":{
-          "shape":"KafkaClusterClientAuthenticationDescription",
-          "documentation":"<p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>"
+        "kafkaClusterClientAuthentication": {
+          "documentation": "<p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>",
+          "shape": "KafkaClusterClientAuthenticationDescription"
         },
-        "kafkaClusterEncryptionInTransit":{
-          "shape":"KafkaClusterEncryptionInTransitDescription",
-          "documentation":"<p>Details of encryption in transit to the Apache Kafka cluster.</p>"
+        "kafkaClusterEncryptionInTransit": {
+          "documentation": "<p>Details of encryption in transit to the Apache Kafka cluster.</p>",
+          "shape": "KafkaClusterEncryptionInTransitDescription"
         },
-        "kafkaConnectVersion":{
-          "shape":"__string",
-          "documentation":"<p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>"
+        "kafkaConnectVersion": {
+          "documentation": "<p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>",
+          "shape": "__string"
         },
-        "logDelivery":{
-          "shape":"LogDeliveryDescription",
-          "documentation":"<p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>"
+        "logDelivery": {
+          "documentation": "<p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>",
+          "shape": "LogDeliveryDescription"
         },
-        "plugins":{
-          "shape":"__listOfPluginDescription",
-          "documentation":"<p>Specifies which plugins were used for this connector.</p>"
+        "plugins": {
+          "documentation": "<p>Specifies which plugins were used for this connector.</p>",
+          "shape": "__listOfPluginDescription"
         },
-        "serviceExecutionRoleArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>"
+        "serviceExecutionRoleArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>",
+          "shape": "__string"
         },
-        "workerConfiguration":{
-          "shape":"WorkerConfigurationDescription",
-          "documentation":"<p>The worker configurations that are in use with the connector.</p>"
+        "workerConfiguration": {
+          "documentation": "<p>The worker configurations that are in use with the connector.</p>",
+          "shape": "WorkerConfigurationDescription"
         }
       },
-      "documentation":"<p>Summary of a connector.</p>"
+      "type": "structure"
     },
-    "CreateConnectorRequest":{
-      "type":"structure",
-      "required":[
+    "CreateConnectorRequest": {
+      "members": {
+        "capacity": {
+          "documentation": "<p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>",
+          "shape": "Capacity"
+        },
+        "connectorConfiguration": {
+          "documentation": "<p>A map of keys to values that represent the configuration for the connector.</p>",
+          "shape": "SyntheticCreateConnectorRequest__mapOf__string"
+        },
+        "connectorDescription": {
+          "documentation": "<p>A summary description of the connector.</p>",
+          "shape": "__stringMax1024"
+        },
+        "connectorName": {
+          "documentation": "<p>The name of the connector.</p>",
+          "shape": "__stringMin1Max128"
+        },
+        "kafkaCluster": {
+          "documentation": "<p>Specifies which Apache Kafka cluster to connect to.</p>",
+          "shape": "KafkaCluster"
+        },
+        "kafkaClusterClientAuthentication": {
+          "documentation": "<p>Details of the client authentication used by the Apache Kafka cluster.</p>",
+          "shape": "KafkaClusterClientAuthentication"
+        },
+        "kafkaClusterEncryptionInTransit": {
+          "documentation": "<p>Details of encryption in transit to the Apache Kafka cluster.</p>",
+          "shape": "KafkaClusterEncryptionInTransit"
+        },
+        "kafkaConnectVersion": {
+          "documentation": "<p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>",
+          "shape": "__string"
+        },
+        "logDelivery": {
+          "documentation": "<p>Details about log delivery.</p>",
+          "shape": "LogDelivery"
+        },
+        "plugins": {
+          "documentation": "<p>Specifies which plugins to use for the connector.</p>",
+          "shape": "__listOfPlugin"
+        },
+        "serviceExecutionRoleArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>",
+          "shape": "__string"
+        },
+        "workerConfiguration": {
+          "documentation": "<p>Specifies which worker configuration to use with the connector.</p>",
+          "shape": "WorkerConfiguration"
+        }
+      },
+      "required": [
         "capacity",
         "connectorConfiguration",
         "connectorName",
@@ -567,1337 +844,1368 @@
         "plugins",
         "serviceExecutionRoleArn"
       ],
-      "members":{
-        "capacity":{
-          "shape":"Capacity",
-          "documentation":"<p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>"
-        },
-        "connectorConfiguration":{
-          "shape":"SyntheticCreateConnectorRequest__mapOf__string",
-          "documentation":"<p>A map of keys to values that represent the configuration for the connector.</p>"
-        },
-        "connectorDescription":{
-          "shape":"__stringMax1024",
-          "documentation":"<p>A summary description of the connector.</p>"
-        },
-        "connectorName":{
-          "shape":"__stringMin1Max128",
-          "documentation":"<p>The name of the connector.</p>"
-        },
-        "kafkaCluster":{
-          "shape":"KafkaCluster",
-          "documentation":"<p>Specifies which Apache Kafka cluster to connect to.</p>"
-        },
-        "kafkaClusterClientAuthentication":{
-          "shape":"KafkaClusterClientAuthentication",
-          "documentation":"<p>Details of the client authentication used by the Apache Kafka cluster.</p>"
-        },
-        "kafkaClusterEncryptionInTransit":{
-          "shape":"KafkaClusterEncryptionInTransit",
-          "documentation":"<p>Details of encryption in transit to the Apache Kafka cluster.</p>"
-        },
-        "kafkaConnectVersion":{
-          "shape":"__string",
-          "documentation":"<p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>"
-        },
-        "logDelivery":{
-          "shape":"LogDelivery",
-          "documentation":"<p>Details about log delivery.</p>"
-        },
-        "plugins":{
-          "shape":"__listOfPlugin",
-          "documentation":"<p>Specifies which plugins to use for the connector.</p>"
-        },
-        "serviceExecutionRoleArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>"
-        },
-        "workerConfiguration":{
-          "shape":"WorkerConfiguration",
-          "documentation":"<p>Specifies which worker configuration to use with the connector.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateConnectorResponse":{
-      "type":"structure",
-      "members":{
-        "connectorArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>"
+    "CreateConnectorResponse": {
+      "members": {
+        "connectorArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>",
+          "shape": "__string"
         },
-        "connectorName":{
-          "shape":"__string",
-          "documentation":"<p>The name of the connector.</p>"
+        "connectorName": {
+          "documentation": "<p>The name of the connector.</p>",
+          "shape": "__string"
         },
-        "connectorState":{
-          "shape":"ConnectorState",
-          "documentation":"<p>The state of the connector.</p>"
+        "connectorState": {
+          "documentation": "<p>The state of the connector.</p>",
+          "shape": "ConnectorState"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateCustomPluginRequest":{
-      "type":"structure",
-      "required":[
+    "CreateCustomPluginRequest": {
+      "members": {
+        "contentType": {
+          "documentation": "<p>The type of the plugin file.</p>",
+          "shape": "CustomPluginContentType"
+        },
+        "description": {
+          "documentation": "<p>A summary description of the custom plugin.</p>",
+          "shape": "__stringMax1024"
+        },
+        "location": {
+          "documentation": "<p>Information about the location of a custom plugin.</p>",
+          "shape": "CustomPluginLocation"
+        },
+        "name": {
+          "documentation": "<p>The name of the custom plugin.</p>",
+          "shape": "__stringMin1Max128"
+        }
+      },
+      "required": [
         "contentType",
         "location",
         "name"
       ],
-      "members":{
-        "contentType":{
-          "shape":"CustomPluginContentType",
-          "documentation":"<p>The type of the plugin file.</p>"
-        },
-        "description":{
-          "shape":"__stringMax1024",
-          "documentation":"<p>A summary description of the custom plugin.</p>"
-        },
-        "location":{
-          "shape":"CustomPluginLocation",
-          "documentation":"<p>Information about the location of a custom plugin.</p>"
-        },
-        "name":{
-          "shape":"__stringMin1Max128",
-          "documentation":"<p>The name of the custom plugin.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateCustomPluginResponse":{
-      "type":"structure",
-      "members":{
-        "customPluginArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>"
+    "CreateCustomPluginResponse": {
+      "members": {
+        "customPluginArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>",
+          "shape": "__string"
         },
-        "customPluginState":{
-          "shape":"CustomPluginState",
-          "documentation":"<p>The state of the custom plugin.</p>"
+        "customPluginState": {
+          "documentation": "<p>The state of the custom plugin.</p>",
+          "shape": "CustomPluginState"
         },
-        "name":{
-          "shape":"__string",
-          "documentation":"<p>The name of the custom plugin.</p>"
+        "name": {
+          "documentation": "<p>The name of the custom plugin.</p>",
+          "shape": "__string"
         },
-        "revision":{
-          "shape":"__long",
-          "documentation":"<p>The revision of the custom plugin.</p>"
+        "revision": {
+          "documentation": "<p>The revision of the custom plugin.</p>",
+          "shape": "__long"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateWorkerConfigurationRequest":{
-      "type":"structure",
-      "required":[
+    "CreateWorkerConfigurationRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>A summary description of the worker configuration.</p>",
+          "shape": "__stringMax1024"
+        },
+        "name": {
+          "documentation": "<p>The name of the worker configuration.</p>",
+          "shape": "__stringMin1Max128"
+        },
+        "propertiesFileContent": {
+          "documentation": "<p>Base64 encoded contents of connect-distributed.properties file.</p>",
+          "shape": "SyntheticCreateWorkerConfigurationRequest__string"
+        }
+      },
+      "required": [
         "name",
         "propertiesFileContent"
       ],
-      "members":{
-        "description":{
-          "shape":"__stringMax1024",
-          "documentation":"<p>A summary description of the worker configuration.</p>"
-        },
-        "name":{
-          "shape":"__stringMin1Max128",
-          "documentation":"<p>The name of the worker configuration.</p>"
-        },
-        "propertiesFileContent":{
-          "shape":"SyntheticCreateWorkerConfigurationRequest__string",
-          "documentation":"<p>Base64 encoded contents of connect-distributed.properties file.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateWorkerConfigurationResponse":{
-      "type":"structure",
-      "members":{
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that the worker configuration was created.</p>"
+    "CreateWorkerConfigurationResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time that the worker configuration was created.</p>",
+          "shape": "__timestampIso8601"
         },
-        "latestRevision":{
-          "shape":"WorkerConfigurationRevisionSummary",
-          "documentation":"<p>The latest revision of the worker configuration.</p>"
+        "latestRevision": {
+          "documentation": "<p>The latest revision of the worker configuration.</p>",
+          "shape": "WorkerConfigurationRevisionSummary"
         },
-        "name":{
-          "shape":"__string",
-          "documentation":"<p>The name of the worker configuration.</p>"
+        "name": {
+          "documentation": "<p>The name of the worker configuration.</p>",
+          "shape": "__string"
         },
-        "workerConfigurationArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>"
+        "workerConfigurationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>",
+          "shape": "__string"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CustomPlugin":{
-      "type":"structure",
-      "required":[
+    "CustomPlugin": {
+      "documentation": "<p>A plugin is an AWS resource that contains the code that defines a connector's logic.</p>",
+      "members": {
+        "customPluginArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the custom plugin.</p>",
+          "shape": "__string"
+        },
+        "revision": {
+          "documentation": "<p>The revision of the custom plugin.</p>",
+          "shape": "__longMin1"
+        }
+      },
+      "required": [
         "customPluginArn",
         "revision"
       ],
-      "members":{
-        "customPluginArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the custom plugin.</p>"
-        },
-        "revision":{
-          "shape":"__longMin1",
-          "documentation":"<p>The revision of the custom plugin.</p>"
-        }
-      },
-      "documentation":"<p>A plugin is an AWS resource that contains the code that defines a connector's logic.</p>"
+      "type": "structure"
     },
-    "CustomPluginContentType":{
-      "type":"string",
-      "enum":[
+    "CustomPluginContentType": {
+      "enum": [
         "JAR",
         "ZIP"
-      ]
+      ],
+      "type": "string"
     },
-    "CustomPluginDescription":{
-      "type":"structure",
-      "members":{
-        "customPluginArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the custom plugin.</p>"
+    "CustomPluginDescription": {
+      "documentation": "<p>Details about a custom plugin.</p>",
+      "members": {
+        "customPluginArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the custom plugin.</p>",
+          "shape": "__string"
         },
-        "revision":{
-          "shape":"__long",
-          "documentation":"<p>The revision of the custom plugin.</p>"
+        "revision": {
+          "documentation": "<p>The revision of the custom plugin.</p>",
+          "shape": "__long"
         }
       },
-      "documentation":"<p>Details about a custom plugin.</p>"
+      "type": "structure"
     },
-    "CustomPluginFileDescription":{
-      "type":"structure",
-      "members":{
-        "fileMd5":{
-          "shape":"__string",
-          "documentation":"<p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>"
+    "CustomPluginFileDescription": {
+      "documentation": "<p>Details about a custom plugin file.</p>",
+      "members": {
+        "fileMd5": {
+          "documentation": "<p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>",
+          "shape": "__string"
         },
-        "fileSize":{
-          "shape":"__long",
-          "documentation":"<p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>"
+        "fileSize": {
+          "documentation": "<p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>",
+          "shape": "__long"
         }
       },
-      "documentation":"<p>Details about a custom plugin file.</p>"
+      "type": "structure"
     },
-    "CustomPluginLocation":{
-      "type":"structure",
-      "required":["s3Location"],
-      "members":{
-        "s3Location":{
-          "shape":"S3Location",
-          "documentation":"<p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>"
+    "CustomPluginLocation": {
+      "documentation": "<p>Information about the location of a custom plugin.</p>",
+      "members": {
+        "s3Location": {
+          "documentation": "<p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>",
+          "shape": "S3Location"
         }
       },
-      "documentation":"<p>Information about the location of a custom plugin.</p>"
+      "required": [
+        "s3Location"
+      ],
+      "type": "structure"
     },
-    "CustomPluginLocationDescription":{
-      "type":"structure",
-      "members":{
-        "s3Location":{
-          "shape":"S3LocationDescription",
-          "documentation":"<p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>"
+    "CustomPluginLocationDescription": {
+      "documentation": "<p>Information about the location of a custom plugin.</p>",
+      "members": {
+        "s3Location": {
+          "documentation": "<p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>",
+          "shape": "S3LocationDescription"
         }
       },
-      "documentation":"<p>Information about the location of a custom plugin.</p>"
+      "type": "structure"
     },
-    "CustomPluginRevisionSummary":{
-      "type":"structure",
-      "members":{
-        "contentType":{
-          "shape":"CustomPluginContentType",
-          "documentation":"<p>The format of the plugin file.</p>"
+    "CustomPluginRevisionSummary": {
+      "documentation": "<p>Details about the revision of a custom plugin.</p>",
+      "members": {
+        "contentType": {
+          "documentation": "<p>The format of the plugin file.</p>",
+          "shape": "CustomPluginContentType"
         },
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that the custom plugin was created.</p>"
+        "creationTime": {
+          "documentation": "<p>The time that the custom plugin was created.</p>",
+          "shape": "__timestampIso8601"
         },
-        "description":{
-          "shape":"__string",
-          "documentation":"<p>The description of the custom plugin.</p>"
+        "description": {
+          "documentation": "<p>The description of the custom plugin.</p>",
+          "shape": "__string"
         },
-        "fileDescription":{
-          "shape":"CustomPluginFileDescription",
-          "documentation":"<p>Details about the custom plugin file.</p>"
+        "fileDescription": {
+          "documentation": "<p>Details about the custom plugin file.</p>",
+          "shape": "CustomPluginFileDescription"
         },
-        "location":{
-          "shape":"CustomPluginLocationDescription",
-          "documentation":"<p>Information about the location of the custom plugin.</p>"
+        "location": {
+          "documentation": "<p>Information about the location of the custom plugin.</p>",
+          "shape": "CustomPluginLocationDescription"
         },
-        "revision":{
-          "shape":"__long",
-          "documentation":"<p>The revision of the custom plugin.</p>"
+        "revision": {
+          "documentation": "<p>The revision of the custom plugin.</p>",
+          "shape": "__long"
         }
       },
-      "documentation":"<p>Details about the revision of a custom plugin.</p>"
+      "type": "structure"
     },
-    "CustomPluginState":{
-      "type":"string",
-      "enum":[
+    "CustomPluginState": {
+      "enum": [
         "CREATING",
         "CREATE_FAILED",
         "ACTIVE",
         "UPDATING",
         "UPDATE_FAILED",
         "DELETING"
-      ]
+      ],
+      "type": "string"
     },
-    "CustomPluginSummary":{
-      "type":"structure",
-      "members":{
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that the custom plugin was created.</p>"
+    "CustomPluginSummary": {
+      "documentation": "<p>A summary of the custom plugin.</p>",
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time that the custom plugin was created.</p>",
+          "shape": "__timestampIso8601"
         },
-        "customPluginArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the custom plugin.</p>"
+        "customPluginArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the custom plugin.</p>",
+          "shape": "__string"
         },
-        "customPluginState":{
-          "shape":"CustomPluginState",
-          "documentation":"<p>The state of the custom plugin.</p>"
+        "customPluginState": {
+          "documentation": "<p>The state of the custom plugin.</p>",
+          "shape": "CustomPluginState"
         },
-        "description":{
-          "shape":"__string",
-          "documentation":"<p>A description of the custom plugin.</p>"
+        "description": {
+          "documentation": "<p>A description of the custom plugin.</p>",
+          "shape": "__string"
         },
-        "latestRevision":{
-          "shape":"CustomPluginRevisionSummary",
-          "documentation":"<p>The latest revision of the custom plugin.</p>"
+        "latestRevision": {
+          "documentation": "<p>The latest revision of the custom plugin.</p>",
+          "shape": "CustomPluginRevisionSummary"
         },
-        "name":{
-          "shape":"__string",
-          "documentation":"<p>The name of the custom plugin.</p>"
+        "name": {
+          "documentation": "<p>The name of the custom plugin.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>A summary of the custom plugin.</p>"
+      "type": "structure"
     },
-    "DeleteConnectorRequest":{
-      "type":"structure",
-      "required":["connectorArn"],
-      "members":{
-        "connectorArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>",
-          "location":"uri",
-          "locationName":"connectorArn"
+    "DeleteConnectorRequest": {
+      "members": {
+        "connectorArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>",
+          "location": "uri",
+          "locationName": "connectorArn",
+          "shape": "__string"
         },
-        "currentVersion":{
-          "shape":"__string",
-          "documentation":"<p>The current version of the connector that you want to delete.</p>",
-          "location":"querystring",
-          "locationName":"currentVersion"
-        }
-      }
-    },
-    "DeleteConnectorResponse":{
-      "type":"structure",
-      "members":{
-        "connectorArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>"
-        },
-        "connectorState":{
-          "shape":"ConnectorState",
-          "documentation":"<p>The state of the connector that you requested to delete.</p>"
-        }
-      }
-    },
-    "DeleteCustomPluginRequest":{
-      "type":"structure",
-      "required":["customPluginArn"],
-      "members":{
-        "customPluginArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>",
-          "location":"uri",
-          "locationName":"customPluginArn"
-        }
-      }
-    },
-    "DeleteCustomPluginResponse":{
-      "type":"structure",
-      "members":{
-        "customPluginArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>"
-        },
-        "customPluginState":{
-          "shape":"CustomPluginState",
-          "documentation":"<p>The state of the custom plugin.</p>"
-        }
-      }
-    },
-    "DescribeConnectorRequest":{
-      "type":"structure",
-      "required":["connectorArn"],
-      "members":{
-        "connectorArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>",
-          "location":"uri",
-          "locationName":"connectorArn"
-        }
-      }
-    },
-    "DescribeConnectorResponse":{
-      "type":"structure",
-      "members":{
-        "capacity":{
-          "shape":"CapacityDescription",
-          "documentation":"<p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>"
-        },
-        "connectorArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the connector.</p>"
-        },
-        "connectorConfiguration":{
-          "shape":"SyntheticDescribeConnectorResponse__mapOf__string",
-          "documentation":"<p>A map of keys to values that represent the configuration for the connector.</p>"
-        },
-        "connectorDescription":{
-          "shape":"__string",
-          "documentation":"<p>A summary description of the connector.</p>"
-        },
-        "connectorName":{
-          "shape":"__string",
-          "documentation":"<p>The name of the connector.</p>"
-        },
-        "connectorState":{
-          "shape":"ConnectorState",
-          "documentation":"<p>The state of the connector.</p>"
-        },
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time the connector was created.</p>"
-        },
-        "currentVersion":{
-          "shape":"__string",
-          "documentation":"<p>The current version of the connector.</p>"
-        },
-        "kafkaCluster":{
-          "shape":"KafkaClusterDescription",
-          "documentation":"<p>The Apache Kafka cluster that the connector is connected to.</p>"
-        },
-        "kafkaClusterClientAuthentication":{
-          "shape":"KafkaClusterClientAuthenticationDescription",
-          "documentation":"<p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>"
-        },
-        "kafkaClusterEncryptionInTransit":{
-          "shape":"KafkaClusterEncryptionInTransitDescription",
-          "documentation":"<p>Details of encryption in transit to the Apache Kafka cluster.</p>"
-        },
-        "kafkaConnectVersion":{
-          "shape":"__string",
-          "documentation":"<p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>"
-        },
-        "logDelivery":{
-          "shape":"LogDeliveryDescription",
-          "documentation":"<p>Details about delivering logs to Amazon CloudWatch Logs.</p>"
-        },
-        "plugins":{
-          "shape":"__listOfPluginDescription",
-          "documentation":"<p>Specifies which plugins were used for this connector.</p>"
-        },
-        "serviceExecutionRoleArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>"
-        },
-        "stateDescription":{
-          "shape":"StateDescription",
-          "documentation":"<p>Details about the state of a connector.</p>"
-        },
-        "workerConfiguration":{
-          "shape":"WorkerConfigurationDescription",
-          "documentation":"<p>Specifies which worker configuration was used for the connector.</p>"
-        }
-      }
-    },
-    "DescribeCustomPluginRequest":{
-      "type":"structure",
-      "required":["customPluginArn"],
-      "members":{
-        "customPluginArn":{
-          "shape":"__string",
-          "documentation":"<p>Returns information about a custom plugin.</p>",
-          "location":"uri",
-          "locationName":"customPluginArn"
-        }
-      }
-    },
-    "DescribeCustomPluginResponse":{
-      "type":"structure",
-      "members":{
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that the custom plugin was created.</p>"
-        },
-        "customPluginArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the custom plugin.</p>"
-        },
-        "customPluginState":{
-          "shape":"CustomPluginState",
-          "documentation":"<p>The state of the custom plugin.</p>"
-        },
-        "description":{
-          "shape":"__string",
-          "documentation":"<p>The description of the custom plugin.</p>"
-        },
-        "latestRevision":{
-          "shape":"CustomPluginRevisionSummary",
-          "documentation":"<p>The latest successfully created revision of the custom plugin. If there are no successfully created revisions, this field will be absent.</p>"
-        },
-        "name":{
-          "shape":"__string",
-          "documentation":"<p>The name of the custom plugin.</p>"
-        },
-        "stateDescription":{
-          "shape":"StateDescription",
-          "documentation":"<p>Details about the state of a custom plugin.</p>"
-        }
-      }
-    },
-    "DescribeWorkerConfigurationRequest":{
-      "type":"structure",
-      "required":["workerConfigurationArn"],
-      "members":{
-        "workerConfigurationArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>",
-          "location":"uri",
-          "locationName":"workerConfigurationArn"
-        }
-      }
-    },
-    "DescribeWorkerConfigurationResponse":{
-      "type":"structure",
-      "members":{
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that the worker configuration was created.</p>"
-        },
-        "description":{
-          "shape":"__string",
-          "documentation":"<p>The description of the worker configuration.</p>"
-        },
-        "latestRevision":{
-          "shape":"WorkerConfigurationRevisionDescription",
-          "documentation":"<p>The latest revision of the custom configuration.</p>"
-        },
-        "name":{
-          "shape":"__string",
-          "documentation":"<p>The name of the worker configuration.</p>"
-        },
-        "workerConfigurationArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the custom configuration.</p>"
-        }
-      }
-    },
-    "FirehoseLogDelivery":{
-      "type":"structure",
-      "required":["enabled"],
-      "members":{
-        "deliveryStream":{
-          "shape":"__string",
-          "documentation":"<p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>"
-        },
-        "enabled":{
-          "shape":"__boolean",
-          "documentation":"<p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>"
+        "currentVersion": {
+          "documentation": "<p>The current version of the connector that you want to delete.</p>",
+          "location": "querystring",
+          "locationName": "currentVersion",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The settings for delivering logs to Amazon Kinesis Data Firehose.</p>"
+      "required": [
+        "connectorArn"
+      ],
+      "type": "structure"
     },
-    "FirehoseLogDeliveryDescription":{
-      "type":"structure",
-      "members":{
-        "deliveryStream":{
-          "shape":"__string",
-          "documentation":"<p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>"
+    "DeleteConnectorResponse": {
+      "members": {
+        "connectorArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>",
+          "shape": "__string"
         },
-        "enabled":{
-          "shape":"__boolean",
-          "documentation":"<p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>"
+        "connectorState": {
+          "documentation": "<p>The state of the connector that you requested to delete.</p>",
+          "shape": "ConnectorState"
         }
       },
-      "documentation":"<p>A description of the settings for delivering logs to Amazon Kinesis Data Firehose.</p>"
+      "type": "structure"
     },
-    "ForbiddenException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"__string"}
-      },
-      "documentation":"<p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "InternalServerErrorException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"__string"}
-      },
-      "documentation":"<p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true
-    },
-    "KafkaCluster":{
-      "type":"structure",
-      "required":["apacheKafkaCluster"],
-      "members":{
-        "apacheKafkaCluster":{
-          "shape":"ApacheKafkaCluster",
-          "documentation":"<p>The Apache Kafka cluster to which the connector is connected.</p>"
+    "DeleteCustomPluginRequest": {
+      "members": {
+        "customPluginArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>",
+          "location": "uri",
+          "locationName": "customPluginArn",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The details of the Apache Kafka cluster to which the connector is connected.</p>"
+      "required": [
+        "customPluginArn"
+      ],
+      "type": "structure"
     },
-    "KafkaClusterClientAuthentication":{
-      "type":"structure",
-      "required":["authenticationType"],
-      "members":{
-        "authenticationType":{
-          "shape":"KafkaClusterClientAuthenticationType",
-          "documentation":"<p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>"
+    "DeleteCustomPluginResponse": {
+      "members": {
+        "customPluginArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>",
+          "shape": "__string"
+        },
+        "customPluginState": {
+          "documentation": "<p>The state of the custom plugin.</p>",
+          "shape": "CustomPluginState"
         }
       },
-      "documentation":"<p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>"
+      "type": "structure"
     },
-    "KafkaClusterClientAuthenticationDescription":{
-      "type":"structure",
-      "members":{
-        "authenticationType":{
-          "shape":"KafkaClusterClientAuthenticationType",
-          "documentation":"<p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>"
+    "DescribeConnectorRequest": {
+      "members": {
+        "connectorArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>",
+          "location": "uri",
+          "locationName": "connectorArn",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>"
+      "required": [
+        "connectorArn"
+      ],
+      "type": "structure"
     },
-    "KafkaClusterClientAuthenticationType":{
-      "type":"string",
-      "enum":[
+    "DescribeConnectorResponse": {
+      "members": {
+        "capacity": {
+          "documentation": "<p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>",
+          "shape": "CapacityDescription"
+        },
+        "connectorArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the connector.</p>",
+          "shape": "__string"
+        },
+        "connectorConfiguration": {
+          "documentation": "<p>A map of keys to values that represent the configuration for the connector.</p>",
+          "shape": "SyntheticDescribeConnectorResponse__mapOf__string"
+        },
+        "connectorDescription": {
+          "documentation": "<p>A summary description of the connector.</p>",
+          "shape": "__string"
+        },
+        "connectorName": {
+          "documentation": "<p>The name of the connector.</p>",
+          "shape": "__string"
+        },
+        "connectorState": {
+          "documentation": "<p>The state of the connector.</p>",
+          "shape": "ConnectorState"
+        },
+        "creationTime": {
+          "documentation": "<p>The time the connector was created.</p>",
+          "shape": "__timestampIso8601"
+        },
+        "currentVersion": {
+          "documentation": "<p>The current version of the connector.</p>",
+          "shape": "__string"
+        },
+        "kafkaCluster": {
+          "documentation": "<p>The Apache Kafka cluster that the connector is connected to.</p>",
+          "shape": "KafkaClusterDescription"
+        },
+        "kafkaClusterClientAuthentication": {
+          "documentation": "<p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>",
+          "shape": "KafkaClusterClientAuthenticationDescription"
+        },
+        "kafkaClusterEncryptionInTransit": {
+          "documentation": "<p>Details of encryption in transit to the Apache Kafka cluster.</p>",
+          "shape": "KafkaClusterEncryptionInTransitDescription"
+        },
+        "kafkaConnectVersion": {
+          "documentation": "<p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>",
+          "shape": "__string"
+        },
+        "logDelivery": {
+          "documentation": "<p>Details about delivering logs to Amazon CloudWatch Logs.</p>",
+          "shape": "LogDeliveryDescription"
+        },
+        "plugins": {
+          "documentation": "<p>Specifies which plugins were used for this connector.</p>",
+          "shape": "__listOfPluginDescription"
+        },
+        "serviceExecutionRoleArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>",
+          "shape": "__string"
+        },
+        "stateDescription": {
+          "documentation": "<p>Details about the state of a connector.</p>",
+          "shape": "StateDescription"
+        },
+        "workerConfiguration": {
+          "documentation": "<p>Specifies which worker configuration was used for the connector.</p>",
+          "shape": "WorkerConfigurationDescription"
+        }
+      },
+      "type": "structure"
+    },
+    "DescribeCustomPluginRequest": {
+      "members": {
+        "customPluginArn": {
+          "documentation": "<p>Returns information about a custom plugin.</p>",
+          "location": "uri",
+          "locationName": "customPluginArn",
+          "shape": "__string"
+        }
+      },
+      "required": [
+        "customPluginArn"
+      ],
+      "type": "structure"
+    },
+    "DescribeCustomPluginResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time that the custom plugin was created.</p>",
+          "shape": "__timestampIso8601"
+        },
+        "customPluginArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the custom plugin.</p>",
+          "shape": "__string"
+        },
+        "customPluginState": {
+          "documentation": "<p>The state of the custom plugin.</p>",
+          "shape": "CustomPluginState"
+        },
+        "description": {
+          "documentation": "<p>The description of the custom plugin.</p>",
+          "shape": "__string"
+        },
+        "latestRevision": {
+          "documentation": "<p>The latest successfully created revision of the custom plugin. If there are no successfully created revisions, this field will be absent.</p>",
+          "shape": "CustomPluginRevisionSummary"
+        },
+        "name": {
+          "documentation": "<p>The name of the custom plugin.</p>",
+          "shape": "__string"
+        },
+        "stateDescription": {
+          "documentation": "<p>Details about the state of a custom plugin.</p>",
+          "shape": "StateDescription"
+        }
+      },
+      "type": "structure"
+    },
+    "DescribeWorkerConfigurationRequest": {
+      "members": {
+        "workerConfigurationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>",
+          "location": "uri",
+          "locationName": "workerConfigurationArn",
+          "shape": "__string"
+        }
+      },
+      "required": [
+        "workerConfigurationArn"
+      ],
+      "type": "structure"
+    },
+    "DescribeWorkerConfigurationResponse": {
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time that the worker configuration was created.</p>",
+          "shape": "__timestampIso8601"
+        },
+        "description": {
+          "documentation": "<p>The description of the worker configuration.</p>",
+          "shape": "__string"
+        },
+        "latestRevision": {
+          "documentation": "<p>The latest revision of the custom configuration.</p>",
+          "shape": "WorkerConfigurationRevisionDescription"
+        },
+        "name": {
+          "documentation": "<p>The name of the worker configuration.</p>",
+          "shape": "__string"
+        },
+        "workerConfigurationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the custom configuration.</p>",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "FirehoseLogDelivery": {
+      "documentation": "<p>The settings for delivering logs to Amazon Kinesis Data Firehose.</p>",
+      "members": {
+        "deliveryStream": {
+          "documentation": "<p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>",
+          "shape": "__string"
+        },
+        "enabled": {
+          "documentation": "<p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>",
+          "shape": "__boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "type": "structure"
+    },
+    "FirehoseLogDeliveryDescription": {
+      "documentation": "<p>A description of the settings for delivering logs to Amazon Kinesis Data Firehose.</p>",
+      "members": {
+        "deliveryStream": {
+          "documentation": "<p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>",
+          "shape": "__string"
+        },
+        "enabled": {
+          "documentation": "<p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>",
+          "shape": "__boolean"
+        }
+      },
+      "type": "structure"
+    },
+    "ForbiddenException": {
+      "documentation": "<p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "InternalServerErrorException": {
+      "documentation": "<p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "KafkaCluster": {
+      "documentation": "<p>The details of the Apache Kafka cluster to which the connector is connected.</p>",
+      "members": {
+        "apacheKafkaCluster": {
+          "documentation": "<p>The Apache Kafka cluster to which the connector is connected.</p>",
+          "shape": "ApacheKafkaCluster"
+        }
+      },
+      "required": [
+        "apacheKafkaCluster"
+      ],
+      "type": "structure"
+    },
+    "KafkaClusterClientAuthentication": {
+      "documentation": "<p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>",
+      "members": {
+        "authenticationType": {
+          "documentation": "<p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>",
+          "shape": "KafkaClusterClientAuthenticationType"
+        }
+      },
+      "required": [
+        "authenticationType"
+      ],
+      "type": "structure"
+    },
+    "KafkaClusterClientAuthenticationDescription": {
+      "documentation": "<p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>",
+      "members": {
+        "authenticationType": {
+          "documentation": "<p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>",
+          "shape": "KafkaClusterClientAuthenticationType"
+        }
+      },
+      "type": "structure"
+    },
+    "KafkaClusterClientAuthenticationType": {
+      "enum": [
         "NONE",
         "IAM"
-      ]
+      ],
+      "type": "string"
     },
-    "KafkaClusterDescription":{
-      "type":"structure",
-      "members":{
-        "apacheKafkaCluster":{
-          "shape":"ApacheKafkaClusterDescription",
-          "documentation":"<p>The Apache Kafka cluster to which the connector is connected.</p>"
+    "KafkaClusterDescription": {
+      "documentation": "<p>Details of how to connect to the Apache Kafka cluster.</p>",
+      "members": {
+        "apacheKafkaCluster": {
+          "documentation": "<p>The Apache Kafka cluster to which the connector is connected.</p>",
+          "shape": "ApacheKafkaClusterDescription"
         }
       },
-      "documentation":"<p>Details of how to connect to the Apache Kafka cluster.</p>"
+      "type": "structure"
     },
-    "KafkaClusterEncryptionInTransit":{
-      "type":"structure",
-      "required":["encryptionType"],
-      "members":{
-        "encryptionType":{
-          "shape":"KafkaClusterEncryptionInTransitType",
-          "documentation":"<p>The type of encryption in transit to the Apache Kafka cluster.</p>"
+    "KafkaClusterEncryptionInTransit": {
+      "documentation": "<p>Details of encryption in transit to the Apache Kafka cluster.</p>",
+      "members": {
+        "encryptionType": {
+          "documentation": "<p>The type of encryption in transit to the Apache Kafka cluster.</p>",
+          "shape": "KafkaClusterEncryptionInTransitType"
         }
       },
-      "documentation":"<p>Details of encryption in transit to the Apache Kafka cluster.</p>"
+      "required": [
+        "encryptionType"
+      ],
+      "type": "structure"
     },
-    "KafkaClusterEncryptionInTransitDescription":{
-      "type":"structure",
-      "members":{
-        "encryptionType":{
-          "shape":"KafkaClusterEncryptionInTransitType",
-          "documentation":"<p>The type of encryption in transit to the Apache Kafka cluster.</p>"
+    "KafkaClusterEncryptionInTransitDescription": {
+      "documentation": "<p>The description of the encryption in transit to the Apache Kafka cluster.</p>",
+      "members": {
+        "encryptionType": {
+          "documentation": "<p>The type of encryption in transit to the Apache Kafka cluster.</p>",
+          "shape": "KafkaClusterEncryptionInTransitType"
         }
       },
-      "documentation":"<p>The description of the encryption in transit to the Apache Kafka cluster.</p>"
+      "type": "structure"
     },
-    "KafkaClusterEncryptionInTransitType":{
-      "type":"string",
-      "enum":[
+    "KafkaClusterEncryptionInTransitType": {
+      "enum": [
         "PLAINTEXT",
         "TLS"
-      ]
+      ],
+      "type": "string"
     },
-    "ListConnectorsRequest":{
-      "type":"structure",
-      "members":{
-        "connectorNamePrefix":{
-          "shape":"__string",
-          "documentation":"<p>The name prefix that you want to use to search for and list connectors.</p>",
-          "location":"querystring",
-          "locationName":"connectorNamePrefix"
+    "ListConnectorsRequest": {
+      "members": {
+        "connectorNamePrefix": {
+          "documentation": "<p>The name prefix that you want to use to search for and list connectors.</p>",
+          "location": "querystring",
+          "locationName": "connectorNamePrefix",
+          "shape": "__string"
         },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of connectors to list in one response.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+        "maxResults": {
+          "documentation": "<p>The maximum number of connectors to list in one response.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
         },
-        "nextToken":{
-          "shape":"__string",
-          "documentation":"<p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        }
-      }
-    },
-    "ListConnectorsResponse":{
-      "type":"structure",
-      "members":{
-        "connectors":{
-          "shape":"__listOfConnectorSummary",
-          "documentation":"<p>An array of connector descriptions.</p>"
-        },
-        "nextToken":{
-          "shape":"__string",
-          "documentation":"<p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.</p>"
-        }
-      }
-    },
-    "ListCustomPluginsRequest":{
-      "type":"structure",
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of custom plugins to list in one response.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"__string",
-          "documentation":"<p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        }
-      }
-    },
-    "ListCustomPluginsResponse":{
-      "type":"structure",
-      "members":{
-        "customPlugins":{
-          "shape":"__listOfCustomPluginSummary",
-          "documentation":"<p>An array of custom plugin descriptions.</p>"
-        },
-        "nextToken":{
-          "shape":"__string",
-          "documentation":"<p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>"
-        }
-      }
-    },
-    "ListWorkerConfigurationsRequest":{
-      "type":"structure",
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of worker configurations to list in one response.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"__string",
-          "documentation":"<p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        }
-      }
-    },
-    "ListWorkerConfigurationsResponse":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"__string",
-          "documentation":"<p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>"
-        },
-        "workerConfigurations":{
-          "shape":"__listOfWorkerConfigurationSummary",
-          "documentation":"<p>An array of worker configuration descriptions.</p>"
-        }
-      }
-    },
-    "LogDelivery":{
-      "type":"structure",
-      "required":["workerLogDelivery"],
-      "members":{
-        "workerLogDelivery":{
-          "shape":"WorkerLogDelivery",
-          "documentation":"<p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>"
+        "nextToken": {
+          "documentation": "<p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>Details about log delivery.</p>"
+      "type": "structure"
     },
-    "LogDeliveryDescription":{
-      "type":"structure",
-      "members":{
-        "workerLogDelivery":{
-          "shape":"WorkerLogDeliveryDescription",
-          "documentation":"<p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>"
+    "ListConnectorsResponse": {
+      "members": {
+        "connectors": {
+          "documentation": "<p>An array of connector descriptions.</p>",
+          "shape": "__listOfConnectorSummary"
+        },
+        "nextToken": {
+          "documentation": "<p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The description of the log delivery settings.</p>"
+      "type": "structure"
     },
-    "MaxResults":{
-      "type":"integer",
-      "max":100,
-      "min":1
-    },
-    "NotFoundException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"__string"}
-      },
-      "documentation":"<p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "Plugin":{
-      "type":"structure",
-      "required":["customPlugin"],
-      "members":{
-        "customPlugin":{
-          "shape":"CustomPlugin",
-          "documentation":"<p>Details about a custom plugin.</p>"
+    "ListCustomPluginsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of custom plugins to list in one response.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>A plugin is an AWS resource that contains the code that defines your connector logic. </p>"
+      "type": "structure"
     },
-    "PluginDescription":{
-      "type":"structure",
-      "members":{
-        "customPlugin":{
-          "shape":"CustomPluginDescription",
-          "documentation":"<p>Details about a custom plugin.</p>"
+    "ListCustomPluginsResponse": {
+      "members": {
+        "customPlugins": {
+          "documentation": "<p>An array of custom plugin descriptions.</p>",
+          "shape": "__listOfCustomPluginSummary"
+        },
+        "nextToken": {
+          "documentation": "<p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The description of the plugin.</p>"
+      "type": "structure"
     },
-    "ProvisionedCapacity":{
-      "type":"structure",
-      "required":[
+    "ListWorkerConfigurationsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of worker configurations to list in one response.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "ListWorkerConfigurationsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>",
+          "shape": "__string"
+        },
+        "workerConfigurations": {
+          "documentation": "<p>An array of worker configuration descriptions.</p>",
+          "shape": "__listOfWorkerConfigurationSummary"
+        }
+      },
+      "type": "structure"
+    },
+    "LogDelivery": {
+      "documentation": "<p>Details about log delivery.</p>",
+      "members": {
+        "workerLogDelivery": {
+          "documentation": "<p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>",
+          "shape": "WorkerLogDelivery"
+        }
+      },
+      "required": [
+        "workerLogDelivery"
+      ],
+      "type": "structure"
+    },
+    "LogDeliveryDescription": {
+      "documentation": "<p>The description of the log delivery settings.</p>",
+      "members": {
+        "workerLogDelivery": {
+          "documentation": "<p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>",
+          "shape": "WorkerLogDeliveryDescription"
+        }
+      },
+      "type": "structure"
+    },
+    "MaxResults": {
+      "max": 100,
+      "min": 1,
+      "type": "integer"
+    },
+    "NotFoundException": {
+      "documentation": "<p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "Plugin": {
+      "documentation": "<p>A plugin is an AWS resource that contains the code that defines your connector logic. </p>",
+      "members": {
+        "customPlugin": {
+          "documentation": "<p>Details about a custom plugin.</p>",
+          "shape": "CustomPlugin"
+        }
+      },
+      "required": [
+        "customPlugin"
+      ],
+      "type": "structure"
+    },
+    "PluginDescription": {
+      "documentation": "<p>The description of the plugin.</p>",
+      "members": {
+        "customPlugin": {
+          "documentation": "<p>Details about a custom plugin.</p>",
+          "shape": "CustomPluginDescription"
+        }
+      },
+      "type": "structure"
+    },
+    "ProvisionedCapacity": {
+      "documentation": "<p>Details about a connector's provisioned capacity.</p>",
+      "members": {
+        "mcuCount": {
+          "documentation": "<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>",
+          "shape": "__integerMin1Max8"
+        },
+        "workerCount": {
+          "documentation": "<p>The number of workers that are allocated to the connector.</p>",
+          "shape": "__integerMin1Max10"
+        }
+      },
+      "required": [
         "mcuCount",
         "workerCount"
       ],
-      "members":{
-        "mcuCount":{
-          "shape":"__integerMin1Max8",
-          "documentation":"<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>"
+      "type": "structure"
+    },
+    "ProvisionedCapacityDescription": {
+      "documentation": "<p>The description of a connector's provisioned capacity.</p>",
+      "members": {
+        "mcuCount": {
+          "documentation": "<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>",
+          "shape": "__integer"
         },
-        "workerCount":{
-          "shape":"__integerMin1Max10",
-          "documentation":"<p>The number of workers that are allocated to the connector.</p>"
+        "workerCount": {
+          "documentation": "<p>The number of workers that are allocated to the connector.</p>",
+          "shape": "__integer"
         }
       },
-      "documentation":"<p>Details about a connector's provisioned capacity.</p>"
+      "type": "structure"
     },
-    "ProvisionedCapacityDescription":{
-      "type":"structure",
-      "members":{
-        "mcuCount":{
-          "shape":"__integer",
-          "documentation":"<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>"
+    "ProvisionedCapacityUpdate": {
+      "documentation": "<p>An update to a connector's fixed capacity.</p>",
+      "members": {
+        "mcuCount": {
+          "documentation": "<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>",
+          "shape": "__integerMin1Max8"
         },
-        "workerCount":{
-          "shape":"__integer",
-          "documentation":"<p>The number of workers that are allocated to the connector.</p>"
+        "workerCount": {
+          "documentation": "<p>The number of workers that are allocated to the connector.</p>",
+          "shape": "__integerMin1Max10"
         }
       },
-      "documentation":"<p>The description of a connector's provisioned capacity.</p>"
-    },
-    "ProvisionedCapacityUpdate":{
-      "type":"structure",
-      "required":[
+      "required": [
         "mcuCount",
         "workerCount"
       ],
-      "members":{
-        "mcuCount":{
-          "shape":"__integerMin1Max8",
-          "documentation":"<p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>"
+      "type": "structure"
+    },
+    "S3Location": {
+      "documentation": "<p>The location of an object in Amazon S3.</p>",
+      "members": {
+        "bucketArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of an S3 bucket.</p>",
+          "shape": "__string"
         },
-        "workerCount":{
-          "shape":"__integerMin1Max10",
-          "documentation":"<p>The number of workers that are allocated to the connector.</p>"
+        "fileKey": {
+          "documentation": "<p>The file key for an object in an S3 bucket.</p>",
+          "shape": "__string"
+        },
+        "objectVersion": {
+          "documentation": "<p>The version of an object in an S3 bucket.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>An update to a connector's fixed capacity.</p>"
-    },
-    "S3Location":{
-      "type":"structure",
-      "required":[
+      "required": [
         "bucketArn",
         "fileKey"
       ],
-      "members":{
-        "bucketArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of an S3 bucket.</p>"
+      "type": "structure"
+    },
+    "S3LocationDescription": {
+      "documentation": "<p>The description of the location of an object in Amazon S3.</p>",
+      "members": {
+        "bucketArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of an S3 bucket.</p>",
+          "shape": "__string"
         },
-        "fileKey":{
-          "shape":"__string",
-          "documentation":"<p>The file key for an object in an S3 bucket.</p>"
+        "fileKey": {
+          "documentation": "<p>The file key for an object in an S3 bucket.</p>",
+          "shape": "__string"
         },
-        "objectVersion":{
-          "shape":"__string",
-          "documentation":"<p>The version of an object in an S3 bucket.</p>"
+        "objectVersion": {
+          "documentation": "<p>The version of an object in an S3 bucket.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The location of an object in Amazon S3.</p>"
+      "type": "structure"
     },
-    "S3LocationDescription":{
-      "type":"structure",
-      "members":{
-        "bucketArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of an S3 bucket.</p>"
+    "S3LogDelivery": {
+      "documentation": "<p>Details about delivering logs to Amazon S3.</p>",
+      "members": {
+        "bucket": {
+          "documentation": "<p>The name of the S3 bucket that is the destination for log delivery.</p>",
+          "shape": "__string"
         },
-        "fileKey":{
-          "shape":"__string",
-          "documentation":"<p>The file key for an object in an S3 bucket.</p>"
+        "enabled": {
+          "documentation": "<p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>",
+          "shape": "__boolean"
         },
-        "objectVersion":{
-          "shape":"__string",
-          "documentation":"<p>The version of an object in an S3 bucket.</p>"
+        "prefix": {
+          "documentation": "<p>The S3 prefix that is the destination for log delivery.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The description of the location of an object in Amazon S3.</p>"
+      "required": [
+        "enabled"
+      ],
+      "type": "structure"
     },
-    "S3LogDelivery":{
-      "type":"structure",
-      "required":["enabled"],
-      "members":{
-        "bucket":{
-          "shape":"__string",
-          "documentation":"<p>The name of the S3 bucket that is the destination for log delivery.</p>"
+    "S3LogDeliveryDescription": {
+      "documentation": "<p>The description of the details about delivering logs to Amazon S3.</p>",
+      "members": {
+        "bucket": {
+          "documentation": "<p>The name of the S3 bucket that is the destination for log delivery.</p>",
+          "shape": "__string"
         },
-        "enabled":{
-          "shape":"__boolean",
-          "documentation":"<p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>"
+        "enabled": {
+          "documentation": "<p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>",
+          "shape": "__boolean"
         },
-        "prefix":{
-          "shape":"__string",
-          "documentation":"<p>The S3 prefix that is the destination for log delivery.</p>"
+        "prefix": {
+          "documentation": "<p>The S3 prefix that is the destination for log delivery.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>Details about delivering logs to Amazon S3.</p>"
+      "type": "structure"
     },
-    "S3LogDeliveryDescription":{
-      "type":"structure",
-      "members":{
-        "bucket":{
-          "shape":"__string",
-          "documentation":"<p>The name of the S3 bucket that is the destination for log delivery.</p>"
+    "ScaleInPolicy": {
+      "documentation": "<p>The scale-in policy for the connector.</p>",
+      "members": {
+        "cpuUtilizationPercentage": {
+          "documentation": "<p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>",
+          "shape": "__integerMin1Max100"
+        }
+      },
+      "required": [
+        "cpuUtilizationPercentage"
+      ],
+      "type": "structure"
+    },
+    "ScaleInPolicyDescription": {
+      "documentation": "<p>The description of the scale-in policy for the connector.</p>",
+      "members": {
+        "cpuUtilizationPercentage": {
+          "documentation": "<p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>",
+          "shape": "__integer"
+        }
+      },
+      "type": "structure"
+    },
+    "ScaleInPolicyUpdate": {
+      "documentation": "<p>An update to the connector's scale-in policy.</p>",
+      "members": {
+        "cpuUtilizationPercentage": {
+          "documentation": "<p>The target CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>",
+          "shape": "__integerMin1Max100"
+        }
+      },
+      "required": [
+        "cpuUtilizationPercentage"
+      ],
+      "type": "structure"
+    },
+    "ScaleOutPolicy": {
+      "documentation": "<p>The scale-out policy for the connector.</p>",
+      "members": {
+        "cpuUtilizationPercentage": {
+          "documentation": "<p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>",
+          "shape": "__integerMin1Max100"
+        }
+      },
+      "required": [
+        "cpuUtilizationPercentage"
+      ],
+      "type": "structure"
+    },
+    "ScaleOutPolicyDescription": {
+      "documentation": "<p>The description of the scale-out policy for the connector.</p>",
+      "members": {
+        "cpuUtilizationPercentage": {
+          "documentation": "<p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>",
+          "shape": "__integer"
+        }
+      },
+      "type": "structure"
+    },
+    "ScaleOutPolicyUpdate": {
+      "documentation": "<p>An update to the connector's scale-out policy.</p>",
+      "members": {
+        "cpuUtilizationPercentage": {
+          "documentation": "<p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>",
+          "shape": "__integerMin1Max100"
+        }
+      },
+      "required": [
+        "cpuUtilizationPercentage"
+      ],
+      "type": "structure"
+    },
+    "ServiceUnavailableException": {
+      "documentation": "<p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>",
+      "error": {
+        "httpStatusCode": 503
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "StateDescription": {
+      "documentation": "<p>Details about the state of a resource.</p>",
+      "members": {
+        "code": {
+          "documentation": "<p>A code that describes the state of a resource.</p>",
+          "shape": "__string"
         },
-        "enabled":{
-          "shape":"__boolean",
-          "documentation":"<p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>"
+        "message": {
+          "documentation": "<p>A message that describes the state of a resource.</p>",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "SyntheticCreateConnectorRequest__mapOf__string": {
+      "key": {
+        "shape": "__string"
+      },
+      "sensitive": true,
+      "type": "map",
+      "value": {
+        "shape": "__string"
+      }
+    },
+    "SyntheticCreateWorkerConfigurationRequest__string": {
+      "sensitive": true,
+      "type": "string"
+    },
+    "SyntheticDescribeConnectorResponse__mapOf__string": {
+      "key": {
+        "shape": "__string"
+      },
+      "sensitive": true,
+      "type": "map",
+      "value": {
+        "shape": "__string"
+      }
+    },
+    "SyntheticWorkerConfigurationRevisionDescription__string": {
+      "sensitive": true,
+      "type": "string"
+    },
+    "TooManyRequestsException": {
+      "documentation": "<p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>",
+      "error": {
+        "httpStatusCode": 429,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "UnauthorizedException": {
+      "documentation": "<p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>",
+      "error": {
+        "httpStatusCode": 401,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "UpdateConnectorRequest": {
+      "members": {
+        "capacity": {
+          "documentation": "<p>The target capacity.</p>",
+          "shape": "CapacityUpdate"
         },
-        "prefix":{
-          "shape":"__string",
-          "documentation":"<p>The S3 prefix that is the destination for log delivery.</p>"
-        }
-      },
-      "documentation":"<p>The description of the details about delivering logs to Amazon S3.</p>"
-    },
-    "ScaleInPolicy":{
-      "type":"structure",
-      "required":["cpuUtilizationPercentage"],
-      "members":{
-        "cpuUtilizationPercentage":{
-          "shape":"__integerMin1Max100",
-          "documentation":"<p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>"
-        }
-      },
-      "documentation":"<p>The scale-in policy for the connector.</p>"
-    },
-    "ScaleInPolicyDescription":{
-      "type":"structure",
-      "members":{
-        "cpuUtilizationPercentage":{
-          "shape":"__integer",
-          "documentation":"<p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>"
-        }
-      },
-      "documentation":"<p>The description of the scale-in policy for the connector.</p>"
-    },
-    "ScaleInPolicyUpdate":{
-      "type":"structure",
-      "required":["cpuUtilizationPercentage"],
-      "members":{
-        "cpuUtilizationPercentage":{
-          "shape":"__integerMin1Max100",
-          "documentation":"<p>The target CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>"
-        }
-      },
-      "documentation":"<p>An update to the connector's scale-in policy.</p>"
-    },
-    "ScaleOutPolicy":{
-      "type":"structure",
-      "required":["cpuUtilizationPercentage"],
-      "members":{
-        "cpuUtilizationPercentage":{
-          "shape":"__integerMin1Max100",
-          "documentation":"<p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>"
-        }
-      },
-      "documentation":"<p>The scale-out policy for the connector.</p>"
-    },
-    "ScaleOutPolicyDescription":{
-      "type":"structure",
-      "members":{
-        "cpuUtilizationPercentage":{
-          "shape":"__integer",
-          "documentation":"<p>The CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>"
-        }
-      },
-      "documentation":"<p>The description of the scale-out policy for the connector.</p>"
-    },
-    "ScaleOutPolicyUpdate":{
-      "type":"structure",
-      "required":["cpuUtilizationPercentage"],
-      "members":{
-        "cpuUtilizationPercentage":{
-          "shape":"__integerMin1Max100",
-          "documentation":"<p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>"
-        }
-      },
-      "documentation":"<p>An update to the connector's scale-out policy.</p>"
-    },
-    "ServiceUnavailableException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"__string"}
-      },
-      "documentation":"<p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>",
-      "error":{"httpStatusCode":503},
-      "exception":true,
-      "fault":true
-    },
-    "StateDescription":{
-      "type":"structure",
-      "members":{
-        "code":{
-          "shape":"__string",
-          "documentation":"<p>A code that describes the state of a resource.</p>"
+        "connectorArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>",
+          "location": "uri",
+          "locationName": "connectorArn",
+          "shape": "__string"
         },
-        "message":{
-          "shape":"__string",
-          "documentation":"<p>A message that describes the state of a resource.</p>"
+        "currentVersion": {
+          "documentation": "<p>The current version of the connector that you want to update.</p>",
+          "location": "querystring",
+          "locationName": "currentVersion",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>Details about the state of a resource.</p>"
-    },
-    "SyntheticCreateConnectorRequest__mapOf__string":{
-      "type":"map",
-      "key":{"shape":"__string"},
-      "value":{"shape":"__string"},
-      "sensitive":true
-    },
-    "SyntheticCreateWorkerConfigurationRequest__string":{
-      "type":"string",
-      "sensitive":true
-    },
-    "SyntheticDescribeConnectorResponse__mapOf__string":{
-      "type":"map",
-      "key":{"shape":"__string"},
-      "value":{"shape":"__string"},
-      "sensitive":true
-    },
-    "SyntheticWorkerConfigurationRevisionDescription__string":{
-      "type":"string",
-      "sensitive":true
-    },
-    "TooManyRequestsException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"__string"}
-      },
-      "documentation":"<p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>",
-      "error":{
-        "httpStatusCode":429,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "UnauthorizedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"__string"}
-      },
-      "documentation":"<p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>",
-      "error":{
-        "httpStatusCode":401,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "UpdateConnectorRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "capacity",
         "connectorArn",
         "currentVersion"
       ],
-      "members":{
-        "capacity":{
-          "shape":"CapacityUpdate",
-          "documentation":"<p>The target capacity.</p>"
-        },
-        "connectorArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>",
-          "location":"uri",
-          "locationName":"connectorArn"
-        },
-        "currentVersion":{
-          "shape":"__string",
-          "documentation":"<p>The current version of the connector that you want to update.</p>",
-          "location":"querystring",
-          "locationName":"currentVersion"
-        }
-      }
+      "type": "structure"
     },
-    "UpdateConnectorResponse":{
-      "type":"structure",
-      "members":{
-        "connectorArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the connector.</p>"
+    "UpdateConnectorResponse": {
+      "members": {
+        "connectorArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the connector.</p>",
+          "shape": "__string"
         },
-        "connectorState":{
-          "shape":"ConnectorState",
-          "documentation":"<p>The state of the connector.</p>"
-        }
-      }
-    },
-    "Vpc":{
-      "type":"structure",
-      "required":["subnets"],
-      "members":{
-        "securityGroups":{
-          "shape":"__listOf__string",
-          "documentation":"<p>The security groups for the connector.</p>"
-        },
-        "subnets":{
-          "shape":"__listOf__string",
-          "documentation":"<p>The subnets for the connector.</p>"
+        "connectorState": {
+          "documentation": "<p>The state of the connector.</p>",
+          "shape": "ConnectorState"
         }
       },
-      "documentation":"<p>Information about the VPC in which the connector resides.</p>"
+      "type": "structure"
     },
-    "VpcDescription":{
-      "type":"structure",
-      "members":{
-        "securityGroups":{
-          "shape":"__listOf__string",
-          "documentation":"<p>The security groups for the connector.</p>"
+    "Vpc": {
+      "documentation": "<p>Information about the VPC in which the connector resides.</p>",
+      "members": {
+        "securityGroups": {
+          "documentation": "<p>The security groups for the connector.</p>",
+          "shape": "__listOf__string"
         },
-        "subnets":{
-          "shape":"__listOf__string",
-          "documentation":"<p>The subnets for the connector.</p>"
+        "subnets": {
+          "documentation": "<p>The subnets for the connector.</p>",
+          "shape": "__listOf__string"
         }
       },
-      "documentation":"<p>The description of the VPC in which the connector resides.</p>"
+      "required": [
+        "subnets"
+      ],
+      "type": "structure"
     },
-    "WorkerConfiguration":{
-      "type":"structure",
-      "required":[
+    "VpcDescription": {
+      "documentation": "<p>The description of the VPC in which the connector resides.</p>",
+      "members": {
+        "securityGroups": {
+          "documentation": "<p>The security groups for the connector.</p>",
+          "shape": "__listOf__string"
+        },
+        "subnets": {
+          "documentation": "<p>The subnets for the connector.</p>",
+          "shape": "__listOf__string"
+        }
+      },
+      "type": "structure"
+    },
+    "WorkerConfiguration": {
+      "documentation": "<p>The configuration of the workers, which are the processes that run the connector logic.</p>",
+      "members": {
+        "revision": {
+          "documentation": "<p>The revision of the worker configuration.</p>",
+          "shape": "__longMin1"
+        },
+        "workerConfigurationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the worker configuration.</p>",
+          "shape": "__string"
+        }
+      },
+      "required": [
         "revision",
         "workerConfigurationArn"
       ],
-      "members":{
-        "revision":{
-          "shape":"__longMin1",
-          "documentation":"<p>The revision of the worker configuration.</p>"
+      "type": "structure"
+    },
+    "WorkerConfigurationDescription": {
+      "documentation": "<p>The description of the worker configuration.</p>",
+      "members": {
+        "revision": {
+          "documentation": "<p>The revision of the worker configuration.</p>",
+          "shape": "__long"
         },
-        "workerConfigurationArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the worker configuration.</p>"
+        "workerConfigurationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the worker configuration.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The configuration of the workers, which are the processes that run the connector logic.</p>"
+      "type": "structure"
     },
-    "WorkerConfigurationDescription":{
-      "type":"structure",
-      "members":{
-        "revision":{
-          "shape":"__long",
-          "documentation":"<p>The revision of the worker configuration.</p>"
+    "WorkerConfigurationRevisionDescription": {
+      "documentation": "<p>The description of the worker configuration revision.</p>",
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time that the worker configuration was created.</p>",
+          "shape": "__timestampIso8601"
         },
-        "workerConfigurationArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the worker configuration.</p>"
+        "description": {
+          "documentation": "<p>The description of the worker configuration revision.</p>",
+          "shape": "__string"
+        },
+        "propertiesFileContent": {
+          "documentation": "<p>Base64 encoded contents of the connect-distributed.properties file.</p>",
+          "shape": "SyntheticWorkerConfigurationRevisionDescription__string"
+        },
+        "revision": {
+          "documentation": "<p>The description of a revision of the worker configuration.</p>",
+          "shape": "__long"
         }
       },
-      "documentation":"<p>The description of the worker configuration.</p>"
+      "type": "structure"
     },
-    "WorkerConfigurationRevisionDescription":{
-      "type":"structure",
-      "members":{
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that the worker configuration was created.</p>"
+    "WorkerConfigurationRevisionSummary": {
+      "documentation": "<p>The summary of a worker configuration revision.</p>",
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time that a worker configuration revision was created.</p>",
+          "shape": "__timestampIso8601"
         },
-        "description":{
-          "shape":"__string",
-          "documentation":"<p>The description of the worker configuration revision.</p>"
+        "description": {
+          "documentation": "<p>The description of a worker configuration revision.</p>",
+          "shape": "__string"
         },
-        "propertiesFileContent":{
-          "shape":"SyntheticWorkerConfigurationRevisionDescription__string",
-          "documentation":"<p>Base64 encoded contents of the connect-distributed.properties file.</p>"
-        },
-        "revision":{
-          "shape":"__long",
-          "documentation":"<p>The description of a revision of the worker configuration.</p>"
+        "revision": {
+          "documentation": "<p>The revision of a worker configuration.</p>",
+          "shape": "__long"
         }
       },
-      "documentation":"<p>The description of the worker configuration revision.</p>"
+      "type": "structure"
     },
-    "WorkerConfigurationRevisionSummary":{
-      "type":"structure",
-      "members":{
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that a worker configuration revision was created.</p>"
+    "WorkerConfigurationSummary": {
+      "documentation": "<p>The summary of a worker configuration.</p>",
+      "members": {
+        "creationTime": {
+          "documentation": "<p>The time that a worker configuration was created.</p>",
+          "shape": "__timestampIso8601"
         },
-        "description":{
-          "shape":"__string",
-          "documentation":"<p>The description of a worker configuration revision.</p>"
+        "description": {
+          "documentation": "<p>The description of a worker configuration.</p>",
+          "shape": "__string"
         },
-        "revision":{
-          "shape":"__long",
-          "documentation":"<p>The revision of a worker configuration.</p>"
+        "latestRevision": {
+          "documentation": "<p>The latest revision of a worker configuration.</p>",
+          "shape": "WorkerConfigurationRevisionSummary"
+        },
+        "name": {
+          "documentation": "<p>The name of the worker configuration.</p>",
+          "shape": "__string"
+        },
+        "workerConfigurationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the worker configuration.</p>",
+          "shape": "__string"
         }
       },
-      "documentation":"<p>The summary of a worker configuration revision.</p>"
+      "type": "structure"
     },
-    "WorkerConfigurationSummary":{
-      "type":"structure",
-      "members":{
-        "creationTime":{
-          "shape":"__timestampIso8601",
-          "documentation":"<p>The time that a worker configuration was created.</p>"
+    "WorkerLogDelivery": {
+      "documentation": "<p>Workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>",
+      "members": {
+        "cloudWatchLogs": {
+          "documentation": "<p>Details about delivering logs to Amazon CloudWatch Logs.</p>",
+          "shape": "CloudWatchLogsLogDelivery"
         },
-        "description":{
-          "shape":"__string",
-          "documentation":"<p>The description of a worker configuration.</p>"
+        "firehose": {
+          "documentation": "<p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>",
+          "shape": "FirehoseLogDelivery"
         },
-        "latestRevision":{
-          "shape":"WorkerConfigurationRevisionSummary",
-          "documentation":"<p>The latest revision of a worker configuration.</p>"
-        },
-        "name":{
-          "shape":"__string",
-          "documentation":"<p>The name of the worker configuration.</p>"
-        },
-        "workerConfigurationArn":{
-          "shape":"__string",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the worker configuration.</p>"
+        "s3": {
+          "documentation": "<p>Details about delivering logs to Amazon S3.</p>",
+          "shape": "S3LogDelivery"
         }
       },
-      "documentation":"<p>The summary of a worker configuration.</p>"
+      "type": "structure"
     },
-    "WorkerLogDelivery":{
-      "type":"structure",
-      "members":{
-        "cloudWatchLogs":{
-          "shape":"CloudWatchLogsLogDelivery",
-          "documentation":"<p>Details about delivering logs to Amazon CloudWatch Logs.</p>"
+    "WorkerLogDeliveryDescription": {
+      "documentation": "<p>Workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>",
+      "members": {
+        "cloudWatchLogs": {
+          "documentation": "<p>Details about delivering logs to Amazon CloudWatch Logs.</p>",
+          "shape": "CloudWatchLogsLogDeliveryDescription"
         },
-        "firehose":{
-          "shape":"FirehoseLogDelivery",
-          "documentation":"<p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>"
+        "firehose": {
+          "documentation": "<p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>",
+          "shape": "FirehoseLogDeliveryDescription"
         },
-        "s3":{
-          "shape":"S3LogDelivery",
-          "documentation":"<p>Details about delivering logs to Amazon S3.</p>"
+        "s3": {
+          "documentation": "<p>Details about delivering logs to Amazon S3.</p>",
+          "shape": "S3LogDeliveryDescription"
         }
       },
-      "documentation":"<p>Workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>"
+      "type": "structure"
     },
-    "WorkerLogDeliveryDescription":{
-      "type":"structure",
-      "members":{
-        "cloudWatchLogs":{
-          "shape":"CloudWatchLogsLogDeliveryDescription",
-          "documentation":"<p>Details about delivering logs to Amazon CloudWatch Logs.</p>"
-        },
-        "firehose":{
-          "shape":"FirehoseLogDeliveryDescription",
-          "documentation":"<p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>"
-        },
-        "s3":{
-          "shape":"S3LogDeliveryDescription",
-          "documentation":"<p>Details about delivering logs to Amazon S3.</p>"
-        }
+    "__boolean": {
+      "type": "boolean"
+    },
+    "__integer": {
+      "type": "integer"
+    },
+    "__integerMin1Max10": {
+      "max": 10,
+      "min": 1,
+      "type": "integer"
+    },
+    "__integerMin1Max100": {
+      "max": 100,
+      "min": 1,
+      "type": "integer"
+    },
+    "__integerMin1Max8": {
+      "max": 8,
+      "min": 1,
+      "type": "integer"
+    },
+    "__listOfConnectorSummary": {
+      "member": {
+        "shape": "ConnectorSummary"
       },
-      "documentation":"<p>Workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>"
+      "type": "list"
     },
-    "__boolean":{"type":"boolean"},
-    "__integer":{"type":"integer"},
-    "__integerMin1Max10":{
-      "type":"integer",
-      "max":10,
-      "min":1
+    "__listOfCustomPluginSummary": {
+      "member": {
+        "shape": "CustomPluginSummary"
+      },
+      "type": "list"
     },
-    "__integerMin1Max100":{
-      "type":"integer",
-      "max":100,
-      "min":1
+    "__listOfPlugin": {
+      "member": {
+        "shape": "Plugin"
+      },
+      "type": "list"
     },
-    "__integerMin1Max8":{
-      "type":"integer",
-      "max":8,
-      "min":1
+    "__listOfPluginDescription": {
+      "member": {
+        "shape": "PluginDescription"
+      },
+      "type": "list"
     },
-    "__listOfConnectorSummary":{
-      "type":"list",
-      "member":{"shape":"ConnectorSummary"}
+    "__listOfWorkerConfigurationSummary": {
+      "member": {
+        "shape": "WorkerConfigurationSummary"
+      },
+      "type": "list"
     },
-    "__listOfCustomPluginSummary":{
-      "type":"list",
-      "member":{"shape":"CustomPluginSummary"}
+    "__listOf__string": {
+      "member": {
+        "shape": "__string"
+      },
+      "type": "list"
     },
-    "__listOfPlugin":{
-      "type":"list",
-      "member":{"shape":"Plugin"}
+    "__long": {
+      "type": "long"
     },
-    "__listOfPluginDescription":{
-      "type":"list",
-      "member":{"shape":"PluginDescription"}
+    "__longMin1": {
+      "max": 9223372036854775807,
+      "min": 1,
+      "type": "long"
     },
-    "__listOfWorkerConfigurationSummary":{
-      "type":"list",
-      "member":{"shape":"WorkerConfigurationSummary"}
+    "__string": {
+      "type": "string"
     },
-    "__listOf__string":{
-      "type":"list",
-      "member":{"shape":"__string"}
+    "__stringMax1024": {
+      "max": 1024,
+      "min": 0,
+      "type": "string"
     },
-    "__long":{"type":"long"},
-    "__longMin1":{
-      "type":"long",
-      "max":9223372036854775807,
-      "min":1
+    "__stringMin1Max128": {
+      "max": 128,
+      "min": 1,
+      "type": "string"
     },
-    "__string":{"type":"string"},
-    "__stringMax1024":{
-      "type":"string",
-      "max":1024,
-      "min":0
-    },
-    "__stringMin1Max128":{
-      "type":"string",
-      "max":128,
-      "min":1
-    },
-    "__timestampIso8601":{
-      "type":"timestamp",
-      "timestampFormat":"iso8601"
+    "__timestampIso8601": {
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
     }
   },
-  "documentation":"<p/>"
+  "version": "2.0"
 }

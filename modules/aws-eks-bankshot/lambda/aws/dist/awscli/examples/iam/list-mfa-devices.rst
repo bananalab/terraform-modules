@@ -2,7 +2,7 @@
 
 This example returns details about the MFA device assigned to the IAM user ``Bob``::
 
-  aws iam list-mfa-devices --user-name Bob 
+  aws iam list-mfa-devices --user-name Bob
 
 Output::
 

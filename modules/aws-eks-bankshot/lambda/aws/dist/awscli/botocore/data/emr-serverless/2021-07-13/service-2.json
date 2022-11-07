@@ -1,269 +1,481 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2021-07-13",
-    "endpointPrefix":"emr-serverless",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"EMR Serverless",
-    "serviceId":"EMR Serverless",
-    "signatureVersion":"v4",
-    "signingName":"emr-serverless",
-    "uid":"emr-serverless-2021-07-13"
+  "documentation": "<p>Amazon EMR Serverless is a new deployment option for Amazon EMR. EMR Serverless provides a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive. With EMR Serverless, you don\u2019t have to configure, optimize, secure, or operate clusters to run applications with these frameworks.</p> <p>The API reference to Amazon EMR Serverless is <code>emr-serverless</code>. The <code>emr-serverless</code> prefix is used in the following scenarios: </p> <ul> <li> <p>It is the prefix in the CLI commands for Amazon EMR Serverless. For example, <code>aws emr-serverless start-job-run</code>.</p> </li> <li> <p>It is the prefix before IAM policy actions for Amazon EMR Serverless. For example, <code>\"Action\": [\"emr-serverless:StartJobRun\"]</code>. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions\">Policy actions for Amazon EMR Serverless</a>.</p> </li> <li> <p>It is the prefix used in Amazon EMR Serverless service endpoints. For example, <code>emr-serverless.us-east-2.amazonaws.com</code>.</p> </li> </ul>",
+  "metadata": {
+    "apiVersion": "2021-07-13",
+    "endpointPrefix": "emr-serverless",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "EMR Serverless",
+    "serviceId": "EMR Serverless",
+    "signatureVersion": "v4",
+    "signingName": "emr-serverless",
+    "uid": "emr-serverless-2021-07-13"
   },
-  "operations":{
-    "CancelJobRun":{
-      "name":"CancelJobRun",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/applications/{applicationId}/jobruns/{jobRunId}",
-        "responseCode":200
-      },
-      "input":{"shape":"CancelJobRunRequest"},
-      "output":{"shape":"CancelJobRunResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+  "operations": {
+    "CancelJobRun": {
+      "documentation": "<p>Cancels a job run.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Cancels a job run.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/applications/{applicationId}/jobruns/{jobRunId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CancelJobRunRequest"
+      },
+      "name": "CancelJobRun",
+      "output": {
+        "shape": "CancelJobRunResponse"
+      }
     },
-    "CreateApplication":{
-      "name":"CreateApplication",
-      "http":{
-        "method":"POST",
-        "requestUri":"/applications",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateApplicationRequest"},
-      "output":{"shape":"CreateApplicationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ConflictException"}
+    "CreateApplication": {
+      "documentation": "<p>Creates an application.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Creates an application.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/applications",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateApplicationRequest"
+      },
+      "name": "CreateApplication",
+      "output": {
+        "shape": "CreateApplicationResponse"
+      }
     },
-    "DeleteApplication":{
-      "name":"DeleteApplication",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/applications/{applicationId}",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteApplicationRequest"},
-      "output":{"shape":"DeleteApplicationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "DeleteApplication": {
+      "documentation": "<p>Deletes an application. An application has to be in a stopped or created state in order to be deleted.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deletes an application. An application has to be in a stopped or created state in order to be deleted.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/applications/{applicationId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteApplicationRequest"
+      },
+      "name": "DeleteApplication",
+      "output": {
+        "shape": "DeleteApplicationResponse"
+      }
     },
-    "GetApplication":{
-      "name":"GetApplication",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{applicationId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetApplicationRequest"},
-      "output":{"shape":"GetApplicationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "GetApplication": {
+      "documentation": "<p>Displays detailed information about a specified application.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Displays detailed information about a specified application.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{applicationId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetApplicationRequest"
+      },
+      "name": "GetApplication",
+      "output": {
+        "shape": "GetApplicationResponse"
+      }
     },
-    "GetDashboardForJobRun":{
-      "name":"GetDashboardForJobRun",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{applicationId}/jobruns/{jobRunId}/dashboard",
-        "responseCode":200
-      },
-      "input":{"shape":"GetDashboardForJobRunRequest"},
-      "output":{"shape":"GetDashboardForJobRunResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "GetDashboardForJobRun": {
+      "documentation": "<p>Returns a URL to access the job run dashboard.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Returns a URL to access the job run dashboard.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{applicationId}/jobruns/{jobRunId}/dashboard",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetDashboardForJobRunRequest"
+      },
+      "name": "GetDashboardForJobRun",
+      "output": {
+        "shape": "GetDashboardForJobRunResponse"
+      }
     },
-    "GetJobRun":{
-      "name":"GetJobRun",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{applicationId}/jobruns/{jobRunId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetJobRunRequest"},
-      "output":{"shape":"GetJobRunResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "GetJobRun": {
+      "documentation": "<p>Displays detailed information about a job run.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Displays detailed information about a job run.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{applicationId}/jobruns/{jobRunId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetJobRunRequest"
+      },
+      "name": "GetJobRun",
+      "output": {
+        "shape": "GetJobRunResponse"
+      }
     },
-    "ListApplications":{
-      "name":"ListApplications",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications",
-        "responseCode":200
-      },
-      "input":{"shape":"ListApplicationsRequest"},
-      "output":{"shape":"ListApplicationsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListApplications": {
+      "documentation": "<p>Lists applications based on a set of parameters.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists applications based on a set of parameters.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListApplicationsRequest"
+      },
+      "name": "ListApplications",
+      "output": {
+        "shape": "ListApplicationsResponse"
+      }
     },
-    "ListJobRuns":{
-      "name":"ListJobRuns",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{applicationId}/jobruns",
-        "responseCode":200
-      },
-      "input":{"shape":"ListJobRunsRequest"},
-      "output":{"shape":"ListJobRunsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListJobRuns": {
+      "documentation": "<p>Lists job runs based on a set of parameters.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists job runs based on a set of parameters.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{applicationId}/jobruns",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListJobRunsRequest"
+      },
+      "name": "ListJobRuns",
+      "output": {
+        "shape": "ListJobRunsResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Lists the tags assigned to the resources.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists the tags assigned to the resources.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "StartApplication":{
-      "name":"StartApplication",
-      "http":{
-        "method":"POST",
-        "requestUri":"/applications/{applicationId}/start",
-        "responseCode":200
-      },
-      "input":{"shape":"StartApplicationRequest"},
-      "output":{"shape":"StartApplicationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "StartApplication": {
+      "documentation": "<p>Starts a specified application and initializes initial capacity if configured.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Starts a specified application and initializes initial capacity if configured.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/applications/{applicationId}/start",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "StartApplicationRequest"
+      },
+      "name": "StartApplication",
+      "output": {
+        "shape": "StartApplicationResponse"
+      }
     },
-    "StartJobRun":{
-      "name":"StartJobRun",
-      "http":{
-        "method":"POST",
-        "requestUri":"/applications/{applicationId}/jobruns",
-        "responseCode":200
-      },
-      "input":{"shape":"StartJobRunRequest"},
-      "output":{"shape":"StartJobRunResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ConflictException"}
+    "StartJobRun": {
+      "documentation": "<p>Starts a job run.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Starts a job run.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/applications/{applicationId}/jobruns",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "StartJobRunRequest"
+      },
+      "name": "StartJobRun",
+      "output": {
+        "shape": "StartJobRunResponse"
+      }
     },
-    "StopApplication":{
-      "name":"StopApplication",
-      "http":{
-        "method":"POST",
-        "requestUri":"/applications/{applicationId}/stop",
-        "responseCode":200
-      },
-      "input":{"shape":"StopApplicationRequest"},
-      "output":{"shape":"StopApplicationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "StopApplication": {
+      "documentation": "<p>Stops a specified application and releases initial capacity if configured. All scheduled and running jobs must be completed or cancelled before stopping an application.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Stops a specified application and releases initial capacity if configured. All scheduled and running jobs must be completed or cancelled before stopping an application.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/applications/{applicationId}/stop",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "StopApplicationRequest"
+      },
+      "name": "StopApplication",
+      "output": {
+        "shape": "StopApplicationResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "TagResource": {
+      "documentation": "<p>Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "UntagResource": {
+      "documentation": "<p>Removes tags from resources.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Removes tags from resources.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
     },
-    "UpdateApplication":{
-      "name":"UpdateApplication",
-      "http":{
-        "method":"PATCH",
-        "requestUri":"/applications/{applicationId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateApplicationRequest"},
-      "output":{"shape":"UpdateApplicationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "UpdateApplication": {
+      "documentation": "<p>Updates a specified application. An application has to be in a stopped or created state in order to be updated.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Updates a specified application. An application has to be in a stopped or created state in order to be updated.</p>"
+      "http": {
+        "method": "PATCH",
+        "requestUri": "/applications/{applicationId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateApplicationRequest"
+      },
+      "name": "UpdateApplication",
+      "output": {
+        "shape": "UpdateApplicationResponse"
+      }
     }
   },
-  "shapes":{
-    "Application":{
-      "type":"structure",
-      "required":[
+  "shapes": {
+    "Application": {
+      "documentation": "<p>Information about an application. EMR Serverless uses applications to run jobs.</p>",
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application.</p>",
+          "shape": "ApplicationId"
+        },
+        "arn": {
+          "documentation": "<p>The ARN of the application.</p>",
+          "shape": "ApplicationArn"
+        },
+        "autoStartConfiguration": {
+          "documentation": "<p>The configuration for an application to automatically start on job submission.</p>",
+          "shape": "AutoStartConfig"
+        },
+        "autoStopConfiguration": {
+          "documentation": "<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>",
+          "shape": "AutoStopConfig"
+        },
+        "createdAt": {
+          "documentation": "<p>The date and time when the application run was created.</p>",
+          "shape": "Date"
+        },
+        "initialCapacity": {
+          "documentation": "<p>The initial capacity of the application.</p>",
+          "shape": "InitialCapacityConfigMap"
+        },
+        "maximumCapacity": {
+          "documentation": "<p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>",
+          "shape": "MaximumAllowedResources"
+        },
+        "name": {
+          "documentation": "<p>The name of the application.</p>",
+          "shape": "ApplicationName"
+        },
+        "networkConfiguration": {
+          "documentation": "<p>The network configuration for customer VPC connectivity for the application.</p>",
+          "shape": "NetworkConfiguration"
+        },
+        "releaseLabel": {
+          "documentation": "<p>The EMR release version associated with the application.</p>",
+          "shape": "ReleaseLabel"
+        },
+        "state": {
+          "documentation": "<p>The state of the application.</p>",
+          "shape": "ApplicationState"
+        },
+        "stateDetails": {
+          "documentation": "<p>The state details of the application.</p>",
+          "shape": "String256"
+        },
+        "tags": {
+          "documentation": "<p>The tags assigned to the application.</p>",
+          "shape": "TagMap"
+        },
+        "type": {
+          "documentation": "<p>The type of application, such as Spark or Hive.</p>",
+          "shape": "EngineType"
+        },
+        "updatedAt": {
+          "documentation": "<p>The date and time when the application run was last updated.</p>",
+          "shape": "Date"
+        }
+      },
+      "required": [
         "applicationId",
         "arn",
         "releaseLabel",
@@ -272,95 +484,34 @@
         "createdAt",
         "updatedAt"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application.</p>"
-        },
-        "name":{
-          "shape":"ApplicationName",
-          "documentation":"<p>The name of the application.</p>"
-        },
-        "arn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The ARN of the application.</p>"
-        },
-        "releaseLabel":{
-          "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application.</p>"
-        },
-        "type":{
-          "shape":"EngineType",
-          "documentation":"<p>The type of application, such as Spark or Hive.</p>"
-        },
-        "state":{
-          "shape":"ApplicationState",
-          "documentation":"<p>The state of the application.</p>"
-        },
-        "stateDetails":{
-          "shape":"String256",
-          "documentation":"<p>The state details of the application.</p>"
-        },
-        "initialCapacity":{
-          "shape":"InitialCapacityConfigMap",
-          "documentation":"<p>The initial capacity of the application.</p>"
-        },
-        "maximumCapacity":{
-          "shape":"MaximumAllowedResources",
-          "documentation":"<p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>"
-        },
-        "createdAt":{
-          "shape":"Date",
-          "documentation":"<p>The date and time when the application run was created.</p>"
-        },
-        "updatedAt":{
-          "shape":"Date",
-          "documentation":"<p>The date and time when the application run was last updated.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags assigned to the application.</p>"
-        },
-        "autoStartConfiguration":{
-          "shape":"AutoStartConfig",
-          "documentation":"<p>The configuration for an application to automatically start on job submission.</p>"
-        },
-        "autoStopConfiguration":{
-          "shape":"AutoStopConfig",
-          "documentation":"<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>"
-        },
-        "networkConfiguration":{
-          "shape":"NetworkConfiguration",
-          "documentation":"<p>The network configuration for customer VPC connectivity for the application.</p>"
-        }
+      "type": "structure"
+    },
+    "ApplicationArn": {
+      "max": 1024,
+      "min": 60,
+      "pattern": "arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\\d{12}):\\/applications\\/[0-9a-zA-Z]+",
+      "type": "string"
+    },
+    "ApplicationId": {
+      "max": 64,
+      "min": 1,
+      "pattern": "[0-9a-z]+",
+      "type": "string"
+    },
+    "ApplicationList": {
+      "member": {
+        "shape": "ApplicationSummary"
       },
-      "documentation":"<p>Information about an application. EMR Serverless uses applications to run jobs.</p>"
+      "type": "list"
     },
-    "ApplicationArn":{
-      "type":"string",
-      "max":1024,
-      "min":60,
-      "pattern":"arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\\d{12}):\\/applications\\/[0-9a-zA-Z]+"
+    "ApplicationName": {
+      "max": 64,
+      "min": 1,
+      "pattern": "[A-Za-z0-9._/#-]+",
+      "type": "string"
     },
-    "ApplicationId":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"[0-9a-z]+"
-    },
-    "ApplicationList":{
-      "type":"list",
-      "member":{"shape":"ApplicationSummary"}
-    },
-    "ApplicationName":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"[A-Za-z0-9._/#-]+"
-    },
-    "ApplicationState":{
-      "type":"string",
-      "enum":[
+    "ApplicationState": {
+      "enum": [
         "CREATING",
         "CREATED",
         "STARTING",
@@ -368,17 +519,58 @@
         "STOPPING",
         "STOPPED",
         "TERMINATED"
-      ]
+      ],
+      "type": "string"
     },
-    "ApplicationStateSet":{
-      "type":"list",
-      "member":{"shape":"ApplicationState"},
-      "max":7,
-      "min":1
+    "ApplicationStateSet": {
+      "max": 7,
+      "member": {
+        "shape": "ApplicationState"
+      },
+      "min": 1,
+      "type": "list"
     },
-    "ApplicationSummary":{
-      "type":"structure",
-      "required":[
+    "ApplicationSummary": {
+      "documentation": "<p>The summary of attributes associated with an application.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The ARN of the application.</p>",
+          "shape": "ApplicationArn"
+        },
+        "createdAt": {
+          "documentation": "<p>The date and time when the application was created.</p>",
+          "shape": "Date"
+        },
+        "id": {
+          "documentation": "<p>The ID of the application.</p>",
+          "shape": "ApplicationId"
+        },
+        "name": {
+          "documentation": "<p>The name of the application.</p>",
+          "shape": "ApplicationName"
+        },
+        "releaseLabel": {
+          "documentation": "<p>The EMR release version associated with the application.</p>",
+          "shape": "ReleaseLabel"
+        },
+        "state": {
+          "documentation": "<p>The state of the application.</p>",
+          "shape": "ApplicationState"
+        },
+        "stateDetails": {
+          "documentation": "<p>The state details of the application.</p>",
+          "shape": "String256"
+        },
+        "type": {
+          "documentation": "<p>The type of application, such as Spark or Hive.</p>",
+          "shape": "EngineType"
+        },
+        "updatedAt": {
+          "documentation": "<p>The date and time when the application was last updated.</p>",
+          "shape": "Date"
+        }
+      },
+      "required": [
         "id",
         "arn",
         "releaseLabel",
@@ -387,499 +579,563 @@
         "createdAt",
         "updatedAt"
       ],
-      "members":{
-        "id":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application.</p>"
-        },
-        "name":{
-          "shape":"ApplicationName",
-          "documentation":"<p>The name of the application.</p>"
-        },
-        "arn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The ARN of the application.</p>"
-        },
-        "releaseLabel":{
-          "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application.</p>"
-        },
-        "type":{
-          "shape":"EngineType",
-          "documentation":"<p>The type of application, such as Spark or Hive.</p>"
-        },
-        "state":{
-          "shape":"ApplicationState",
-          "documentation":"<p>The state of the application.</p>"
-        },
-        "stateDetails":{
-          "shape":"String256",
-          "documentation":"<p>The state details of the application.</p>"
-        },
-        "createdAt":{
-          "shape":"Date",
-          "documentation":"<p>The date and time when the application was created.</p>"
-        },
-        "updatedAt":{
-          "shape":"Date",
-          "documentation":"<p>The date and time when the application was last updated.</p>"
+      "type": "structure"
+    },
+    "AutoStartConfig": {
+      "documentation": "<p>The configuration for an application to automatically start on job submission.</p>",
+      "members": {
+        "enabled": {
+          "documentation": "<p>Enables the application to automatically start on job submission. Defaults to true.</p>",
+          "shape": "Boolean"
         }
       },
-      "documentation":"<p>The summary of attributes associated with an application.</p>"
+      "type": "structure"
     },
-    "AutoStartConfig":{
-      "type":"structure",
-      "members":{
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Enables the application to automatically start on job submission. Defaults to true.</p>"
-        }
-      },
-      "documentation":"<p>The configuration for an application to automatically start on job submission.</p>"
-    },
-    "AutoStopConfig":{
-      "type":"structure",
-      "members":{
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Enables the application to automatically stop after a certain amount of time being idle. Defaults to true.</p>"
+    "AutoStopConfig": {
+      "documentation": "<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>",
+      "members": {
+        "enabled": {
+          "documentation": "<p>Enables the application to automatically stop after a certain amount of time being idle. Defaults to true.</p>",
+          "shape": "Boolean"
         },
-        "idleTimeoutMinutes":{
-          "shape":"AutoStopConfigIdleTimeoutMinutesInteger",
-          "documentation":"<p>The amount of idle time in minutes after which your application will automatically stop. Defaults to 15 minutes.</p>"
+        "idleTimeoutMinutes": {
+          "documentation": "<p>The amount of idle time in minutes after which your application will automatically stop. Defaults to 15 minutes.</p>",
+          "shape": "AutoStopConfigIdleTimeoutMinutesInteger"
         }
       },
-      "documentation":"<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>"
+      "type": "structure"
     },
-    "AutoStopConfigIdleTimeoutMinutesInteger":{
-      "type":"integer",
-      "box":true,
-      "max":10080,
-      "min":1
+    "AutoStopConfigIdleTimeoutMinutesInteger": {
+      "box": true,
+      "max": 10080,
+      "min": 1,
+      "type": "integer"
     },
-    "Boolean":{
-      "type":"boolean",
-      "box":true
+    "Boolean": {
+      "box": true,
+      "type": "boolean"
     },
-    "CancelJobRunRequest":{
-      "type":"structure",
-      "required":[
+    "CancelJobRunRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application on which the job run will be canceled.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
+        },
+        "jobRunId": {
+          "documentation": "<p>The ID of the job run to cancel.</p>",
+          "location": "uri",
+          "locationName": "jobRunId",
+          "shape": "JobRunId"
+        }
+      },
+      "required": [
         "applicationId",
         "jobRunId"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application on which the job run will be canceled.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
-        },
-        "jobRunId":{
-          "shape":"JobRunId",
-          "documentation":"<p>The ID of the job run to cancel.</p>",
-          "location":"uri",
-          "locationName":"jobRunId"
-        }
-      }
+      "type": "structure"
     },
-    "CancelJobRunResponse":{
-      "type":"structure",
-      "required":[
+    "CancelJobRunResponse": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The output contains the application ID on which the job run is cancelled.</p>",
+          "shape": "ApplicationId"
+        },
+        "jobRunId": {
+          "documentation": "<p>The output contains the ID of the cancelled job run.</p>",
+          "shape": "JobRunId"
+        }
+      },
+      "required": [
         "applicationId",
         "jobRunId"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The output contains the application ID on which the job run is cancelled.</p>"
-        },
-        "jobRunId":{
-          "shape":"JobRunId",
-          "documentation":"<p>The output contains the ID of the cancelled job run.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "ClientToken":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"[A-Za-z0-9._-]+"
+    "ClientToken": {
+      "max": 64,
+      "min": 1,
+      "pattern": "[A-Za-z0-9._-]+",
+      "type": "string"
     },
-    "Configuration":{
-      "type":"structure",
-      "required":["classification"],
-      "members":{
-        "classification":{
-          "shape":"String1024",
-          "documentation":"<p>The classification within a configuration.</p>"
+    "Configuration": {
+      "documentation": "<p>A configuration specification to be used when provisioning an application. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file.</p>",
+      "members": {
+        "classification": {
+          "documentation": "<p>The classification within a configuration.</p>",
+          "shape": "String1024"
         },
-        "properties":{
-          "shape":"SensitivePropertiesMap",
-          "documentation":"<p>A set of properties specified within a configuration classification.</p>"
+        "configurations": {
+          "documentation": "<p>A list of additional configurations to apply within a configuration object.</p>",
+          "shape": "ConfigurationList"
         },
-        "configurations":{
-          "shape":"ConfigurationList",
-          "documentation":"<p>A list of additional configurations to apply within a configuration object.</p>"
+        "properties": {
+          "documentation": "<p>A set of properties specified within a configuration classification.</p>",
+          "shape": "SensitivePropertiesMap"
         }
       },
-      "documentation":"<p>A configuration specification to be used when provisioning an application. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file.</p>"
+      "required": [
+        "classification"
+      ],
+      "type": "structure"
     },
-    "ConfigurationList":{
-      "type":"list",
-      "member":{"shape":"Configuration"},
-      "max":100,
-      "min":0
+    "ConfigurationList": {
+      "max": 100,
+      "member": {
+        "shape": "Configuration"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "ConfigurationOverrides":{
-      "type":"structure",
-      "members":{
-        "applicationConfiguration":{
-          "shape":"ConfigurationList",
-          "documentation":"<p>The override configurations for the application.</p>"
+    "ConfigurationOverrides": {
+      "documentation": "<p>A configuration specification to be used to override existing configurations.</p>",
+      "members": {
+        "applicationConfiguration": {
+          "documentation": "<p>The override configurations for the application.</p>",
+          "shape": "ConfigurationList"
         },
-        "monitoringConfiguration":{
-          "shape":"MonitoringConfiguration",
-          "documentation":"<p>The override configurations for monitoring.</p>"
+        "monitoringConfiguration": {
+          "documentation": "<p>The override configurations for monitoring.</p>",
+          "shape": "MonitoringConfiguration"
         }
       },
-      "documentation":"<p>A configuration specification to be used to override existing configurations.</p>"
+      "type": "structure"
     },
-    "ConflictException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String1024"}
+    "ConflictException": {
+      "documentation": "<p>The request could not be processed because of conflict in the current state of the resource.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
       },
-      "documentation":"<p>The request could not be processed because of conflict in the current state of the resource.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String1024"
+        }
       },
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "CpuSize":{
-      "type":"string",
-      "max":15,
-      "min":1,
-      "pattern":"[1-9][0-9]*(\\s)?(vCPU|vcpu|VCPU)?"
+    "CpuSize": {
+      "max": 15,
+      "min": 1,
+      "pattern": "[1-9][0-9]*(\\s)?(vCPU|vcpu|VCPU)?",
+      "type": "string"
     },
-    "CreateApplicationRequest":{
-      "type":"structure",
-      "required":[
+    "CreateApplicationRequest": {
+      "members": {
+        "autoStartConfiguration": {
+          "documentation": "<p>The configuration for an application to automatically start on job submission.</p>",
+          "shape": "AutoStartConfig"
+        },
+        "autoStopConfiguration": {
+          "documentation": "<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>",
+          "shape": "AutoStopConfig"
+        },
+        "clientToken": {
+          "documentation": "<p>The client idempotency token of the application to create. Its value must be unique for each request.</p>",
+          "idempotencyToken": true,
+          "shape": "ClientToken"
+        },
+        "initialCapacity": {
+          "documentation": "<p>The capacity to initialize when the application is created.</p>",
+          "shape": "InitialCapacityConfigMap"
+        },
+        "maximumCapacity": {
+          "documentation": "<p>The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.</p>",
+          "shape": "MaximumAllowedResources"
+        },
+        "name": {
+          "documentation": "<p>The name of the application.</p>",
+          "shape": "ApplicationName"
+        },
+        "networkConfiguration": {
+          "documentation": "<p>The network configuration for customer VPC connectivity.</p>",
+          "shape": "NetworkConfiguration"
+        },
+        "releaseLabel": {
+          "documentation": "<p>The EMR release version associated with the application.</p>",
+          "shape": "ReleaseLabel"
+        },
+        "tags": {
+          "documentation": "<p>The tags assigned to the application.</p>",
+          "shape": "TagMap"
+        },
+        "type": {
+          "documentation": "<p>The type of application you want to start, such as Spark or Hive.</p>",
+          "shape": "EngineType"
+        }
+      },
+      "required": [
         "releaseLabel",
         "type",
         "clientToken"
       ],
-      "members":{
-        "name":{
-          "shape":"ApplicationName",
-          "documentation":"<p>The name of the application.</p>"
-        },
-        "releaseLabel":{
-          "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application.</p>"
-        },
-        "type":{
-          "shape":"EngineType",
-          "documentation":"<p>The type of application you want to start, such as Spark or Hive.</p>"
-        },
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>The client idempotency token of the application to create. Its value must be unique for each request.</p>",
-          "idempotencyToken":true
-        },
-        "initialCapacity":{
-          "shape":"InitialCapacityConfigMap",
-          "documentation":"<p>The capacity to initialize when the application is created.</p>"
-        },
-        "maximumCapacity":{
-          "shape":"MaximumAllowedResources",
-          "documentation":"<p>The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags assigned to the application.</p>"
-        },
-        "autoStartConfiguration":{
-          "shape":"AutoStartConfig",
-          "documentation":"<p>The configuration for an application to automatically start on job submission.</p>"
-        },
-        "autoStopConfiguration":{
-          "shape":"AutoStopConfig",
-          "documentation":"<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>"
-        },
-        "networkConfiguration":{
-          "shape":"NetworkConfiguration",
-          "documentation":"<p>The network configuration for customer VPC connectivity.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateApplicationResponse":{
-      "type":"structure",
-      "required":[
+    "CreateApplicationResponse": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The output contains the application ID.</p>",
+          "shape": "ApplicationId"
+        },
+        "arn": {
+          "documentation": "<p>The output contains the ARN of the application.</p>",
+          "shape": "ApplicationArn"
+        },
+        "name": {
+          "documentation": "<p>The output contains the name of the application.</p>",
+          "shape": "ApplicationName"
+        }
+      },
+      "required": [
         "applicationId",
         "arn"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The output contains the application ID.</p>"
+      "type": "structure"
+    },
+    "Date": {
+      "type": "timestamp"
+    },
+    "DeleteApplicationRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application that will be deleted.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
+        }
+      },
+      "required": [
+        "applicationId"
+      ],
+      "type": "structure"
+    },
+    "DeleteApplicationResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "DiskSize": {
+      "max": 15,
+      "min": 1,
+      "pattern": "[1-9][0-9]*(\\s)?(GB|gb|gB|Gb)",
+      "type": "string"
+    },
+    "Double": {
+      "box": true,
+      "type": "double"
+    },
+    "Duration": {
+      "max": 1000000,
+      "min": 0,
+      "type": "long"
+    },
+    "EncryptionKeyArn": {
+      "max": 2048,
+      "min": 20,
+      "pattern": "arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\\-]*:(\\d{12})?:key\\/[a-zA-Z0-9-]+",
+      "type": "string"
+    },
+    "EngineType": {
+      "max": 64,
+      "min": 1,
+      "type": "string"
+    },
+    "EntryPointArgument": {
+      "max": 10280,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "sensitive": true,
+      "type": "string"
+    },
+    "EntryPointArguments": {
+      "member": {
+        "shape": "EntryPointArgument"
+      },
+      "type": "list"
+    },
+    "EntryPointPath": {
+      "max": 256,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "sensitive": true,
+      "type": "string"
+    },
+    "GetApplicationRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application that will be described.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
+        }
+      },
+      "required": [
+        "applicationId"
+      ],
+      "type": "structure"
+    },
+    "GetApplicationResponse": {
+      "members": {
+        "application": {
+          "documentation": "<p>The output displays information about the specified application.</p>",
+          "shape": "Application"
+        }
+      },
+      "required": [
+        "application"
+      ],
+      "type": "structure"
+    },
+    "GetDashboardForJobRunRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
         },
-        "name":{
-          "shape":"ApplicationName",
-          "documentation":"<p>The output contains the name of the application.</p>"
-        },
-        "arn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The output contains the ARN of the application.</p>"
+        "jobRunId": {
+          "documentation": "<p>The ID of the job run.</p>",
+          "location": "uri",
+          "locationName": "jobRunId",
+          "shape": "JobRunId"
         }
-      }
-    },
-    "Date":{"type":"timestamp"},
-    "DeleteApplicationRequest":{
-      "type":"structure",
-      "required":["applicationId"],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application that will be deleted.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
-        }
-      }
-    },
-    "DeleteApplicationResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DiskSize":{
-      "type":"string",
-      "max":15,
-      "min":1,
-      "pattern":"[1-9][0-9]*(\\s)?(GB|gb|gB|Gb)"
-    },
-    "Double":{
-      "type":"double",
-      "box":true
-    },
-    "Duration":{
-      "type":"long",
-      "max":1000000,
-      "min":0
-    },
-    "EncryptionKeyArn":{
-      "type":"string",
-      "max":2048,
-      "min":20,
-      "pattern":"arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\\-]*:(\\d{12})?:key\\/[a-zA-Z0-9-]+"
-    },
-    "EngineType":{
-      "type":"string",
-      "max":64,
-      "min":1
-    },
-    "EntryPointArgument":{
-      "type":"string",
-      "max":10280,
-      "min":1,
-      "pattern":".*\\S.*",
-      "sensitive":true
-    },
-    "EntryPointArguments":{
-      "type":"list",
-      "member":{"shape":"EntryPointArgument"}
-    },
-    "EntryPointPath":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":".*\\S.*",
-      "sensitive":true
-    },
-    "GetApplicationRequest":{
-      "type":"structure",
-      "required":["applicationId"],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application that will be described.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
-        }
-      }
-    },
-    "GetApplicationResponse":{
-      "type":"structure",
-      "required":["application"],
-      "members":{
-        "application":{
-          "shape":"Application",
-          "documentation":"<p>The output displays information about the specified application.</p>"
-        }
-      }
-    },
-    "GetDashboardForJobRunRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "applicationId",
         "jobRunId"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
+      "type": "structure"
+    },
+    "GetDashboardForJobRunResponse": {
+      "members": {
+        "url": {
+          "documentation": "<p>The URL to view job run's dashboard.</p>",
+          "shape": "Url"
+        }
+      },
+      "type": "structure"
+    },
+    "GetJobRunRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application on which the job run is submitted.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
         },
-        "jobRunId":{
-          "shape":"JobRunId",
-          "documentation":"<p>The ID of the job run.</p>",
-          "location":"uri",
-          "locationName":"jobRunId"
+        "jobRunId": {
+          "documentation": "<p>The ID of the job run.</p>",
+          "location": "uri",
+          "locationName": "jobRunId",
+          "shape": "JobRunId"
         }
-      }
-    },
-    "GetDashboardForJobRunResponse":{
-      "type":"structure",
-      "members":{
-        "url":{
-          "shape":"Url",
-          "documentation":"<p>The URL to view job run's dashboard.</p>"
-        }
-      }
-    },
-    "GetJobRunRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "applicationId",
         "jobRunId"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application on which the job run is submitted.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
-        },
-        "jobRunId":{
-          "shape":"JobRunId",
-          "documentation":"<p>The ID of the job run.</p>",
-          "location":"uri",
-          "locationName":"jobRunId"
+      "type": "structure"
+    },
+    "GetJobRunResponse": {
+      "members": {
+        "jobRun": {
+          "documentation": "<p>The output displays information about the job run.</p>",
+          "shape": "JobRun"
         }
+      },
+      "required": [
+        "jobRun"
+      ],
+      "type": "structure"
+    },
+    "Hive": {
+      "documentation": "<p>The configurations for the Hive job driver.</p>",
+      "members": {
+        "initQueryFile": {
+          "documentation": "<p>The query file for the Hive job run.</p>",
+          "shape": "InitScriptPath"
+        },
+        "parameters": {
+          "documentation": "<p>The parameters for the Hive job run.</p>",
+          "shape": "HiveCliParameters"
+        },
+        "query": {
+          "documentation": "<p>The query for the Hive job run.</p>",
+          "shape": "Query"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "structure"
+    },
+    "HiveCliParameters": {
+      "max": 102400,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "sensitive": true,
+      "type": "string"
+    },
+    "IAMRoleArn": {
+      "max": 2048,
+      "min": 20,
+      "pattern": "arn:(aws[a-zA-Z0-9-]*):iam::(\\d{12})?:(role((\\u002F)|(\\u002F[\\u0021-\\u007F]+\\u002F))[\\w+=,.@-]+)",
+      "type": "string"
+    },
+    "InitScriptPath": {
+      "max": 256,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "sensitive": true,
+      "type": "string"
+    },
+    "InitialCapacityConfig": {
+      "documentation": "<p>The initial capacity configuration per worker.</p>",
+      "members": {
+        "workerConfiguration": {
+          "documentation": "<p>The resource configuration of the initial capacity configuration.</p>",
+          "shape": "WorkerResourceConfig"
+        },
+        "workerCount": {
+          "documentation": "<p>The number of workers in the initial capacity configuration.</p>",
+          "shape": "WorkerCounts"
+        }
+      },
+      "required": [
+        "workerCount"
+      ],
+      "type": "structure"
+    },
+    "InitialCapacityConfigMap": {
+      "key": {
+        "shape": "WorkerTypeString"
+      },
+      "max": 10,
+      "min": 0,
+      "type": "map",
+      "value": {
+        "shape": "InitialCapacityConfig"
       }
     },
-    "GetJobRunResponse":{
-      "type":"structure",
-      "required":["jobRun"],
-      "members":{
-        "jobRun":{
-          "shape":"JobRun",
-          "documentation":"<p>The output displays information about the job run.</p>"
-        }
-      }
+    "Integer": {
+      "box": true,
+      "type": "integer"
     },
-    "Hive":{
-      "type":"structure",
-      "required":["query"],
-      "members":{
-        "query":{
-          "shape":"Query",
-          "documentation":"<p>The query for the Hive job run.</p>"
-        },
-        "initQueryFile":{
-          "shape":"InitScriptPath",
-          "documentation":"<p>The query file for the Hive job run.</p>"
-        },
-        "parameters":{
-          "shape":"HiveCliParameters",
-          "documentation":"<p>The parameters for the Hive job run.</p>"
+    "InternalServerException": {
+      "documentation": "<p>Request processing failed because of an error or failure with the service.</p>",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "String1024"
         }
       },
-      "documentation":"<p>The configurations for the Hive job driver.</p>"
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "HiveCliParameters":{
-      "type":"string",
-      "max":102400,
-      "min":1,
-      "pattern":".*\\S.*",
-      "sensitive":true
+    "JobArn": {
+      "max": 1024,
+      "min": 60,
+      "pattern": "arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\\d{12}):\\/applications\\/[0-9a-zA-Z]+\\/jobruns\\/[0-9a-zA-Z]+",
+      "type": "string"
     },
-    "IAMRoleArn":{
-      "type":"string",
-      "max":2048,
-      "min":20,
-      "pattern":"arn:(aws[a-zA-Z0-9-]*):iam::(\\d{12})?:(role((\\u002F)|(\\u002F[\\u0021-\\u007F]+\\u002F))[\\w+=,.@-]+)"
-    },
-    "InitScriptPath":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":".*\\S.*",
-      "sensitive":true
-    },
-    "InitialCapacityConfig":{
-      "type":"structure",
-      "required":["workerCount"],
-      "members":{
-        "workerCount":{
-          "shape":"WorkerCounts",
-          "documentation":"<p>The number of workers in the initial capacity configuration.</p>"
+    "JobDriver": {
+      "documentation": "<p>The driver that the job runs on.</p>",
+      "members": {
+        "hive": {
+          "documentation": "<p>The job driver parameters specified for Hive.</p>",
+          "shape": "Hive"
         },
-        "workerConfiguration":{
-          "shape":"WorkerResourceConfig",
-          "documentation":"<p>The resource configuration of the initial capacity configuration.</p>"
+        "sparkSubmit": {
+          "documentation": "<p>The job driver parameters specified for Spark.</p>",
+          "shape": "SparkSubmit"
         }
       },
-      "documentation":"<p>The initial capacity configuration per worker.</p>"
+      "type": "structure",
+      "union": true
     },
-    "InitialCapacityConfigMap":{
-      "type":"map",
-      "key":{"shape":"WorkerTypeString"},
-      "value":{"shape":"InitialCapacityConfig"},
-      "max":10,
-      "min":0
-    },
-    "Integer":{
-      "type":"integer",
-      "box":true
-    },
-    "InternalServerException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String1024"}
-      },
-      "documentation":"<p>Request processing failed because of an error or failure with the service.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true
-    },
-    "JobArn":{
-      "type":"string",
-      "max":1024,
-      "min":60,
-      "pattern":"arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\\d{12}):\\/applications\\/[0-9a-zA-Z]+\\/jobruns\\/[0-9a-zA-Z]+"
-    },
-    "JobDriver":{
-      "type":"structure",
-      "members":{
-        "sparkSubmit":{
-          "shape":"SparkSubmit",
-          "documentation":"<p>The job driver parameters specified for Spark.</p>"
+    "JobRun": {
+      "documentation": "<p>Information about a job run. A job run is a unit of work, such as a Spark JAR, Hive query, or SparkSQL query, that you submit to an EMR Serverless application.</p>",
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application the job is running on.</p>",
+          "shape": "ApplicationId"
         },
-        "hive":{
-          "shape":"Hive",
-          "documentation":"<p>The job driver parameters specified for Hive.</p>"
+        "arn": {
+          "documentation": "<p>The execution role ARN of the job run.</p>",
+          "shape": "JobArn"
+        },
+        "configurationOverrides": {
+          "documentation": "<p>The configuration settings that are used to override default configuration.</p>",
+          "shape": "ConfigurationOverrides"
+        },
+        "createdAt": {
+          "documentation": "<p>The date and time when the job run was created.</p>",
+          "shape": "Date"
+        },
+        "createdBy": {
+          "documentation": "<p>The user who created the job run.</p>",
+          "shape": "RequestIdentityUserArn"
+        },
+        "executionRole": {
+          "documentation": "<p>The execution role ARN of the job run.</p>",
+          "shape": "IAMRoleArn"
+        },
+        "jobDriver": {
+          "documentation": "<p>The job driver for the job run.</p>",
+          "shape": "JobDriver"
+        },
+        "jobRunId": {
+          "documentation": "<p>The ID of the job run.</p>",
+          "shape": "JobRunId"
+        },
+        "name": {
+          "documentation": "<p>The optional job run name. This doesn't have to be unique.</p>",
+          "shape": "String256"
+        },
+        "networkConfiguration": {
+          "shape": "NetworkConfiguration"
+        },
+        "releaseLabel": {
+          "documentation": "<p>The EMR release version associated with the application your job is running on.</p>",
+          "shape": "ReleaseLabel"
+        },
+        "state": {
+          "documentation": "<p>The state of the job run.</p>",
+          "shape": "JobRunState"
+        },
+        "stateDetails": {
+          "documentation": "<p>The state details of the job run.</p>",
+          "shape": "String256"
+        },
+        "tags": {
+          "documentation": "<p>The tags assigned to the job run.</p>",
+          "shape": "TagMap"
+        },
+        "totalExecutionDurationSeconds": {
+          "documentation": "<p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>",
+          "shape": "Integer"
+        },
+        "totalResourceUtilization": {
+          "documentation": "<p>The aggregate vCPU, memory, and storage resources used from the time job start executing till the time job is terminated, rounded up to the nearest second.</p>",
+          "shape": "TotalResourceUtilization"
+        },
+        "updatedAt": {
+          "documentation": "<p>The date and time when the job run was updated.</p>",
+          "shape": "Date"
         }
       },
-      "documentation":"<p>The driver that the job runs on.</p>",
-      "union":true
-    },
-    "JobRun":{
-      "type":"structure",
-      "required":[
+      "required": [
         "applicationId",
         "jobRunId",
         "arn",
@@ -892,84 +1148,16 @@
         "releaseLabel",
         "jobDriver"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application the job is running on.</p>"
-        },
-        "jobRunId":{
-          "shape":"JobRunId",
-          "documentation":"<p>The ID of the job run.</p>"
-        },
-        "name":{
-          "shape":"String256",
-          "documentation":"<p>The optional job run name. This doesn't have to be unique.</p>"
-        },
-        "arn":{
-          "shape":"JobArn",
-          "documentation":"<p>The execution role ARN of the job run.</p>"
-        },
-        "createdBy":{
-          "shape":"RequestIdentityUserArn",
-          "documentation":"<p>The user who created the job run.</p>"
-        },
-        "createdAt":{
-          "shape":"Date",
-          "documentation":"<p>The date and time when the job run was created.</p>"
-        },
-        "updatedAt":{
-          "shape":"Date",
-          "documentation":"<p>The date and time when the job run was updated.</p>"
-        },
-        "executionRole":{
-          "shape":"IAMRoleArn",
-          "documentation":"<p>The execution role ARN of the job run.</p>"
-        },
-        "state":{
-          "shape":"JobRunState",
-          "documentation":"<p>The state of the job run.</p>"
-        },
-        "stateDetails":{
-          "shape":"String256",
-          "documentation":"<p>The state details of the job run.</p>"
-        },
-        "releaseLabel":{
-          "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application your job is running on.</p>"
-        },
-        "configurationOverrides":{
-          "shape":"ConfigurationOverrides",
-          "documentation":"<p>The configuration settings that are used to override default configuration.</p>"
-        },
-        "jobDriver":{
-          "shape":"JobDriver",
-          "documentation":"<p>The job driver for the job run.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags assigned to the job run.</p>"
-        },
-        "totalResourceUtilization":{
-          "shape":"TotalResourceUtilization",
-          "documentation":"<p>The aggregate vCPU, memory, and storage resources used from the time job start executing till the time job is terminated, rounded up to the nearest second.</p>"
-        },
-        "networkConfiguration":{"shape":"NetworkConfiguration"},
-        "totalExecutionDurationSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>"
-        }
-      },
-      "documentation":"<p>Information about a job run. A job run is a unit of work, such as a Spark JAR, Hive query, or SparkSQL query, that you submit to an EMR Serverless application.</p>"
+      "type": "structure"
     },
-    "JobRunId":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"[0-9a-z]+"
+    "JobRunId": {
+      "max": 64,
+      "min": 1,
+      "pattern": "[0-9a-z]+",
+      "type": "string"
     },
-    "JobRunState":{
-      "type":"string",
-      "enum":[
+    "JobRunState": {
+      "enum": [
         "SUBMITTED",
         "PENDING",
         "SCHEDULED",
@@ -978,17 +1166,70 @@
         "FAILED",
         "CANCELLING",
         "CANCELLED"
-      ]
+      ],
+      "type": "string"
     },
-    "JobRunStateSet":{
-      "type":"list",
-      "member":{"shape":"JobRunState"},
-      "max":8,
-      "min":0
+    "JobRunStateSet": {
+      "max": 8,
+      "member": {
+        "shape": "JobRunState"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "JobRunSummary":{
-      "type":"structure",
-      "required":[
+    "JobRunSummary": {
+      "documentation": "<p>The summary of attributes associated with a job run.</p>",
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application the job is running on.</p>",
+          "shape": "ApplicationId"
+        },
+        "arn": {
+          "documentation": "<p>The ARN of the job run.</p>",
+          "shape": "JobArn"
+        },
+        "createdAt": {
+          "documentation": "<p>The date and time when the job run was created.</p>",
+          "shape": "Date"
+        },
+        "createdBy": {
+          "documentation": "<p>The user who created the job run.</p>",
+          "shape": "RequestIdentityUserArn"
+        },
+        "executionRole": {
+          "documentation": "<p>The execution role ARN of the job run.</p>",
+          "shape": "IAMRoleArn"
+        },
+        "id": {
+          "documentation": "<p>The ID of the job run.</p>",
+          "shape": "JobRunId"
+        },
+        "name": {
+          "documentation": "<p>The optional job run name. This doesn't have to be unique.</p>",
+          "shape": "String256"
+        },
+        "releaseLabel": {
+          "documentation": "<p>The EMR release version associated with the application your job is running on.</p>",
+          "shape": "ReleaseLabel"
+        },
+        "state": {
+          "documentation": "<p>The state of the job run.</p>",
+          "shape": "JobRunState"
+        },
+        "stateDetails": {
+          "documentation": "<p>The state details of the job run.</p>",
+          "shape": "String256"
+        },
+        "type": {
+          "documentation": "<p>The type of job run, such as Spark or Hive.</p>",
+          "shape": "JobRunType"
+        },
+        "updatedAt": {
+          "documentation": "<p>The date and time when the job run was last updated.</p>",
+          "shape": "Date"
+        }
+      },
+      "required": [
         "applicationId",
         "id",
         "arn",
@@ -1000,699 +1241,693 @@
         "stateDetails",
         "releaseLabel"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application the job is running on.</p>"
+      "type": "structure"
+    },
+    "JobRunType": {
+      "type": "string"
+    },
+    "JobRuns": {
+      "member": {
+        "shape": "JobRunSummary"
+      },
+      "type": "list"
+    },
+    "ListApplicationsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of applications that can be listed.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "ListApplicationsRequestMaxResultsInteger"
         },
-        "id":{
-          "shape":"JobRunId",
-          "documentation":"<p>The ID of the job run.</p>"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of application results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
         },
-        "name":{
-          "shape":"String256",
-          "documentation":"<p>The optional job run name. This doesn't have to be unique.</p>"
-        },
-        "arn":{
-          "shape":"JobArn",
-          "documentation":"<p>The ARN of the job run.</p>"
-        },
-        "createdBy":{
-          "shape":"RequestIdentityUserArn",
-          "documentation":"<p>The user who created the job run.</p>"
-        },
-        "createdAt":{
-          "shape":"Date",
-          "documentation":"<p>The date and time when the job run was created.</p>"
-        },
-        "updatedAt":{
-          "shape":"Date",
-          "documentation":"<p>The date and time when the job run was last updated.</p>"
-        },
-        "executionRole":{
-          "shape":"IAMRoleArn",
-          "documentation":"<p>The execution role ARN of the job run.</p>"
-        },
-        "state":{
-          "shape":"JobRunState",
-          "documentation":"<p>The state of the job run.</p>"
-        },
-        "stateDetails":{
-          "shape":"String256",
-          "documentation":"<p>The state details of the job run.</p>"
-        },
-        "releaseLabel":{
-          "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application your job is running on.</p>"
-        },
-        "type":{
-          "shape":"JobRunType",
-          "documentation":"<p>The type of job run, such as Spark or Hive.</p>"
+        "states": {
+          "documentation": "<p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>",
+          "location": "querystring",
+          "locationName": "states",
+          "shape": "ApplicationStateSet"
         }
       },
-      "documentation":"<p>The summary of attributes associated with a job run.</p>"
+      "type": "structure"
     },
-    "JobRunType":{"type":"string"},
-    "JobRuns":{
-      "type":"list",
-      "member":{"shape":"JobRunSummary"}
+    "ListApplicationsRequestMaxResultsInteger": {
+      "box": true,
+      "max": 50,
+      "min": 1,
+      "type": "integer"
     },
-    "ListApplicationsRequest":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of application results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+    "ListApplicationsResponse": {
+      "members": {
+        "applications": {
+          "documentation": "<p>The output lists the specified applications.</p>",
+          "shape": "ApplicationList"
         },
-        "maxResults":{
-          "shape":"ListApplicationsRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of applications that can be listed.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "states":{
-          "shape":"ApplicationStateSet",
-          "documentation":"<p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>",
-          "location":"querystring",
-          "locationName":"states"
-        }
-      }
-    },
-    "ListApplicationsRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":50,
-      "min":1
-    },
-    "ListApplicationsResponse":{
-      "type":"structure",
-      "required":["applications"],
-      "members":{
-        "applications":{
-          "shape":"ApplicationList",
-          "documentation":"<p>The output lists the specified applications.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>"
-        }
-      }
-    },
-    "ListJobRunsRequest":{
-      "type":"structure",
-      "required":["applicationId"],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application for which to list the job run.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of job run results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "maxResults":{
-          "shape":"ListJobRunsRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of job runs that can be listed.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "createdAtAfter":{
-          "shape":"Date",
-          "documentation":"<p>The lower bound of the option to filter by creation date and time.</p>",
-          "location":"querystring",
-          "locationName":"createdAtAfter"
-        },
-        "createdAtBefore":{
-          "shape":"Date",
-          "documentation":"<p>The upper bound of the option to filter by creation date and time.</p>",
-          "location":"querystring",
-          "locationName":"createdAtBefore"
-        },
-        "states":{
-          "shape":"JobRunStateSet",
-          "documentation":"<p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>",
-          "location":"querystring",
-          "locationName":"states"
-        }
-      }
-    },
-    "ListJobRunsRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":50,
-      "min":1
-    },
-    "ListJobRunsResponse":{
-      "type":"structure",
-      "required":["jobRuns"],
-      "members":{
-        "jobRuns":{
-          "shape":"JobRuns",
-          "documentation":"<p>The output lists information about the specified job runs.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>"
-        }
-      }
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["resourceArn"],
-      "members":{
-        "resourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags for the resource.</p>"
-        }
-      }
-    },
-    "ManagedPersistenceMonitoringConfiguration":{
-      "type":"structure",
-      "members":{
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Enables managed logging and defaults to true. If set to false, managed logging will be turned off.</p>"
-        },
-        "encryptionKeyArn":{
-          "shape":"EncryptionKeyArn",
-          "documentation":"<p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>"
+        "nextToken": {
+          "documentation": "<p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>",
+          "shape": "NextToken"
         }
       },
-      "documentation":"<p>The managed log persistence configuration for a job run.</p>"
+      "required": [
+        "applications"
+      ],
+      "type": "structure"
     },
-    "MaximumAllowedResources":{
-      "type":"structure",
-      "required":[
+    "ListJobRunsRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application for which to list the job run.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
+        },
+        "createdAtAfter": {
+          "documentation": "<p>The lower bound of the option to filter by creation date and time.</p>",
+          "location": "querystring",
+          "locationName": "createdAtAfter",
+          "shape": "Date"
+        },
+        "createdAtBefore": {
+          "documentation": "<p>The upper bound of the option to filter by creation date and time.</p>",
+          "location": "querystring",
+          "locationName": "createdAtBefore",
+          "shape": "Date"
+        },
+        "maxResults": {
+          "documentation": "<p>The maximum number of job runs that can be listed.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "ListJobRunsRequestMaxResultsInteger"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of job run results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "states": {
+          "documentation": "<p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>",
+          "location": "querystring",
+          "locationName": "states",
+          "shape": "JobRunStateSet"
+        }
+      },
+      "required": [
+        "applicationId"
+      ],
+      "type": "structure"
+    },
+    "ListJobRunsRequestMaxResultsInteger": {
+      "box": true,
+      "max": 50,
+      "min": 1,
+      "type": "integer"
+    },
+    "ListJobRunsResponse": {
+      "members": {
+        "jobRuns": {
+          "documentation": "<p>The output lists information about the specified job runs.</p>",
+          "shape": "JobRuns"
+        },
+        "nextToken": {
+          "documentation": "<p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "jobRuns"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "ResourceArn"
+        }
+      },
+      "required": [
+        "resourceArn"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "documentation": "<p>The tags for the resource.</p>",
+          "shape": "TagMap"
+        }
+      },
+      "type": "structure"
+    },
+    "ManagedPersistenceMonitoringConfiguration": {
+      "documentation": "<p>The managed log persistence configuration for a job run.</p>",
+      "members": {
+        "enabled": {
+          "documentation": "<p>Enables managed logging and defaults to true. If set to false, managed logging will be turned off.</p>",
+          "shape": "Boolean"
+        },
+        "encryptionKeyArn": {
+          "documentation": "<p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>",
+          "shape": "EncryptionKeyArn"
+        }
+      },
+      "type": "structure"
+    },
+    "MaximumAllowedResources": {
+      "documentation": "<p>The maximum allowed cumulative resources for an application. No new resources will be created once the limit is hit.</p>",
+      "members": {
+        "cpu": {
+          "documentation": "<p>The maximum allowed CPU for an application.</p>",
+          "shape": "CpuSize"
+        },
+        "disk": {
+          "documentation": "<p>The maximum allowed disk for an application.</p>",
+          "shape": "DiskSize"
+        },
+        "memory": {
+          "documentation": "<p>The maximum allowed resources for an application.</p>",
+          "shape": "MemorySize"
+        }
+      },
+      "required": [
         "cpu",
         "memory"
       ],
-      "members":{
-        "cpu":{
-          "shape":"CpuSize",
-          "documentation":"<p>The maximum allowed CPU for an application.</p>"
+      "type": "structure"
+    },
+    "MemorySize": {
+      "max": 15,
+      "min": 1,
+      "pattern": "[1-9][0-9]*(\\s)?(GB|gb|gB|Gb)?",
+      "type": "string"
+    },
+    "MonitoringConfiguration": {
+      "documentation": "<p>The configuration setting for monitoring.</p>",
+      "members": {
+        "managedPersistenceMonitoringConfiguration": {
+          "documentation": "<p>The managed log persistence configuration for a job run.</p>",
+          "shape": "ManagedPersistenceMonitoringConfiguration"
         },
-        "memory":{
-          "shape":"MemorySize",
-          "documentation":"<p>The maximum allowed resources for an application.</p>"
-        },
-        "disk":{
-          "shape":"DiskSize",
-          "documentation":"<p>The maximum allowed disk for an application.</p>"
+        "s3MonitoringConfiguration": {
+          "documentation": "<p>The Amazon S3 configuration for monitoring log publishing.</p>",
+          "shape": "S3MonitoringConfiguration"
         }
       },
-      "documentation":"<p>The maximum allowed cumulative resources for an application. No new resources will be created once the limit is hit.</p>"
+      "type": "structure"
     },
-    "MemorySize":{
-      "type":"string",
-      "max":15,
-      "min":1,
-      "pattern":"[1-9][0-9]*(\\s)?(GB|gb|gB|Gb)?"
-    },
-    "MonitoringConfiguration":{
-      "type":"structure",
-      "members":{
-        "s3MonitoringConfiguration":{
-          "shape":"S3MonitoringConfiguration",
-          "documentation":"<p>The Amazon S3 configuration for monitoring log publishing.</p>"
+    "NetworkConfiguration": {
+      "documentation": "<p>The network configuration for customer VPC connectivity.</p>",
+      "members": {
+        "securityGroupIds": {
+          "documentation": "<p>The array of security group Ids for customer VPC connectivity.</p>",
+          "shape": "SecurityGroupIds"
         },
-        "managedPersistenceMonitoringConfiguration":{
-          "shape":"ManagedPersistenceMonitoringConfiguration",
-          "documentation":"<p>The managed log persistence configuration for a job run.</p>"
+        "subnetIds": {
+          "documentation": "<p>The array of subnet Ids for customer VPC connectivity.</p>",
+          "shape": "SubnetIds"
         }
       },
-      "documentation":"<p>The configuration setting for monitoring.</p>"
+      "type": "structure"
     },
-    "NetworkConfiguration":{
-      "type":"structure",
-      "members":{
-        "subnetIds":{
-          "shape":"SubnetIds",
-          "documentation":"<p>The array of subnet Ids for customer VPC connectivity.</p>"
-        },
-        "securityGroupIds":{
-          "shape":"SecurityGroupIds",
-          "documentation":"<p>The array of security group Ids for customer VPC connectivity.</p>"
+    "NextToken": {
+      "max": 1024,
+      "min": 1,
+      "pattern": "[A-Za-z0-9_=-]+",
+      "type": "string"
+    },
+    "Query": {
+      "max": 10280,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "sensitive": true,
+      "type": "string"
+    },
+    "ReleaseLabel": {
+      "max": 64,
+      "min": 1,
+      "pattern": "[A-Za-z0-9._/-]+",
+      "type": "string"
+    },
+    "RequestIdentityUserArn": {
+      "max": 2048,
+      "min": 20,
+      "pattern": "arn:(aws[a-zA-Z0-9-]*):(iam|sts)::(\\d{12})?:[\\w/+=,.@-]+",
+      "type": "string"
+    },
+    "ResourceArn": {
+      "max": 1024,
+      "min": 60,
+      "pattern": "arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\\d{12}):\\/applications\\/[0-9a-zA-Z]+(\\/jobruns\\/[0-9a-zA-Z]+)?",
+      "type": "string"
+    },
+    "ResourceNotFoundException": {
+      "documentation": "<p>The specified resource was not found.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String1024"
         }
       },
-      "documentation":"<p>The network configuration for customer VPC connectivity.</p>"
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "NextToken":{
-      "type":"string",
-      "max":1024,
-      "min":1,
-      "pattern":"[A-Za-z0-9_=-]+"
-    },
-    "Query":{
-      "type":"string",
-      "max":10280,
-      "min":1,
-      "pattern":".*\\S.*",
-      "sensitive":true
-    },
-    "ReleaseLabel":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"[A-Za-z0-9._/-]+"
-    },
-    "RequestIdentityUserArn":{
-      "type":"string",
-      "max":2048,
-      "min":20,
-      "pattern":"arn:(aws[a-zA-Z0-9-]*):(iam|sts)::(\\d{12})?:[\\w/+=,.@-]+"
-    },
-    "ResourceArn":{
-      "type":"string",
-      "max":1024,
-      "min":60,
-      "pattern":"arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\\d{12}):\\/applications\\/[0-9a-zA-Z]+(\\/jobruns\\/[0-9a-zA-Z]+)?"
-    },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String1024"}
-      },
-      "documentation":"<p>The specified resource was not found.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "S3MonitoringConfiguration":{
-      "type":"structure",
-      "members":{
-        "logUri":{
-          "shape":"UriString",
-          "documentation":"<p>The Amazon S3 destination URI for log publishing.</p>"
+    "S3MonitoringConfiguration": {
+      "documentation": "<p>The Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>",
+      "members": {
+        "encryptionKeyArn": {
+          "documentation": "<p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>",
+          "shape": "EncryptionKeyArn"
         },
-        "encryptionKeyArn":{
-          "shape":"EncryptionKeyArn",
-          "documentation":"<p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>"
+        "logUri": {
+          "documentation": "<p>The Amazon S3 destination URI for log publishing.</p>",
+          "shape": "UriString"
         }
       },
-      "documentation":"<p>The Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>"
+      "type": "structure"
     },
-    "SecurityGroupIds":{
-      "type":"list",
-      "member":{"shape":"SecurityGroupString"},
-      "max":5,
-      "min":0
-    },
-    "SecurityGroupString":{
-      "type":"string",
-      "max":32,
-      "min":1,
-      "pattern":"[-0-9a-zA-Z]+.*"
-    },
-    "SensitivePropertiesMap":{
-      "type":"map",
-      "key":{"shape":"String1024"},
-      "value":{"shape":"String1024"},
-      "max":100,
-      "min":0,
-      "sensitive":true
-    },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String1024"}
+    "SecurityGroupIds": {
+      "max": 5,
+      "member": {
+        "shape": "SecurityGroupString"
       },
-      "documentation":"<p>The maximum number of resources per account has been reached.</p>",
-      "error":{
-        "httpStatusCode":402,
-        "senderFault":true
+      "min": 0,
+      "type": "list"
+    },
+    "SecurityGroupString": {
+      "max": 32,
+      "min": 1,
+      "pattern": "[-0-9a-zA-Z]+.*",
+      "type": "string"
+    },
+    "SensitivePropertiesMap": {
+      "key": {
+        "shape": "String1024"
       },
-      "exception":true
-    },
-    "SparkSubmit":{
-      "type":"structure",
-      "required":["entryPoint"],
-      "members":{
-        "entryPoint":{
-          "shape":"EntryPointPath",
-          "documentation":"<p>The entry point for the Spark submit job run.</p>"
-        },
-        "entryPointArguments":{
-          "shape":"EntryPointArguments",
-          "documentation":"<p>The arguments for the Spark submit job run.</p>"
-        },
-        "sparkSubmitParameters":{
-          "shape":"SparkSubmitParameters",
-          "documentation":"<p>The parameters for the Spark submit job run.</p>"
-        }
-      },
-      "documentation":"<p>The configurations for the Spark submit job driver.</p>"
-    },
-    "SparkSubmitParameters":{
-      "type":"string",
-      "max":102400,
-      "min":1,
-      "pattern":".*\\S.*",
-      "sensitive":true
-    },
-    "StartApplicationRequest":{
-      "type":"structure",
-      "required":["applicationId"],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application to start.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
-        }
+      "max": 100,
+      "min": 0,
+      "sensitive": true,
+      "type": "map",
+      "value": {
+        "shape": "String1024"
       }
     },
-    "StartApplicationResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>The maximum number of resources per account has been reached.</p>",
+      "error": {
+        "httpStatusCode": 402,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String1024"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "StartJobRunRequest":{
-      "type":"structure",
-      "required":[
+    "SparkSubmit": {
+      "documentation": "<p>The configurations for the Spark submit job driver.</p>",
+      "members": {
+        "entryPoint": {
+          "documentation": "<p>The entry point for the Spark submit job run.</p>",
+          "shape": "EntryPointPath"
+        },
+        "entryPointArguments": {
+          "documentation": "<p>The arguments for the Spark submit job run.</p>",
+          "shape": "EntryPointArguments"
+        },
+        "sparkSubmitParameters": {
+          "documentation": "<p>The parameters for the Spark submit job run.</p>",
+          "shape": "SparkSubmitParameters"
+        }
+      },
+      "required": [
+        "entryPoint"
+      ],
+      "type": "structure"
+    },
+    "SparkSubmitParameters": {
+      "max": 102400,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "sensitive": true,
+      "type": "string"
+    },
+    "StartApplicationRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application to start.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
+        }
+      },
+      "required": [
+        "applicationId"
+      ],
+      "type": "structure"
+    },
+    "StartApplicationResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "StartJobRunRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application on which to run the job.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
+        },
+        "clientToken": {
+          "documentation": "<p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>",
+          "idempotencyToken": true,
+          "shape": "ClientToken"
+        },
+        "configurationOverrides": {
+          "documentation": "<p>The configuration overrides for the job run.</p>",
+          "shape": "ConfigurationOverrides"
+        },
+        "executionRoleArn": {
+          "documentation": "<p>The execution role ARN for the job run.</p>",
+          "shape": "IAMRoleArn"
+        },
+        "executionTimeoutMinutes": {
+          "box": true,
+          "documentation": "<p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>",
+          "shape": "Duration"
+        },
+        "jobDriver": {
+          "documentation": "<p>The job driver for the job run.</p>",
+          "shape": "JobDriver"
+        },
+        "name": {
+          "documentation": "<p>The optional job run name. This doesn't have to be unique.</p>",
+          "shape": "String256"
+        },
+        "tags": {
+          "documentation": "<p>The tags assigned to the job run.</p>",
+          "shape": "TagMap"
+        }
+      },
+      "required": [
         "applicationId",
         "clientToken",
         "executionRoleArn"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application on which to run the job.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
-        },
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>",
-          "idempotencyToken":true
-        },
-        "executionRoleArn":{
-          "shape":"IAMRoleArn",
-          "documentation":"<p>The execution role ARN for the job run.</p>"
-        },
-        "jobDriver":{
-          "shape":"JobDriver",
-          "documentation":"<p>The job driver for the job run.</p>"
-        },
-        "configurationOverrides":{
-          "shape":"ConfigurationOverrides",
-          "documentation":"<p>The configuration overrides for the job run.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags assigned to the job run.</p>"
-        },
-        "executionTimeoutMinutes":{
-          "shape":"Duration",
-          "documentation":"<p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>",
-          "box":true
-        },
-        "name":{
-          "shape":"String256",
-          "documentation":"<p>The optional job run name. This doesn't have to be unique.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "StartJobRunResponse":{
-      "type":"structure",
-      "required":[
+    "StartJobRunResponse": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>This output displays the application ID on which the job run was submitted.</p>",
+          "shape": "ApplicationId"
+        },
+        "arn": {
+          "documentation": "<p>The output lists the execution role ARN of the job run.</p>",
+          "shape": "JobArn"
+        },
+        "jobRunId": {
+          "documentation": "<p>The output contains the ID of the started job run.</p>",
+          "shape": "JobRunId"
+        }
+      },
+      "required": [
         "applicationId",
         "jobRunId",
         "arn"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>This output displays the application ID on which the job run was submitted.</p>"
-        },
-        "jobRunId":{
-          "shape":"JobRunId",
-          "documentation":"<p>The output contains the ID of the started job run.</p>"
-        },
-        "arn":{
-          "shape":"JobArn",
-          "documentation":"<p>The output lists the execution role ARN of the job run.</p>"
+      "type": "structure"
+    },
+    "StopApplicationRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application to stop.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
         }
+      },
+      "required": [
+        "applicationId"
+      ],
+      "type": "structure"
+    },
+    "StopApplicationResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "String1024": {
+      "max": 1024,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "type": "string"
+    },
+    "String256": {
+      "max": 256,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "type": "string"
+    },
+    "SubnetIds": {
+      "max": 16,
+      "member": {
+        "shape": "SubnetString"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "SubnetString": {
+      "max": 32,
+      "min": 1,
+      "pattern": "[-0-9a-zA-Z]+.*",
+      "type": "string"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "[A-Za-z0-9 /_.:=+@-]+",
+      "type": "string"
+    },
+    "TagKeyList": {
+      "max": 200,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 1,
+      "type": "list"
+    },
+    "TagMap": {
+      "key": {
+        "shape": "TagKey"
+      },
+      "max": 200,
+      "min": 0,
+      "type": "map",
+      "value": {
+        "shape": "TagValue"
       }
     },
-    "StopApplicationRequest":{
-      "type":"structure",
-      "required":["applicationId"],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application to stop.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
+    "TagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "ResourceArn"
+        },
+        "tags": {
+          "documentation": "<p>The tags to add to the resource. A tag is an array of key-value pairs.</p>",
+          "shape": "TagMap"
         }
-      }
-    },
-    "StopApplicationResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "String1024":{
-      "type":"string",
-      "max":1024,
-      "min":1,
-      "pattern":".*\\S.*"
-    },
-    "String256":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":".*\\S.*"
-    },
-    "SubnetIds":{
-      "type":"list",
-      "member":{"shape":"SubnetString"},
-      "max":16,
-      "min":0
-    },
-    "SubnetString":{
-      "type":"string",
-      "max":32,
-      "min":1,
-      "pattern":"[-0-9a-zA-Z]+.*"
-    },
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"[A-Za-z0-9 /_.:=+@-]+"
-    },
-    "TagKeyList":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "max":200,
-      "min":1
-    },
-    "TagMap":{
-      "type":"map",
-      "key":{"shape":"TagKey"},
-      "value":{"shape":"TagValue"},
-      "max":200,
-      "min":0
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "resourceArn",
         "tags"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags to add to the resource. A tag is an array of key-value pairs.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
     },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "min":0,
-      "pattern":"[A-Za-z0-9 /_.:=+@-]*"
+    "TagValue": {
+      "max": 256,
+      "min": 0,
+      "pattern": "[A-Za-z0-9 /_.:=+@-]*",
+      "type": "string"
     },
-    "TotalResourceUtilization":{
-      "type":"structure",
-      "members":{
-        "vCPUHour":{
-          "shape":"Double",
-          "documentation":"<p>The aggregated vCPU used per hour from the time job start executing till the time job is terminated.</p>"
+    "TotalResourceUtilization": {
+      "documentation": "<p>The aggregate vCPU, memory, and storage resources used from the time job start executing till the time job is terminated, rounded up to the nearest second.</p>",
+      "members": {
+        "memoryGBHour": {
+          "documentation": "<p>The aggregated memory used per hour from the time job start executing till the time job is terminated.</p>",
+          "shape": "Double"
         },
-        "memoryGBHour":{
-          "shape":"Double",
-          "documentation":"<p>The aggregated memory used per hour from the time job start executing till the time job is terminated.</p>"
+        "storageGBHour": {
+          "documentation": "<p>The aggregated storage used per hour from the time job start executing till the time job is terminated.</p>",
+          "shape": "Double"
         },
-        "storageGBHour":{
-          "shape":"Double",
-          "documentation":"<p>The aggregated storage used per hour from the time job start executing till the time job is terminated.</p>"
+        "vCPUHour": {
+          "documentation": "<p>The aggregated vCPU used per hour from the time job start executing till the time job is terminated.</p>",
+          "shape": "Double"
         }
       },
-      "documentation":"<p>The aggregate vCPU, memory, and storage resources used from the time job start executing till the time job is terminated, rounded up to the nearest second.</p>"
+      "type": "structure"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "UntagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "ResourceArn"
+        },
+        "tagKeys": {
+          "documentation": "<p>The keys of the tags to be removed.</p>",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeyList"
+        }
+      },
+      "required": [
         "resourceArn",
         "tagKeys"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"ResourceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateApplicationRequest": {
+      "members": {
+        "applicationId": {
+          "documentation": "<p>The ID of the application to update.</p>",
+          "location": "uri",
+          "locationName": "applicationId",
+          "shape": "ApplicationId"
         },
-        "tagKeys":{
-          "shape":"TagKeyList",
-          "documentation":"<p>The keys of the tags to be removed.</p>",
-          "location":"querystring",
-          "locationName":"tagKeys"
+        "autoStartConfiguration": {
+          "documentation": "<p>The configuration for an application to automatically start on job submission.</p>",
+          "shape": "AutoStartConfig"
+        },
+        "autoStopConfiguration": {
+          "documentation": "<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>",
+          "shape": "AutoStopConfig"
+        },
+        "clientToken": {
+          "documentation": "<p>The client idempotency token of the application to update. Its value must be unique for each request.</p>",
+          "idempotencyToken": true,
+          "shape": "ClientToken"
+        },
+        "initialCapacity": {
+          "documentation": "<p>The capacity to initialize when the application is updated.</p>",
+          "shape": "InitialCapacityConfigMap"
+        },
+        "maximumCapacity": {
+          "documentation": "<p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>",
+          "shape": "MaximumAllowedResources"
+        },
+        "networkConfiguration": {
+          "shape": "NetworkConfiguration"
         }
-      }
-    },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateApplicationRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "applicationId",
         "clientToken"
       ],
-      "members":{
-        "applicationId":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The ID of the application to update.</p>",
-          "location":"uri",
-          "locationName":"applicationId"
-        },
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>The client idempotency token of the application to update. Its value must be unique for each request.</p>",
-          "idempotencyToken":true
-        },
-        "initialCapacity":{
-          "shape":"InitialCapacityConfigMap",
-          "documentation":"<p>The capacity to initialize when the application is updated.</p>"
-        },
-        "maximumCapacity":{
-          "shape":"MaximumAllowedResources",
-          "documentation":"<p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>"
-        },
-        "autoStartConfiguration":{
-          "shape":"AutoStartConfig",
-          "documentation":"<p>The configuration for an application to automatically start on job submission.</p>"
-        },
-        "autoStopConfiguration":{
-          "shape":"AutoStopConfig",
-          "documentation":"<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>"
-        },
-        "networkConfiguration":{"shape":"NetworkConfiguration"}
-      }
+      "type": "structure"
     },
-    "UpdateApplicationResponse":{
-      "type":"structure",
-      "required":["application"],
-      "members":{
-        "application":{
-          "shape":"Application",
-          "documentation":"<p>Information about the updated application.</p>"
+    "UpdateApplicationResponse": {
+      "members": {
+        "application": {
+          "documentation": "<p>Information about the updated application.</p>",
+          "shape": "Application"
         }
-      }
-    },
-    "UriString":{
-      "type":"string",
-      "max":10280,
-      "min":1,
-      "pattern":".*[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDBFF-\\uDC00\\uDFFF\\r\\n\\t]*.*"
-    },
-    "Url":{
-      "type":"string",
-      "max":2048,
-      "min":1
-    },
-    "ValidationException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String1024"}
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
+      "required": [
+        "application"
+      ],
+      "type": "structure"
+    },
+    "UriString": {
+      "max": 10280,
+      "min": 1,
+      "pattern": ".*[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDBFF-\\uDC00\\uDFFF\\r\\n\\t]*.*",
+      "type": "string"
+    },
+    "Url": {
+      "max": 2048,
+      "min": 1,
+      "type": "string"
+    },
+    "ValidationException": {
+      "documentation": "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
       },
-      "exception":true
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String1024"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "WorkerCounts":{
-      "type":"long",
-      "max":1000000,
-      "min":1
+    "WorkerCounts": {
+      "max": 1000000,
+      "min": 1,
+      "type": "long"
     },
-    "WorkerResourceConfig":{
-      "type":"structure",
-      "required":[
+    "WorkerResourceConfig": {
+      "documentation": "<p>The cumulative configuration requirements for every worker instance of the worker type.</p>",
+      "members": {
+        "cpu": {
+          "documentation": "<p>The CPU requirements for every worker instance of the worker type.</p>",
+          "shape": "CpuSize"
+        },
+        "disk": {
+          "documentation": "<p>The disk requirements for every worker instance of the worker type.</p>",
+          "shape": "DiskSize"
+        },
+        "memory": {
+          "documentation": "<p>The memory requirements for every worker instance of the worker type.</p>",
+          "shape": "MemorySize"
+        }
+      },
+      "required": [
         "cpu",
         "memory"
       ],
-      "members":{
-        "cpu":{
-          "shape":"CpuSize",
-          "documentation":"<p>The CPU requirements for every worker instance of the worker type.</p>"
-        },
-        "memory":{
-          "shape":"MemorySize",
-          "documentation":"<p>The memory requirements for every worker instance of the worker type.</p>"
-        },
-        "disk":{
-          "shape":"DiskSize",
-          "documentation":"<p>The disk requirements for every worker instance of the worker type.</p>"
-        }
-      },
-      "documentation":"<p>The cumulative configuration requirements for every worker instance of the worker type.</p>"
+      "type": "structure"
     },
-    "WorkerTypeString":{
-      "type":"string",
-      "max":50,
-      "min":1,
-      "pattern":"[a-zA-Z]+[-_]*[a-zA-Z]+"
+    "WorkerTypeString": {
+      "max": 50,
+      "min": 1,
+      "pattern": "[a-zA-Z]+[-_]*[a-zA-Z]+",
+      "type": "string"
     }
   },
-  "documentation":"<p>Amazon EMR Serverless is a new deployment option for Amazon EMR. EMR Serverless provides a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive. With EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters to run applications with these frameworks.</p> <p>The API reference to Amazon EMR Serverless is <code>emr-serverless</code>. The <code>emr-serverless</code> prefix is used in the following scenarios: </p> <ul> <li> <p>It is the prefix in the CLI commands for Amazon EMR Serverless. For example, <code>aws emr-serverless start-job-run</code>.</p> </li> <li> <p>It is the prefix before IAM policy actions for Amazon EMR Serverless. For example, <code>\"Action\": [\"emr-serverless:StartJobRun\"]</code>. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions\">Policy actions for Amazon EMR Serverless</a>.</p> </li> <li> <p>It is the prefix used in Amazon EMR Serverless service endpoints. For example, <code>emr-serverless.us-east-2.amazonaws.com</code>.</p> </li> </ul>"
+  "version": "2.0"
 }

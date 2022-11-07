@@ -9,4 +9,3 @@ To get the ID for a signing certificate, use the ``list-signing-certificates`` c
 For more information, see `Creating and Uploading a User Signing Certificate`_ in the *Using IAM* guide.
 
 .. _`Creating and Uploading a User Signing Certificate`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_UploadCertificate.html
-

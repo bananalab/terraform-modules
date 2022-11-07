@@ -1,5 +1,72 @@
 {
-  "version": "1.0",
+  "operations": {
+    "CopyBackupToRegion": {
+      "BackupId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BackupId",
+            "resourceName": "Backup"
+          }
+        ]
+      }
+    },
+    "DeleteBackup": {
+      "BackupId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BackupId",
+            "resourceName": "Backup"
+          }
+        ]
+      }
+    },
+    "DeleteCluster": {
+      "ClusterId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ClusterId",
+            "resourceName": "Cluster"
+          }
+        ]
+      }
+    },
+    "DeleteHsm": {
+      "ClusterId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ClusterId",
+            "resourceName": "Cluster"
+          }
+        ]
+      }
+    },
+    "InitializeCluster": {
+      "ClusterId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ClusterId",
+            "resourceName": "Cluster"
+          }
+        ]
+      }
+    },
+    "RestoreBackup": {
+      "BackupId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BackupId",
+            "resourceName": "Backup"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Backup": {
       "operation": "DescribeBackups",
@@ -14,72 +81,5 @@
       }
     }
   },
-  "operations": {
-    "CopyBackupToRegion": {
-      "BackupId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Backup",
-            "resourceIdentifier": "BackupId"
-          }
-        ]
-      }
-    },
-    "DeleteBackup": {
-      "BackupId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Backup",
-            "resourceIdentifier": "BackupId"
-          }
-        ]
-      }
-    },
-    "DeleteCluster": {
-      "ClusterId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Cluster",
-            "resourceIdentifier": "ClusterId"
-          }
-        ]
-      }
-    },
-    "DeleteHsm": {
-      "ClusterId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Cluster",
-            "resourceIdentifier": "ClusterId"
-          }
-        ]
-      }
-    },
-    "InitializeCluster": {
-      "ClusterId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Cluster",
-            "resourceIdentifier": "ClusterId"
-          }
-        ]
-      }
-    },
-    "RestoreBackup": {
-      "BackupId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Backup",
-            "resourceIdentifier": "BackupId"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

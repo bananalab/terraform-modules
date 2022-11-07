@@ -1,5 +1,83 @@
 {
-  "version": "1.0",
+  "operations": {
+    "BatchGetNamedQuery": {
+      "NamedQueryIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NamedQueryId",
+            "resourceName": "NamedQuery"
+          }
+        ]
+      }
+    },
+    "BatchGetQueryExecution": {
+      "QueryExecutionIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "QueryExecutionId",
+            "resourceName": "QueryExecution"
+          }
+        ]
+      }
+    },
+    "DeleteNamedQuery": {
+      "NamedQueryId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NamedQueryId",
+            "resourceName": "NamedQuery"
+          }
+        ]
+      }
+    },
+    "GetNamedQuery": {
+      "NamedQueryId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NamedQueryId",
+            "resourceName": "NamedQuery"
+          }
+        ]
+      }
+    },
+    "GetQueryExecution": {
+      "QueryExecutionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "QueryExecutionId",
+            "resourceName": "QueryExecution"
+          }
+        ]
+      }
+    },
+    "GetQueryResults": {
+      "QueryExecutionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "QueryExecutionId",
+            "resourceName": "QueryExecution"
+          }
+        ]
+      }
+    },
+    "StopQueryExecution": {
+      "QueryExecutionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "QueryExecutionId",
+            "resourceName": "QueryExecution"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "NamedQuery": {
       "operation": "ListNamedQueries",
@@ -14,83 +92,5 @@
       }
     }
   },
-  "operations": {
-    "BatchGetNamedQuery": {
-      "NamedQueryIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NamedQuery",
-            "resourceIdentifier": "NamedQueryId"
-          }
-        ]
-      }
-    },
-    "BatchGetQueryExecution": {
-      "QueryExecutionIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "QueryExecution",
-            "resourceIdentifier": "QueryExecutionId"
-          }
-        ]
-      }
-    },
-    "DeleteNamedQuery": {
-      "NamedQueryId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NamedQuery",
-            "resourceIdentifier": "NamedQueryId"
-          }
-        ]
-      }
-    },
-    "GetNamedQuery": {
-      "NamedQueryId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NamedQuery",
-            "resourceIdentifier": "NamedQueryId"
-          }
-        ]
-      }
-    },
-    "GetQueryExecution": {
-      "QueryExecutionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "QueryExecution",
-            "resourceIdentifier": "QueryExecutionId"
-          }
-        ]
-      }
-    },
-    "GetQueryResults": {
-      "QueryExecutionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "QueryExecution",
-            "resourceIdentifier": "QueryExecutionId"
-          }
-        ]
-      }
-    },
-    "StopQueryExecution": {
-      "QueryExecutionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "QueryExecution",
-            "resourceIdentifier": "QueryExecutionId"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

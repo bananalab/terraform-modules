@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Organization": {
-      "operation": "ListOrganizations",
-      "resourceIdentifier": {
-        "OrganizationId": "OrganizationSummaries[].OrganizationId",
-        "Alias": "OrganizationSummaries[].Alias"
-      }
-    }
-  },
   "operations": {
     "AssociateDelegateToResource": {
       "OrganizationId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -26,28 +16,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
     },
     "DeleteAlias": {
-      "OrganizationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
-          }
-        ]
-      },
       "Alias": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "Alias"
+            "resourceIdentifier": "Alias",
+            "resourceName": "Organization"
+          }
+        ]
+      },
+      "OrganizationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -57,8 +47,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -68,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -79,8 +69,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -90,8 +80,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -101,8 +91,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -112,8 +102,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -123,8 +113,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -134,8 +124,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -145,8 +135,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -156,8 +146,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -167,8 +157,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -178,8 +168,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -189,8 +179,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -200,8 +190,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -211,8 +201,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -222,8 +212,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -233,8 +223,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -244,8 +234,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -255,8 +245,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -266,8 +256,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -277,8 +267,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -288,8 +278,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
@@ -299,11 +289,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Organization",
-            "resourceIdentifier": "OrganizationId"
+            "resourceIdentifier": "OrganizationId",
+            "resourceName": "Organization"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Organization": {
+      "operation": "ListOrganizations",
+      "resourceIdentifier": {
+        "Alias": "OrganizationSummaries[].Alias",
+        "OrganizationId": "OrganizationSummaries[].OrganizationId"
+      }
+    }
+  },
+  "version": "1.0"
 }

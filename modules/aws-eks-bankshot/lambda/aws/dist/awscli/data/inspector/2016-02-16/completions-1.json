@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "EventSubscription": {
-      "operation": "ListEventSubscriptions",
-      "resourceIdentifier": {
-        "resourceArn": "subscriptions[].resourceArn",
-        "topicArn": "subscriptions[].topicArn"
-      }
-    }
-  },
   "operations": {
     "ListEventSubscriptions": {
       "resourceArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSubscription",
-            "resourceIdentifier": "resourceArn"
+            "resourceIdentifier": "resourceArn",
+            "resourceName": "EventSubscription"
           }
         ]
       }
@@ -26,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSubscription",
-            "resourceIdentifier": "resourceArn"
+            "resourceIdentifier": "resourceArn",
+            "resourceName": "EventSubscription"
           }
         ]
       }
@@ -37,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSubscription",
-            "resourceIdentifier": "resourceArn"
+            "resourceIdentifier": "resourceArn",
+            "resourceName": "EventSubscription"
           }
         ]
       }
@@ -48,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSubscription",
-            "resourceIdentifier": "resourceArn"
+            "resourceIdentifier": "resourceArn",
+            "resourceName": "EventSubscription"
           }
         ]
       },
@@ -57,8 +47,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSubscription",
-            "resourceIdentifier": "topicArn"
+            "resourceIdentifier": "topicArn",
+            "resourceName": "EventSubscription"
           }
         ]
       }
@@ -68,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSubscription",
-            "resourceIdentifier": "resourceArn"
+            "resourceIdentifier": "resourceArn",
+            "resourceName": "EventSubscription"
           }
         ]
       },
@@ -77,11 +67,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSubscription",
-            "resourceIdentifier": "topicArn"
+            "resourceIdentifier": "topicArn",
+            "resourceName": "EventSubscription"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "EventSubscription": {
+      "operation": "ListEventSubscriptions",
+      "resourceIdentifier": {
+        "resourceArn": "subscriptions[].resourceArn",
+        "topicArn": "subscriptions[].topicArn"
+      }
+    }
+  },
+  "version": "1.0"
 }

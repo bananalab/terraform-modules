@@ -35,5 +35,5 @@ Output::
             "PreviousSpotFleetRequestState": "active"
         }
     ],
-    "UnsuccessfulFleetRequests": []  
+    "UnsuccessfulFleetRequests": []
   }

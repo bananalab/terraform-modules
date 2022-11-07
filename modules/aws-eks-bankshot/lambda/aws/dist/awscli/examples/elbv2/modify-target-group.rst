@@ -5,7 +5,7 @@ This example changes the configuration of the health checks used to evaluate the
 Command::
 
   aws elbv2 modify-target-group --target-group-arn arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-https-targets/2453ed029918f21f --health-check-protocol HTTPS --health-check-port 443
-  
+
 Output::
 
   {

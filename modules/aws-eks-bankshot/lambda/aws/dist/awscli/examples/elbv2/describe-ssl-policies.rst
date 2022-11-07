@@ -4,7 +4,7 @@ The following ``describe-ssl-policies`` example displays details of the specifie
 
     aws elbv2 describe-ssl-policies \
         --names ELBSecurityPolicy-2016-08
-      
+
 Output::
 
     {

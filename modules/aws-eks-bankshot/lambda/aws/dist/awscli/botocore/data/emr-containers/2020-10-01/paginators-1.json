@@ -2,20 +2,20 @@
   "pagination": {
     "ListJobRuns": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "jobRuns"
     },
     "ListManagedEndpoints": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "endpoints"
     },
     "ListVirtualClusters": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "virtualClusters"
     }
   }

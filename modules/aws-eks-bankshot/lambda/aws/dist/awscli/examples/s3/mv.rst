@@ -89,4 +89,3 @@ The following ``mv`` command moves a single file (``mydoc.txt``) to the access p
 Output::
 
     move: mydoc.txt to s3://arn:aws:s3:us-west-2:123456789012:accesspoint/myaccesspoint/mykey
-

@@ -24,4 +24,3 @@ To attach a permissions policy to a role, use the ``put-role-policy`` command.
 For more information, see `Creating a Role`_ in the *Using IAM* guide.
 
 .. _`Creating a Role`: http://docs.aws.amazon.com/IAM/latest/UserGuide/creating-role.html
-

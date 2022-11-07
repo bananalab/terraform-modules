@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Pipeline": {
-      "operation": "ListPipelines",
-      "resourceIdentifier": {
-        "name": "pipelines[].name",
-        "version": "pipelines[].version"
-      }
-    }
-  },
   "operations": {
     "DeleteCustomActionType": {
       "version": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "version"
+            "resourceIdentifier": "version",
+            "resourceName": "Pipeline"
           }
         ]
       }
@@ -26,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "name"
+            "resourceIdentifier": "name",
+            "resourceName": "Pipeline"
           }
         ]
       }
@@ -37,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "name"
+            "resourceIdentifier": "name",
+            "resourceName": "Pipeline"
           }
         ]
       }
@@ -48,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "name"
+            "resourceIdentifier": "name",
+            "resourceName": "Pipeline"
           }
         ]
       },
@@ -57,8 +47,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "version"
+            "resourceIdentifier": "version",
+            "resourceName": "Pipeline"
           }
         ]
       }
@@ -68,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "name"
+            "resourceIdentifier": "name",
+            "resourceName": "Pipeline"
           }
         ]
       }
@@ -79,11 +69,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "name"
+            "resourceIdentifier": "name",
+            "resourceName": "Pipeline"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Pipeline": {
+      "operation": "ListPipelines",
+      "resourceIdentifier": {
+        "name": "pipelines[].name",
+        "version": "pipelines[].version"
+      }
+    }
+  },
+  "version": "1.0"
 }

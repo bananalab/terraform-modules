@@ -1,1327 +1,1603 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2018-05-10",
-    "endpointPrefix":"rolesanywhere",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"IAM Roles Anywhere",
-    "serviceId":"RolesAnywhere",
-    "signatureVersion":"v4",
-    "signingName":"rolesanywhere",
-    "uid":"rolesanywhere-2018-05-10"
+  "documentation": "<p>AWS Identity and Access Management Roles Anywhere provides a secure way for your workloads such as servers, containers, and applications running outside of AWS to obtain Temporary AWS credentials. Your workloads can use the same IAM policies and roles that you have configured with native AWS applications to access AWS resources. Using IAM Roles Anywhere will eliminate the need to manage long term credentials for workloads running outside of AWS.</p> <p>To use IAM Roles Anywhere customer workloads will need to use X.509 certificates issued by their Certificate Authority (CA) . The Certificate Authority (CA) needs to be registered with IAM Roles Anywhere as a trust anchor to establish trust between customer PKI and IAM Roles Anywhere. Customers who do not manage their own PKI system can use AWS Certificate Manager Private Certificate Authority (ACM PCA) to create a Certificate Authority and use that to establish trust with IAM Roles Anywhere</p> <p>This guide describes the IAM rolesanywhere operations that you can call programmatically. For general information about IAM Roles Anywhere see <a href=\"https://docs.aws.amazon.com/\">https://docs.aws.amazon.com/</a> </p>",
+  "metadata": {
+    "apiVersion": "2018-05-10",
+    "endpointPrefix": "rolesanywhere",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "IAM Roles Anywhere",
+    "serviceId": "RolesAnywhere",
+    "signatureVersion": "v4",
+    "signingName": "rolesanywhere",
+    "uid": "rolesanywhere-2018-05-10"
   },
-  "operations":{
-    "CreateProfile":{
-      "name":"CreateProfile",
-      "http":{
-        "method":"POST",
-        "requestUri":"/profiles",
-        "responseCode":201
-      },
-      "input":{"shape":"CreateProfileRequest"},
-      "output":{"shape":"ProfileDetailResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+  "operations": {
+    "CreateProfile": {
+      "documentation": "<p>Creates a profile. A profile is configuration resource to list the roles that RolesAnywhere service is trusted to assume. In addition, by applying a profile you can intersect permissions with IAM managed policies.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:CreateProfile</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Creates a profile. A profile is configuration resource to list the roles that RolesAnywhere service is trusted to assume. In addition, by applying a profile you can intersect permissions with IAM managed policies.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:CreateProfile</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/profiles",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateProfileRequest"
+      },
+      "name": "CreateProfile",
+      "output": {
+        "shape": "ProfileDetailResponse"
+      }
     },
-    "CreateTrustAnchor":{
-      "name":"CreateTrustAnchor",
-      "http":{
-        "method":"POST",
-        "requestUri":"/trustanchors",
-        "responseCode":201
-      },
-      "input":{"shape":"CreateTrustAnchorRequest"},
-      "output":{"shape":"TrustAnchorDetailResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "CreateTrustAnchor": {
+      "documentation": "<p>Creates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. A Trust Anchor is defined either as a reference to a AWS Certificate Manager Private Certificate Authority (ACM PCA), or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can authenticate with the trust anchor using certificates issued by the trusted Certificate Authority (CA) in exchange for temporary AWS credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:CreateTrustAnchor</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Creates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. A Trust Anchor is defined either as a reference to a AWS Certificate Manager Private Certificate Authority (ACM PCA), or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can authenticate with the trust anchor using certificates issued by the trusted Certificate Authority (CA) in exchange for temporary AWS credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:CreateTrustAnchor</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/trustanchors",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateTrustAnchorRequest"
+      },
+      "name": "CreateTrustAnchor",
+      "output": {
+        "shape": "TrustAnchorDetailResponse"
+      }
     },
-    "DeleteCrl":{
-      "name":"DeleteCrl",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/crl/{crlId}",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarCrlRequest"},
-      "output":{"shape":"CrlDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "DeleteCrl": {
+      "documentation": "<p>Deletes a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Deletes a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>. </p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/crl/{crlId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ScalarCrlRequest"
+      },
+      "name": "DeleteCrl",
+      "output": {
+        "shape": "CrlDetailResponse"
+      }
     },
-    "DeleteProfile":{
-      "name":"DeleteProfile",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/profile/{profileId}",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarProfileRequest"},
-      "output":{"shape":"ProfileDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "DeleteProfile": {
+      "documentation": "<p>Deletes a profile.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteProfile</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Deletes a profile.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteProfile</code>. </p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/profile/{profileId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ScalarProfileRequest"
+      },
+      "name": "DeleteProfile",
+      "output": {
+        "shape": "ProfileDetailResponse"
+      }
     },
-    "DeleteTrustAnchor":{
-      "name":"DeleteTrustAnchor",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/trustanchor/{trustAnchorId}",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarTrustAnchorRequest"},
-      "output":{"shape":"TrustAnchorDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "DeleteTrustAnchor": {
+      "documentation": "<p>Deletes a trust anchor.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteTrustAnchor</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Deletes a trust anchor.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteTrustAnchor</code>. </p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/trustanchor/{trustAnchorId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ScalarTrustAnchorRequest"
+      },
+      "name": "DeleteTrustAnchor",
+      "output": {
+        "shape": "TrustAnchorDetailResponse"
+      }
     },
-    "DisableCrl":{
-      "name":"DisableCrl",
-      "http":{
-        "method":"POST",
-        "requestUri":"/crl/{crlId}/disable",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarCrlRequest"},
-      "output":{"shape":"CrlDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "DisableCrl": {
+      "documentation": "<p>Disables a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableCrl</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Disables a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableCrl</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/crl/{crlId}/disable",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarCrlRequest"
+      },
+      "name": "DisableCrl",
+      "output": {
+        "shape": "CrlDetailResponse"
+      }
     },
-    "DisableProfile":{
-      "name":"DisableProfile",
-      "http":{
-        "method":"POST",
-        "requestUri":"/profile/{profileId}/disable",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarProfileRequest"},
-      "output":{"shape":"ProfileDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "DisableProfile": {
+      "documentation": "<p>Disables a profile. When disabled, <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> requests with this profile fail.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableProfile</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Disables a profile. When disabled, <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> requests with this profile fail.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableProfile</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/profile/{profileId}/disable",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarProfileRequest"
+      },
+      "name": "DisableProfile",
+      "output": {
+        "shape": "ProfileDetailResponse"
+      }
     },
-    "DisableTrustAnchor":{
-      "name":"DisableTrustAnchor",
-      "http":{
-        "method":"POST",
-        "requestUri":"/trustanchor/{trustAnchorId}/disable",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarTrustAnchorRequest"},
-      "output":{"shape":"TrustAnchorDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "DisableTrustAnchor": {
+      "documentation": "<p>Disables a trust anchor. When disabled, <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> requests specifying this trust anchor are unauthorized.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Disables a trust anchor. When disabled, <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> requests specifying this trust anchor are unauthorized.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/trustanchor/{trustAnchorId}/disable",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarTrustAnchorRequest"
+      },
+      "name": "DisableTrustAnchor",
+      "output": {
+        "shape": "TrustAnchorDetailResponse"
+      }
     },
-    "EnableCrl":{
-      "name":"EnableCrl",
-      "http":{
-        "method":"POST",
-        "requestUri":"/crl/{crlId}/enable",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarCrlRequest"},
-      "output":{"shape":"CrlDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "EnableCrl": {
+      "documentation": "<p>Enables a certificate revocation list (CRL). When enabled, certificates stored in the CRL are unauthorized to receive session credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableCrl</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Enables a certificate revocation list (CRL). When enabled, certificates stored in the CRL are unauthorized to receive session credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableCrl</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/crl/{crlId}/enable",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarCrlRequest"
+      },
+      "name": "EnableCrl",
+      "output": {
+        "shape": "CrlDetailResponse"
+      }
     },
-    "EnableProfile":{
-      "name":"EnableProfile",
-      "http":{
-        "method":"POST",
-        "requestUri":"/profile/{profileId}/enable",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarProfileRequest"},
-      "output":{"shape":"ProfileDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "EnableProfile": {
+      "documentation": "<p>Enables the roles in a profile to receive session credentials in <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a>. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableProfile</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Enables the roles in a profile to receive session credentials in <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a>. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableProfile</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/profile/{profileId}/enable",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarProfileRequest"
+      },
+      "name": "EnableProfile",
+      "output": {
+        "shape": "ProfileDetailResponse"
+      }
     },
-    "EnableTrustAnchor":{
-      "name":"EnableTrustAnchor",
-      "http":{
-        "method":"POST",
-        "requestUri":"/trustanchor/{trustAnchorId}/enable",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarTrustAnchorRequest"},
-      "output":{"shape":"TrustAnchorDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "EnableTrustAnchor": {
+      "documentation": "<p>Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableTrustAnchor</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableTrustAnchor</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/trustanchor/{trustAnchorId}/enable",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarTrustAnchorRequest"
+      },
+      "name": "EnableTrustAnchor",
+      "output": {
+        "shape": "TrustAnchorDetailResponse"
+      }
     },
-    "GetCrl":{
-      "name":"GetCrl",
-      "http":{
-        "method":"GET",
-        "requestUri":"/crl/{crlId}",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarCrlRequest"},
-      "output":{"shape":"CrlDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"}
+    "GetCrl": {
+      "documentation": "<p>Gets a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetCrl</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Gets a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetCrl</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/crl/{crlId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarCrlRequest"
+      },
+      "name": "GetCrl",
+      "output": {
+        "shape": "CrlDetailResponse"
+      }
     },
-    "GetProfile":{
-      "name":"GetProfile",
-      "http":{
-        "method":"GET",
-        "requestUri":"/profile/{profileId}",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarProfileRequest"},
-      "output":{"shape":"ProfileDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "GetProfile": {
+      "documentation": "<p>Gets a profile.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetProfile</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Gets a profile.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetProfile</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/profile/{profileId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarProfileRequest"
+      },
+      "name": "GetProfile",
+      "output": {
+        "shape": "ProfileDetailResponse"
+      }
     },
-    "GetSubject":{
-      "name":"GetSubject",
-      "http":{
-        "method":"GET",
-        "requestUri":"/subject/{subjectId}",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarSubjectRequest"},
-      "output":{"shape":"SubjectDetailResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "GetSubject": {
+      "documentation": "<p>Gets a Subject. A Subject associates a certificate identity with authentication attempts by CreateSession. The Subject resources stores audit information such as status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Gets a Subject. A Subject associates a certificate identity with authentication attempts by CreateSession. The Subject resources stores audit information such as status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/subject/{subjectId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarSubjectRequest"
+      },
+      "name": "GetSubject",
+      "output": {
+        "shape": "SubjectDetailResponse"
+      }
     },
-    "GetTrustAnchor":{
-      "name":"GetTrustAnchor",
-      "http":{
-        "method":"GET",
-        "requestUri":"/trustanchor/{trustAnchorId}",
-        "responseCode":200
-      },
-      "input":{"shape":"ScalarTrustAnchorRequest"},
-      "output":{"shape":"TrustAnchorDetailResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "GetTrustAnchor": {
+      "documentation": "<p>Gets a trust anchor.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetTrustAnchor</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Gets a trust anchor.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetTrustAnchor</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/trustanchor/{trustAnchorId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ScalarTrustAnchorRequest"
+      },
+      "name": "GetTrustAnchor",
+      "output": {
+        "shape": "TrustAnchorDetailResponse"
+      }
     },
-    "ImportCrl":{
-      "name":"ImportCrl",
-      "http":{
-        "method":"POST",
-        "requestUri":"/crls",
-        "responseCode":201
-      },
-      "input":{"shape":"ImportCrlRequest"},
-      "output":{"shape":"CrlDetailResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "ImportCrl": {
+      "documentation": "<p>Imports the certificate revocation list (CRL). CRl is a list of certificates that have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates against the crl list before issuing credentials. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:ImportCrl</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Imports the certificate revocation list (CRL). CRl is a list of certificates that have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates against the crl list before issuing credentials. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:ImportCrl</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/crls",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "ImportCrlRequest"
+      },
+      "name": "ImportCrl",
+      "output": {
+        "shape": "CrlDetailResponse"
+      }
     },
-    "ListCrls":{
-      "name":"ListCrls",
-      "http":{
-        "method":"GET",
-        "requestUri":"/crls",
-        "responseCode":200
-      },
-      "input":{"shape":"ListRequest"},
-      "output":{"shape":"ListCrlsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "ListCrls": {
+      "documentation": "<p>Lists all Crls in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListCrls</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists all Crls in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListCrls</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/crls",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListRequest"
+      },
+      "name": "ListCrls",
+      "output": {
+        "shape": "ListCrlsResponse"
+      }
     },
-    "ListProfiles":{
-      "name":"ListProfiles",
-      "http":{
-        "method":"GET",
-        "requestUri":"/profiles",
-        "responseCode":200
-      },
-      "input":{"shape":"ListRequest"},
-      "output":{"shape":"ListProfilesResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "ListProfiles": {
+      "documentation": "<p>Lists all profiles in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListProfiles</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists all profiles in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListProfiles</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/profiles",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListRequest"
+      },
+      "name": "ListProfiles",
+      "output": {
+        "shape": "ListProfilesResponse"
+      }
     },
-    "ListSubjects":{
-      "name":"ListSubjects",
-      "http":{
-        "method":"GET",
-        "requestUri":"/subjects",
-        "responseCode":200
-      },
-      "input":{"shape":"ListRequest"},
-      "output":{"shape":"ListSubjectsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "ListSubjects": {
+      "documentation": "<p>Lists the subjects in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListSubjects</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists the subjects in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListSubjects</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/subjects",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListRequest"
+      },
+      "name": "ListSubjects",
+      "output": {
+        "shape": "ListSubjectsResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/ListTagsForResource",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Lists the tags attached to the resource.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListTagsForResource</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists the tags attached to the resource.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListTagsForResource</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/ListTagsForResource",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "ListTrustAnchors":{
-      "name":"ListTrustAnchors",
-      "http":{
-        "method":"GET",
-        "requestUri":"/trustanchors",
-        "responseCode":200
-      },
-      "input":{"shape":"ListRequest"},
-      "output":{"shape":"ListTrustAnchorsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "ListTrustAnchors": {
+      "documentation": "<p>Lists the trust anchors in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListTrustAnchors</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists the trust anchors in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListTrustAnchors</code>. </p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/trustanchors",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListRequest"
+      },
+      "name": "ListTrustAnchors",
+      "output": {
+        "shape": "ListTrustAnchorsResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/TagResource",
-        "responseCode":201
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"TooManyTagsException"}
+    "TagResource": {
+      "documentation": "<p>Attaches tags to a resource.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:TagResource</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "TooManyTagsException"
+        }
       ],
-      "documentation":"<p>Attaches tags to a resource.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:TagResource</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/TagResource",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/UntagResource",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "UntagResource": {
+      "documentation": "<p>Removes tags from the resource.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UntagResource</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Removes tags from the resource.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UntagResource</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/UntagResource",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
     },
-    "UpdateCrl":{
-      "name":"UpdateCrl",
-      "http":{
-        "method":"PATCH",
-        "requestUri":"/crl/{crlId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateCrlRequest"},
-      "output":{"shape":"CrlDetailResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "UpdateCrl": {
+      "documentation": "<p>Updates the certificate revocation list (CRL). CRl is a list of certificates that have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates against the crl list before issuing credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Updates the certificate revocation list (CRL). CRl is a list of certificates that have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates against the crl list before issuing credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>. </p>"
+      "http": {
+        "method": "PATCH",
+        "requestUri": "/crl/{crlId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateCrlRequest"
+      },
+      "name": "UpdateCrl",
+      "output": {
+        "shape": "CrlDetailResponse"
+      }
     },
-    "UpdateProfile":{
-      "name":"UpdateProfile",
-      "http":{
-        "method":"PATCH",
-        "requestUri":"/profile/{profileId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateProfileRequest"},
-      "output":{"shape":"ProfileDetailResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "UpdateProfile": {
+      "documentation": "<p>Updates the profile. A profile is configuration resource to list the roles that RolesAnywhere service is trusted to assume. In addition, by applying a profile you can scope-down permissions with IAM managed policies.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateProfile</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Updates the profile. A profile is configuration resource to list the roles that RolesAnywhere service is trusted to assume. In addition, by applying a profile you can scope-down permissions with IAM managed policies.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateProfile</code>. </p>",
-      "idempotent":true
+      "http": {
+        "method": "PATCH",
+        "requestUri": "/profile/{profileId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateProfileRequest"
+      },
+      "name": "UpdateProfile",
+      "output": {
+        "shape": "ProfileDetailResponse"
+      }
     },
-    "UpdateTrustAnchor":{
-      "name":"UpdateTrustAnchor",
-      "http":{
-        "method":"PATCH",
-        "requestUri":"/trustanchor/{trustAnchorId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateTrustAnchorRequest"},
-      "output":{"shape":"TrustAnchorDetailResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "UpdateTrustAnchor": {
+      "documentation": "<p>Updates the trust anchor.You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. A Trust Anchor is defined either as a reference to a AWS Certificate Manager Private Certificate Authority (ACM PCA), or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can authenticate with the trust anchor using certificates issued by the trusted Certificate Authority (CA) in exchange for temporary AWS credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Updates the trust anchor.You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. A Trust Anchor is defined either as a reference to a AWS Certificate Manager Private Certificate Authority (ACM PCA), or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can authenticate with the trust anchor using certificates issued by the trusted Certificate Authority (CA) in exchange for temporary AWS credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>. </p>",
-      "idempotent":true
+      "http": {
+        "method": "PATCH",
+        "requestUri": "/trustanchor/{trustAnchorId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateTrustAnchorRequest"
+      },
+      "name": "UpdateTrustAnchor",
+      "output": {
+        "shape": "TrustAnchorDetailResponse"
+      }
     }
   },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>You do not have sufficient access to perform this action.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
       },
-      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
       },
-      "exception":true
+      "type": "structure"
     },
-    "AmazonResourceName":{
-      "type":"string",
-      "max":1011,
-      "min":1
+    "AmazonResourceName": {
+      "max": 1011,
+      "min": 1,
+      "type": "string"
     },
-    "Blob":{"type":"blob"},
-    "Boolean":{
-      "type":"boolean",
-      "box":true
+    "Blob": {
+      "type": "blob"
     },
-    "CreateProfileRequest":{
-      "type":"structure",
-      "required":[
+    "Boolean": {
+      "box": true,
+      "type": "boolean"
+    },
+    "CreateProfileRequest": {
+      "members": {
+        "durationSeconds": {
+          "documentation": "<p> The number of seconds the vended session credentials are valid for. </p>",
+          "shape": "CreateProfileRequestDurationSecondsInteger"
+        },
+        "enabled": {
+          "documentation": "<p>Specifies whether the profile is enabled.</p>",
+          "shape": "Boolean"
+        },
+        "managedPolicyArns": {
+          "documentation": "<p>A list of managed policy ARNs that apply to the vended session credentials. </p>",
+          "shape": "ManagedPolicyList"
+        },
+        "name": {
+          "documentation": "<p>The name of the profile.</p>",
+          "shape": "ResourceName"
+        },
+        "requireInstanceProperties": {
+          "documentation": "<p>Specifies whether instance properties are required in <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> requests with this profile. </p>",
+          "shape": "Boolean"
+        },
+        "roleArns": {
+          "documentation": "<p>A list of IAM roles that this profile can assume in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>",
+          "shape": "RoleArnList"
+        },
+        "sessionPolicy": {
+          "documentation": "<p>A session policy that applies to the trust boundary of the vended session credentials. </p>",
+          "shape": "String"
+        },
+        "tags": {
+          "documentation": "<p>The tags to attach to the profile.</p>",
+          "shape": "TagList"
+        }
+      },
+      "required": [
         "name",
         "roleArns"
       ],
-      "members":{
-        "durationSeconds":{
-          "shape":"CreateProfileRequestDurationSecondsInteger",
-          "documentation":"<p> The number of seconds the vended session credentials are valid for. </p>"
+      "type": "structure"
+    },
+    "CreateProfileRequestDurationSecondsInteger": {
+      "box": true,
+      "max": 43200,
+      "min": 900,
+      "type": "integer"
+    },
+    "CreateTrustAnchorRequest": {
+      "members": {
+        "enabled": {
+          "documentation": "<p>Specifies whether the trust anchor is enabled.</p>",
+          "shape": "Boolean"
         },
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Specifies whether the profile is enabled.</p>"
+        "name": {
+          "documentation": "<p>The name of the trust anchor.</p>",
+          "shape": "ResourceName"
         },
-        "managedPolicyArns":{
-          "shape":"ManagedPolicyList",
-          "documentation":"<p>A list of managed policy ARNs that apply to the vended session credentials. </p>"
+        "source": {
+          "documentation": "<p>The trust anchor type and its related certificate data.</p>",
+          "shape": "Source"
         },
-        "name":{
-          "shape":"ResourceName",
-          "documentation":"<p>The name of the profile.</p>"
-        },
-        "requireInstanceProperties":{
-          "shape":"Boolean",
-          "documentation":"<p>Specifies whether instance properties are required in <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> requests with this profile. </p>"
-        },
-        "roleArns":{
-          "shape":"RoleArnList",
-          "documentation":"<p>A list of IAM roles that this profile can assume in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>"
-        },
-        "sessionPolicy":{
-          "shape":"String",
-          "documentation":"<p>A session policy that applies to the trust boundary of the vended session credentials. </p>"
-        },
-        "tags":{
-          "shape":"TagList",
-          "documentation":"<p>The tags to attach to the profile.</p>"
+        "tags": {
+          "documentation": "<p>The tags to attach to the trust anchor.</p>",
+          "shape": "TagList"
         }
-      }
-    },
-    "CreateProfileRequestDurationSecondsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":43200,
-      "min":900
-    },
-    "CreateTrustAnchorRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "name",
         "source"
       ],
-      "members":{
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Specifies whether the trust anchor is enabled.</p>"
-        },
-        "name":{
-          "shape":"ResourceName",
-          "documentation":"<p>The name of the trust anchor.</p>"
-        },
-        "source":{
-          "shape":"Source",
-          "documentation":"<p>The trust anchor type and its related certificate data.</p>"
-        },
-        "tags":{
-          "shape":"TagList",
-          "documentation":"<p>The tags to attach to the trust anchor.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CredentialSummaries":{
-      "type":"list",
-      "member":{"shape":"CredentialSummary"}
+    "CredentialSummaries": {
+      "member": {
+        "shape": "CredentialSummary"
+      },
+      "type": "list"
     },
-    "CredentialSummary":{
-      "type":"structure",
-      "members":{
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Indicates whether the credential is enabled.</p>"
+    "CredentialSummary": {
+      "documentation": "<p>A record of a presented X509 credential to <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a>. </p>",
+      "members": {
+        "enabled": {
+          "documentation": "<p>Indicates whether the credential is enabled.</p>",
+          "shape": "Boolean"
         },
-        "failed":{
-          "shape":"Boolean",
-          "documentation":"<p>Indicates whether the <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation was successful. </p>"
+        "failed": {
+          "documentation": "<p>Indicates whether the <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation was successful. </p>",
+          "shape": "Boolean"
         },
-        "issuer":{
-          "shape":"String",
-          "documentation":"<p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>"
+        "issuer": {
+          "documentation": "<p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>",
+          "shape": "String"
         },
-        "seenAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 time stamp of when the certificate was last used in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>"
+        "seenAt": {
+          "documentation": "<p>The ISO-8601 time stamp of when the certificate was last used in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>",
+          "shape": "SyntheticTimestamp_date_time"
         },
-        "serialNumber":{
-          "shape":"String",
-          "documentation":"<p>The serial number of the certificate.</p>"
+        "serialNumber": {
+          "documentation": "<p>The serial number of the certificate.</p>",
+          "shape": "String"
         },
-        "x509CertificateData":{
-          "shape":"String",
-          "documentation":"<p>The PEM-encoded data of the certificate.</p>"
+        "x509CertificateData": {
+          "documentation": "<p>The PEM-encoded data of the certificate.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>A record of a presented X509 credential to <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a>. </p>"
+      "type": "structure"
     },
-    "CrlDetail":{
-      "type":"structure",
-      "members":{
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>"
+    "CrlDetail": {
+      "documentation": "<p>The state of the certificate revocation list (CRL) after a read or write operation.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>",
+          "shape": "SyntheticTimestamp_date_time"
         },
-        "crlArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN of the certificate revocation list (CRL).</p>"
+        "crlArn": {
+          "documentation": "<p>The ARN of the certificate revocation list (CRL).</p>",
+          "shape": "String"
         },
-        "crlData":{
-          "shape":"Blob",
-          "documentation":"<p>The state of the certificate revocation list (CRL) after a read or write operation.</p>"
+        "crlData": {
+          "documentation": "<p>The state of the certificate revocation list (CRL) after a read or write operation.</p>",
+          "shape": "Blob"
         },
-        "crlId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the certificate revocation list (CRL).</p>"
+        "crlId": {
+          "documentation": "<p>The unique identifier of the certificate revocation list (CRL).</p>",
+          "shape": "Uuid"
         },
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Indicates whether the certificate revocation list (CRL) is enabled.</p>"
+        "enabled": {
+          "documentation": "<p>Indicates whether the certificate revocation list (CRL) is enabled.</p>",
+          "shape": "Boolean"
         },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The name of the certificate revocation list (CRL).</p>"
+        "name": {
+          "documentation": "<p>The name of the certificate revocation list (CRL).</p>",
+          "shape": "String"
         },
-        "trustAnchorArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>"
+        "trustAnchorArn": {
+          "documentation": "<p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>",
+          "shape": "String"
         },
-        "updatedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>"
+        "updatedAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>",
+          "shape": "SyntheticTimestamp_date_time"
         }
       },
-      "documentation":"<p>The state of the certificate revocation list (CRL) after a read or write operation.</p>"
+      "type": "structure"
     },
-    "CrlDetailResponse":{
-      "type":"structure",
-      "required":["crl"],
-      "members":{
-        "crl":{
-          "shape":"CrlDetail",
-          "documentation":"<p>The state of the certificate revocation list (CRL) after a read or write operation.</p>"
+    "CrlDetailResponse": {
+      "members": {
+        "crl": {
+          "documentation": "<p>The state of the certificate revocation list (CRL) after a read or write operation.</p>",
+          "shape": "CrlDetail"
         }
-      }
+      },
+      "required": [
+        "crl"
+      ],
+      "type": "structure"
     },
-    "CrlDetails":{
-      "type":"list",
-      "member":{"shape":"CrlDetail"}
+    "CrlDetails": {
+      "member": {
+        "shape": "CrlDetail"
+      },
+      "type": "list"
     },
-    "ImportCrlRequest":{
-      "type":"structure",
-      "required":[
+    "ImportCrlRequest": {
+      "members": {
+        "crlData": {
+          "documentation": "<p>The x509 v3 specified certificate revocation list</p>",
+          "shape": "ImportCrlRequestCrlDataBlob"
+        },
+        "enabled": {
+          "documentation": "<p>Specifies whether the certificate revocation list (CRL) is enabled.</p>",
+          "shape": "Boolean"
+        },
+        "name": {
+          "documentation": "<p>The name of the certificate revocation list (CRL).</p>",
+          "shape": "ResourceName"
+        },
+        "tags": {
+          "documentation": "<p>A list of tags to attach to the certificate revocation list (CRL).</p>",
+          "shape": "TagList"
+        },
+        "trustAnchorArn": {
+          "documentation": "<p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>",
+          "shape": "TrustAnchorArn"
+        }
+      },
+      "required": [
         "crlData",
         "name",
         "trustAnchorArn"
       ],
-      "members":{
-        "crlData":{
-          "shape":"ImportCrlRequestCrlDataBlob",
-          "documentation":"<p>The x509 v3 specified certificate revocation list</p>"
-        },
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Specifies whether the certificate revocation list (CRL) is enabled.</p>"
-        },
-        "name":{
-          "shape":"ResourceName",
-          "documentation":"<p>The name of the certificate revocation list (CRL).</p>"
-        },
-        "tags":{
-          "shape":"TagList",
-          "documentation":"<p>A list of tags to attach to the certificate revocation list (CRL).</p>"
-        },
-        "trustAnchorArn":{
-          "shape":"TrustAnchorArn",
-          "documentation":"<p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "ImportCrlRequestCrlDataBlob":{
-      "type":"blob",
-      "max":300000,
-      "min":1
+    "ImportCrlRequestCrlDataBlob": {
+      "max": 300000,
+      "min": 1,
+      "type": "blob"
     },
-    "InstanceProperties":{
-      "type":"list",
-      "member":{"shape":"InstanceProperty"}
+    "InstanceProperties": {
+      "member": {
+        "shape": "InstanceProperty"
+      },
+      "type": "list"
     },
-    "InstanceProperty":{
-      "type":"structure",
-      "members":{
-        "failed":{
-          "shape":"Boolean",
-          "documentation":"<p>Indicates whether the <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation was successful. </p>"
+    "InstanceProperty": {
+      "documentation": "<p>A key-value pair you set that identifies a property of the authenticating instance.</p>",
+      "members": {
+        "failed": {
+          "documentation": "<p>Indicates whether the <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation was successful. </p>",
+          "shape": "Boolean"
         },
-        "properties":{
-          "shape":"InstancePropertyMap",
-          "documentation":"<p>A list of instanceProperty objects. </p>"
+        "properties": {
+          "documentation": "<p>A list of instanceProperty objects. </p>",
+          "shape": "InstancePropertyMap"
         },
-        "seenAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 time stamp of when the certificate was last used in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>"
+        "seenAt": {
+          "documentation": "<p>The ISO-8601 time stamp of when the certificate was last used in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>",
+          "shape": "SyntheticTimestamp_date_time"
         }
       },
-      "documentation":"<p>A key-value pair you set that identifies a property of the authenticating instance.</p>"
+      "type": "structure"
     },
-    "InstancePropertyMap":{
-      "type":"map",
-      "key":{"shape":"InstancePropertyMapKeyString"},
-      "value":{"shape":"InstancePropertyMapValueString"},
-      "max":50,
-      "min":0
-    },
-    "InstancePropertyMapKeyString":{
-      "type":"string",
-      "max":200,
-      "min":1
-    },
-    "InstancePropertyMapValueString":{
-      "type":"string",
-      "max":200,
-      "min":1
-    },
-    "Integer":{
-      "type":"integer",
-      "box":true
-    },
-    "ListCrlsResponse":{
-      "type":"structure",
-      "members":{
-        "crls":{
-          "shape":"CrlDetails",
-          "documentation":"<p>A list of certificate revocation lists (CRL). </p>"
-        },
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>"
-        }
+    "InstancePropertyMap": {
+      "key": {
+        "shape": "InstancePropertyMapKeyString"
+      },
+      "max": 50,
+      "min": 0,
+      "type": "map",
+      "value": {
+        "shape": "InstancePropertyMapValueString"
       }
     },
-    "ListProfilesResponse":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>"
-        },
-        "profiles":{
-          "shape":"ProfileDetails",
-          "documentation":"<p>A list of profiles.</p>"
-        }
-      }
+    "InstancePropertyMapKeyString": {
+      "max": 200,
+      "min": 1,
+      "type": "string"
     },
-    "ListRequest":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"ListRequestNextTokenString",
-          "documentation":"<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "pageSize":{
-          "shape":"Integer",
-          "documentation":"<p>The number of resources in the paginated list. </p>",
-          "location":"querystring",
-          "locationName":"pageSize"
-        }
-      }
+    "InstancePropertyMapValueString": {
+      "max": 200,
+      "min": 1,
+      "type": "string"
     },
-    "ListRequestNextTokenString":{
-      "type":"string",
-      "max":10000,
-      "min":1
+    "Integer": {
+      "box": true,
+      "type": "integer"
     },
-    "ListSubjectsResponse":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>"
+    "ListCrlsResponse": {
+      "members": {
+        "crls": {
+          "documentation": "<p>A list of certificate revocation lists (CRL). </p>",
+          "shape": "CrlDetails"
         },
-        "subjects":{
-          "shape":"SubjectSummaries",
-          "documentation":"<p>A list of subjects.</p>"
-        }
-      }
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["resourceArn"],
-      "members":{
-        "resourceArn":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The ARN of the resource.</p>",
-          "location":"querystring",
-          "locationName":"resourceArn"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{
-          "shape":"TagList",
-          "documentation":"<p>A list of tags attached to the resource.</p>"
-        }
-      }
-    },
-    "ListTrustAnchorsResponse":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>"
-        },
-        "trustAnchors":{
-          "shape":"TrustAnchorDetails",
-          "documentation":"<p>A list of trust anchors.</p>"
-        }
-      }
-    },
-    "ManagedPolicyList":{
-      "type":"list",
-      "member":{"shape":"ManagedPolicyListMemberString"},
-      "max":50,
-      "min":0
-    },
-    "ManagedPolicyListMemberString":{
-      "type":"string",
-      "max":200,
-      "min":1
-    },
-    "ProfileArn":{
-      "type":"string",
-      "max":1011,
-      "min":1,
-      "pattern":"^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:profile.*)$"
-    },
-    "ProfileDetail":{
-      "type":"structure",
-      "members":{
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the profile was created. </p>"
-        },
-        "createdBy":{
-          "shape":"String",
-          "documentation":"<p>The Amazon Web Services account that created the profile.</p>"
-        },
-        "durationSeconds":{
-          "shape":"Integer",
-          "documentation":"<p> The number of seconds the vended session credentials are valid for. </p>"
-        },
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Indicates whether the profile is enabled.</p>"
-        },
-        "managedPolicyArns":{
-          "shape":"ManagedPolicyList",
-          "documentation":"<p>A list of managed policy ARNs that apply to the vended session credentials. </p>"
-        },
-        "name":{
-          "shape":"ResourceName",
-          "documentation":"<p>The name of the profile.</p>"
-        },
-        "profileArn":{
-          "shape":"ProfileArn",
-          "documentation":"<p>The ARN of the profile.</p>"
-        },
-        "profileId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the profile.</p>"
-        },
-        "requireInstanceProperties":{
-          "shape":"Boolean",
-          "documentation":"<p>Specifies whether instance properties are required in <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> requests with this profile. </p>"
-        },
-        "roleArns":{
-          "shape":"RoleArnList",
-          "documentation":"<p>A list of IAM roles that this profile can assume in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>"
-        },
-        "sessionPolicy":{
-          "shape":"String",
-          "documentation":"<p>A session policy that applies to the trust boundary of the vended session credentials. </p>"
-        },
-        "updatedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the profile was last updated. </p>"
+        "nextToken": {
+          "documentation": "<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The state of the profile after a read or write operation.</p>"
+      "type": "structure"
     },
-    "ProfileDetailResponse":{
-      "type":"structure",
-      "members":{
-        "profile":{
-          "shape":"ProfileDetail",
-          "documentation":"<p>The state of the profile after a read or write operation.</p>"
-        }
-      }
-    },
-    "ProfileDetails":{
-      "type":"list",
-      "member":{"shape":"ProfileDetail"}
-    },
-    "ResourceName":{
-      "type":"string",
-      "max":255,
-      "min":1,
-      "pattern":"^[ a-zA-Z0-9-_]*$"
-    },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>The resource could not be found.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "RoleArn":{
-      "type":"string",
-      "max":1011,
-      "min":1,
-      "pattern":"^arn:aws(-[^:]+)?:iam(:.*){2}(:role.*)$"
-    },
-    "RoleArnList":{
-      "type":"list",
-      "member":{"shape":"RoleArn"},
-      "max":50,
-      "min":0
-    },
-    "ScalarCrlRequest":{
-      "type":"structure",
-      "required":["crlId"],
-      "members":{
-        "crlId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the certificate revocation list (CRL).</p>",
-          "location":"uri",
-          "locationName":"crlId"
-        }
-      }
-    },
-    "ScalarProfileRequest":{
-      "type":"structure",
-      "required":["profileId"],
-      "members":{
-        "profileId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the profile.</p>",
-          "location":"uri",
-          "locationName":"profileId"
-        }
-      }
-    },
-    "ScalarSubjectRequest":{
-      "type":"structure",
-      "required":["subjectId"],
-      "members":{
-        "subjectId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the subject. </p>",
-          "location":"uri",
-          "locationName":"subjectId"
-        }
-      }
-    },
-    "ScalarTrustAnchorRequest":{
-      "type":"structure",
-      "required":["trustAnchorId"],
-      "members":{
-        "trustAnchorId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the trust anchor.</p>",
-          "location":"uri",
-          "locationName":"trustAnchorId"
-        }
-      }
-    },
-    "Source":{
-      "type":"structure",
-      "members":{
-        "sourceData":{
-          "shape":"SourceData",
-          "documentation":"<p>The data field of the trust anchor depending on its type. </p>"
+    "ListProfilesResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>",
+          "shape": "String"
         },
-        "sourceType":{
-          "shape":"TrustAnchorType",
-          "documentation":"<p>The type of the trust anchor. </p>"
+        "profiles": {
+          "documentation": "<p>A list of profiles.</p>",
+          "shape": "ProfileDetails"
         }
       },
-      "documentation":"<p>The trust anchor type and its related certificate data.</p>"
+      "type": "structure"
     },
-    "SourceData":{
-      "type":"structure",
-      "members":{
-        "acmPcaArn":{
-          "shape":"String",
-          "documentation":"<p>The root certificate of the Certificate Manager Private Certificate Authority specified by this ARN is used in trust validation for <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operations. Included for trust anchors of type <code>AWS_ACM_PCA</code>. </p>"
+    "ListRequest": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "ListRequestNextTokenString"
         },
-        "x509CertificateData":{
-          "shape":"String",
-          "documentation":"<p>The PEM-encoded data for the certificate anchor. Included for trust anchors of type <code>CERTIFICATE_BUNDLE</code>. </p>"
+        "pageSize": {
+          "documentation": "<p>The number of resources in the paginated list. </p>",
+          "location": "querystring",
+          "locationName": "pageSize",
+          "shape": "Integer"
         }
       },
-      "documentation":"<p>The data field of the trust anchor depending on its type. </p>",
-      "union":true
+      "type": "structure"
     },
-    "String":{"type":"string"},
-    "SubjectDetail":{
-      "type":"structure",
-      "members":{
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the subject was created. </p>"
+    "ListRequestNextTokenString": {
+      "max": 10000,
+      "min": 1,
+      "type": "string"
+    },
+    "ListSubjectsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>",
+          "shape": "String"
         },
-        "credentials":{
-          "shape":"CredentialSummaries",
-          "documentation":"<p>The temporary session credentials vended at the last authenticating call with this Subject.</p>"
-        },
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>The enabled status of the subject.</p>"
-        },
-        "instanceProperties":{
-          "shape":"InstanceProperties",
-          "documentation":"<p>The specified instance properties associated with the request.</p>"
-        },
-        "lastSeenAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>"
-        },
-        "subjectArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN of the resource.</p>"
-        },
-        "subjectId":{
-          "shape":"Uuid",
-          "documentation":"<p>The id of the resource</p>"
-        },
-        "updatedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the subject was last updated.</p>"
-        },
-        "x509Subject":{
-          "shape":"String",
-          "documentation":"<p>The x509 principal identifier of the authenticating certificate.</p>"
+        "subjects": {
+          "documentation": "<p>A list of subjects.</p>",
+          "shape": "SubjectSummaries"
         }
       },
-      "documentation":"<p>The state of the subject after a read or write operation.</p>"
+      "type": "structure"
     },
-    "SubjectDetailResponse":{
-      "type":"structure",
-      "members":{
-        "subject":{
-          "shape":"SubjectDetail",
-          "documentation":"<p>The state of the subject after a read or write operation.</p>"
-        }
-      }
-    },
-    "SubjectSummaries":{
-      "type":"list",
-      "member":{"shape":"SubjectSummary"}
-    },
-    "SubjectSummary":{
-      "type":"structure",
-      "members":{
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 time stamp of when the certificate was first used in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>"
-        },
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>The enabled status of the Subject. </p>"
-        },
-        "lastSeenAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 time stamp of when the certificate was last used in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>"
-        },
-        "subjectArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN of the resource.</p>"
-        },
-        "subjectId":{
-          "shape":"Uuid",
-          "documentation":"<p>The id of the resource.</p>"
-        },
-        "updatedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the subject was last updated. </p>"
-        },
-        "x509Subject":{
-          "shape":"String",
-          "documentation":"<p>The x509 principal identifier of the authenticating certificate.</p>"
+    "ListTagsForResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The ARN of the resource.</p>",
+          "location": "querystring",
+          "locationName": "resourceArn",
+          "shape": "AmazonResourceName"
         }
       },
-      "documentation":"<p>A summary representation of Subject resources returned in read operations; primarily ListSubjects.</p>"
+      "required": [
+        "resourceArn"
+      ],
+      "type": "structure"
     },
-    "SyntheticTimestamp_date_time":{
-      "type":"timestamp",
-      "timestampFormat":"iso8601"
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "documentation": "<p>A list of tags attached to the resource.</p>",
+          "shape": "TagList"
+        }
+      },
+      "type": "structure"
     },
-    "Tag":{
-      "type":"structure",
-      "required":[
+    "ListTrustAnchorsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>",
+          "shape": "String"
+        },
+        "trustAnchors": {
+          "documentation": "<p>A list of trust anchors.</p>",
+          "shape": "TrustAnchorDetails"
+        }
+      },
+      "type": "structure"
+    },
+    "ManagedPolicyList": {
+      "max": 50,
+      "member": {
+        "shape": "ManagedPolicyListMemberString"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "ManagedPolicyListMemberString": {
+      "max": 200,
+      "min": 1,
+      "type": "string"
+    },
+    "ProfileArn": {
+      "max": 1011,
+      "min": 1,
+      "pattern": "^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:profile.*)$",
+      "type": "string"
+    },
+    "ProfileDetail": {
+      "documentation": "<p>The state of the profile after a read or write operation.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the profile was created. </p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "createdBy": {
+          "documentation": "<p>The Amazon Web Services account that created the profile.</p>",
+          "shape": "String"
+        },
+        "durationSeconds": {
+          "documentation": "<p> The number of seconds the vended session credentials are valid for. </p>",
+          "shape": "Integer"
+        },
+        "enabled": {
+          "documentation": "<p>Indicates whether the profile is enabled.</p>",
+          "shape": "Boolean"
+        },
+        "managedPolicyArns": {
+          "documentation": "<p>A list of managed policy ARNs that apply to the vended session credentials. </p>",
+          "shape": "ManagedPolicyList"
+        },
+        "name": {
+          "documentation": "<p>The name of the profile.</p>",
+          "shape": "ResourceName"
+        },
+        "profileArn": {
+          "documentation": "<p>The ARN of the profile.</p>",
+          "shape": "ProfileArn"
+        },
+        "profileId": {
+          "documentation": "<p>The unique identifier of the profile.</p>",
+          "shape": "Uuid"
+        },
+        "requireInstanceProperties": {
+          "documentation": "<p>Specifies whether instance properties are required in <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> requests with this profile. </p>",
+          "shape": "Boolean"
+        },
+        "roleArns": {
+          "documentation": "<p>A list of IAM roles that this profile can assume in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>",
+          "shape": "RoleArnList"
+        },
+        "sessionPolicy": {
+          "documentation": "<p>A session policy that applies to the trust boundary of the vended session credentials. </p>",
+          "shape": "String"
+        },
+        "updatedAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the profile was last updated. </p>",
+          "shape": "SyntheticTimestamp_date_time"
+        }
+      },
+      "type": "structure"
+    },
+    "ProfileDetailResponse": {
+      "members": {
+        "profile": {
+          "documentation": "<p>The state of the profile after a read or write operation.</p>",
+          "shape": "ProfileDetail"
+        }
+      },
+      "type": "structure"
+    },
+    "ProfileDetails": {
+      "member": {
+        "shape": "ProfileDetail"
+      },
+      "type": "list"
+    },
+    "ResourceName": {
+      "max": 255,
+      "min": 1,
+      "pattern": "^[ a-zA-Z0-9-_]*$",
+      "type": "string"
+    },
+    "ResourceNotFoundException": {
+      "documentation": "<p>The resource could not be found.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "RoleArn": {
+      "max": 1011,
+      "min": 1,
+      "pattern": "^arn:aws(-[^:]+)?:iam(:.*){2}(:role.*)$",
+      "type": "string"
+    },
+    "RoleArnList": {
+      "max": 50,
+      "member": {
+        "shape": "RoleArn"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "ScalarCrlRequest": {
+      "members": {
+        "crlId": {
+          "documentation": "<p>The unique identifier of the certificate revocation list (CRL).</p>",
+          "location": "uri",
+          "locationName": "crlId",
+          "shape": "Uuid"
+        }
+      },
+      "required": [
+        "crlId"
+      ],
+      "type": "structure"
+    },
+    "ScalarProfileRequest": {
+      "members": {
+        "profileId": {
+          "documentation": "<p>The unique identifier of the profile.</p>",
+          "location": "uri",
+          "locationName": "profileId",
+          "shape": "Uuid"
+        }
+      },
+      "required": [
+        "profileId"
+      ],
+      "type": "structure"
+    },
+    "ScalarSubjectRequest": {
+      "members": {
+        "subjectId": {
+          "documentation": "<p>The unique identifier of the subject. </p>",
+          "location": "uri",
+          "locationName": "subjectId",
+          "shape": "Uuid"
+        }
+      },
+      "required": [
+        "subjectId"
+      ],
+      "type": "structure"
+    },
+    "ScalarTrustAnchorRequest": {
+      "members": {
+        "trustAnchorId": {
+          "documentation": "<p>The unique identifier of the trust anchor.</p>",
+          "location": "uri",
+          "locationName": "trustAnchorId",
+          "shape": "Uuid"
+        }
+      },
+      "required": [
+        "trustAnchorId"
+      ],
+      "type": "structure"
+    },
+    "Source": {
+      "documentation": "<p>The trust anchor type and its related certificate data.</p>",
+      "members": {
+        "sourceData": {
+          "documentation": "<p>The data field of the trust anchor depending on its type. </p>",
+          "shape": "SourceData"
+        },
+        "sourceType": {
+          "documentation": "<p>The type of the trust anchor. </p>",
+          "shape": "TrustAnchorType"
+        }
+      },
+      "type": "structure"
+    },
+    "SourceData": {
+      "documentation": "<p>The data field of the trust anchor depending on its type. </p>",
+      "members": {
+        "acmPcaArn": {
+          "documentation": "<p>The root certificate of the Certificate Manager Private Certificate Authority specified by this ARN is used in trust validation for <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operations. Included for trust anchors of type <code>AWS_ACM_PCA</code>. </p>",
+          "shape": "String"
+        },
+        "x509CertificateData": {
+          "documentation": "<p>The PEM-encoded data for the certificate anchor. Included for trust anchors of type <code>CERTIFICATE_BUNDLE</code>. </p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure",
+      "union": true
+    },
+    "String": {
+      "type": "string"
+    },
+    "SubjectDetail": {
+      "documentation": "<p>The state of the subject after a read or write operation.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the subject was created. </p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "credentials": {
+          "documentation": "<p>The temporary session credentials vended at the last authenticating call with this Subject.</p>",
+          "shape": "CredentialSummaries"
+        },
+        "enabled": {
+          "documentation": "<p>The enabled status of the subject.</p>",
+          "shape": "Boolean"
+        },
+        "instanceProperties": {
+          "documentation": "<p>The specified instance properties associated with the request.</p>",
+          "shape": "InstanceProperties"
+        },
+        "lastSeenAt": {
+          "documentation": "<p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "subjectArn": {
+          "documentation": "<p>The ARN of the resource.</p>",
+          "shape": "String"
+        },
+        "subjectId": {
+          "documentation": "<p>The id of the resource</p>",
+          "shape": "Uuid"
+        },
+        "updatedAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the subject was last updated.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "x509Subject": {
+          "documentation": "<p>The x509 principal identifier of the authenticating certificate.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "SubjectDetailResponse": {
+      "members": {
+        "subject": {
+          "documentation": "<p>The state of the subject after a read or write operation.</p>",
+          "shape": "SubjectDetail"
+        }
+      },
+      "type": "structure"
+    },
+    "SubjectSummaries": {
+      "member": {
+        "shape": "SubjectSummary"
+      },
+      "type": "list"
+    },
+    "SubjectSummary": {
+      "documentation": "<p>A summary representation of Subject resources returned in read operations; primarily ListSubjects.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The ISO-8601 time stamp of when the certificate was first used in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "enabled": {
+          "documentation": "<p>The enabled status of the Subject. </p>",
+          "shape": "Boolean"
+        },
+        "lastSeenAt": {
+          "documentation": "<p>The ISO-8601 time stamp of when the certificate was last used in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "subjectArn": {
+          "documentation": "<p>The ARN of the resource.</p>",
+          "shape": "String"
+        },
+        "subjectId": {
+          "documentation": "<p>The id of the resource.</p>",
+          "shape": "Uuid"
+        },
+        "updatedAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the subject was last updated. </p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "x509Subject": {
+          "documentation": "<p>The x509 principal identifier of the authenticating certificate.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "SyntheticTimestamp_date_time": {
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
+    },
+    "Tag": {
+      "documentation": "<p>A label that consists of a key and value you define. </p>",
+      "members": {
+        "key": {
+          "documentation": "<p>The tag key.</p>",
+          "shape": "TagKey"
+        },
+        "value": {
+          "documentation": "<p>The tag value.</p>",
+          "shape": "TagValue"
+        }
+      },
+      "required": [
         "key",
         "value"
       ],
-      "members":{
-        "key":{
-          "shape":"TagKey",
-          "documentation":"<p>The tag key.</p>"
+      "type": "structure"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "^[ a-zA-Z0-9_.:/=+@-]*$",
+      "sensitive": true,
+      "type": "string"
+    },
+    "TagKeyList": {
+      "max": 50,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "TagList": {
+      "max": 50,
+      "member": {
+        "shape": "Tag"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "TagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The ARN of the resource.</p>",
+          "shape": "AmazonResourceName"
         },
-        "value":{
-          "shape":"TagValue",
-          "documentation":"<p>The tag value.</p>"
+        "tags": {
+          "documentation": "<p>The tags to attach to the resource.</p>",
+          "shape": "TagList"
         }
       },
-      "documentation":"<p>A label that consists of a key and value you define. </p>"
-    },
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"^[ a-zA-Z0-9_.:/=+@-]*$",
-      "sensitive":true
-    },
-    "TagKeyList":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "max":50,
-      "min":0
-    },
-    "TagList":{
-      "type":"list",
-      "member":{"shape":"Tag"},
-      "max":50,
-      "min":0
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "resourceArn",
         "tags"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The ARN of the resource.</p>"
-        },
-        "tags":{
-          "shape":"TagList",
-          "documentation":"<p>The tags to attach to the resource.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
     },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "min":0,
-      "pattern":"^[ a-zA-Z0-9_.:/=+@-]*$",
-      "sensitive":true
+    "TagValue": {
+      "max": 256,
+      "min": 0,
+      "pattern": "^[ a-zA-Z0-9_.:/=+@-]*$",
+      "sensitive": true,
+      "type": "string"
     },
-    "TooManyTagsException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "TooManyTagsException": {
+      "documentation": "<p>Too many tags.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
       },
-      "documentation":"<p>Too many tags.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "TrustAnchorArn":{
-      "type":"string",
-      "max":1011,
-      "min":1,
-      "pattern":"^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)$"
-    },
-    "TrustAnchorDetail":{
-      "type":"structure",
-      "members":{
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the trust anchor was created. </p>"
-        },
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Indicates whether the trust anchor is enabled.</p>"
-        },
-        "name":{
-          "shape":"ResourceName",
-          "documentation":"<p>The name of the trust anchor.</p>"
-        },
-        "source":{
-          "shape":"Source",
-          "documentation":"<p>The trust anchor type and its related certificate data.</p>"
-        },
-        "trustAnchorArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN of the trust anchor.</p>"
-        },
-        "trustAnchorId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the trust anchor.</p>"
-        },
-        "updatedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The ISO-8601 timestamp when the trust anchor was last updated. </p>"
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>The state of the trust anchor after a read or write operation. </p>"
+      "type": "structure"
     },
-    "TrustAnchorDetailResponse":{
-      "type":"structure",
-      "required":["trustAnchor"],
-      "members":{
-        "trustAnchor":{
-          "shape":"TrustAnchorDetail",
-          "documentation":"<p>The state of the trust anchor after a read or write operation. </p>"
+    "TrustAnchorArn": {
+      "max": 1011,
+      "min": 1,
+      "pattern": "^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)$",
+      "type": "string"
+    },
+    "TrustAnchorDetail": {
+      "documentation": "<p>The state of the trust anchor after a read or write operation. </p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the trust anchor was created. </p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "enabled": {
+          "documentation": "<p>Indicates whether the trust anchor is enabled.</p>",
+          "shape": "Boolean"
+        },
+        "name": {
+          "documentation": "<p>The name of the trust anchor.</p>",
+          "shape": "ResourceName"
+        },
+        "source": {
+          "documentation": "<p>The trust anchor type and its related certificate data.</p>",
+          "shape": "Source"
+        },
+        "trustAnchorArn": {
+          "documentation": "<p>The ARN of the trust anchor.</p>",
+          "shape": "String"
+        },
+        "trustAnchorId": {
+          "documentation": "<p>The unique identifier of the trust anchor.</p>",
+          "shape": "Uuid"
+        },
+        "updatedAt": {
+          "documentation": "<p>The ISO-8601 timestamp when the trust anchor was last updated. </p>",
+          "shape": "SyntheticTimestamp_date_time"
         }
-      }
+      },
+      "type": "structure"
     },
-    "TrustAnchorDetails":{
-      "type":"list",
-      "member":{"shape":"TrustAnchorDetail"}
+    "TrustAnchorDetailResponse": {
+      "members": {
+        "trustAnchor": {
+          "documentation": "<p>The state of the trust anchor after a read or write operation. </p>",
+          "shape": "TrustAnchorDetail"
+        }
+      },
+      "required": [
+        "trustAnchor"
+      ],
+      "type": "structure"
     },
-    "TrustAnchorType":{
-      "type":"string",
-      "enum":[
+    "TrustAnchorDetails": {
+      "member": {
+        "shape": "TrustAnchorDetail"
+      },
+      "type": "list"
+    },
+    "TrustAnchorType": {
+      "enum": [
         "AWS_ACM_PCA",
         "CERTIFICATE_BUNDLE",
         "SELF_SIGNED_REPOSITORY"
-      ]
+      ],
+      "type": "string"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "UntagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The ARN of the resource.</p>",
+          "shape": "AmazonResourceName"
+        },
+        "tagKeys": {
+          "documentation": "<p>A list of keys. Tag keys are the unique identifiers of tags. </p>",
+          "shape": "TagKeyList"
+        }
+      },
+      "required": [
         "resourceArn",
         "tagKeys"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The ARN of the resource.</p>"
+      "type": "structure"
+    },
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateCrlRequest": {
+      "members": {
+        "crlData": {
+          "documentation": "<p>The x509 v3 specified certificate revocation list</p>",
+          "shape": "UpdateCrlRequestCrlDataBlob"
         },
-        "tagKeys":{
-          "shape":"TagKeyList",
-          "documentation":"<p>A list of keys. Tag keys are the unique identifiers of tags. </p>"
+        "crlId": {
+          "documentation": "<p>The unique identifier of the certificate revocation list (CRL).</p>",
+          "location": "uri",
+          "locationName": "crlId",
+          "shape": "Uuid"
+        },
+        "name": {
+          "documentation": "<p>The name of the Crl.</p>",
+          "shape": "ResourceName"
         }
-      }
-    },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateCrlRequest":{
-      "type":"structure",
-      "required":["crlId"],
-      "members":{
-        "crlData":{
-          "shape":"UpdateCrlRequestCrlDataBlob",
-          "documentation":"<p>The x509 v3 specified certificate revocation list</p>"
-        },
-        "crlId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the certificate revocation list (CRL).</p>",
-          "location":"uri",
-          "locationName":"crlId"
-        },
-        "name":{
-          "shape":"ResourceName",
-          "documentation":"<p>The name of the Crl.</p>"
-        }
-      }
-    },
-    "UpdateCrlRequestCrlDataBlob":{
-      "type":"blob",
-      "max":300000,
-      "min":1
-    },
-    "UpdateProfileRequest":{
-      "type":"structure",
-      "required":["profileId"],
-      "members":{
-        "durationSeconds":{
-          "shape":"UpdateProfileRequestDurationSecondsInteger",
-          "documentation":"<p> The number of seconds the vended session credentials are valid for. </p>"
-        },
-        "managedPolicyArns":{
-          "shape":"ManagedPolicyList",
-          "documentation":"<p>A list of managed policy ARNs that apply to the vended session credentials. </p>"
-        },
-        "name":{
-          "shape":"ResourceName",
-          "documentation":"<p>The name of the profile.</p>"
-        },
-        "profileId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the profile.</p>",
-          "location":"uri",
-          "locationName":"profileId"
-        },
-        "roleArns":{
-          "shape":"RoleArnList",
-          "documentation":"<p>A list of IAM roles that this profile can assume in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>"
-        },
-        "sessionPolicy":{
-          "shape":"UpdateProfileRequestSessionPolicyString",
-          "documentation":"<p>A session policy that applies to the trust boundary of the vended session credentials. </p>"
-        }
-      }
-    },
-    "UpdateProfileRequestDurationSecondsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":43200,
-      "min":900
-    },
-    "UpdateProfileRequestSessionPolicyString":{
-      "type":"string",
-      "max":100000,
-      "min":1
-    },
-    "UpdateTrustAnchorRequest":{
-      "type":"structure",
-      "required":["trustAnchorId"],
-      "members":{
-        "name":{
-          "shape":"ResourceName",
-          "documentation":"<p>The name of the trust anchor.</p>"
-        },
-        "source":{
-          "shape":"Source",
-          "documentation":"<p>The trust anchor type and its related certificate data.</p>"
-        },
-        "trustAnchorId":{
-          "shape":"Uuid",
-          "documentation":"<p>The unique identifier of the trust anchor.</p>",
-          "location":"uri",
-          "locationName":"trustAnchorId"
-        }
-      }
-    },
-    "Uuid":{
-      "type":"string",
-      "max":36,
-      "min":36,
-      "pattern":"[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}"
-    },
-    "ValidationException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>Validation exception error.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
+      "required": [
+        "crlId"
+      ],
+      "type": "structure"
+    },
+    "UpdateCrlRequestCrlDataBlob": {
+      "max": 300000,
+      "min": 1,
+      "type": "blob"
+    },
+    "UpdateProfileRequest": {
+      "members": {
+        "durationSeconds": {
+          "documentation": "<p> The number of seconds the vended session credentials are valid for. </p>",
+          "shape": "UpdateProfileRequestDurationSecondsInteger"
+        },
+        "managedPolicyArns": {
+          "documentation": "<p>A list of managed policy ARNs that apply to the vended session credentials. </p>",
+          "shape": "ManagedPolicyList"
+        },
+        "name": {
+          "documentation": "<p>The name of the profile.</p>",
+          "shape": "ResourceName"
+        },
+        "profileId": {
+          "documentation": "<p>The unique identifier of the profile.</p>",
+          "location": "uri",
+          "locationName": "profileId",
+          "shape": "Uuid"
+        },
+        "roleArns": {
+          "documentation": "<p>A list of IAM roles that this profile can assume in a <a href=\"https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html\">CreateSession</a> operation.</p>",
+          "shape": "RoleArnList"
+        },
+        "sessionPolicy": {
+          "documentation": "<p>A session policy that applies to the trust boundary of the vended session credentials. </p>",
+          "shape": "UpdateProfileRequestSessionPolicyString"
+        }
       },
-      "exception":true
+      "required": [
+        "profileId"
+      ],
+      "type": "structure"
+    },
+    "UpdateProfileRequestDurationSecondsInteger": {
+      "box": true,
+      "max": 43200,
+      "min": 900,
+      "type": "integer"
+    },
+    "UpdateProfileRequestSessionPolicyString": {
+      "max": 100000,
+      "min": 1,
+      "type": "string"
+    },
+    "UpdateTrustAnchorRequest": {
+      "members": {
+        "name": {
+          "documentation": "<p>The name of the trust anchor.</p>",
+          "shape": "ResourceName"
+        },
+        "source": {
+          "documentation": "<p>The trust anchor type and its related certificate data.</p>",
+          "shape": "Source"
+        },
+        "trustAnchorId": {
+          "documentation": "<p>The unique identifier of the trust anchor.</p>",
+          "location": "uri",
+          "locationName": "trustAnchorId",
+          "shape": "Uuid"
+        }
+      },
+      "required": [
+        "trustAnchorId"
+      ],
+      "type": "structure"
+    },
+    "Uuid": {
+      "max": 36,
+      "min": 36,
+      "pattern": "[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}",
+      "type": "string"
+    },
+    "ValidationException": {
+      "documentation": "<p>Validation exception error.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
     }
   },
-  "documentation":"<p>AWS Identity and Access Management Roles Anywhere provides a secure way for your workloads such as servers, containers, and applications running outside of AWS to obtain Temporary AWS credentials. Your workloads can use the same IAM policies and roles that you have configured with native AWS applications to access AWS resources. Using IAM Roles Anywhere will eliminate the need to manage long term credentials for workloads running outside of AWS.</p> <p>To use IAM Roles Anywhere customer workloads will need to use X.509 certificates issued by their Certificate Authority (CA) . The Certificate Authority (CA) needs to be registered with IAM Roles Anywhere as a trust anchor to establish trust between customer PKI and IAM Roles Anywhere. Customers who do not manage their own PKI system can use AWS Certificate Manager Private Certificate Authority (ACM PCA) to create a Certificate Authority and use that to establish trust with IAM Roles Anywhere</p> <p>This guide describes the IAM rolesanywhere operations that you can call programmatically. For general information about IAM Roles Anywhere see <a href=\"https://docs.aws.amazon.com/\">https://docs.aws.amazon.com/</a> </p>"
+  "version": "2.0"
 }

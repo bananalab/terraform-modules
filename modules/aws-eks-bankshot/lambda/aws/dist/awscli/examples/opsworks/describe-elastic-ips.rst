@@ -21,4 +21,3 @@ The following ``describe-elastic-ips`` commmand describes the Elastic IP address
 For more information, see Instances_ in the *AWS OpsWorks User Guide*.
 
 .. _Instances: http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html
-

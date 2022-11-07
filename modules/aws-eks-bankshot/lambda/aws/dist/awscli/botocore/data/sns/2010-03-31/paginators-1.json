@@ -5,10 +5,27 @@
       "output_token": "NextToken",
       "result_key": "Endpoints"
     },
+    "ListOriginationNumbers": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "PhoneNumbers"
+    },
+    "ListPhoneNumbersOptedOut": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "result_key": "phoneNumbers"
+    },
     "ListPlatformApplications": {
       "input_token": "NextToken",
       "output_token": "NextToken",
       "result_key": "PlatformApplications"
+    },
+    "ListSMSSandboxPhoneNumbers": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "PhoneNumbers"
     },
     "ListSubscriptions": {
       "input_token": "NextToken",
@@ -24,23 +41,6 @@
       "input_token": "NextToken",
       "output_token": "NextToken",
       "result_key": "Topics"
-    },
-    "ListPhoneNumbersOptedOut": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "result_key": "phoneNumbers"
-    },
-    "ListOriginationNumbers": {
-      "input_token": "NextToken",
-      "limit_key": "MaxResults",
-      "output_token": "NextToken",
-      "result_key": "PhoneNumbers"
-    },
-    "ListSMSSandboxPhoneNumbers": {
-      "input_token": "NextToken",
-      "limit_key": "MaxResults",
-      "output_token": "NextToken",
-      "result_key": "PhoneNumbers"
     }
   }
 }

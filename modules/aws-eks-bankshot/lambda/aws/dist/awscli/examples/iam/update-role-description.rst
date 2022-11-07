@@ -33,4 +33,3 @@ The following ``update-role`` command changes the description of the IAM role ``
 For more information, see `Modifying a Role`_ in the *AWS IAM User's Guide*.
 
 .. _`Modifying a Role`: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_modify.html
-

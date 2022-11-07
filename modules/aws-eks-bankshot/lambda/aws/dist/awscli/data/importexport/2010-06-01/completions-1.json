@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Job": {
-      "operation": "ListJobs",
-      "resourceIdentifier": {
-        "JobId": "Jobs[].JobId",
-        "JobType": "Jobs[].JobType"
-      }
-    }
-  },
   "operations": {
     "CancelJob": {
       "JobId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "Job"
           }
         ]
       }
@@ -26,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "Job"
           }
         ]
       }
@@ -37,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "JobId"
+            "resourceIdentifier": "JobId",
+            "resourceName": "Job"
           }
         ]
       },
@@ -46,11 +36,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Job",
-            "resourceIdentifier": "JobType"
+            "resourceIdentifier": "JobType",
+            "resourceName": "Job"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Job": {
+      "operation": "ListJobs",
+      "resourceIdentifier": {
+        "JobId": "Jobs[].JobId",
+        "JobType": "Jobs[].JobType"
+      }
+    }
+  },
+  "version": "1.0"
 }

@@ -7,7 +7,7 @@ The following ``update-route`` example updates the specified route to use a JWT 
         --route-id a1b2c3  \
         --authorization-type JWT \
         --authorizer-id a1b2c5 \
-        --authorization-scopes user.id user.email  
+        --authorization-scopes user.id user.email
 
 Output::
 

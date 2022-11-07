@@ -1,5 +1,248 @@
 {
-  "version": "1.0",
+  "operations": {
+    "AssociateNode": {
+      "EngineAttributes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EngineAttributes",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "DeleteBackup": {
+      "BackupId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BackupId",
+            "resourceName": "Backup"
+          }
+        ]
+      }
+    },
+    "DeleteServer": {
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "DescribeBackups": {
+      "BackupId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BackupId",
+            "resourceName": "Backup"
+          }
+        ]
+      },
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "DescribeEvents": {
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "DescribeNodeAssociationStatus": {
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "DescribeServers": {
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "DisassociateNode": {
+      "EngineAttributes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EngineAttributes",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "ExportServerEngineAttribute": {
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "RestoreServer": {
+      "BackupId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BackupId",
+            "resourceName": "Backup"
+          }
+        ]
+      },
+      "InstanceType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceType",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "KeyPair": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "KeyPair",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "StartMaintenance": {
+      "EngineAttributes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EngineAttributes",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "UpdateServer": {
+      "BackupRetentionCount": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BackupRetentionCount",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "DisableAutomatedBackup": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DisableAutomatedBackup",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "PreferredBackupWindow": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PreferredBackupWindow",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "PreferredMaintenanceWindow": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PreferredMaintenanceWindow",
+            "resourceName": "Server"
+          }
+        ]
+      },
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    },
+    "UpdateServerEngineAttributes": {
+      "ServerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServerName",
+            "resourceName": "Server"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Backup": {
       "operation": "DescribeBackups",
@@ -11,258 +254,15 @@
       "operation": "DescribeServers",
       "resourceIdentifier": {
         "BackupRetentionCount": "Servers[].BackupRetentionCount",
-        "ServerName": "Servers[].ServerName",
         "DisableAutomatedBackup": "Servers[].DisableAutomatedBackup",
         "EngineAttributes": "Servers[].EngineAttributes",
         "InstanceType": "Servers[].InstanceType",
         "KeyPair": "Servers[].KeyPair",
+        "PreferredBackupWindow": "Servers[].PreferredBackupWindow",
         "PreferredMaintenanceWindow": "Servers[].PreferredMaintenanceWindow",
-        "PreferredBackupWindow": "Servers[].PreferredBackupWindow"
+        "ServerName": "Servers[].ServerName"
       }
     }
   },
-  "operations": {
-    "AssociateNode": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      },
-      "EngineAttributes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "EngineAttributes"
-          }
-        ]
-      }
-    },
-    "DeleteBackup": {
-      "BackupId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Backup",
-            "resourceIdentifier": "BackupId"
-          }
-        ]
-      }
-    },
-    "DeleteServer": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      }
-    },
-    "DescribeBackups": {
-      "BackupId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Backup",
-            "resourceIdentifier": "BackupId"
-          }
-        ]
-      },
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      }
-    },
-    "DescribeEvents": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      }
-    },
-    "DescribeNodeAssociationStatus": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      }
-    },
-    "DescribeServers": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      }
-    },
-    "DisassociateNode": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      },
-      "EngineAttributes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "EngineAttributes"
-          }
-        ]
-      }
-    },
-    "ExportServerEngineAttribute": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      }
-    },
-    "RestoreServer": {
-      "BackupId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Backup",
-            "resourceIdentifier": "BackupId"
-          }
-        ]
-      },
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      },
-      "InstanceType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "InstanceType"
-          }
-        ]
-      },
-      "KeyPair": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "KeyPair"
-          }
-        ]
-      }
-    },
-    "StartMaintenance": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      },
-      "EngineAttributes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "EngineAttributes"
-          }
-        ]
-      }
-    },
-    "UpdateServer": {
-      "DisableAutomatedBackup": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "DisableAutomatedBackup"
-          }
-        ]
-      },
-      "BackupRetentionCount": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "BackupRetentionCount"
-          }
-        ]
-      },
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      },
-      "PreferredMaintenanceWindow": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "PreferredMaintenanceWindow"
-          }
-        ]
-      },
-      "PreferredBackupWindow": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "PreferredBackupWindow"
-          }
-        ]
-      }
-    },
-    "UpdateServerEngineAttributes": {
-      "ServerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Server",
-            "resourceIdentifier": "ServerName"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

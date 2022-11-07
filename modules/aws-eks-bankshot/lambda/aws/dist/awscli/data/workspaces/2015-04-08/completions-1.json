@@ -1,36 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "WorkspaceBundle": {
-      "operation": "DescribeWorkspaceBundles",
-      "resourceIdentifier": {
-        "Owner": "Bundles[].Owner"
-      }
-    },
-    "Workspace": {
-      "operation": "DescribeWorkspaces",
-      "resourceIdentifier": {
-        "DirectoryId": "Workspaces[].DirectoryId",
-        "UserName": "Workspaces[].UserName",
-        "BundleId": "Workspaces[].BundleId",
-        "WorkspaceProperties": "Workspaces[].WorkspaceProperties"
-      }
-    },
-    "WorkspacesConnectionStatu": {
-      "operation": "DescribeWorkspacesConnectionStatus",
-      "resourceIdentifier": {
-        "WorkspaceId": "WorkspacesConnectionStatus[].WorkspaceId"
-      }
-    }
-  },
   "operations": {
     "AssociateIpGroups": {
       "DirectoryId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Workspace",
-            "resourceIdentifier": "DirectoryId"
+            "resourceIdentifier": "DirectoryId",
+            "resourceName": "Workspace"
           }
         ]
       }
@@ -40,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Workspace",
-            "resourceIdentifier": "BundleId"
+            "resourceIdentifier": "BundleId",
+            "resourceName": "Workspace"
           }
         ]
       },
@@ -49,8 +25,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "WorkspaceBundle",
-            "resourceIdentifier": "Owner"
+            "resourceIdentifier": "Owner",
+            "resourceName": "WorkspaceBundle"
           }
         ]
       }
@@ -60,19 +36,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Workspace",
-            "resourceIdentifier": "DirectoryId"
+            "resourceIdentifier": "DirectoryId",
+            "resourceName": "Workspace"
           }
         ]
       }
     },
     "DescribeWorkspaces": {
-      "WorkspaceIds": {
+      "BundleId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "WorkspacesConnectionStatu",
-            "resourceIdentifier": "WorkspaceId"
+            "resourceIdentifier": "BundleId",
+            "resourceName": "Workspace"
           }
         ]
       },
@@ -80,8 +56,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Workspace",
-            "resourceIdentifier": "DirectoryId"
+            "resourceIdentifier": "DirectoryId",
+            "resourceName": "Workspace"
           }
         ]
       },
@@ -89,17 +65,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Workspace",
-            "resourceIdentifier": "UserName"
+            "resourceIdentifier": "UserName",
+            "resourceName": "Workspace"
           }
         ]
       },
-      "BundleId": {
+      "WorkspaceIds": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Workspace",
-            "resourceIdentifier": "BundleId"
+            "resourceIdentifier": "WorkspaceId",
+            "resourceName": "WorkspacesConnectionStatu"
           }
         ]
       }
@@ -109,8 +85,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "WorkspacesConnectionStatu",
-            "resourceIdentifier": "WorkspaceId"
+            "resourceIdentifier": "WorkspaceId",
+            "resourceName": "WorkspacesConnectionStatu"
           }
         ]
       }
@@ -120,8 +96,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Workspace",
-            "resourceIdentifier": "DirectoryId"
+            "resourceIdentifier": "DirectoryId",
+            "resourceName": "Workspace"
           }
         ]
       }
@@ -131,8 +107,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "WorkspacesConnectionStatu",
-            "resourceIdentifier": "WorkspaceId"
+            "resourceIdentifier": "WorkspaceId",
+            "resourceName": "WorkspacesConnectionStatu"
           }
         ]
       },
@@ -140,8 +116,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Workspace",
-            "resourceIdentifier": "WorkspaceProperties"
+            "resourceIdentifier": "WorkspaceProperties",
+            "resourceName": "Workspace"
           }
         ]
       }
@@ -151,11 +127,35 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "WorkspacesConnectionStatu",
-            "resourceIdentifier": "WorkspaceId"
+            "resourceIdentifier": "WorkspaceId",
+            "resourceName": "WorkspacesConnectionStatu"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Workspace": {
+      "operation": "DescribeWorkspaces",
+      "resourceIdentifier": {
+        "BundleId": "Workspaces[].BundleId",
+        "DirectoryId": "Workspaces[].DirectoryId",
+        "UserName": "Workspaces[].UserName",
+        "WorkspaceProperties": "Workspaces[].WorkspaceProperties"
+      }
+    },
+    "WorkspaceBundle": {
+      "operation": "DescribeWorkspaceBundles",
+      "resourceIdentifier": {
+        "Owner": "Bundles[].Owner"
+      }
+    },
+    "WorkspacesConnectionStatu": {
+      "operation": "DescribeWorkspacesConnectionStatus",
+      "resourceIdentifier": {
+        "WorkspaceId": "WorkspacesConnectionStatus[].WorkspaceId"
+      }
+    }
+  },
+  "version": "1.0"
 }

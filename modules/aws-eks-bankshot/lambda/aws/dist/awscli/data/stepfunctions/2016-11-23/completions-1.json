@@ -1,5 +1,103 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteActivity": {
+      "activityArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "activityArn",
+            "resourceName": "Activity"
+          }
+        ]
+      }
+    },
+    "DeleteStateMachine": {
+      "stateMachineArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "stateMachineArn",
+            "resourceName": "StateMachine"
+          }
+        ]
+      }
+    },
+    "DescribeActivity": {
+      "activityArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "activityArn",
+            "resourceName": "Activity"
+          }
+        ]
+      }
+    },
+    "DescribeStateMachine": {
+      "stateMachineArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "stateMachineArn",
+            "resourceName": "StateMachine"
+          }
+        ]
+      }
+    },
+    "GetActivityTask": {
+      "activityArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "activityArn",
+            "resourceName": "Activity"
+          }
+        ]
+      }
+    },
+    "ListExecutions": {
+      "stateMachineArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "stateMachineArn",
+            "resourceName": "StateMachine"
+          }
+        ]
+      }
+    },
+    "StartExecution": {
+      "name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "name",
+            "resourceName": "StateMachine"
+          }
+        ]
+      },
+      "stateMachineArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "stateMachineArn",
+            "resourceName": "StateMachine"
+          }
+        ]
+      }
+    },
+    "UpdateStateMachine": {
+      "stateMachineArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "stateMachineArn",
+            "resourceName": "StateMachine"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Activity": {
       "operation": "ListActivities",
@@ -10,108 +108,10 @@
     "StateMachine": {
       "operation": "ListStateMachines",
       "resourceIdentifier": {
-        "stateMachineArn": "stateMachines[].stateMachineArn",
-        "name": "stateMachines[].name"
+        "name": "stateMachines[].name",
+        "stateMachineArn": "stateMachines[].stateMachineArn"
       }
     }
   },
-  "operations": {
-    "DeleteActivity": {
-      "activityArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Activity",
-            "resourceIdentifier": "activityArn"
-          }
-        ]
-      }
-    },
-    "DeleteStateMachine": {
-      "stateMachineArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "StateMachine",
-            "resourceIdentifier": "stateMachineArn"
-          }
-        ]
-      }
-    },
-    "DescribeActivity": {
-      "activityArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Activity",
-            "resourceIdentifier": "activityArn"
-          }
-        ]
-      }
-    },
-    "DescribeStateMachine": {
-      "stateMachineArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "StateMachine",
-            "resourceIdentifier": "stateMachineArn"
-          }
-        ]
-      }
-    },
-    "GetActivityTask": {
-      "activityArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Activity",
-            "resourceIdentifier": "activityArn"
-          }
-        ]
-      }
-    },
-    "ListExecutions": {
-      "stateMachineArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "StateMachine",
-            "resourceIdentifier": "stateMachineArn"
-          }
-        ]
-      }
-    },
-    "StartExecution": {
-      "stateMachineArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "StateMachine",
-            "resourceIdentifier": "stateMachineArn"
-          }
-        ]
-      },
-      "name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "StateMachine",
-            "resourceIdentifier": "name"
-          }
-        ]
-      }
-    },
-    "UpdateStateMachine": {
-      "stateMachineArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "StateMachine",
-            "resourceIdentifier": "stateMachineArn"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

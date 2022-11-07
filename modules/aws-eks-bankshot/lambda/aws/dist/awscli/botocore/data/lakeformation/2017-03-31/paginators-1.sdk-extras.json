@@ -1,5 +1,4 @@
 {
-  "version": 1.0,
   "merge": {
     "pagination": {
       "GetWorkUnits": {
@@ -8,5 +7,6 @@
         ]
       }
     }
-  }
+  },
+  "version": 1.0
 }

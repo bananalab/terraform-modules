@@ -1,6 +1,6 @@
 **To find detailed information about a KMS key**
 
-The following ``describe-key`` example gets detailed information about the AWS managed key for Amazon S3 in the example account and Region. You can use this command to find details about AWS managed keys and customer managed keys. 
+The following ``describe-key`` example gets detailed information about the AWS managed key for Amazon S3 in the example account and Region. You can use this command to find details about AWS managed keys and customer managed keys.
 
 To specify the KMS key, use the ``key-id`` parameter. This example uses an alias name value, but you can use a key ID, key ARN, alias name, or alias ARN in this command. ::
 
@@ -49,12 +49,12 @@ Output::
             "CreationDate": "2021-01-29T16:37:28.915000+00:00",
             "Enabled": false,
             "Description": "",
-            "KeyUsage": "SIGN_VERIFY",        
+            "KeyUsage": "SIGN_VERIFY",
             "KeyState": "Disabled",
             "Origin": "AWS_KMS",
             "KeyManager": "CUSTOMER",
             "CustomerMasterKeySpec": "RSA_2048",
-            "KeySpec": "RSA_2048",    
+            "KeySpec": "RSA_2048",
             "SigningAlgorithms": [
                 "RSASSA_PKCS1_V1_5_SHA_256",
                 "RSASSA_PKCS1_V1_5_SHA_384",
@@ -65,8 +65,8 @@ Output::
             ],
             "MultiRegion": false
         }
-    }    
-    
+    }
+
 For more information, see `Identifying asymmetric KMS keys <https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html>`__ in the *AWS Key Management Service Developer Guide*.
 
 **To get details about a multi-Region replica key**
@@ -125,7 +125,7 @@ For more information, see `Viewing multi-Region keys <https://docs.aws.amazon.co
 **To get details about an HMAC KMS key**
 
 The following ``describe-key`` example gets detailed information about an HMAC KMS key. ::
-        
+
     aws kms describe-key \
         --key-id 1234abcd-12ab-34cd-56ef-1234567890ab
 
@@ -152,4 +152,4 @@ Output::
         }
     }
 
-For more information, see `Viewing HMAC KMS keys <https://docs.aws.amazon.com/kms/latest/developerguide/hmac-view.html>`__ in the *AWS Key Management Service Developer Guide*.    
+For more information, see `Viewing HMAC KMS keys <https://docs.aws.amazon.com/kms/latest/developerguide/hmac-view.html>`__ in the *AWS Key Management Service Developer Guide*.

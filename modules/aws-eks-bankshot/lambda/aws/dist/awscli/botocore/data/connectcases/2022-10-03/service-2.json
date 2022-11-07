@@ -1,2896 +1,3468 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2022-10-03",
-    "endpointPrefix":"cases",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceAbbreviation":"ConnectCases",
-    "serviceFullName":"Amazon Connect Cases",
-    "serviceId":"ConnectCases",
-    "signatureVersion":"v4",
-    "signingName":"cases",
-    "uid":"connectcases-2022-10-03"
+  "documentation": "<p>Welcome to the Amazon Connect Cases API Reference. This guide provides information about the Amazon Connect Cases API, which you can use to create, update, get, and list Cases domains, fields, field options, layouts, templates, cases, related items, and tags.</p> <pre><code> &lt;p&gt;For more information about Amazon Connect Cases, see &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/adminguide/cases.html&quot;&gt;Amazon Connect Cases&lt;/a&gt; in the &lt;i&gt;Amazon Connect Administrator Guide&lt;/i&gt;. &lt;/p&gt; </code></pre>",
+  "metadata": {
+    "apiVersion": "2022-10-03",
+    "endpointPrefix": "cases",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceAbbreviation": "ConnectCases",
+    "serviceFullName": "Amazon Connect Cases",
+    "serviceId": "ConnectCases",
+    "signatureVersion": "v4",
+    "signingName": "cases",
+    "uid": "connectcases-2022-10-03"
   },
-  "operations":{
-    "BatchGetField":{
-      "name":"BatchGetField",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/fields-batch",
-        "responseCode":200
-      },
-      "input":{"shape":"BatchGetFieldRequest"},
-      "output":{"shape":"BatchGetFieldResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+  "operations": {
+    "BatchGetField": {
+      "documentation": "<p>Returns the description for the list of fields in the request parameters. </p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Returns the description for the list of fields in the request parameters. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/fields-batch",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "BatchGetFieldRequest"
+      },
+      "name": "BatchGetField",
+      "output": {
+        "shape": "BatchGetFieldResponse"
+      }
     },
-    "BatchPutFieldOptions":{
-      "name":"BatchPutFieldOptions",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/domains/{domainId}/fields/{fieldId}/options",
-        "responseCode":200
-      },
-      "input":{"shape":"BatchPutFieldOptionsRequest"},
-      "output":{"shape":"BatchPutFieldOptionsResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "BatchPutFieldOptions": {
+      "documentation": "<p>Creates and updates a set of field options for a single select field in a Cases domain.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Creates and updates a set of field options for a single select field in a Cases domain.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/domains/{domainId}/fields/{fieldId}/options",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "BatchPutFieldOptionsRequest"
+      },
+      "name": "BatchPutFieldOptions",
+      "output": {
+        "shape": "BatchPutFieldOptionsResponse"
+      }
     },
-    "CreateCase":{
-      "name":"CreateCase",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/cases",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateCaseRequest"},
-      "output":{"shape":"CreateCaseResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"}
+    "CreateCase": {
+      "documentation": "<p>Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.</p> <note> <p> <code>customer_id</code> is a required field when creating a case.</p> </note>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.</p> <note> <p> <code>customer_id</code> is a required field when creating a case.</p> </note>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/cases",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateCaseRequest"
+      },
+      "name": "CreateCase",
+      "output": {
+        "shape": "CreateCaseResponse"
+      }
     },
-    "CreateDomain":{
-      "name":"CreateDomain",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateDomainRequest"},
-      "output":{"shape":"CreateDomainResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "CreateDomain": {
+      "documentation": "<p>Creates a domain, which is a container for all case data, such as cases, fields, templates and layouts. Each Amazon Connect instance can be associated with only one Cases domain.</p> <important> <p>This will not associate your connect instance to Cases domain. Instead, use the Amazon Connect <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html\">CreateIntegrationAssociation</a> API.</p> </important>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Creates a domain, which is a container for all case data, such as cases, fields, templates and layouts. Each Amazon Connect instance can be associated with only one Cases domain.</p> <important> <p>This will not associate your connect instance to Cases domain. Instead, use the Amazon Connect <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html\">CreateIntegrationAssociation</a> API.</p> </important>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateDomainRequest"
+      },
+      "name": "CreateDomain",
+      "output": {
+        "shape": "CreateDomainResponse"
+      }
     },
-    "CreateField":{
-      "name":"CreateField",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/fields",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateFieldRequest"},
-      "output":{"shape":"CreateFieldResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "CreateField": {
+      "documentation": "<p>Creates a field in the Cases domain. This field is used to define the case object model (that is, defines what data can be captured on cases) in a Cases domain. </p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Creates a field in the Cases domain. This field is used to define the case object model (that is, defines what data can be captured on cases) in a Cases domain. </p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/fields",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateFieldRequest"
+      },
+      "name": "CreateField",
+      "output": {
+        "shape": "CreateFieldResponse"
+      }
     },
-    "CreateLayout":{
-      "name":"CreateLayout",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/layouts",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateLayoutRequest"},
-      "output":{"shape":"CreateLayoutResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "CreateLayout": {
+      "documentation": "<p>Creates a layout in the Cases domain. Layouts define the following configuration in the top section and More Info tab of the Cases user interface:</p> <ul> <li> <p>Fields to display to the users</p> </li> <li> <p>Field ordering</p> </li> </ul> <note> <p>Title and Status fields cannot be part of layouts since they are not configurable.</p> </note>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Creates a layout in the Cases domain. Layouts define the following configuration in the top section and More Info tab of the Cases user interface:</p> <ul> <li> <p>Fields to display to the users</p> </li> <li> <p>Field ordering</p> </li> </ul> <note> <p>Title and Status fields cannot be part of layouts since they are not configurable.</p> </note>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/layouts",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateLayoutRequest"
+      },
+      "name": "CreateLayout",
+      "output": {
+        "shape": "CreateLayoutResponse"
+      }
     },
-    "CreateRelatedItem":{
-      "name":"CreateRelatedItem",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/cases/{caseId}/related-items/",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateRelatedItemRequest"},
-      "output":{"shape":"CreateRelatedItemResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "CreateRelatedItem": {
+      "documentation": "<p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p> <note> <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p> </note>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p> <note> <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p> </note>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/cases/{caseId}/related-items/",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateRelatedItemRequest"
+      },
+      "name": "CreateRelatedItem",
+      "output": {
+        "shape": "CreateRelatedItemResponse"
+      }
     },
-    "CreateTemplate":{
-      "name":"CreateTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/templates",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateTemplateRequest"},
-      "output":{"shape":"CreateTemplateResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "CreateTemplate": {
+      "documentation": "<p>Creates a template in the Cases domain. This template is used to define the case object model (that is, define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Creates a template in the Cases domain. This template is used to define the case object model (that is, define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/templates",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateTemplateRequest"
+      },
+      "name": "CreateTemplate",
+      "output": {
+        "shape": "CreateTemplateResponse"
+      }
     },
-    "GetCase":{
-      "name":"GetCase",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/cases/{caseId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetCaseRequest"},
-      "output":{"shape":"GetCaseResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "GetCase": {
+      "documentation": "<p>Returns information about a specific case if it exists. </p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Returns information about a specific case if it exists. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/cases/{caseId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetCaseRequest"
+      },
+      "name": "GetCase",
+      "output": {
+        "shape": "GetCaseResponse"
+      }
     },
-    "GetCaseEventConfiguration":{
-      "name":"GetCaseEventConfiguration",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/case-event-configuration",
-        "responseCode":200
-      },
-      "input":{"shape":"GetCaseEventConfigurationRequest"},
-      "output":{"shape":"GetCaseEventConfigurationResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "GetCaseEventConfiguration": {
+      "documentation": "<p>Returns the case event publishing configuration.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Returns the case event publishing configuration.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/case-event-configuration",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetCaseEventConfigurationRequest"
+      },
+      "name": "GetCaseEventConfiguration",
+      "output": {
+        "shape": "GetCaseEventConfigurationResponse"
+      }
     },
-    "GetDomain":{
-      "name":"GetDomain",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetDomainRequest"},
-      "output":{"shape":"GetDomainResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "GetDomain": {
+      "documentation": "<p>Returns information about a specific domain if it exists. </p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Returns information about a specific domain if it exists. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetDomainRequest"
+      },
+      "name": "GetDomain",
+      "output": {
+        "shape": "GetDomainResponse"
+      }
     },
-    "GetLayout":{
-      "name":"GetLayout",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/layouts/{layoutId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetLayoutRequest"},
-      "output":{"shape":"GetLayoutResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "GetLayout": {
+      "documentation": "<p>Returns the details for the requested layout.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Returns the details for the requested layout.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/layouts/{layoutId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetLayoutRequest"
+      },
+      "name": "GetLayout",
+      "output": {
+        "shape": "GetLayoutResponse"
+      }
     },
-    "GetTemplate":{
-      "name":"GetTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/templates/{templateId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetTemplateRequest"},
-      "output":{"shape":"GetTemplateResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "GetTemplate": {
+      "documentation": "<p>Returns the details for the requested template. </p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Returns the details for the requested template. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/templates/{templateId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetTemplateRequest"
+      },
+      "name": "GetTemplate",
+      "output": {
+        "shape": "GetTemplateResponse"
+      }
     },
-    "ListCasesForContact":{
-      "name":"ListCasesForContact",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/list-cases-for-contact",
-        "responseCode":200
-      },
-      "input":{"shape":"ListCasesForContactRequest"},
-      "output":{"shape":"ListCasesForContactResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "ListCasesForContact": {
+      "documentation": "<p>Lists cases for a given contact.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists cases for a given contact.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/list-cases-for-contact",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListCasesForContactRequest"
+      },
+      "name": "ListCasesForContact",
+      "output": {
+        "shape": "ListCasesForContactResponse"
+      }
     },
-    "ListDomains":{
-      "name":"ListDomains",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains-list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListDomainsRequest"},
-      "output":{"shape":"ListDomainsResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "ListDomains": {
+      "documentation": "<p>Lists all cases domains in the Amazon Web Services account. Each list item is a condensed summary object of the domain.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists all cases domains in the Amazon Web Services account. Each list item is a condensed summary object of the domain.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains-list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListDomainsRequest"
+      },
+      "name": "ListDomains",
+      "output": {
+        "shape": "ListDomainsResponse"
+      }
     },
-    "ListFieldOptions":{
-      "name":"ListFieldOptions",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/fields/{fieldId}/options-list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListFieldOptionsRequest"},
-      "output":{"shape":"ListFieldOptionsResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "ListFieldOptions": {
+      "documentation": "<p>Lists all of the field options for a field identifier in the domain. </p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists all of the field options for a field identifier in the domain. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/fields/{fieldId}/options-list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListFieldOptionsRequest"
+      },
+      "name": "ListFieldOptions",
+      "output": {
+        "shape": "ListFieldOptionsResponse"
+      }
     },
-    "ListFields":{
-      "name":"ListFields",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/fields-list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListFieldsRequest"},
-      "output":{"shape":"ListFieldsResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "ListFields": {
+      "documentation": "<p>Lists all fields in a Cases domain.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists all fields in a Cases domain.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/fields-list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListFieldsRequest"
+      },
+      "name": "ListFields",
+      "output": {
+        "shape": "ListFieldsResponse"
+      }
     },
-    "ListLayouts":{
-      "name":"ListLayouts",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/layouts-list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListLayoutsRequest"},
-      "output":{"shape":"ListLayoutsResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "ListLayouts": {
+      "documentation": "<p>Lists all layouts in the given cases domain. Each list item is a condensed summary object of the layout.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists all layouts in the given cases domain. Each list item is a condensed summary object of the layout.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/layouts-list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListLayoutsRequest"
+      },
+      "name": "ListLayouts",
+      "output": {
+        "shape": "ListLayoutsResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{arn}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Lists tags for a resource.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists tags for a resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{arn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "ListTemplates":{
-      "name":"ListTemplates",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/templates-list",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTemplatesRequest"},
-      "output":{"shape":"ListTemplatesResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "ListTemplates": {
+      "documentation": "<p>Lists all of the templates in a Cases domain. Each list item is a condensed summary object of the template. </p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists all of the templates in a Cases domain. Each list item is a condensed summary object of the template. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/templates-list",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTemplatesRequest"
+      },
+      "name": "ListTemplates",
+      "output": {
+        "shape": "ListTemplatesResponse"
+      }
     },
-    "PutCaseEventConfiguration":{
-      "name":"PutCaseEventConfiguration",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/domains/{domainId}/case-event-configuration",
-        "responseCode":200
-      },
-      "input":{"shape":"PutCaseEventConfigurationRequest"},
-      "output":{"shape":"PutCaseEventConfigurationResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "PutCaseEventConfiguration": {
+      "documentation": "<p>API for adding case event publishing configuration</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>API for adding case event publishing configuration</p>"
+      "http": {
+        "method": "PUT",
+        "requestUri": "/domains/{domainId}/case-event-configuration",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "PutCaseEventConfigurationRequest"
+      },
+      "name": "PutCaseEventConfiguration",
+      "output": {
+        "shape": "PutCaseEventConfigurationResponse"
+      }
     },
-    "SearchCases":{
-      "name":"SearchCases",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/cases-search",
-        "responseCode":200
-      },
-      "input":{"shape":"SearchCasesRequest"},
-      "output":{"shape":"SearchCasesResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "SearchCases": {
+      "documentation": "<p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/cases-search",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SearchCasesRequest"
+      },
+      "name": "SearchCases",
+      "output": {
+        "shape": "SearchCasesResponse"
+      }
     },
-    "SearchRelatedItems":{
-      "name":"SearchRelatedItems",
-      "http":{
-        "method":"POST",
-        "requestUri":"/domains/{domainId}/cases/{caseId}/related-items-search",
-        "responseCode":200
-      },
-      "input":{"shape":"SearchRelatedItemsRequest"},
-      "output":{"shape":"SearchRelatedItemsResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "SearchRelatedItems": {
+      "documentation": "<p>Searches for related items that are associated with a case.</p> <note> <p>If no filters are provided, this returns all related items associated with a case.</p> </note>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Searches for related items that are associated with a case.</p> <note> <p>If no filters are provided, this returns all related items associated with a case.</p> </note>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/domains/{domainId}/cases/{caseId}/related-items-search",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SearchRelatedItemsRequest"
+      },
+      "name": "SearchRelatedItems",
+      "output": {
+        "shape": "SearchRelatedItemsResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{arn}",
-        "responseCode":200
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "TagResource": {
+      "documentation": "<p>Adds tags to a resource.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Adds tags to a resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{arn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource"
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{arn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "UntagResource": {
+      "documentation": "<p>Untags a resource.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Untags a resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{arn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource"
     },
-    "UpdateCase":{
-      "name":"UpdateCase",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/domains/{domainId}/cases/{caseId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateCaseRequest"},
-      "output":{"shape":"UpdateCaseResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"}
+    "UpdateCase": {
+      "documentation": "<p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input .</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input .</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>"
+      "http": {
+        "method": "PUT",
+        "requestUri": "/domains/{domainId}/cases/{caseId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateCaseRequest"
+      },
+      "name": "UpdateCase",
+      "output": {
+        "shape": "UpdateCaseResponse"
+      }
     },
-    "UpdateField":{
-      "name":"UpdateField",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/domains/{domainId}/fields/{fieldId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateFieldRequest"},
-      "output":{"shape":"UpdateFieldResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"}
+    "UpdateField": {
+      "documentation": "<p>Updates the properties of an existing field. </p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Updates the properties of an existing field. </p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/domains/{domainId}/fields/{fieldId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateFieldRequest"
+      },
+      "name": "UpdateField",
+      "output": {
+        "shape": "UpdateFieldResponse"
+      }
     },
-    "UpdateLayout":{
-      "name":"UpdateLayout",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/domains/{domainId}/layouts/{layoutId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateLayoutRequest"},
-      "output":{"shape":"UpdateLayoutResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"}
+    "UpdateLayout": {
+      "documentation": "<p>Updates the attributes of an existing layout.</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p> <p>A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code> to a layout.</p> <note> <p>Title and Status fields cannot be part of layouts because they are not configurable.</p> </note>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Updates the attributes of an existing layout.</p> <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p> <p>A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code> to a layout.</p> <note> <p>Title and Status fields cannot be part of layouts because they are not configurable.</p> </note>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/domains/{domainId}/layouts/{layoutId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateLayoutRequest"
+      },
+      "name": "UpdateLayout",
+      "output": {
+        "shape": "UpdateLayoutResponse"
+      }
     },
-    "UpdateTemplate":{
-      "name":"UpdateTemplate",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/domains/{domainId}/templates/{templateId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateTemplateRequest"},
-      "output":{"shape":"UpdateTemplateResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"}
+    "UpdateTemplate": {
+      "documentation": "<p>Updates the attributes of an existing template. The template attributes that can be modified include <code>name</code>, <code>description</code>, <code>layouts</code>, and <code>requiredFields</code>. At least one of these attributes must not be null. If a null value is provided for a given attribute, that attribute is ignored and its current value is preserved.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Updates the attributes of an existing template. The template attributes that can be modified include <code>name</code>, <code>description</code>, <code>layouts</code>, and <code>requiredFields</code>. At least one of these attributes must not be null. If a null value is provided for a given attribute, that attribute is ignored and its current value is preserved.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/domains/{domainId}/templates/{templateId}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateTemplateRequest"
+      },
+      "name": "UpdateTemplate",
+      "output": {
+        "shape": "UpdateTemplateResponse"
+      }
     }
   },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>You do not have sufficient access to perform this action.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
       },
-      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "Arn":{
-      "type":"string",
-      "max":500,
-      "min":1
-    },
-    "AssociationTime":{
-      "type":"timestamp",
-      "timestampFormat":"iso8601"
-    },
-    "BasicLayout":{
-      "type":"structure",
-      "members":{
-        "moreInfo":{
-          "shape":"LayoutSections",
-          "documentation":"<p>This represents sections in a tab of the page layout.</p>"
-        },
-        "topPanel":{
-          "shape":"LayoutSections",
-          "documentation":"<p>This represents sections in a panel of the page layout.</p>"
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>Content specific to <code>BasicLayout</code> type. It configures fields in the top panel and More Info tab of agent application. </p>"
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "BatchGetFieldIdentifierList":{
-      "type":"list",
-      "member":{"shape":"FieldIdentifier"},
-      "max":50,
-      "min":1
+    "Arn": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "BatchGetFieldRequest":{
-      "type":"structure",
-      "required":[
+    "AssociationTime": {
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
+    },
+    "BasicLayout": {
+      "documentation": "<p>Content specific to <code>BasicLayout</code> type. It configures fields in the top panel and More Info tab of agent application. </p>",
+      "members": {
+        "moreInfo": {
+          "documentation": "<p>This represents sections in a tab of the page layout.</p>",
+          "shape": "LayoutSections"
+        },
+        "topPanel": {
+          "documentation": "<p>This represents sections in a panel of the page layout.</p>",
+          "shape": "LayoutSections"
+        }
+      },
+      "type": "structure"
+    },
+    "BatchGetFieldIdentifierList": {
+      "max": 50,
+      "member": {
+        "shape": "FieldIdentifier"
+      },
+      "min": 1,
+      "type": "list"
+    },
+    "BatchGetFieldRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "fields": {
+          "documentation": "<p>A list of unique field identifiers. </p>",
+          "shape": "BatchGetFieldIdentifierList"
+        }
+      },
+      "required": [
         "domainId",
         "fields"
       ],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "fields":{
-          "shape":"BatchGetFieldIdentifierList",
-          "documentation":"<p>A list of unique field identifiers. </p>"
-        }
-      }
+      "type": "structure"
     },
-    "BatchGetFieldResponse":{
-      "type":"structure",
-      "required":[
+    "BatchGetFieldResponse": {
+      "members": {
+        "errors": {
+          "documentation": "<p>A list of field errors. </p>",
+          "shape": "BatchGetFieldResponseErrorsList"
+        },
+        "fields": {
+          "documentation": "<p>A list of detailed field information. </p>",
+          "shape": "BatchGetFieldResponseFieldsList"
+        }
+      },
+      "required": [
         "errors",
         "fields"
       ],
-      "members":{
-        "errors":{
-          "shape":"BatchGetFieldResponseErrorsList",
-          "documentation":"<p>A list of field errors. </p>"
+      "type": "structure"
+    },
+    "BatchGetFieldResponseErrorsList": {
+      "max": 50,
+      "member": {
+        "shape": "FieldError"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "BatchGetFieldResponseFieldsList": {
+      "max": 50,
+      "member": {
+        "shape": "GetFieldResponse"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "BatchPutFieldOptionsRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "fields":{
-          "shape":"BatchGetFieldResponseFieldsList",
-          "documentation":"<p>A list of detailed field information. </p>"
+        "fieldId": {
+          "documentation": "<p>The unique identifier of a field.</p>",
+          "location": "uri",
+          "locationName": "fieldId",
+          "shape": "FieldId"
+        },
+        "options": {
+          "documentation": "<p>A list of <code>FieldOption</code> objects.</p>",
+          "shape": "BatchPutFieldOptionsRequestOptionsList"
         }
-      }
-    },
-    "BatchGetFieldResponseErrorsList":{
-      "type":"list",
-      "member":{"shape":"FieldError"},
-      "max":50,
-      "min":0
-    },
-    "BatchGetFieldResponseFieldsList":{
-      "type":"list",
-      "member":{"shape":"GetFieldResponse"},
-      "max":50,
-      "min":0
-    },
-    "BatchPutFieldOptionsRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "domainId",
         "fieldId",
         "options"
       ],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "fieldId":{
-          "shape":"FieldId",
-          "documentation":"<p>The unique identifier of a field.</p>",
-          "location":"uri",
-          "locationName":"fieldId"
-        },
-        "options":{
-          "shape":"BatchPutFieldOptionsRequestOptionsList",
-          "documentation":"<p>A list of <code>FieldOption</code> objects.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "BatchPutFieldOptionsRequestOptionsList":{
-      "type":"list",
-      "member":{"shape":"FieldOption"},
-      "max":50,
-      "min":0
+    "BatchPutFieldOptionsRequestOptionsList": {
+      "max": 50,
+      "member": {
+        "shape": "FieldOption"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "BatchPutFieldOptionsResponse":{
-      "type":"structure",
-      "members":{
-        "errors":{
-          "shape":"BatchPutFieldOptionsResponseErrorsList",
-          "documentation":"<p>A list of field errors. </p>"
-        }
-      }
-    },
-    "BatchPutFieldOptionsResponseErrorsList":{
-      "type":"list",
-      "member":{"shape":"FieldOptionError"},
-      "max":50,
-      "min":0
-    },
-    "Boolean":{
-      "type":"boolean",
-      "box":true
-    },
-    "CaseArn":{
-      "type":"string",
-      "max":500,
-      "min":1
-    },
-    "CaseEventIncludedData":{
-      "type":"structure",
-      "required":["fields"],
-      "members":{
-        "fields":{
-          "shape":"CaseEventIncludedDataFieldsList",
-          "documentation":"<p>List of field identifiers.</p>"
+    "BatchPutFieldOptionsResponse": {
+      "members": {
+        "errors": {
+          "documentation": "<p>A list of field errors. </p>",
+          "shape": "BatchPutFieldOptionsResponseErrorsList"
         }
       },
-      "documentation":"<p>Details of what case data is published through the case event stream.</p>"
+      "type": "structure"
     },
-    "CaseEventIncludedDataFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldIdentifier"},
-      "max":50,
-      "min":0
-    },
-    "CaseFilter":{
-      "type":"structure",
-      "members":{
-        "andAll":{
-          "shape":"CaseFilterAndAllList",
-          "documentation":"<p>Provides \"and all\" filtering.</p>"
-        },
-        "field":{
-          "shape":"FieldFilter",
-          "documentation":"<p>A list of fields to filter on.</p>"
-        },
-        "not":{"shape":"CaseFilter"}
+    "BatchPutFieldOptionsResponseErrorsList": {
+      "max": 50,
+      "member": {
+        "shape": "FieldOptionError"
       },
-      "documentation":"<p>A filter for cases. Only one value can be provided.</p>",
-      "union":true
+      "min": 0,
+      "type": "list"
     },
-    "CaseFilterAndAllList":{
-      "type":"list",
-      "member":{"shape":"CaseFilter"},
-      "max":10,
-      "min":0
+    "Boolean": {
+      "box": true,
+      "type": "boolean"
     },
-    "CaseId":{
-      "type":"string",
-      "max":500,
-      "min":1
+    "CaseArn": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "CaseSummary":{
-      "type":"structure",
-      "required":[
+    "CaseEventIncludedData": {
+      "documentation": "<p>Details of what case data is published through the case event stream.</p>",
+      "members": {
+        "fields": {
+          "documentation": "<p>List of field identifiers.</p>",
+          "shape": "CaseEventIncludedDataFieldsList"
+        }
+      },
+      "required": [
+        "fields"
+      ],
+      "type": "structure"
+    },
+    "CaseEventIncludedDataFieldsList": {
+      "max": 50,
+      "member": {
+        "shape": "FieldIdentifier"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "CaseFilter": {
+      "documentation": "<p>A filter for cases. Only one value can be provided.</p>",
+      "members": {
+        "andAll": {
+          "documentation": "<p>Provides \"and all\" filtering.</p>",
+          "shape": "CaseFilterAndAllList"
+        },
+        "field": {
+          "documentation": "<p>A list of fields to filter on.</p>",
+          "shape": "FieldFilter"
+        },
+        "not": {
+          "shape": "CaseFilter"
+        }
+      },
+      "type": "structure",
+      "union": true
+    },
+    "CaseFilterAndAllList": {
+      "max": 10,
+      "member": {
+        "shape": "CaseFilter"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "CaseId": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
+    },
+    "CaseSummary": {
+      "documentation": "<p>Case summary information.</p>",
+      "members": {
+        "caseId": {
+          "documentation": "<p>A unique identifier of the case.</p>",
+          "shape": "CaseId"
+        },
+        "templateId": {
+          "documentation": "<p>A unique identifier of a template.</p>",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
         "caseId",
         "templateId"
       ],
-      "members":{
-        "caseId":{
-          "shape":"CaseId",
-          "documentation":"<p>A unique identifier of the case.</p>"
+      "type": "structure"
+    },
+    "Channel": {
+      "max": 100,
+      "min": 1,
+      "type": "string"
+    },
+    "CommentBody": {
+      "max": 1000,
+      "min": 1,
+      "type": "string"
+    },
+    "CommentBodyTextType": {
+      "enum": [
+        "Text/Plain"
+      ],
+      "type": "string"
+    },
+    "CommentContent": {
+      "documentation": "<p>Represents the content of a <code>Comment</code> to be returned to agents.</p>",
+      "members": {
+        "body": {
+          "documentation": "<p>Text in the body of a <code>Comment</code> on a case.</p>",
+          "shape": "CommentBody"
         },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>A unique identifier of a template.</p>"
+        "contentType": {
+          "documentation": "<p>Type of the text in the box of a <code>Comment</code> on a case.</p>",
+          "shape": "CommentBodyTextType"
         }
       },
-      "documentation":"<p>Case summary information.</p>"
-    },
-    "Channel":{
-      "type":"string",
-      "max":100,
-      "min":1
-    },
-    "CommentBody":{
-      "type":"string",
-      "max":1000,
-      "min":1
-    },
-    "CommentBodyTextType":{
-      "type":"string",
-      "enum":["Text/Plain"]
-    },
-    "CommentContent":{
-      "type":"structure",
-      "required":[
+      "required": [
         "body",
         "contentType"
       ],
-      "members":{
-        "body":{
-          "shape":"CommentBody",
-          "documentation":"<p>Text in the body of a <code>Comment</code> on a case.</p>"
+      "type": "structure"
+    },
+    "CommentFilter": {
+      "documentation": "<p>A filter for related items of type <code>Comment</code>.</p>",
+      "members": {},
+      "type": "structure"
+    },
+    "ConflictException": {
+      "documentation": "<p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. See the accompanying error message for details.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "ConnectedToSystemTime": {
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
+    },
+    "Contact": {
+      "documentation": "<p>An object that represents an Amazon Connect contact object. </p>",
+      "members": {
+        "contactArn": {
+          "documentation": "<p>A unique identifier of a contact in Amazon Connect.</p>",
+          "shape": "ContactArn"
+        }
+      },
+      "required": [
+        "contactArn"
+      ],
+      "type": "structure"
+    },
+    "ContactArn": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
+    },
+    "ContactContent": {
+      "documentation": "<p>An object that represents a content of an Amazon Connect contact object.</p>",
+      "members": {
+        "channel": {
+          "documentation": "<p>A list of channels to filter on for related items of type <code>Contact</code>.</p>",
+          "shape": "Channel"
         },
-        "contentType":{
-          "shape":"CommentBodyTextType",
-          "documentation":"<p>Type of the text in the box of a <code>Comment</code> on a case.</p>"
+        "connectedToSystemTime": {
+          "documentation": "<p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>",
+          "shape": "ConnectedToSystemTime"
+        },
+        "contactArn": {
+          "documentation": "<p>A unique identifier of a contact in Amazon Connect.</p>",
+          "shape": "ContactArn"
         }
       },
-      "documentation":"<p>Represents the content of a <code>Comment</code> to be returned to agents.</p>"
-    },
-    "CommentFilter":{
-      "type":"structure",
-      "members":{
-      },
-      "documentation":"<p>A filter for related items of type <code>Comment</code>.</p>"
-    },
-    "ConflictException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. See the accompanying error message for details.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "ConnectedToSystemTime":{
-      "type":"timestamp",
-      "timestampFormat":"iso8601"
-    },
-    "Contact":{
-      "type":"structure",
-      "required":["contactArn"],
-      "members":{
-        "contactArn":{
-          "shape":"ContactArn",
-          "documentation":"<p>A unique identifier of a contact in Amazon Connect.</p>"
-        }
-      },
-      "documentation":"<p>An object that represents an Amazon Connect contact object. </p>"
-    },
-    "ContactArn":{
-      "type":"string",
-      "max":500,
-      "min":1
-    },
-    "ContactContent":{
-      "type":"structure",
-      "required":[
+      "required": [
         "channel",
         "connectedToSystemTime",
         "contactArn"
       ],
-      "members":{
-        "channel":{
-          "shape":"Channel",
-          "documentation":"<p>A list of channels to filter on for related items of type <code>Contact</code>.</p>"
+      "type": "structure"
+    },
+    "ContactFilter": {
+      "documentation": "<p>A filter for related items of type <code>Contact</code>.</p>",
+      "members": {
+        "channel": {
+          "documentation": "<p>A list of channels to filter on for related items of type <code>Contact</code>.</p>",
+          "shape": "ContactFilterChannelList"
         },
-        "connectedToSystemTime":{
-          "shape":"ConnectedToSystemTime",
-          "documentation":"<p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>"
-        },
-        "contactArn":{
-          "shape":"ContactArn",
-          "documentation":"<p>A unique identifier of a contact in Amazon Connect.</p>"
+        "contactArn": {
+          "documentation": "<p>A unique identifier of a contact in Amazon Connect.</p>",
+          "shape": "ContactArn"
         }
       },
-      "documentation":"<p>An object that represents a content of an Amazon Connect contact object.</p>"
+      "type": "structure"
     },
-    "ContactFilter":{
-      "type":"structure",
-      "members":{
-        "channel":{
-          "shape":"ContactFilterChannelList",
-          "documentation":"<p>A list of channels to filter on for related items of type <code>Contact</code>.</p>"
+    "ContactFilterChannelList": {
+      "max": 3,
+      "member": {
+        "shape": "Channel"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "CreateCaseRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "CreateCaseRequestClientTokenString"
         },
-        "contactArn":{
-          "shape":"ContactArn",
-          "documentation":"<p>A unique identifier of a contact in Amazon Connect.</p>"
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "fields": {
+          "documentation": "<p>An array of objects with field ID (matching ListFields/DescribeField) and value union data.</p>",
+          "shape": "CreateCaseRequestFieldsList"
+        },
+        "templateId": {
+          "documentation": "<p>A unique identifier of a template.</p>",
+          "shape": "TemplateId"
         }
       },
-      "documentation":"<p>A filter for related items of type <code>Contact</code>.</p>"
-    },
-    "ContactFilterChannelList":{
-      "type":"list",
-      "member":{"shape":"Channel"},
-      "max":3,
-      "min":0
-    },
-    "CreateCaseRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "domainId",
         "fields",
         "templateId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"CreateCaseRequestClientTokenString",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
+      "type": "structure"
+    },
+    "CreateCaseRequestClientTokenString": {
+      "max": 64,
+      "min": 0,
+      "type": "string"
+    },
+    "CreateCaseRequestFieldsList": {
+      "max": 100,
+      "member": {
+        "shape": "FieldValue"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "CreateCaseResponse": {
+      "members": {
+        "caseArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the case.</p>",
+          "shape": "CaseArn"
         },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "fields":{
-          "shape":"CreateCaseRequestFieldsList",
-          "documentation":"<p>An array of objects with field ID (matching ListFields/DescribeField) and value union data.</p>"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>A unique identifier of a template.</p>"
+        "caseId": {
+          "documentation": "<p>A unique identifier of the case.</p>",
+          "shape": "CaseId"
         }
-      }
-    },
-    "CreateCaseRequestClientTokenString":{
-      "type":"string",
-      "max":64,
-      "min":0
-    },
-    "CreateCaseRequestFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldValue"},
-      "max":100,
-      "min":0
-    },
-    "CreateCaseResponse":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "caseArn",
         "caseId"
       ],
-      "members":{
-        "caseArn":{
-          "shape":"CaseArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the case.</p>"
+      "type": "structure"
+    },
+    "CreateDomainRequest": {
+      "members": {
+        "name": {
+          "documentation": "<p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>",
+          "shape": "DomainName"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "structure"
+    },
+    "CreateDomainResponse": {
+      "members": {
+        "domainArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) for the Cases domain.</p>",
+          "shape": "DomainArn"
         },
-        "caseId":{
-          "shape":"CaseId",
-          "documentation":"<p>A unique identifier of the case.</p>"
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "shape": "DomainId"
+        },
+        "domainStatus": {
+          "documentation": "<p>The status of the domain.</p>",
+          "shape": "DomainStatus"
         }
-      }
-    },
-    "CreateDomainRequest":{
-      "type":"structure",
-      "required":["name"],
-      "members":{
-        "name":{
-          "shape":"DomainName",
-          "documentation":"<p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>"
-        }
-      }
-    },
-    "CreateDomainResponse":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "domainArn",
         "domainId",
         "domainStatus"
       ],
-      "members":{
-        "domainArn":{
-          "shape":"DomainArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) for the Cases domain.</p>"
-        },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>"
-        },
-        "domainStatus":{
-          "shape":"DomainStatus",
-          "documentation":"<p>The status of the domain.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateFieldRequest":{
-      "type":"structure",
-      "required":[
+    "CreateFieldRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the field.</p>",
+          "shape": "FieldDescription"
+        },
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "name": {
+          "documentation": "<p>The name of the field.</p>",
+          "shape": "FieldName"
+        },
+        "type": {
+          "documentation": "<p>Defines the data type, some system constraints, and default display of the field.</p>",
+          "shape": "FieldType"
+        }
+      },
+      "required": [
         "domainId",
         "name",
         "type"
       ],
-      "members":{
-        "description":{
-          "shape":"FieldDescription",
-          "documentation":"<p>The description of the field.</p>"
-        },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "name":{
-          "shape":"FieldName",
-          "documentation":"<p>The name of the field.</p>"
-        },
-        "type":{
-          "shape":"FieldType",
-          "documentation":"<p>Defines the data type, some system constraints, and default display of the field.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateFieldResponse":{
-      "type":"structure",
-      "required":[
+    "CreateFieldResponse": {
+      "members": {
+        "fieldArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the field.</p>",
+          "shape": "FieldArn"
+        },
+        "fieldId": {
+          "documentation": "<p>The unique identifier of a field.</p>",
+          "shape": "FieldId"
+        }
+      },
+      "required": [
         "fieldArn",
         "fieldId"
       ],
-      "members":{
-        "fieldArn":{
-          "shape":"FieldArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the field.</p>"
-        },
-        "fieldId":{
-          "shape":"FieldId",
-          "documentation":"<p>The unique identifier of a field.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateLayoutRequest":{
-      "type":"structure",
-      "required":[
+    "CreateLayoutRequest": {
+      "members": {
+        "content": {
+          "documentation": "<p>Information about which fields will be present in the layout, and information about the order of the fields.</p>",
+          "shape": "LayoutContent"
+        },
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "name": {
+          "documentation": "<p>The name of the layout. It must be unique for the Cases domain.</p>",
+          "shape": "LayoutName"
+        }
+      },
+      "required": [
         "content",
         "domainId",
         "name"
       ],
-      "members":{
-        "content":{
-          "shape":"LayoutContent",
-          "documentation":"<p>Information about which fields will be present in the layout, and information about the order of the fields.</p>"
-        },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "name":{
-          "shape":"LayoutName",
-          "documentation":"<p>The name of the layout. It must be unique for the Cases domain.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateLayoutResponse":{
-      "type":"structure",
-      "required":[
+    "CreateLayoutResponse": {
+      "members": {
+        "layoutArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the newly created layout.</p>",
+          "shape": "LayoutArn"
+        },
+        "layoutId": {
+          "documentation": "<p>The unique identifier of the layout.</p>",
+          "shape": "LayoutId"
+        }
+      },
+      "required": [
         "layoutArn",
         "layoutId"
       ],
-      "members":{
-        "layoutArn":{
-          "shape":"LayoutArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the newly created layout.</p>"
-        },
-        "layoutId":{
-          "shape":"LayoutId",
-          "documentation":"<p>The unique identifier of the layout.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateRelatedItemRequest":{
-      "type":"structure",
-      "required":[
+    "CreateRelatedItemRequest": {
+      "members": {
+        "caseId": {
+          "documentation": "<p>A unique identifier of the case.</p>",
+          "location": "uri",
+          "locationName": "caseId",
+          "shape": "CaseId"
+        },
+        "content": {
+          "documentation": "<p>The content of a related item to be created.</p>",
+          "shape": "RelatedItemInputContent"
+        },
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "type": {
+          "documentation": "<p>The type of a related item.</p>",
+          "shape": "RelatedItemType"
+        }
+      },
+      "required": [
         "caseId",
         "content",
         "domainId",
         "type"
       ],
-      "members":{
-        "caseId":{
-          "shape":"CaseId",
-          "documentation":"<p>A unique identifier of the case.</p>",
-          "location":"uri",
-          "locationName":"caseId"
-        },
-        "content":{
-          "shape":"RelatedItemInputContent",
-          "documentation":"<p>The content of a related item to be created.</p>"
-        },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "type":{
-          "shape":"RelatedItemType",
-          "documentation":"<p>The type of a related item.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateRelatedItemResponse":{
-      "type":"structure",
-      "required":[
+    "CreateRelatedItemResponse": {
+      "members": {
+        "relatedItemArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the related item.</p>",
+          "shape": "RelatedItemArn"
+        },
+        "relatedItemId": {
+          "documentation": "<p>The unique identifier of the related item.</p>",
+          "shape": "RelatedItemId"
+        }
+      },
+      "required": [
         "relatedItemArn",
         "relatedItemId"
       ],
-      "members":{
-        "relatedItemArn":{
-          "shape":"RelatedItemArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the related item.</p>"
-        },
-        "relatedItemId":{
-          "shape":"RelatedItemId",
-          "documentation":"<p>The unique identifier of the related item.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateTemplateRequest":{
-      "type":"structure",
-      "required":[
+    "CreateTemplateRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>A brief description of the template.</p>",
+          "shape": "TemplateDescription"
+        },
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "layoutConfiguration": {
+          "documentation": "<p>Configuration of layouts associated to the template.</p>",
+          "shape": "LayoutConfiguration"
+        },
+        "name": {
+          "documentation": "<p>A name for the template. It must be unique per domain.</p>",
+          "shape": "TemplateName"
+        },
+        "requiredFields": {
+          "documentation": "<p>A list of fields that must contain a value for a case to be successfully created with this template.</p>",
+          "shape": "RequiredFieldList"
+        }
+      },
+      "required": [
         "domainId",
         "name"
       ],
-      "members":{
-        "description":{
-          "shape":"TemplateDescription",
-          "documentation":"<p>A brief description of the template.</p>"
-        },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "layoutConfiguration":{
-          "shape":"LayoutConfiguration",
-          "documentation":"<p>Configuration of layouts associated to the template.</p>"
-        },
-        "name":{
-          "shape":"TemplateName",
-          "documentation":"<p>A name for the template. It must be unique per domain.</p>"
-        },
-        "requiredFields":{
-          "shape":"RequiredFieldList",
-          "documentation":"<p>A list of fields that must contain a value for a case to be successfully created with this template.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateTemplateResponse":{
-      "type":"structure",
-      "required":[
+    "CreateTemplateResponse": {
+      "members": {
+        "templateArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the newly created template.</p>",
+          "shape": "TemplateArn"
+        },
+        "templateId": {
+          "documentation": "<p>A unique identifier of a template.</p>",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
         "templateArn",
         "templateId"
       ],
-      "members":{
-        "templateArn":{
-          "shape":"TemplateArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the newly created template.</p>"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>A unique identifier of a template.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreatedTime":{
-      "type":"timestamp",
-      "timestampFormat":"iso8601"
+    "CreatedTime": {
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
     },
-    "DomainArn":{
-      "type":"string",
-      "max":500,
-      "min":1
+    "DomainArn": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "DomainId":{
-      "type":"string",
-      "max":500,
-      "min":1
+    "DomainId": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "DomainName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"^.*[\\S]$"
+    "DomainName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "^.*[\\S]$",
+      "type": "string"
     },
-    "DomainStatus":{
-      "type":"string",
-      "enum":[
+    "DomainStatus": {
+      "enum": [
         "Active",
         "CreationInProgress",
         "CreationFailed"
-      ]
+      ],
+      "type": "string"
     },
-    "DomainSummary":{
-      "type":"structure",
-      "required":[
+    "DomainSummary": {
+      "documentation": "<p>Object for the summarized details of the domain.</p>",
+      "members": {
+        "domainArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the domain.</p>",
+          "shape": "DomainArn"
+        },
+        "domainId": {
+          "documentation": "<p>The unique identifier of the domain.</p>",
+          "shape": "DomainId"
+        },
+        "name": {
+          "documentation": "<p>The name of the domain.</p>",
+          "shape": "DomainName"
+        }
+      },
+      "required": [
         "domainArn",
         "domainId",
         "name"
       ],
-      "members":{
-        "domainArn":{
-          "shape":"DomainArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the domain.</p>"
+      "type": "structure"
+    },
+    "DomainSummaryList": {
+      "member": {
+        "shape": "DomainSummary"
+      },
+      "type": "list"
+    },
+    "Double": {
+      "box": true,
+      "type": "double"
+    },
+    "EventBridgeConfiguration": {
+      "documentation": "<p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>",
+      "members": {
+        "enabled": {
+          "documentation": "<p>Indicates whether the to broadcast case event data to the customer.</p>",
+          "shape": "Boolean"
         },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the domain.</p>"
-        },
-        "name":{
-          "shape":"DomainName",
-          "documentation":"<p>The name of the domain.</p>"
+        "includedData": {
+          "documentation": "<p>Details of what case and related item data is published through the case event stream.</p>",
+          "shape": "EventIncludedData"
         }
       },
-      "documentation":"<p>Object for the summarized details of the domain.</p>"
+      "required": [
+        "enabled"
+      ],
+      "type": "structure"
     },
-    "DomainSummaryList":{
-      "type":"list",
-      "member":{"shape":"DomainSummary"}
-    },
-    "Double":{
-      "type":"double",
-      "box":true
-    },
-    "EventBridgeConfiguration":{
-      "type":"structure",
-      "required":["enabled"],
-      "members":{
-        "enabled":{
-          "shape":"Boolean",
-          "documentation":"<p>Indicates whether the to broadcast case event data to the customer.</p>"
+    "EventIncludedData": {
+      "documentation": "<p>Details of what case and related item data is published through the case event stream.</p>",
+      "members": {
+        "caseData": {
+          "documentation": "<p>Details of what case data is published through the case event stream.</p>",
+          "shape": "CaseEventIncludedData"
         },
-        "includedData":{
-          "shape":"EventIncludedData",
-          "documentation":"<p>Details of what case and related item data is published through the case event stream.</p>"
+        "relatedItemData": {
+          "documentation": "<p>Details of what related item data is published through the case event stream.</p>",
+          "shape": "RelatedItemEventIncludedData"
         }
       },
-      "documentation":"<p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>"
+      "type": "structure"
     },
-    "EventIncludedData":{
-      "type":"structure",
-      "members":{
-        "caseData":{
-          "shape":"CaseEventIncludedData",
-          "documentation":"<p>Details of what case data is published through the case event stream.</p>"
+    "FieldArn": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
+    },
+    "FieldDescription": {
+      "max": 255,
+      "min": 0,
+      "type": "string"
+    },
+    "FieldError": {
+      "documentation": "<p>Object for errors on fields.</p>",
+      "members": {
+        "errorCode": {
+          "documentation": "<p>The error code from getting a field.</p>",
+          "shape": "String"
         },
-        "relatedItemData":{
-          "shape":"RelatedItemEventIncludedData",
-          "documentation":"<p>Details of what related item data is published through the case event stream.</p>"
+        "id": {
+          "documentation": "<p>The field identifier that caused the error.</p>",
+          "shape": "FieldId"
+        },
+        "message": {
+          "documentation": "<p>The error message from getting a field.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Details of what case and related item data is published through the case event stream.</p>"
-    },
-    "FieldArn":{
-      "type":"string",
-      "max":500,
-      "min":1
-    },
-    "FieldDescription":{
-      "type":"string",
-      "max":255,
-      "min":0
-    },
-    "FieldError":{
-      "type":"structure",
-      "required":[
+      "required": [
         "errorCode",
         "id"
       ],
-      "members":{
-        "errorCode":{
-          "shape":"String",
-          "documentation":"<p>The error code from getting a field.</p>"
+      "type": "structure"
+    },
+    "FieldFilter": {
+      "documentation": "<p>A filter for fields. Only one value can be provided.</p>",
+      "members": {
+        "contains": {
+          "documentation": "<p>Object containing field identifier and value information.</p>",
+          "shape": "FieldValue"
         },
-        "id":{
-          "shape":"FieldId",
-          "documentation":"<p>The field identifier that caused the error.</p>"
+        "equalTo": {
+          "documentation": "<p>Object containing field identifier and value information.</p>",
+          "shape": "FieldValue"
         },
-        "message":{
-          "shape":"String",
-          "documentation":"<p>The error message from getting a field.</p>"
+        "greaterThan": {
+          "documentation": "<p>Object containing field identifier and value information.</p>",
+          "shape": "FieldValue"
+        },
+        "greaterThanOrEqualTo": {
+          "documentation": "<p>Object containing field identifier and value information.</p>",
+          "shape": "FieldValue"
+        },
+        "lessThan": {
+          "documentation": "<p>Object containing field identifier and value information.</p>",
+          "shape": "FieldValue"
+        },
+        "lessThanOrEqualTo": {
+          "documentation": "<p>Object containing field identifier and value information. </p>",
+          "shape": "FieldValue"
         }
       },
-      "documentation":"<p>Object for errors on fields.</p>"
+      "type": "structure",
+      "union": true
     },
-    "FieldFilter":{
-      "type":"structure",
-      "members":{
-        "contains":{
-          "shape":"FieldValue",
-          "documentation":"<p>Object containing field identifier and value information.</p>"
+    "FieldGroup": {
+      "documentation": "<p>Object for a group of fields and associated properties.</p>",
+      "members": {
+        "fields": {
+          "documentation": "<p>Represents an ordered list containing field related information.</p>",
+          "shape": "FieldGroupFieldsList"
         },
-        "equalTo":{
-          "shape":"FieldValue",
-          "documentation":"<p>Object containing field identifier and value information.</p>"
-        },
-        "greaterThan":{
-          "shape":"FieldValue",
-          "documentation":"<p>Object containing field identifier and value information.</p>"
-        },
-        "greaterThanOrEqualTo":{
-          "shape":"FieldValue",
-          "documentation":"<p>Object containing field identifier and value information.</p>"
-        },
-        "lessThan":{
-          "shape":"FieldValue",
-          "documentation":"<p>Object containing field identifier and value information.</p>"
-        },
-        "lessThanOrEqualTo":{
-          "shape":"FieldValue",
-          "documentation":"<p>Object containing field identifier and value information. </p>"
+        "name": {
+          "documentation": "<p>Name of the field group.</p>",
+          "shape": "FieldGroupNameString"
         }
       },
-      "documentation":"<p>A filter for fields. Only one value can be provided.</p>",
-      "union":true
+      "required": [
+        "fields"
+      ],
+      "type": "structure"
     },
-    "FieldGroup":{
-      "type":"structure",
-      "required":["fields"],
-      "members":{
-        "fields":{
-          "shape":"FieldGroupFieldsList",
-          "documentation":"<p>Represents an ordered list containing field related information.</p>"
-        },
-        "name":{
-          "shape":"FieldGroupNameString",
-          "documentation":"<p>Name of the field group.</p>"
+    "FieldGroupFieldsList": {
+      "max": 30,
+      "member": {
+        "shape": "FieldItem"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "FieldGroupNameString": {
+      "max": 100,
+      "min": 0,
+      "type": "string"
+    },
+    "FieldId": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
+    },
+    "FieldIdentifier": {
+      "documentation": "<p>Object for unique identifier of a field.</p>",
+      "members": {
+        "id": {
+          "documentation": "<p>Unique identifier of a field.</p>",
+          "shape": "FieldId"
         }
       },
-      "documentation":"<p>Object for a group of fields and associated properties.</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "FieldGroupFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldItem"},
-      "max":30,
-      "min":0
-    },
-    "FieldGroupNameString":{
-      "type":"string",
-      "max":100,
-      "min":0
-    },
-    "FieldId":{
-      "type":"string",
-      "max":500,
-      "min":1
-    },
-    "FieldIdentifier":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"FieldId",
-          "documentation":"<p>Unique identifier of a field.</p>"
+    "FieldItem": {
+      "documentation": "<p>Object for field related information.</p>",
+      "members": {
+        "id": {
+          "documentation": "<p>Unique identifier of a field.</p>",
+          "shape": "FieldId"
         }
       },
-      "documentation":"<p>Object for unique identifier of a field.</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "FieldItem":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"FieldId",
-          "documentation":"<p>Unique identifier of a field.</p>"
-        }
-      },
-      "documentation":"<p>Object for field related information.</p>"
+    "FieldName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "^.*[\\S]$",
+      "type": "string"
     },
-    "FieldName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"^.*[\\S]$"
-    },
-    "FieldNamespace":{
-      "type":"string",
-      "enum":[
+    "FieldNamespace": {
+      "enum": [
         "System",
         "Custom"
-      ]
+      ],
+      "type": "string"
     },
-    "FieldOption":{
-      "type":"structure",
-      "required":[
+    "FieldOption": {
+      "documentation": "<p>Object for field Options information.</p>",
+      "members": {
+        "active": {
+          "documentation": "<p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>",
+          "shape": "Boolean"
+        },
+        "name": {
+          "documentation": "<p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>",
+          "shape": "FieldOptionName"
+        },
+        "value": {
+          "documentation": "<p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>",
+          "shape": "FieldOptionValue"
+        }
+      },
+      "required": [
         "active",
         "name",
         "value"
       ],
-      "members":{
-        "active":{
-          "shape":"Boolean",
-          "documentation":"<p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>"
+      "type": "structure"
+    },
+    "FieldOptionError": {
+      "documentation": "<p>Object for field Options errors.</p>",
+      "members": {
+        "errorCode": {
+          "documentation": "<p>Error code from creating or updating field option.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"FieldOptionName",
-          "documentation":"<p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>"
+        "message": {
+          "documentation": "<p>Error message from creating or updating field option.</p>",
+          "shape": "String"
         },
-        "value":{
-          "shape":"FieldOptionValue",
-          "documentation":"<p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>"
+        "value": {
+          "documentation": "<p>The field option value that caused the error.</p>",
+          "shape": "FieldOptionValue"
         }
       },
-      "documentation":"<p>Object for field Options information.</p>"
-    },
-    "FieldOptionError":{
-      "type":"structure",
-      "required":[
+      "required": [
         "errorCode",
         "message",
         "value"
       ],
-      "members":{
-        "errorCode":{
-          "shape":"String",
-          "documentation":"<p>Error code from creating or updating field option.</p>"
+      "type": "structure"
+    },
+    "FieldOptionName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "^.*[\\S]$",
+      "type": "string"
+    },
+    "FieldOptionValue": {
+      "max": 100,
+      "min": 1,
+      "pattern": "^.*[\\S]$",
+      "type": "string"
+    },
+    "FieldOptionsList": {
+      "member": {
+        "shape": "FieldOption"
+      },
+      "type": "list"
+    },
+    "FieldSummary": {
+      "documentation": "<p>Object for the summarized details of the field.</p>",
+      "members": {
+        "fieldArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the field.</p>",
+          "shape": "FieldArn"
         },
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Error message from creating or updating field option.</p>"
+        "fieldId": {
+          "documentation": "<p>The unique identifier of a field.</p>",
+          "shape": "FieldId"
         },
-        "value":{
-          "shape":"FieldOptionValue",
-          "documentation":"<p>The field option value that caused the error.</p>"
+        "name": {
+          "documentation": "<p>Name of the field.</p>",
+          "shape": "FieldName"
+        },
+        "namespace": {
+          "documentation": "<p>The namespace of a field.</p>",
+          "shape": "FieldNamespace"
+        },
+        "type": {
+          "documentation": "<p>The type of a field.</p>",
+          "shape": "FieldType"
         }
       },
-      "documentation":"<p>Object for field Options errors.</p>"
-    },
-    "FieldOptionName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"^.*[\\S]$"
-    },
-    "FieldOptionValue":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"^.*[\\S]$"
-    },
-    "FieldOptionsList":{
-      "type":"list",
-      "member":{"shape":"FieldOption"}
-    },
-    "FieldSummary":{
-      "type":"structure",
-      "required":[
+      "required": [
         "fieldArn",
         "fieldId",
         "name",
         "namespace",
         "type"
       ],
-      "members":{
-        "fieldArn":{
-          "shape":"FieldArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the field.</p>"
-        },
-        "fieldId":{
-          "shape":"FieldId",
-          "documentation":"<p>The unique identifier of a field.</p>"
-        },
-        "name":{
-          "shape":"FieldName",
-          "documentation":"<p>Name of the field.</p>"
-        },
-        "namespace":{
-          "shape":"FieldNamespace",
-          "documentation":"<p>The namespace of a field.</p>"
-        },
-        "type":{
-          "shape":"FieldType",
-          "documentation":"<p>The type of a field.</p>"
-        }
-      },
-      "documentation":"<p>Object for the summarized details of the field.</p>"
+      "type": "structure"
     },
-    "FieldType":{
-      "type":"string",
-      "enum":[
+    "FieldType": {
+      "enum": [
         "Text",
         "Number",
         "Boolean",
         "DateTime",
         "SingleSelect"
-      ]
+      ],
+      "type": "string"
     },
-    "FieldValue":{
-      "type":"structure",
-      "required":[
+    "FieldValue": {
+      "documentation": "<p>Object for case field values.</p>",
+      "members": {
+        "id": {
+          "documentation": "<p>Unique identifier of a field.</p>",
+          "shape": "FieldId"
+        },
+        "value": {
+          "documentation": "<p>Union of potential field value types.</p>",
+          "shape": "FieldValueUnion"
+        }
+      },
+      "required": [
         "id",
         "value"
       ],
-      "members":{
-        "id":{
-          "shape":"FieldId",
-          "documentation":"<p>Unique identifier of a field.</p>"
+      "type": "structure"
+    },
+    "FieldValueUnion": {
+      "documentation": "<p>Object to store union of Field values.</p>",
+      "members": {
+        "booleanValue": {
+          "documentation": "<p>Can be either null, or have a Boolean value type. Only one value can be provided.</p>",
+          "shape": "Boolean"
         },
-        "value":{
-          "shape":"FieldValueUnion",
-          "documentation":"<p>Union of potential field value types.</p>"
+        "doubleValue": {
+          "documentation": "<p>Can be either null, or have a Double number value type. Only one value can be provided.</p>",
+          "shape": "Double"
+        },
+        "stringValue": {
+          "documentation": "<p>String value type.</p>",
+          "shape": "FieldValueUnionStringValueString"
         }
       },
-      "documentation":"<p>Object for case field values.</p>"
+      "type": "structure",
+      "union": true
     },
-    "FieldValueUnion":{
-      "type":"structure",
-      "members":{
-        "booleanValue":{
-          "shape":"Boolean",
-          "documentation":"<p>Can be either null, or have a Boolean value type. Only one value can be provided.</p>"
-        },
-        "doubleValue":{
-          "shape":"Double",
-          "documentation":"<p>Can be either null, or have a Double number value type. Only one value can be provided.</p>"
-        },
-        "stringValue":{
-          "shape":"FieldValueUnionStringValueString",
-          "documentation":"<p>String value type.</p>"
+    "FieldValueUnionStringValueString": {
+      "max": 500,
+      "min": 0,
+      "type": "string"
+    },
+    "GetCaseEventConfigurationRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         }
       },
-      "documentation":"<p>Object to store union of Field values.</p>",
-      "union":true
+      "required": [
+        "domainId"
+      ],
+      "type": "structure"
     },
-    "FieldValueUnionStringValueString":{
-      "type":"string",
-      "max":500,
-      "min":0
-    },
-    "GetCaseEventConfigurationRequest":{
-      "type":"structure",
-      "required":["domainId"],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+    "GetCaseEventConfigurationResponse": {
+      "members": {
+        "eventBridge": {
+          "documentation": "<p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>",
+          "shape": "EventBridgeConfiguration"
         }
-      }
+      },
+      "required": [
+        "eventBridge"
+      ],
+      "type": "structure"
     },
-    "GetCaseEventConfigurationResponse":{
-      "type":"structure",
-      "required":["eventBridge"],
-      "members":{
-        "eventBridge":{
-          "shape":"EventBridgeConfiguration",
-          "documentation":"<p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>"
+    "GetCaseRequest": {
+      "members": {
+        "caseId": {
+          "documentation": "<p>A unique identifier of the case.</p>",
+          "location": "uri",
+          "locationName": "caseId",
+          "shape": "CaseId"
+        },
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "fields": {
+          "documentation": "<p>A list of unique field identifiers. </p>",
+          "shape": "GetCaseRequestFieldsList"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "shape": "NextToken"
         }
-      }
-    },
-    "GetCaseRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "caseId",
         "domainId",
         "fields"
       ],
-      "members":{
-        "caseId":{
-          "shape":"CaseId",
-          "documentation":"<p>A unique identifier of the case.</p>",
-          "location":"uri",
-          "locationName":"caseId"
+      "type": "structure"
+    },
+    "GetCaseRequestFieldsList": {
+      "max": 100,
+      "member": {
+        "shape": "FieldIdentifier"
+      },
+      "min": 1,
+      "type": "list"
+    },
+    "GetCaseResponse": {
+      "members": {
+        "fields": {
+          "documentation": "<p>A list of detailed field information. </p>",
+          "shape": "GetCaseResponseFieldsList"
         },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         },
-        "fields":{
-          "shape":"GetCaseRequestFieldsList",
-          "documentation":"<p>A list of unique field identifiers. </p>"
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>"
+        "templateId": {
+          "documentation": "<p>A unique identifier of a template.</p>",
+          "shape": "TemplateId"
         }
-      }
-    },
-    "GetCaseRequestFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldIdentifier"},
-      "max":100,
-      "min":1
-    },
-    "GetCaseResponse":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "fields",
         "templateId"
       ],
-      "members":{
-        "fields":{
-          "shape":"GetCaseResponseFieldsList",
-          "documentation":"<p>A list of detailed field information. </p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>A unique identifier of a template.</p>"
+      "type": "structure"
+    },
+    "GetCaseResponseFieldsList": {
+      "max": 100,
+      "member": {
+        "shape": "FieldValue"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "GetDomainRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         }
-      }
+      },
+      "required": [
+        "domainId"
+      ],
+      "type": "structure"
     },
-    "GetCaseResponseFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldValue"},
-      "max":100,
-      "min":0
-    },
-    "GetDomainRequest":{
-      "type":"structure",
-      "required":["domainId"],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+    "GetDomainResponse": {
+      "members": {
+        "createdTime": {
+          "documentation": "<p>The timestamp when the Cases domain was created.</p>",
+          "shape": "CreatedTime"
+        },
+        "domainArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) for the Cases domain.</p>",
+          "shape": "DomainArn"
+        },
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "shape": "DomainId"
+        },
+        "domainStatus": {
+          "documentation": "<p>The status of the Cases domain.</p>",
+          "shape": "DomainStatus"
+        },
+        "name": {
+          "documentation": "<p>The name of the Cases domain.</p>",
+          "shape": "DomainName"
+        },
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
         }
-      }
-    },
-    "GetDomainResponse":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "createdTime",
         "domainArn",
         "domainId",
         "domainStatus",
         "name"
       ],
-      "members":{
-        "createdTime":{
-          "shape":"CreatedTime",
-          "documentation":"<p>The timestamp when the Cases domain was created.</p>"
-        },
-        "domainArn":{
-          "shape":"DomainArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) for the Cases domain.</p>"
-        },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>"
-        },
-        "domainStatus":{
-          "shape":"DomainStatus",
-          "documentation":"<p>The status of the Cases domain.</p>"
-        },
-        "name":{
-          "shape":"DomainName",
-          "documentation":"<p>The name of the Cases domain.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "GetFieldResponse":{
-      "type":"structure",
-      "required":[
+    "GetFieldResponse": {
+      "documentation": "<p>Object to store detailed field information.</p>",
+      "members": {
+        "description": {
+          "documentation": "<p>Description of the field.</p>",
+          "shape": "FieldDescription"
+        },
+        "fieldArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the field.</p>",
+          "shape": "FieldArn"
+        },
+        "fieldId": {
+          "documentation": "<p>Unique identifier of the field.</p>",
+          "shape": "FieldId"
+        },
+        "name": {
+          "documentation": "<p>Name of the field.</p>",
+          "shape": "FieldName"
+        },
+        "namespace": {
+          "documentation": "<p>Namespace of the field.</p>",
+          "shape": "FieldNamespace"
+        },
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "type": {
+          "documentation": "<p>Type of the field.</p>",
+          "shape": "FieldType"
+        }
+      },
+      "required": [
         "fieldArn",
         "fieldId",
         "name",
         "namespace",
         "type"
       ],
-      "members":{
-        "description":{
-          "shape":"FieldDescription",
-          "documentation":"<p>Description of the field.</p>"
+      "type": "structure"
+    },
+    "GetLayoutRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "fieldArn":{
-          "shape":"FieldArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the field.</p>"
-        },
-        "fieldId":{
-          "shape":"FieldId",
-          "documentation":"<p>Unique identifier of the field.</p>"
-        },
-        "name":{
-          "shape":"FieldName",
-          "documentation":"<p>Name of the field.</p>"
-        },
-        "namespace":{
-          "shape":"FieldNamespace",
-          "documentation":"<p>Namespace of the field.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
-        },
-        "type":{
-          "shape":"FieldType",
-          "documentation":"<p>Type of the field.</p>"
+        "layoutId": {
+          "documentation": "<p>The unique identifier of the layout.</p>",
+          "location": "uri",
+          "locationName": "layoutId",
+          "shape": "LayoutId"
         }
       },
-      "documentation":"<p>Object to store detailed field information.</p>"
-    },
-    "GetLayoutRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "domainId",
         "layoutId"
       ],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "layoutId":{
-          "shape":"LayoutId",
-          "documentation":"<p>The unique identifier of the layout.</p>",
-          "location":"uri",
-          "locationName":"layoutId"
-        }
-      }
+      "type": "structure"
     },
-    "GetLayoutResponse":{
-      "type":"structure",
-      "required":[
+    "GetLayoutResponse": {
+      "members": {
+        "content": {
+          "documentation": "<p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>",
+          "shape": "LayoutContent"
+        },
+        "layoutArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the newly created layout.</p>",
+          "shape": "LayoutArn"
+        },
+        "layoutId": {
+          "documentation": "<p>The unique identifier of the layout.</p>",
+          "shape": "LayoutId"
+        },
+        "name": {
+          "documentation": "<p>The name of the layout. It must be unique.</p>",
+          "shape": "LayoutName"
+        },
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "required": [
         "content",
         "layoutArn",
         "layoutId",
         "name"
       ],
-      "members":{
-        "content":{
-          "shape":"LayoutContent",
-          "documentation":"<p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>"
-        },
-        "layoutArn":{
-          "shape":"LayoutArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the newly created layout.</p>"
-        },
-        "layoutId":{
-          "shape":"LayoutId",
-          "documentation":"<p>The unique identifier of the layout.</p>"
-        },
-        "name":{
-          "shape":"LayoutName",
-          "documentation":"<p>The name of the layout. It must be unique.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "GetTemplateRequest":{
-      "type":"structure",
-      "required":[
+    "GetTemplateRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "templateId": {
+          "documentation": "<p>A unique identifier of a template.</p>",
+          "location": "uri",
+          "locationName": "templateId",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
         "domainId",
         "templateId"
       ],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>A unique identifier of a template.</p>",
-          "location":"uri",
-          "locationName":"templateId"
-        }
-      }
+      "type": "structure"
     },
-    "GetTemplateResponse":{
-      "type":"structure",
-      "required":[
+    "GetTemplateResponse": {
+      "members": {
+        "description": {
+          "documentation": "<p>A brief description of the template.</p>",
+          "shape": "TemplateDescription"
+        },
+        "layoutConfiguration": {
+          "documentation": "<p>Configuration of layouts associated to the template.</p>",
+          "shape": "LayoutConfiguration"
+        },
+        "name": {
+          "documentation": "<p>The name of the template.</p>",
+          "shape": "TemplateName"
+        },
+        "requiredFields": {
+          "documentation": "<p>A list of fields that must contain a value for a case to be successfully created with this template.</p>",
+          "shape": "RequiredFieldList"
+        },
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "templateArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the template.</p>",
+          "shape": "TemplateArn"
+        },
+        "templateId": {
+          "documentation": "<p>A unique identifier of a template.</p>",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
         "name",
         "templateArn",
         "templateId"
       ],
-      "members":{
-        "description":{
-          "shape":"TemplateDescription",
-          "documentation":"<p>A brief description of the template.</p>"
-        },
-        "layoutConfiguration":{
-          "shape":"LayoutConfiguration",
-          "documentation":"<p>Configuration of layouts associated to the template.</p>"
-        },
-        "name":{
-          "shape":"TemplateName",
-          "documentation":"<p>The name of the template.</p>"
-        },
-        "requiredFields":{
-          "shape":"RequiredFieldList",
-          "documentation":"<p>A list of fields that must contain a value for a case to be successfully created with this template.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
-        },
-        "templateArn":{
-          "shape":"TemplateArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the template.</p>"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>A unique identifier of a template.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "Integer":{
-      "type":"integer",
-      "box":true
+    "Integer": {
+      "box": true,
+      "type": "integer"
     },
-    "InternalServerException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "retryAfterSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>Advice to clients on when the call can be safely retried.</p>",
-          "location":"header",
-          "locationName":"Retry-After"
+    "InternalServerException": {
+      "documentation": "<p>We couldn't process your request because of an issue with the server. Try again later.</p>",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "retryAfterSeconds": {
+          "documentation": "<p>Advice to clients on when the call can be safely retried.</p>",
+          "location": "header",
+          "locationName": "Retry-After",
+          "shape": "Integer"
         }
       },
-      "documentation":"<p>We couldn't process your request because of an issue with the server. Try again later.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true,
-      "retryable":{"throttling":false}
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
+      },
+      "type": "structure"
     },
-    "LayoutArn":{
-      "type":"string",
-      "max":500,
-      "min":1
+    "LayoutArn": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "LayoutConfiguration":{
-      "type":"structure",
-      "members":{
-        "defaultLayout":{
-          "shape":"LayoutId",
-          "documentation":"<p> Unique identifier of a layout. </p>"
+    "LayoutConfiguration": {
+      "documentation": "<p>Object to store configuration of layouts associated to the template.</p>",
+      "members": {
+        "defaultLayout": {
+          "documentation": "<p> Unique identifier of a layout. </p>",
+          "shape": "LayoutId"
         }
       },
-      "documentation":"<p>Object to store configuration of layouts associated to the template.</p>"
+      "type": "structure"
     },
-    "LayoutContent":{
-      "type":"structure",
-      "members":{
-        "basic":{
-          "shape":"BasicLayout",
-          "documentation":"<p>Content specific to <code>BasicLayout</code> type. It configures fields in the top panel and More Info tab of Cases user interface.</p>"
+    "LayoutContent": {
+      "documentation": "<p>Object to store union of different versions of layout content.</p>",
+      "members": {
+        "basic": {
+          "documentation": "<p>Content specific to <code>BasicLayout</code> type. It configures fields in the top panel and More Info tab of Cases user interface.</p>",
+          "shape": "BasicLayout"
         }
       },
-      "documentation":"<p>Object to store union of different versions of layout content.</p>",
-      "union":true
+      "type": "structure",
+      "union": true
     },
-    "LayoutId":{
-      "type":"string",
-      "max":500,
-      "min":1
+    "LayoutId": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "LayoutName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"^.*[\\S]$"
+    "LayoutName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "^.*[\\S]$",
+      "type": "string"
     },
-    "LayoutSections":{
-      "type":"structure",
-      "members":{
-        "sections":{"shape":"SectionsList"}
+    "LayoutSections": {
+      "documentation": "<p>Ordered list containing different kinds of sections that can be added. A LayoutSections object can only contain one section.</p>",
+      "members": {
+        "sections": {
+          "shape": "SectionsList"
+        }
       },
-      "documentation":"<p>Ordered list containing different kinds of sections that can be added. A LayoutSections object can only contain one section.</p>"
+      "type": "structure"
     },
-    "LayoutSummary":{
-      "type":"structure",
-      "required":[
+    "LayoutSummary": {
+      "documentation": "<p>Object for the summarized details of the layout.</p>",
+      "members": {
+        "layoutArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the layout.</p>",
+          "shape": "LayoutArn"
+        },
+        "layoutId": {
+          "documentation": "<p>The unique identifier for of the layout.</p>",
+          "shape": "LayoutId"
+        },
+        "name": {
+          "documentation": "<p>The name of the layout.</p>",
+          "shape": "LayoutName"
+        }
+      },
+      "required": [
         "layoutArn",
         "layoutId",
         "name"
       ],
-      "members":{
-        "layoutArn":{
-          "shape":"LayoutArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the layout.</p>"
+      "type": "structure"
+    },
+    "LayoutSummaryList": {
+      "member": {
+        "shape": "LayoutSummary"
+      },
+      "type": "list"
+    },
+    "ListCasesForContactRequest": {
+      "members": {
+        "contactArn": {
+          "documentation": "<p>A unique identifier of a contact in Amazon Connect.</p>",
+          "shape": "ContactArn"
         },
-        "layoutId":{
-          "shape":"LayoutId",
-          "documentation":"<p>The unique identifier for of the layout.</p>"
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "name":{
-          "shape":"LayoutName",
-          "documentation":"<p>The name of the layout.</p>"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "shape": "ListCasesForContactRequestMaxResultsInteger"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "shape": "NextToken"
         }
       },
-      "documentation":"<p>Object for the summarized details of the layout.</p>"
-    },
-    "LayoutSummaryList":{
-      "type":"list",
-      "member":{"shape":"LayoutSummary"}
-    },
-    "ListCasesForContactRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "contactArn",
         "domainId"
       ],
-      "members":{
-        "contactArn":{
-          "shape":"ContactArn",
-          "documentation":"<p>A unique identifier of a contact in Amazon Connect.</p>"
+      "type": "structure"
+    },
+    "ListCasesForContactRequestMaxResultsInteger": {
+      "box": true,
+      "max": 10,
+      "min": 1,
+      "type": "integer"
+    },
+    "ListCasesForContactResponse": {
+      "members": {
+        "cases": {
+          "documentation": "<p>A list of Case summary information.</p>",
+          "shape": "ListCasesForContactResponseCasesList"
         },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "maxResults":{
-          "shape":"ListCasesForContactRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return per page.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         }
-      }
+      },
+      "required": [
+        "cases"
+      ],
+      "type": "structure"
     },
-    "ListCasesForContactRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":10,
-      "min":1
+    "ListCasesForContactResponseCasesList": {
+      "max": 10,
+      "member": {
+        "shape": "CaseSummary"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "ListCasesForContactResponse":{
-      "type":"structure",
-      "required":["cases"],
-      "members":{
-        "cases":{
-          "shape":"ListCasesForContactResponseCasesList",
-          "documentation":"<p>A list of Case summary information.</p>"
+    "ListDomainsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "ListDomainsRequestMaxResultsInteger"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListCasesForContactResponseCasesList":{
-      "type":"list",
-      "member":{"shape":"CaseSummary"},
-      "max":10,
-      "min":0
+    "ListDomainsRequestMaxResultsInteger": {
+      "box": true,
+      "max": 10,
+      "min": 1,
+      "type": "integer"
     },
-    "ListDomainsRequest":{
-      "type":"structure",
-      "members":{
-        "maxResults":{
-          "shape":"ListDomainsRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+    "ListDomainsResponse": {
+      "members": {
+        "domains": {
+          "documentation": "<p>The Cases domain.</p>",
+          "shape": "DomainSummaryList"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         }
-      }
+      },
+      "required": [
+        "domains"
+      ],
+      "type": "structure"
     },
-    "ListDomainsRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":10,
-      "min":1
-    },
-    "ListDomainsResponse":{
-      "type":"structure",
-      "required":["domains"],
-      "members":{
-        "domains":{
-          "shape":"DomainSummaryList",
-          "documentation":"<p>The Cases domain.</p>"
+    "ListFieldOptionsRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
+        "fieldId": {
+          "documentation": "<p>The unique identifier of a field.</p>",
+          "location": "uri",
+          "locationName": "fieldId",
+          "shape": "FieldId"
+        },
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "values": {
+          "documentation": "<p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>",
+          "location": "querystring",
+          "locationName": "values",
+          "shape": "ValuesList"
         }
-      }
-    },
-    "ListFieldOptionsRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "domainId",
         "fieldId"
       ],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+      "type": "structure"
+    },
+    "ListFieldOptionsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         },
-        "fieldId":{
-          "shape":"FieldId",
-          "documentation":"<p>The unique identifier of a field.</p>",
-          "location":"uri",
-          "locationName":"fieldId"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "values":{
-          "shape":"ValuesList",
-          "documentation":"<p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>",
-          "location":"querystring",
-          "locationName":"values"
+        "options": {
+          "documentation": "<p>A list of <code>FieldOption</code> objects.</p>",
+          "shape": "FieldOptionsList"
         }
-      }
+      },
+      "required": [
+        "options"
+      ],
+      "type": "structure"
     },
-    "ListFieldOptionsResponse":{
-      "type":"structure",
-      "required":["options"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
+    "ListFieldsRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "options":{
-          "shape":"FieldOptionsList",
-          "documentation":"<p>A list of <code>FieldOption</code> objects.</p>"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
         }
-      }
+      },
+      "required": [
+        "domainId"
+      ],
+      "type": "structure"
     },
-    "ListFieldsRequest":{
-      "type":"structure",
-      "required":["domainId"],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+    "ListFieldsResponse": {
+      "members": {
+        "fields": {
+          "documentation": "<p>List of detailed field information.</p>",
+          "shape": "ListFieldsResponseFieldsList"
         },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         }
-      }
+      },
+      "required": [
+        "fields"
+      ],
+      "type": "structure"
     },
-    "ListFieldsResponse":{
-      "type":"structure",
-      "required":["fields"],
-      "members":{
-        "fields":{
-          "shape":"ListFieldsResponseFieldsList",
-          "documentation":"<p>List of detailed field information.</p>"
+    "ListFieldsResponseFieldsList": {
+      "max": 100,
+      "member": {
+        "shape": "FieldSummary"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "ListLayoutsRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
-        }
-      }
-    },
-    "ListFieldsResponseFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldSummary"},
-      "max":100,
-      "min":0
-    },
-    "ListLayoutsRequest":{
-      "type":"structure",
-      "required":["domainId"],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
         },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "domainId"
+      ],
+      "type": "structure"
+    },
+    "ListLayoutsResponse": {
+      "members": {
+        "layouts": {
+          "documentation": "<p>The layouts for the domain.</p>",
+          "shape": "LayoutSummaryList"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         }
-      }
+      },
+      "required": [
+        "layouts"
+      ],
+      "type": "structure"
     },
-    "ListLayoutsResponse":{
-      "type":"structure",
-      "required":["layouts"],
-      "members":{
-        "layouts":{
-          "shape":"LayoutSummaryList",
-          "documentation":"<p>The layouts for the domain.</p>"
+    "ListTagsForResourceRequest": {
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN)</p>",
+          "location": "uri",
+          "locationName": "arn",
+          "shape": "Arn"
+        }
+      },
+      "required": [
+        "arn"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "type": "structure"
+    },
+    "ListTemplatesRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
-        }
-      }
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["arn"],
-      "members":{
-        "arn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN)</p>",
-          "location":"uri",
-          "locationName":"arn"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
-        }
-      }
-    },
-    "ListTemplatesRequest":{
-      "type":"structure",
-      "required":["domainId"],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
         },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
         }
-      }
+      },
+      "required": [
+        "domainId"
+      ],
+      "type": "structure"
     },
-    "ListTemplatesResponse":{
-      "type":"structure",
-      "required":["templates"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
+    "ListTemplatesResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         },
-        "templates":{
-          "shape":"ListTemplatesResponseTemplatesList",
-          "documentation":"<p>List of template summary objects.</p>"
+        "templates": {
+          "documentation": "<p>List of template summary objects.</p>",
+          "shape": "ListTemplatesResponseTemplatesList"
         }
-      }
+      },
+      "required": [
+        "templates"
+      ],
+      "type": "structure"
     },
-    "ListTemplatesResponseTemplatesList":{
-      "type":"list",
-      "member":{"shape":"TemplateSummary"},
-      "max":100,
-      "min":0
+    "ListTemplatesResponseTemplatesList": {
+      "max": 100,
+      "member": {
+        "shape": "TemplateSummary"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "MaxResults":{
-      "type":"integer",
-      "box":true,
-      "max":100,
-      "min":1
+    "MaxResults": {
+      "box": true,
+      "max": 100,
+      "min": 1,
+      "type": "integer"
     },
-    "NextToken":{
-      "type":"string",
-      "max":9000,
-      "min":0
+    "NextToken": {
+      "max": 9000,
+      "min": 0,
+      "type": "string"
     },
-    "Order":{
-      "type":"string",
-      "enum":[
+    "Order": {
+      "enum": [
         "Asc",
         "Desc"
-      ]
+      ],
+      "type": "string"
     },
-    "PutCaseEventConfigurationRequest":{
-      "type":"structure",
-      "required":[
+    "PutCaseEventConfigurationRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "eventBridge": {
+          "documentation": "<p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>",
+          "shape": "EventBridgeConfiguration"
+        }
+      },
+      "required": [
         "domainId",
         "eventBridge"
       ],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+      "type": "structure"
+    },
+    "PutCaseEventConfigurationResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "RelatedItemArn": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
+    },
+    "RelatedItemContent": {
+      "documentation": "<p>Represents the content of a particular type of related item.</p>",
+      "members": {
+        "comment": {
+          "documentation": "<p>Represents the content of a comment to be returned to agents.</p>",
+          "shape": "CommentContent"
         },
-        "eventBridge":{
-          "shape":"EventBridgeConfiguration",
-          "documentation":"<p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>"
-        }
-      }
-    },
-    "PutCaseEventConfigurationResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "RelatedItemArn":{
-      "type":"string",
-      "max":500,
-      "min":1
-    },
-    "RelatedItemContent":{
-      "type":"structure",
-      "members":{
-        "comment":{
-          "shape":"CommentContent",
-          "documentation":"<p>Represents the content of a comment to be returned to agents.</p>"
-        },
-        "contact":{
-          "shape":"ContactContent",
-          "documentation":"<p>Represents the content of a contact to be returned to agents.</p>"
+        "contact": {
+          "documentation": "<p>Represents the content of a contact to be returned to agents.</p>",
+          "shape": "ContactContent"
         }
       },
-      "documentation":"<p>Represents the content of a particular type of related item.</p>",
-      "union":true
+      "type": "structure",
+      "union": true
     },
-    "RelatedItemEventIncludedData":{
-      "type":"structure",
-      "required":["includeContent"],
-      "members":{
-        "includeContent":{
-          "shape":"Boolean",
-          "documentation":"<p>Details of what related item data is published through the case event stream.</p>"
+    "RelatedItemEventIncludedData": {
+      "documentation": "<p>Details of what related item data is published through the case event stream.</p>",
+      "members": {
+        "includeContent": {
+          "documentation": "<p>Details of what related item data is published through the case event stream.</p>",
+          "shape": "Boolean"
         }
       },
-      "documentation":"<p>Details of what related item data is published through the case event stream.</p>"
+      "required": [
+        "includeContent"
+      ],
+      "type": "structure"
     },
-    "RelatedItemId":{
-      "type":"string",
-      "max":500,
-      "min":1
+    "RelatedItemId": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "RelatedItemInputContent":{
-      "type":"structure",
-      "members":{
-        "comment":{
-          "shape":"CommentContent",
-          "documentation":"<p>Represents the content of a comment to be returned to agents.</p>"
+    "RelatedItemInputContent": {
+      "documentation": "<p>Represents the content of a related item to be created.</p>",
+      "members": {
+        "comment": {
+          "documentation": "<p>Represents the content of a comment to be returned to agents.</p>",
+          "shape": "CommentContent"
         },
-        "contact":{
-          "shape":"Contact",
-          "documentation":"<p>Object representing a contact in Amazon Connect as an API request field.</p>"
+        "contact": {
+          "documentation": "<p>Object representing a contact in Amazon Connect as an API request field.</p>",
+          "shape": "Contact"
         }
       },
-      "documentation":"<p>Represents the content of a related item to be created.</p>",
-      "union":true
+      "type": "structure",
+      "union": true
     },
-    "RelatedItemType":{
-      "type":"string",
-      "enum":[
+    "RelatedItemType": {
+      "enum": [
         "Contact",
         "Comment"
-      ]
+      ],
+      "type": "string"
     },
-    "RelatedItemTypeFilter":{
-      "type":"structure",
-      "members":{
-        "comment":{
-          "shape":"CommentFilter",
-          "documentation":"<p>A filter for related items of type <code>Comment</code>.</p>"
+    "RelatedItemTypeFilter": {
+      "documentation": "<p>The list of types of related items and their parameters to use for filtering.</p>",
+      "members": {
+        "comment": {
+          "documentation": "<p>A filter for related items of type <code>Comment</code>.</p>",
+          "shape": "CommentFilter"
         },
-        "contact":{
-          "shape":"ContactFilter",
-          "documentation":"<p>A filter for related items of type <code>Contact</code>.</p>"
+        "contact": {
+          "documentation": "<p>A filter for related items of type <code>Contact</code>.</p>",
+          "shape": "ContactFilter"
         }
       },
-      "documentation":"<p>The list of types of related items and their parameters to use for filtering.</p>",
-      "union":true
+      "type": "structure",
+      "union": true
     },
-    "RequiredField":{
-      "type":"structure",
-      "required":["fieldId"],
-      "members":{
-        "fieldId":{
-          "shape":"FieldId",
-          "documentation":"<p>Unique identifier of a field.</p>"
+    "RequiredField": {
+      "documentation": "<p>List of fields that must have a value provided to create a case.</p>",
+      "members": {
+        "fieldId": {
+          "documentation": "<p>Unique identifier of a field.</p>",
+          "shape": "FieldId"
         }
       },
-      "documentation":"<p>List of fields that must have a value provided to create a case.</p>"
+      "required": [
+        "fieldId"
+      ],
+      "type": "structure"
     },
-    "RequiredFieldList":{
-      "type":"list",
-      "member":{"shape":"RequiredField"},
-      "max":100,
-      "min":0
+    "RequiredFieldList": {
+      "max": 100,
+      "member": {
+        "shape": "RequiredField"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "required":[
+    "ResourceNotFoundException": {
+      "documentation": "<p>We couldn't find the requested resource. Check that your resources exists and were created in the same Amazon Web Services Region as your request, and try your request again.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "resourceId": {
+          "documentation": "<p>Unique identifier of the resource affected.</p>",
+          "shape": "String"
+        },
+        "resourceType": {
+          "documentation": "<p>Type of the resource affected.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "message",
         "resourceId",
         "resourceType"
       ],
-      "members":{
-        "message":{"shape":"String"},
-        "resourceId":{
-          "shape":"String",
-          "documentation":"<p>Unique identifier of the resource affected.</p>"
+      "type": "structure"
+    },
+    "SearchCasesRequest": {
+      "members": {
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "resourceType":{
-          "shape":"String",
-          "documentation":"<p>Type of the resource affected.</p>"
+        "fields": {
+          "documentation": "<p>The list of field identifiers to be returned as part of the response.</p>",
+          "shape": "SearchCasesRequestFieldsList"
+        },
+        "filter": {
+          "documentation": "<p>A list of filter objects.</p>",
+          "shape": "CaseFilter"
+        },
+        "maxResults": {
+          "documentation": "<p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>",
+          "shape": "SearchCasesRequestMaxResultsInteger"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "shape": "NextToken"
+        },
+        "searchTerm": {
+          "documentation": "<p>A word or phrase used to perform a quick search.</p>",
+          "shape": "SearchCasesRequestSearchTermString"
+        },
+        "sorts": {
+          "documentation": "<p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>",
+          "shape": "SearchCasesRequestSortsList"
         }
       },
-      "documentation":"<p>We couldn't find the requested resource. Check that your resources exists and were created in the same Amazon Web Services Region as your request, and try your request again.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
+      "required": [
+        "domainId"
+      ],
+      "type": "structure"
+    },
+    "SearchCasesRequestFieldsList": {
+      "max": 10,
+      "member": {
+        "shape": "FieldIdentifier"
       },
-      "exception":true
+      "min": 0,
+      "type": "list"
     },
-    "SearchCasesRequest":{
-      "type":"structure",
-      "required":["domainId"],
-      "members":{
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+    "SearchCasesRequestMaxResultsInteger": {
+      "box": true,
+      "max": 25,
+      "min": 1,
+      "type": "integer"
+    },
+    "SearchCasesRequestSearchTermString": {
+      "max": 255,
+      "min": 0,
+      "type": "string"
+    },
+    "SearchCasesRequestSortsList": {
+      "documentation": "<p>/@documentation(&quot;The templateId&quot;)</p>",
+      "max": 2,
+      "member": {
+        "shape": "Sort"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "SearchCasesResponse": {
+      "members": {
+        "cases": {
+          "documentation": "<p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>",
+          "shape": "SearchCasesResponseCasesList"
         },
-        "fields":{
-          "shape":"SearchCasesRequestFieldsList",
-          "documentation":"<p>The list of field identifiers to be returned as part of the response.</p>"
-        },
-        "filter":{
-          "shape":"CaseFilter",
-          "documentation":"<p>A list of filter objects.</p>"
-        },
-        "maxResults":{
-          "shape":"SearchCasesRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>"
-        },
-        "searchTerm":{
-          "shape":"SearchCasesRequestSearchTermString",
-          "documentation":"<p>A word or phrase used to perform a quick search.</p>"
-        },
-        "sorts":{
-          "shape":"SearchCasesRequestSortsList",
-          "documentation":"<p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         }
-      }
+      },
+      "required": [
+        "cases"
+      ],
+      "type": "structure"
     },
-    "SearchCasesRequestFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldIdentifier"},
-      "max":10,
-      "min":0
+    "SearchCasesResponseCasesList": {
+      "max": 25,
+      "member": {
+        "shape": "SearchCasesResponseItem"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "SearchCasesRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":25,
-      "min":1
-    },
-    "SearchCasesRequestSearchTermString":{
-      "type":"string",
-      "max":255,
-      "min":0
-    },
-    "SearchCasesRequestSortsList":{
-      "type":"list",
-      "member":{"shape":"Sort"},
-      "documentation":"<p>/@documentation(&quot;The templateId&quot;)</p>",
-      "max":2,
-      "min":0
-    },
-    "SearchCasesResponse":{
-      "type":"structure",
-      "required":["cases"],
-      "members":{
-        "cases":{
-          "shape":"SearchCasesResponseCasesList",
-          "documentation":"<p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>"
+    "SearchCasesResponseItem": {
+      "documentation": "<p>A list of items that represent cases.</p>",
+      "members": {
+        "caseId": {
+          "documentation": "<p>A unique identifier of the case.</p>",
+          "shape": "CaseId"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
+        "fields": {
+          "documentation": "<p>List of case field values.</p>",
+          "shape": "SearchCasesResponseItemFieldsList"
+        },
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "templateId": {
+          "documentation": "<p>A unique identifier of a template.</p>",
+          "shape": "TemplateId"
         }
-      }
-    },
-    "SearchCasesResponseCasesList":{
-      "type":"list",
-      "member":{"shape":"SearchCasesResponseItem"},
-      "max":25,
-      "min":0
-    },
-    "SearchCasesResponseItem":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "caseId",
         "fields",
         "templateId"
       ],
-      "members":{
-        "caseId":{
-          "shape":"CaseId",
-          "documentation":"<p>A unique identifier of the case.</p>"
+      "type": "structure"
+    },
+    "SearchCasesResponseItemFieldsList": {
+      "max": 10,
+      "member": {
+        "shape": "FieldValue"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "SearchRelatedItemsRequest": {
+      "members": {
+        "caseId": {
+          "documentation": "<p>A unique identifier of the case.</p>",
+          "location": "uri",
+          "locationName": "caseId",
+          "shape": "CaseId"
         },
-        "fields":{
-          "shape":"SearchCasesResponseItemFieldsList",
-          "documentation":"<p>List of case field values.</p>"
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
+        "filters": {
+          "documentation": "<p>The list of types of related items and their parameters to use for filtering.</p>",
+          "shape": "SearchRelatedItemsRequestFiltersList"
         },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>A unique identifier of a template.</p>"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "shape": "SearchRelatedItemsRequestMaxResultsInteger"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "shape": "NextToken"
         }
       },
-      "documentation":"<p>A list of items that represent cases.</p>"
-    },
-    "SearchCasesResponseItemFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldValue"},
-      "max":10,
-      "min":0
-    },
-    "SearchRelatedItemsRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "caseId",
         "domainId"
       ],
-      "members":{
-        "caseId":{
-          "shape":"CaseId",
-          "documentation":"<p>A unique identifier of the case.</p>",
-          "location":"uri",
-          "locationName":"caseId"
+      "type": "structure"
+    },
+    "SearchRelatedItemsRequestFiltersList": {
+      "max": 10,
+      "member": {
+        "shape": "RelatedItemTypeFilter"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "SearchRelatedItemsRequestMaxResultsInteger": {
+      "box": true,
+      "max": 25,
+      "min": 1,
+      "type": "integer"
+    },
+    "SearchRelatedItemsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. This is null if there are no more results to return.</p>",
+          "shape": "NextToken"
         },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "filters":{
-          "shape":"SearchRelatedItemsRequestFiltersList",
-          "documentation":"<p>The list of types of related items and their parameters to use for filtering.</p>"
-        },
-        "maxResults":{
-          "shape":"SearchRelatedItemsRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return per page.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>"
+        "relatedItems": {
+          "documentation": "<p>A list of items related to a case. </p>",
+          "shape": "SearchRelatedItemsResponseRelatedItemsList"
         }
-      }
+      },
+      "required": [
+        "relatedItems"
+      ],
+      "type": "structure"
     },
-    "SearchRelatedItemsRequestFiltersList":{
-      "type":"list",
-      "member":{"shape":"RelatedItemTypeFilter"},
-      "max":10,
-      "min":0
-    },
-    "SearchRelatedItemsRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":25,
-      "min":1
-    },
-    "SearchRelatedItemsResponse":{
-      "type":"structure",
-      "required":["relatedItems"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. This is null if there are no more results to return.</p>"
+    "SearchRelatedItemsResponseItem": {
+      "documentation": "<p>A list of items that represent RelatedItems.</p>",
+      "members": {
+        "associationTime": {
+          "documentation": "<p>Time at which a related item was associated with a case.</p>",
+          "shape": "AssociationTime"
         },
-        "relatedItems":{
-          "shape":"SearchRelatedItemsResponseRelatedItemsList",
-          "documentation":"<p>A list of items related to a case. </p>"
+        "content": {
+          "documentation": "<p>Represents the content of a particular type of related item.</p>",
+          "shape": "RelatedItemContent"
+        },
+        "relatedItemId": {
+          "documentation": "<p>Unique identifier of a related item.</p>",
+          "shape": "RelatedItemId"
+        },
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "type": {
+          "documentation": "<p>Type of a related item.</p>",
+          "shape": "RelatedItemType"
         }
-      }
-    },
-    "SearchRelatedItemsResponseItem":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "associationTime",
         "content",
         "relatedItemId",
         "type"
       ],
-      "members":{
-        "associationTime":{
-          "shape":"AssociationTime",
-          "documentation":"<p>Time at which a related item was associated with a case.</p>"
-        },
-        "content":{
-          "shape":"RelatedItemContent",
-          "documentation":"<p>Represents the content of a particular type of related item.</p>"
-        },
-        "relatedItemId":{
-          "shape":"RelatedItemId",
-          "documentation":"<p>Unique identifier of a related item.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
-        },
-        "type":{
-          "shape":"RelatedItemType",
-          "documentation":"<p>Type of a related item.</p>"
+      "type": "structure"
+    },
+    "SearchRelatedItemsResponseRelatedItemsList": {
+      "max": 25,
+      "member": {
+        "shape": "SearchRelatedItemsResponseItem"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "Section": {
+      "documentation": "<p>This represents a sections within a panel or tab of the page layout.</p>",
+      "members": {
+        "fieldGroup": {
+          "documentation": "<p>Consists of a group of fields and associated properties.</p>",
+          "shape": "FieldGroup"
         }
       },
-      "documentation":"<p>A list of items that represent RelatedItems.</p>"
+      "type": "structure",
+      "union": true
     },
-    "SearchRelatedItemsResponseRelatedItemsList":{
-      "type":"list",
-      "member":{"shape":"SearchRelatedItemsResponseItem"},
-      "max":25,
-      "min":0
+    "SectionsList": {
+      "documentation": "<p>Ordered list containing different kinds of sections that can be added.</p>",
+      "max": 1,
+      "member": {
+        "shape": "Section"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "Section":{
-      "type":"structure",
-      "members":{
-        "fieldGroup":{
-          "shape":"FieldGroup",
-          "documentation":"<p>Consists of a group of fields and associated properties.</p>"
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>The service quota has been exceeded. For a list of service quotas, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html\">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>",
+      "error": {
+        "httpStatusCode": 402,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>This represents a sections within a panel or tab of the page layout.</p>",
-      "union":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "SectionsList":{
-      "type":"list",
-      "member":{"shape":"Section"},
-      "documentation":"<p>Ordered list containing different kinds of sections that can be added.</p>",
-      "max":1,
-      "min":0
-    },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
+    "Sort": {
+      "documentation": "<p>A structured set of sort terms.</p>",
+      "members": {
+        "fieldId": {
+          "documentation": "<p>Unique identifier of a field.</p>",
+          "shape": "FieldId"
+        },
+        "sortOrder": {
+          "documentation": "<p>A structured set of sort terms</p>",
+          "shape": "Order"
+        }
       },
-      "documentation":"<p>The service quota has been exceeded. For a list of service quotas, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html\">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>",
-      "error":{
-        "httpStatusCode":402,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "Sort":{
-      "type":"structure",
-      "required":[
+      "required": [
         "fieldId",
         "sortOrder"
       ],
-      "members":{
-        "fieldId":{
-          "shape":"FieldId",
-          "documentation":"<p>Unique identifier of a field.</p>"
+      "type": "structure"
+    },
+    "String": {
+      "type": "string"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "^(?!aws:)[a-zA-Z+-=._:/]+$",
+      "type": "string"
+    },
+    "TagKeyList": {
+      "max": 50,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "TagResourceRequest": {
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN)</p>",
+          "location": "uri",
+          "locationName": "arn",
+          "shape": "Arn"
         },
-        "sortOrder":{
-          "shape":"Order",
-          "documentation":"<p>A structured set of sort terms</p>"
+        "tags": {
+          "documentation": "<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
         }
       },
-      "documentation":"<p>A structured set of sort terms.</p>"
-    },
-    "String":{"type":"string"},
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"^(?!aws:)[a-zA-Z+-=._:/]+$"
-    },
-    "TagKeyList":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "max":50,
-      "min":0
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "arn",
         "tags"
       ],
-      "members":{
-        "arn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN)</p>",
-          "location":"uri",
-          "locationName":"arn"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>"
-        }
+      "type": "structure"
+    },
+    "Tags": {
+      "key": {
+        "shape": "String"
+      },
+      "type": "map",
+      "value": {
+        "shape": "String"
       }
     },
-    "Tags":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
+    "TemplateArn": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "TemplateArn":{
-      "type":"string",
-      "max":500,
-      "min":1
+    "TemplateDescription": {
+      "max": 255,
+      "min": 0,
+      "type": "string"
     },
-    "TemplateDescription":{
-      "type":"string",
-      "max":255,
-      "min":0
+    "TemplateId": {
+      "max": 500,
+      "min": 1,
+      "type": "string"
     },
-    "TemplateId":{
-      "type":"string",
-      "max":500,
-      "min":1
+    "TemplateName": {
+      "max": 100,
+      "min": 1,
+      "pattern": "^.*[\\S]$",
+      "type": "string"
     },
-    "TemplateName":{
-      "type":"string",
-      "max":100,
-      "min":1,
-      "pattern":"^.*[\\S]$"
-    },
-    "TemplateSummary":{
-      "type":"structure",
-      "required":[
+    "TemplateSummary": {
+      "documentation": "<p>Template summary information.</p>",
+      "members": {
+        "name": {
+          "documentation": "<p>The template name.</p>",
+          "shape": "TemplateName"
+        },
+        "templateArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the template.</p>",
+          "shape": "TemplateArn"
+        },
+        "templateId": {
+          "documentation": "<p>The unique identifier for the template.</p>",
+          "shape": "TemplateId"
+        }
+      },
+      "required": [
         "name",
         "templateArn",
         "templateId"
       ],
-      "members":{
-        "name":{
-          "shape":"TemplateName",
-          "documentation":"<p>The template name.</p>"
-        },
-        "templateArn":{
-          "shape":"TemplateArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the template.</p>"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>The unique identifier for the template.</p>"
+      "type": "structure"
+    },
+    "ThrottlingException": {
+      "documentation": "<p>The rate has been exceeded for this API. Please try again after a few minutes.</p>",
+      "error": {
+        "httpStatusCode": 429,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>Template summary information.</p>"
-    },
-    "ThrottlingException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
       },
-      "documentation":"<p>The rate has been exceeded for this API. Please try again after a few minutes.</p>",
-      "error":{
-        "httpStatusCode":429,
-        "senderFault":true
-      },
-      "exception":true,
-      "retryable":{"throttling":false}
+      "type": "structure"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "UntagResourceRequest": {
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN)</p>",
+          "location": "uri",
+          "locationName": "arn",
+          "shape": "Arn"
+        },
+        "tagKeys": {
+          "documentation": "<p>List of tag keys.</p>",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeyList"
+        }
+      },
+      "required": [
         "arn",
         "tagKeys"
       ],
-      "members":{
-        "arn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN)</p>",
-          "location":"uri",
-          "locationName":"arn"
-        },
-        "tagKeys":{
-          "shape":"TagKeyList",
-          "documentation":"<p>List of tag keys.</p>",
-          "location":"querystring",
-          "locationName":"tagKeys"
-        }
-      }
+      "type": "structure"
     },
-    "UpdateCaseRequest":{
-      "type":"structure",
-      "required":[
+    "UpdateCaseRequest": {
+      "members": {
+        "caseId": {
+          "documentation": "<p>A unique identifier of the case.</p>",
+          "location": "uri",
+          "locationName": "caseId",
+          "shape": "CaseId"
+        },
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
+        },
+        "fields": {
+          "documentation": "<p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>",
+          "shape": "UpdateCaseRequestFieldsList"
+        }
+      },
+      "required": [
         "caseId",
         "domainId",
         "fields"
       ],
-      "members":{
-        "caseId":{
-          "shape":"CaseId",
-          "documentation":"<p>A unique identifier of the case.</p>",
-          "location":"uri",
-          "locationName":"caseId"
+      "type": "structure"
+    },
+    "UpdateCaseRequestFieldsList": {
+      "max": 100,
+      "member": {
+        "shape": "FieldValue"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "UpdateCaseResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateFieldRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>The description of a field.</p>",
+          "shape": "FieldDescription"
         },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "fields":{
-          "shape":"UpdateCaseRequestFieldsList",
-          "documentation":"<p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>"
+        "fieldId": {
+          "documentation": "<p>The unique identifier of a field.</p>",
+          "location": "uri",
+          "locationName": "fieldId",
+          "shape": "FieldId"
+        },
+        "name": {
+          "documentation": "<p>The name of the field.</p>",
+          "shape": "FieldName"
         }
-      }
-    },
-    "UpdateCaseRequestFieldsList":{
-      "type":"list",
-      "member":{"shape":"FieldValue"},
-      "max":100,
-      "min":0
-    },
-    "UpdateCaseResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateFieldRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "domainId",
         "fieldId"
       ],
-      "members":{
-        "description":{
-          "shape":"FieldDescription",
-          "documentation":"<p>The description of a field.</p>"
+      "type": "structure"
+    },
+    "UpdateFieldResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateLayoutRequest": {
+      "members": {
+        "content": {
+          "documentation": "<p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>",
+          "shape": "LayoutContent"
         },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "fieldId":{
-          "shape":"FieldId",
-          "documentation":"<p>The unique identifier of a field.</p>",
-          "location":"uri",
-          "locationName":"fieldId"
+        "layoutId": {
+          "documentation": "<p>The unique identifier of the layout.</p>",
+          "location": "uri",
+          "locationName": "layoutId",
+          "shape": "LayoutId"
         },
-        "name":{
-          "shape":"FieldName",
-          "documentation":"<p>The name of the field.</p>"
+        "name": {
+          "documentation": "<p>The name of the layout. It must be unique per domain.</p>",
+          "shape": "LayoutName"
         }
-      }
-    },
-    "UpdateFieldResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateLayoutRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "domainId",
         "layoutId"
       ],
-      "members":{
-        "content":{
-          "shape":"LayoutContent",
-          "documentation":"<p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>"
+      "type": "structure"
+    },
+    "UpdateLayoutResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateTemplateRequest": {
+      "members": {
+        "description": {
+          "documentation": "<p>A brief description of the template.</p>",
+          "shape": "TemplateDescription"
         },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
+        "domainId": {
+          "documentation": "<p>The unique identifier of the Cases domain. </p>",
+          "location": "uri",
+          "locationName": "domainId",
+          "shape": "DomainId"
         },
-        "layoutId":{
-          "shape":"LayoutId",
-          "documentation":"<p>The unique identifier of the layout.</p>",
-          "location":"uri",
-          "locationName":"layoutId"
+        "layoutConfiguration": {
+          "documentation": "<p>Configuration of layouts associated to the template.</p>",
+          "shape": "LayoutConfiguration"
         },
-        "name":{
-          "shape":"LayoutName",
-          "documentation":"<p>The name of the layout. It must be unique per domain.</p>"
+        "name": {
+          "documentation": "<p>The name of the template. It must be unique per domain.</p>",
+          "shape": "TemplateName"
+        },
+        "requiredFields": {
+          "documentation": "<p>A list of fields that must contain a value for a case to be successfully created with this template.</p>",
+          "shape": "RequiredFieldList"
+        },
+        "templateId": {
+          "documentation": "<p>A unique identifier for the template.</p>",
+          "location": "uri",
+          "locationName": "templateId",
+          "shape": "TemplateId"
         }
-      }
-    },
-    "UpdateLayoutResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateTemplateRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "domainId",
         "templateId"
       ],
-      "members":{
-        "description":{
-          "shape":"TemplateDescription",
-          "documentation":"<p>A brief description of the template.</p>"
-        },
-        "domainId":{
-          "shape":"DomainId",
-          "documentation":"<p>The unique identifier of the Cases domain. </p>",
-          "location":"uri",
-          "locationName":"domainId"
-        },
-        "layoutConfiguration":{
-          "shape":"LayoutConfiguration",
-          "documentation":"<p>Configuration of layouts associated to the template.</p>"
-        },
-        "name":{
-          "shape":"TemplateName",
-          "documentation":"<p>The name of the template. It must be unique per domain.</p>"
-        },
-        "requiredFields":{
-          "shape":"RequiredFieldList",
-          "documentation":"<p>A list of fields that must contain a value for a case to be successfully created with this template.</p>"
-        },
-        "templateId":{
-          "shape":"TemplateId",
-          "documentation":"<p>A unique identifier for the template.</p>",
-          "location":"uri",
-          "locationName":"templateId"
+      "type": "structure"
+    },
+    "UpdateTemplateResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "ValidationException": {
+      "documentation": "<p>The request isn't valid. Check the syntax and try again.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
-      }
-    },
-    "UpdateTemplateResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "ValidationException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The request isn't valid. Check the syntax and try again.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "Value": {
+      "max": 100,
+      "min": 0,
+      "type": "string"
+    },
+    "ValuesList": {
+      "max": 1,
+      "member": {
+        "shape": "Value"
       },
-      "exception":true
-    },
-    "Value":{
-      "type":"string",
-      "max":100,
-      "min":0
-    },
-    "ValuesList":{
-      "type":"list",
-      "member":{"shape":"Value"},
-      "max":1,
-      "min":0
+      "min": 0,
+      "type": "list"
     }
   },
-  "documentation":"<p>Welcome to the Amazon Connect Cases API Reference. This guide provides information about the Amazon Connect Cases API, which you can use to create, update, get, and list Cases domains, fields, field options, layouts, templates, cases, related items, and tags.</p> <pre><code> &lt;p&gt;For more information about Amazon Connect Cases, see &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/adminguide/cases.html&quot;&gt;Amazon Connect Cases&lt;/a&gt; in the &lt;i&gt;Amazon Connect Administrator Guide&lt;/i&gt;. &lt;/p&gt; </code></pre>"
+  "version": "2.0"
 }

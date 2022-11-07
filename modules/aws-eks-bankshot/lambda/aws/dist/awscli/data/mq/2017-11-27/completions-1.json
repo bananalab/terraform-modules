@@ -1,5 +1,114 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteBroker": {
+      "BrokerId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BrokerId",
+            "resourceName": "Broker"
+          }
+        ]
+      }
+    },
+    "DeleteUser": {
+      "BrokerId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BrokerId",
+            "resourceName": "Broker"
+          }
+        ]
+      }
+    },
+    "DescribeBroker": {
+      "BrokerId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BrokerId",
+            "resourceName": "Broker"
+          }
+        ]
+      }
+    },
+    "DescribeUser": {
+      "BrokerId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BrokerId",
+            "resourceName": "Broker"
+          }
+        ]
+      }
+    },
+    "ListUsers": {
+      "BrokerId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BrokerId",
+            "resourceName": "Broker"
+          }
+        ]
+      }
+    },
+    "RebootBroker": {
+      "BrokerId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BrokerId",
+            "resourceName": "Broker"
+          }
+        ]
+      }
+    },
+    "UpdateBroker": {
+      "BrokerId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BrokerId",
+            "resourceName": "Broker"
+          }
+        ]
+      },
+      "EngineVersion": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EngineVersion",
+            "resourceName": "Configuration"
+          }
+        ]
+      }
+    },
+    "UpdateConfiguration": {
+      "Description": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Description",
+            "resourceName": "Configuration"
+          }
+        ]
+      }
+    },
+    "UpdateUser": {
+      "BrokerId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "BrokerId",
+            "resourceName": "Broker"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Broker": {
       "operation": "ListBrokers",
@@ -15,114 +124,5 @@
       }
     }
   },
-  "operations": {
-    "DeleteBroker": {
-      "BrokerId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Broker",
-            "resourceIdentifier": "BrokerId"
-          }
-        ]
-      }
-    },
-    "DeleteUser": {
-      "BrokerId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Broker",
-            "resourceIdentifier": "BrokerId"
-          }
-        ]
-      }
-    },
-    "DescribeBroker": {
-      "BrokerId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Broker",
-            "resourceIdentifier": "BrokerId"
-          }
-        ]
-      }
-    },
-    "DescribeUser": {
-      "BrokerId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Broker",
-            "resourceIdentifier": "BrokerId"
-          }
-        ]
-      }
-    },
-    "ListUsers": {
-      "BrokerId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Broker",
-            "resourceIdentifier": "BrokerId"
-          }
-        ]
-      }
-    },
-    "RebootBroker": {
-      "BrokerId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Broker",
-            "resourceIdentifier": "BrokerId"
-          }
-        ]
-      }
-    },
-    "UpdateBroker": {
-      "BrokerId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Broker",
-            "resourceIdentifier": "BrokerId"
-          }
-        ]
-      },
-      "EngineVersion": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Configuration",
-            "resourceIdentifier": "EngineVersion"
-          }
-        ]
-      }
-    },
-    "UpdateConfiguration": {
-      "Description": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Configuration",
-            "resourceIdentifier": "Description"
-          }
-        ]
-      }
-    },
-    "UpdateUser": {
-      "BrokerId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Broker",
-            "resourceIdentifier": "BrokerId"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

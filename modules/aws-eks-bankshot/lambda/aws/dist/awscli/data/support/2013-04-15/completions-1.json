@@ -1,24 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Case": {
-      "operation": "DescribeCases",
-      "resourceIdentifier": {
-        "caseId": "cases[].caseId",
-        "displayId": "cases[].displayId",
-        "ccEmailAddresses": "cases[].ccEmailAddresses",
-        "language": "cases[].language"
-      }
-    }
-  },
   "operations": {
     "AddCommunicationToCase": {
       "caseId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "caseId"
+            "resourceIdentifier": "caseId",
+            "resourceName": "Case"
           }
         ]
       },
@@ -26,8 +14,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "ccEmailAddresses"
+            "resourceIdentifier": "ccEmailAddresses",
+            "resourceName": "Case"
           }
         ]
       }
@@ -37,8 +25,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "displayId"
+            "resourceIdentifier": "displayId",
+            "resourceName": "Case"
           }
         ]
       },
@@ -46,8 +34,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "language"
+            "resourceIdentifier": "language",
+            "resourceName": "Case"
           }
         ]
       }
@@ -57,8 +45,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "caseId"
+            "resourceIdentifier": "caseId",
+            "resourceName": "Case"
           }
         ]
       }
@@ -68,8 +56,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "language"
+            "resourceIdentifier": "language",
+            "resourceName": "Case"
           }
         ]
       }
@@ -79,8 +67,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "language"
+            "resourceIdentifier": "language",
+            "resourceName": "Case"
           }
         ]
       }
@@ -90,8 +78,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "language"
+            "resourceIdentifier": "language",
+            "resourceName": "Case"
           }
         ]
       }
@@ -101,8 +89,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "language"
+            "resourceIdentifier": "language",
+            "resourceName": "Case"
           }
         ]
       }
@@ -112,11 +100,23 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Case",
-            "resourceIdentifier": "caseId"
+            "resourceIdentifier": "caseId",
+            "resourceName": "Case"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Case": {
+      "operation": "DescribeCases",
+      "resourceIdentifier": {
+        "caseId": "cases[].caseId",
+        "ccEmailAddresses": "cases[].ccEmailAddresses",
+        "displayId": "cases[].displayId",
+        "language": "cases[].language"
+      }
+    }
+  },
+  "version": "1.0"
 }

@@ -1,5 +1,4 @@
 {
-  "version": 1.0,
   "merge": {
     "pagination": {
       "ListResolverEndpointIpAddresses": {
@@ -35,5 +34,6 @@
         ]
       }
     }
-  }
+  },
+  "version": 1.0
 }

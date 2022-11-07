@@ -1,34 +1,522 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteAlarms": {
+      "AlarmNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmName",
+            "resourceName": "Alarm"
+          }
+        ]
+      }
+    },
+    "DeleteDashboards": {
+      "DashboardNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DashboardName",
+            "resourceName": "Dashboard"
+          }
+        ]
+      }
+    },
+    "DescribeAlarmHistory": {
+      "AlarmName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmName",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "HistoryItemType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HistoryItemType",
+            "resourceName": "AlarmHistory"
+          }
+        ]
+      }
+    },
+    "DescribeAlarms": {
+      "AlarmNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmName",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "StateValue": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StateValue",
+            "resourceName": "Alarm"
+          }
+        ]
+      }
+    },
+    "DescribeAlarmsForMetric": {
+      "Dimensions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Dimensions",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "ExtendedStatistic": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ExtendedStatistic",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "MetricName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MetricName",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "Namespace": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Namespace",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "Period": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Period",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Statistic": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Statistic",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Unit": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Unit",
+            "resourceName": "Alarm"
+          }
+        ]
+      }
+    },
+    "DisableAlarmActions": {
+      "AlarmNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmName",
+            "resourceName": "Alarm"
+          }
+        ]
+      }
+    },
+    "EnableAlarmActions": {
+      "AlarmNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmName",
+            "resourceName": "Alarm"
+          }
+        ]
+      }
+    },
+    "GetDashboard": {
+      "DashboardName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DashboardName",
+            "resourceName": "Dashboard"
+          }
+        ]
+      }
+    },
+    "GetMetricStatistics": {
+      "Dimensions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Dimensions",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "ExtendedStatistics": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ExtendedStatistic",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "MetricName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MetricName",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "Namespace": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Namespace",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "Period": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Period",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Statistics": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Statistic",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Unit": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Unit",
+            "resourceName": "Alarm"
+          }
+        ]
+      }
+    },
+    "ListMetrics": {
+      "Dimensions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Dimensions",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "MetricName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MetricName",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "Namespace": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Namespace",
+            "resourceName": "Metric"
+          }
+        ]
+      }
+    },
+    "PutDashboard": {
+      "DashboardName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DashboardName",
+            "resourceName": "Dashboard"
+          }
+        ]
+      }
+    },
+    "PutMetricAlarm": {
+      "ActionsEnabled": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ActionsEnabled",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "AlarmActions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmActions",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "AlarmDescription": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmDescription",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "AlarmName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmName",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "ComparisonOperator": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ComparisonOperator",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "DatapointsToAlarm": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DatapointsToAlarm",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Dimensions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Dimensions",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "EvaluateLowSampleCountPercentile": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EvaluateLowSampleCountPercentile",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "EvaluationPeriods": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EvaluationPeriods",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "ExtendedStatistic": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ExtendedStatistic",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "InsufficientDataActions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InsufficientDataActions",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "MetricName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MetricName",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "Namespace": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Namespace",
+            "resourceName": "Metric"
+          }
+        ]
+      },
+      "OKActions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OKActions",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Period": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Period",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Statistic": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Statistic",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Threshold": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Threshold",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "TreatMissingData": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TreatMissingData",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "Unit": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Unit",
+            "resourceName": "Alarm"
+          }
+        ]
+      }
+    },
+    "PutMetricData": {
+      "Namespace": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Namespace",
+            "resourceName": "Metric"
+          }
+        ]
+      }
+    },
+    "SetAlarmState": {
+      "AlarmName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AlarmName",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "StateReason": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StateReason",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "StateReasonData": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StateReasonData",
+            "resourceName": "Alarm"
+          }
+        ]
+      },
+      "StateValue": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StateValue",
+            "resourceName": "Alarm"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
+    "Alarm": {
+      "operation": "DescribeAlarms",
+      "resourceIdentifier": {
+        "ActionsEnabled": "MetricAlarms[].ActionsEnabled",
+        "AlarmActions": "MetricAlarms[].AlarmActions",
+        "AlarmDescription": "MetricAlarms[].AlarmDescription",
+        "AlarmName": "MetricAlarms[].AlarmName",
+        "ComparisonOperator": "MetricAlarms[].ComparisonOperator",
+        "DatapointsToAlarm": "MetricAlarms[].DatapointsToAlarm",
+        "EvaluateLowSampleCountPercentile": "MetricAlarms[].EvaluateLowSampleCountPercentile",
+        "EvaluationPeriods": "MetricAlarms[].EvaluationPeriods",
+        "ExtendedStatistic": "MetricAlarms[].ExtendedStatistic",
+        "InsufficientDataActions": "MetricAlarms[].InsufficientDataActions",
+        "OKActions": "MetricAlarms[].OKActions",
+        "Period": "MetricAlarms[].Period",
+        "StateReason": "MetricAlarms[].StateReason",
+        "StateReasonData": "MetricAlarms[].StateReasonData",
+        "StateValue": "MetricAlarms[].StateValue",
+        "Statistic": "MetricAlarms[].Statistic",
+        "Threshold": "MetricAlarms[].Threshold",
+        "TreatMissingData": "MetricAlarms[].TreatMissingData",
+        "Unit": "MetricAlarms[].Unit"
+      }
+    },
     "AlarmHistory": {
       "operation": "DescribeAlarmHistory",
       "resourceIdentifier": {
         "HistoryItemType": "AlarmHistoryItems[].HistoryItemType"
-      }
-    },
-    "Alarm": {
-      "operation": "DescribeAlarms",
-      "resourceIdentifier": {
-        "AlarmName": "MetricAlarms[].AlarmName",
-        "AlarmDescription": "MetricAlarms[].AlarmDescription",
-        "ActionsEnabled": "MetricAlarms[].ActionsEnabled",
-        "OKActions": "MetricAlarms[].OKActions",
-        "AlarmActions": "MetricAlarms[].AlarmActions",
-        "InsufficientDataActions": "MetricAlarms[].InsufficientDataActions",
-        "StateValue": "MetricAlarms[].StateValue",
-        "StateReason": "MetricAlarms[].StateReason",
-        "StateReasonData": "MetricAlarms[].StateReasonData",
-        "Statistic": "MetricAlarms[].Statistic",
-        "ExtendedStatistic": "MetricAlarms[].ExtendedStatistic",
-        "Period": "MetricAlarms[].Period",
-        "Unit": "MetricAlarms[].Unit",
-        "EvaluationPeriods": "MetricAlarms[].EvaluationPeriods",
-        "DatapointsToAlarm": "MetricAlarms[].DatapointsToAlarm",
-        "Threshold": "MetricAlarms[].Threshold",
-        "ComparisonOperator": "MetricAlarms[].ComparisonOperator",
-        "TreatMissingData": "MetricAlarms[].TreatMissingData",
-        "EvaluateLowSampleCountPercentile": "MetricAlarms[].EvaluateLowSampleCountPercentile"
       }
     },
     "Dashboard": {
@@ -40,499 +528,11 @@
     "Metric": {
       "operation": "ListMetrics",
       "resourceIdentifier": {
-        "Namespace": "Metrics[].Namespace",
+        "Dimensions": "Metrics[].Dimensions",
         "MetricName": "Metrics[].MetricName",
-        "Dimensions": "Metrics[].Dimensions"
+        "Namespace": "Metrics[].Namespace"
       }
     }
   },
-  "operations": {
-    "DeleteAlarms": {
-      "AlarmNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmName"
-          }
-        ]
-      }
-    },
-    "DeleteDashboards": {
-      "DashboardNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dashboard",
-            "resourceIdentifier": "DashboardName"
-          }
-        ]
-      }
-    },
-    "DescribeAlarmHistory": {
-      "AlarmName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmName"
-          }
-        ]
-      },
-      "HistoryItemType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AlarmHistory",
-            "resourceIdentifier": "HistoryItemType"
-          }
-        ]
-      }
-    },
-    "DescribeAlarms": {
-      "AlarmNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmName"
-          }
-        ]
-      },
-      "StateValue": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "StateValue"
-          }
-        ]
-      }
-    },
-    "DescribeAlarmsForMetric": {
-      "MetricName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "MetricName"
-          }
-        ]
-      },
-      "Namespace": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Namespace"
-          }
-        ]
-      },
-      "Statistic": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Statistic"
-          }
-        ]
-      },
-      "ExtendedStatistic": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "ExtendedStatistic"
-          }
-        ]
-      },
-      "Dimensions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Dimensions"
-          }
-        ]
-      },
-      "Period": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Period"
-          }
-        ]
-      },
-      "Unit": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Unit"
-          }
-        ]
-      }
-    },
-    "DisableAlarmActions": {
-      "AlarmNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmName"
-          }
-        ]
-      }
-    },
-    "EnableAlarmActions": {
-      "AlarmNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmName"
-          }
-        ]
-      }
-    },
-    "GetDashboard": {
-      "DashboardName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dashboard",
-            "resourceIdentifier": "DashboardName"
-          }
-        ]
-      }
-    },
-    "GetMetricStatistics": {
-      "Namespace": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Namespace"
-          }
-        ]
-      },
-      "MetricName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "MetricName"
-          }
-        ]
-      },
-      "Dimensions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Dimensions"
-          }
-        ]
-      },
-      "Period": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Period"
-          }
-        ]
-      },
-      "Statistics": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Statistic"
-          }
-        ]
-      },
-      "ExtendedStatistics": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "ExtendedStatistic"
-          }
-        ]
-      },
-      "Unit": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Unit"
-          }
-        ]
-      }
-    },
-    "ListMetrics": {
-      "Namespace": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Namespace"
-          }
-        ]
-      },
-      "MetricName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "MetricName"
-          }
-        ]
-      },
-      "Dimensions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Dimensions"
-          }
-        ]
-      }
-    },
-    "PutDashboard": {
-      "DashboardName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dashboard",
-            "resourceIdentifier": "DashboardName"
-          }
-        ]
-      }
-    },
-    "PutMetricAlarm": {
-      "AlarmName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmName"
-          }
-        ]
-      },
-      "AlarmDescription": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmDescription"
-          }
-        ]
-      },
-      "ActionsEnabled": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "ActionsEnabled"
-          }
-        ]
-      },
-      "OKActions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "OKActions"
-          }
-        ]
-      },
-      "AlarmActions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmActions"
-          }
-        ]
-      },
-      "InsufficientDataActions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "InsufficientDataActions"
-          }
-        ]
-      },
-      "MetricName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "MetricName"
-          }
-        ]
-      },
-      "Namespace": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Namespace"
-          }
-        ]
-      },
-      "Statistic": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Statistic"
-          }
-        ]
-      },
-      "ExtendedStatistic": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "ExtendedStatistic"
-          }
-        ]
-      },
-      "Dimensions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Dimensions"
-          }
-        ]
-      },
-      "Period": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Period"
-          }
-        ]
-      },
-      "Unit": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Unit"
-          }
-        ]
-      },
-      "EvaluationPeriods": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "EvaluationPeriods"
-          }
-        ]
-      },
-      "DatapointsToAlarm": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "DatapointsToAlarm"
-          }
-        ]
-      },
-      "Threshold": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "Threshold"
-          }
-        ]
-      },
-      "ComparisonOperator": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "ComparisonOperator"
-          }
-        ]
-      },
-      "TreatMissingData": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "TreatMissingData"
-          }
-        ]
-      },
-      "EvaluateLowSampleCountPercentile": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "EvaluateLowSampleCountPercentile"
-          }
-        ]
-      }
-    },
-    "PutMetricData": {
-      "Namespace": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Metric",
-            "resourceIdentifier": "Namespace"
-          }
-        ]
-      }
-    },
-    "SetAlarmState": {
-      "AlarmName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "AlarmName"
-          }
-        ]
-      },
-      "StateValue": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "StateValue"
-          }
-        ]
-      },
-      "StateReason": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "StateReason"
-          }
-        ]
-      },
-      "StateReasonData": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Alarm",
-            "resourceIdentifier": "StateReasonData"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

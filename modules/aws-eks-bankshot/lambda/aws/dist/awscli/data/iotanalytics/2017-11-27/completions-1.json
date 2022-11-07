@@ -1,5 +1,233 @@
 {
-  "version": "1.0",
+  "operations": {
+    "BatchPutMessage": {
+      "channelName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "channelName",
+            "resourceName": "Channel"
+          }
+        ]
+      }
+    },
+    "CancelPipelineReprocessing": {
+      "pipelineName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "pipelineName",
+            "resourceName": "Pipeline"
+          }
+        ]
+      }
+    },
+    "DeleteChannel": {
+      "channelName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "channelName",
+            "resourceName": "Channel"
+          }
+        ]
+      }
+    },
+    "DeleteDataset": {
+      "datasetName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datasetName",
+            "resourceName": "Dataset"
+          }
+        ]
+      }
+    },
+    "DeleteDatasetContent": {
+      "datasetName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datasetName",
+            "resourceName": "Dataset"
+          }
+        ]
+      }
+    },
+    "DeleteDatastore": {
+      "datastoreName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datastoreName",
+            "resourceName": "Datastore"
+          }
+        ]
+      }
+    },
+    "DeletePipeline": {
+      "pipelineName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "pipelineName",
+            "resourceName": "Pipeline"
+          }
+        ]
+      }
+    },
+    "DescribeChannel": {
+      "channelName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "channelName",
+            "resourceName": "Channel"
+          }
+        ]
+      }
+    },
+    "DescribeDataset": {
+      "datasetName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datasetName",
+            "resourceName": "Dataset"
+          }
+        ]
+      }
+    },
+    "DescribeDatastore": {
+      "datastoreName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datastoreName",
+            "resourceName": "Datastore"
+          }
+        ]
+      }
+    },
+    "DescribePipeline": {
+      "pipelineName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "pipelineName",
+            "resourceName": "Pipeline"
+          }
+        ]
+      }
+    },
+    "GetDatasetContent": {
+      "datasetName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datasetName",
+            "resourceName": "Dataset"
+          }
+        ]
+      }
+    },
+    "ListDatasetContents": {
+      "datasetName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datasetName",
+            "resourceName": "Dataset"
+          }
+        ]
+      }
+    },
+    "SampleChannelData": {
+      "channelName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "channelName",
+            "resourceName": "Channel"
+          }
+        ]
+      }
+    },
+    "StartPipelineReprocessing": {
+      "pipelineName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "pipelineName",
+            "resourceName": "Pipeline"
+          }
+        ]
+      }
+    },
+    "UpdateChannel": {
+      "channelName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "channelName",
+            "resourceName": "Channel"
+          }
+        ]
+      }
+    },
+    "UpdateDataset": {
+      "actions": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "actions",
+            "resourceName": "Dataset"
+          }
+        ]
+      },
+      "datasetName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datasetName",
+            "resourceName": "Dataset"
+          }
+        ]
+      },
+      "triggers": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "triggers",
+            "resourceName": "Dataset"
+          }
+        ]
+      }
+    },
+    "UpdateDatastore": {
+      "datastoreName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "datastoreName",
+            "resourceName": "Datastore"
+          }
+        ]
+      }
+    },
+    "UpdatePipeline": {
+      "pipelineName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "pipelineName",
+            "resourceName": "Pipeline"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Channel": {
       "operation": "ListChannels",
@@ -10,9 +238,9 @@
     "Dataset": {
       "operation": "ListDatasets",
       "resourceIdentifier": {
+        "actions": "datasetSummaries[].actions",
         "datasetName": "datasetSummaries[].datasetName",
-        "triggers": "datasetSummaries[].triggers",
-        "actions": "datasetSummaries[].actions"
+        "triggers": "datasetSummaries[].triggers"
       }
     },
     "Datastore": {
@@ -28,233 +256,5 @@
       }
     }
   },
-  "operations": {
-    "BatchPutMessage": {
-      "channelName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "channelName"
-          }
-        ]
-      }
-    },
-    "CancelPipelineReprocessing": {
-      "pipelineName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "pipelineName"
-          }
-        ]
-      }
-    },
-    "DeleteChannel": {
-      "channelName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "channelName"
-          }
-        ]
-      }
-    },
-    "DeleteDataset": {
-      "datasetName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dataset",
-            "resourceIdentifier": "datasetName"
-          }
-        ]
-      }
-    },
-    "DeleteDatasetContent": {
-      "datasetName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dataset",
-            "resourceIdentifier": "datasetName"
-          }
-        ]
-      }
-    },
-    "DeleteDatastore": {
-      "datastoreName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Datastore",
-            "resourceIdentifier": "datastoreName"
-          }
-        ]
-      }
-    },
-    "DeletePipeline": {
-      "pipelineName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "pipelineName"
-          }
-        ]
-      }
-    },
-    "DescribeChannel": {
-      "channelName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "channelName"
-          }
-        ]
-      }
-    },
-    "DescribeDataset": {
-      "datasetName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dataset",
-            "resourceIdentifier": "datasetName"
-          }
-        ]
-      }
-    },
-    "DescribeDatastore": {
-      "datastoreName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Datastore",
-            "resourceIdentifier": "datastoreName"
-          }
-        ]
-      }
-    },
-    "DescribePipeline": {
-      "pipelineName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "pipelineName"
-          }
-        ]
-      }
-    },
-    "GetDatasetContent": {
-      "datasetName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dataset",
-            "resourceIdentifier": "datasetName"
-          }
-        ]
-      }
-    },
-    "ListDatasetContents": {
-      "datasetName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dataset",
-            "resourceIdentifier": "datasetName"
-          }
-        ]
-      }
-    },
-    "SampleChannelData": {
-      "channelName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "channelName"
-          }
-        ]
-      }
-    },
-    "StartPipelineReprocessing": {
-      "pipelineName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "pipelineName"
-          }
-        ]
-      }
-    },
-    "UpdateChannel": {
-      "channelName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "channelName"
-          }
-        ]
-      }
-    },
-    "UpdateDataset": {
-      "datasetName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dataset",
-            "resourceIdentifier": "datasetName"
-          }
-        ]
-      },
-      "actions": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dataset",
-            "resourceIdentifier": "actions"
-          }
-        ]
-      },
-      "triggers": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Dataset",
-            "resourceIdentifier": "triggers"
-          }
-        ]
-      }
-    },
-    "UpdateDatastore": {
-      "datastoreName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Datastore",
-            "resourceIdentifier": "datastoreName"
-          }
-        ]
-      }
-    },
-    "UpdatePipeline": {
-      "pipelineName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Pipeline",
-            "resourceIdentifier": "pipelineName"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

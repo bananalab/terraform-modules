@@ -1,5 +1,164 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteReservation": {
+      "ReservationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ReservationId",
+            "resourceName": "Reservation"
+          }
+        ]
+      }
+    },
+    "DescribeOffering": {
+      "OfferingId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OfferingId",
+            "resourceName": "Reservation"
+          }
+        ]
+      }
+    },
+    "DescribeReservation": {
+      "ReservationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ReservationId",
+            "resourceName": "Reservation"
+          }
+        ]
+      }
+    },
+    "PurchaseOffering": {
+      "Count": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Count",
+            "resourceName": "Reservation"
+          }
+        ]
+      },
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "Reservation"
+          }
+        ]
+      },
+      "OfferingId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OfferingId",
+            "resourceName": "Reservation"
+          }
+        ]
+      }
+    },
+    "UpdateChannel": {
+      "Destinations": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Destinations",
+            "resourceName": "Input"
+          }
+        ]
+      },
+      "InputAttachments": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InputAttachments",
+            "resourceName": "Channel"
+          }
+        ]
+      },
+      "InputSpecification": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InputSpecification",
+            "resourceName": "Channel"
+          }
+        ]
+      },
+      "LogLevel": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LogLevel",
+            "resourceName": "Channel"
+          }
+        ]
+      },
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "Reservation"
+          }
+        ]
+      },
+      "RoleArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "RoleArn",
+            "resourceName": "Channel"
+          }
+        ]
+      }
+    },
+    "UpdateInput": {
+      "Destinations": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Destinations",
+            "resourceName": "Input"
+          }
+        ]
+      },
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "Reservation"
+          }
+        ]
+      },
+      "Sources": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Sources",
+            "resourceName": "Input"
+          }
+        ]
+      }
+    },
+    "UpdateInputSecurityGroup": {
+      "WhitelistRules": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "WhitelistRules",
+            "resourceName": "InputSecurityGroup"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Channel": {
       "operation": "ListChannels",
@@ -10,17 +169,17 @@
         "RoleArn": "Channels[].RoleArn"
       }
     },
-    "InputSecurityGroup": {
-      "operation": "ListInputSecurityGroups",
-      "resourceIdentifier": {
-        "WhitelistRules": "InputSecurityGroups[].WhitelistRules"
-      }
-    },
     "Input": {
       "operation": "ListInputs",
       "resourceIdentifier": {
         "Destinations": "Inputs[].Destinations",
         "Sources": "Inputs[].Sources"
+      }
+    },
+    "InputSecurityGroup": {
+      "operation": "ListInputSecurityGroups",
+      "resourceIdentifier": {
+        "WhitelistRules": "InputSecurityGroups[].WhitelistRules"
       }
     },
     "Reservation": {
@@ -33,164 +192,5 @@
       }
     }
   },
-  "operations": {
-    "DeleteReservation": {
-      "ReservationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Reservation",
-            "resourceIdentifier": "ReservationId"
-          }
-        ]
-      }
-    },
-    "DescribeOffering": {
-      "OfferingId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Reservation",
-            "resourceIdentifier": "OfferingId"
-          }
-        ]
-      }
-    },
-    "DescribeReservation": {
-      "ReservationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Reservation",
-            "resourceIdentifier": "ReservationId"
-          }
-        ]
-      }
-    },
-    "PurchaseOffering": {
-      "Count": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Reservation",
-            "resourceIdentifier": "Count"
-          }
-        ]
-      },
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Reservation",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      },
-      "OfferingId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Reservation",
-            "resourceIdentifier": "OfferingId"
-          }
-        ]
-      }
-    },
-    "UpdateChannel": {
-      "Destinations": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Input",
-            "resourceIdentifier": "Destinations"
-          }
-        ]
-      },
-      "InputAttachments": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "InputAttachments"
-          }
-        ]
-      },
-      "InputSpecification": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "InputSpecification"
-          }
-        ]
-      },
-      "LogLevel": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "LogLevel"
-          }
-        ]
-      },
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Reservation",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      },
-      "RoleArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Channel",
-            "resourceIdentifier": "RoleArn"
-          }
-        ]
-      }
-    },
-    "UpdateInput": {
-      "Destinations": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Input",
-            "resourceIdentifier": "Destinations"
-          }
-        ]
-      },
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Reservation",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      },
-      "Sources": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Input",
-            "resourceIdentifier": "Sources"
-          }
-        ]
-      }
-    },
-    "UpdateInputSecurityGroup": {
-      "WhitelistRules": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "InputSecurityGroup",
-            "resourceIdentifier": "WhitelistRules"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

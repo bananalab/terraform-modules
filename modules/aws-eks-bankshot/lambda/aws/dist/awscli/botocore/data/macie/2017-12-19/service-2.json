@@ -1,495 +1,603 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2017-12-19",
-    "endpointPrefix":"macie",
-    "jsonVersion":"1.1",
-    "protocol":"json",
-    "serviceFullName":"Amazon Macie",
-    "serviceId":"Macie",
-    "signatureVersion":"v4",
-    "targetPrefix":"MacieService",
-    "uid":"macie-2017-12-19"
+  "documentation": "<fullname>Amazon Macie Classic</fullname> <p>Amazon Macie Classic has been discontinued and is no longer available.</p> <p>A new Amazon Macie is now available with significant design improvements and additional features, at a lower price and in most Amazon Web Services Regions. We encourage you to take advantage of the new and improved features, and benefit from the reduced cost. To learn about features and pricing for the new Macie, see <a href=\"http://aws.amazon.com/macie/\">Amazon Macie</a>. To learn how to use the new Macie, see the <a href=\"https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html\">Amazon Macie User Guide</a>.</p>",
+  "metadata": {
+    "apiVersion": "2017-12-19",
+    "endpointPrefix": "macie",
+    "jsonVersion": "1.1",
+    "protocol": "json",
+    "serviceFullName": "Amazon Macie",
+    "serviceId": "Macie",
+    "signatureVersion": "v4",
+    "targetPrefix": "MacieService",
+    "uid": "macie-2017-12-19"
   },
-  "operations":{
-    "AssociateMemberAccount":{
-      "name":"AssociateMemberAccount",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"AssociateMemberAccountRequest"},
-      "errors":[
-        {"shape":"InvalidInputException"},
-        {"shape":"LimitExceededException"},
-        {"shape":"InternalException"}
+  "operations": {
+    "AssociateMemberAccount": {
+      "documentation": "<p>(Discontinued) Associates a specified Amazon Web Services account with Amazon Macie Classic as a member account.</p>",
+      "errors": [
+        {
+          "shape": "InvalidInputException"
+        },
+        {
+          "shape": "LimitExceededException"
+        },
+        {
+          "shape": "InternalException"
+        }
       ],
-      "documentation":"<p>(Discontinued) Associates a specified Amazon Web Services account with Amazon Macie Classic as a member account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "AssociateMemberAccountRequest"
+      },
+      "name": "AssociateMemberAccount"
     },
-    "AssociateS3Resources":{
-      "name":"AssociateS3Resources",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"AssociateS3ResourcesRequest"},
-      "output":{"shape":"AssociateS3ResourcesResult"},
-      "errors":[
-        {"shape":"InvalidInputException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"LimitExceededException"},
-        {"shape":"InternalException"}
+    "AssociateS3Resources": {
+      "documentation": "<p>(Discontinued) Associates specified S3 resources with Amazon Macie Classic for monitoring and data classification. If <code>memberAccountId</code> isn't specified, the action associates specified S3 resources with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action associates specified S3 resources with Macie Classic for the specified member account.</p>",
+      "errors": [
+        {
+          "shape": "InvalidInputException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "LimitExceededException"
+        },
+        {
+          "shape": "InternalException"
+        }
       ],
-      "documentation":"<p>(Discontinued) Associates specified S3 resources with Amazon Macie Classic for monitoring and data classification. If <code>memberAccountId</code> isn't specified, the action associates specified S3 resources with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action associates specified S3 resources with Macie Classic for the specified member account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "AssociateS3ResourcesRequest"
+      },
+      "name": "AssociateS3Resources",
+      "output": {
+        "shape": "AssociateS3ResourcesResult"
+      }
     },
-    "DisassociateMemberAccount":{
-      "name":"DisassociateMemberAccount",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DisassociateMemberAccountRequest"},
-      "errors":[
-        {"shape":"InvalidInputException"},
-        {"shape":"InternalException"}
+    "DisassociateMemberAccount": {
+      "documentation": "<p>(Discontinued) Removes the specified member account from Amazon Macie Classic.</p>",
+      "errors": [
+        {
+          "shape": "InvalidInputException"
+        },
+        {
+          "shape": "InternalException"
+        }
       ],
-      "documentation":"<p>(Discontinued) Removes the specified member account from Amazon Macie Classic.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DisassociateMemberAccountRequest"
+      },
+      "name": "DisassociateMemberAccount"
     },
-    "DisassociateS3Resources":{
-      "name":"DisassociateS3Resources",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DisassociateS3ResourcesRequest"},
-      "output":{"shape":"DisassociateS3ResourcesResult"},
-      "errors":[
-        {"shape":"InvalidInputException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalException"}
+    "DisassociateS3Resources": {
+      "documentation": "<p>(Discontinued) Removes specified S3 resources from being monitored by Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action removes specified S3 resources from Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action removes specified S3 resources from Macie Classic for the specified member account.</p>",
+      "errors": [
+        {
+          "shape": "InvalidInputException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalException"
+        }
       ],
-      "documentation":"<p>(Discontinued) Removes specified S3 resources from being monitored by Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action removes specified S3 resources from Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action removes specified S3 resources from Macie Classic for the specified member account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DisassociateS3ResourcesRequest"
+      },
+      "name": "DisassociateS3Resources",
+      "output": {
+        "shape": "DisassociateS3ResourcesResult"
+      }
     },
-    "ListMemberAccounts":{
-      "name":"ListMemberAccounts",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListMemberAccountsRequest"},
-      "output":{"shape":"ListMemberAccountsResult"},
-      "errors":[
-        {"shape":"InternalException"},
-        {"shape":"InvalidInputException"}
+    "ListMemberAccounts": {
+      "documentation": "<p>(Discontinued) Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator account.</p>",
+      "errors": [
+        {
+          "shape": "InternalException"
+        },
+        {
+          "shape": "InvalidInputException"
+        }
       ],
-      "documentation":"<p>(Discontinued) Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListMemberAccountsRequest"
+      },
+      "name": "ListMemberAccounts",
+      "output": {
+        "shape": "ListMemberAccountsResult"
+      }
     },
-    "ListS3Resources":{
-      "name":"ListS3Resources",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListS3ResourcesRequest"},
-      "output":{"shape":"ListS3ResourcesResult"},
-      "errors":[
-        {"shape":"InvalidInputException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalException"}
+    "ListS3Resources": {
+      "documentation": "<p>(Discontinued) Lists all the S3 resources associated with Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action lists the S3 resources associated with Macie Classic for the specified member account. </p>",
+      "errors": [
+        {
+          "shape": "InvalidInputException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalException"
+        }
       ],
-      "documentation":"<p>(Discontinued) Lists all the S3 resources associated with Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action lists the S3 resources associated with Macie Classic for the specified member account. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListS3ResourcesRequest"
+      },
+      "name": "ListS3Resources",
+      "output": {
+        "shape": "ListS3ResourcesResult"
+      }
     },
-    "UpdateS3Resources":{
-      "name":"UpdateS3Resources",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"UpdateS3ResourcesRequest"},
-      "output":{"shape":"UpdateS3ResourcesResult"},
-      "errors":[
-        {"shape":"InvalidInputException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalException"}
+    "UpdateS3Resources": {
+      "documentation": "<p>(Discontinued) Updates the classification types for the specified S3 resources. If <code>memberAccountId</code> isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action updates the classification types of the S3 resources associated with Macie Classic for the specified member account.</p>",
+      "errors": [
+        {
+          "shape": "InvalidInputException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalException"
+        }
       ],
-      "documentation":"<p>(Discontinued) Updates the classification types for the specified S3 resources. If <code>memberAccountId</code> isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action updates the classification types of the S3 resources associated with Macie Classic for the specified member account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "UpdateS3ResourcesRequest"
+      },
+      "name": "UpdateS3Resources",
+      "output": {
+        "shape": "UpdateS3ResourcesResult"
+      }
     }
   },
-  "shapes":{
-    "AWSAccountId":{
-      "type":"string",
-      "pattern":"[0-9]{12}"
+  "shapes": {
+    "AWSAccountId": {
+      "pattern": "[0-9]{12}",
+      "type": "string"
     },
-    "AccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"ExceptionMessage"},
-        "resourceType":{"shape":"ResourceType"}
-      },
-      "documentation":"<p>(Discontinued) You do not have required permissions to access the requested resource.</p>",
-      "exception":true
-    },
-    "AssociateMemberAccountRequest":{
-      "type":"structure",
-      "required":["memberAccountId"],
-      "members":{
-        "memberAccountId":{
-          "shape":"AWSAccountId",
-          "documentation":"<p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>"
-        }
-      }
-    },
-    "AssociateS3ResourcesRequest":{
-      "type":"structure",
-      "required":["s3Resources"],
-      "members":{
-        "memberAccountId":{
-          "shape":"AWSAccountId",
-          "documentation":"<p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>"
+    "AccessDeniedException": {
+      "documentation": "<p>(Discontinued) You do not have required permissions to access the requested resource.</p>",
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "ExceptionMessage"
         },
-        "s3Resources":{
-          "shape":"S3ResourcesClassification",
-          "documentation":"<p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>"
+        "resourceType": {
+          "shape": "ResourceType"
         }
-      }
+      },
+      "type": "structure"
     },
-    "AssociateS3ResourcesResult":{
-      "type":"structure",
-      "members":{
-        "failedS3Resources":{
-          "shape":"FailedS3Resources",
-          "documentation":"<p>(Discontinued) S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>"
+    "AssociateMemberAccountRequest": {
+      "members": {
+        "memberAccountId": {
+          "documentation": "<p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>",
+          "shape": "AWSAccountId"
         }
-      }
+      },
+      "required": [
+        "memberAccountId"
+      ],
+      "type": "structure"
     },
-    "BucketName":{
-      "type":"string",
-      "max":500
+    "AssociateS3ResourcesRequest": {
+      "members": {
+        "memberAccountId": {
+          "documentation": "<p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>",
+          "shape": "AWSAccountId"
+        },
+        "s3Resources": {
+          "documentation": "<p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>",
+          "shape": "S3ResourcesClassification"
+        }
+      },
+      "required": [
+        "s3Resources"
+      ],
+      "type": "structure"
     },
-    "ClassificationType":{
-      "type":"structure",
-      "required":[
+    "AssociateS3ResourcesResult": {
+      "members": {
+        "failedS3Resources": {
+          "documentation": "<p>(Discontinued) S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>",
+          "shape": "FailedS3Resources"
+        }
+      },
+      "type": "structure"
+    },
+    "BucketName": {
+      "max": 500,
+      "type": "string"
+    },
+    "ClassificationType": {
+      "documentation": "<p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources.</p>",
+      "members": {
+        "continuous": {
+          "documentation": "<p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>",
+          "shape": "S3ContinuousClassificationType"
+        },
+        "oneTime": {
+          "documentation": "<p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>",
+          "shape": "S3OneTimeClassificationType"
+        }
+      },
+      "required": [
         "oneTime",
         "continuous"
       ],
-      "members":{
-        "oneTime":{
-          "shape":"S3OneTimeClassificationType",
-          "documentation":"<p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>"
+      "type": "structure"
+    },
+    "ClassificationTypeUpdate": {
+      "documentation": "<p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources. At least one of the classification types (<code>oneTime</code> or <code>continuous</code>) must be specified. </p>",
+      "members": {
+        "continuous": {
+          "documentation": "<p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic. </p>",
+          "shape": "S3ContinuousClassificationType"
         },
-        "continuous":{
-          "shape":"S3ContinuousClassificationType",
-          "documentation":"<p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>"
+        "oneTime": {
+          "documentation": "<p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>",
+          "shape": "S3OneTimeClassificationType"
         }
       },
-      "documentation":"<p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources.</p>"
+      "type": "structure"
     },
-    "ClassificationTypeUpdate":{
-      "type":"structure",
-      "members":{
-        "oneTime":{
-          "shape":"S3OneTimeClassificationType",
-          "documentation":"<p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>"
-        },
-        "continuous":{
-          "shape":"S3ContinuousClassificationType",
-          "documentation":"<p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic. </p>"
+    "DisassociateMemberAccountRequest": {
+      "members": {
+        "memberAccountId": {
+          "documentation": "<p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>",
+          "shape": "AWSAccountId"
         }
       },
-      "documentation":"<p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources. At least one of the classification types (<code>oneTime</code> or <code>continuous</code>) must be specified. </p>"
+      "required": [
+        "memberAccountId"
+      ],
+      "type": "structure"
     },
-    "DisassociateMemberAccountRequest":{
-      "type":"structure",
-      "required":["memberAccountId"],
-      "members":{
-        "memberAccountId":{
-          "shape":"AWSAccountId",
-          "documentation":"<p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>"
-        }
-      }
-    },
-    "DisassociateS3ResourcesRequest":{
-      "type":"structure",
-      "required":["associatedS3Resources"],
-      "members":{
-        "memberAccountId":{
-          "shape":"AWSAccountId",
-          "documentation":"<p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>"
+    "DisassociateS3ResourcesRequest": {
+      "members": {
+        "associatedS3Resources": {
+          "documentation": "<p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>",
+          "shape": "S3Resources"
         },
-        "associatedS3Resources":{
-          "shape":"S3Resources",
-          "documentation":"<p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>"
-        }
-      }
-    },
-    "DisassociateS3ResourcesResult":{
-      "type":"structure",
-      "members":{
-        "failedS3Resources":{
-          "shape":"FailedS3Resources",
-          "documentation":"<p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>"
-        }
-      }
-    },
-    "ErrorCode":{
-      "type":"string",
-      "documentation":"Error code for the exception",
-      "max":10
-    },
-    "ExceptionMessage":{
-      "type":"string",
-      "max":10000
-    },
-    "FailedS3Resource":{
-      "type":"structure",
-      "members":{
-        "failedItem":{
-          "shape":"S3Resource",
-          "documentation":"<p>(Discontinued) The failed S3 resources.</p>"
-        },
-        "errorCode":{
-          "shape":"ErrorCode",
-          "documentation":"<p>(Discontinued) The status code of a failed item.</p>"
-        },
-        "errorMessage":{
-          "shape":"ExceptionMessage",
-          "documentation":"<p>(Discontinued) The error message of a failed item.</p>"
+        "memberAccountId": {
+          "documentation": "<p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>",
+          "shape": "AWSAccountId"
         }
       },
-      "documentation":"<p>(Discontinued) Includes details about the failed S3 resources.</p>"
+      "required": [
+        "associatedS3Resources"
+      ],
+      "type": "structure"
     },
-    "FailedS3Resources":{
-      "type":"list",
-      "member":{"shape":"FailedS3Resource"}
-    },
-    "FieldName":{
-      "type":"string",
-      "documentation":"Field that has invalid input",
-      "max":1000
-    },
-    "InternalException":{
-      "type":"structure",
-      "members":{
-        "errorCode":{"shape":"ErrorCode"},
-        "message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>(Discontinued) Internal server error.</p>",
-      "exception":true,
-      "fault":true
-    },
-    "InvalidInputException":{
-      "type":"structure",
-      "members":{
-        "errorCode":{"shape":"ErrorCode"},
-        "message":{"shape":"ExceptionMessage"},
-        "fieldName":{"shape":"FieldName"}
-      },
-      "documentation":"<p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
-      "exception":true
-    },
-    "LimitExceededException":{
-      "type":"structure",
-      "members":{
-        "errorCode":{"shape":"ErrorCode"},
-        "message":{"shape":"ExceptionMessage"},
-        "resourceType":{"shape":"ResourceType"}
-      },
-      "documentation":"<p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>",
-      "exception":true
-    },
-    "ListMemberAccountsRequest":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>"
-        }
-      }
-    },
-    "ListMemberAccountsResult":{
-      "type":"structure",
-      "members":{
-        "memberAccounts":{
-          "shape":"MemberAccounts",
-          "documentation":"<p>(Discontinued) A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>"
-        }
-      }
-    },
-    "ListS3ResourcesRequest":{
-      "type":"structure",
-      "members":{
-        "memberAccountId":{
-          "shape":"AWSAccountId",
-          "documentation":"<p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>"
-        }
-      }
-    },
-    "ListS3ResourcesResult":{
-      "type":"structure",
-      "members":{
-        "s3Resources":{
-          "shape":"S3ResourcesClassification",
-          "documentation":"<p>(Discontinued) A list of the associated S3 resources returned by the action.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>"
-        }
-      }
-    },
-    "MaxResults":{
-      "type":"integer",
-      "box":true,
-      "max":250
-    },
-    "MemberAccount":{
-      "type":"structure",
-      "members":{
-        "accountId":{
-          "shape":"AWSAccountId",
-          "documentation":"<p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>"
+    "DisassociateS3ResourcesResult": {
+      "members": {
+        "failedS3Resources": {
+          "documentation": "<p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>",
+          "shape": "FailedS3Resources"
         }
       },
-      "documentation":"<p>(Discontinued) Contains information about the Amazon Macie Classic member account.</p>"
+      "type": "structure"
     },
-    "MemberAccounts":{
-      "type":"list",
-      "member":{"shape":"MemberAccount"}
+    "ErrorCode": {
+      "documentation": "Error code for the exception",
+      "max": 10,
+      "type": "string"
     },
-    "NextToken":{
-      "type":"string",
-      "max":500
+    "ExceptionMessage": {
+      "max": 10000,
+      "type": "string"
     },
-    "Prefix":{
-      "type":"string",
-      "max":10000
+    "FailedS3Resource": {
+      "documentation": "<p>(Discontinued) Includes details about the failed S3 resources.</p>",
+      "members": {
+        "errorCode": {
+          "documentation": "<p>(Discontinued) The status code of a failed item.</p>",
+          "shape": "ErrorCode"
+        },
+        "errorMessage": {
+          "documentation": "<p>(Discontinued) The error message of a failed item.</p>",
+          "shape": "ExceptionMessage"
+        },
+        "failedItem": {
+          "documentation": "<p>(Discontinued) The failed S3 resources.</p>",
+          "shape": "S3Resource"
+        }
+      },
+      "type": "structure"
     },
-    "ResourceType":{
-      "type":"string",
-      "documentation":"Resource type that caused the exception",
-      "max":1000
+    "FailedS3Resources": {
+      "member": {
+        "shape": "FailedS3Resource"
+      },
+      "type": "list"
     },
-    "S3ContinuousClassificationType":{
-      "type":"string",
-      "enum":["FULL"]
+    "FieldName": {
+      "documentation": "Field that has invalid input",
+      "max": 1000,
+      "type": "string"
     },
-    "S3OneTimeClassificationType":{
-      "type":"string",
-      "enum":[
+    "InternalException": {
+      "documentation": "<p>(Discontinued) Internal server error.</p>",
+      "exception": true,
+      "fault": true,
+      "members": {
+        "errorCode": {
+          "shape": "ErrorCode"
+        },
+        "message": {
+          "shape": "ExceptionMessage"
+        }
+      },
+      "type": "structure"
+    },
+    "InvalidInputException": {
+      "documentation": "<p>(Discontinued) The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>",
+      "exception": true,
+      "members": {
+        "errorCode": {
+          "shape": "ErrorCode"
+        },
+        "fieldName": {
+          "shape": "FieldName"
+        },
+        "message": {
+          "shape": "ExceptionMessage"
+        }
+      },
+      "type": "structure"
+    },
+    "LimitExceededException": {
+      "documentation": "<p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>",
+      "exception": true,
+      "members": {
+        "errorCode": {
+          "shape": "ErrorCode"
+        },
+        "message": {
+          "shape": "ExceptionMessage"
+        },
+        "resourceType": {
+          "shape": "ResourceType"
+        }
+      },
+      "type": "structure"
+    },
+    "ListMemberAccountsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListMemberAccountsResult": {
+      "members": {
+        "memberAccounts": {
+          "documentation": "<p>(Discontinued) A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list.</p>",
+          "shape": "MemberAccounts"
+        },
+        "nextToken": {
+          "documentation": "<p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListS3ResourcesRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>",
+          "shape": "MaxResults"
+        },
+        "memberAccountId": {
+          "documentation": "<p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>",
+          "shape": "AWSAccountId"
+        },
+        "nextToken": {
+          "documentation": "<p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListS3ResourcesResult": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>",
+          "shape": "NextToken"
+        },
+        "s3Resources": {
+          "documentation": "<p>(Discontinued) A list of the associated S3 resources returned by the action.</p>",
+          "shape": "S3ResourcesClassification"
+        }
+      },
+      "type": "structure"
+    },
+    "MaxResults": {
+      "box": true,
+      "max": 250,
+      "type": "integer"
+    },
+    "MemberAccount": {
+      "documentation": "<p>(Discontinued) Contains information about the Amazon Macie Classic member account.</p>",
+      "members": {
+        "accountId": {
+          "documentation": "<p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>",
+          "shape": "AWSAccountId"
+        }
+      },
+      "type": "structure"
+    },
+    "MemberAccounts": {
+      "member": {
+        "shape": "MemberAccount"
+      },
+      "type": "list"
+    },
+    "NextToken": {
+      "max": 500,
+      "type": "string"
+    },
+    "Prefix": {
+      "max": 10000,
+      "type": "string"
+    },
+    "ResourceType": {
+      "documentation": "Resource type that caused the exception",
+      "max": 1000,
+      "type": "string"
+    },
+    "S3ContinuousClassificationType": {
+      "enum": [
+        "FULL"
+      ],
+      "type": "string"
+    },
+    "S3OneTimeClassificationType": {
+      "enum": [
         "FULL",
         "NONE"
-      ]
+      ],
+      "type": "string"
     },
-    "S3Resource":{
-      "type":"structure",
-      "required":["bucketName"],
-      "members":{
-        "bucketName":{
-          "shape":"BucketName",
-          "documentation":"<p>(Discontinued) The name of the S3 bucket.</p>"
+    "S3Resource": {
+      "documentation": "<p>(Discontinued) Contains information about the S3 resource. This data type is used as a request parameter in the <code>DisassociateS3Resources</code> action and can be used as a response parameter in the <code>AssociateS3Resources</code> and <code>UpdateS3Resources</code> actions. </p>",
+      "members": {
+        "bucketName": {
+          "documentation": "<p>(Discontinued) The name of the S3 bucket.</p>",
+          "shape": "BucketName"
         },
-        "prefix":{
-          "shape":"Prefix",
-          "documentation":"<p>(Discontinued) The prefix of the S3 bucket.</p>"
+        "prefix": {
+          "documentation": "<p>(Discontinued) The prefix of the S3 bucket.</p>",
+          "shape": "Prefix"
         }
       },
-      "documentation":"<p>(Discontinued) Contains information about the S3 resource. This data type is used as a request parameter in the <code>DisassociateS3Resources</code> action and can be used as a response parameter in the <code>AssociateS3Resources</code> and <code>UpdateS3Resources</code> actions. </p>"
+      "required": [
+        "bucketName"
+      ],
+      "type": "structure"
     },
-    "S3ResourceClassification":{
-      "type":"structure",
-      "required":[
+    "S3ResourceClassification": {
+      "documentation": "<p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This data type is used as a request parameter in the <code>AssociateS3Resources</code> action and a response parameter in the <code>ListS3Resources</code> action. </p>",
+      "members": {
+        "bucketName": {
+          "documentation": "<p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>",
+          "shape": "BucketName"
+        },
+        "classificationType": {
+          "documentation": "<p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>",
+          "shape": "ClassificationType"
+        },
+        "prefix": {
+          "documentation": "<p>(Discontinued) The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>",
+          "shape": "Prefix"
+        }
+      },
+      "required": [
         "bucketName",
         "classificationType"
       ],
-      "members":{
-        "bucketName":{
-          "shape":"BucketName",
-          "documentation":"<p>(Discontinued) The name of the S3 bucket that you want to associate with Amazon Macie Classic.</p>"
+      "type": "structure"
+    },
+    "S3ResourceClassificationUpdate": {
+      "documentation": "<p>(Discontinued) The S3 resources whose classification types you want to update. This data type is used as a request parameter in the <code>UpdateS3Resources</code> action. </p>",
+      "members": {
+        "bucketName": {
+          "documentation": "<p>(Discontinued) The name of the S3 bucket whose classification types you want to update.</p>",
+          "shape": "BucketName"
         },
-        "prefix":{
-          "shape":"Prefix",
-          "documentation":"<p>(Discontinued) The prefix of the S3 bucket that you want to associate with Amazon Macie Classic.</p>"
+        "classificationTypeUpdate": {
+          "documentation": "<p>(Discontinued) The classification type that you want to update for the resource associated with Amazon Macie Classic. </p>",
+          "shape": "ClassificationTypeUpdate"
         },
-        "classificationType":{
-          "shape":"ClassificationType",
-          "documentation":"<p>(Discontinued) The classification type that you want to specify for the resource associated with Amazon Macie Classic. </p>"
+        "prefix": {
+          "documentation": "<p>(Discontinued) The prefix of the S3 bucket whose classification types you want to update.</p>",
+          "shape": "Prefix"
         }
       },
-      "documentation":"<p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This data type is used as a request parameter in the <code>AssociateS3Resources</code> action and a response parameter in the <code>ListS3Resources</code> action. </p>"
-    },
-    "S3ResourceClassificationUpdate":{
-      "type":"structure",
-      "required":[
+      "required": [
         "bucketName",
         "classificationTypeUpdate"
       ],
-      "members":{
-        "bucketName":{
-          "shape":"BucketName",
-          "documentation":"<p>(Discontinued) The name of the S3 bucket whose classification types you want to update.</p>"
+      "type": "structure"
+    },
+    "S3Resources": {
+      "member": {
+        "shape": "S3Resource"
+      },
+      "type": "list"
+    },
+    "S3ResourcesClassification": {
+      "member": {
+        "shape": "S3ResourceClassification"
+      },
+      "type": "list"
+    },
+    "S3ResourcesClassificationUpdate": {
+      "member": {
+        "shape": "S3ResourceClassificationUpdate"
+      },
+      "type": "list"
+    },
+    "UpdateS3ResourcesRequest": {
+      "members": {
+        "memberAccountId": {
+          "documentation": "<p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>",
+          "shape": "AWSAccountId"
         },
-        "prefix":{
-          "shape":"Prefix",
-          "documentation":"<p>(Discontinued) The prefix of the S3 bucket whose classification types you want to update.</p>"
-        },
-        "classificationTypeUpdate":{
-          "shape":"ClassificationTypeUpdate",
-          "documentation":"<p>(Discontinued) The classification type that you want to update for the resource associated with Amazon Macie Classic. </p>"
+        "s3ResourcesUpdate": {
+          "documentation": "<p>(Discontinued) The S3 resources whose classification types you want to update.</p>",
+          "shape": "S3ResourcesClassificationUpdate"
         }
       },
-      "documentation":"<p>(Discontinued) The S3 resources whose classification types you want to update. This data type is used as a request parameter in the <code>UpdateS3Resources</code> action. </p>"
+      "required": [
+        "s3ResourcesUpdate"
+      ],
+      "type": "structure"
     },
-    "S3Resources":{
-      "type":"list",
-      "member":{"shape":"S3Resource"}
-    },
-    "S3ResourcesClassification":{
-      "type":"list",
-      "member":{"shape":"S3ResourceClassification"}
-    },
-    "S3ResourcesClassificationUpdate":{
-      "type":"list",
-      "member":{"shape":"S3ResourceClassificationUpdate"}
-    },
-    "UpdateS3ResourcesRequest":{
-      "type":"structure",
-      "required":["s3ResourcesUpdate"],
-      "members":{
-        "memberAccountId":{
-          "shape":"AWSAccountId",
-          "documentation":"<p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>"
-        },
-        "s3ResourcesUpdate":{
-          "shape":"S3ResourcesClassificationUpdate",
-          "documentation":"<p>(Discontinued) The S3 resources whose classification types you want to update.</p>"
+    "UpdateS3ResourcesResult": {
+      "members": {
+        "failedS3Resources": {
+          "documentation": "<p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>",
+          "shape": "FailedS3Resources"
         }
-      }
-    },
-    "UpdateS3ResourcesResult":{
-      "type":"structure",
-      "members":{
-        "failedS3Resources":{
-          "shape":"FailedS3Resources",
-          "documentation":"<p>(Discontinued) The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.</p>"
-        }
-      }
+      },
+      "type": "structure"
     }
   },
-  "documentation":"<fullname>Amazon Macie Classic</fullname> <p>Amazon Macie Classic has been discontinued and is no longer available.</p> <p>A new Amazon Macie is now available with significant design improvements and additional features, at a lower price and in most Amazon Web Services Regions. We encourage you to take advantage of the new and improved features, and benefit from the reduced cost. To learn about features and pricing for the new Macie, see <a href=\"http://aws.amazon.com/macie/\">Amazon Macie</a>. To learn how to use the new Macie, see the <a href=\"https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html\">Amazon Macie User Guide</a>.</p>"
+  "version": "2.0"
 }

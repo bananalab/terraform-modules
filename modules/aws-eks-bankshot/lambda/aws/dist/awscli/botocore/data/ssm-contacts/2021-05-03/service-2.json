@@ -1,1000 +1,1486 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2021-05-03",
-    "endpointPrefix":"ssm-contacts",
-    "jsonVersion":"1.1",
-    "protocol":"json",
-    "serviceAbbreviation":"SSM Contacts",
-    "serviceFullName":"AWS Systems Manager Incident Manager Contacts",
-    "serviceId":"SSM Contacts",
-    "signatureVersion":"v4",
-    "signingName":"ssm-contacts",
-    "targetPrefix":"SSMContacts",
-    "uid":"ssm-contacts-2021-05-03"
+  "documentation": "<p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>",
+  "metadata": {
+    "apiVersion": "2021-05-03",
+    "endpointPrefix": "ssm-contacts",
+    "jsonVersion": "1.1",
+    "protocol": "json",
+    "serviceAbbreviation": "SSM Contacts",
+    "serviceFullName": "AWS Systems Manager Incident Manager Contacts",
+    "serviceId": "SSM Contacts",
+    "signatureVersion": "v4",
+    "signingName": "ssm-contacts",
+    "targetPrefix": "SSMContacts",
+    "uid": "ssm-contacts-2021-05-03"
   },
-  "operations":{
-    "AcceptPage":{
-      "name":"AcceptPage",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"AcceptPageRequest"},
-      "output":{"shape":"AcceptPageResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+  "operations": {
+    "AcceptPage": {
+      "documentation": "<p>Used to acknowledge an engagement to a contact channel during an incident.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Used to acknowledge an engagement to a contact channel during an incident.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "AcceptPageRequest"
+      },
+      "name": "AcceptPage",
+      "output": {
+        "shape": "AcceptPageResult"
+      }
     },
-    "ActivateContactChannel":{
-      "name":"ActivateContactChannel",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ActivateContactChannelRequest"},
-      "output":{"shape":"ActivateContactChannelResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "ActivateContactChannel": {
+      "documentation": "<p>Activates a contact's contact channel. Incident Manager can't engage a contact until the contact channel has been activated.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Activates a contact's contact channel. Incident Manager can't engage a contact until the contact channel has been activated.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ActivateContactChannelRequest"
+      },
+      "name": "ActivateContactChannel",
+      "output": {
+        "shape": "ActivateContactChannelResult"
+      }
     },
-    "CreateContact":{
-      "name":"CreateContact",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"CreateContactRequest"},
-      "output":{"shape":"CreateContactResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"DataEncryptionException"}
+    "CreateContact": {
+      "documentation": "<p>Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident. </p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        }
       ],
-      "documentation":"<p>Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "CreateContactRequest"
+      },
+      "name": "CreateContact",
+      "output": {
+        "shape": "CreateContactResult"
+      }
     },
-    "CreateContactChannel":{
-      "name":"CreateContactChannel",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"CreateContactChannelRequest"},
-      "output":{"shape":"CreateContactChannelResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"DataEncryptionException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "CreateContactChannel": {
+      "documentation": "<p>A contact channel is the method that Incident Manager uses to engage your contact.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>A contact channel is the method that Incident Manager uses to engage your contact.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "CreateContactChannelRequest"
+      },
+      "name": "CreateContactChannel",
+      "output": {
+        "shape": "CreateContactChannelResult"
+      }
     },
-    "DeactivateContactChannel":{
-      "name":"DeactivateContactChannel",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DeactivateContactChannelRequest"},
-      "output":{"shape":"DeactivateContactChannelResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "DeactivateContactChannel": {
+      "documentation": "<p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DeactivateContactChannelRequest"
+      },
+      "name": "DeactivateContactChannel",
+      "output": {
+        "shape": "DeactivateContactChannelResult"
+      }
     },
-    "DeleteContact":{
-      "name":"DeleteContact",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DeleteContactRequest"},
-      "output":{"shape":"DeleteContactResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "DeleteContact": {
+      "documentation": "<p>To remove a contact from Incident Manager, you can delete the contact. Deleting a contact removes them from all escalation plans and related response plans. Deleting an escalation plan removes it from all related response plans. You will have to recreate the contact and its contact channels before you can use it again.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>To remove a contact from Incident Manager, you can delete the contact. Deleting a contact removes them from all escalation plans and related response plans. Deleting an escalation plan removes it from all related response plans. You will have to recreate the contact and its contact channels before you can use it again.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DeleteContactRequest"
+      },
+      "name": "DeleteContact",
+      "output": {
+        "shape": "DeleteContactResult"
+      }
     },
-    "DeleteContactChannel":{
-      "name":"DeleteContactChannel",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DeleteContactChannelRequest"},
-      "output":{"shape":"DeleteContactChannelResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "DeleteContactChannel": {
+      "documentation": "<p>To no longer receive engagements on a contact channel, you can delete the channel from a contact. Deleting the contact channel removes it from the contact's engagement plan. If you delete the only contact channel for a contact, you won't be able to engage that contact during an incident.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>To no longer receive engagements on a contact channel, you can delete the channel from a contact. Deleting the contact channel removes it from the contact's engagement plan. If you delete the only contact channel for a contact, you won't be able to engage that contact during an incident.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DeleteContactChannelRequest"
+      },
+      "name": "DeleteContactChannel",
+      "output": {
+        "shape": "DeleteContactChannelResult"
+      }
     },
-    "DescribeEngagement":{
-      "name":"DescribeEngagement",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DescribeEngagementRequest"},
-      "output":{"shape":"DescribeEngagementResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DataEncryptionException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "DescribeEngagement": {
+      "documentation": "<p>Incident Manager uses engagements to engage contacts and escalation plans during an incident. Use this command to describe the engagement that occurred during an incident.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Incident Manager uses engagements to engage contacts and escalation plans during an incident. Use this command to describe the engagement that occurred during an incident.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DescribeEngagementRequest"
+      },
+      "name": "DescribeEngagement",
+      "output": {
+        "shape": "DescribeEngagementResult"
+      }
     },
-    "DescribePage":{
-      "name":"DescribePage",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DescribePageRequest"},
-      "output":{"shape":"DescribePageResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DataEncryptionException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "DescribePage": {
+      "documentation": "<p>Lists details of the engagement to a contact channel.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Lists details of the engagement to a contact channel.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DescribePageRequest"
+      },
+      "name": "DescribePage",
+      "output": {
+        "shape": "DescribePageResult"
+      }
     },
-    "GetContact":{
-      "name":"GetContact",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"GetContactRequest"},
-      "output":{"shape":"GetContactResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"DataEncryptionException"}
+    "GetContact": {
+      "documentation": "<p>Retrieves information about the specified contact or escalation plan.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        }
       ],
-      "documentation":"<p>Retrieves information about the specified contact or escalation plan.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetContactRequest"
+      },
+      "name": "GetContact",
+      "output": {
+        "shape": "GetContactResult"
+      }
     },
-    "GetContactChannel":{
-      "name":"GetContactChannel",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"GetContactChannelRequest"},
-      "output":{"shape":"GetContactChannelResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DataEncryptionException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "GetContactChannel": {
+      "documentation": "<p>List details about a specific contact channel.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>List details about a specific contact channel.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetContactChannelRequest"
+      },
+      "name": "GetContactChannel",
+      "output": {
+        "shape": "GetContactChannelResult"
+      }
     },
-    "GetContactPolicy":{
-      "name":"GetContactPolicy",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"GetContactPolicyRequest"},
-      "output":{"shape":"GetContactPolicyResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "GetContactPolicy": {
+      "documentation": "<p>Retrieves the resource policies attached to the specified contact or escalation plan.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Retrieves the resource policies attached to the specified contact or escalation plan.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetContactPolicyRequest"
+      },
+      "name": "GetContactPolicy",
+      "output": {
+        "shape": "GetContactPolicyResult"
+      }
     },
-    "ListContactChannels":{
-      "name":"ListContactChannels",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListContactChannelsRequest"},
-      "output":{"shape":"ListContactChannelsResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DataEncryptionException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "ListContactChannels": {
+      "documentation": "<p>Lists all contact channels for the specified contact.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Lists all contact channels for the specified contact.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListContactChannelsRequest"
+      },
+      "name": "ListContactChannels",
+      "output": {
+        "shape": "ListContactChannelsResult"
+      }
     },
-    "ListContacts":{
-      "name":"ListContacts",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListContactsRequest"},
-      "output":{"shape":"ListContactsResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "ListContacts": {
+      "documentation": "<p>Lists all contacts and escalation plans in Incident Manager.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Lists all contacts and escalation plans in Incident Manager.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListContactsRequest"
+      },
+      "name": "ListContacts",
+      "output": {
+        "shape": "ListContactsResult"
+      }
     },
-    "ListEngagements":{
-      "name":"ListEngagements",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListEngagementsRequest"},
-      "output":{"shape":"ListEngagementsResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "ListEngagements": {
+      "documentation": "<p>Lists all engagements that have happened in an incident.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Lists all engagements that have happened in an incident.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListEngagementsRequest"
+      },
+      "name": "ListEngagements",
+      "output": {
+        "shape": "ListEngagementsResult"
+      }
     },
-    "ListPageReceipts":{
-      "name":"ListPageReceipts",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListPageReceiptsRequest"},
-      "output":{"shape":"ListPageReceiptsResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "ListPageReceipts": {
+      "documentation": "<p>Lists all of the engagements to contact channels that have been acknowledged. </p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Lists all of the engagements to contact channels that have been acknowledged. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListPageReceiptsRequest"
+      },
+      "name": "ListPageReceipts",
+      "output": {
+        "shape": "ListPageReceiptsResult"
+      }
     },
-    "ListPagesByContact":{
-      "name":"ListPagesByContact",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListPagesByContactRequest"},
-      "output":{"shape":"ListPagesByContactResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "ListPagesByContact": {
+      "documentation": "<p>Lists the engagements to a contact's contact channels.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Lists the engagements to a contact's contact channels.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListPagesByContactRequest"
+      },
+      "name": "ListPagesByContact",
+      "output": {
+        "shape": "ListPagesByContactResult"
+      }
     },
-    "ListPagesByEngagement":{
-      "name":"ListPagesByEngagement",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListPagesByEngagementRequest"},
-      "output":{"shape":"ListPagesByEngagementResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "ListPagesByEngagement": {
+      "documentation": "<p>Lists the engagements to contact channels that occurred by engaging a contact.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Lists the engagements to contact channels that occurred by engaging a contact.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListPagesByEngagementRequest"
+      },
+      "name": "ListPagesByEngagement",
+      "output": {
+        "shape": "ListPagesByEngagementResult"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Lists the tags of an escalation plan or contact.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists the tags of an escalation plan or contact.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResult"
+      }
     },
-    "PutContactPolicy":{
-      "name":"PutContactPolicy",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"PutContactPolicyRequest"},
-      "output":{"shape":"PutContactPolicyResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"}
+    "PutContactPolicy": {
+      "documentation": "<p>Adds a resource policy to the specified contact or escalation plan. The resource policy is used to share the contact or escalation plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href=\"https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html\">Setting up cross-account functionality</a>.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Adds a resource policy to the specified contact or escalation plan. The resource policy is used to share the contact or escalation plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href=\"https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html\">Setting up cross-account functionality</a>.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "PutContactPolicyRequest"
+      },
+      "name": "PutContactPolicy",
+      "output": {
+        "shape": "PutContactPolicyResult"
+      }
     },
-    "SendActivationCode":{
-      "name":"SendActivationCode",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"SendActivationCodeRequest"},
-      "output":{"shape":"SendActivationCodeResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DataEncryptionException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "SendActivationCode": {
+      "documentation": "<p>Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel until it has been activated.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel until it has been activated.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "SendActivationCodeRequest"
+      },
+      "name": "SendActivationCode",
+      "output": {
+        "shape": "SendActivationCodeResult"
+      }
     },
-    "StartEngagement":{
-      "name":"StartEngagement",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"StartEngagementRequest"},
-      "output":{"shape":"StartEngagementResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DataEncryptionException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "StartEngagement": {
+      "documentation": "<p>Starts an engagement to a contact or escalation plan. The engagement engages each contact specified in the incident.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Starts an engagement to a contact or escalation plan. The engagement engages each contact specified in the incident.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "StartEngagementRequest"
+      },
+      "name": "StartEngagement",
+      "output": {
+        "shape": "StartEngagementResult"
+      }
     },
-    "StopEngagement":{
-      "name":"StopEngagement",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"StopEngagementRequest"},
-      "output":{"shape":"StopEngagementResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"}
+    "StopEngagement": {
+      "documentation": "<p>Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren't engaged.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren't engaged.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "StopEngagementRequest"
+      },
+      "name": "StopEngagement",
+      "output": {
+        "shape": "StopEngagementResult"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ValidationException"}
+    "TagResource": {
+      "documentation": "<p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the first region of your replication set. </p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the first region of your replication set. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResult"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "UntagResource": {
+      "documentation": "<p>Removes tags from the specified resource. </p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Removes tags from the specified resource. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResult"
+      }
     },
-    "UpdateContact":{
-      "name":"UpdateContact",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"UpdateContactRequest"},
-      "output":{"shape":"UpdateContactResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"DataEncryptionException"}
+    "UpdateContact": {
+      "documentation": "<p>Updates the contact or escalation plan specified. </p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        }
       ],
-      "documentation":"<p>Updates the contact or escalation plan specified. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "UpdateContactRequest"
+      },
+      "name": "UpdateContact",
+      "output": {
+        "shape": "UpdateContactResult"
+      }
     },
-    "UpdateContactChannel":{
-      "name":"UpdateContactChannel",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"UpdateContactChannelRequest"},
-      "output":{"shape":"UpdateContactChannelResult"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"DataEncryptionException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"}
+    "UpdateContactChannel": {
+      "documentation": "<p>Updates a contact's contact channel.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "DataEncryptionException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Updates a contact's contact channel.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "UpdateContactChannelRequest"
+      },
+      "name": "UpdateContactChannel",
+      "output": {
+        "shape": "UpdateContactChannelResult"
+      }
     }
   },
-  "shapes":{
-    "AcceptCode":{
-      "type":"string",
-      "max":10,
-      "min":6,
-      "pattern":"^[0-9]*$"
+  "shapes": {
+    "AcceptCode": {
+      "max": 10,
+      "min": 6,
+      "pattern": "^[0-9]*$",
+      "type": "string"
     },
-    "AcceptCodeValidation":{
-      "type":"string",
-      "enum":[
+    "AcceptCodeValidation": {
+      "enum": [
         "IGNORE",
         "ENFORCE"
-      ]
+      ],
+      "type": "string"
     },
-    "AcceptPageRequest":{
-      "type":"structure",
-      "required":[
+    "AcceptPageRequest": {
+      "members": {
+        "AcceptCode": {
+          "documentation": "<p>The accept code is a 6-digit code used to acknowledge the page.</p>",
+          "shape": "AcceptCode"
+        },
+        "AcceptCodeValidation": {
+          "documentation": "<p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p> <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>",
+          "shape": "AcceptCodeValidation"
+        },
+        "AcceptType": {
+          "documentation": "<p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>",
+          "shape": "AcceptType"
+        },
+        "ContactChannelId": {
+          "documentation": "<p>The ARN of the contact channel.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "Note": {
+          "documentation": "<p>Information provided by the user when the user acknowledges the page.</p>",
+          "shape": "ReceiptInfo"
+        },
+        "PageId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>",
+          "shape": "SsmContactsArn"
+        }
+      },
+      "required": [
         "PageId",
         "AcceptType",
         "AcceptCode"
       ],
-      "members":{
-        "PageId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>"
-        },
-        "ContactChannelId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the contact channel.</p>"
-        },
-        "AcceptType":{
-          "shape":"AcceptType",
-          "documentation":"<p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>"
-        },
-        "Note":{
-          "shape":"ReceiptInfo",
-          "documentation":"<p>Information provided by the user when the user acknowledges the page.</p>"
-        },
-        "AcceptCode":{
-          "shape":"AcceptCode",
-          "documentation":"<p>The accept code is a 6-digit code used to acknowledge the page.</p>"
-        },
-        "AcceptCodeValidation":{
-          "shape":"AcceptCodeValidation",
-          "documentation":"<p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p> <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "AcceptPageResult":{
-      "type":"structure",
-      "members":{
-      }
+    "AcceptPageResult": {
+      "members": {},
+      "type": "structure"
     },
-    "AcceptType":{
-      "type":"string",
-      "enum":[
+    "AcceptType": {
+      "enum": [
         "DELIVERED",
         "READ"
-      ]
+      ],
+      "type": "string"
     },
-    "AccessDeniedException":{
-      "type":"structure",
-      "required":["Message"],
-      "members":{
-        "Message":{"shape":"String"}
+    "AccessDeniedException": {
+      "documentation": "<p>You don't have sufficient access to perform this operation.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "String"
+        }
       },
-      "documentation":"<p>You don't have sufficient access to perform this operation.</p>",
-      "exception":true
+      "required": [
+        "Message"
+      ],
+      "type": "structure"
     },
-    "ActivateContactChannelRequest":{
-      "type":"structure",
-      "required":[
+    "ActivateContactChannelRequest": {
+      "members": {
+        "ActivationCode": {
+          "documentation": "<p>The code sent to the contact channel when it was created in the contact. </p>",
+          "shape": "ActivationCode"
+        },
+        "ContactChannelId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel.</p>",
+          "shape": "SsmContactsArn"
+        }
+      },
+      "required": [
         "ContactChannelId",
         "ActivationCode"
       ],
-      "members":{
-        "ContactChannelId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel.</p>"
-        },
-        "ActivationCode":{
-          "shape":"ActivationCode",
-          "documentation":"<p>The code sent to the contact channel when it was created in the contact. </p>"
-        }
-      }
+      "type": "structure"
     },
-    "ActivateContactChannelResult":{
-      "type":"structure",
-      "members":{
-      }
+    "ActivateContactChannelResult": {
+      "members": {},
+      "type": "structure"
     },
-    "ActivationCode":{
-      "type":"string",
-      "max":10,
-      "min":6,
-      "pattern":"^[0-9]*$"
+    "ActivationCode": {
+      "max": 10,
+      "min": 6,
+      "pattern": "^[0-9]*$",
+      "type": "string"
     },
-    "ActivationStatus":{
-      "type":"string",
-      "enum":[
+    "ActivationStatus": {
+      "enum": [
         "ACTIVATED",
         "NOT_ACTIVATED"
-      ]
+      ],
+      "type": "string"
     },
-    "AmazonResourceName":{
-      "type":"string",
-      "max":1011,
-      "min":1
+    "AmazonResourceName": {
+      "max": 1011,
+      "min": 1,
+      "type": "string"
     },
-    "ChannelName":{
-      "type":"string",
-      "max":255,
-      "min":1,
-      "pattern":"^[\\p{L}\\p{Z}\\p{N}_.\\-]*$"
+    "ChannelName": {
+      "max": 255,
+      "min": 1,
+      "pattern": "^[\\p{L}\\p{Z}\\p{N}_.\\-]*$",
+      "type": "string"
     },
-    "ChannelTargetInfo":{
-      "type":"structure",
-      "required":["ContactChannelId"],
-      "members":{
-        "ContactChannelId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel.</p>"
+    "ChannelTargetInfo": {
+      "documentation": "<p>Information about the contact channel that Incident Manager uses to engage the contact.</p>",
+      "members": {
+        "ContactChannelId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel.</p>",
+          "shape": "SsmContactsArn"
         },
-        "RetryIntervalInMinutes":{
-          "shape":"RetryIntervalInMinutes",
-          "documentation":"<p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>"
+        "RetryIntervalInMinutes": {
+          "documentation": "<p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>",
+          "shape": "RetryIntervalInMinutes"
         }
       },
-      "documentation":"<p>Information about the contact channel that Incident Manager uses to engage the contact.</p>"
+      "required": [
+        "ContactChannelId"
+      ],
+      "type": "structure"
     },
-    "ChannelType":{
-      "type":"string",
-      "enum":[
+    "ChannelType": {
+      "enum": [
         "SMS",
         "VOICE",
         "EMAIL"
-      ]
+      ],
+      "type": "string"
     },
-    "ConflictException":{
-      "type":"structure",
-      "required":[
+    "ConflictException": {
+      "documentation": "<p>Updating or deleting a resource causes an inconsistent state.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "String"
+        },
+        "ResourceId": {
+          "documentation": "Identifier of the resource in use",
+          "shape": "String"
+        },
+        "ResourceType": {
+          "documentation": "ype of the resource in use",
+          "shape": "String"
+        }
+      },
+      "required": [
         "Message",
         "ResourceId",
         "ResourceType"
       ],
-      "members":{
-        "Message":{"shape":"String"},
-        "ResourceId":{
-          "shape":"String",
-          "documentation":"Identifier of the resource in use"
+      "type": "structure"
+    },
+    "Contact": {
+      "documentation": "<p>A personal contact or escalation plan that Incident Manager engages during an incident.</p>",
+      "members": {
+        "Alias": {
+          "documentation": "<p>The unique and identifiable alias of the contact or escalation plan.</p>",
+          "shape": "ContactAlias"
         },
-        "ResourceType":{
-          "shape":"String",
-          "documentation":"ype of the resource in use"
+        "ContactArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "DisplayName": {
+          "documentation": "<p>The full name of the contact or escalation plan.</p>",
+          "shape": "ContactName"
+        },
+        "Type": {
+          "documentation": "<p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>",
+          "shape": "ContactType"
         }
       },
-      "documentation":"<p>Updating or deleting a resource causes an inconsistent state.</p>",
-      "exception":true
-    },
-    "Contact":{
-      "type":"structure",
-      "required":[
+      "required": [
         "ContactArn",
         "Alias",
         "Type"
       ],
-      "members":{
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>"
+      "type": "structure"
+    },
+    "ContactAlias": {
+      "max": 255,
+      "min": 1,
+      "pattern": "^[a-z0-9_\\-]*$",
+      "type": "string"
+    },
+    "ContactChannel": {
+      "documentation": "<p>The method that Incident Manager uses to engage a contact.</p>",
+      "members": {
+        "ActivationStatus": {
+          "documentation": "<p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>",
+          "shape": "ActivationStatus"
         },
-        "Alias":{
-          "shape":"ContactAlias",
-          "documentation":"<p>The unique and identifiable alias of the contact or escalation plan.</p>"
+        "ContactArn": {
+          "documentation": "<p>The ARN of the contact that contains the contact channel.</p>",
+          "shape": "SsmContactsArn"
         },
-        "DisplayName":{
-          "shape":"ContactName",
-          "documentation":"<p>The full name of the contact or escalation plan.</p>"
+        "ContactChannelArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel.</p>",
+          "shape": "SsmContactsArn"
         },
-        "Type":{
-          "shape":"ContactType",
-          "documentation":"<p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>"
+        "DeliveryAddress": {
+          "documentation": "<p>The details that Incident Manager uses when trying to engage the contact channel.</p>",
+          "shape": "ContactChannelAddress"
+        },
+        "Name": {
+          "documentation": "<p>The name of the contact channel.</p>",
+          "shape": "ChannelName"
+        },
+        "Type": {
+          "documentation": "<p>The type of the contact channel. Incident Manager supports three contact methods:</p> <ul> <li> <p>SMS</p> </li> <li> <p>VOICE</p> </li> <li> <p>EMAIL</p> </li> </ul>",
+          "shape": "ChannelType"
         }
       },
-      "documentation":"<p>A personal contact or escalation plan that Incident Manager engages during an incident.</p>"
-    },
-    "ContactAlias":{
-      "type":"string",
-      "max":255,
-      "min":1,
-      "pattern":"^[a-z0-9_\\-]*$"
-    },
-    "ContactChannel":{
-      "type":"structure",
-      "required":[
+      "required": [
         "ContactChannelArn",
         "ContactArn",
         "Name",
         "DeliveryAddress",
         "ActivationStatus"
       ],
-      "members":{
-        "ContactChannelArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel.</p>"
-        },
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the contact that contains the contact channel.</p>"
-        },
-        "Name":{
-          "shape":"ChannelName",
-          "documentation":"<p>The name of the contact channel.</p>"
-        },
-        "Type":{
-          "shape":"ChannelType",
-          "documentation":"<p>The type of the contact channel. Incident Manager supports three contact methods:</p> <ul> <li> <p>SMS</p> </li> <li> <p>VOICE</p> </li> <li> <p>EMAIL</p> </li> </ul>"
-        },
-        "DeliveryAddress":{
-          "shape":"ContactChannelAddress",
-          "documentation":"<p>The details that Incident Manager uses when trying to engage the contact channel.</p>"
-        },
-        "ActivationStatus":{
-          "shape":"ActivationStatus",
-          "documentation":"<p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>"
+      "type": "structure"
+    },
+    "ContactChannelAddress": {
+      "documentation": "<p>The details that Incident Manager uses when trying to engage the contact channel. </p>",
+      "members": {
+        "SimpleAddress": {
+          "documentation": "<p>The format is dependent on the type of the contact channel. The following are the expected formats:</p> <ul> <li> <p>SMS - '+' followed by the country code and phone number</p> </li> <li> <p>VOICE - '+' followed by the country code and phone number</p> </li> <li> <p>EMAIL - any standard email format</p> </li> </ul>",
+          "shape": "SimpleAddress"
         }
       },
-      "documentation":"<p>The method that Incident Manager uses to engage a contact.</p>"
+      "type": "structure"
     },
-    "ContactChannelAddress":{
-      "type":"structure",
-      "members":{
-        "SimpleAddress":{
-          "shape":"SimpleAddress",
-          "documentation":"<p>The format is dependent on the type of the contact channel. The following are the expected formats:</p> <ul> <li> <p>SMS - '+' followed by the country code and phone number</p> </li> <li> <p>VOICE - '+' followed by the country code and phone number</p> </li> <li> <p>EMAIL - any standard email format</p> </li> </ul>"
-        }
+    "ContactChannelList": {
+      "member": {
+        "shape": "ContactChannel"
       },
-      "documentation":"<p>The details that Incident Manager uses when trying to engage the contact channel. </p>"
+      "type": "list"
     },
-    "ContactChannelList":{
-      "type":"list",
-      "member":{"shape":"ContactChannel"}
+    "ContactName": {
+      "max": 255,
+      "min": 0,
+      "pattern": "^[\\p{L}\\p{Z}\\p{N}_.\\-]*$",
+      "type": "string"
     },
-    "ContactName":{
-      "type":"string",
-      "max":255,
-      "min":0,
-      "pattern":"^[\\p{L}\\p{Z}\\p{N}_.\\-]*$"
-    },
-    "ContactTargetInfo":{
-      "type":"structure",
-      "required":["IsEssential"],
-      "members":{
-        "ContactId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact.</p>"
+    "ContactTargetInfo": {
+      "documentation": "<p>The contact that Incident Manager is engaging during an incident.</p>",
+      "members": {
+        "ContactId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact.</p>",
+          "shape": "SsmContactsArn"
         },
-        "IsEssential":{
-          "shape":"IsEssential",
-          "documentation":"<p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>"
+        "IsEssential": {
+          "documentation": "<p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>",
+          "shape": "IsEssential"
         }
       },
-      "documentation":"<p>The contact that Incident Manager is engaging during an incident.</p>"
+      "required": [
+        "IsEssential"
+      ],
+      "type": "structure"
     },
-    "ContactType":{
-      "type":"string",
-      "enum":[
+    "ContactType": {
+      "enum": [
         "PERSONAL",
         "ESCALATION"
-      ]
+      ],
+      "type": "string"
     },
-    "ContactsList":{
-      "type":"list",
-      "member":{"shape":"Contact"}
+    "ContactsList": {
+      "member": {
+        "shape": "Contact"
+      },
+      "type": "list"
     },
-    "Content":{
-      "type":"string",
-      "max":8192,
-      "min":1,
-      "pattern":"^[.\\s\\S]*$"
+    "Content": {
+      "max": 8192,
+      "min": 1,
+      "pattern": "^[.\\s\\S]*$",
+      "type": "string"
     },
-    "CreateContactChannelRequest":{
-      "type":"structure",
-      "required":[
+    "CreateContactChannelRequest": {
+      "members": {
+        "ContactId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "DeferActivation": {
+          "documentation": "<p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>",
+          "shape": "DeferActivation"
+        },
+        "DeliveryAddress": {
+          "documentation": "<p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p> <ul> <li> <p>SMS - '+' followed by the country code and phone number</p> </li> <li> <p>VOICE - '+' followed by the country code and phone number</p> </li> <li> <p>EMAIL - any standard email format</p> </li> </ul>",
+          "shape": "ContactChannelAddress"
+        },
+        "IdempotencyToken": {
+          "documentation": "<p>A token ensuring that the operation is called only once with the specified details.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
+        },
+        "Name": {
+          "documentation": "<p>The name of the contact channel.</p>",
+          "shape": "ChannelName"
+        },
+        "Type": {
+          "documentation": "<p>Incident Manager supports three types of contact channels:</p> <ul> <li> <p> <code>SMS</code> </p> </li> <li> <p> <code>VOICE</code> </p> </li> <li> <p> <code>EMAIL</code> </p> </li> </ul>",
+          "shape": "ChannelType"
+        }
+      },
+      "required": [
         "ContactId",
         "Name",
         "Type",
         "DeliveryAddress"
       ],
-      "members":{
-        "ContactId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>"
-        },
-        "Name":{
-          "shape":"ChannelName",
-          "documentation":"<p>The name of the contact channel.</p>"
-        },
-        "Type":{
-          "shape":"ChannelType",
-          "documentation":"<p>Incident Manager supports three types of contact channels:</p> <ul> <li> <p> <code>SMS</code> </p> </li> <li> <p> <code>VOICE</code> </p> </li> <li> <p> <code>EMAIL</code> </p> </li> </ul>"
-        },
-        "DeliveryAddress":{
-          "shape":"ContactChannelAddress",
-          "documentation":"<p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p> <ul> <li> <p>SMS - '+' followed by the country code and phone number</p> </li> <li> <p>VOICE - '+' followed by the country code and phone number</p> </li> <li> <p>EMAIL - any standard email format</p> </li> </ul>"
-        },
-        "DeferActivation":{
-          "shape":"DeferActivation",
-          "documentation":"<p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>"
-        },
-        "IdempotencyToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>A token ensuring that the operation is called only once with the specified details.</p>",
-          "idempotencyToken":true
-        }
-      }
+      "type": "structure"
     },
-    "CreateContactChannelResult":{
-      "type":"structure",
-      "required":["ContactChannelArn"],
-      "members":{
-        "ContactChannelArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel.</p>"
+    "CreateContactChannelResult": {
+      "members": {
+        "ContactChannelArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
+      },
+      "required": [
+        "ContactChannelArn"
+      ],
+      "type": "structure"
     },
-    "CreateContactRequest":{
-      "type":"structure",
-      "required":[
+    "CreateContactRequest": {
+      "members": {
+        "Alias": {
+          "documentation": "<p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>",
+          "shape": "ContactAlias"
+        },
+        "DisplayName": {
+          "documentation": "<p>The full name of the contact or escalation plan. </p>",
+          "shape": "ContactName"
+        },
+        "IdempotencyToken": {
+          "documentation": "<p>A token ensuring that the operation is called only once with the specified details.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
+        },
+        "Plan": {
+          "documentation": "<p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>",
+          "shape": "Plan"
+        },
+        "Tags": {
+          "documentation": "<p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>",
+          "shape": "TagsList"
+        },
+        "Type": {
+          "documentation": "<p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>",
+          "shape": "ContactType"
+        }
+      },
+      "required": [
         "Alias",
         "Type",
         "Plan"
       ],
-      "members":{
-        "Alias":{
-          "shape":"ContactAlias",
-          "documentation":"<p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>"
-        },
-        "DisplayName":{
-          "shape":"ContactName",
-          "documentation":"<p>The full name of the contact or escalation plan. </p>"
-        },
-        "Type":{
-          "shape":"ContactType",
-          "documentation":"<p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>"
-        },
-        "Plan":{
-          "shape":"Plan",
-          "documentation":"<p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>"
-        },
-        "Tags":{
-          "shape":"TagsList",
-          "documentation":"<p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>"
-        },
-        "IdempotencyToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>A token ensuring that the operation is called only once with the specified details.</p>",
-          "idempotencyToken":true
-        }
-      }
+      "type": "structure"
     },
-    "CreateContactResult":{
-      "type":"structure",
-      "required":["ContactArn"],
-      "members":{
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>"
+    "CreateContactResult": {
+      "members": {
+        "ContactArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
-    },
-    "DataEncryptionException":{
-      "type":"structure",
-      "required":["Message"],
-      "members":{
-        "Message":{"shape":"String"}
       },
-      "documentation":"<p>The operation failed to due an encryption key error.</p>",
-      "exception":true
+      "required": [
+        "ContactArn"
+      ],
+      "type": "structure"
     },
-    "DateTime":{"type":"timestamp"},
-    "DeactivateContactChannelRequest":{
-      "type":"structure",
-      "required":["ContactChannelId"],
-      "members":{
-        "ContactChannelId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>"
+    "DataEncryptionException": {
+      "documentation": "<p>The operation failed to due an encryption key error.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "String"
         }
-      }
+      },
+      "required": [
+        "Message"
+      ],
+      "type": "structure"
     },
-    "DeactivateContactChannelResult":{
-      "type":"structure",
-      "members":{
-      }
+    "DateTime": {
+      "type": "timestamp"
     },
-    "DeferActivation":{
-      "type":"boolean",
-      "box":true
-    },
-    "DeleteContactChannelRequest":{
-      "type":"structure",
-      "required":["ContactChannelId"],
-      "members":{
-        "ContactChannelId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel.</p>"
+    "DeactivateContactChannelRequest": {
+      "members": {
+        "ContactChannelId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
+      },
+      "required": [
+        "ContactChannelId"
+      ],
+      "type": "structure"
     },
-    "DeleteContactChannelResult":{
-      "type":"structure",
-      "members":{
-      }
+    "DeactivateContactChannelResult": {
+      "members": {},
+      "type": "structure"
     },
-    "DeleteContactRequest":{
-      "type":"structure",
-      "required":["ContactId"],
-      "members":{
-        "ContactId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>"
+    "DeferActivation": {
+      "box": true,
+      "type": "boolean"
+    },
+    "DeleteContactChannelRequest": {
+      "members": {
+        "ContactChannelId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
+      },
+      "required": [
+        "ContactChannelId"
+      ],
+      "type": "structure"
     },
-    "DeleteContactResult":{
-      "type":"structure",
-      "members":{
-      }
+    "DeleteContactChannelResult": {
+      "members": {},
+      "type": "structure"
     },
-    "DescribeEngagementRequest":{
-      "type":"structure",
-      "required":["EngagementId"],
-      "members":{
-        "EngagementId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>"
+    "DeleteContactRequest": {
+      "members": {
+        "ContactId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
+      },
+      "required": [
+        "ContactId"
+      ],
+      "type": "structure"
     },
-    "DescribeEngagementResult":{
-      "type":"structure",
-      "required":[
+    "DeleteContactResult": {
+      "members": {},
+      "type": "structure"
+    },
+    "DescribeEngagementRequest": {
+      "members": {
+        "EngagementId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>",
+          "shape": "SsmContactsArn"
+        }
+      },
+      "required": [
+        "EngagementId"
+      ],
+      "type": "structure"
+    },
+    "DescribeEngagementResult": {
+      "members": {
+        "ContactArn": {
+          "documentation": "<p>The ARN of the escalation plan or contacts involved in the engagement.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "Content": {
+          "documentation": "<p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>",
+          "shape": "Content"
+        },
+        "EngagementArn": {
+          "documentation": "<p>The ARN of the engagement.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "IncidentId": {
+          "documentation": "<p>The ARN of the incident in which the engagement occurred.</p>",
+          "shape": "IncidentId"
+        },
+        "PublicContent": {
+          "documentation": "<p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>",
+          "shape": "PublicContent"
+        },
+        "PublicSubject": {
+          "documentation": "<p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>",
+          "shape": "PublicSubject"
+        },
+        "Sender": {
+          "documentation": "<p>The user that started the engagement.</p>",
+          "shape": "Sender"
+        },
+        "StartTime": {
+          "documentation": "<p>The time that the engagement started.</p>",
+          "shape": "DateTime"
+        },
+        "StopTime": {
+          "documentation": "<p>The time that the engagement ended.</p>",
+          "shape": "DateTime"
+        },
+        "Subject": {
+          "documentation": "<p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>",
+          "shape": "Subject"
+        }
+      },
+      "required": [
         "ContactArn",
         "EngagementArn",
         "Sender",
         "Subject",
         "Content"
       ],
-      "members":{
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the escalation plan or contacts involved in the engagement.</p>"
-        },
-        "EngagementArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the engagement.</p>"
-        },
-        "Sender":{
-          "shape":"Sender",
-          "documentation":"<p>The user that started the engagement.</p>"
-        },
-        "Subject":{
-          "shape":"Subject",
-          "documentation":"<p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>"
-        },
-        "Content":{
-          "shape":"Content",
-          "documentation":"<p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>"
-        },
-        "PublicSubject":{
-          "shape":"PublicSubject",
-          "documentation":"<p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>"
-        },
-        "PublicContent":{
-          "shape":"PublicContent",
-          "documentation":"<p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>"
-        },
-        "IncidentId":{
-          "shape":"IncidentId",
-          "documentation":"<p>The ARN of the incident in which the engagement occurred.</p>"
-        },
-        "StartTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time that the engagement started.</p>"
-        },
-        "StopTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time that the engagement ended.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "DescribePageRequest":{
-      "type":"structure",
-      "required":["PageId"],
-      "members":{
-        "PageId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ID of the engagement to a contact channel.</p>"
+    "DescribePageRequest": {
+      "members": {
+        "PageId": {
+          "documentation": "<p>The ID of the engagement to a contact channel.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
+      },
+      "required": [
+        "PageId"
+      ],
+      "type": "structure"
     },
-    "DescribePageResult":{
-      "type":"structure",
-      "required":[
+    "DescribePageResult": {
+      "members": {
+        "ContactArn": {
+          "documentation": "<p>The ARN of the contact that was engaged.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "Content": {
+          "documentation": "<p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>",
+          "shape": "Content"
+        },
+        "DeliveryTime": {
+          "documentation": "<p>The time that the contact channel received the engagement.</p>",
+          "shape": "DateTime"
+        },
+        "EngagementArn": {
+          "documentation": "<p>The ARN of the engagement that engaged the contact channel.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "IncidentId": {
+          "documentation": "<p>The ARN of the incident that engaged the contact channel.</p>",
+          "shape": "IncidentId"
+        },
+        "PageArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "PublicContent": {
+          "documentation": "<p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>",
+          "shape": "PublicContent"
+        },
+        "PublicSubject": {
+          "documentation": "<p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>",
+          "shape": "PublicSubject"
+        },
+        "ReadTime": {
+          "documentation": "<p>The time that the contact channel acknowledged the engagement.</p>",
+          "shape": "DateTime"
+        },
+        "Sender": {
+          "documentation": "<p>The user that started the engagement.</p>",
+          "shape": "Sender"
+        },
+        "SentTime": {
+          "documentation": "<p>The time the engagement was sent to the contact channel.</p>",
+          "shape": "DateTime"
+        },
+        "Subject": {
+          "documentation": "<p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>",
+          "shape": "Subject"
+        }
+      },
+      "required": [
         "PageArn",
         "EngagementArn",
         "ContactArn",
@@ -1002,1035 +1488,1051 @@
         "Subject",
         "Content"
       ],
-      "members":{
-        "PageArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>"
-        },
-        "EngagementArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the engagement that engaged the contact channel.</p>"
-        },
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the contact that was engaged.</p>"
-        },
-        "Sender":{
-          "shape":"Sender",
-          "documentation":"<p>The user that started the engagement.</p>"
-        },
-        "Subject":{
-          "shape":"Subject",
-          "documentation":"<p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>"
-        },
-        "Content":{
-          "shape":"Content",
-          "documentation":"<p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>"
-        },
-        "PublicSubject":{
-          "shape":"PublicSubject",
-          "documentation":"<p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>"
-        },
-        "PublicContent":{
-          "shape":"PublicContent",
-          "documentation":"<p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>"
-        },
-        "IncidentId":{
-          "shape":"IncidentId",
-          "documentation":"<p>The ARN of the incident that engaged the contact channel.</p>"
-        },
-        "SentTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time the engagement was sent to the contact channel.</p>"
-        },
-        "ReadTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time that the contact channel acknowledged the engagement.</p>"
-        },
-        "DeliveryTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time that the contact channel received the engagement.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "Engagement":{
-      "type":"structure",
-      "required":[
+    "Engagement": {
+      "documentation": "<p>Incident Manager reaching out to a contact or escalation plan to engage contact during an incident.</p>",
+      "members": {
+        "ContactArn": {
+          "documentation": "<p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "EngagementArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the engagement.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "IncidentId": {
+          "documentation": "<p>The ARN of the incident that's engaging the contact.</p>",
+          "shape": "IncidentId"
+        },
+        "Sender": {
+          "documentation": "<p>The user that started the engagement.</p>",
+          "shape": "Sender"
+        },
+        "StartTime": {
+          "documentation": "<p>The time that the engagement began.</p>",
+          "shape": "DateTime"
+        },
+        "StopTime": {
+          "documentation": "<p>The time that the engagement ended.</p>",
+          "shape": "DateTime"
+        }
+      },
+      "required": [
         "EngagementArn",
         "ContactArn",
         "Sender"
       ],
-      "members":{
-        "EngagementArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the engagement.</p>"
-        },
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>"
-        },
-        "Sender":{
-          "shape":"Sender",
-          "documentation":"<p>The user that started the engagement.</p>"
-        },
-        "IncidentId":{
-          "shape":"IncidentId",
-          "documentation":"<p>The ARN of the incident that's engaging the contact.</p>"
-        },
-        "StartTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time that the engagement began.</p>"
-        },
-        "StopTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time that the engagement ended.</p>"
+      "type": "structure"
+    },
+    "EngagementsList": {
+      "member": {
+        "shape": "Engagement"
+      },
+      "type": "list"
+    },
+    "GetContactChannelRequest": {
+      "members": {
+        "ContactChannelId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>",
+          "shape": "SsmContactsArn"
         }
       },
-      "documentation":"<p>Incident Manager reaching out to a contact or escalation plan to engage contact during an incident.</p>"
+      "required": [
+        "ContactChannelId"
+      ],
+      "type": "structure"
     },
-    "EngagementsList":{
-      "type":"list",
-      "member":{"shape":"Engagement"}
-    },
-    "GetContactChannelRequest":{
-      "type":"structure",
-      "required":["ContactChannelId"],
-      "members":{
-        "ContactChannelId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>"
+    "GetContactChannelResult": {
+      "members": {
+        "ActivationStatus": {
+          "documentation": "<p>A Boolean value indicating if the contact channel has been activated or not.</p>",
+          "shape": "ActivationStatus"
+        },
+        "ContactArn": {
+          "documentation": "<p>The ARN of the contact that the channel belongs to.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "ContactChannelArn": {
+          "documentation": "<p>The ARN of the contact channel.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "DeliveryAddress": {
+          "documentation": "<p>The details that Incident Manager uses when trying to engage the contact channel. </p>",
+          "shape": "ContactChannelAddress"
+        },
+        "Name": {
+          "documentation": "<p>The name of the contact channel</p>",
+          "shape": "ChannelName"
+        },
+        "Type": {
+          "documentation": "<p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>",
+          "shape": "ChannelType"
         }
-      }
-    },
-    "GetContactChannelResult":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "ContactArn",
         "ContactChannelArn",
         "Name",
         "Type",
         "DeliveryAddress"
       ],
-      "members":{
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the contact that the channel belongs to.</p>"
-        },
-        "ContactChannelArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the contact channel.</p>"
-        },
-        "Name":{
-          "shape":"ChannelName",
-          "documentation":"<p>The name of the contact channel</p>"
-        },
-        "Type":{
-          "shape":"ChannelType",
-          "documentation":"<p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>"
-        },
-        "DeliveryAddress":{
-          "shape":"ContactChannelAddress",
-          "documentation":"<p>The details that Incident Manager uses when trying to engage the contact channel. </p>"
-        },
-        "ActivationStatus":{
-          "shape":"ActivationStatus",
-          "documentation":"<p>A Boolean value indicating if the contact channel has been activated or not.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "GetContactPolicyRequest":{
-      "type":"structure",
-      "required":["ContactArn"],
-      "members":{
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>"
+    "GetContactPolicyRequest": {
+      "members": {
+        "ContactArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
+      },
+      "required": [
+        "ContactArn"
+      ],
+      "type": "structure"
     },
-    "GetContactPolicyResult":{
-      "type":"structure",
-      "members":{
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the contact or escalation plan.</p>"
+    "GetContactPolicyResult": {
+      "members": {
+        "ContactArn": {
+          "documentation": "<p>The ARN of the contact or escalation plan.</p>",
+          "shape": "SsmContactsArn"
         },
-        "Policy":{
-          "shape":"Policy",
-          "documentation":"<p>Details about the resource policy attached to the contact or escalation plan.</p>"
+        "Policy": {
+          "documentation": "<p>Details about the resource policy attached to the contact or escalation plan.</p>",
+          "shape": "Policy"
         }
-      }
+      },
+      "type": "structure"
     },
-    "GetContactRequest":{
-      "type":"structure",
-      "required":["ContactId"],
-      "members":{
-        "ContactId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>"
+    "GetContactRequest": {
+      "members": {
+        "ContactId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
+      },
+      "required": [
+        "ContactId"
+      ],
+      "type": "structure"
     },
-    "GetContactResult":{
-      "type":"structure",
-      "required":[
+    "GetContactResult": {
+      "members": {
+        "Alias": {
+          "documentation": "<p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>",
+          "shape": "ContactAlias"
+        },
+        "ContactArn": {
+          "documentation": "<p>The ARN of the contact or escalation plan.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "DisplayName": {
+          "documentation": "<p>The full name of the contact or escalation plan.</p>",
+          "shape": "ContactName"
+        },
+        "Plan": {
+          "documentation": "<p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>",
+          "shape": "Plan"
+        },
+        "Type": {
+          "documentation": "<p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>",
+          "shape": "ContactType"
+        }
+      },
+      "required": [
         "ContactArn",
         "Alias",
         "Type",
         "Plan"
       ],
-      "members":{
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the contact or escalation plan.</p>"
-        },
-        "Alias":{
-          "shape":"ContactAlias",
-          "documentation":"<p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>"
-        },
-        "DisplayName":{
-          "shape":"ContactName",
-          "documentation":"<p>The full name of the contact or escalation plan.</p>"
-        },
-        "Type":{
-          "shape":"ContactType",
-          "documentation":"<p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>"
-        },
-        "Plan":{
-          "shape":"Plan",
-          "documentation":"<p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "IdempotencyToken":{
-      "type":"string",
-      "max":2048,
-      "pattern":"^[\\\\\\/a-zA-Z0-9_+=\\-]*$"
+    "IdempotencyToken": {
+      "max": 2048,
+      "pattern": "^[\\\\\\/a-zA-Z0-9_+=\\-]*$",
+      "type": "string"
     },
-    "IncidentId":{
-      "type":"string",
-      "max":1024,
-      "pattern":"^[\\\\a-zA-Z0-9_@#%*+=:?.\\/!\\s-]*$"
+    "IncidentId": {
+      "max": 1024,
+      "pattern": "^[\\\\a-zA-Z0-9_@#%*+=:?.\\/!\\s-]*$",
+      "type": "string"
     },
-    "InternalServerException":{
-      "type":"structure",
-      "required":["Message"],
-      "members":{
-        "Message":{"shape":"String"},
-        "RetryAfterSeconds":{
-          "shape":"RetryAfterSeconds",
-          "documentation":"Advice to clients on when the call can be safely retried"
+    "InternalServerException": {
+      "documentation": "<p>Unexpected error occurred while processing the request.</p>",
+      "exception": true,
+      "fault": true,
+      "members": {
+        "Message": {
+          "shape": "String"
+        },
+        "RetryAfterSeconds": {
+          "documentation": "Advice to clients on when the call can be safely retried",
+          "shape": "RetryAfterSeconds"
         }
       },
-      "documentation":"<p>Unexpected error occurred while processing the request.</p>",
-      "exception":true,
-      "fault":true
+      "required": [
+        "Message"
+      ],
+      "type": "structure"
     },
-    "IsEssential":{
-      "type":"boolean",
-      "box":true
+    "IsEssential": {
+      "box": true,
+      "type": "boolean"
     },
-    "ListContactChannelsRequest":{
-      "type":"structure",
-      "required":["ContactId"],
-      "members":{
-        "ContactId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact. </p>"
+    "ListContactChannelsRequest": {
+      "members": {
+        "ContactId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact. </p>",
+          "shape": "SsmContactsArn"
         },
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+        "MaxResults": {
+          "documentation": "<p>The maximum number of contact channels per page.</p>",
+          "shape": "MaxResults"
         },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of contact channels per page.</p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         }
-      }
+      },
+      "required": [
+        "ContactId"
+      ],
+      "type": "structure"
     },
-    "ListContactChannelsResult":{
-      "type":"structure",
-      "required":["ContactChannels"],
-      "members":{
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+    "ListContactChannelsResult": {
+      "members": {
+        "ContactChannels": {
+          "documentation": "<p>A list of contact channels related to the specified contact.</p>",
+          "shape": "ContactChannelList"
         },
-        "ContactChannels":{
-          "shape":"ContactChannelList",
-          "documentation":"<p>A list of contact channels related to the specified contact.</p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         }
-      }
+      },
+      "required": [
+        "ContactChannels"
+      ],
+      "type": "structure"
     },
-    "ListContactsRequest":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+    "ListContactsRequest": {
+      "members": {
+        "AliasPrefix": {
+          "documentation": "<p>Used to list only contacts who's aliases start with the specified prefix.</p>",
+          "shape": "ContactAlias"
         },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of contacts and escalation plans per page of results.</p>"
+        "MaxResults": {
+          "documentation": "<p>The maximum number of contacts and escalation plans per page of results.</p>",
+          "shape": "MaxResults"
         },
-        "AliasPrefix":{
-          "shape":"ContactAlias",
-          "documentation":"<p>Used to list only contacts who's aliases start with the specified prefix.</p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         },
-        "Type":{
-          "shape":"ContactType",
-          "documentation":"<p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>"
+        "Type": {
+          "documentation": "<p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>",
+          "shape": "ContactType"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListContactsResult":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+    "ListContactsResult": {
+      "members": {
+        "Contacts": {
+          "documentation": "<p>A list of the contacts and escalation plans in your Incident Manager account.</p>",
+          "shape": "ContactsList"
         },
-        "Contacts":{
-          "shape":"ContactsList",
-          "documentation":"<p>A list of the contacts and escalation plans in your Incident Manager account.</p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListEngagementsRequest":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+    "ListEngagementsRequest": {
+      "members": {
+        "IncidentId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>",
+          "shape": "IncidentId"
         },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of engagements per page of results.</p>"
+        "MaxResults": {
+          "documentation": "<p>The maximum number of engagements per page of results.</p>",
+          "shape": "MaxResults"
         },
-        "IncidentId":{
-          "shape":"IncidentId",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         },
-        "TimeRangeValue":{
-          "shape":"TimeRange",
-          "documentation":"<p>The time range to lists engagements for an incident.</p>"
+        "TimeRangeValue": {
+          "documentation": "<p>The time range to lists engagements for an incident.</p>",
+          "shape": "TimeRange"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListEngagementsResult":{
-      "type":"structure",
-      "required":["Engagements"],
-      "members":{
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+    "ListEngagementsResult": {
+      "members": {
+        "Engagements": {
+          "documentation": "<p>A list of each engagement that occurred during the specified time range of an incident.</p>",
+          "shape": "EngagementsList"
         },
-        "Engagements":{
-          "shape":"EngagementsList",
-          "documentation":"<p>A list of each engagement that occurred during the specified time range of an incident.</p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         }
-      }
+      },
+      "required": [
+        "Engagements"
+      ],
+      "type": "structure"
     },
-    "ListPageReceiptsRequest":{
-      "type":"structure",
-      "required":["PageId"],
-      "members":{
-        "PageId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>"
+    "ListPageReceiptsRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The maximum number of acknowledgements per page of results.</p>",
+          "shape": "MaxResults"
         },
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of acknowledgements per page of results.</p>"
+        "PageId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>",
+          "shape": "SsmContactsArn"
         }
-      }
+      },
+      "required": [
+        "PageId"
+      ],
+      "type": "structure"
     },
-    "ListPageReceiptsResult":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+    "ListPageReceiptsResult": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         },
-        "Receipts":{
-          "shape":"ReceiptsList",
-          "documentation":"<p>A list of each acknowledgement.</p>"
+        "Receipts": {
+          "documentation": "<p>A list of each acknowledgement.</p>",
+          "shape": "ReceiptsList"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListPagesByContactRequest":{
-      "type":"structure",
-      "required":["ContactId"],
-      "members":{
-        "ContactId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>"
+    "ListPagesByContactRequest": {
+      "members": {
+        "ContactId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>",
+          "shape": "SsmContactsArn"
         },
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+        "MaxResults": {
+          "documentation": "<p>The maximum number of engagements to contact channels to list per page of results. </p>",
+          "shape": "MaxResults"
         },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of engagements to contact channels to list per page of results. </p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         }
-      }
+      },
+      "required": [
+        "ContactId"
+      ],
+      "type": "structure"
     },
-    "ListPagesByContactResult":{
-      "type":"structure",
-      "required":["Pages"],
-      "members":{
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+    "ListPagesByContactResult": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         },
-        "Pages":{
-          "shape":"PagesList",
-          "documentation":"<p>The list of engagements to a contact's contact channel.</p>"
+        "Pages": {
+          "documentation": "<p>The list of engagements to a contact's contact channel.</p>",
+          "shape": "PagesList"
         }
-      }
+      },
+      "required": [
+        "Pages"
+      ],
+      "type": "structure"
     },
-    "ListPagesByEngagementRequest":{
-      "type":"structure",
-      "required":["EngagementId"],
-      "members":{
-        "EngagementId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the engagement.</p>"
+    "ListPagesByEngagementRequest": {
+      "members": {
+        "EngagementId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the engagement.</p>",
+          "shape": "SsmContactsArn"
         },
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+        "MaxResults": {
+          "documentation": "<p>The maximum number of engagements to contact channels to list per page of results.</p>",
+          "shape": "MaxResults"
         },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of engagements to contact channels to list per page of results.</p>"
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         }
-      }
+      },
+      "required": [
+        "EngagementId"
+      ],
+      "type": "structure"
     },
-    "ListPagesByEngagementResult":{
-      "type":"structure",
-      "required":["Pages"],
-      "members":{
-        "NextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>The pagination token to continue to the next page of results.</p>"
+    "ListPagesByEngagementResult": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The pagination token to continue to the next page of results.</p>",
+          "shape": "PaginationToken"
         },
-        "Pages":{
-          "shape":"PagesList",
-          "documentation":"<p>The list of engagements to contact channels.</p>"
+        "Pages": {
+          "documentation": "<p>The list of engagements to contact channels.</p>",
+          "shape": "PagesList"
         }
-      }
+      },
+      "required": [
+        "Pages"
+      ],
+      "type": "structure"
     },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["ResourceARN"],
-      "members":{
-        "ResourceARN":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>"
+    "ListTagsForResourceRequest": {
+      "members": {
+        "ResourceARN": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>",
+          "shape": "AmazonResourceName"
         }
-      }
+      },
+      "required": [
+        "ResourceARN"
+      ],
+      "type": "structure"
     },
-    "ListTagsForResourceResult":{
-      "type":"structure",
-      "members":{
-        "Tags":{
-          "shape":"TagsList",
-          "documentation":"<p>The tags related to the contact or escalation plan.</p>"
+    "ListTagsForResourceResult": {
+      "members": {
+        "Tags": {
+          "documentation": "<p>The tags related to the contact or escalation plan.</p>",
+          "shape": "TagsList"
         }
-      }
+      },
+      "type": "structure"
     },
-    "MaxResults":{
-      "type":"integer",
-      "box":true,
-      "max":1024,
-      "min":0
+    "MaxResults": {
+      "box": true,
+      "max": 1024,
+      "min": 0,
+      "type": "integer"
     },
-    "Page":{
-      "type":"structure",
-      "required":[
+    "Page": {
+      "documentation": "<p>Incident Manager engaging a contact's contact channel.</p>",
+      "members": {
+        "ContactArn": {
+          "documentation": "<p>The ARN of the contact that Incident Manager is engaging.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "DeliveryTime": {
+          "documentation": "<p>The time the message was delivered to the contact channel.</p>",
+          "shape": "DateTime"
+        },
+        "EngagementArn": {
+          "documentation": "<p>The ARN of the engagement that this page is part of.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "IncidentId": {
+          "documentation": "<p>The ARN of the incident that's engaging the contact channel.</p>",
+          "shape": "IncidentId"
+        },
+        "PageArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "ReadTime": {
+          "documentation": "<p>The time that the contact channel acknowledged engagement.</p>",
+          "shape": "DateTime"
+        },
+        "Sender": {
+          "documentation": "<p>The user that started the engagement.</p>",
+          "shape": "Sender"
+        },
+        "SentTime": {
+          "documentation": "<p>The time that Incident Manager engaged the contact channel.</p>",
+          "shape": "DateTime"
+        }
+      },
+      "required": [
         "PageArn",
         "EngagementArn",
         "ContactArn",
         "Sender"
       ],
-      "members":{
-        "PageArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>"
-        },
-        "EngagementArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the engagement that this page is part of.</p>"
-        },
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the contact that Incident Manager is engaging.</p>"
-        },
-        "Sender":{
-          "shape":"Sender",
-          "documentation":"<p>The user that started the engagement.</p>"
-        },
-        "IncidentId":{
-          "shape":"IncidentId",
-          "documentation":"<p>The ARN of the incident that's engaging the contact channel.</p>"
-        },
-        "SentTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time that Incident Manager engaged the contact channel.</p>"
-        },
-        "DeliveryTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time the message was delivered to the contact channel.</p>"
-        },
-        "ReadTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time that the contact channel acknowledged engagement.</p>"
+      "type": "structure"
+    },
+    "PagesList": {
+      "member": {
+        "shape": "Page"
+      },
+      "type": "list"
+    },
+    "PaginationToken": {
+      "max": 2048,
+      "pattern": "^[\\\\\\/a-zA-Z0-9_+=\\-]*$",
+      "type": "string"
+    },
+    "Plan": {
+      "documentation": "<p>The stages that an escalation plan or engagement plan engages contacts and contact methods in.</p>",
+      "members": {
+        "Stages": {
+          "documentation": "<p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>",
+          "shape": "StagesList"
         }
       },
-      "documentation":"<p>Incident Manager engaging a contact's contact channel.</p>"
+      "required": [
+        "Stages"
+      ],
+      "type": "structure"
     },
-    "PagesList":{
-      "type":"list",
-      "member":{"shape":"Page"}
+    "Policy": {
+      "max": 395000,
+      "min": 1,
+      "pattern": ".*\\S.*",
+      "type": "string"
     },
-    "PaginationToken":{
-      "type":"string",
-      "max":2048,
-      "pattern":"^[\\\\\\/a-zA-Z0-9_+=\\-]*$"
+    "PublicContent": {
+      "max": 8192,
+      "min": 1,
+      "pattern": "^[.\\s\\S]*$",
+      "type": "string"
     },
-    "Plan":{
-      "type":"structure",
-      "required":["Stages"],
-      "members":{
-        "Stages":{
-          "shape":"StagesList",
-          "documentation":"<p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>"
+    "PublicSubject": {
+      "max": 2048,
+      "min": 1,
+      "pattern": "^[.\\s\\S]*$",
+      "type": "string"
+    },
+    "PutContactPolicyRequest": {
+      "members": {
+        "ContactArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "Policy": {
+          "documentation": "<p>Details of the resource policy.</p>",
+          "shape": "Policy"
         }
       },
-      "documentation":"<p>The stages that an escalation plan or engagement plan engages contacts and contact methods in.</p>"
-    },
-    "Policy":{
-      "type":"string",
-      "max":395000,
-      "min":1,
-      "pattern":".*\\S.*"
-    },
-    "PublicContent":{
-      "type":"string",
-      "max":8192,
-      "min":1,
-      "pattern":"^[.\\s\\S]*$"
-    },
-    "PublicSubject":{
-      "type":"string",
-      "max":2048,
-      "min":1,
-      "pattern":"^[.\\s\\S]*$"
-    },
-    "PutContactPolicyRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "ContactArn",
         "Policy"
       ],
-      "members":{
-        "ContactArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>"
+      "type": "structure"
+    },
+    "PutContactPolicyResult": {
+      "members": {},
+      "type": "structure"
+    },
+    "Receipt": {
+      "documentation": "<p>Records events during an engagement.</p>",
+      "members": {
+        "ContactChannelArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>",
+          "shape": "SsmContactsArn"
         },
-        "Policy":{
-          "shape":"Policy",
-          "documentation":"<p>Details of the resource policy.</p>"
+        "ReceiptInfo": {
+          "documentation": "<p>Information provided during the page acknowledgement.</p>",
+          "shape": "ReceiptInfo"
+        },
+        "ReceiptTime": {
+          "documentation": "<p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>",
+          "shape": "DateTime"
+        },
+        "ReceiptType": {
+          "documentation": "<p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>",
+          "shape": "ReceiptType"
         }
-      }
-    },
-    "PutContactPolicyResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "Receipt":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "ReceiptType",
         "ReceiptTime"
       ],
-      "members":{
-        "ContactChannelArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>"
-        },
-        "ReceiptType":{
-          "shape":"ReceiptType",
-          "documentation":"<p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>"
-        },
-        "ReceiptInfo":{
-          "shape":"ReceiptInfo",
-          "documentation":"<p>Information provided during the page acknowledgement.</p>"
-        },
-        "ReceiptTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>"
-        }
-      },
-      "documentation":"<p>Records events during an engagement.</p>"
+      "type": "structure"
     },
-    "ReceiptInfo":{
-      "type":"string",
-      "max":2048,
-      "min":1,
-      "pattern":"^[.\\s\\S]*$"
+    "ReceiptInfo": {
+      "max": 2048,
+      "min": 1,
+      "pattern": "^[.\\s\\S]*$",
+      "type": "string"
     },
-    "ReceiptType":{
-      "type":"string",
-      "enum":[
+    "ReceiptType": {
+      "enum": [
         "DELIVERED",
         "ERROR",
         "READ",
         "SENT",
         "STOP"
-      ]
+      ],
+      "type": "string"
     },
-    "ReceiptsList":{
-      "type":"list",
-      "member":{"shape":"Receipt"}
+    "ReceiptsList": {
+      "member": {
+        "shape": "Receipt"
+      },
+      "type": "list"
     },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "required":[
+    "ResourceNotFoundException": {
+      "documentation": "<p>Request references a resource that doesn't exist.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "String"
+        },
+        "ResourceId": {
+          "documentation": "Hypothetical resource identifier that was not found",
+          "shape": "String"
+        },
+        "ResourceType": {
+          "documentation": "Hypothetical resource type that was not found",
+          "shape": "String"
+        }
+      },
+      "required": [
         "Message",
         "ResourceId",
         "ResourceType"
       ],
-      "members":{
-        "Message":{"shape":"String"},
-        "ResourceId":{
-          "shape":"String",
-          "documentation":"Hypothetical resource identifier that was not found"
-        },
-        "ResourceType":{
-          "shape":"String",
-          "documentation":"Hypothetical resource type that was not found"
+      "type": "structure"
+    },
+    "RetryAfterSeconds": {
+      "type": "integer"
+    },
+    "RetryIntervalInMinutes": {
+      "box": true,
+      "max": 60,
+      "min": 0,
+      "type": "integer"
+    },
+    "SendActivationCodeRequest": {
+      "members": {
+        "ContactChannelId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel.</p>",
+          "shape": "SsmContactsArn"
         }
       },
-      "documentation":"<p>Request references a resource that doesn't exist.</p>",
-      "exception":true
+      "required": [
+        "ContactChannelId"
+      ],
+      "type": "structure"
     },
-    "RetryAfterSeconds":{"type":"integer"},
-    "RetryIntervalInMinutes":{
-      "type":"integer",
-      "box":true,
-      "max":60,
-      "min":0
+    "SendActivationCodeResult": {
+      "members": {},
+      "type": "structure"
     },
-    "SendActivationCodeRequest":{
-      "type":"structure",
-      "required":["ContactChannelId"],
-      "members":{
-        "ContactChannelId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel.</p>"
+    "Sender": {
+      "max": 255,
+      "pattern": "^[\\\\a-zA-Z0-9_@#%*+=:?.\\/!\\s-]*$",
+      "type": "string"
+    },
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>Request would cause a service quota to be exceeded.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "String"
+        },
+        "QuotaCode": {
+          "documentation": "Service Quotas requirement to identify originating service",
+          "shape": "String"
+        },
+        "ResourceId": {
+          "documentation": "Identifier of the resource affected",
+          "shape": "String"
+        },
+        "ResourceType": {
+          "documentation": "Type of the resource affected",
+          "shape": "String"
+        },
+        "ServiceCode": {
+          "documentation": "Service Quotas requirement to identify originating quota",
+          "shape": "String"
         }
-      }
-    },
-    "SendActivationCodeResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "Sender":{
-      "type":"string",
-      "max":255,
-      "pattern":"^[\\\\a-zA-Z0-9_@#%*+=:?.\\/!\\s-]*$"
-    },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "Message",
         "QuotaCode",
         "ServiceCode"
       ],
-      "members":{
-        "Message":{"shape":"String"},
-        "ResourceId":{
-          "shape":"String",
-          "documentation":"Identifier of the resource affected"
+      "type": "structure"
+    },
+    "SimpleAddress": {
+      "max": 320,
+      "min": 1,
+      "type": "string"
+    },
+    "SsmContactsArn": {
+      "max": 2048,
+      "min": 1,
+      "pattern": "arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\\w+=\\/,.@]*:[0-9]+:([\\w+=\\/,.@:-]+)*",
+      "type": "string"
+    },
+    "Stage": {
+      "documentation": "<p>A set amount of time that an escalation plan or engagement plan engages the specified contacts or contact methods.</p>",
+      "members": {
+        "DurationInMinutes": {
+          "documentation": "<p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>",
+          "shape": "StageDurationInMins"
         },
-        "ResourceType":{
-          "shape":"String",
-          "documentation":"Type of the resource affected"
-        },
-        "QuotaCode":{
-          "shape":"String",
-          "documentation":"Service Quotas requirement to identify originating service"
-        },
-        "ServiceCode":{
-          "shape":"String",
-          "documentation":"Service Quotas requirement to identify originating quota"
+        "Targets": {
+          "documentation": "<p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>",
+          "shape": "TargetsList"
         }
       },
-      "documentation":"<p>Request would cause a service quota to be exceeded.</p>",
-      "exception":true
-    },
-    "SimpleAddress":{
-      "type":"string",
-      "max":320,
-      "min":1
-    },
-    "SsmContactsArn":{
-      "type":"string",
-      "max":2048,
-      "min":1,
-      "pattern":"arn:(aws|aws-cn|aws-us-gov):ssm-contacts:[-\\w+=\\/,.@]*:[0-9]+:([\\w+=\\/,.@:-]+)*"
-    },
-    "Stage":{
-      "type":"structure",
-      "required":[
+      "required": [
         "DurationInMinutes",
         "Targets"
       ],
-      "members":{
-        "DurationInMinutes":{
-          "shape":"StageDurationInMins",
-          "documentation":"<p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>"
+      "type": "structure"
+    },
+    "StageDurationInMins": {
+      "box": true,
+      "max": 30,
+      "min": 0,
+      "type": "integer"
+    },
+    "StagesList": {
+      "member": {
+        "shape": "Stage"
+      },
+      "type": "list"
+    },
+    "StartEngagementRequest": {
+      "members": {
+        "ContactId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact being engaged.</p>",
+          "shape": "SsmContactsArn"
         },
-        "Targets":{
-          "shape":"TargetsList",
-          "documentation":"<p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>"
+        "Content": {
+          "documentation": "<p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>",
+          "shape": "Content"
+        },
+        "IdempotencyToken": {
+          "documentation": "<p>A token ensuring that the operation is called only once with the specified details.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
+        },
+        "IncidentId": {
+          "documentation": "<p>The ARN of the incident that the engagement is part of.</p>",
+          "shape": "IncidentId"
+        },
+        "PublicContent": {
+          "documentation": "<p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>",
+          "shape": "PublicContent"
+        },
+        "PublicSubject": {
+          "documentation": "<p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>",
+          "shape": "PublicSubject"
+        },
+        "Sender": {
+          "documentation": "<p>The user that started the engagement.</p>",
+          "shape": "Sender"
+        },
+        "Subject": {
+          "documentation": "<p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>",
+          "shape": "Subject"
         }
       },
-      "documentation":"<p>A set amount of time that an escalation plan or engagement plan engages the specified contacts or contact methods.</p>"
-    },
-    "StageDurationInMins":{
-      "type":"integer",
-      "box":true,
-      "max":30,
-      "min":0
-    },
-    "StagesList":{
-      "type":"list",
-      "member":{"shape":"Stage"}
-    },
-    "StartEngagementRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "ContactId",
         "Sender",
         "Subject",
         "Content"
       ],
-      "members":{
-        "ContactId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact being engaged.</p>"
-        },
-        "Sender":{
-          "shape":"Sender",
-          "documentation":"<p>The user that started the engagement.</p>"
-        },
-        "Subject":{
-          "shape":"Subject",
-          "documentation":"<p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>"
-        },
-        "Content":{
-          "shape":"Content",
-          "documentation":"<p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>"
-        },
-        "PublicSubject":{
-          "shape":"PublicSubject",
-          "documentation":"<p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>"
-        },
-        "PublicContent":{
-          "shape":"PublicContent",
-          "documentation":"<p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>"
-        },
-        "IncidentId":{
-          "shape":"IncidentId",
-          "documentation":"<p>The ARN of the incident that the engagement is part of.</p>"
-        },
-        "IdempotencyToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>A token ensuring that the operation is called only once with the specified details.</p>",
-          "idempotencyToken":true
-        }
-      }
+      "type": "structure"
     },
-    "StartEngagementResult":{
-      "type":"structure",
-      "required":["EngagementArn"],
-      "members":{
-        "EngagementArn":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The ARN of the engagement.</p>"
-        }
-      }
-    },
-    "StopEngagementRequest":{
-      "type":"structure",
-      "required":["EngagementId"],
-      "members":{
-        "EngagementId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the engagement.</p>"
-        },
-        "Reason":{
-          "shape":"StopReason",
-          "documentation":"<p>The reason that you're stopping the engagement. </p>"
-        }
-      }
-    },
-    "StopEngagementResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "StopReason":{
-      "type":"string",
-      "max":255,
-      "pattern":"^[.\\s\\S]*$"
-    },
-    "String":{"type":"string"},
-    "Subject":{
-      "type":"string",
-      "max":2048,
-      "min":1,
-      "pattern":"^[.\\s\\S]*$"
-    },
-    "Tag":{
-      "type":"structure",
-      "members":{
-        "Key":{
-          "shape":"TagKey",
-          "documentation":"<p>Name of the object key.</p>"
-        },
-        "Value":{
-          "shape":"TagValue",
-          "documentation":"<p>Value of the tag.</p>"
+    "StartEngagementResult": {
+      "members": {
+        "EngagementArn": {
+          "documentation": "<p>The ARN of the engagement.</p>",
+          "shape": "SsmContactsArn"
         }
       },
-      "documentation":"<p>A container of a key-value name pair.</p>"
+      "required": [
+        "EngagementArn"
+      ],
+      "type": "structure"
     },
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"^[\\\\\\/a-zA-Z0-9_+=\\-]*$"
+    "StopEngagementRequest": {
+      "members": {
+        "EngagementId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the engagement.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "Reason": {
+          "documentation": "<p>The reason that you're stopping the engagement. </p>",
+          "shape": "StopReason"
+        }
+      },
+      "required": [
+        "EngagementId"
+      ],
+      "type": "structure"
     },
-    "TagKeyList":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "max":50,
-      "min":0
+    "StopEngagementResult": {
+      "members": {},
+      "type": "structure"
     },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "StopReason": {
+      "max": 255,
+      "pattern": "^[.\\s\\S]*$",
+      "type": "string"
+    },
+    "String": {
+      "type": "string"
+    },
+    "Subject": {
+      "max": 2048,
+      "min": 1,
+      "pattern": "^[.\\s\\S]*$",
+      "type": "string"
+    },
+    "Tag": {
+      "documentation": "<p>A container of a key-value name pair.</p>",
+      "members": {
+        "Key": {
+          "documentation": "<p>Name of the object key.</p>",
+          "shape": "TagKey"
+        },
+        "Value": {
+          "documentation": "<p>Value of the tag.</p>",
+          "shape": "TagValue"
+        }
+      },
+      "type": "structure"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "^[\\\\\\/a-zA-Z0-9_+=\\-]*$",
+      "type": "string"
+    },
+    "TagKeyList": {
+      "max": 50,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "TagResourceRequest": {
+      "members": {
+        "ResourceARN": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>",
+          "shape": "AmazonResourceName"
+        },
+        "Tags": {
+          "documentation": "<p>A list of tags that you are adding to the contact or escalation plan.</p>",
+          "shape": "TagsList"
+        }
+      },
+      "required": [
         "ResourceARN",
         "Tags"
       ],
-      "members":{
-        "ResourceARN":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>"
+      "type": "structure"
+    },
+    "TagResourceResult": {
+      "members": {},
+      "type": "structure"
+    },
+    "TagValue": {
+      "max": 256,
+      "min": 1,
+      "pattern": "^[\\p{L}\\p{Z}\\p{N}_.:\\/=+\\-@]*$",
+      "type": "string"
+    },
+    "TagsList": {
+      "max": 50,
+      "member": {
+        "shape": "Tag"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "Target": {
+      "documentation": "<p>The contact or contact channel that's being engaged.</p>",
+      "members": {
+        "ChannelTargetInfo": {
+          "documentation": "<p>Information about the contact channel Incident Manager is engaging.</p>",
+          "shape": "ChannelTargetInfo"
         },
-        "Tags":{
-          "shape":"TagsList",
-          "documentation":"<p>A list of tags that you are adding to the contact or escalation plan.</p>"
-        }
-      }
-    },
-    "TagResourceResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":"^[\\p{L}\\p{Z}\\p{N}_.:\\/=+\\-@]*$"
-    },
-    "TagsList":{
-      "type":"list",
-      "member":{"shape":"Tag"},
-      "max":50,
-      "min":0
-    },
-    "Target":{
-      "type":"structure",
-      "members":{
-        "ChannelTargetInfo":{
-          "shape":"ChannelTargetInfo",
-          "documentation":"<p>Information about the contact channel Incident Manager is engaging.</p>"
-        },
-        "ContactTargetInfo":{
-          "shape":"ContactTargetInfo",
-          "documentation":"<p>Information about the contact that Incident Manager is engaging.</p>"
+        "ContactTargetInfo": {
+          "documentation": "<p>Information about the contact that Incident Manager is engaging.</p>",
+          "shape": "ContactTargetInfo"
         }
       },
-      "documentation":"<p>The contact or contact channel that's being engaged.</p>"
+      "type": "structure"
     },
-    "TargetsList":{
-      "type":"list",
-      "member":{"shape":"Target"}
+    "TargetsList": {
+      "member": {
+        "shape": "Target"
+      },
+      "type": "list"
     },
-    "ThrottlingException":{
-      "type":"structure",
-      "required":["Message"],
-      "members":{
-        "Message":{"shape":"String"},
-        "QuotaCode":{
-          "shape":"String",
-          "documentation":"Service Quotas requirement to identify originating service"
+    "ThrottlingException": {
+      "documentation": "<p>The request was denied due to request throttling.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "String"
         },
-        "ServiceCode":{
-          "shape":"String",
-          "documentation":"Service Quotas requirement to identify originating quota"
+        "QuotaCode": {
+          "documentation": "Service Quotas requirement to identify originating service",
+          "shape": "String"
         },
-        "RetryAfterSeconds":{
-          "shape":"RetryAfterSeconds",
-          "documentation":"Advice to clients on when the call can be safely retried"
+        "RetryAfterSeconds": {
+          "documentation": "Advice to clients on when the call can be safely retried",
+          "shape": "RetryAfterSeconds"
+        },
+        "ServiceCode": {
+          "documentation": "Service Quotas requirement to identify originating quota",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The request was denied due to request throttling.</p>",
-      "exception":true
+      "required": [
+        "Message"
+      ],
+      "type": "structure"
     },
-    "TimeRange":{
-      "type":"structure",
-      "members":{
-        "StartTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The start of the time range.</p>"
+    "TimeRange": {
+      "documentation": "<p>A range of between two set times</p>",
+      "members": {
+        "EndTime": {
+          "documentation": "<p>The end of the time range.</p>",
+          "shape": "DateTime"
         },
-        "EndTime":{
-          "shape":"DateTime",
-          "documentation":"<p>The end of the time range.</p>"
+        "StartTime": {
+          "documentation": "<p>The start of the time range.</p>",
+          "shape": "DateTime"
         }
       },
-      "documentation":"<p>A range of between two set times</p>"
+      "type": "structure"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "UntagResourceRequest": {
+      "members": {
+        "ResourceARN": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>",
+          "shape": "AmazonResourceName"
+        },
+        "TagKeys": {
+          "documentation": "<p>The key of the tag that you want to remove.</p>",
+          "shape": "TagKeyList"
+        }
+      },
+      "required": [
         "ResourceARN",
         "TagKeys"
       ],
-      "members":{
-        "ResourceARN":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>"
-        },
-        "TagKeys":{
-          "shape":"TagKeyList",
-          "documentation":"<p>The key of the tag that you want to remove.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "UntagResourceResult":{
-      "type":"structure",
-      "members":{
-      }
+    "UntagResourceResult": {
+      "members": {},
+      "type": "structure"
     },
-    "UpdateContactChannelRequest":{
-      "type":"structure",
-      "required":["ContactChannelId"],
-      "members":{
-        "ContactChannelId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>"
+    "UpdateContactChannelRequest": {
+      "members": {
+        "ContactChannelId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>",
+          "shape": "SsmContactsArn"
         },
-        "Name":{
-          "shape":"ChannelName",
-          "documentation":"<p>The name of the contact channel.</p>"
+        "DeliveryAddress": {
+          "documentation": "<p>The details that Incident Manager uses when trying to engage the contact channel. </p>",
+          "shape": "ContactChannelAddress"
         },
-        "DeliveryAddress":{
-          "shape":"ContactChannelAddress",
-          "documentation":"<p>The details that Incident Manager uses when trying to engage the contact channel. </p>"
-        }
-      }
-    },
-    "UpdateContactChannelResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateContactRequest":{
-      "type":"structure",
-      "required":["ContactId"],
-      "members":{
-        "ContactId":{
-          "shape":"SsmContactsArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>"
-        },
-        "DisplayName":{
-          "shape":"ContactName",
-          "documentation":"<p>The full name of the contact or escalation plan.</p>"
-        },
-        "Plan":{
-          "shape":"Plan",
-          "documentation":"<p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>"
-        }
-      }
-    },
-    "UpdateContactResult":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "ValidationException":{
-      "type":"structure",
-      "required":["Message"],
-      "members":{
-        "Message":{"shape":"String"},
-        "Reason":{
-          "shape":"ValidationExceptionReason",
-          "documentation":"Reason the request failed validation"
-        },
-        "Fields":{
-          "shape":"ValidationExceptionFieldList",
-          "documentation":"The fields that caused the error"
+        "Name": {
+          "documentation": "<p>The name of the contact channel.</p>",
+          "shape": "ChannelName"
         }
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>",
-      "exception":true
+      "required": [
+        "ContactChannelId"
+      ],
+      "type": "structure"
     },
-    "ValidationExceptionField":{
-      "type":"structure",
-      "required":[
+    "UpdateContactChannelResult": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateContactRequest": {
+      "members": {
+        "ContactId": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>",
+          "shape": "SsmContactsArn"
+        },
+        "DisplayName": {
+          "documentation": "<p>The full name of the contact or escalation plan.</p>",
+          "shape": "ContactName"
+        },
+        "Plan": {
+          "documentation": "<p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>",
+          "shape": "Plan"
+        }
+      },
+      "required": [
+        "ContactId"
+      ],
+      "type": "structure"
+    },
+    "UpdateContactResult": {
+      "members": {},
+      "type": "structure"
+    },
+    "ValidationException": {
+      "documentation": "<p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>",
+      "exception": true,
+      "members": {
+        "Fields": {
+          "documentation": "The fields that caused the error",
+          "shape": "ValidationExceptionFieldList"
+        },
+        "Message": {
+          "shape": "String"
+        },
+        "Reason": {
+          "documentation": "Reason the request failed validation",
+          "shape": "ValidationExceptionReason"
+        }
+      },
+      "required": [
+        "Message"
+      ],
+      "type": "structure"
+    },
+    "ValidationExceptionField": {
+      "documentation": "<p>Provides information about which field caused the exception.</p>",
+      "members": {
+        "Message": {
+          "documentation": "<p>Information about what caused the field to cause an exception.</p>",
+          "shape": "String"
+        },
+        "Name": {
+          "documentation": "<p>The name of the field that caused the exception.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "Name",
         "Message"
       ],
-      "members":{
-        "Name":{
-          "shape":"String",
-          "documentation":"<p>The name of the field that caused the exception.</p>"
-        },
-        "Message":{
-          "shape":"String",
-          "documentation":"<p>Information about what caused the field to cause an exception.</p>"
-        }
+      "type": "structure"
+    },
+    "ValidationExceptionFieldList": {
+      "member": {
+        "shape": "ValidationExceptionField"
       },
-      "documentation":"<p>Provides information about which field caused the exception.</p>"
+      "type": "list"
     },
-    "ValidationExceptionFieldList":{
-      "type":"list",
-      "member":{"shape":"ValidationExceptionField"}
-    },
-    "ValidationExceptionReason":{
-      "type":"string",
-      "enum":[
+    "ValidationExceptionReason": {
+      "enum": [
         "UNKNOWN_OPERATION",
         "CANNOT_PARSE",
         "FIELD_VALIDATION_FAILED",
         "OTHER"
-      ]
+      ],
+      "type": "string"
     }
   },
-  "documentation":"<p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>"
+  "version": "2.0"
 }

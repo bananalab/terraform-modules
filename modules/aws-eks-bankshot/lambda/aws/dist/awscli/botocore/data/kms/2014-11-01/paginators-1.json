@@ -1,39 +1,39 @@
 {
   "pagination": {
-    "ListAliases": {
-      "limit_key": "Limit",
-      "input_token": "Marker",
-      "output_token": "NextMarker",
-      "more_results": "Truncated",
-      "result_key": "Aliases"
-    },
-    "ListGrants": {
-      "limit_key": "Limit",
-      "input_token": "Marker",
-      "output_token": "NextMarker",
-      "more_results": "Truncated",
-      "result_key": "Grants"
-    },
-    "ListKeyPolicies": {
-      "limit_key": "Limit",
-      "input_token": "Marker",
-      "output_token": "NextMarker",
-      "more_results": "Truncated",
-      "result_key": "PolicyNames"
-    },
-    "ListKeys": {
-      "limit_key": "Limit",
-      "input_token": "Marker",
-      "output_token": "NextMarker",
-      "more_results": "Truncated",
-      "result_key": "Keys"
-    },
     "DescribeCustomKeyStores": {
       "input_token": "Marker",
       "limit_key": "Limit",
       "more_results": "Truncated",
       "output_token": "NextMarker",
       "result_key": "CustomKeyStores"
+    },
+    "ListAliases": {
+      "input_token": "Marker",
+      "limit_key": "Limit",
+      "more_results": "Truncated",
+      "output_token": "NextMarker",
+      "result_key": "Aliases"
+    },
+    "ListGrants": {
+      "input_token": "Marker",
+      "limit_key": "Limit",
+      "more_results": "Truncated",
+      "output_token": "NextMarker",
+      "result_key": "Grants"
+    },
+    "ListKeyPolicies": {
+      "input_token": "Marker",
+      "limit_key": "Limit",
+      "more_results": "Truncated",
+      "output_token": "NextMarker",
+      "result_key": "PolicyNames"
+    },
+    "ListKeys": {
+      "input_token": "Marker",
+      "limit_key": "Limit",
+      "more_results": "Truncated",
+      "output_token": "NextMarker",
+      "result_key": "Keys"
     },
     "ListResourceTags": {
       "input_token": "Marker",

@@ -1,10 +1,16 @@
 {
   "pagination": {
-    "LookupEvents": {
+    "ListImportFailures": {
       "input_token": "NextToken",
-      "output_token": "NextToken",
       "limit_key": "MaxResults",
-      "result_key": "Events"
+      "output_token": "NextToken",
+      "result_key": "Failures"
+    },
+    "ListImports": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Imports"
     },
     "ListPublicKeys": {
       "input_token": "NextToken",
@@ -21,17 +27,11 @@
       "output_token": "NextToken",
       "result_key": "Trails"
     },
-    "ListImportFailures": {
+    "LookupEvents": {
       "input_token": "NextToken",
       "limit_key": "MaxResults",
       "output_token": "NextToken",
-      "result_key": "Failures"
-    },
-    "ListImports": {
-      "input_token": "NextToken",
-      "limit_key": "MaxResults",
-      "output_token": "NextToken",
-      "result_key": "Imports"
+      "result_key": "Events"
     }
   }
 }

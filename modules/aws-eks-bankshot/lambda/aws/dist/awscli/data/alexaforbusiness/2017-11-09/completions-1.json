@@ -1,21 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Skill": {
-      "operation": "ListSkills",
-      "resourceIdentifier": {
-        "SkillId": "SkillSummaries[].SkillId"
-      }
-    }
-  },
   "operations": {
     "DeleteRoomSkillParameter": {
       "SkillId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Skill",
-            "resourceIdentifier": "SkillId"
+            "resourceIdentifier": "SkillId",
+            "resourceName": "Skill"
           }
         ]
       }
@@ -25,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Skill",
-            "resourceIdentifier": "SkillId"
+            "resourceIdentifier": "SkillId",
+            "resourceName": "Skill"
           }
         ]
       }
@@ -36,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Skill",
-            "resourceIdentifier": "SkillId"
+            "resourceIdentifier": "SkillId",
+            "resourceName": "Skill"
           }
         ]
       }
@@ -47,11 +38,20 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Skill",
-            "resourceIdentifier": "SkillId"
+            "resourceIdentifier": "SkillId",
+            "resourceName": "Skill"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Skill": {
+      "operation": "ListSkills",
+      "resourceIdentifier": {
+        "SkillId": "SkillSummaries[].SkillId"
+      }
+    }
+  },
+  "version": "1.0"
 }

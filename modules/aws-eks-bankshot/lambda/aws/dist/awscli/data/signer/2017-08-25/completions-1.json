@@ -1,5 +1,157 @@
 {
-  "version": "1.0",
+  "operations": {
+    "CancelSigningProfile": {
+      "profileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "profileName",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      }
+    },
+    "DescribeSigningJob": {
+      "jobId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobId",
+            "resourceName": "SigningJob"
+          }
+        ]
+      }
+    },
+    "GetSigningPlatform": {
+      "platformId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "platformId",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      }
+    },
+    "GetSigningProfile": {
+      "profileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "profileName",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      }
+    },
+    "ListSigningJobs": {
+      "platformId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "platformId",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      },
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      }
+    },
+    "ListSigningPlatforms": {
+      "category": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "category",
+            "resourceName": "SigningPlatform"
+          }
+        ]
+      },
+      "partner": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "partner",
+            "resourceName": "SigningPlatform"
+          }
+        ]
+      },
+      "target": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "target",
+            "resourceName": "SigningPlatform"
+          }
+        ]
+      }
+    },
+    "PutSigningProfile": {
+      "platformId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "platformId",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      },
+      "profileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "profileName",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      },
+      "signingMaterial": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "signingMaterial",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      },
+      "signingParameters": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "signingParameters",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      }
+    },
+    "StartSigningJob": {
+      "profileName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "profileName",
+            "resourceName": "SigningProfile"
+          }
+        ]
+      },
+      "source": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "source",
+            "resourceName": "SigningJob"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "SigningJob": {
       "operation": "ListSigningJobs",
@@ -11,173 +163,21 @@
     "SigningPlatform": {
       "operation": "ListSigningPlatforms",
       "resourceIdentifier": {
+        "category": "platforms[].category",
         "partner": "platforms[].partner",
-        "target": "platforms[].target",
-        "category": "platforms[].category"
+        "target": "platforms[].target"
       }
     },
     "SigningProfile": {
       "operation": "ListSigningProfiles",
       "resourceIdentifier": {
+        "platformId": "profiles[].platformId",
         "profileName": "profiles[].profileName",
         "signingMaterial": "profiles[].signingMaterial",
-        "platformId": "profiles[].platformId",
         "signingParameters": "profiles[].signingParameters",
         "status": "profiles[].status"
       }
     }
   },
-  "operations": {
-    "CancelSigningProfile": {
-      "profileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "profileName"
-          }
-        ]
-      }
-    },
-    "DescribeSigningJob": {
-      "jobId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningJob",
-            "resourceIdentifier": "jobId"
-          }
-        ]
-      }
-    },
-    "GetSigningPlatform": {
-      "platformId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "platformId"
-          }
-        ]
-      }
-    },
-    "GetSigningProfile": {
-      "profileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "profileName"
-          }
-        ]
-      }
-    },
-    "ListSigningJobs": {
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "status"
-          }
-        ]
-      },
-      "platformId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "platformId"
-          }
-        ]
-      }
-    },
-    "ListSigningPlatforms": {
-      "category": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningPlatform",
-            "resourceIdentifier": "category"
-          }
-        ]
-      },
-      "partner": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningPlatform",
-            "resourceIdentifier": "partner"
-          }
-        ]
-      },
-      "target": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningPlatform",
-            "resourceIdentifier": "target"
-          }
-        ]
-      }
-    },
-    "PutSigningProfile": {
-      "profileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "profileName"
-          }
-        ]
-      },
-      "signingMaterial": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "signingMaterial"
-          }
-        ]
-      },
-      "platformId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "platformId"
-          }
-        ]
-      },
-      "signingParameters": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "signingParameters"
-          }
-        ]
-      }
-    },
-    "StartSigningJob": {
-      "source": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningJob",
-            "resourceIdentifier": "source"
-          }
-        ]
-      },
-      "profileName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SigningProfile",
-            "resourceIdentifier": "profileName"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

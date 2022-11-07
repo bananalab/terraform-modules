@@ -1,493 +1,826 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2021-01-30",
-    "endpointPrefix":"connect-campaigns",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"AmazonConnectCampaignService",
-    "serviceId":"ConnectCampaigns",
-    "signatureVersion":"v4",
-    "signingName":"connect-campaigns",
-    "uid":"connectcampaigns-2021-01-30"
+  "documentation": "<p>Provide APIs to create and manage Amazon Connect Campaigns.</p>",
+  "metadata": {
+    "apiVersion": "2021-01-30",
+    "endpointPrefix": "connect-campaigns",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "AmazonConnectCampaignService",
+    "serviceId": "ConnectCampaigns",
+    "signatureVersion": "v4",
+    "signingName": "connect-campaigns",
+    "uid": "connectcampaigns-2021-01-30"
   },
-  "operations":{
-    "CreateCampaign":{
-      "name":"CreateCampaign",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/campaigns",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateCampaignRequest"},
-      "output":{"shape":"CreateCampaignResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ThrottlingException"}
+  "operations": {
+    "CreateCampaign": {
+      "documentation": "<p>Creates a campaign for the specified Amazon Connect account. This API is idempotent.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Creates a campaign for the specified Amazon Connect account. This API is idempotent.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/campaigns",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateCampaignRequest"
+      },
+      "name": "CreateCampaign",
+      "output": {
+        "shape": "CreateCampaignResponse"
+      }
     },
-    "DeleteCampaign":{
-      "name":"DeleteCampaign",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/campaigns/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteCampaignRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "DeleteCampaign": {
+      "documentation": "<p>Deletes a campaign from the specified Amazon Connect account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Deletes a campaign from the specified Amazon Connect account.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/campaigns/{id}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteCampaignRequest"
+      },
+      "name": "DeleteCampaign"
     },
-    "DeleteConnectInstanceConfig":{
-      "name":"DeleteConnectInstanceConfig",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/connect-instance/{connectInstanceId}/config",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteConnectInstanceConfigRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InvalidStateException"},
-        {"shape":"ThrottlingException"}
+    "DeleteConnectInstanceConfig": {
+      "documentation": "<p>Deletes a connect instance config from the specified AWS account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InvalidStateException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Deletes a connect instance config from the specified AWS account.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/connect-instance/{connectInstanceId}/config",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteConnectInstanceConfigRequest"
+      },
+      "name": "DeleteConnectInstanceConfig"
     },
-    "DeleteInstanceOnboardingJob":{
-      "name":"DeleteInstanceOnboardingJob",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/connect-instance/{connectInstanceId}/onboarding",
-        "responseCode":200
-      },
-      "input":{"shape":"DeleteInstanceOnboardingJobRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InvalidStateException"}
+    "DeleteInstanceOnboardingJob": {
+      "documentation": "<p>Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InvalidStateException"
+        }
       ],
-      "documentation":"<p>Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/connect-instance/{connectInstanceId}/onboarding",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteInstanceOnboardingJobRequest"
+      },
+      "name": "DeleteInstanceOnboardingJob"
     },
-    "DescribeCampaign":{
-      "name":"DescribeCampaign",
-      "http":{
-        "method":"GET",
-        "requestUri":"/campaigns/{id}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeCampaignRequest"},
-      "output":{"shape":"DescribeCampaignResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "DescribeCampaign": {
+      "documentation": "<p>Describes the specific campaign.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Describes the specific campaign.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/campaigns/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeCampaignRequest"
+      },
+      "name": "DescribeCampaign",
+      "output": {
+        "shape": "DescribeCampaignResponse"
+      }
     },
-    "GetCampaignState":{
-      "name":"GetCampaignState",
-      "http":{
-        "method":"GET",
-        "requestUri":"/campaigns/{id}/state",
-        "responseCode":200
-      },
-      "input":{"shape":"GetCampaignStateRequest"},
-      "output":{"shape":"GetCampaignStateResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "GetCampaignState": {
+      "documentation": "<p>Get state of a campaign for the specified Amazon Connect account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Get state of a campaign for the specified Amazon Connect account.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/campaigns/{id}/state",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetCampaignStateRequest"
+      },
+      "name": "GetCampaignState",
+      "output": {
+        "shape": "GetCampaignStateResponse"
+      }
     },
-    "GetCampaignStateBatch":{
-      "name":"GetCampaignStateBatch",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns-state",
-        "responseCode":200
-      },
-      "input":{"shape":"GetCampaignStateBatchRequest"},
-      "output":{"shape":"GetCampaignStateBatchResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "GetCampaignStateBatch": {
+      "documentation": "<p>Get state of campaigns for the specified Amazon Connect account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Get state of campaigns for the specified Amazon Connect account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns-state",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetCampaignStateBatchRequest"
+      },
+      "name": "GetCampaignStateBatch",
+      "output": {
+        "shape": "GetCampaignStateBatchResponse"
+      }
     },
-    "GetConnectInstanceConfig":{
-      "name":"GetConnectInstanceConfig",
-      "http":{
-        "method":"GET",
-        "requestUri":"/connect-instance/{connectInstanceId}/config",
-        "responseCode":200
-      },
-      "input":{"shape":"GetConnectInstanceConfigRequest"},
-      "output":{"shape":"GetConnectInstanceConfigResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "GetConnectInstanceConfig": {
+      "documentation": "<p>Get the specific Connect instance config.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Get the specific Connect instance config.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/connect-instance/{connectInstanceId}/config",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetConnectInstanceConfigRequest"
+      },
+      "name": "GetConnectInstanceConfig",
+      "output": {
+        "shape": "GetConnectInstanceConfigResponse"
+      }
     },
-    "GetInstanceOnboardingJobStatus":{
-      "name":"GetInstanceOnboardingJobStatus",
-      "http":{
-        "method":"GET",
-        "requestUri":"/connect-instance/{connectInstanceId}/onboarding",
-        "responseCode":200
-      },
-      "input":{"shape":"GetInstanceOnboardingJobStatusRequest"},
-      "output":{"shape":"GetInstanceOnboardingJobStatusResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "GetInstanceOnboardingJobStatus": {
+      "documentation": "<p>Get the specific instance onboarding job status.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Get the specific instance onboarding job status.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/connect-instance/{connectInstanceId}/onboarding",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetInstanceOnboardingJobStatusRequest"
+      },
+      "name": "GetInstanceOnboardingJobStatus",
+      "output": {
+        "shape": "GetInstanceOnboardingJobStatusResponse"
+      }
     },
-    "ListCampaigns":{
-      "name":"ListCampaigns",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns-summary",
-        "responseCode":200
-      },
-      "input":{"shape":"ListCampaignsRequest"},
-      "output":{"shape":"ListCampaignsResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "ListCampaigns": {
+      "documentation": "<p>Provides summary information about the campaigns under the specified Amazon Connect account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Provides summary information about the campaigns under the specified Amazon Connect account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns-summary",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListCampaignsRequest"
+      },
+      "name": "ListCampaigns",
+      "output": {
+        "shape": "ListCampaignsResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{arn}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "ListTagsForResource": {
+      "documentation": "<p>List tags for a resource.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>List tags for a resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{arn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "PauseCampaign":{
-      "name":"PauseCampaign",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns/{id}/pause",
-        "responseCode":200
-      },
-      "input":{"shape":"PauseCampaignRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"InvalidCampaignStateException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "PauseCampaign": {
+      "documentation": "<p>Pauses a campaign for the specified Amazon Connect account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InvalidCampaignStateException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Pauses a campaign for the specified Amazon Connect account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns/{id}/pause",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "PauseCampaignRequest"
+      },
+      "name": "PauseCampaign"
     },
-    "PutDialRequestBatch":{
-      "name":"PutDialRequestBatch",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/campaigns/{id}/dial-requests",
-        "responseCode":200
-      },
-      "input":{"shape":"PutDialRequestBatchRequest"},
-      "output":{"shape":"PutDialRequestBatchResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"InvalidCampaignStateException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "PutDialRequestBatch": {
+      "documentation": "<p>Creates dials requests for the specified campaign Amazon Connect account. This API is idempotent.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InvalidCampaignStateException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Creates dials requests for the specified campaign Amazon Connect account. This API is idempotent.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/campaigns/{id}/dial-requests",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "PutDialRequestBatchRequest"
+      },
+      "name": "PutDialRequestBatch",
+      "output": {
+        "shape": "PutDialRequestBatchResponse"
+      }
     },
-    "ResumeCampaign":{
-      "name":"ResumeCampaign",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns/{id}/resume",
-        "responseCode":200
-      },
-      "input":{"shape":"ResumeCampaignRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"InvalidCampaignStateException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "ResumeCampaign": {
+      "documentation": "<p>Stops a campaign for the specified Amazon Connect account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InvalidCampaignStateException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Stops a campaign for the specified Amazon Connect account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns/{id}/resume",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ResumeCampaignRequest"
+      },
+      "name": "ResumeCampaign"
     },
-    "StartCampaign":{
-      "name":"StartCampaign",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns/{id}/start",
-        "responseCode":200
-      },
-      "input":{"shape":"StartCampaignRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"InvalidCampaignStateException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "StartCampaign": {
+      "documentation": "<p>Starts a campaign for the specified Amazon Connect account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InvalidCampaignStateException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Starts a campaign for the specified Amazon Connect account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns/{id}/start",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StartCampaignRequest"
+      },
+      "name": "StartCampaign"
     },
-    "StartInstanceOnboardingJob":{
-      "name":"StartInstanceOnboardingJob",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/connect-instance/{connectInstanceId}/onboarding",
-        "responseCode":200
-      },
-      "input":{"shape":"StartInstanceOnboardingJobRequest"},
-      "output":{"shape":"StartInstanceOnboardingJobResponse"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "StartInstanceOnboardingJob": {
+      "documentation": "<p>Onboard the specific Amazon Connect instance to Connect Campaigns.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Onboard the specific Amazon Connect instance to Connect Campaigns.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/connect-instance/{connectInstanceId}/onboarding",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "StartInstanceOnboardingJobRequest"
+      },
+      "name": "StartInstanceOnboardingJob",
+      "output": {
+        "shape": "StartInstanceOnboardingJobResponse"
+      }
     },
-    "StopCampaign":{
-      "name":"StopCampaign",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns/{id}/stop",
-        "responseCode":200
-      },
-      "input":{"shape":"StopCampaignRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"InvalidCampaignStateException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "StopCampaign": {
+      "documentation": "<p>Stops a campaign for the specified Amazon Connect account.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InvalidCampaignStateException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Stops a campaign for the specified Amazon Connect account.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns/{id}/stop",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StopCampaignRequest"
+      },
+      "name": "StopCampaign"
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{arn}",
-        "responseCode":200
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "TagResource": {
+      "documentation": "<p>Tag a resource.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Tag a resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{arn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource"
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{arn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "UntagResource": {
+      "documentation": "<p>Untag a resource.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Untag a resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{arn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource"
     },
-    "UpdateCampaignDialerConfig":{
-      "name":"UpdateCampaignDialerConfig",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns/{id}/dialer-config",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateCampaignDialerConfigRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"AccessDeniedException"}
+    "UpdateCampaignDialerConfig": {
+      "documentation": "<p>Updates the dialer config of a campaign. This API is idempotent.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Updates the dialer config of a campaign. This API is idempotent.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns/{id}/dialer-config",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateCampaignDialerConfigRequest"
+      },
+      "name": "UpdateCampaignDialerConfig"
     },
-    "UpdateCampaignName":{
-      "name":"UpdateCampaignName",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns/{id}/name",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateCampaignNameRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"AccessDeniedException"}
+    "UpdateCampaignName": {
+      "documentation": "<p>Updates the name of a campaign. This API is idempotent.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Updates the name of a campaign. This API is idempotent.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns/{id}/name",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateCampaignNameRequest"
+      },
+      "name": "UpdateCampaignName"
     },
-    "UpdateCampaignOutboundCallConfig":{
-      "name":"UpdateCampaignOutboundCallConfig",
-      "http":{
-        "method":"POST",
-        "requestUri":"/campaigns/{id}/outbound-call-config",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateCampaignOutboundCallConfigRequest"},
-      "errors":[
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+    "UpdateCampaignOutboundCallConfig": {
+      "documentation": "<p>Updates the outbound call config of a campaign. This API is idempotent.</p>",
+      "errors": [
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        }
       ],
-      "documentation":"<p>Updates the outbound call config of a campaign. This API is idempotent.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/campaigns/{id}/outbound-call-config",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateCampaignOutboundCallConfigRequest"
+      },
+      "name": "UpdateCampaignOutboundCallConfig"
     }
   },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>You do not have sufficient access to perform this action.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
         }
       },
-      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
-      },
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "AnswerMachineDetectionConfig":{
-      "type":"structure",
-      "required":["enableAnswerMachineDetection"],
-      "members":{
-        "enableAnswerMachineDetection":{
-          "shape":"Boolean",
-          "documentation":"<p>Enable or disable answering machine detection</p>"
+    "AnswerMachineDetectionConfig": {
+      "documentation": "<p>Answering Machine Detection config</p>",
+      "members": {
+        "enableAnswerMachineDetection": {
+          "documentation": "<p>Enable or disable answering machine detection</p>",
+          "shape": "Boolean"
         }
       },
-      "documentation":"<p>Answering Machine Detection config</p>"
+      "required": [
+        "enableAnswerMachineDetection"
+      ],
+      "type": "structure"
     },
-    "Arn":{
-      "type":"string",
-      "documentation":"<p>Arn</p>",
-      "max":500,
-      "min":20,
-      "pattern":"^arn:.*"
+    "Arn": {
+      "documentation": "<p>Arn</p>",
+      "max": 500,
+      "min": 20,
+      "pattern": "^arn:.*",
+      "type": "string"
     },
-    "AttributeName":{
-      "type":"string",
-      "documentation":"<p>The key of the attribute. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>",
-      "max":32767,
-      "min":0,
-      "pattern":"^[a-zA-Z0-9\\-_]+$"
+    "AttributeName": {
+      "documentation": "<p>The key of the attribute. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>",
+      "max": 32767,
+      "min": 0,
+      "pattern": "^[a-zA-Z0-9\\-_]+$",
+      "type": "string"
     },
-    "AttributeValue":{
-      "type":"string",
-      "documentation":"<p>The value of the attribute.</p>",
-      "max":32767,
-      "min":0
+    "AttributeValue": {
+      "documentation": "<p>The value of the attribute.</p>",
+      "max": 32767,
+      "min": 0,
+      "type": "string"
     },
-    "Attributes":{
-      "type":"map",
-      "key":{"shape":"AttributeName"},
-      "value":{"shape":"AttributeValue"},
-      "documentation":"<p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>",
-      "sensitive":true
+    "Attributes": {
+      "documentation": "<p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>",
+      "key": {
+        "shape": "AttributeName"
+      },
+      "sensitive": true,
+      "type": "map",
+      "value": {
+        "shape": "AttributeValue"
+      }
     },
-    "BandwidthAllocation":{
-      "type":"double",
-      "documentation":"<p>The bandwidth allocation of a queue resource.</p>",
-      "box":true,
-      "max":1,
-      "min":0
+    "BandwidthAllocation": {
+      "box": true,
+      "documentation": "<p>The bandwidth allocation of a queue resource.</p>",
+      "max": 1,
+      "min": 0,
+      "type": "double"
     },
-    "Boolean":{
-      "type":"boolean",
-      "box":true
+    "Boolean": {
+      "box": true,
+      "type": "boolean"
     },
-    "Campaign":{
-      "type":"structure",
-      "required":[
+    "Campaign": {
+      "documentation": "<p>An Amazon Connect campaign.</p>",
+      "members": {
+        "arn": {
+          "shape": "CampaignArn"
+        },
+        "connectInstanceId": {
+          "shape": "InstanceId"
+        },
+        "dialerConfig": {
+          "shape": "DialerConfig"
+        },
+        "id": {
+          "shape": "CampaignId"
+        },
+        "name": {
+          "shape": "CampaignName"
+        },
+        "outboundCallConfig": {
+          "shape": "OutboundCallConfig"
+        },
+        "tags": {
+          "shape": "TagMap"
+        }
+      },
+      "required": [
         "arn",
         "connectInstanceId",
         "dialerConfig",
@@ -495,923 +828,1150 @@
         "name",
         "outboundCallConfig"
       ],
-      "members":{
-        "arn":{"shape":"CampaignArn"},
-        "connectInstanceId":{"shape":"InstanceId"},
-        "dialerConfig":{"shape":"DialerConfig"},
-        "id":{"shape":"CampaignId"},
-        "name":{"shape":"CampaignName"},
-        "outboundCallConfig":{"shape":"OutboundCallConfig"},
-        "tags":{"shape":"TagMap"}
+      "type": "structure"
+    },
+    "CampaignArn": {
+      "documentation": "<p>The resource name of an Amazon Connect campaign.</p>",
+      "max": 500,
+      "min": 20,
+      "type": "string"
+    },
+    "CampaignFilters": {
+      "documentation": "<p>Filter model by type</p>",
+      "members": {
+        "instanceIdFilter": {
+          "shape": "InstanceIdFilter"
+        }
       },
-      "documentation":"<p>An Amazon Connect campaign.</p>"
+      "type": "structure"
     },
-    "CampaignArn":{
-      "type":"string",
-      "documentation":"<p>The resource name of an Amazon Connect campaign.</p>",
-      "max":500,
-      "min":20
+    "CampaignId": {
+      "documentation": "<p>Identifier representing a Campaign</p>",
+      "max": 256,
+      "min": 0,
+      "type": "string"
     },
-    "CampaignFilters":{
-      "type":"structure",
-      "members":{
-        "instanceIdFilter":{"shape":"InstanceIdFilter"}
-      },
-      "documentation":"<p>Filter model by type</p>"
+    "CampaignName": {
+      "documentation": "<p>The name of an Amazon Connect Campaign name.</p>",
+      "max": 127,
+      "min": 1,
+      "type": "string"
     },
-    "CampaignId":{
-      "type":"string",
-      "documentation":"<p>Identifier representing a Campaign</p>",
-      "max":256,
-      "min":0
-    },
-    "CampaignName":{
-      "type":"string",
-      "documentation":"<p>The name of an Amazon Connect Campaign name.</p>",
-      "max":127,
-      "min":1
-    },
-    "CampaignState":{
-      "type":"string",
-      "documentation":"<p>State of a campaign</p>",
-      "enum":[
+    "CampaignState": {
+      "documentation": "<p>State of a campaign</p>",
+      "enum": [
         "Initialized",
         "Running",
         "Paused",
         "Stopped",
         "Failed"
-      ]
+      ],
+      "type": "string"
     },
-    "CampaignSummary":{
-      "type":"structure",
-      "required":[
+    "CampaignSummary": {
+      "documentation": "<p>An Amazon Connect campaign summary.</p>",
+      "members": {
+        "arn": {
+          "shape": "CampaignArn"
+        },
+        "connectInstanceId": {
+          "shape": "InstanceId"
+        },
+        "id": {
+          "shape": "CampaignId"
+        },
+        "name": {
+          "shape": "CampaignName"
+        }
+      },
+      "required": [
         "arn",
         "connectInstanceId",
         "id",
         "name"
       ],
-      "members":{
-        "arn":{"shape":"CampaignArn"},
-        "connectInstanceId":{"shape":"InstanceId"},
-        "id":{"shape":"CampaignId"},
-        "name":{"shape":"CampaignName"}
+      "type": "structure"
+    },
+    "CampaignSummaryList": {
+      "documentation": "<p>A list of Amazon Connect campaigns.</p>",
+      "member": {
+        "shape": "CampaignSummary"
       },
-      "documentation":"<p>An Amazon Connect campaign summary.</p>"
+      "type": "list"
     },
-    "CampaignSummaryList":{
-      "type":"list",
-      "member":{"shape":"CampaignSummary"},
-      "documentation":"<p>A list of Amazon Connect campaigns.</p>"
+    "ClientToken": {
+      "documentation": "<p>Client provided parameter used for idempotency. Its value must be unique for each request.</p>",
+      "max": 64,
+      "min": 0,
+      "type": "string"
     },
-    "ClientToken":{
-      "type":"string",
-      "documentation":"<p>Client provided parameter used for idempotency. Its value must be unique for each request.</p>",
-      "max":64,
-      "min":0
-    },
-    "ConflictException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+    "ConflictException": {
+      "documentation": "<p>The request could not be processed because of conflict in the current state of the resource.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
         }
       },
-      "documentation":"<p>The request could not be processed because of conflict in the current state of the resource.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "ContactFlowId": {
+      "documentation": "<p>The identifier of the contact flow for the outbound call.</p>",
+      "max": 500,
+      "min": 0,
+      "type": "string"
+    },
+    "CreateCampaignRequest": {
+      "documentation": "<p>The request for Create Campaign API.</p>",
+      "members": {
+        "connectInstanceId": {
+          "shape": "InstanceId"
+        },
+        "dialerConfig": {
+          "shape": "DialerConfig"
+        },
+        "name": {
+          "shape": "CampaignName"
+        },
+        "outboundCallConfig": {
+          "shape": "OutboundCallConfig"
+        },
+        "tags": {
+          "shape": "TagMap"
+        }
       },
-      "exception":true
-    },
-    "ContactFlowId":{
-      "type":"string",
-      "documentation":"<p>The identifier of the contact flow for the outbound call.</p>",
-      "max":500,
-      "min":0
-    },
-    "CreateCampaignRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "connectInstanceId",
         "dialerConfig",
         "name",
         "outboundCallConfig"
       ],
-      "members":{
-        "connectInstanceId":{"shape":"InstanceId"},
-        "dialerConfig":{"shape":"DialerConfig"},
-        "name":{"shape":"CampaignName"},
-        "outboundCallConfig":{"shape":"OutboundCallConfig"},
-        "tags":{"shape":"TagMap"}
-      },
-      "documentation":"<p>The request for Create Campaign API.</p>"
+      "type": "structure"
     },
-    "CreateCampaignResponse":{
-      "type":"structure",
-      "members":{
-        "arn":{"shape":"CampaignArn"},
-        "id":{"shape":"CampaignId"},
-        "tags":{"shape":"TagMap"}
-      },
-      "documentation":"<p>The response for Create Campaign API</p>"
-    },
-    "DeleteCampaignRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+    "CreateCampaignResponse": {
+      "documentation": "<p>The response for Create Campaign API</p>",
+      "members": {
+        "arn": {
+          "shape": "CampaignArn"
+        },
+        "id": {
+          "shape": "CampaignId"
+        },
+        "tags": {
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>DeleteCampaignRequest</p>"
+      "type": "structure"
     },
-    "DeleteConnectInstanceConfigRequest":{
-      "type":"structure",
-      "required":["connectInstanceId"],
-      "members":{
-        "connectInstanceId":{
-          "shape":"InstanceId",
-          "location":"uri",
-          "locationName":"connectInstanceId"
+    "DeleteCampaignRequest": {
+      "documentation": "<p>DeleteCampaignRequest</p>",
+      "members": {
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
         }
       },
-      "documentation":"<p>DeleteCampaignRequest</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "DeleteInstanceOnboardingJobRequest":{
-      "type":"structure",
-      "required":["connectInstanceId"],
-      "members":{
-        "connectInstanceId":{
-          "shape":"InstanceId",
-          "location":"uri",
-          "locationName":"connectInstanceId"
+    "DeleteConnectInstanceConfigRequest": {
+      "documentation": "<p>DeleteCampaignRequest</p>",
+      "members": {
+        "connectInstanceId": {
+          "location": "uri",
+          "locationName": "connectInstanceId",
+          "shape": "InstanceId"
         }
       },
-      "documentation":"<p>The request for DeleteInstanceOnboardingJob API.</p>"
+      "required": [
+        "connectInstanceId"
+      ],
+      "type": "structure"
     },
-    "DescribeCampaignRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+    "DeleteInstanceOnboardingJobRequest": {
+      "documentation": "<p>The request for DeleteInstanceOnboardingJob API.</p>",
+      "members": {
+        "connectInstanceId": {
+          "location": "uri",
+          "locationName": "connectInstanceId",
+          "shape": "InstanceId"
         }
       },
-      "documentation":"<p>DescribeCampaignRequests</p>"
+      "required": [
+        "connectInstanceId"
+      ],
+      "type": "structure"
     },
-    "DescribeCampaignResponse":{
-      "type":"structure",
-      "members":{
-        "campaign":{"shape":"Campaign"}
+    "DescribeCampaignRequest": {
+      "documentation": "<p>DescribeCampaignRequests</p>",
+      "members": {
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
+        }
       },
-      "documentation":"<p>DescribeCampaignResponse</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "DestinationPhoneNumber":{
-      "type":"string",
-      "documentation":"<p>The phone number of the customer, in E.164 format.</p>",
-      "max":20,
-      "min":0,
-      "sensitive":true
+    "DescribeCampaignResponse": {
+      "documentation": "<p>DescribeCampaignResponse</p>",
+      "members": {
+        "campaign": {
+          "shape": "Campaign"
+        }
+      },
+      "type": "structure"
     },
-    "DialRequest":{
-      "type":"structure",
-      "required":[
+    "DestinationPhoneNumber": {
+      "documentation": "<p>The phone number of the customer, in E.164 format.</p>",
+      "max": 20,
+      "min": 0,
+      "sensitive": true,
+      "type": "string"
+    },
+    "DialRequest": {
+      "documentation": "<p>A dial request for a campaign.</p>",
+      "members": {
+        "attributes": {
+          "shape": "Attributes"
+        },
+        "clientToken": {
+          "shape": "ClientToken"
+        },
+        "expirationTime": {
+          "shape": "TimeStamp"
+        },
+        "phoneNumber": {
+          "shape": "DestinationPhoneNumber"
+        }
+      },
+      "required": [
         "attributes",
         "clientToken",
         "expirationTime",
         "phoneNumber"
       ],
-      "members":{
-        "attributes":{"shape":"Attributes"},
-        "clientToken":{"shape":"ClientToken"},
-        "expirationTime":{"shape":"TimeStamp"},
-        "phoneNumber":{"shape":"DestinationPhoneNumber"}
+      "type": "structure"
+    },
+    "DialRequestId": {
+      "documentation": "<p>Identifier representing a Dial request</p>",
+      "type": "string"
+    },
+    "DialRequestList": {
+      "documentation": "<p>A list of dial requests.</p>",
+      "max": 25,
+      "member": {
+        "shape": "DialRequest"
       },
-      "documentation":"<p>A dial request for a campaign.</p>"
+      "min": 1,
+      "type": "list"
     },
-    "DialRequestId":{
-      "type":"string",
-      "documentation":"<p>Identifier representing a Dial request</p>"
-    },
-    "DialRequestList":{
-      "type":"list",
-      "member":{"shape":"DialRequest"},
-      "documentation":"<p>A list of dial requests.</p>",
-      "max":25,
-      "min":1
-    },
-    "DialerConfig":{
-      "type":"structure",
-      "members":{
-        "predictiveDialerConfig":{"shape":"PredictiveDialerConfig"},
-        "progressiveDialerConfig":{"shape":"ProgressiveDialerConfig"}
+    "DialerConfig": {
+      "documentation": "<p>The possible types of dialer config parameters</p>",
+      "members": {
+        "predictiveDialerConfig": {
+          "shape": "PredictiveDialerConfig"
+        },
+        "progressiveDialerConfig": {
+          "shape": "ProgressiveDialerConfig"
+        }
       },
-      "documentation":"<p>The possible types of dialer config parameters</p>",
-      "union":true
+      "type": "structure",
+      "union": true
     },
-    "Enabled":{
-      "type":"boolean",
-      "documentation":"<p>Boolean to indicate if custom encryption has been enabled.</p>"
+    "Enabled": {
+      "documentation": "<p>Boolean to indicate if custom encryption has been enabled.</p>",
+      "type": "boolean"
     },
-    "EncryptionConfig":{
-      "type":"structure",
-      "required":["enabled"],
-      "members":{
-        "enabled":{"shape":"Enabled"},
-        "encryptionType":{"shape":"EncryptionType"},
-        "keyArn":{"shape":"EncryptionKey"}
+    "EncryptionConfig": {
+      "documentation": "<p>Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported</p>",
+      "members": {
+        "enabled": {
+          "shape": "Enabled"
+        },
+        "encryptionType": {
+          "shape": "EncryptionType"
+        },
+        "keyArn": {
+          "shape": "EncryptionKey"
+        }
       },
-      "documentation":"<p>Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported</p>"
+      "required": [
+        "enabled"
+      ],
+      "type": "structure"
     },
-    "EncryptionKey":{
-      "type":"string",
-      "documentation":"<p>KMS key id/arn for encryption config.</p>",
-      "max":500,
-      "min":0
+    "EncryptionKey": {
+      "documentation": "<p>KMS key id/arn for encryption config.</p>",
+      "max": 500,
+      "min": 0,
+      "type": "string"
     },
-    "EncryptionType":{
-      "type":"string",
-      "documentation":"<p>Server-side encryption type.</p>",
-      "enum":["KMS"]
+    "EncryptionType": {
+      "documentation": "<p>Server-side encryption type.</p>",
+      "enum": [
+        "KMS"
+      ],
+      "type": "string"
     },
-    "FailedCampaignStateResponse":{
-      "type":"structure",
-      "members":{
-        "campaignId":{"shape":"CampaignId"},
-        "failureCode":{"shape":"GetCampaignStateBatchFailureCode"}
+    "FailedCampaignStateResponse": {
+      "documentation": "<p>Failed response of campaign state</p>",
+      "members": {
+        "campaignId": {
+          "shape": "CampaignId"
+        },
+        "failureCode": {
+          "shape": "GetCampaignStateBatchFailureCode"
+        }
       },
-      "documentation":"<p>Failed response of campaign state</p>"
+      "type": "structure"
     },
-    "FailedCampaignStateResponseList":{
-      "type":"list",
-      "member":{"shape":"FailedCampaignStateResponse"},
-      "documentation":"<p>List of failed requests of campaign state</p>",
-      "max":25,
-      "min":0
-    },
-    "FailedRequest":{
-      "type":"structure",
-      "members":{
-        "clientToken":{"shape":"ClientToken"},
-        "failureCode":{"shape":"FailureCode"},
-        "id":{"shape":"DialRequestId"}
+    "FailedCampaignStateResponseList": {
+      "documentation": "<p>List of failed requests of campaign state</p>",
+      "max": 25,
+      "member": {
+        "shape": "FailedCampaignStateResponse"
       },
-      "documentation":"<p>A failed request identified by the unique client token.</p>"
+      "min": 0,
+      "type": "list"
     },
-    "FailedRequestList":{
-      "type":"list",
-      "member":{"shape":"FailedRequest"},
-      "documentation":"<p>A list of failed requests.</p>",
-      "max":25,
-      "min":0
+    "FailedRequest": {
+      "documentation": "<p>A failed request identified by the unique client token.</p>",
+      "members": {
+        "clientToken": {
+          "shape": "ClientToken"
+        },
+        "failureCode": {
+          "shape": "FailureCode"
+        },
+        "id": {
+          "shape": "DialRequestId"
+        }
+      },
+      "type": "structure"
     },
-    "FailureCode":{
-      "type":"string",
-      "documentation":"<p>A predefined code indicating the error that caused the failure.</p>",
-      "enum":[
+    "FailedRequestList": {
+      "documentation": "<p>A list of failed requests.</p>",
+      "max": 25,
+      "member": {
+        "shape": "FailedRequest"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "FailureCode": {
+      "documentation": "<p>A predefined code indicating the error that caused the failure.</p>",
+      "enum": [
         "InvalidInput",
         "RequestThrottled",
         "UnknownError"
-      ]
+      ],
+      "type": "string"
     },
-    "GetCampaignStateBatchFailureCode":{
-      "type":"string",
-      "documentation":"<p>A predefined code indicating the error that caused the failure in getting state of campaigns</p>",
-      "enum":[
+    "GetCampaignStateBatchFailureCode": {
+      "documentation": "<p>A predefined code indicating the error that caused the failure in getting state of campaigns</p>",
+      "enum": [
         "ResourceNotFound",
         "UnknownError"
-      ]
+      ],
+      "type": "string"
     },
-    "GetCampaignStateBatchRequest":{
-      "type":"structure",
-      "required":["campaignIds"],
-      "members":{
-        "campaignIds":{"shape":"GetCampaignStateBatchRequestCampaignIdsList"}
-      },
-      "documentation":"<p>GetCampaignStateBatchRequest</p>"
-    },
-    "GetCampaignStateBatchRequestCampaignIdsList":{
-      "type":"list",
-      "member":{"shape":"CampaignId"},
-      "documentation":"<p>List of CampaignId</p>",
-      "max":25,
-      "min":1
-    },
-    "GetCampaignStateBatchResponse":{
-      "type":"structure",
-      "members":{
-        "failedRequests":{"shape":"FailedCampaignStateResponseList"},
-        "successfulRequests":{"shape":"SuccessfulCampaignStateResponseList"}
-      },
-      "documentation":"<p>GetCampaignStateBatchResponse</p>"
-    },
-    "GetCampaignStateRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+    "GetCampaignStateBatchRequest": {
+      "documentation": "<p>GetCampaignStateBatchRequest</p>",
+      "members": {
+        "campaignIds": {
+          "shape": "GetCampaignStateBatchRequestCampaignIdsList"
         }
       },
-      "documentation":"<p>GetCampaignStateRequest</p>"
+      "required": [
+        "campaignIds"
+      ],
+      "type": "structure"
     },
-    "GetCampaignStateResponse":{
-      "type":"structure",
-      "members":{
-        "state":{"shape":"CampaignState"}
+    "GetCampaignStateBatchRequestCampaignIdsList": {
+      "documentation": "<p>List of CampaignId</p>",
+      "max": 25,
+      "member": {
+        "shape": "CampaignId"
       },
-      "documentation":"<p>GetCampaignStateResponse</p>"
+      "min": 1,
+      "type": "list"
     },
-    "GetConnectInstanceConfigRequest":{
-      "type":"structure",
-      "required":["connectInstanceId"],
-      "members":{
-        "connectInstanceId":{
-          "shape":"InstanceId",
-          "location":"uri",
-          "locationName":"connectInstanceId"
+    "GetCampaignStateBatchResponse": {
+      "documentation": "<p>GetCampaignStateBatchResponse</p>",
+      "members": {
+        "failedRequests": {
+          "shape": "FailedCampaignStateResponseList"
+        },
+        "successfulRequests": {
+          "shape": "SuccessfulCampaignStateResponseList"
         }
       },
-      "documentation":"<p>GetConnectInstanceConfigRequest</p>"
+      "type": "structure"
     },
-    "GetConnectInstanceConfigResponse":{
-      "type":"structure",
-      "members":{
-        "connectInstanceConfig":{"shape":"InstanceConfig"}
-      },
-      "documentation":"<p>GetConnectInstanceConfigResponse</p>"
-    },
-    "GetInstanceOnboardingJobStatusRequest":{
-      "type":"structure",
-      "required":["connectInstanceId"],
-      "members":{
-        "connectInstanceId":{
-          "shape":"InstanceId",
-          "location":"uri",
-          "locationName":"connectInstanceId"
+    "GetCampaignStateRequest": {
+      "documentation": "<p>GetCampaignStateRequest</p>",
+      "members": {
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
         }
       },
-      "documentation":"<p>GetInstanceOnboardingJobStatusRequest</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "GetInstanceOnboardingJobStatusResponse":{
-      "type":"structure",
-      "members":{
-        "connectInstanceOnboardingJobStatus":{"shape":"InstanceOnboardingJobStatus"}
+    "GetCampaignStateResponse": {
+      "documentation": "<p>GetCampaignStateResponse</p>",
+      "members": {
+        "state": {
+          "shape": "CampaignState"
+        }
       },
-      "documentation":"<p>GetInstanceOnboardingJobStatusResponse</p>"
+      "type": "structure"
     },
-    "InstanceConfig":{
-      "type":"structure",
-      "required":[
+    "GetConnectInstanceConfigRequest": {
+      "documentation": "<p>GetConnectInstanceConfigRequest</p>",
+      "members": {
+        "connectInstanceId": {
+          "location": "uri",
+          "locationName": "connectInstanceId",
+          "shape": "InstanceId"
+        }
+      },
+      "required": [
+        "connectInstanceId"
+      ],
+      "type": "structure"
+    },
+    "GetConnectInstanceConfigResponse": {
+      "documentation": "<p>GetConnectInstanceConfigResponse</p>",
+      "members": {
+        "connectInstanceConfig": {
+          "shape": "InstanceConfig"
+        }
+      },
+      "type": "structure"
+    },
+    "GetInstanceOnboardingJobStatusRequest": {
+      "documentation": "<p>GetInstanceOnboardingJobStatusRequest</p>",
+      "members": {
+        "connectInstanceId": {
+          "location": "uri",
+          "locationName": "connectInstanceId",
+          "shape": "InstanceId"
+        }
+      },
+      "required": [
+        "connectInstanceId"
+      ],
+      "type": "structure"
+    },
+    "GetInstanceOnboardingJobStatusResponse": {
+      "documentation": "<p>GetInstanceOnboardingJobStatusResponse</p>",
+      "members": {
+        "connectInstanceOnboardingJobStatus": {
+          "shape": "InstanceOnboardingJobStatus"
+        }
+      },
+      "type": "structure"
+    },
+    "InstanceConfig": {
+      "documentation": "<p>Instance config object</p>",
+      "members": {
+        "connectInstanceId": {
+          "shape": "InstanceId"
+        },
+        "encryptionConfig": {
+          "shape": "EncryptionConfig"
+        },
+        "serviceLinkedRoleArn": {
+          "shape": "ServiceLinkedRoleArn"
+        }
+      },
+      "required": [
         "connectInstanceId",
         "encryptionConfig",
         "serviceLinkedRoleArn"
       ],
-      "members":{
-        "connectInstanceId":{"shape":"InstanceId"},
-        "encryptionConfig":{"shape":"EncryptionConfig"},
-        "serviceLinkedRoleArn":{"shape":"ServiceLinkedRoleArn"}
+      "type": "structure"
+    },
+    "InstanceId": {
+      "documentation": "<p>Amazon Connect Instance Id</p>",
+      "max": 256,
+      "min": 0,
+      "type": "string"
+    },
+    "InstanceIdFilter": {
+      "documentation": "<p>Connect instance identifier filter</p>",
+      "members": {
+        "operator": {
+          "shape": "InstanceIdFilterOperator"
+        },
+        "value": {
+          "shape": "InstanceId"
+        }
       },
-      "documentation":"<p>Instance config object</p>"
-    },
-    "InstanceId":{
-      "type":"string",
-      "documentation":"<p>Amazon Connect Instance Id</p>",
-      "max":256,
-      "min":0
-    },
-    "InstanceIdFilter":{
-      "type":"structure",
-      "required":[
+      "required": [
         "operator",
         "value"
       ],
-      "members":{
-        "operator":{"shape":"InstanceIdFilterOperator"},
-        "value":{"shape":"InstanceId"}
-      },
-      "documentation":"<p>Connect instance identifier filter</p>"
+      "type": "structure"
     },
-    "InstanceIdFilterOperator":{
-      "type":"string",
-      "documentation":"<p>Operators for Connect instance identifier filter</p>",
-      "enum":["Eq"]
+    "InstanceIdFilterOperator": {
+      "documentation": "<p>Operators for Connect instance identifier filter</p>",
+      "enum": [
+        "Eq"
+      ],
+      "type": "string"
     },
-    "InstanceOnboardingJobFailureCode":{
-      "type":"string",
-      "documentation":"<p>Enumeration of the possible failure codes for instance onboarding job</p>",
-      "enum":[
+    "InstanceOnboardingJobFailureCode": {
+      "documentation": "<p>Enumeration of the possible failure codes for instance onboarding job</p>",
+      "enum": [
         "EVENT_BRIDGE_ACCESS_DENIED",
         "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
         "IAM_ACCESS_DENIED",
         "KMS_ACCESS_DENIED",
         "KMS_KEY_NOT_FOUND",
         "INTERNAL_FAILURE"
-      ]
+      ],
+      "type": "string"
     },
-    "InstanceOnboardingJobStatus":{
-      "type":"structure",
-      "required":[
+    "InstanceOnboardingJobStatus": {
+      "documentation": "<p>Instance onboarding job status object</p>",
+      "members": {
+        "connectInstanceId": {
+          "shape": "InstanceId"
+        },
+        "failureCode": {
+          "shape": "InstanceOnboardingJobFailureCode"
+        },
+        "status": {
+          "shape": "InstanceOnboardingJobStatusCode"
+        }
+      },
+      "required": [
         "connectInstanceId",
         "status"
       ],
-      "members":{
-        "connectInstanceId":{"shape":"InstanceId"},
-        "failureCode":{"shape":"InstanceOnboardingJobFailureCode"},
-        "status":{"shape":"InstanceOnboardingJobStatusCode"}
-      },
-      "documentation":"<p>Instance onboarding job status object</p>"
+      "type": "structure"
     },
-    "InstanceOnboardingJobStatusCode":{
-      "type":"string",
-      "documentation":"<p>Enumeration of the possible states for instance onboarding job</p>",
-      "enum":[
+    "InstanceOnboardingJobStatusCode": {
+      "documentation": "<p>Enumeration of the possible states for instance onboarding job</p>",
+      "enum": [
         "IN_PROGRESS",
         "SUCCEEDED",
         "FAILED"
-      ]
+      ],
+      "type": "string"
     },
-    "InternalServerException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+    "InternalServerException": {
+      "documentation": "<p>Request processing failed because of an error or failure with the service.</p>",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
         }
       },
-      "documentation":"<p>Request processing failed because of an error or failure with the service.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true,
-      "retryable":{"throttling":false}
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
+      },
+      "type": "structure"
     },
-    "InvalidCampaignStateException":{
-      "type":"structure",
-      "required":[
+    "InvalidCampaignStateException": {
+      "documentation": "<p>The request could not be processed because of conflict in the current state of the campaign.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "state": {
+          "shape": "CampaignState"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
+        }
+      },
+      "required": [
         "message",
         "state"
       ],
-      "members":{
-        "message":{"shape":"String"},
-        "state":{"shape":"CampaignState"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+      "type": "structure"
+    },
+    "InvalidStateException": {
+      "documentation": "<p>The request could not be processed because of conflict in the current state.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
         }
       },
-      "documentation":"<p>The request could not be processed because of conflict in the current state of the campaign.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
-      },
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "InvalidStateException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+    "ListCampaignsRequest": {
+      "documentation": "<p>ListCampaignsRequest</p>",
+      "members": {
+        "filters": {
+          "shape": "CampaignFilters"
+        },
+        "maxResults": {
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "shape": "NextToken"
         }
       },
-      "documentation":"<p>The request could not be processed because of conflict in the current state.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "structure"
     },
-    "ListCampaignsRequest":{
-      "type":"structure",
-      "members":{
-        "filters":{"shape":"CampaignFilters"},
-        "maxResults":{"shape":"MaxResults"},
-        "nextToken":{"shape":"NextToken"}
-      },
-      "documentation":"<p>ListCampaignsRequest</p>"
-    },
-    "ListCampaignsResponse":{
-      "type":"structure",
-      "members":{
-        "campaignSummaryList":{"shape":"CampaignSummaryList"},
-        "nextToken":{"shape":"NextToken"}
-      },
-      "documentation":"<p>ListCampaignsResponse</p>"
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["arn"],
-      "members":{
-        "arn":{
-          "shape":"Arn",
-          "location":"uri",
-          "locationName":"arn"
+    "ListCampaignsResponse": {
+      "documentation": "<p>ListCampaignsResponse</p>",
+      "members": {
+        "campaignSummaryList": {
+          "shape": "CampaignSummaryList"
+        },
+        "nextToken": {
+          "shape": "NextToken"
         }
       },
-      "documentation":"<p>ListTagsForResource</p>"
+      "type": "structure"
     },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{"shape":"TagMap"}
+    "ListTagsForResourceRequest": {
+      "documentation": "<p>ListTagsForResource</p>",
+      "members": {
+        "arn": {
+          "location": "uri",
+          "locationName": "arn",
+          "shape": "Arn"
+        }
       },
-      "documentation":"<p>ListTagsForResponse</p>"
+      "required": [
+        "arn"
+      ],
+      "type": "structure"
     },
-    "MaxResults":{
-      "type":"integer",
-      "documentation":"<p>The maximum number of results to return per page.</p>",
-      "box":true,
-      "max":50,
-      "min":1
+    "ListTagsForResourceResponse": {
+      "documentation": "<p>ListTagsForResponse</p>",
+      "members": {
+        "tags": {
+          "shape": "TagMap"
+        }
+      },
+      "type": "structure"
     },
-    "NextToken":{
-      "type":"string",
-      "documentation":"<p>The token for the next set of results.</p>",
-      "max":1000,
-      "min":0
+    "MaxResults": {
+      "box": true,
+      "documentation": "<p>The maximum number of results to return per page.</p>",
+      "max": 50,
+      "min": 1,
+      "type": "integer"
     },
-    "OutboundCallConfig":{
-      "type":"structure",
-      "required":[
+    "NextToken": {
+      "documentation": "<p>The token for the next set of results.</p>",
+      "max": 1000,
+      "min": 0,
+      "type": "string"
+    },
+    "OutboundCallConfig": {
+      "documentation": "<p>The configuration used for outbound calls.</p>",
+      "members": {
+        "answerMachineDetectionConfig": {
+          "shape": "AnswerMachineDetectionConfig"
+        },
+        "connectContactFlowId": {
+          "shape": "ContactFlowId"
+        },
+        "connectQueueId": {
+          "shape": "QueueId"
+        },
+        "connectSourcePhoneNumber": {
+          "shape": "SourcePhoneNumber"
+        }
+      },
+      "required": [
         "connectContactFlowId",
         "connectQueueId"
       ],
-      "members":{
-        "answerMachineDetectionConfig":{"shape":"AnswerMachineDetectionConfig"},
-        "connectContactFlowId":{"shape":"ContactFlowId"},
-        "connectQueueId":{"shape":"QueueId"},
-        "connectSourcePhoneNumber":{"shape":"SourcePhoneNumber"}
-      },
-      "documentation":"<p>The configuration used for outbound calls.</p>"
+      "type": "structure"
     },
-    "PauseCampaignRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+    "PauseCampaignRequest": {
+      "documentation": "<p>PauseCampaignRequest</p>",
+      "members": {
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
         }
       },
-      "documentation":"<p>PauseCampaignRequest</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "PredictiveDialerConfig":{
-      "type":"structure",
-      "required":["bandwidthAllocation"],
-      "members":{
-        "bandwidthAllocation":{"shape":"BandwidthAllocation"}
+    "PredictiveDialerConfig": {
+      "documentation": "<p>Predictive Dialer config</p>",
+      "members": {
+        "bandwidthAllocation": {
+          "shape": "BandwidthAllocation"
+        }
       },
-      "documentation":"<p>Predictive Dialer config</p>"
+      "required": [
+        "bandwidthAllocation"
+      ],
+      "type": "structure"
     },
-    "ProgressiveDialerConfig":{
-      "type":"structure",
-      "required":["bandwidthAllocation"],
-      "members":{
-        "bandwidthAllocation":{"shape":"BandwidthAllocation"}
+    "ProgressiveDialerConfig": {
+      "documentation": "<p>Progressive Dialer config</p>",
+      "members": {
+        "bandwidthAllocation": {
+          "shape": "BandwidthAllocation"
+        }
       },
-      "documentation":"<p>Progressive Dialer config</p>"
+      "required": [
+        "bandwidthAllocation"
+      ],
+      "type": "structure"
     },
-    "PutDialRequestBatchRequest":{
-      "type":"structure",
-      "required":[
+    "PutDialRequestBatchRequest": {
+      "documentation": "<p>PutDialRequestBatchRequest</p>",
+      "members": {
+        "dialRequests": {
+          "shape": "DialRequestList"
+        },
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
+        }
+      },
+      "required": [
         "dialRequests",
         "id"
       ],
-      "members":{
-        "dialRequests":{"shape":"DialRequestList"},
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+      "type": "structure"
+    },
+    "PutDialRequestBatchResponse": {
+      "documentation": "<p>PutDialRequestBatchResponse</p>",
+      "members": {
+        "failedRequests": {
+          "shape": "FailedRequestList"
+        },
+        "successfulRequests": {
+          "shape": "SuccessfulRequestList"
         }
       },
-      "documentation":"<p>PutDialRequestBatchRequest</p>"
+      "type": "structure"
     },
-    "PutDialRequestBatchResponse":{
-      "type":"structure",
-      "members":{
-        "failedRequests":{"shape":"FailedRequestList"},
-        "successfulRequests":{"shape":"SuccessfulRequestList"}
+    "QueueId": {
+      "documentation": "<p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>",
+      "max": 500,
+      "min": 0,
+      "type": "string"
+    },
+    "ResourceNotFoundException": {
+      "documentation": "<p>The specified resource was not found.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
       },
-      "documentation":"<p>PutDialRequestBatchResponse</p>"
-    },
-    "QueueId":{
-      "type":"string",
-      "documentation":"<p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>",
-      "max":500,
-      "min":0
-    },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
         }
       },
-      "documentation":"<p>The specified resource was not found.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "ResumeCampaignRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+    "ResumeCampaignRequest": {
+      "documentation": "<p>ResumeCampaignRequest</p>",
+      "members": {
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
         }
       },
-      "documentation":"<p>ResumeCampaignRequest</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "ServiceLinkedRoleArn":{
-      "type":"string",
-      "documentation":"<p>Service linked role arn</p>",
-      "max":256,
-      "min":0
+    "ServiceLinkedRoleArn": {
+      "documentation": "<p>Service linked role arn</p>",
+      "max": 256,
+      "min": 0,
+      "type": "string"
     },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>Request would cause a service quota to be exceeded.</p>",
+      "error": {
+        "httpStatusCode": 402,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
         }
       },
-      "documentation":"<p>Request would cause a service quota to be exceeded.</p>",
-      "error":{
-        "httpStatusCode":402,
-        "senderFault":true
-      },
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "SourcePhoneNumber":{
-      "type":"string",
-      "documentation":"<p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>",
-      "max":100,
-      "min":0
+    "SourcePhoneNumber": {
+      "documentation": "<p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>",
+      "max": 100,
+      "min": 0,
+      "type": "string"
     },
-    "StartCampaignRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+    "StartCampaignRequest": {
+      "documentation": "<p>StartCampaignRequest</p>",
+      "members": {
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
         }
       },
-      "documentation":"<p>StartCampaignRequest</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "StartInstanceOnboardingJobRequest":{
-      "type":"structure",
-      "required":[
+    "StartInstanceOnboardingJobRequest": {
+      "documentation": "<p>The request for StartInstanceOnboardingJob API.</p>",
+      "members": {
+        "connectInstanceId": {
+          "location": "uri",
+          "locationName": "connectInstanceId",
+          "shape": "InstanceId"
+        },
+        "encryptionConfig": {
+          "shape": "EncryptionConfig"
+        }
+      },
+      "required": [
         "connectInstanceId",
         "encryptionConfig"
       ],
-      "members":{
-        "connectInstanceId":{
-          "shape":"InstanceId",
-          "location":"uri",
-          "locationName":"connectInstanceId"
-        },
-        "encryptionConfig":{"shape":"EncryptionConfig"}
-      },
-      "documentation":"<p>The request for StartInstanceOnboardingJob API.</p>"
+      "type": "structure"
     },
-    "StartInstanceOnboardingJobResponse":{
-      "type":"structure",
-      "members":{
-        "connectInstanceOnboardingJobStatus":{"shape":"InstanceOnboardingJobStatus"}
-      },
-      "documentation":"<p>The response for StartInstanceOnboardingJob API.</p>"
-    },
-    "StopCampaignRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+    "StartInstanceOnboardingJobResponse": {
+      "documentation": "<p>The response for StartInstanceOnboardingJob API.</p>",
+      "members": {
+        "connectInstanceOnboardingJobStatus": {
+          "shape": "InstanceOnboardingJobStatus"
         }
       },
-      "documentation":"<p>StopCampaignRequest</p>"
+      "type": "structure"
     },
-    "String":{"type":"string"},
-    "SuccessfulCampaignStateResponse":{
-      "type":"structure",
-      "members":{
-        "campaignId":{"shape":"CampaignId"},
-        "state":{"shape":"CampaignState"}
+    "StopCampaignRequest": {
+      "documentation": "<p>StopCampaignRequest</p>",
+      "members": {
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
+        }
       },
-      "documentation":"<p>Successful response of campaign state</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "SuccessfulCampaignStateResponseList":{
-      "type":"list",
-      "member":{"shape":"SuccessfulCampaignStateResponse"},
-      "documentation":"<p>List of successful response of campaign state</p>",
-      "max":25,
-      "min":0
+    "String": {
+      "type": "string"
     },
-    "SuccessfulRequest":{
-      "type":"structure",
-      "members":{
-        "clientToken":{"shape":"ClientToken"},
-        "id":{"shape":"DialRequestId"}
+    "SuccessfulCampaignStateResponse": {
+      "documentation": "<p>Successful response of campaign state</p>",
+      "members": {
+        "campaignId": {
+          "shape": "CampaignId"
+        },
+        "state": {
+          "shape": "CampaignState"
+        }
       },
-      "documentation":"<p>A successful request identified by the unique client token.</p>"
+      "type": "structure"
     },
-    "SuccessfulRequestList":{
-      "type":"list",
-      "member":{"shape":"SuccessfulRequest"},
-      "documentation":"<p>A list of successful requests identified by the unique client token.</p>",
-      "max":25,
-      "min":0
+    "SuccessfulCampaignStateResponseList": {
+      "documentation": "<p>List of successful response of campaign state</p>",
+      "max": 25,
+      "member": {
+        "shape": "SuccessfulCampaignStateResponse"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "TagKey":{
-      "type":"string",
-      "documentation":"<p>Tag key.</p>",
-      "max":128,
-      "min":1,
-      "pattern":"^(?!aws:)[a-zA-Z+-=._:/]+$"
+    "SuccessfulRequest": {
+      "documentation": "<p>A successful request identified by the unique client token.</p>",
+      "members": {
+        "clientToken": {
+          "shape": "ClientToken"
+        },
+        "id": {
+          "shape": "DialRequestId"
+        }
+      },
+      "type": "structure"
     },
-    "TagKeyList":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "documentation":"<p>List of tag keys.</p>",
-      "max":50,
-      "min":0
+    "SuccessfulRequestList": {
+      "documentation": "<p>A list of successful requests identified by the unique client token.</p>",
+      "max": 25,
+      "member": {
+        "shape": "SuccessfulRequest"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "TagMap":{
-      "type":"map",
-      "key":{"shape":"TagKey"},
-      "value":{"shape":"TagValue"},
-      "documentation":"<p>Tag map with key and value.</p>"
+    "TagKey": {
+      "documentation": "<p>Tag key.</p>",
+      "max": 128,
+      "min": 1,
+      "pattern": "^(?!aws:)[a-zA-Z+-=._:/]+$",
+      "type": "string"
     },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "TagKeyList": {
+      "documentation": "<p>List of tag keys.</p>",
+      "max": 50,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "TagMap": {
+      "documentation": "<p>Tag map with key and value.</p>",
+      "key": {
+        "shape": "TagKey"
+      },
+      "type": "map",
+      "value": {
+        "shape": "TagValue"
+      }
+    },
+    "TagResourceRequest": {
+      "documentation": "<p>TagResourceRequest</p>",
+      "members": {
+        "arn": {
+          "location": "uri",
+          "locationName": "arn",
+          "shape": "Arn"
+        },
+        "tags": {
+          "shape": "TagMap"
+        }
+      },
+      "required": [
         "arn",
         "tags"
       ],
-      "members":{
-        "arn":{
-          "shape":"Arn",
-          "location":"uri",
-          "locationName":"arn"
-        },
-        "tags":{"shape":"TagMap"}
+      "type": "structure"
+    },
+    "TagValue": {
+      "documentation": "<p>Tag value.</p>",
+      "max": 256,
+      "min": 0,
+      "type": "string"
+    },
+    "ThrottlingException": {
+      "documentation": "<p>The request was denied due to request throttling.</p>",
+      "error": {
+        "httpStatusCode": 429,
+        "senderFault": true
       },
-      "documentation":"<p>TagResourceRequest</p>"
-    },
-    "TagValue":{
-      "type":"string",
-      "documentation":"<p>Tag value.</p>",
-      "max":256,
-      "min":0
-    },
-    "ThrottlingException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
         }
       },
-      "documentation":"<p>The request was denied due to request throttling.</p>",
-      "error":{
-        "httpStatusCode":429,
-        "senderFault":true
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
       },
-      "exception":true,
-      "retryable":{"throttling":false}
+      "type": "structure"
     },
-    "TimeStamp":{
-      "type":"timestamp",
-      "documentation":"<p>Timestamp with no UTC offset or timezone</p>",
-      "timestampFormat":"iso8601"
+    "TimeStamp": {
+      "documentation": "<p>Timestamp with no UTC offset or timezone</p>",
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "UntagResourceRequest": {
+      "documentation": "<p>UntagResourceRequest</p>",
+      "members": {
+        "arn": {
+          "location": "uri",
+          "locationName": "arn",
+          "shape": "Arn"
+        },
+        "tagKeys": {
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeyList"
+        }
+      },
+      "required": [
         "arn",
         "tagKeys"
       ],
-      "members":{
-        "arn":{
-          "shape":"Arn",
-          "location":"uri",
-          "locationName":"arn"
+      "type": "structure"
+    },
+    "UpdateCampaignDialerConfigRequest": {
+      "documentation": "<p>UpdateCampaignDialerConfigRequest</p>",
+      "members": {
+        "dialerConfig": {
+          "shape": "DialerConfig"
         },
-        "tagKeys":{
-          "shape":"TagKeyList",
-          "location":"querystring",
-          "locationName":"tagKeys"
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
         }
       },
-      "documentation":"<p>UntagResourceRequest</p>"
-    },
-    "UpdateCampaignDialerConfigRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "dialerConfig",
         "id"
       ],
-      "members":{
-        "dialerConfig":{"shape":"DialerConfig"},
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+      "type": "structure"
+    },
+    "UpdateCampaignNameRequest": {
+      "documentation": "<p>UpdateCampaignNameRequest</p>",
+      "members": {
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
+        },
+        "name": {
+          "shape": "CampaignName"
         }
       },
-      "documentation":"<p>UpdateCampaignDialerConfigRequest</p>"
-    },
-    "UpdateCampaignNameRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "id",
         "name"
       ],
-      "members":{
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+      "type": "structure"
+    },
+    "UpdateCampaignOutboundCallConfigRequest": {
+      "documentation": "<p>UpdateCampaignOutboundCallConfigRequest</p>",
+      "members": {
+        "answerMachineDetectionConfig": {
+          "shape": "AnswerMachineDetectionConfig"
         },
-        "name":{"shape":"CampaignName"}
-      },
-      "documentation":"<p>UpdateCampaignNameRequest</p>"
-    },
-    "UpdateCampaignOutboundCallConfigRequest":{
-      "type":"structure",
-      "required":["id"],
-      "members":{
-        "answerMachineDetectionConfig":{"shape":"AnswerMachineDetectionConfig"},
-        "connectContactFlowId":{"shape":"ContactFlowId"},
-        "connectSourcePhoneNumber":{"shape":"SourcePhoneNumber"},
-        "id":{
-          "shape":"CampaignId",
-          "location":"uri",
-          "locationName":"id"
+        "connectContactFlowId": {
+          "shape": "ContactFlowId"
+        },
+        "connectSourcePhoneNumber": {
+          "shape": "SourcePhoneNumber"
+        },
+        "id": {
+          "location": "uri",
+          "locationName": "id",
+          "shape": "CampaignId"
         }
       },
-      "documentation":"<p>UpdateCampaignOutboundCallConfigRequest</p>"
+      "required": [
+        "id"
+      ],
+      "type": "structure"
     },
-    "ValidationException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{"shape":"String"},
-        "xAmzErrorType":{
-          "shape":"XAmazonErrorType",
-          "location":"header",
-          "locationName":"x-amzn-ErrorType"
+    "ValidationException": {
+      "documentation": "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "xAmzErrorType": {
+          "location": "header",
+          "locationName": "x-amzn-ErrorType",
+          "shape": "XAmazonErrorType"
         }
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
     },
-    "XAmazonErrorType":{
-      "type":"string",
-      "documentation":"<p>A header that defines the error encountered while processing the request.</p>"
+    "XAmazonErrorType": {
+      "documentation": "<p>A header that defines the error encountered while processing the request.</p>",
+      "type": "string"
     }
   },
-  "documentation":"<p>Provide APIs to create and manage Amazon Connect Campaigns.</p>"
+  "version": "2.0"
 }

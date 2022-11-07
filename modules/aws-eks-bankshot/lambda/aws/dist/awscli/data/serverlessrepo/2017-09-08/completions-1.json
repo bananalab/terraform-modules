@@ -1,5 +1,108 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteApplication": {
+      "ApplicationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ApplicationId",
+            "resourceName": "Application"
+          }
+        ]
+      }
+    },
+    "GetApplication": {
+      "ApplicationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ApplicationId",
+            "resourceName": "Application"
+          }
+        ]
+      }
+    },
+    "GetApplicationPolicy": {
+      "ApplicationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ApplicationId",
+            "resourceName": "Application"
+          }
+        ]
+      }
+    },
+    "ListApplicationVersions": {
+      "ApplicationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ApplicationId",
+            "resourceName": "Application"
+          }
+        ]
+      }
+    },
+    "PutApplicationPolicy": {
+      "ApplicationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ApplicationId",
+            "resourceName": "Application"
+          }
+        ]
+      }
+    },
+    "UpdateApplication": {
+      "ApplicationId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ApplicationId",
+            "resourceName": "Application"
+          }
+        ]
+      },
+      "Author": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Author",
+            "resourceName": "Application"
+          }
+        ]
+      },
+      "Description": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Description",
+            "resourceName": "Application"
+          }
+        ]
+      },
+      "HomePageUrl": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HomePageUrl",
+            "resourceName": "Application"
+          }
+        ]
+      },
+      "Labels": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Labels",
+            "resourceName": "Application"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Application": {
       "operation": "ListApplications",
@@ -12,108 +115,5 @@
       }
     }
   },
-  "operations": {
-    "DeleteApplication": {
-      "ApplicationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "ApplicationId"
-          }
-        ]
-      }
-    },
-    "GetApplication": {
-      "ApplicationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "ApplicationId"
-          }
-        ]
-      }
-    },
-    "GetApplicationPolicy": {
-      "ApplicationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "ApplicationId"
-          }
-        ]
-      }
-    },
-    "ListApplicationVersions": {
-      "ApplicationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "ApplicationId"
-          }
-        ]
-      }
-    },
-    "PutApplicationPolicy": {
-      "ApplicationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "ApplicationId"
-          }
-        ]
-      }
-    },
-    "UpdateApplication": {
-      "ApplicationId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "ApplicationId"
-          }
-        ]
-      },
-      "Author": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "Author"
-          }
-        ]
-      },
-      "Description": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "Description"
-          }
-        ]
-      },
-      "HomePageUrl": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "HomePageUrl"
-          }
-        ]
-      },
-      "Labels": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "Labels"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

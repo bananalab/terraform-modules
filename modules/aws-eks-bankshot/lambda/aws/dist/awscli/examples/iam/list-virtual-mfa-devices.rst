@@ -20,4 +20,3 @@ Output::
 For more information, see `Using a Virtual MFA Device with AWS`_ in the *Using IAM* guide.
 
 .. _`Using a Virtual MFA Device with AWS`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html
-

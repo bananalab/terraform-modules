@@ -26,5 +26,3 @@ You cannot list the secret access keys for IAM users. If the secret access keys 
 For more information, see `Creating, Modifying, and Viewing User Security Credentials`_ in the *Using IAM* guide.
 
 .. _`Creating, Modifying, and Viewing User Security Credentials`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_CreateAccessKey.html
-
-

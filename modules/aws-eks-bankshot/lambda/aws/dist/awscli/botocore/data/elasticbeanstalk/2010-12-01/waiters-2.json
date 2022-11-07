@@ -2,62 +2,61 @@
   "version": 2,
   "waiters": {
     "EnvironmentExists": {
-      "delay": 20,
-      "maxAttempts": 20,
-      "operation": "DescribeEnvironments",
       "acceptors": [
         {
-          "state": "success",
-          "matcher": "pathAll",
           "argument": "Environments[].Status",
-          "expected": "Ready"
+          "expected": "Ready",
+          "matcher": "pathAll",
+          "state": "success"
         },
         {
-          "state": "retry",
-          "matcher": "pathAll",
           "argument": "Environments[].Status",
-          "expected": "Launching"
+          "expected": "Launching",
+          "matcher": "pathAll",
+          "state": "retry"
         }
-      ]
-    },
-    "EnvironmentUpdated": {
+      ],
       "delay": 20,
       "maxAttempts": 20,
-      "operation": "DescribeEnvironments",
-      "acceptors": [
-        {
-          "state": "success",
-          "matcher": "pathAll",
-          "argument": "Environments[].Status",
-          "expected": "Ready"
-        },
-        {
-          "state": "retry",
-          "matcher": "pathAll",
-          "argument": "Environments[].Status",
-          "expected": "Updating"
-        }
-      ]
+      "operation": "DescribeEnvironments"
     },
     "EnvironmentTerminated": {
-      "delay": 20,
-      "maxAttempts": 20,
-      "operation": "DescribeEnvironments",
       "acceptors": [
         {
-          "state": "success",
-          "matcher": "pathAll",
           "argument": "Environments[].Status",
-          "expected": "Terminated"
+          "expected": "Terminated",
+          "matcher": "pathAll",
+          "state": "success"
         },
         {
-          "state": "retry",
-          "matcher": "pathAll",
           "argument": "Environments[].Status",
-          "expected": "Terminating"
+          "expected": "Terminating",
+          "matcher": "pathAll",
+          "state": "retry"
         }
-      ]
+      ],
+      "delay": 20,
+      "maxAttempts": 20,
+      "operation": "DescribeEnvironments"
+    },
+    "EnvironmentUpdated": {
+      "acceptors": [
+        {
+          "argument": "Environments[].Status",
+          "expected": "Ready",
+          "matcher": "pathAll",
+          "state": "success"
+        },
+        {
+          "argument": "Environments[].Status",
+          "expected": "Updating",
+          "matcher": "pathAll",
+          "state": "retry"
+        }
+      ],
+      "delay": 20,
+      "maxAttempts": 20,
+      "operation": "DescribeEnvironments"
     }
   }
 }
-

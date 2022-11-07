@@ -1,5 +1,4 @@
 {
-  "version": 1.0,
   "merge": {
     "pagination": {
       "ListTableColumns": {
@@ -26,5 +25,6 @@
         ]
       }
     }
-  }
+  },
+  "version": 1.0
 }

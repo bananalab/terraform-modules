@@ -1,5 +1,17 @@
 {
-  "version": "1.0",
+  "operations": {
+    "UpdateGroup": {
+      "Description": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Description",
+            "resourceName": "Group"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Group": {
       "operation": "ListGroups",
@@ -8,17 +20,5 @@
       }
     }
   },
-  "operations": {
-    "UpdateGroup": {
-      "Description": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Group",
-            "resourceIdentifier": "Description"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

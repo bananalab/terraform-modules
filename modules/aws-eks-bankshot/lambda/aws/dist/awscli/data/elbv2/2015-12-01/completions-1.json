@@ -1,66 +1,21 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Listener": {
-      "operation": "DescribeListeners",
-      "resourceIdentifier": {
-        "ListenerArn": "Listeners[].ListenerArn",
-        "Certificates": "Listeners[].Certificates",
-        "SslPolicy": "Listeners[].SslPolicy",
-        "DefaultActions": "Listeners[].DefaultActions"
-      }
-    },
-    "LoadBalancer": {
-      "operation": "DescribeLoadBalancers",
-      "resourceIdentifier": {
-        "LoadBalancerArn": "LoadBalancers[].LoadBalancerArn",
-        "SecurityGroups": "LoadBalancers[].SecurityGroups",
-        "IpAddressType": "LoadBalancers[].IpAddressType"
-      }
-    },
-    "Rule": {
-      "operation": "DescribeRules",
-      "resourceIdentifier": {
-        "RuleArn": "Rules[].RuleArn",
-        "Conditions": "Rules[].Conditions",
-        "Actions": "Rules[].Actions"
-      }
-    },
-    "TargetGroup": {
-      "operation": "DescribeTargetGroups",
-      "resourceIdentifier": {
-        "TargetGroupArn": "TargetGroups[].TargetGroupArn",
-        "Protocol": "TargetGroups[].Protocol",
-        "Port": "TargetGroups[].Port",
-        "HealthCheckProtocol": "TargetGroups[].HealthCheckProtocol",
-        "HealthCheckPort": "TargetGroups[].HealthCheckPort",
-        "HealthCheckIntervalSeconds": "TargetGroups[].HealthCheckIntervalSeconds",
-        "HealthCheckTimeoutSeconds": "TargetGroups[].HealthCheckTimeoutSeconds",
-        "HealthyThresholdCount": "TargetGroups[].HealthyThresholdCount",
-        "UnhealthyThresholdCount": "TargetGroups[].UnhealthyThresholdCount",
-        "HealthCheckPath": "TargetGroups[].HealthCheckPath",
-        "Matcher": "TargetGroups[].Matcher",
-        "LoadBalancerArns": "TargetGroups[].LoadBalancerArns"
-      }
-    }
-  },
   "operations": {
     "AddListenerCertificates": {
-      "ListenerArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "ListenerArn"
-          }
-        ]
-      },
       "Certificates": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "Certificates"
+            "resourceIdentifier": "Certificates",
+            "resourceName": "Listener"
+          }
+        ]
+      },
+      "ListenerArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ListenerArn",
+            "resourceName": "Listener"
           }
         ]
       }
@@ -70,8 +25,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "ListenerArn"
+            "resourceIdentifier": "ListenerArn",
+            "resourceName": "Listener"
           }
         ]
       }
@@ -81,8 +36,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerArn"
+            "resourceIdentifier": "LoadBalancerArn",
+            "resourceName": "LoadBalancer"
           }
         ]
       }
@@ -92,8 +47,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "RuleArn"
+            "resourceIdentifier": "RuleArn",
+            "resourceName": "Rule"
           }
         ]
       }
@@ -103,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "TargetGroupArn"
+            "resourceIdentifier": "TargetGroupArn",
+            "resourceName": "TargetGroup"
           }
         ]
       }
@@ -114,8 +69,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "TargetGroupArn"
+            "resourceIdentifier": "TargetGroupArn",
+            "resourceName": "TargetGroup"
           }
         ]
       }
@@ -125,28 +80,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "ListenerArn"
+            "resourceIdentifier": "ListenerArn",
+            "resourceName": "Listener"
           }
         ]
       }
     },
     "DescribeListeners": {
-      "LoadBalancerArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerArn"
-          }
-        ]
-      },
       "ListenerArns": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "ListenerArn"
+            "resourceIdentifier": "ListenerArn",
+            "resourceName": "Listener"
+          }
+        ]
+      },
+      "LoadBalancerArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerArn",
+            "resourceName": "LoadBalancer"
           }
         ]
       }
@@ -156,8 +111,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerArn"
+            "resourceIdentifier": "LoadBalancerArn",
+            "resourceName": "LoadBalancer"
           }
         ]
       }
@@ -167,8 +122,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "LoadBalancerArns"
+            "resourceIdentifier": "LoadBalancerArns",
+            "resourceName": "TargetGroup"
           }
         ]
       }
@@ -178,8 +133,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "ListenerArn"
+            "resourceIdentifier": "ListenerArn",
+            "resourceName": "Listener"
           }
         ]
       },
@@ -187,8 +142,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "RuleArn"
+            "resourceIdentifier": "RuleArn",
+            "resourceName": "Rule"
           }
         ]
       }
@@ -198,8 +153,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "TargetGroupArn"
+            "resourceIdentifier": "TargetGroupArn",
+            "resourceName": "TargetGroup"
           }
         ]
       }
@@ -209,8 +164,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerArn"
+            "resourceIdentifier": "LoadBalancerArn",
+            "resourceName": "LoadBalancer"
           }
         ]
       },
@@ -218,8 +173,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "TargetGroupArn"
+            "resourceIdentifier": "TargetGroupArn",
+            "resourceName": "TargetGroup"
           }
         ]
       }
@@ -229,55 +184,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "TargetGroupArn"
+            "resourceIdentifier": "TargetGroupArn",
+            "resourceName": "TargetGroup"
           }
         ]
       }
     },
     "ModifyListener": {
-      "ListenerArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "ListenerArn"
-          }
-        ]
-      },
-      "Port": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "Port"
-          }
-        ]
-      },
-      "Protocol": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "Protocol"
-          }
-        ]
-      },
-      "SslPolicy": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "SslPolicy"
-          }
-        ]
-      },
       "Certificates": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "Certificates"
+            "resourceIdentifier": "Certificates",
+            "resourceName": "Listener"
           }
         ]
       },
@@ -285,8 +204,44 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "DefaultActions"
+            "resourceIdentifier": "DefaultActions",
+            "resourceName": "Listener"
+          }
+        ]
+      },
+      "ListenerArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ListenerArn",
+            "resourceName": "Listener"
+          }
+        ]
+      },
+      "Port": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Port",
+            "resourceName": "TargetGroup"
+          }
+        ]
+      },
+      "Protocol": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Protocol",
+            "resourceName": "TargetGroup"
+          }
+        ]
+      },
+      "SslPolicy": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SslPolicy",
+            "resourceName": "Listener"
           }
         ]
       }
@@ -296,19 +251,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerArn"
+            "resourceIdentifier": "LoadBalancerArn",
+            "resourceName": "LoadBalancer"
           }
         ]
       }
     },
     "ModifyRule": {
-      "RuleArn": {
+      "Actions": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "RuleArn"
+            "resourceIdentifier": "Actions",
+            "resourceName": "Rule"
           }
         ]
       },
@@ -316,46 +271,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "Conditions"
+            "resourceIdentifier": "Conditions",
+            "resourceName": "Rule"
           }
         ]
       },
-      "Actions": {
+      "RuleArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "Actions"
+            "resourceIdentifier": "RuleArn",
+            "resourceName": "Rule"
           }
         ]
       }
     },
     "ModifyTargetGroup": {
-      "TargetGroupArn": {
+      "HealthCheckIntervalSeconds": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "TargetGroupArn"
-          }
-        ]
-      },
-      "HealthCheckProtocol": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "HealthCheckProtocol"
-          }
-        ]
-      },
-      "HealthCheckPort": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "HealthCheckPort"
+            "resourceIdentifier": "HealthCheckIntervalSeconds",
+            "resourceName": "TargetGroup"
           }
         ]
       },
@@ -363,17 +300,26 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "HealthCheckPath"
+            "resourceIdentifier": "HealthCheckPath",
+            "resourceName": "TargetGroup"
           }
         ]
       },
-      "HealthCheckIntervalSeconds": {
+      "HealthCheckPort": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "HealthCheckIntervalSeconds"
+            "resourceIdentifier": "HealthCheckPort",
+            "resourceName": "TargetGroup"
+          }
+        ]
+      },
+      "HealthCheckProtocol": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HealthCheckProtocol",
+            "resourceName": "TargetGroup"
           }
         ]
       },
@@ -381,8 +327,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "HealthCheckTimeoutSeconds"
+            "resourceIdentifier": "HealthCheckTimeoutSeconds",
+            "resourceName": "TargetGroup"
           }
         ]
       },
@@ -390,17 +336,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "HealthyThresholdCount"
-          }
-        ]
-      },
-      "UnhealthyThresholdCount": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "UnhealthyThresholdCount"
+            "resourceIdentifier": "HealthyThresholdCount",
+            "resourceName": "TargetGroup"
           }
         ]
       },
@@ -408,8 +345,26 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "Matcher"
+            "resourceIdentifier": "Matcher",
+            "resourceName": "TargetGroup"
+          }
+        ]
+      },
+      "TargetGroupArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TargetGroupArn",
+            "resourceName": "TargetGroup"
+          }
+        ]
+      },
+      "UnhealthyThresholdCount": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "UnhealthyThresholdCount",
+            "resourceName": "TargetGroup"
           }
         ]
       }
@@ -419,8 +374,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "TargetGroupArn"
+            "resourceIdentifier": "TargetGroupArn",
+            "resourceName": "TargetGroup"
           }
         ]
       }
@@ -430,48 +385,48 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TargetGroup",
-            "resourceIdentifier": "TargetGroupArn"
+            "resourceIdentifier": "TargetGroupArn",
+            "resourceName": "TargetGroup"
           }
         ]
       }
     },
     "RemoveListenerCertificates": {
-      "ListenerArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "ListenerArn"
-          }
-        ]
-      },
       "Certificates": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Listener",
-            "resourceIdentifier": "Certificates"
+            "resourceIdentifier": "Certificates",
+            "resourceName": "Listener"
+          }
+        ]
+      },
+      "ListenerArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ListenerArn",
+            "resourceName": "Listener"
           }
         ]
       }
     },
     "SetIpAddressType": {
-      "LoadBalancerArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerArn"
-          }
-        ]
-      },
       "IpAddressType": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "IpAddressType"
+            "resourceIdentifier": "IpAddressType",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "LoadBalancerArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerArn",
+            "resourceName": "LoadBalancer"
           }
         ]
       }
@@ -481,8 +436,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerArn"
+            "resourceIdentifier": "LoadBalancerArn",
+            "resourceName": "LoadBalancer"
           }
         ]
       },
@@ -490,8 +445,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "SecurityGroups"
+            "resourceIdentifier": "SecurityGroups",
+            "resourceName": "LoadBalancer"
           }
         ]
       }
@@ -501,11 +456,56 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerArn"
+            "resourceIdentifier": "LoadBalancerArn",
+            "resourceName": "LoadBalancer"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Listener": {
+      "operation": "DescribeListeners",
+      "resourceIdentifier": {
+        "Certificates": "Listeners[].Certificates",
+        "DefaultActions": "Listeners[].DefaultActions",
+        "ListenerArn": "Listeners[].ListenerArn",
+        "SslPolicy": "Listeners[].SslPolicy"
+      }
+    },
+    "LoadBalancer": {
+      "operation": "DescribeLoadBalancers",
+      "resourceIdentifier": {
+        "IpAddressType": "LoadBalancers[].IpAddressType",
+        "LoadBalancerArn": "LoadBalancers[].LoadBalancerArn",
+        "SecurityGroups": "LoadBalancers[].SecurityGroups"
+      }
+    },
+    "Rule": {
+      "operation": "DescribeRules",
+      "resourceIdentifier": {
+        "Actions": "Rules[].Actions",
+        "Conditions": "Rules[].Conditions",
+        "RuleArn": "Rules[].RuleArn"
+      }
+    },
+    "TargetGroup": {
+      "operation": "DescribeTargetGroups",
+      "resourceIdentifier": {
+        "HealthCheckIntervalSeconds": "TargetGroups[].HealthCheckIntervalSeconds",
+        "HealthCheckPath": "TargetGroups[].HealthCheckPath",
+        "HealthCheckPort": "TargetGroups[].HealthCheckPort",
+        "HealthCheckProtocol": "TargetGroups[].HealthCheckProtocol",
+        "HealthCheckTimeoutSeconds": "TargetGroups[].HealthCheckTimeoutSeconds",
+        "HealthyThresholdCount": "TargetGroups[].HealthyThresholdCount",
+        "LoadBalancerArns": "TargetGroups[].LoadBalancerArns",
+        "Matcher": "TargetGroups[].Matcher",
+        "Port": "TargetGroups[].Port",
+        "Protocol": "TargetGroups[].Protocol",
+        "TargetGroupArn": "TargetGroups[].TargetGroupArn",
+        "UnhealthyThresholdCount": "TargetGroups[].UnhealthyThresholdCount"
+      }
+    }
+  },
+  "version": "1.0"
 }

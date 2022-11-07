@@ -1,5 +1,138 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteModel": {
+      "ModelName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ModelName",
+            "resourceName": "Model"
+          }
+        ]
+      }
+    },
+    "DeleteNotebookInstanceLifecycleConfig": {
+      "NotebookInstanceLifecycleConfigName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NotebookInstanceLifecycleConfigName",
+            "resourceName": "NotebookInstanceLifecycleConfig"
+          }
+        ]
+      }
+    },
+    "DescribeHyperParameterTuningJob": {
+      "HyperParameterTuningJobName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HyperParameterTuningJobName",
+            "resourceName": "HyperParameterTuningJob"
+          }
+        ]
+      }
+    },
+    "DescribeModel": {
+      "ModelName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ModelName",
+            "resourceName": "Model"
+          }
+        ]
+      }
+    },
+    "DescribeNotebookInstanceLifecycleConfig": {
+      "NotebookInstanceLifecycleConfigName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NotebookInstanceLifecycleConfigName",
+            "resourceName": "NotebookInstanceLifecycleConfig"
+          }
+        ]
+      }
+    },
+    "DescribeTrainingJob": {
+      "TrainingJobName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TrainingJobName",
+            "resourceName": "TrainingJob"
+          }
+        ]
+      }
+    },
+    "DescribeTransformJob": {
+      "TransformJobName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TransformJobName",
+            "resourceName": "TransformJob"
+          }
+        ]
+      }
+    },
+    "ListTrainingJobsForHyperParameterTuningJob": {
+      "HyperParameterTuningJobName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HyperParameterTuningJobName",
+            "resourceName": "HyperParameterTuningJob"
+          }
+        ]
+      }
+    },
+    "StopHyperParameterTuningJob": {
+      "HyperParameterTuningJobName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HyperParameterTuningJobName",
+            "resourceName": "HyperParameterTuningJob"
+          }
+        ]
+      }
+    },
+    "StopTrainingJob": {
+      "TrainingJobName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TrainingJobName",
+            "resourceName": "TrainingJob"
+          }
+        ]
+      }
+    },
+    "StopTransformJob": {
+      "TransformJobName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TransformJobName",
+            "resourceName": "TransformJob"
+          }
+        ]
+      }
+    },
+    "UpdateNotebookInstanceLifecycleConfig": {
+      "NotebookInstanceLifecycleConfigName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NotebookInstanceLifecycleConfigName",
+            "resourceName": "NotebookInstanceLifecycleConfig"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "HyperParameterTuningJob": {
       "operation": "ListHyperParameterTuningJobs",
@@ -32,138 +165,5 @@
       }
     }
   },
-  "operations": {
-    "DeleteModel": {
-      "ModelName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Model",
-            "resourceIdentifier": "ModelName"
-          }
-        ]
-      }
-    },
-    "DeleteNotebookInstanceLifecycleConfig": {
-      "NotebookInstanceLifecycleConfigName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NotebookInstanceLifecycleConfig",
-            "resourceIdentifier": "NotebookInstanceLifecycleConfigName"
-          }
-        ]
-      }
-    },
-    "DescribeHyperParameterTuningJob": {
-      "HyperParameterTuningJobName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "HyperParameterTuningJob",
-            "resourceIdentifier": "HyperParameterTuningJobName"
-          }
-        ]
-      }
-    },
-    "DescribeModel": {
-      "ModelName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Model",
-            "resourceIdentifier": "ModelName"
-          }
-        ]
-      }
-    },
-    "DescribeNotebookInstanceLifecycleConfig": {
-      "NotebookInstanceLifecycleConfigName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NotebookInstanceLifecycleConfig",
-            "resourceIdentifier": "NotebookInstanceLifecycleConfigName"
-          }
-        ]
-      }
-    },
-    "DescribeTrainingJob": {
-      "TrainingJobName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TrainingJob",
-            "resourceIdentifier": "TrainingJobName"
-          }
-        ]
-      }
-    },
-    "DescribeTransformJob": {
-      "TransformJobName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TransformJob",
-            "resourceIdentifier": "TransformJobName"
-          }
-        ]
-      }
-    },
-    "ListTrainingJobsForHyperParameterTuningJob": {
-      "HyperParameterTuningJobName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "HyperParameterTuningJob",
-            "resourceIdentifier": "HyperParameterTuningJobName"
-          }
-        ]
-      }
-    },
-    "StopHyperParameterTuningJob": {
-      "HyperParameterTuningJobName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "HyperParameterTuningJob",
-            "resourceIdentifier": "HyperParameterTuningJobName"
-          }
-        ]
-      }
-    },
-    "StopTrainingJob": {
-      "TrainingJobName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TrainingJob",
-            "resourceIdentifier": "TrainingJobName"
-          }
-        ]
-      }
-    },
-    "StopTransformJob": {
-      "TransformJobName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TransformJob",
-            "resourceIdentifier": "TransformJobName"
-          }
-        ]
-      }
-    },
-    "UpdateNotebookInstanceLifecycleConfig": {
-      "NotebookInstanceLifecycleConfigName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NotebookInstanceLifecycleConfig",
-            "resourceIdentifier": "NotebookInstanceLifecycleConfigName"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

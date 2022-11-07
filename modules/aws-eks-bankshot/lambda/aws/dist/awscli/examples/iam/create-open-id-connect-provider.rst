@@ -28,7 +28,7 @@ Output::
       "OpenIDConnectProviderArn": "arn:aws:iam::123456789012:oidc-provider/server.example.com"
   }
 
-For more information about OIDC providers, see `Using OpenID Connect Identity Providers`_ in the *Using IAM* guide. 
+For more information about OIDC providers, see `Using OpenID Connect Identity Providers`_ in the *Using IAM* guide.
 
 For more information about obtaining thumbprints for an OIDC provider, see `Obtaining the Thumbprint for an OpenID Connect Provider`_ in the *Using IAM* guide.
 

@@ -1,41 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Portfolio": {
-      "operation": "ListPortfolios",
-      "resourceIdentifier": {
-        "DisplayName": "PortfolioDetails[].DisplayName",
-        "Description": "PortfolioDetails[].Description",
-        "ProviderName": "PortfolioDetails[].ProviderName"
-      }
-    },
-    "RecordHistory": {
-      "operation": "ListRecordHistory",
-      "resourceIdentifier": {
-        "ProvisionedProductName": "RecordDetails[].ProvisionedProductName",
-        "ProvisionedProductId": "RecordDetails[].ProvisionedProductId",
-        "ProductId": "RecordDetails[].ProductId",
-        "ProvisioningArtifactId": "RecordDetails[].ProvisioningArtifactId",
-        "PathId": "RecordDetails[].PathId"
-      }
-    },
-    "TagOption": {
-      "operation": "ListTagOptions",
-      "resourceIdentifier": {
-        "Value": "TagOptionDetails[].Value",
-        "Active": "TagOptionDetails[].Active",
-        "Id": "TagOptionDetails[].Id"
-      }
-    }
-  },
   "operations": {
     "AssociateProductWithPortfolio": {
       "ProductId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
@@ -45,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -56,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -67,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -78,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       },
@@ -87,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisioningArtifactId"
+            "resourceIdentifier": "ProvisioningArtifactId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
@@ -98,8 +69,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -109,8 +80,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -120,8 +91,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -131,8 +102,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -142,8 +113,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -153,8 +124,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -164,39 +135,48 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
     },
     "DescribeProvisioningArtifact": {
-      "ProvisioningArtifactId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisioningArtifactId"
-          }
-        ]
-      },
       "ProductId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
+          }
+        ]
+      },
+      "ProvisioningArtifactId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ProvisioningArtifactId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
     },
     "DescribeProvisioningParameters": {
+      "PathId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PathId",
+            "resourceName": "RecordHistory"
+          }
+        ]
+      },
       "ProductId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       },
@@ -204,17 +184,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisioningArtifactId"
-          }
-        ]
-      },
-      "PathId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "PathId"
+            "resourceIdentifier": "ProvisioningArtifactId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
@@ -224,8 +195,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -235,8 +206,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
@@ -246,8 +217,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
@@ -257,8 +228,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
@@ -268,8 +239,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
@@ -279,8 +250,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
@@ -290,8 +261,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisionedProductId"
+            "resourceIdentifier": "ProvisionedProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
@@ -301,19 +272,37 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
     },
     "ProvisionProduct": {
+      "PathId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PathId",
+            "resourceName": "RecordHistory"
+          }
+        ]
+      },
       "ProductId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
+          }
+        ]
+      },
+      "ProvisionedProductName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ProvisionedProductName",
+            "resourceName": "RecordHistory"
           }
         ]
       },
@@ -321,77 +310,59 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisioningArtifactId"
-          }
-        ]
-      },
-      "PathId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "PathId"
-          }
-        ]
-      },
-      "ProvisionedProductName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisionedProductName"
+            "resourceIdentifier": "ProvisioningArtifactId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
     },
     "TerminateProvisionedProduct": {
-      "ProvisionedProductName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisionedProductName"
-          }
-        ]
-      },
       "ProvisionedProductId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisionedProductId"
+            "resourceIdentifier": "ProvisionedProductId",
+            "resourceName": "RecordHistory"
+          }
+        ]
+      },
+      "ProvisionedProductName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ProvisionedProductName",
+            "resourceName": "RecordHistory"
           }
         ]
       }
     },
     "UpdateConstraint": {
-      "Id": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
-          }
-        ]
-      },
       "Description": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Portfolio",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Portfolio"
+          }
+        ]
+      },
+      "Id": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
     },
     "UpdatePortfolio": {
-      "Id": {
+      "Description": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Description",
+            "resourceName": "Portfolio"
           }
         ]
       },
@@ -399,17 +370,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Portfolio",
-            "resourceIdentifier": "DisplayName"
+            "resourceIdentifier": "DisplayName",
+            "resourceName": "Portfolio"
           }
         ]
       },
-      "Description": {
+      "Id": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Portfolio",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       },
@@ -417,39 +388,48 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Portfolio",
-            "resourceIdentifier": "ProviderName"
+            "resourceIdentifier": "ProviderName",
+            "resourceName": "Portfolio"
           }
         ]
       }
     },
     "UpdateProduct": {
-      "Id": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
-          }
-        ]
-      },
       "Description": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Portfolio",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Portfolio"
+          }
+        ]
+      },
+      "Id": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       }
     },
     "UpdateProvisionedProduct": {
-      "ProvisionedProductName": {
+      "PathId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisionedProductName"
+            "resourceIdentifier": "PathId",
+            "resourceName": "RecordHistory"
+          }
+        ]
+      },
+      "ProductId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       },
@@ -457,17 +437,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisionedProductId"
+            "resourceIdentifier": "ProvisionedProductId",
+            "resourceName": "RecordHistory"
           }
         ]
       },
-      "ProductId": {
+      "ProvisionedProductName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
+            "resourceIdentifier": "ProvisionedProductName",
+            "resourceName": "RecordHistory"
           }
         ]
       },
@@ -475,37 +455,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisioningArtifactId"
-          }
-        ]
-      },
-      "PathId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "PathId"
+            "resourceIdentifier": "ProvisioningArtifactId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
     },
     "UpdateProvisioningArtifact": {
-      "ProductId": {
+      "Active": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProductId"
-          }
-        ]
-      },
-      "ProvisioningArtifactId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "RecordHistory",
-            "resourceIdentifier": "ProvisioningArtifactId"
+            "resourceIdentifier": "Active",
+            "resourceName": "TagOption"
           }
         ]
       },
@@ -513,28 +475,46 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Portfolio",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Portfolio"
           }
         ]
       },
-      "Active": {
+      "ProductId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Active"
+            "resourceIdentifier": "ProductId",
+            "resourceName": "RecordHistory"
+          }
+        ]
+      },
+      "ProvisioningArtifactId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ProvisioningArtifactId",
+            "resourceName": "RecordHistory"
           }
         ]
       }
     },
     "UpdateTagOption": {
+      "Active": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Active",
+            "resourceName": "TagOption"
+          }
+        ]
+      },
       "Id": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Id"
+            "resourceIdentifier": "Id",
+            "resourceName": "TagOption"
           }
         ]
       },
@@ -542,20 +522,40 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Value"
-          }
-        ]
-      },
-      "Active": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "TagOption",
-            "resourceIdentifier": "Active"
+            "resourceIdentifier": "Value",
+            "resourceName": "TagOption"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Portfolio": {
+      "operation": "ListPortfolios",
+      "resourceIdentifier": {
+        "Description": "PortfolioDetails[].Description",
+        "DisplayName": "PortfolioDetails[].DisplayName",
+        "ProviderName": "PortfolioDetails[].ProviderName"
+      }
+    },
+    "RecordHistory": {
+      "operation": "ListRecordHistory",
+      "resourceIdentifier": {
+        "PathId": "RecordDetails[].PathId",
+        "ProductId": "RecordDetails[].ProductId",
+        "ProvisionedProductId": "RecordDetails[].ProvisionedProductId",
+        "ProvisionedProductName": "RecordDetails[].ProvisionedProductName",
+        "ProvisioningArtifactId": "RecordDetails[].ProvisioningArtifactId"
+      }
+    },
+    "TagOption": {
+      "operation": "ListTagOptions",
+      "resourceIdentifier": {
+        "Active": "TagOptionDetails[].Active",
+        "Id": "TagOptionDetails[].Id",
+        "Value": "TagOptionDetails[].Value"
+      }
+    }
+  },
+  "version": "1.0"
 }

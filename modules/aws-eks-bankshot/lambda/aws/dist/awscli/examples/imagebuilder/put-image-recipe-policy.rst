@@ -4,7 +4,7 @@ The following ``put-image-recipe-policy`` command applies a resource policy to a
 
     aws imagebuilder put-image-recipe-policy \
         --image-recipe-arn arn:aws:imagebuilder:us-west-2:123456789012:image-recipe/example-image-recipe/2019.12.02/1 \
-        --policy '{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "AWS": [ "123456789012" ] }, "Action": [ "imagebuilder:GetImageRecipe", "imagebuilder:ListImageRecipes" ], "Resource": [ "arn:aws:imagebuilder:us-west-2:123456789012:image-recipe/example-image-recipe/2019.12.02/1" ] } ] }' 
+        --policy '{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Principal": { "AWS": [ "123456789012" ] }, "Action": [ "imagebuilder:GetImageRecipe", "imagebuilder:ListImageRecipes" ], "Resource": [ "arn:aws:imagebuilder:us-west-2:123456789012:image-recipe/example-image-recipe/2019.12.02/1" ] } ] }'
 
 Output::
 

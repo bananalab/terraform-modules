@@ -7,8 +7,6 @@
     },
     "DescribeChangeSet": {
       "input_token": "NextToken",
-      "output_token": "NextToken",
-      "result_key": "Changes",
       "non_aggregate_keys": [
         "ChangeSetName",
         "ChangeSetId",
@@ -27,7 +25,9 @@
         "ParentChangeSetId",
         "IncludeNestedStacks",
         "RootChangeSetId"
-      ]
+      ],
+      "output_token": "NextToken",
+      "result_key": "Changes"
     },
     "DescribeStackEvents": {
       "input_token": "NextToken",
@@ -44,40 +44,6 @@
       "output_token": "NextToken",
       "result_key": "Summaries"
     },
-    "ListStackInstances": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "MaxResults",
-      "result_key": "Summaries"
-    },
-    "ListStackResources": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "result_key": "StackResourceSummaries"
-    },
-    "ListStacks": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "result_key": "StackSummaries"
-    },
-    "ListStackSetOperationResults": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "MaxResults",
-      "result_key": "Summaries"
-    },
-    "ListStackSetOperations": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "MaxResults",
-      "result_key": "Summaries"
-    },
-    "ListStackSets": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "MaxResults",
-      "result_key": "Summaries"
-    },
     "ListExports": {
       "input_token": "NextToken",
       "output_token": "NextToken",
@@ -87,6 +53,40 @@
       "input_token": "NextToken",
       "output_token": "NextToken",
       "result_key": "Imports"
+    },
+    "ListStackInstances": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Summaries"
+    },
+    "ListStackResources": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "result_key": "StackResourceSummaries"
+    },
+    "ListStackSetOperationResults": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Summaries"
+    },
+    "ListStackSetOperations": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Summaries"
+    },
+    "ListStackSets": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Summaries"
+    },
+    "ListStacks": {
+      "input_token": "NextToken",
+      "output_token": "NextToken",
+      "result_key": "StackSummaries"
     },
     "ListTypes": {
       "input_token": "NextToken",

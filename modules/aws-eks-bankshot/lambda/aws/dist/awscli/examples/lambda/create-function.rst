@@ -9,7 +9,7 @@ The following ``create-function`` example creates a Lambda function named ``my-f
         --handler my-function.handler \
         --role arn:aws:iam::123456789012:role/service-role/MyTestFunction-role-tges6bf4
 
-Contents of ``my-function.zip``: 
+Contents of ``my-function.zip``:
 This file is a deployment package that contains your function code and any dependencies.
 
 Output::

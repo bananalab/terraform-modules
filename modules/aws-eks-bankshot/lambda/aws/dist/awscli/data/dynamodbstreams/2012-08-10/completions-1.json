@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Stream": {
-      "operation": "ListStreams",
-      "resourceIdentifier": {
-        "StreamArn": "Streams[].StreamArn",
-        "TableName": "Streams[].TableName"
-      }
-    }
-  },
   "operations": {
     "DescribeStream": {
       "StreamArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamArn"
+            "resourceIdentifier": "StreamArn",
+            "resourceName": "Stream"
           }
         ]
       }
@@ -26,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "StreamArn"
+            "resourceIdentifier": "StreamArn",
+            "resourceName": "Stream"
           }
         ]
       }
@@ -37,11 +27,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stream",
-            "resourceIdentifier": "TableName"
+            "resourceIdentifier": "TableName",
+            "resourceName": "Stream"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Stream": {
+      "operation": "ListStreams",
+      "resourceIdentifier": {
+        "StreamArn": "Streams[].StreamArn",
+        "TableName": "Streams[].TableName"
+      }
+    }
+  },
+  "version": "1.0"
 }

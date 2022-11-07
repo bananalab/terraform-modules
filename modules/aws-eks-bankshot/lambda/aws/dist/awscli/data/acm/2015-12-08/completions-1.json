@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Certificate": {
-      "operation": "ListCertificates",
-      "resourceIdentifier": {
-        "CertificateArn": "CertificateSummaryList[].CertificateArn",
-        "DomainName": "CertificateSummaryList[].DomainName"
-      }
-    }
-  },
   "operations": {
     "AddTagsToCertificate": {
       "CertificateArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -26,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -37,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -48,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -59,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -70,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -81,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -92,8 +82,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -103,8 +93,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -114,8 +104,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
@@ -125,11 +115,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Certificate",
-            "resourceIdentifier": "CertificateArn"
+            "resourceIdentifier": "CertificateArn",
+            "resourceName": "Certificate"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Certificate": {
+      "operation": "ListCertificates",
+      "resourceIdentifier": {
+        "CertificateArn": "CertificateSummaryList[].CertificateArn",
+        "DomainName": "CertificateSummaryList[].DomainName"
+      }
+    }
+  },
+  "version": "1.0"
 }

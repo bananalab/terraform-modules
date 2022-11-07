@@ -1,5 +1,200 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteLexicon": {
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "Lexicon"
+          }
+        ]
+      }
+    },
+    "DescribeVoices": {
+      "LanguageCode": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      }
+    },
+    "GetLexicon": {
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "Lexicon"
+          }
+        ]
+      }
+    },
+    "GetSpeechSynthesisTask": {
+      "TaskId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TaskId",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      }
+    },
+    "PutLexicon": {
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "Lexicon"
+          }
+        ]
+      }
+    },
+    "StartSpeechSynthesisTask": {
+      "LanguageCode": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "LexiconNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LexiconNames",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "OutputFormat": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OutputFormat",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "SampleRate": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SampleRate",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "SnsTopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SnsTopicArn",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "SpeechMarkTypes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SpeechMarkTypes",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "TextType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TextType",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "VoiceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VoiceId",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      }
+    },
+    "SynthesizeSpeech": {
+      "LanguageCode": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LanguageCode",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "LexiconNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LexiconNames",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "OutputFormat": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "OutputFormat",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "SampleRate": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SampleRate",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "SpeechMarkTypes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SpeechMarkTypes",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "TextType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TextType",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      },
+      "VoiceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VoiceId",
+            "resourceName": "SpeechSynthesisTask"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Lexicon": {
       "operation": "ListLexicons",
@@ -10,212 +205,17 @@
     "SpeechSynthesisTask": {
       "operation": "ListSpeechSynthesisTasks",
       "resourceIdentifier": {
-        "TaskId": "SynthesisTasks[].TaskId",
-        "SnsTopicArn": "SynthesisTasks[].SnsTopicArn",
+        "LanguageCode": "SynthesisTasks[].LanguageCode",
         "LexiconNames": "SynthesisTasks[].LexiconNames",
         "OutputFormat": "SynthesisTasks[].OutputFormat",
         "SampleRate": "SynthesisTasks[].SampleRate",
+        "SnsTopicArn": "SynthesisTasks[].SnsTopicArn",
         "SpeechMarkTypes": "SynthesisTasks[].SpeechMarkTypes",
+        "TaskId": "SynthesisTasks[].TaskId",
         "TextType": "SynthesisTasks[].TextType",
-        "VoiceId": "SynthesisTasks[].VoiceId",
-        "LanguageCode": "SynthesisTasks[].LanguageCode"
+        "VoiceId": "SynthesisTasks[].VoiceId"
       }
     }
   },
-  "operations": {
-    "DeleteLexicon": {
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lexicon",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      }
-    },
-    "DescribeVoices": {
-      "LanguageCode": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "LanguageCode"
-          }
-        ]
-      }
-    },
-    "GetLexicon": {
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lexicon",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      }
-    },
-    "GetSpeechSynthesisTask": {
-      "TaskId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "TaskId"
-          }
-        ]
-      }
-    },
-    "PutLexicon": {
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lexicon",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      }
-    },
-    "StartSpeechSynthesisTask": {
-      "LexiconNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "LexiconNames"
-          }
-        ]
-      },
-      "OutputFormat": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "OutputFormat"
-          }
-        ]
-      },
-      "SampleRate": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "SampleRate"
-          }
-        ]
-      },
-      "SnsTopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "SnsTopicArn"
-          }
-        ]
-      },
-      "SpeechMarkTypes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "SpeechMarkTypes"
-          }
-        ]
-      },
-      "TextType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "TextType"
-          }
-        ]
-      },
-      "VoiceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "VoiceId"
-          }
-        ]
-      },
-      "LanguageCode": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "LanguageCode"
-          }
-        ]
-      }
-    },
-    "SynthesizeSpeech": {
-      "LexiconNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "LexiconNames"
-          }
-        ]
-      },
-      "OutputFormat": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "OutputFormat"
-          }
-        ]
-      },
-      "SampleRate": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "SampleRate"
-          }
-        ]
-      },
-      "SpeechMarkTypes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "SpeechMarkTypes"
-          }
-        ]
-      },
-      "TextType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "TextType"
-          }
-        ]
-      },
-      "VoiceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "VoiceId"
-          }
-        ]
-      },
-      "LanguageCode": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "SpeechSynthesisTask",
-            "resourceIdentifier": "LanguageCode"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

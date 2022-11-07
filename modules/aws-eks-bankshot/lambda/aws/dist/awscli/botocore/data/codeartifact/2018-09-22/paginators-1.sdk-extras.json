@@ -1,5 +1,4 @@
 {
-  "version": 1.0,
   "merge": {
     "pagination": {
       "ListPackageVersionAssets": {
@@ -20,5 +19,6 @@
         ]
       }
     }
-  }
+  },
+  "version": 1.0
 }

@@ -1,65 +1,32 @@
 {
-  "version": "1.0",
-  "resources": {
-    "StackEvent": {
-      "operation": "DescribeStackEvents",
-      "resourceIdentifier": {
-        "LogicalResourceId": "StackEvents[].LogicalResourceId",
-        "PhysicalResourceId": "StackEvents[].PhysicalResourceId",
-        "ResourceType": "StackEvents[].ResourceType",
-        "ClientRequestToken": "StackEvents[].ClientRequestToken"
-      }
-    },
-    "Stack": {
-      "operation": "ListStacks",
-      "resourceIdentifier": {
-        "StackName": "StackSummaries[].StackName",
-        "Parameters": "Stacks[].Parameters",
-        "RollbackConfiguration": "Stacks[].RollbackConfiguration",
-        "NotificationARNs": "Stacks[].NotificationARNs",
-        "Capabilities": "Stacks[].Capabilities",
-        "RoleARN": "Stacks[].RoleARN",
-        "Tags": "Stacks[].Tags",
-        "EnableTerminationProtection": "Stacks[].EnableTerminationProtection"
-      }
-    },
-    "StackSet": {
-      "operation": "ListStackSets",
-      "resourceIdentifier": {
-        "StackSetName": "Summaries[].StackSetName",
-        "Description": "Summaries[].Description",
-        "Status": "Summaries[].Status"
-      }
-    }
-  },
   "operations": {
     "CancelUpdateStack": {
-      "StackName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
-          }
-        ]
-      },
       "ClientRequestToken": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "ClientRequestToken"
+            "resourceIdentifier": "ClientRequestToken",
+            "resourceName": "StackEvent"
+          }
+        ]
+      },
+      "StackName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
     },
     "ContinueUpdateRollback": {
-      "StackName": {
+      "ClientRequestToken": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "ClientRequestToken",
+            "resourceName": "StackEvent"
           }
         ]
       },
@@ -67,17 +34,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "RoleARN"
+            "resourceIdentifier": "RoleARN",
+            "resourceName": "Stack"
           }
         ]
       },
-      "ClientRequestToken": {
+      "StackName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "ClientRequestToken"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -87,19 +54,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
     },
     "DeleteStack": {
-      "StackName": {
+      "ClientRequestToken": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "ClientRequestToken",
+            "resourceName": "StackEvent"
           }
         ]
       },
@@ -107,17 +74,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "RoleARN"
+            "resourceIdentifier": "RoleARN",
+            "resourceName": "Stack"
           }
         ]
       },
-      "ClientRequestToken": {
+      "StackName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "ClientRequestToken"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -127,8 +94,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -138,8 +105,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -149,8 +116,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -160,8 +127,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -171,48 +138,39 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
     },
     "DescribeStackResource": {
-      "StackName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
-          }
-        ]
-      },
       "LogicalResourceId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "LogicalResourceId"
+            "resourceIdentifier": "LogicalResourceId",
+            "resourceName": "StackEvent"
+          }
+        ]
+      },
+      "StackName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
     },
     "DescribeStackResources": {
-      "StackName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
-          }
-        ]
-      },
       "LogicalResourceId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "LogicalResourceId"
+            "resourceIdentifier": "LogicalResourceId",
+            "resourceName": "StackEvent"
           }
         ]
       },
@@ -220,8 +178,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "PhysicalResourceId"
+            "resourceIdentifier": "PhysicalResourceId",
+            "resourceName": "StackEvent"
+          }
+        ]
+      },
+      "StackName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -231,8 +198,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -242,8 +209,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -253,8 +220,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -264,28 +231,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "Parameters"
+            "resourceIdentifier": "Parameters",
+            "resourceName": "Stack"
           }
         ]
       }
     },
     "ExecuteChangeSet": {
-      "StackName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
-          }
-        ]
-      },
       "ClientRequestToken": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "ClientRequestToken"
+            "resourceIdentifier": "ClientRequestToken",
+            "resourceName": "StackEvent"
+          }
+        ]
+      },
+      "StackName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -295,8 +262,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -306,8 +273,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -317,8 +284,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       },
@@ -326,8 +293,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -337,8 +304,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -348,8 +315,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -359,8 +326,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -370,8 +337,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -381,8 +348,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -392,8 +359,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "Status"
+            "resourceIdentifier": "Status",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -403,28 +370,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
     },
     "SignalResource": {
-      "StackName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
-          }
-        ]
-      },
       "LogicalResourceId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "LogicalResourceId"
+            "resourceIdentifier": "LogicalResourceId",
+            "resourceName": "StackEvent"
+          }
+        ]
+      },
+      "StackName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       },
@@ -432,8 +399,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "Status"
+            "resourceIdentifier": "Status",
+            "resourceName": "StackSet"
           }
         ]
       }
@@ -443,82 +410,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
     },
     "UpdateStack": {
-      "StackName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
-          }
-        ]
-      },
-      "Parameters": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "Parameters"
-          }
-        ]
-      },
       "Capabilities": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "Capabilities"
-          }
-        ]
-      },
-      "ResourceTypes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "ResourceType"
-          }
-        ]
-      },
-      "RoleARN": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "RoleARN"
-          }
-        ]
-      },
-      "RollbackConfiguration": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "RollbackConfiguration"
-          }
-        ]
-      },
-      "NotificationARNs": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "NotificationARNs"
-          }
-        ]
-      },
-      "Tags": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "Tags"
+            "resourceIdentifier": "Capabilities",
+            "resourceName": "Stack"
           }
         ]
       },
@@ -526,8 +430,71 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackEvent",
-            "resourceIdentifier": "ClientRequestToken"
+            "resourceIdentifier": "ClientRequestToken",
+            "resourceName": "StackEvent"
+          }
+        ]
+      },
+      "NotificationARNs": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NotificationARNs",
+            "resourceName": "Stack"
+          }
+        ]
+      },
+      "Parameters": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Parameters",
+            "resourceName": "Stack"
+          }
+        ]
+      },
+      "ResourceTypes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ResourceType",
+            "resourceName": "StackEvent"
+          }
+        ]
+      },
+      "RoleARN": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "RoleARN",
+            "resourceName": "Stack"
+          }
+        ]
+      },
+      "RollbackConfiguration": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "RollbackConfiguration",
+            "resourceName": "Stack"
+          }
+        ]
+      },
+      "StackName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
+          }
+        ]
+      },
+      "Tags": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Tags",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -537,19 +504,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       }
     },
     "UpdateStackSet": {
-      "StackSetName": {
+      "Capabilities": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "StackSetName"
+            "resourceIdentifier": "Capabilities",
+            "resourceName": "Stack"
           }
         ]
       },
@@ -557,8 +524,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "StackSet",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "StackSet"
           }
         ]
       },
@@ -566,17 +533,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "Parameters"
+            "resourceIdentifier": "Parameters",
+            "resourceName": "Stack"
           }
         ]
       },
-      "Capabilities": {
+      "StackSetName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "Capabilities"
+            "resourceIdentifier": "StackSetName",
+            "resourceName": "StackSet"
           }
         ]
       },
@@ -584,8 +551,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "Tags"
+            "resourceIdentifier": "Tags",
+            "resourceName": "Stack"
           }
         ]
       }
@@ -595,8 +562,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "EnableTerminationProtection"
+            "resourceIdentifier": "EnableTerminationProtection",
+            "resourceName": "Stack"
           }
         ]
       },
@@ -604,11 +571,44 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Stack",
-            "resourceIdentifier": "StackName"
+            "resourceIdentifier": "StackName",
+            "resourceName": "Stack"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Stack": {
+      "operation": "ListStacks",
+      "resourceIdentifier": {
+        "Capabilities": "Stacks[].Capabilities",
+        "EnableTerminationProtection": "Stacks[].EnableTerminationProtection",
+        "NotificationARNs": "Stacks[].NotificationARNs",
+        "Parameters": "Stacks[].Parameters",
+        "RoleARN": "Stacks[].RoleARN",
+        "RollbackConfiguration": "Stacks[].RollbackConfiguration",
+        "StackName": "StackSummaries[].StackName",
+        "Tags": "Stacks[].Tags"
+      }
+    },
+    "StackEvent": {
+      "operation": "DescribeStackEvents",
+      "resourceIdentifier": {
+        "ClientRequestToken": "StackEvents[].ClientRequestToken",
+        "LogicalResourceId": "StackEvents[].LogicalResourceId",
+        "PhysicalResourceId": "StackEvents[].PhysicalResourceId",
+        "ResourceType": "StackEvents[].ResourceType"
+      }
+    },
+    "StackSet": {
+      "operation": "ListStackSets",
+      "resourceIdentifier": {
+        "Description": "Summaries[].Description",
+        "StackSetName": "Summaries[].StackSetName",
+        "Status": "Summaries[].Status"
+      }
+    }
+  },
+  "version": "1.0"
 }

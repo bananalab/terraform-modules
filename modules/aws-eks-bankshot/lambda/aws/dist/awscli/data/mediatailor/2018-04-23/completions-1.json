@@ -1,5 +1,75 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeletePlaybackConfiguration": {
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "PlaybackConfiguration"
+          }
+        ]
+      }
+    },
+    "GetPlaybackConfiguration": {
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "PlaybackConfiguration"
+          }
+        ]
+      }
+    },
+    "PutPlaybackConfiguration": {
+      "AdDecisionServerUrl": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AdDecisionServerUrl",
+            "resourceName": "PlaybackConfiguration"
+          }
+        ]
+      },
+      "CdnConfiguration": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "CdnConfiguration",
+            "resourceName": "PlaybackConfiguration"
+          }
+        ]
+      },
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "PlaybackConfiguration"
+          }
+        ]
+      },
+      "SlateAdUrl": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SlateAdUrl",
+            "resourceName": "PlaybackConfiguration"
+          }
+        ]
+      },
+      "VideoContentSourceUrl": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VideoContentSourceUrl",
+            "resourceName": "PlaybackConfiguration"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "PlaybackConfiguration": {
       "operation": "ListPlaybackConfigurations",
@@ -12,75 +82,5 @@
       }
     }
   },
-  "operations": {
-    "DeletePlaybackConfiguration": {
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlaybackConfiguration",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      }
-    },
-    "GetPlaybackConfiguration": {
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlaybackConfiguration",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      }
-    },
-    "PutPlaybackConfiguration": {
-      "AdDecisionServerUrl": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlaybackConfiguration",
-            "resourceIdentifier": "AdDecisionServerUrl"
-          }
-        ]
-      },
-      "CdnConfiguration": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlaybackConfiguration",
-            "resourceIdentifier": "CdnConfiguration"
-          }
-        ]
-      },
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlaybackConfiguration",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      },
-      "SlateAdUrl": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlaybackConfiguration",
-            "resourceIdentifier": "SlateAdUrl"
-          }
-        ]
-      },
-      "VideoContentSourceUrl": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlaybackConfiguration",
-            "resourceIdentifier": "VideoContentSourceUrl"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

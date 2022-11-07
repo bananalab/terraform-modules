@@ -1,54 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Application": {
-      "operation": "DescribeApplications",
-      "resourceIdentifier": {
-        "ResourceLifecycleConfig": "Applications[].ResourceLifecycleConfig"
-      }
-    },
-    "EnvironmentManagedAction": {
-      "operation": "DescribeEnvironmentManagedActions",
-      "resourceIdentifier": {
-        "ActionId": "ManagedActions[].ActionId"
-      }
-    },
-    "Environment": {
-      "operation": "DescribeEnvironments",
-      "resourceIdentifier": {
-        "EnvironmentId": "Environments[].EnvironmentId",
-        "SolutionStackName": "Environments[].SolutionStackName",
-        "Description": "Environments[].Description",
-        "Status": "Environments[].Status",
-        "Tier": "Environments[].Tier"
-      }
-    },
-    "Event": {
-      "operation": "DescribeEvents",
-      "resourceIdentifier": {
-        "ApplicationName": "Events[].ApplicationName",
-        "VersionLabel": "Events[].VersionLabel",
-        "TemplateName": "Events[].TemplateName",
-        "EnvironmentName": "Events[].EnvironmentName",
-        "RequestId": "Events[].RequestId",
-        "Severity": "Events[].Severity"
-      }
-    },
-    "PlatformVersion": {
-      "operation": "ListPlatformVersions",
-      "resourceIdentifier": {
-        "PlatformArn": "PlatformSummaryList[].PlatformArn"
-      }
-    }
-  },
   "operations": {
     "AbortEnvironmentUpdate": {
       "EnvironmentId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -56,19 +14,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
     },
     "ApplyEnvironmentManagedAction": {
-      "EnvironmentName": {
+      "ActionId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "ActionId",
+            "resourceName": "EnvironmentManagedAction"
           }
         ]
       },
@@ -76,17 +34,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
-      "ActionId": {
+      "EnvironmentName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentManagedAction",
-            "resourceIdentifier": "ActionId"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -96,8 +54,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -105,8 +63,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "VersionLabel"
+            "resourceIdentifier": "VersionLabel",
+            "resourceName": "Event"
           }
         ]
       }
@@ -116,8 +74,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -127,8 +85,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -136,8 +94,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "VersionLabel"
+            "resourceIdentifier": "VersionLabel",
+            "resourceName": "Event"
           }
         ]
       }
@@ -147,8 +105,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -156,8 +114,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "TemplateName"
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -167,8 +125,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -176,8 +134,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -187,8 +145,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PlatformVersion",
-            "resourceIdentifier": "PlatformArn"
+            "resourceIdentifier": "PlatformArn",
+            "resourceName": "PlatformVersion"
           }
         ]
       }
@@ -198,8 +156,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -207,8 +165,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "VersionLabel"
+            "resourceIdentifier": "VersionLabel",
+            "resourceName": "Event"
           }
         ]
       }
@@ -218,8 +176,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -229,17 +187,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
-          }
-        ]
-      },
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "TemplateName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -247,17 +196,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
-          }
-        ]
-      },
-      "SolutionStackName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "SolutionStackName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -265,8 +205,26 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PlatformVersion",
-            "resourceIdentifier": "PlatformArn"
+            "resourceIdentifier": "PlatformArn",
+            "resourceName": "PlatformVersion"
+          }
+        ]
+      },
+      "SolutionStackName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SolutionStackName",
+            "resourceName": "Environment"
+          }
+        ]
+      },
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -276,8 +234,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
+          }
+        ]
+      },
+      "EnvironmentName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -285,37 +252,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      },
-      "EnvironmentName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "Event"
           }
         ]
       }
     },
     "DescribeEnvironmentHealth": {
-      "EnvironmentName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
-          }
-        ]
-      },
       "EnvironmentId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
+          }
+        ]
+      },
+      "EnvironmentName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -325,8 +283,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -334,28 +292,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
     },
     "DescribeEnvironmentManagedActions": {
-      "EnvironmentName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
-          }
-        ]
-      },
       "EnvironmentId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
+          }
+        ]
+      },
+      "EnvironmentName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -363,8 +321,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "Status"
+            "resourceIdentifier": "Status",
+            "resourceName": "Environment"
           }
         ]
       }
@@ -374,8 +332,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -383,8 +341,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -394,17 +352,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
-          }
-        ]
-      },
-      "VersionLabel": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "VersionLabel"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -412,8 +361,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -421,8 +370,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
+          }
+        ]
+      },
+      "VersionLabel": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VersionLabel",
+            "resourceName": "Event"
           }
         ]
       }
@@ -432,26 +390,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
-          }
-        ]
-      },
-      "VersionLabel": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "VersionLabel"
-          }
-        ]
-      },
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "TemplateName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -459,8 +399,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -468,8 +408,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -477,8 +417,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PlatformVersion",
-            "resourceIdentifier": "PlatformArn"
+            "resourceIdentifier": "PlatformArn",
+            "resourceName": "PlatformVersion"
           }
         ]
       },
@@ -486,8 +426,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "RequestId"
+            "resourceIdentifier": "RequestId",
+            "resourceName": "Event"
           }
         ]
       },
@@ -495,28 +435,46 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "Severity"
+            "resourceIdentifier": "Severity",
+            "resourceName": "Event"
+          }
+        ]
+      },
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "Event"
+          }
+        ]
+      },
+      "VersionLabel": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VersionLabel",
+            "resourceName": "Event"
           }
         ]
       }
     },
     "DescribeInstancesHealth": {
-      "EnvironmentName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
-          }
-        ]
-      },
       "EnvironmentId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
+          }
+        ]
+      },
+      "EnvironmentName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -526,8 +484,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PlatformVersion",
-            "resourceIdentifier": "PlatformArn"
+            "resourceIdentifier": "PlatformArn",
+            "resourceName": "PlatformVersion"
           }
         ]
       }
@@ -537,8 +495,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -546,8 +504,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -557,8 +515,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -566,8 +524,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -577,8 +535,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -586,8 +544,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -597,8 +555,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -606,8 +564,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -617,8 +575,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
@@ -626,8 +584,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -637,8 +595,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -646,8 +604,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Environment"
           }
         ]
       }
@@ -657,8 +615,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -666,8 +624,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Application",
-            "resourceIdentifier": "ResourceLifecycleConfig"
+            "resourceIdentifier": "ResourceLifecycleConfig",
+            "resourceName": "Application"
           }
         ]
       }
@@ -677,17 +635,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
-          }
-        ]
-      },
-      "VersionLabel": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "VersionLabel"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -695,8 +644,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Environment"
+          }
+        ]
+      },
+      "VersionLabel": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VersionLabel",
+            "resourceName": "Event"
           }
         ]
       }
@@ -706,17 +664,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
-          }
-        ]
-      },
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "TemplateName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -724,8 +673,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Environment"
+          }
+        ]
+      },
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "Event"
           }
         ]
       }
@@ -735,26 +693,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
-          }
-        ]
-      },
-      "EnvironmentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "EnvironmentId"
-          }
-        ]
-      },
-      "EnvironmentName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -762,44 +702,26 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Environment"
           }
         ]
       },
-      "Tier": {
+      "EnvironmentId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "Tier"
+            "resourceIdentifier": "EnvironmentId",
+            "resourceName": "Environment"
           }
         ]
       },
-      "VersionLabel": {
+      "EnvironmentName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "VersionLabel"
-          }
-        ]
-      },
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      },
-      "SolutionStackName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Environment",
-            "resourceIdentifier": "SolutionStackName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -807,8 +729,44 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PlatformVersion",
-            "resourceIdentifier": "PlatformArn"
+            "resourceIdentifier": "PlatformArn",
+            "resourceName": "PlatformVersion"
+          }
+        ]
+      },
+      "SolutionStackName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SolutionStackName",
+            "resourceName": "Environment"
+          }
+        ]
+      },
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "Event"
+          }
+        ]
+      },
+      "Tier": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Tier",
+            "resourceName": "Environment"
+          }
+        ]
+      },
+      "VersionLabel": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VersionLabel",
+            "resourceName": "Event"
           }
         ]
       }
@@ -818,17 +776,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "ApplicationName"
-          }
-        ]
-      },
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "TemplateName"
+            "resourceIdentifier": "ApplicationName",
+            "resourceName": "Event"
           }
         ]
       },
@@ -836,11 +785,62 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Event",
-            "resourceIdentifier": "EnvironmentName"
+            "resourceIdentifier": "EnvironmentName",
+            "resourceName": "Event"
+          }
+        ]
+      },
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "Event"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Application": {
+      "operation": "DescribeApplications",
+      "resourceIdentifier": {
+        "ResourceLifecycleConfig": "Applications[].ResourceLifecycleConfig"
+      }
+    },
+    "Environment": {
+      "operation": "DescribeEnvironments",
+      "resourceIdentifier": {
+        "Description": "Environments[].Description",
+        "EnvironmentId": "Environments[].EnvironmentId",
+        "SolutionStackName": "Environments[].SolutionStackName",
+        "Status": "Environments[].Status",
+        "Tier": "Environments[].Tier"
+      }
+    },
+    "EnvironmentManagedAction": {
+      "operation": "DescribeEnvironmentManagedActions",
+      "resourceIdentifier": {
+        "ActionId": "ManagedActions[].ActionId"
+      }
+    },
+    "Event": {
+      "operation": "DescribeEvents",
+      "resourceIdentifier": {
+        "ApplicationName": "Events[].ApplicationName",
+        "EnvironmentName": "Events[].EnvironmentName",
+        "RequestId": "Events[].RequestId",
+        "Severity": "Events[].Severity",
+        "TemplateName": "Events[].TemplateName",
+        "VersionLabel": "Events[].VersionLabel"
+      }
+    },
+    "PlatformVersion": {
+      "operation": "ListPlatformVersions",
+      "resourceIdentifier": {
+        "PlatformArn": "PlatformSummaryList[].PlatformArn"
+      }
+    }
+  },
+  "version": "1.0"
 }

@@ -1,21 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Queue": {
-      "operation": "ListQueues",
-      "resourceIdentifier": {
-        "QueueUrl": "QueueUrls[]"
-      }
-    }
-  },
   "operations": {
     "AddPermission": {
       "QueueUrl": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -25,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -36,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -47,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -58,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -69,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -80,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -91,8 +82,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -102,8 +93,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -113,8 +104,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -124,8 +115,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -135,8 +126,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -146,8 +137,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -157,8 +148,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -168,8 +159,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -179,8 +170,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
@@ -190,11 +181,20 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Queue",
-            "resourceIdentifier": "QueueUrl"
+            "resourceIdentifier": "QueueUrl",
+            "resourceName": "Queue"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Queue": {
+      "operation": "ListQueues",
+      "resourceIdentifier": {
+        "QueueUrl": "QueueUrls[]"
+      }
+    }
+  },
+  "version": "1.0"
 }

@@ -1,5 +1,554 @@
 {
-  "version": "1.0",
+  "operations": {
+    "AllocateConnectionOnInterconnect": {
+      "bandwidth": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "bandwidth",
+            "resourceName": "Interconnect"
+          }
+        ]
+      },
+      "connectionName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionName",
+            "resourceName": "Connection"
+          }
+        ]
+      },
+      "interconnectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "interconnectId",
+            "resourceName": "Interconnect"
+          }
+        ]
+      },
+      "ownerAccount": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ownerAccount",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "vlan": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "vlan",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "AllocateHostedConnection": {
+      "bandwidth": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "bandwidth",
+            "resourceName": "Interconnect"
+          }
+        ]
+      },
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "connectionName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionName",
+            "resourceName": "Connection"
+          }
+        ]
+      },
+      "ownerAccount": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ownerAccount",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "vlan": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "vlan",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "AllocatePrivateVirtualInterface": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "ownerAccount": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ownerAccount",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "AllocatePublicVirtualInterface": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "ownerAccount": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ownerAccount",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "AssociateConnectionWithLag": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "lagId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "lagId",
+            "resourceName": "Lag"
+          }
+        ]
+      }
+    },
+    "AssociateHostedConnection": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "AssociateVirtualInterface": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "virtualInterfaceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualInterfaceId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "ConfirmConnection": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "ConfirmPrivateVirtualInterface": {
+      "directConnectGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "directConnectGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "virtualGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "virtualInterfaceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualInterfaceId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "ConfirmPublicVirtualInterface": {
+      "virtualInterfaceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualInterfaceId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DeleteBGPPeer": {
+      "asn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "asn",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "customerAddress": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "customerAddress",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "virtualInterfaceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualInterfaceId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DeleteConnection": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DeleteDirectConnectGateway": {
+      "directConnectGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "directConnectGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DeleteDirectConnectGatewayAssociation": {
+      "directConnectGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "directConnectGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "virtualGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DeleteInterconnect": {
+      "interconnectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "interconnectId",
+            "resourceName": "Interconnect"
+          }
+        ]
+      }
+    },
+    "DeleteLag": {
+      "lagId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "lagId",
+            "resourceName": "Lag"
+          }
+        ]
+      }
+    },
+    "DeleteVirtualInterface": {
+      "virtualInterfaceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualInterfaceId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DescribeConnectionLoa": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DescribeConnections": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DescribeConnectionsOnInterconnect": {
+      "interconnectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "interconnectId",
+            "resourceName": "Interconnect"
+          }
+        ]
+      }
+    },
+    "DescribeDirectConnectGatewayAssociations": {
+      "directConnectGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "directConnectGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "virtualGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DescribeDirectConnectGatewayAttachments": {
+      "directConnectGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "directConnectGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "virtualInterfaceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualInterfaceId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DescribeDirectConnectGateways": {
+      "directConnectGatewayId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "directConnectGatewayId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DescribeHostedConnections": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DescribeInterconnectLoa": {
+      "interconnectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "interconnectId",
+            "resourceName": "Interconnect"
+          }
+        ]
+      }
+    },
+    "DescribeInterconnects": {
+      "interconnectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "interconnectId",
+            "resourceName": "Interconnect"
+          }
+        ]
+      }
+    },
+    "DescribeLags": {
+      "lagId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "lagId",
+            "resourceName": "Lag"
+          }
+        ]
+      }
+    },
+    "DescribeLoa": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DescribeVirtualInterfaces": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "virtualInterfaceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "virtualInterfaceId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      }
+    },
+    "DisassociateConnectionFromLag": {
+      "connectionId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "connectionId",
+            "resourceName": "VirtualInterface"
+          }
+        ]
+      },
+      "lagId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "lagId",
+            "resourceName": "Lag"
+          }
+        ]
+      }
+    },
+    "UpdateLag": {
+      "lagId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "lagId",
+            "resourceName": "Lag"
+          }
+        ]
+      },
+      "lagName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "lagName",
+            "resourceName": "Lag"
+          }
+        ]
+      },
+      "minimumLinks": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "minimumLinks",
+            "resourceName": "Lag"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Connection": {
       "operation": "DescribeConnections",
@@ -10,8 +559,8 @@
     "Interconnect": {
       "operation": "DescribeInterconnects",
       "resourceIdentifier": {
-        "interconnectId": "interconnects[].interconnectId",
-        "bandwidth": "interconnects[].bandwidth"
+        "bandwidth": "interconnects[].bandwidth",
+        "interconnectId": "interconnects[].interconnectId"
       }
     },
     "Lag": {
@@ -25,565 +574,16 @@
     "VirtualInterface": {
       "operation": "DescribeVirtualInterfaces",
       "resourceIdentifier": {
-        "ownerAccount": "virtualInterfaces[].ownerAccount",
-        "virtualInterfaceId": "virtualInterfaces[].virtualInterfaceId",
-        "connectionId": "virtualInterfaces[].connectionId",
-        "vlan": "virtualInterfaces[].vlan",
         "asn": "virtualInterfaces[].asn",
+        "connectionId": "virtualInterfaces[].connectionId",
         "customerAddress": "virtualInterfaces[].customerAddress",
+        "directConnectGatewayId": "virtualInterfaces[].directConnectGatewayId",
+        "ownerAccount": "virtualInterfaces[].ownerAccount",
         "virtualGatewayId": "virtualInterfaces[].virtualGatewayId",
-        "directConnectGatewayId": "virtualInterfaces[].directConnectGatewayId"
+        "virtualInterfaceId": "virtualInterfaces[].virtualInterfaceId",
+        "vlan": "virtualInterfaces[].vlan"
       }
     }
   },
-  "operations": {
-    "AllocateConnectionOnInterconnect": {
-      "bandwidth": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Interconnect",
-            "resourceIdentifier": "bandwidth"
-          }
-        ]
-      },
-      "connectionName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Connection",
-            "resourceIdentifier": "connectionName"
-          }
-        ]
-      },
-      "ownerAccount": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "ownerAccount"
-          }
-        ]
-      },
-      "interconnectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Interconnect",
-            "resourceIdentifier": "interconnectId"
-          }
-        ]
-      },
-      "vlan": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "vlan"
-          }
-        ]
-      }
-    },
-    "AllocateHostedConnection": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      },
-      "ownerAccount": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "ownerAccount"
-          }
-        ]
-      },
-      "bandwidth": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Interconnect",
-            "resourceIdentifier": "bandwidth"
-          }
-        ]
-      },
-      "connectionName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Connection",
-            "resourceIdentifier": "connectionName"
-          }
-        ]
-      },
-      "vlan": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "vlan"
-          }
-        ]
-      }
-    },
-    "AllocatePrivateVirtualInterface": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      },
-      "ownerAccount": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "ownerAccount"
-          }
-        ]
-      }
-    },
-    "AllocatePublicVirtualInterface": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      },
-      "ownerAccount": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "ownerAccount"
-          }
-        ]
-      }
-    },
-    "AssociateConnectionWithLag": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      },
-      "lagId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lag",
-            "resourceIdentifier": "lagId"
-          }
-        ]
-      }
-    },
-    "AssociateHostedConnection": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      }
-    },
-    "AssociateVirtualInterface": {
-      "virtualInterfaceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualInterfaceId"
-          }
-        ]
-      },
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      }
-    },
-    "ConfirmConnection": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      }
-    },
-    "ConfirmPrivateVirtualInterface": {
-      "virtualInterfaceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualInterfaceId"
-          }
-        ]
-      },
-      "virtualGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualGatewayId"
-          }
-        ]
-      },
-      "directConnectGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "directConnectGatewayId"
-          }
-        ]
-      }
-    },
-    "ConfirmPublicVirtualInterface": {
-      "virtualInterfaceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualInterfaceId"
-          }
-        ]
-      }
-    },
-    "DeleteBGPPeer": {
-      "virtualInterfaceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualInterfaceId"
-          }
-        ]
-      },
-      "asn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "asn"
-          }
-        ]
-      },
-      "customerAddress": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "customerAddress"
-          }
-        ]
-      }
-    },
-    "DeleteConnection": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      }
-    },
-    "DeleteDirectConnectGateway": {
-      "directConnectGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "directConnectGatewayId"
-          }
-        ]
-      }
-    },
-    "DeleteDirectConnectGatewayAssociation": {
-      "directConnectGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "directConnectGatewayId"
-          }
-        ]
-      },
-      "virtualGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualGatewayId"
-          }
-        ]
-      }
-    },
-    "DeleteInterconnect": {
-      "interconnectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Interconnect",
-            "resourceIdentifier": "interconnectId"
-          }
-        ]
-      }
-    },
-    "DeleteLag": {
-      "lagId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lag",
-            "resourceIdentifier": "lagId"
-          }
-        ]
-      }
-    },
-    "DeleteVirtualInterface": {
-      "virtualInterfaceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualInterfaceId"
-          }
-        ]
-      }
-    },
-    "DescribeConnectionLoa": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      }
-    },
-    "DescribeConnections": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      }
-    },
-    "DescribeConnectionsOnInterconnect": {
-      "interconnectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Interconnect",
-            "resourceIdentifier": "interconnectId"
-          }
-        ]
-      }
-    },
-    "DescribeDirectConnectGatewayAssociations": {
-      "directConnectGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "directConnectGatewayId"
-          }
-        ]
-      },
-      "virtualGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualGatewayId"
-          }
-        ]
-      }
-    },
-    "DescribeDirectConnectGatewayAttachments": {
-      "directConnectGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "directConnectGatewayId"
-          }
-        ]
-      },
-      "virtualInterfaceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualInterfaceId"
-          }
-        ]
-      }
-    },
-    "DescribeDirectConnectGateways": {
-      "directConnectGatewayId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "directConnectGatewayId"
-          }
-        ]
-      }
-    },
-    "DescribeHostedConnections": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      }
-    },
-    "DescribeInterconnectLoa": {
-      "interconnectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Interconnect",
-            "resourceIdentifier": "interconnectId"
-          }
-        ]
-      }
-    },
-    "DescribeInterconnects": {
-      "interconnectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Interconnect",
-            "resourceIdentifier": "interconnectId"
-          }
-        ]
-      }
-    },
-    "DescribeLags": {
-      "lagId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lag",
-            "resourceIdentifier": "lagId"
-          }
-        ]
-      }
-    },
-    "DescribeLoa": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      }
-    },
-    "DescribeVirtualInterfaces": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      },
-      "virtualInterfaceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "virtualInterfaceId"
-          }
-        ]
-      }
-    },
-    "DisassociateConnectionFromLag": {
-      "connectionId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "VirtualInterface",
-            "resourceIdentifier": "connectionId"
-          }
-        ]
-      },
-      "lagId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lag",
-            "resourceIdentifier": "lagId"
-          }
-        ]
-      }
-    },
-    "UpdateLag": {
-      "lagId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lag",
-            "resourceIdentifier": "lagId"
-          }
-        ]
-      },
-      "lagName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lag",
-            "resourceIdentifier": "lagName"
-          }
-        ]
-      },
-      "minimumLinks": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Lag",
-            "resourceIdentifier": "minimumLinks"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

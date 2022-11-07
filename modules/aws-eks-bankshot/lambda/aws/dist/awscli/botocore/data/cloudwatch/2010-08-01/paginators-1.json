@@ -2,17 +2,32 @@
   "pagination": {
     "DescribeAlarmHistory": {
       "input_token": "NextToken",
-      "output_token": "NextToken",
       "limit_key": "MaxRecords",
+      "output_token": "NextToken",
       "result_key": "AlarmHistoryItems"
     },
     "DescribeAlarms": {
       "input_token": "NextToken",
-      "output_token": "NextToken",
       "limit_key": "MaxRecords",
+      "output_token": "NextToken",
       "result_key": [
         "MetricAlarms",
         "CompositeAlarms"
+      ]
+    },
+    "DescribeAnomalyDetectors": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "AnomalyDetectors"
+    },
+    "GetMetricData": {
+      "input_token": "NextToken",
+      "limit_key": "MaxDatapoints",
+      "output_token": "NextToken",
+      "result_key": [
+        "MetricDataResults",
+        "Messages"
       ]
     },
     "ListDashboards": {
@@ -24,21 +39,6 @@
       "input_token": "NextToken",
       "output_token": "NextToken",
       "result_key": "Metrics"
-    },
-    "GetMetricData": {
-      "input_token": "NextToken",
-      "limit_key": "MaxDatapoints",
-      "output_token": "NextToken",
-      "result_key": [
-        "MetricDataResults",
-        "Messages"
-      ]
-    },
-    "DescribeAnomalyDetectors": {
-      "input_token": "NextToken",
-      "limit_key": "MaxResults",
-      "output_token": "NextToken",
-      "result_key": "AnomalyDetectors"
     }
   }
 }

@@ -24,4 +24,3 @@ Output::
     }
 
 For more information, see `BatchPutMessage <https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-commands.html#api-iotevents-data-BatchPutMessage>`__ in the *AWS IoT Events Developer Guide**.
-

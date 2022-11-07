@@ -2,7 +2,7 @@
 
 The following ``sign`` example generates a cryptographic signature for a short message. The output of the command includes a base-64 encoded ``Signature`` field that you can verify by using the ``verify`` command.
 
-You must also specify a signing algorithm that your asymmetric KMS key supports. To get the signing algorithms for your KMS key, use the ``describe-key`` command. 
+You must also specify a signing algorithm that your asymmetric KMS key supports. To get the signing algorithms for your KMS key, use the ``describe-key`` command.
 
 Before running this command, replace the example key ID with a valid key ID from your AWS account. The key ID must represent an asymmetric KMS key with a key usage of SIGN_VERIFY. ::
 

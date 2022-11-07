@@ -1,23 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "EnvironmentMembership": {
-      "operation": "DescribeEnvironmentMemberships",
-      "resourceIdentifier": {
-        "permissions": "memberships[].permissions",
-        "userArn": "memberships[].userArn",
-        "environmentId": "memberships[].environmentId"
-      }
-    }
-  },
   "operations": {
     "DeleteEnvironment": {
       "environmentId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "environmentId"
+            "resourceIdentifier": "environmentId",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       }
@@ -27,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "environmentId"
+            "resourceIdentifier": "environmentId",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       },
@@ -36,28 +25,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "userArn"
+            "resourceIdentifier": "userArn",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       }
     },
     "DescribeEnvironmentMemberships": {
-      "userArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "userArn"
-          }
-        ]
-      },
       "environmentId": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "environmentId"
+            "resourceIdentifier": "environmentId",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       },
@@ -65,8 +45,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "permissions"
+            "resourceIdentifier": "permissions",
+            "resourceName": "EnvironmentMembership"
+          }
+        ]
+      },
+      "userArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userArn",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       }
@@ -76,8 +65,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "environmentId"
+            "resourceIdentifier": "environmentId",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       }
@@ -87,8 +76,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "environmentId"
+            "resourceIdentifier": "environmentId",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       }
@@ -98,8 +87,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "environmentId"
+            "resourceIdentifier": "environmentId",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       }
@@ -109,17 +98,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "environmentId"
-          }
-        ]
-      },
-      "userArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "userArn"
+            "resourceIdentifier": "environmentId",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       },
@@ -127,11 +107,31 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EnvironmentMembership",
-            "resourceIdentifier": "permissions"
+            "resourceIdentifier": "permissions",
+            "resourceName": "EnvironmentMembership"
+          }
+        ]
+      },
+      "userArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userArn",
+            "resourceName": "EnvironmentMembership"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "EnvironmentMembership": {
+      "operation": "DescribeEnvironmentMemberships",
+      "resourceIdentifier": {
+        "environmentId": "memberships[].environmentId",
+        "permissions": "memberships[].permissions",
+        "userArn": "memberships[].userArn"
+      }
+    }
+  },
+  "version": "1.0"
 }

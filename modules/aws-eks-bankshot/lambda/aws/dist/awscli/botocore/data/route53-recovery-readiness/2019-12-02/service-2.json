@@ -1,18 +1,41 @@
 {
+  "documentation": "<p>Recovery readiness</p>",
   "metadata": {
     "apiVersion": "2019-12-02",
     "endpointPrefix": "route53-recovery-readiness",
-    "signingName": "route53-recovery-readiness",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
     "serviceFullName": "AWS Route53 Recovery Readiness",
     "serviceId": "Route53 Recovery Readiness",
-    "protocol": "rest-json",
-    "jsonVersion": "1.1",
-    "uid": "route53-recovery-readiness-2019-12-02",
-    "signatureVersion": "v4"
+    "signatureVersion": "v4",
+    "signingName": "route53-recovery-readiness",
+    "uid": "route53-recovery-readiness-2019-12-02"
   },
   "operations": {
     "CreateCell": {
-      "name": "CreateCell",
+      "documentation": "<p>Creates a cell in an account.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>",
+          "shape": "ConflictException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "POST",
         "requestUri": "/cells",
@@ -21,36 +44,36 @@
       "input": {
         "shape": "CreateCellRequest"
       },
+      "name": "CreateCell",
       "output": {
-        "shape": "CreateCellResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "ConflictException",
-          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Creates a cell in an account.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "CreateCellResponse"
+      }
     },
     "CreateCrossAccountAuthorization": {
-      "name": "CreateCrossAccountAuthorization",
+      "documentation": "<p>Creates a cross-account readiness authorization. This lets you authorize another account to work with Route 53 Application Recovery Controller, for example, to check the readiness status of resources in a separate account.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>",
+          "shape": "ConflictException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "POST",
         "requestUri": "/crossaccountauthorizations",
@@ -59,36 +82,36 @@
       "input": {
         "shape": "CreateCrossAccountAuthorizationRequest"
       },
+      "name": "CreateCrossAccountAuthorization",
       "output": {
-        "shape": "CreateCrossAccountAuthorizationResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "ConflictException",
-          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Creates a cross-account readiness authorization. This lets you authorize another account to work with Route 53 Application Recovery Controller, for example, to check the readiness status of resources in a separate account.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "CreateCrossAccountAuthorizationResponse"
+      }
     },
     "CreateReadinessCheck": {
-      "name": "CreateReadinessCheck",
+      "documentation": "<p>Creates a readiness check in an account. A readiness check monitors a resource set in your application, such as a set of Amazon Aurora instances, that Application Recovery Controller is auditing recovery readiness for. The audits run once every minute on every resource that's associated with a readiness check.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>",
+          "shape": "ConflictException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "POST",
         "requestUri": "/readinesschecks",
@@ -97,36 +120,36 @@
       "input": {
         "shape": "CreateReadinessCheckRequest"
       },
+      "name": "CreateReadinessCheck",
       "output": {
-        "shape": "CreateReadinessCheckResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "ConflictException",
-          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Creates a readiness check in an account. A readiness check monitors a resource set in your application, such as a set of Amazon Aurora instances, that Application Recovery Controller is auditing recovery readiness for. The audits run once every minute on every resource that's associated with a readiness check.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "CreateReadinessCheckResponse"
+      }
     },
     "CreateRecoveryGroup": {
-      "name": "CreateRecoveryGroup",
+      "documentation": "<p>Creates a recovery group in an account. A recovery group corresponds to an application and includes a list of the cells that make up the application.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>",
+          "shape": "ConflictException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "POST",
         "requestUri": "/recoverygroups",
@@ -135,36 +158,36 @@
       "input": {
         "shape": "CreateRecoveryGroupRequest"
       },
+      "name": "CreateRecoveryGroup",
       "output": {
-        "shape": "CreateRecoveryGroupResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "ConflictException",
-          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Creates a recovery group in an account. A recovery group corresponds to an application and includes a list of the cells that make up the application.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "CreateRecoveryGroupResponse"
+      }
     },
     "CreateResourceSet": {
-      "name": "CreateResourceSet",
+      "documentation": "<p>Creates a resource set. A resource set is a set of resources of one type that span multiple cells. You can associate a resource set with a readiness check to monitor the resources for failover readiness.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>",
+          "shape": "ConflictException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "POST",
         "requestUri": "/resourcesets",
@@ -173,36 +196,36 @@
       "input": {
         "shape": "CreateResourceSetRequest"
       },
+      "name": "CreateResourceSet",
       "output": {
-        "shape": "CreateResourceSetResponse",
-        "documentation": "<p>200 response</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "ConflictException",
-          "documentation": "<p>409 response - Conflict exception. You might be using a predefined variable.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Creates a resource set. A resource set is a set of resources of one type that span multiple cells. You can associate a resource set with a readiness check to monitor the resources for failover readiness.</p>"
+        "documentation": "<p>200 response</p>",
+        "shape": "CreateResourceSetResponse"
+      }
     },
     "DeleteCell": {
-      "name": "DeleteCell",
+      "documentation": "<p>Delete a cell. When successful, the response code is 204, with no response body.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "DELETE",
         "requestUri": "/cells/{cellName}",
@@ -211,32 +234,28 @@
       "input": {
         "shape": "DeleteCellRequest"
       },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Delete a cell. When successful, the response code is 204, with no response body.</p>"
+      "name": "DeleteCell"
     },
     "DeleteCrossAccountAuthorization": {
-      "name": "DeleteCrossAccountAuthorization",
+      "documentation": "<p>Deletes cross account readiness authorization.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "DELETE",
         "requestUri": "/crossaccountauthorizations/{crossAccountAuthorization}",
@@ -245,32 +264,36 @@
       "input": {
         "shape": "DeleteCrossAccountAuthorizationRequest"
       },
+      "name": "DeleteCrossAccountAuthorization",
       "output": {
-        "shape": "DeleteCrossAccountAuthorizationResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Deletes cross account readiness authorization.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "DeleteCrossAccountAuthorizationResponse"
+      }
     },
     "DeleteReadinessCheck": {
-      "name": "DeleteReadinessCheck",
+      "documentation": "<p>Deletes a readiness check.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "DELETE",
         "requestUri": "/readinesschecks/{readinessCheckName}",
@@ -279,32 +302,32 @@
       "input": {
         "shape": "DeleteReadinessCheckRequest"
       },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Deletes a readiness check.</p>"
+      "name": "DeleteReadinessCheck"
     },
     "DeleteRecoveryGroup": {
-      "name": "DeleteRecoveryGroup",
+      "documentation": "<p>Deletes a recovery group.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "DELETE",
         "requestUri": "/recoverygroups/{recoveryGroupName}",
@@ -313,32 +336,32 @@
       "input": {
         "shape": "DeleteRecoveryGroupRequest"
       },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Deletes a recovery group.</p>"
+      "name": "DeleteRecoveryGroup"
     },
     "DeleteResourceSet": {
-      "name": "DeleteResourceSet",
+      "documentation": "<p>Deletes a resource set.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "DELETE",
         "requestUri": "/resourcesets/{resourceSetName}",
@@ -347,32 +370,32 @@
       "input": {
         "shape": "DeleteResourceSetRequest"
       },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Deletes a resource set.</p>"
+      "name": "DeleteResourceSet"
     },
     "GetArchitectureRecommendations": {
-      "name": "GetArchitectureRecommendations",
+      "documentation": "<p>Gets recommendations about architecture designs for improving resiliency for an application, based on a recovery group.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/recoverygroups/{recoveryGroupName}/architectureRecommendations",
@@ -381,36 +404,36 @@
       "input": {
         "shape": "GetArchitectureRecommendationsRequest"
       },
+      "name": "GetArchitectureRecommendations",
       "output": {
-        "shape": "GetArchitectureRecommendationsResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Gets recommendations about architecture designs for improving resiliency for an application, based on a recovery group.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetArchitectureRecommendationsResponse"
+      }
     },
     "GetCell": {
-      "name": "GetCell",
+      "documentation": "<p>Gets information about a cell including cell name, cell Amazon Resource Name (ARN), ARNs of nested cells for this cell, and a list of those cell ARNs with their associated recovery group ARNs.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/cells/{cellName}",
@@ -419,36 +442,36 @@
       "input": {
         "shape": "GetCellRequest"
       },
+      "name": "GetCell",
       "output": {
-        "shape": "GetCellResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Gets information about a cell including cell name, cell Amazon Resource Name (ARN), ARNs of nested cells for this cell, and a list of those cell ARNs with their associated recovery group ARNs.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetCellResponse"
+      }
     },
     "GetCellReadinessSummary": {
-      "name": "GetCellReadinessSummary",
+      "documentation": "<p>Gets readiness for a cell. Aggregates the readiness of all the resources that are associated with the cell into a single value.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/cellreadiness/{cellName}",
@@ -457,36 +480,36 @@
       "input": {
         "shape": "GetCellReadinessSummaryRequest"
       },
+      "name": "GetCellReadinessSummary",
       "output": {
-        "shape": "GetCellReadinessSummaryResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Gets readiness for a cell. Aggregates the readiness of all the resources that are associated with the cell into a single value.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetCellReadinessSummaryResponse"
+      }
     },
     "GetReadinessCheck": {
-      "name": "GetReadinessCheck",
+      "documentation": "<p>Gets details about a readiness check.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/readinesschecks/{readinessCheckName}",
@@ -495,36 +518,36 @@
       "input": {
         "shape": "GetReadinessCheckRequest"
       },
+      "name": "GetReadinessCheck",
       "output": {
-        "shape": "GetReadinessCheckResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Gets details about a readiness check.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetReadinessCheckResponse"
+      }
     },
     "GetReadinessCheckResourceStatus": {
-      "name": "GetReadinessCheckResourceStatus",
+      "documentation": "<p>Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/readinesschecks/{readinessCheckName}/resource/{resourceIdentifier}/status",
@@ -533,36 +556,36 @@
       "input": {
         "shape": "GetReadinessCheckResourceStatusRequest"
       },
+      "name": "GetReadinessCheckResourceStatus",
       "output": {
-        "shape": "GetReadinessCheckResourceStatusResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetReadinessCheckResourceStatusResponse"
+      }
     },
     "GetReadinessCheckStatus": {
-      "name": "GetReadinessCheckStatus",
+      "documentation": "<p>Gets the readiness status for an individual readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in a recovery group, use GetRecoveryGroupReadinessSummary.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/readinesschecks/{readinessCheckName}/status",
@@ -571,36 +594,36 @@
       "input": {
         "shape": "GetReadinessCheckStatusRequest"
       },
+      "name": "GetReadinessCheckStatus",
       "output": {
-        "shape": "GetReadinessCheckStatusResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Gets the readiness status for an individual readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in a recovery group, use GetRecoveryGroupReadinessSummary.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetReadinessCheckStatusResponse"
+      }
     },
     "GetRecoveryGroup": {
-      "name": "GetRecoveryGroup",
+      "documentation": "<p>Gets details about a recovery group, including a list of the cells that are included in it.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/recoverygroups/{recoveryGroupName}",
@@ -609,36 +632,36 @@
       "input": {
         "shape": "GetRecoveryGroupRequest"
       },
+      "name": "GetRecoveryGroup",
       "output": {
-        "shape": "GetRecoveryGroupResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Gets details about a recovery group, including a list of the cells that are included in it.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetRecoveryGroupResponse"
+      }
     },
     "GetRecoveryGroupReadinessSummary": {
-      "name": "GetRecoveryGroupReadinessSummary",
+      "documentation": "<p>Displays a summary of information about a recovery group's readiness status. Includes the readiness checks for resources in the recovery group and the readiness status of each one.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/recoverygroupreadiness/{recoveryGroupName}",
@@ -647,36 +670,36 @@
       "input": {
         "shape": "GetRecoveryGroupReadinessSummaryRequest"
       },
+      "name": "GetRecoveryGroupReadinessSummary",
       "output": {
-        "shape": "GetRecoveryGroupReadinessSummaryResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Displays a summary of information about a recovery group's readiness status. Includes the readiness checks for resources in the recovery group and the readiness status of each one.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetRecoveryGroupReadinessSummaryResponse"
+      }
     },
     "GetResourceSet": {
-      "name": "GetResourceSet",
+      "documentation": "<p>Displays the details about a resource set, including a list of the resources in the set.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/resourcesets/{resourceSetName}",
@@ -685,36 +708,32 @@
       "input": {
         "shape": "GetResourceSetRequest"
       },
+      "name": "GetResourceSet",
       "output": {
-        "shape": "GetResourceSetResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Displays the details about a resource set, including a list of the resources in the set.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "GetResourceSetResponse"
+      }
     },
     "ListCells": {
-      "name": "ListCells",
+      "documentation": "<p>Lists the cells for an account.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/cells",
@@ -723,32 +742,32 @@
       "input": {
         "shape": "ListCellsRequest"
       },
+      "name": "ListCells",
       "output": {
-        "shape": "ListCellsResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Lists the cells for an account.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "ListCellsResponse"
+      }
     },
     "ListCrossAccountAuthorizations": {
-      "name": "ListCrossAccountAuthorizations",
+      "documentation": "<p>Lists the cross-account readiness authorizations that are in place for an account.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/crossaccountauthorizations",
@@ -757,32 +776,32 @@
       "input": {
         "shape": "ListCrossAccountAuthorizationsRequest"
       },
+      "name": "ListCrossAccountAuthorizations",
       "output": {
-        "shape": "ListCrossAccountAuthorizationsResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Lists the cross-account readiness authorizations that are in place for an account.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "ListCrossAccountAuthorizationsResponse"
+      }
     },
     "ListReadinessChecks": {
-      "name": "ListReadinessChecks",
+      "documentation": "<p>Lists the readiness checks for an account.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/readinesschecks",
@@ -791,32 +810,32 @@
       "input": {
         "shape": "ListReadinessChecksRequest"
       },
+      "name": "ListReadinessChecks",
       "output": {
-        "shape": "ListReadinessChecksResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Lists the readiness checks for an account.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "ListReadinessChecksResponse"
+      }
     },
     "ListRecoveryGroups": {
-      "name": "ListRecoveryGroups",
+      "documentation": "<p>Lists the recovery groups in an account.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/recoverygroups",
@@ -825,32 +844,32 @@
       "input": {
         "shape": "ListRecoveryGroupsRequest"
       },
+      "name": "ListRecoveryGroups",
       "output": {
-        "shape": "ListRecoveryGroupsResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Lists the recovery groups in an account.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "ListRecoveryGroupsResponse"
+      }
     },
     "ListResourceSets": {
-      "name": "ListResourceSets",
+      "documentation": "<p>Lists the resource sets in an account.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/resourcesets",
@@ -859,32 +878,32 @@
       "input": {
         "shape": "ListResourceSetsRequest"
       },
+      "name": "ListResourceSets",
       "output": {
-        "shape": "ListResourceSetsResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Lists the resource sets in an account.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "ListResourceSetsResponse"
+      }
     },
     "ListRules": {
-      "name": "ListRules",
+      "documentation": "<p>Lists all readiness rules, or lists the readiness rules for a specific resource type.</p>",
+      "errors": [
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/rules",
@@ -893,32 +912,28 @@
       "input": {
         "shape": "ListRulesRequest"
       },
+      "name": "ListRules",
       "output": {
-        "shape": "ListRulesResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Lists all readiness rules, or lists the readiness rules for a specific resource type.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "ListRulesResponse"
+      }
     },
     "ListTagsForResources": {
-      "name": "ListTagsForResources",
+      "documentation": "<p>Lists the tags for a resource.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        }
+      ],
       "http": {
         "method": "GET",
         "requestUri": "/tags/{resource-arn}",
@@ -927,28 +942,28 @@
       "input": {
         "shape": "ListTagsForResourcesRequest"
       },
+      "name": "ListTagsForResources",
       "output": {
-        "shape": "ListTagsForResourcesResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        }
-      ],
-      "documentation": "<p>Lists the tags for a resource.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "ListTagsForResourcesResponse"
+      }
     },
     "TagResource": {
-      "name": "TagResource",
+      "documentation": "<p>Adds a tag to a resource.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        }
+      ],
       "http": {
         "method": "POST",
         "requestUri": "/tags/{resource-arn}",
@@ -957,28 +972,28 @@
       "input": {
         "shape": "TagResourceRequest"
       },
+      "name": "TagResource",
       "output": {
-        "shape": "TagResourceResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        }
-      ],
-      "documentation": "<p>Adds a tag to a resource.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "TagResourceResponse"
+      }
     },
     "UntagResource": {
-      "name": "UntagResource",
+      "documentation": "<p>Removes a tag from a resource.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        }
+      ],
       "http": {
         "method": "DELETE",
         "requestUri": "/tags/{resource-arn}",
@@ -987,24 +1002,32 @@
       "input": {
         "shape": "UntagResourceRequest"
       },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        }
-      ],
-      "documentation": "<p>Removes a tag from a resource.</p>"
+      "name": "UntagResource"
     },
     "UpdateCell": {
-      "name": "UpdateCell",
+      "documentation": "<p>Updates a cell to replace the list of nested cells with a new list of nested cells.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "PUT",
         "requestUri": "/cells/{cellName}",
@@ -1013,36 +1036,36 @@
       "input": {
         "shape": "UpdateCellRequest"
       },
+      "name": "UpdateCell",
       "output": {
-        "shape": "UpdateCellResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Updates a cell to replace the list of nested cells with a new list of nested cells.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "UpdateCellResponse"
+      }
     },
     "UpdateReadinessCheck": {
-      "name": "UpdateReadinessCheck",
+      "documentation": "<p>Updates a readiness check.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "PUT",
         "requestUri": "/readinesschecks/{readinessCheckName}",
@@ -1051,36 +1074,36 @@
       "input": {
         "shape": "UpdateReadinessCheckRequest"
       },
+      "name": "UpdateReadinessCheck",
       "output": {
-        "shape": "UpdateReadinessCheckResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Updates a readiness check.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "UpdateReadinessCheckResponse"
+      }
     },
     "UpdateRecoveryGroup": {
-      "name": "UpdateRecoveryGroup",
+      "documentation": "<p>Updates a recovery group.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "PUT",
         "requestUri": "/recoverygroups/{recoveryGroupName}",
@@ -1089,36 +1112,36 @@
       "input": {
         "shape": "UpdateRecoveryGroupRequest"
       },
+      "name": "UpdateRecoveryGroup",
       "output": {
-        "shape": "UpdateRecoveryGroupResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Updates a recovery group.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "UpdateRecoveryGroupResponse"
+      }
     },
     "UpdateResourceSet": {
-      "name": "UpdateResourceSet",
+      "documentation": "<p>Updates a resource set.</p>",
+      "errors": [
+        {
+          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>",
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>",
+          "shape": "ThrottlingException"
+        },
+        {
+          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>",
+          "shape": "ValidationException"
+        },
+        {
+          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>",
+          "shape": "InternalServerException"
+        },
+        {
+          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>",
+          "shape": "AccessDeniedException"
+        }
+      ],
       "http": {
         "method": "PUT",
         "requestUri": "/resourcesets/{resourceSetName}",
@@ -1127,1791 +1150,1768 @@
       "input": {
         "shape": "UpdateResourceSetRequest"
       },
+      "name": "UpdateResourceSet",
       "output": {
-        "shape": "UpdateResourceSetResponse",
-        "documentation": "<p>200 response - Success.</p>"
-      },
-      "errors": [
-        {
-          "shape": "ResourceNotFoundException",
-          "documentation": "<p>404 response - Malformed query string. The query string contains a syntax error or resource not found.</p>"
-        },
-        {
-          "shape": "ThrottlingException",
-          "documentation": "<p>429 response - Limit exceeded exception or too many requests exception.</p>"
-        },
-        {
-          "shape": "ValidationException",
-          "documentation": "<p>400 response - Multiple causes. For example, you might have a malformed query string, an input parameter might be out of range, or you used parameters together incorrectly.</p>"
-        },
-        {
-          "shape": "InternalServerException",
-          "documentation": "<p>500 response - Internal service error or temporary service error. Retry the request.</p>"
-        },
-        {
-          "shape": "AccessDeniedException",
-          "documentation": "<p>403 response - Access denied exception. You do not have sufficient access to perform this action.</p>"
-        }
-      ],
-      "documentation": "<p>Updates a resource set.</p>"
+        "documentation": "<p>200 response - Success.</p>",
+        "shape": "UpdateResourceSetResponse"
+      }
     }
   },
   "shapes": {
     "AccessDeniedException": {
-      "type": "structure",
-      "exception": true,
+      "documentation": "User does not have sufficient access to perform this action.",
       "error": {
         "httpStatusCode": 403
       },
-      "documentation": "User does not have sufficient access to perform this action.",
+      "exception": true,
       "members": {
         "Message": {
-          "shape": "__string",
-          "locationName": "message"
-        }
-      }
-    },
-    "CellOutput": {
-      "type": "structure",
-      "members": {
-        "CellArn": {
-          "shape": "__stringMax256",
-          "locationName": "cellArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the cell.</p>"
-        },
-        "CellName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
-          "locationName": "cellName",
-          "documentation": "<p>The name of the cell.</p>"
-        },
-        "Cells": {
-          "shape": "__listOf__string",
-          "locationName": "cells",
-          "documentation": "<p>A list of cell ARNs.</p>"
-        },
-        "ParentReadinessScopes": {
-          "shape": "__listOf__string",
-          "locationName": "parentReadinessScopes",
-          "documentation": "<p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>"
-        },
-        "Tags": {
-          "shape": "Tags",
-          "locationName": "tags",
-          "documentation": "<p>Tags on the resources.</p>"
+          "locationName": "message",
+          "shape": "__string"
         }
       },
+      "type": "structure"
+    },
+    "CellOutput": {
       "documentation": "<p>Information about a cell.</p>",
+      "members": {
+        "CellArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) for the cell.</p>",
+          "locationName": "cellArn",
+          "shape": "__stringMax256"
+        },
+        "CellName": {
+          "documentation": "<p>The name of the cell.</p>",
+          "locationName": "cellName",
+          "shape": "__stringMax64PatternAAZAZ09Z"
+        },
+        "Cells": {
+          "documentation": "<p>A list of cell ARNs.</p>",
+          "locationName": "cells",
+          "shape": "__listOf__string"
+        },
+        "ParentReadinessScopes": {
+          "documentation": "<p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>",
+          "locationName": "parentReadinessScopes",
+          "shape": "__listOf__string"
+        },
+        "Tags": {
+          "documentation": "<p>Tags on the resources.</p>",
+          "locationName": "tags",
+          "shape": "Tags"
+        }
+      },
       "required": [
         "ParentReadinessScopes",
         "CellArn",
         "CellName",
         "Cells"
-      ]
+      ],
+      "type": "structure"
     },
     "ConflictException": {
-      "type": "structure",
-      "exception": true,
+      "documentation": "Updating or deleting a resource can cause an inconsistent state.",
       "error": {
         "httpStatusCode": 409
       },
-      "documentation": "Updating or deleting a resource can cause an inconsistent state.",
+      "exception": true,
       "members": {
         "Message": {
-          "shape": "__string",
-          "locationName": "message"
+          "locationName": "message",
+          "shape": "__string"
         }
-      }
+      },
+      "type": "structure"
     },
     "CreateCellRequest": {
-      "type": "structure",
       "members": {
         "CellName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the cell to create.</p>",
           "locationName": "cellName",
-          "documentation": "<p>The name of the cell to create.</p>"
+          "shape": "__string"
         },
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>"
+          "shape": "__listOf__string"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
         "CellName"
-      ]
+      ],
+      "type": "structure"
     },
     "CreateCellResponse": {
-      "type": "structure",
       "members": {
         "CellArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the cell.</p>",
           "locationName": "cellArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the cell.</p>"
+          "shape": "__stringMax256"
         },
         "CellName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the cell.</p>",
           "locationName": "cellName",
-          "documentation": "<p>The name of the cell.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of cell ARNs.</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of cell ARNs.</p>"
+          "shape": "__listOf__string"
         },
         "ParentReadinessScopes": {
-          "shape": "__listOf__string",
+          "documentation": "<p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>",
           "locationName": "parentReadinessScopes",
-          "documentation": "<p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>"
+          "shape": "__listOf__string"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p>Tags on the resources.</p>",
           "locationName": "tags",
-          "documentation": "<p>Tags on the resources.</p>"
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "CreateCrossAccountAuthorizationRequest": {
-      "type": "structure",
       "members": {
         "CrossAccountAuthorization": {
-          "shape": "CrossAccountAuthorization",
+          "documentation": "<p>The cross-account authorization.</p>",
           "locationName": "crossAccountAuthorization",
-          "documentation": "<p>The cross-account authorization.</p>"
+          "shape": "CrossAccountAuthorization"
         }
       },
       "required": [
         "CrossAccountAuthorization"
-      ]
+      ],
+      "type": "structure"
     },
     "CreateCrossAccountAuthorizationResponse": {
-      "type": "structure",
       "members": {
         "CrossAccountAuthorization": {
-          "shape": "CrossAccountAuthorization",
+          "documentation": "<p>The cross-account authorization.</p>",
           "locationName": "crossAccountAuthorization",
-          "documentation": "<p>The cross-account authorization.</p>"
+          "shape": "CrossAccountAuthorization"
         }
-      }
+      },
+      "type": "structure"
     },
     "CreateReadinessCheckRequest": {
-      "type": "structure",
       "members": {
         "ReadinessCheckName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the readiness check to create.</p>",
           "locationName": "readinessCheckName",
-          "documentation": "<p>The name of the readiness check to create.</p>"
+          "shape": "__string"
         },
         "ResourceSetName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the resource set to check.</p>",
           "locationName": "resourceSetName",
-          "documentation": "<p>The name of the resource set to check.</p>"
+          "shape": "__string"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
         "ResourceSetName",
         "ReadinessCheckName"
-      ]
+      ],
+      "type": "structure"
     },
     "CreateReadinessCheckResponse": {
-      "type": "structure",
       "members": {
         "ReadinessCheckArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) associated with a readiness check.</p>",
           "locationName": "readinessCheckArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) associated with a readiness check.</p>"
+          "shape": "__stringMax256"
         },
         "ReadinessCheckName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>Name of a readiness check.</p>",
           "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "ResourceSet": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>Name of the resource set to be checked.</p>",
           "locationName": "resourceSet",
-          "documentation": "<p>Name of the resource set to be checked.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "CreateRecoveryGroupRequest": {
-      "type": "structure",
       "members": {
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>"
+          "shape": "__listOf__string"
         },
         "RecoveryGroupName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the recovery group to create.</p>",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of the recovery group to create.</p>"
+          "shape": "__string"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
         "RecoveryGroupName"
-      ]
+      ],
+      "type": "structure"
     },
     "CreateRecoveryGroupResponse": {
-      "type": "structure",
       "members": {
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of a cell's Amazon Resource Names (ARNs).</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of a cell's Amazon Resource Names (ARNs).</p>"
+          "shape": "__listOf__string"
         },
         "RecoveryGroupArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the recovery group.</p>",
           "locationName": "recoveryGroupArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the recovery group.</p>"
+          "shape": "__stringMax256"
         },
         "RecoveryGroupName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the recovery group.</p>",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of the recovery group.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p>The tags associated with the recovery group.</p>",
           "locationName": "tags",
-          "documentation": "<p>The tags associated with the recovery group.</p>"
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "CreateResourceSetRequest": {
-      "type": "structure",
       "members": {
         "ResourceSetName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the resource set to create.</p>",
           "locationName": "resourceSetName",
-          "documentation": "<p>The name of the resource set to create.</p>"
+          "shape": "__string"
         },
         "ResourceSetType": {
-          "shape": "__stringPatternAWSAZaZ09AZaZ09",
+          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>",
           "locationName": "resourceSetType",
-          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>"
+          "shape": "__stringPatternAWSAZaZ09AZaZ09"
         },
         "Resources": {
-          "shape": "__listOfResource",
+          "documentation": "<p>A list of resource objects in the resource set.</p>",
           "locationName": "resources",
-          "documentation": "<p>A list of resource objects in the resource set.</p>"
+          "shape": "__listOfResource"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p>A tag to associate with the parameters for a resource set.</p>",
           "locationName": "tags",
-          "documentation": "<p>A tag to associate with the parameters for a resource set.</p>"
+          "shape": "Tags"
         }
       },
       "required": [
         "ResourceSetType",
         "ResourceSetName",
         "Resources"
-      ]
+      ],
+      "type": "structure"
     },
     "CreateResourceSetResponse": {
-      "type": "structure",
       "members": {
         "ResourceSetArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the resource set.</p>",
           "locationName": "resourceSetArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the resource set.</p>"
+          "shape": "__stringMax256"
         },
         "ResourceSetName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the resource set.</p>",
           "locationName": "resourceSetName",
-          "documentation": "<p>The name of the resource set.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "ResourceSetType": {
-          "shape": "__stringPatternAWSAZaZ09AZaZ09",
+          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>",
           "locationName": "resourceSetType",
-          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>"
+          "shape": "__stringPatternAWSAZaZ09AZaZ09"
         },
         "Resources": {
-          "shape": "__listOfResource",
+          "documentation": "<p>A list of resource objects.</p>",
           "locationName": "resources",
-          "documentation": "<p>A list of resource objects.</p>"
+          "shape": "__listOfResource"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
-        }
-      }
-    },
-    "CrossAccountAuthorization": {
-      "type": "string",
-      "documentation": "<p>CrossAccountAuthorization</p>"
-    },
-    "DNSTargetResource": {
-      "type": "structure",
-      "members": {
-        "DomainName": {
-          "shape": "__string",
-          "locationName": "domainName",
-          "documentation": "<p>The domain name that acts as an ingress point to a portion of the customer application.</p>"
-        },
-        "HostedZoneArn": {
-          "shape": "__string",
-          "locationName": "hostedZoneArn",
-          "documentation": "<p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>"
-        },
-        "RecordSetId": {
-          "shape": "__string",
-          "locationName": "recordSetId",
-          "documentation": "<p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>"
-        },
-        "RecordType": {
-          "shape": "__string",
-          "locationName": "recordType",
-          "documentation": "<p>The type of DNS record of the target resource.</p>"
-        },
-        "TargetResource": {
-          "shape": "TargetResource",
-          "locationName": "targetResource",
-          "documentation": "<p>The target resource of the DNS target resource.</p>"
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
-      "documentation": "<p>A component for DNS/routing control readiness checks and architecture checks.</p>"
+      "type": "structure"
+    },
+    "CrossAccountAuthorization": {
+      "documentation": "<p>CrossAccountAuthorization</p>",
+      "type": "string"
+    },
+    "DNSTargetResource": {
+      "documentation": "<p>A component for DNS/routing control readiness checks and architecture checks.</p>",
+      "members": {
+        "DomainName": {
+          "documentation": "<p>The domain name that acts as an ingress point to a portion of the customer application.</p>",
+          "locationName": "domainName",
+          "shape": "__string"
+        },
+        "HostedZoneArn": {
+          "documentation": "<p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>",
+          "locationName": "hostedZoneArn",
+          "shape": "__string"
+        },
+        "RecordSetId": {
+          "documentation": "<p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>",
+          "locationName": "recordSetId",
+          "shape": "__string"
+        },
+        "RecordType": {
+          "documentation": "<p>The type of DNS record of the target resource.</p>",
+          "locationName": "recordType",
+          "shape": "__string"
+        },
+        "TargetResource": {
+          "documentation": "<p>The target resource of the DNS target resource.</p>",
+          "locationName": "targetResource",
+          "shape": "TargetResource"
+        }
+      },
+      "type": "structure"
     },
     "DeleteCellRequest": {
-      "type": "structure",
       "members": {
         "CellName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the cell.</p>",
           "location": "uri",
           "locationName": "cellName",
-          "documentation": "<p>The name of the cell.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "CellName"
-      ]
+      ],
+      "type": "structure"
     },
     "DeleteCrossAccountAuthorizationRequest": {
-      "type": "structure",
       "members": {
         "CrossAccountAuthorization": {
-          "shape": "__string",
+          "documentation": "<p>The cross-account authorization.</p>",
           "location": "uri",
           "locationName": "crossAccountAuthorization",
-          "documentation": "<p>The cross-account authorization.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "CrossAccountAuthorization"
-      ]
+      ],
+      "type": "structure"
     },
     "DeleteCrossAccountAuthorizationResponse": {
-      "type": "structure",
-      "members": {}
+      "members": {},
+      "type": "structure"
     },
     "DeleteReadinessCheckRequest": {
-      "type": "structure",
       "members": {
         "ReadinessCheckName": {
-          "shape": "__string",
+          "documentation": "<p>Name of a readiness check.</p>",
           "location": "uri",
           "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "ReadinessCheckName"
-      ]
+      ],
+      "type": "structure"
     },
     "DeleteRecoveryGroupRequest": {
-      "type": "structure",
       "members": {
         "RecoveryGroupName": {
-          "shape": "__string",
+          "documentation": "<p>The name of a recovery group.</p>",
           "location": "uri",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of a recovery group.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "RecoveryGroupName"
-      ]
+      ],
+      "type": "structure"
     },
     "DeleteResourceSetRequest": {
-      "type": "structure",
       "members": {
         "ResourceSetName": {
-          "shape": "__string",
+          "documentation": "<p>Name of a resource set.</p>",
           "location": "uri",
           "locationName": "resourceSetName",
-          "documentation": "<p>Name of a resource set.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "ResourceSetName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetArchitectureRecommendationsRequest": {
-      "type": "structure",
       "members": {
         "MaxResults": {
-          "shape": "MaxResults",
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
           "location": "querystring",
           "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
+          "shape": "MaxResults"
         },
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "location": "querystring",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "RecoveryGroupName": {
-          "shape": "__string",
+          "documentation": "<p>The name of a recovery group.</p>",
           "location": "uri",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of a recovery group.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "RecoveryGroupName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetArchitectureRecommendationsResponse": {
-      "type": "structure",
       "members": {
         "LastAuditTimestamp": {
-          "shape": "LastAuditTimestamp",
+          "documentation": "<p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>",
           "locationName": "lastAuditTimestamp",
-          "documentation": "<p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>"
+          "shape": "LastAuditTimestamp"
         },
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "Recommendations": {
-          "shape": "__listOfRecommendation",
+          "documentation": "<p>A list of the recommendations for the customer's application.</p>",
           "locationName": "recommendations",
-          "documentation": "<p>A list of the recommendations for the customer's application.</p>"
+          "shape": "__listOfRecommendation"
         }
-      }
+      },
+      "type": "structure"
     },
     "GetCellReadinessSummaryRequest": {
-      "type": "structure",
       "members": {
         "CellName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the cell.</p>",
           "location": "uri",
           "locationName": "cellName",
-          "documentation": "<p>The name of the cell.</p>"
+          "shape": "__string"
         },
         "MaxResults": {
-          "shape": "MaxResults",
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
           "location": "querystring",
           "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
+          "shape": "MaxResults"
         },
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "location": "querystring",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "CellName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetCellReadinessSummaryResponse": {
-      "type": "structure",
       "members": {
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "Readiness": {
-          "shape": "Readiness",
+          "documentation": "<p>The readiness at a cell level.</p>",
           "locationName": "readiness",
-          "documentation": "<p>The readiness at a cell level.</p>"
+          "shape": "Readiness"
         },
         "ReadinessChecks": {
-          "shape": "__listOfReadinessCheckSummary",
+          "documentation": "<p>Summaries for the readiness checks that make up the cell.</p>",
           "locationName": "readinessChecks",
-          "documentation": "<p>Summaries for the readiness checks that make up the cell.</p>"
+          "shape": "__listOfReadinessCheckSummary"
         }
-      }
+      },
+      "type": "structure"
     },
     "GetCellRequest": {
-      "type": "structure",
       "members": {
         "CellName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the cell.</p>",
           "location": "uri",
           "locationName": "cellName",
-          "documentation": "<p>The name of the cell.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "CellName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetCellResponse": {
-      "type": "structure",
       "members": {
         "CellArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the cell.</p>",
           "locationName": "cellArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the cell.</p>"
+          "shape": "__stringMax256"
         },
         "CellName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the cell.</p>",
           "locationName": "cellName",
-          "documentation": "<p>The name of the cell.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of cell ARNs.</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of cell ARNs.</p>"
+          "shape": "__listOf__string"
         },
         "ParentReadinessScopes": {
-          "shape": "__listOf__string",
+          "documentation": "<p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>",
           "locationName": "parentReadinessScopes",
-          "documentation": "<p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>"
+          "shape": "__listOf__string"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p>Tags on the resources.</p>",
           "locationName": "tags",
-          "documentation": "<p>Tags on the resources.</p>"
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "GetReadinessCheckRequest": {
-      "type": "structure",
       "members": {
         "ReadinessCheckName": {
-          "shape": "__string",
+          "documentation": "<p>Name of a readiness check.</p>",
           "location": "uri",
           "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "ReadinessCheckName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetReadinessCheckResourceStatusRequest": {
-      "type": "structure",
       "members": {
         "MaxResults": {
-          "shape": "MaxResults",
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
           "location": "querystring",
           "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
+          "shape": "MaxResults"
         },
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "location": "querystring",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "ReadinessCheckName": {
-          "shape": "__string",
+          "documentation": "<p>Name of a readiness check.</p>",
           "location": "uri",
           "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
+          "shape": "__string"
         },
         "ResourceIdentifier": {
-          "shape": "__string",
+          "documentation": "<p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>",
           "location": "uri",
           "locationName": "resourceIdentifier",
-          "documentation": "<p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "ReadinessCheckName",
         "ResourceIdentifier"
-      ]
+      ],
+      "type": "structure"
     },
     "GetReadinessCheckResourceStatusResponse": {
-      "type": "structure",
       "members": {
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "Readiness": {
-          "shape": "Readiness",
+          "documentation": "<p>The readiness at a rule level.</p>",
           "locationName": "readiness",
-          "documentation": "<p>The readiness at a rule level.</p>"
+          "shape": "Readiness"
         },
         "Rules": {
-          "shape": "__listOfRuleResult",
+          "documentation": "<p>Details of the rule's results.</p>",
           "locationName": "rules",
-          "documentation": "<p>Details of the rule's results.</p>"
+          "shape": "__listOfRuleResult"
         }
-      }
+      },
+      "type": "structure"
     },
     "GetReadinessCheckResponse": {
-      "type": "structure",
       "members": {
         "ReadinessCheckArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) associated with a readiness check.</p>",
           "locationName": "readinessCheckArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) associated with a readiness check.</p>"
+          "shape": "__stringMax256"
         },
         "ReadinessCheckName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>Name of a readiness check.</p>",
           "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "ResourceSet": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>Name of the resource set to be checked.</p>",
           "locationName": "resourceSet",
-          "documentation": "<p>Name of the resource set to be checked.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "GetReadinessCheckStatusRequest": {
-      "type": "structure",
       "members": {
         "MaxResults": {
-          "shape": "MaxResults",
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
           "location": "querystring",
           "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
+          "shape": "MaxResults"
         },
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "location": "querystring",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "ReadinessCheckName": {
-          "shape": "__string",
+          "documentation": "<p>Name of a readiness check.</p>",
           "location": "uri",
           "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "ReadinessCheckName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetReadinessCheckStatusResponse": {
-      "type": "structure",
       "members": {
         "Messages": {
-          "shape": "__listOfMessage",
+          "documentation": "<p>Top level messages for readiness check status</p>",
           "locationName": "messages",
-          "documentation": "<p>Top level messages for readiness check status</p>"
+          "shape": "__listOfMessage"
         },
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "Readiness": {
-          "shape": "Readiness",
+          "documentation": "<p>The readiness at rule level.</p>",
           "locationName": "readiness",
-          "documentation": "<p>The readiness at rule level.</p>"
+          "shape": "Readiness"
         },
         "Resources": {
-          "shape": "__listOfResourceResult",
+          "documentation": "<p>Summary of the readiness of resources.</p>",
           "locationName": "resources",
-          "documentation": "<p>Summary of the readiness of resources.</p>"
+          "shape": "__listOfResourceResult"
         }
-      }
+      },
+      "type": "structure"
     },
     "GetRecoveryGroupReadinessSummaryRequest": {
-      "type": "structure",
       "members": {
         "MaxResults": {
-          "shape": "MaxResults",
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
           "location": "querystring",
           "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
+          "shape": "MaxResults"
         },
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "location": "querystring",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "RecoveryGroupName": {
-          "shape": "__string",
+          "documentation": "<p>The name of a recovery group.</p>",
           "location": "uri",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of a recovery group.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "RecoveryGroupName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetRecoveryGroupReadinessSummaryResponse": {
-      "type": "structure",
       "members": {
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "Readiness": {
-          "shape": "Readiness",
+          "documentation": "<p>The readiness status at a recovery group level.</p>",
           "locationName": "readiness",
-          "documentation": "<p>The readiness status at a recovery group level.</p>"
+          "shape": "Readiness"
         },
         "ReadinessChecks": {
-          "shape": "__listOfReadinessCheckSummary",
+          "documentation": "<p>Summaries of the readiness checks for the recovery group.</p>",
           "locationName": "readinessChecks",
-          "documentation": "<p>Summaries of the readiness checks for the recovery group.</p>"
+          "shape": "__listOfReadinessCheckSummary"
         }
-      }
+      },
+      "type": "structure"
     },
     "GetRecoveryGroupRequest": {
-      "type": "structure",
       "members": {
         "RecoveryGroupName": {
-          "shape": "__string",
+          "documentation": "<p>The name of a recovery group.</p>",
           "location": "uri",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of a recovery group.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "RecoveryGroupName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetRecoveryGroupResponse": {
-      "type": "structure",
       "members": {
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of a cell's Amazon Resource Names (ARNs).</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of a cell's Amazon Resource Names (ARNs).</p>"
+          "shape": "__listOf__string"
         },
         "RecoveryGroupArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the recovery group.</p>",
           "locationName": "recoveryGroupArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the recovery group.</p>"
+          "shape": "__stringMax256"
         },
         "RecoveryGroupName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the recovery group.</p>",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of the recovery group.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p>The tags associated with the recovery group.</p>",
           "locationName": "tags",
-          "documentation": "<p>The tags associated with the recovery group.</p>"
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "GetResourceSetRequest": {
-      "type": "structure",
       "members": {
         "ResourceSetName": {
-          "shape": "__string",
+          "documentation": "<p>Name of a resource set.</p>",
           "location": "uri",
           "locationName": "resourceSetName",
-          "documentation": "<p>Name of a resource set.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "ResourceSetName"
-      ]
+      ],
+      "type": "structure"
     },
     "GetResourceSetResponse": {
-      "type": "structure",
       "members": {
         "ResourceSetArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the resource set.</p>",
           "locationName": "resourceSetArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the resource set.</p>"
+          "shape": "__stringMax256"
         },
         "ResourceSetName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the resource set.</p>",
           "locationName": "resourceSetName",
-          "documentation": "<p>The name of the resource set.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "ResourceSetType": {
-          "shape": "__stringPatternAWSAZaZ09AZaZ09",
+          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>",
           "locationName": "resourceSetType",
-          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>"
+          "shape": "__stringPatternAWSAZaZ09AZaZ09"
         },
         "Resources": {
-          "shape": "__listOfResource",
+          "documentation": "<p>A list of resource objects.</p>",
           "locationName": "resources",
-          "documentation": "<p>A list of resource objects.</p>"
+          "shape": "__listOfResource"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "InternalServerException": {
-      "type": "structure",
-      "exception": true,
+      "documentation": "An unexpected error occurred.",
       "error": {
         "httpStatusCode": 500
       },
-      "documentation": "An unexpected error occurred.",
+      "exception": true,
       "members": {
         "Message": {
-          "shape": "__string",
-          "locationName": "message"
-        }
-      }
-    },
-    "LastAuditTimestamp": {
-      "type": "timestamp",
-      "documentation": "<p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>",
-      "timestampFormat": "iso8601"
-    },
-    "ListCellsRequest": {
-      "type": "structure",
-      "members": {
-        "MaxResults": {
-          "shape": "MaxResults",
-          "location": "querystring",
-          "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
-        },
-        "NextToken": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        }
-      }
-    },
-    "ListCellsResponse": {
-      "type": "structure",
-      "members": {
-        "Cells": {
-          "shape": "__listOfCellOutput",
-          "locationName": "cells",
-          "documentation": "<p>A list of cells.</p>"
-        },
-        "NextToken": {
-          "shape": "__string",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        }
-      }
-    },
-    "ListCrossAccountAuthorizationsRequest": {
-      "type": "structure",
-      "members": {
-        "MaxResults": {
-          "shape": "MaxResults",
-          "location": "querystring",
-          "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
-        },
-        "NextToken": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        }
-      }
-    },
-    "ListCrossAccountAuthorizationsResponse": {
-      "type": "structure",
-      "members": {
-        "CrossAccountAuthorizations": {
-          "shape": "__listOfCrossAccountAuthorization",
-          "locationName": "crossAccountAuthorizations",
-          "documentation": "<p>A list of cross-account authorizations.</p>"
-        },
-        "NextToken": {
-          "shape": "__string",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        }
-      }
-    },
-    "ListReadinessChecksRequest": {
-      "type": "structure",
-      "members": {
-        "MaxResults": {
-          "shape": "MaxResults",
-          "location": "querystring",
-          "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
-        },
-        "NextToken": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        }
-      }
-    },
-    "ListReadinessChecksResponse": {
-      "type": "structure",
-      "members": {
-        "NextToken": {
-          "shape": "__string",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        },
-        "ReadinessChecks": {
-          "shape": "__listOfReadinessCheckOutput",
-          "locationName": "readinessChecks",
-          "documentation": "<p>A list of readiness checks associated with the account.</p>"
-        }
-      }
-    },
-    "ListRecoveryGroupsRequest": {
-      "type": "structure",
-      "members": {
-        "MaxResults": {
-          "shape": "MaxResults",
-          "location": "querystring",
-          "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
-        },
-        "NextToken": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        }
-      }
-    },
-    "ListRecoveryGroupsResponse": {
-      "type": "structure",
-      "members": {
-        "NextToken": {
-          "shape": "__string",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        },
-        "RecoveryGroups": {
-          "shape": "__listOfRecoveryGroupOutput",
-          "locationName": "recoveryGroups",
-          "documentation": "<p>A list of recovery groups.</p>"
-        }
-      }
-    },
-    "ListResourceSetsRequest": {
-      "type": "structure",
-      "members": {
-        "MaxResults": {
-          "shape": "MaxResults",
-          "location": "querystring",
-          "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
-        },
-        "NextToken": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        }
-      }
-    },
-    "ListResourceSetsResponse": {
-      "type": "structure",
-      "members": {
-        "NextToken": {
-          "shape": "__string",
-          "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
-        },
-        "ResourceSets": {
-          "shape": "__listOfResourceSetOutput",
-          "locationName": "resourceSets",
-          "documentation": "<p>A list of resource sets associated with the account.</p>"
-        }
-      }
-    },
-    "ListRulesOutput": {
-      "type": "structure",
-      "members": {
-        "ResourceType": {
-          "shape": "__stringMax64",
-          "locationName": "resourceType",
-          "documentation": "<p>The resource type that the readiness rule applies to.</p>"
-        },
-        "RuleDescription": {
-          "shape": "__stringMax256",
-          "locationName": "ruleDescription",
-          "documentation": "<p>The description of a readiness rule.</p>"
-        },
-        "RuleId": {
-          "shape": "__stringMax64",
-          "locationName": "ruleId",
-          "documentation": "<p>The ID for the readiness rule.</p>"
+          "locationName": "message",
+          "shape": "__string"
         }
       },
+      "type": "structure"
+    },
+    "LastAuditTimestamp": {
+      "documentation": "<p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>",
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
+    },
+    "ListCellsRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "ListCellsResponse": {
+      "members": {
+        "Cells": {
+          "documentation": "<p>A list of cells.</p>",
+          "locationName": "cells",
+          "shape": "__listOfCellOutput"
+        },
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "locationName": "nextToken",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "ListCrossAccountAuthorizationsRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "ListCrossAccountAuthorizationsResponse": {
+      "members": {
+        "CrossAccountAuthorizations": {
+          "documentation": "<p>A list of cross-account authorizations.</p>",
+          "locationName": "crossAccountAuthorizations",
+          "shape": "__listOfCrossAccountAuthorization"
+        },
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "locationName": "nextToken",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "ListReadinessChecksRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "ListReadinessChecksResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "locationName": "nextToken",
+          "shape": "__string"
+        },
+        "ReadinessChecks": {
+          "documentation": "<p>A list of readiness checks associated with the account.</p>",
+          "locationName": "readinessChecks",
+          "shape": "__listOfReadinessCheckOutput"
+        }
+      },
+      "type": "structure"
+    },
+    "ListRecoveryGroupsRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "ListRecoveryGroupsResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "locationName": "nextToken",
+          "shape": "__string"
+        },
+        "RecoveryGroups": {
+          "documentation": "<p>A list of recovery groups.</p>",
+          "locationName": "recoveryGroups",
+          "shape": "__listOfRecoveryGroupOutput"
+        }
+      },
+      "type": "structure"
+    },
+    "ListResourceSetsRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "ListResourceSetsResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
+          "locationName": "nextToken",
+          "shape": "__string"
+        },
+        "ResourceSets": {
+          "documentation": "<p>A list of resource sets associated with the account.</p>",
+          "locationName": "resourceSets",
+          "shape": "__listOfResourceSetOutput"
+        }
+      },
+      "type": "structure"
+    },
+    "ListRulesOutput": {
       "documentation": "<p>Readiness rule information, including the resource type, rule ID, and rule description.</p>",
+      "members": {
+        "ResourceType": {
+          "documentation": "<p>The resource type that the readiness rule applies to.</p>",
+          "locationName": "resourceType",
+          "shape": "__stringMax64"
+        },
+        "RuleDescription": {
+          "documentation": "<p>The description of a readiness rule.</p>",
+          "locationName": "ruleDescription",
+          "shape": "__stringMax256"
+        },
+        "RuleId": {
+          "documentation": "<p>The ID for the readiness rule.</p>",
+          "locationName": "ruleId",
+          "shape": "__stringMax64"
+        }
+      },
       "required": [
         "RuleDescription",
         "RuleId",
         "ResourceType"
-      ]
+      ],
+      "type": "structure"
     },
     "ListRulesRequest": {
-      "type": "structure",
       "members": {
         "MaxResults": {
-          "shape": "MaxResults",
+          "documentation": "<p>The number of objects that you want to return with this call.</p>",
           "location": "querystring",
           "locationName": "maxResults",
-          "documentation": "<p>The number of objects that you want to return with this call.</p>"
+          "shape": "MaxResults"
         },
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "location": "querystring",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "ResourceType": {
-          "shape": "__string",
+          "documentation": "<p>The resource type that a readiness rule applies to.</p>",
           "location": "querystring",
           "locationName": "resourceType",
-          "documentation": "<p>The resource type that a readiness rule applies to.</p>"
+          "shape": "__string"
         }
-      }
+      },
+      "type": "structure"
     },
     "ListRulesResponse": {
-      "type": "structure",
       "members": {
         "NextToken": {
-          "shape": "__string",
+          "documentation": "<p>The token that identifies which batch of results you want to see.</p>",
           "locationName": "nextToken",
-          "documentation": "<p>The token that identifies which batch of results you want to see.</p>"
+          "shape": "__string"
         },
         "Rules": {
-          "shape": "__listOfListRulesOutput",
+          "documentation": "<p>A list of readiness rules for a specific resource type.</p>",
           "locationName": "rules",
-          "documentation": "<p>A list of readiness rules for a specific resource type.</p>"
+          "shape": "__listOfListRulesOutput"
         }
-      }
+      },
+      "type": "structure"
     },
     "ListTagsForResourcesRequest": {
-      "type": "structure",
       "members": {
         "ResourceArn": {
-          "shape": "__string",
+          "documentation": "<p>The Amazon Resource Name (ARN) for a resource.</p>",
           "location": "uri",
           "locationName": "resource-arn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for a resource.</p>"
+          "shape": "__string"
         }
       },
       "required": [
         "ResourceArn"
-      ]
+      ],
+      "type": "structure"
     },
     "ListTagsForResourcesResponse": {
-      "type": "structure",
       "members": {
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p></p>",
           "locationName": "tags",
-          "documentation": "<p></p>"
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "MaxResults": {
-      "type": "integer",
+      "max": 1000,
       "min": 1,
-      "max": 1000
+      "type": "integer"
     },
     "Message": {
-      "type": "structure",
+      "documentation": "<p>Information relating to readiness check status.</p>",
       "members": {
         "MessageText": {
-          "shape": "__string",
+          "documentation": "<p>The text of a readiness check message.</p>",
           "locationName": "messageText",
-          "documentation": "<p>The text of a readiness check message.</p>"
+          "shape": "__string"
         }
       },
-      "documentation": "<p>Information relating to readiness check status.</p>"
+      "type": "structure"
     },
     "NLBResource": {
-      "type": "structure",
+      "documentation": "<p>The Network Load Balancer resource that a DNS target resource points to.</p>",
       "members": {
         "Arn": {
-          "shape": "__string",
+          "documentation": "<p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>",
           "locationName": "arn",
-          "documentation": "<p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>"
+          "shape": "__string"
         }
       },
-      "documentation": "<p>The Network Load Balancer resource that a DNS target resource points to.</p>"
+      "type": "structure"
     },
     "R53ResourceRecord": {
-      "type": "structure",
+      "documentation": "<p>The Route 53 resource that a DNS target resource record points to.</p>",
       "members": {
         "DomainName": {
-          "shape": "__string",
+          "documentation": "<p>The DNS target domain name.</p>",
           "locationName": "domainName",
-          "documentation": "<p>The DNS target domain name.</p>"
+          "shape": "__string"
         },
         "RecordSetId": {
-          "shape": "__string",
+          "documentation": "<p>The Route 53 Resource Record Set ID.</p>",
           "locationName": "recordSetId",
-          "documentation": "<p>The Route 53 Resource Record Set ID.</p>"
+          "shape": "__string"
         }
       },
-      "documentation": "<p>The Route 53 resource that a DNS target resource record points to.</p>"
+      "type": "structure"
     },
     "Readiness": {
-      "type": "string",
       "documentation": "<p>The readiness status.</p>",
       "enum": [
         "READY",
         "NOT_READY",
         "UNKNOWN",
         "NOT_AUTHORIZED"
-      ]
+      ],
+      "type": "string"
     },
     "ReadinessCheckOutput": {
-      "type": "structure",
+      "documentation": "<p>A readiness check.</p>",
       "members": {
         "ReadinessCheckArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) associated with a readiness check.</p>",
           "locationName": "readinessCheckArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) associated with a readiness check.</p>"
+          "shape": "__stringMax256"
         },
         "ReadinessCheckName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>Name of a readiness check.</p>",
           "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "ResourceSet": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>Name of the resource set to be checked.</p>",
           "locationName": "resourceSet",
-          "documentation": "<p>Name of the resource set to be checked.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
-      "documentation": "<p>A readiness check.</p>",
       "required": [
         "ReadinessCheckArn",
         "ResourceSet"
-      ]
+      ],
+      "type": "structure"
     },
     "ReadinessCheckSummary": {
-      "type": "structure",
+      "documentation": "<p>Summary of all readiness check statuses in a recovery group, paginated in GetRecoveryGroupReadinessSummary and GetCellReadinessSummary.</p>",
       "members": {
         "Readiness": {
-          "shape": "Readiness",
+          "documentation": "<p>The readiness status of this readiness check.</p>",
           "locationName": "readiness",
-          "documentation": "<p>The readiness status of this readiness check.</p>"
+          "shape": "Readiness"
         },
         "ReadinessCheckName": {
-          "shape": "__string",
+          "documentation": "<p>The name of a readiness check.</p>",
           "locationName": "readinessCheckName",
-          "documentation": "<p>The name of a readiness check.</p>"
+          "shape": "__string"
         }
       },
-      "documentation": "<p>Summary of all readiness check statuses in a recovery group, paginated in GetRecoveryGroupReadinessSummary and GetCellReadinessSummary.</p>"
+      "type": "structure"
     },
     "ReadinessCheckTimestamp": {
-      "type": "timestamp",
       "documentation": "<p>The time (UTC) that the cell was last checked for readiness, in ISO-8601 format.</p>",
-      "timestampFormat": "iso8601"
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
     },
     "Recommendation": {
-      "type": "structure",
+      "documentation": "<p>Recommendations that are provided to make an application more recovery resilient.</p>",
       "members": {
         "RecommendationText": {
-          "shape": "__string",
+          "documentation": "<p>Text of the recommendations that are provided to make an application more recovery resilient.</p>",
           "locationName": "recommendationText",
-          "documentation": "<p>Text of the recommendations that are provided to make an application more recovery resilient.</p>"
+          "shape": "__string"
         }
       },
-      "documentation": "<p>Recommendations that are provided to make an application more recovery resilient.</p>",
       "required": [
         "RecommendationText"
-      ]
+      ],
+      "type": "structure"
     },
     "RecoveryGroupOutput": {
-      "type": "structure",
+      "documentation": "<p>A representation of the application, typically containing multiple cells.</p>",
       "members": {
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of a cell's Amazon Resource Names (ARNs).</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of a cell's Amazon Resource Names (ARNs).</p>"
+          "shape": "__listOf__string"
         },
         "RecoveryGroupArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the recovery group.</p>",
           "locationName": "recoveryGroupArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the recovery group.</p>"
+          "shape": "__stringMax256"
         },
         "RecoveryGroupName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the recovery group.</p>",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of the recovery group.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p>The tags associated with the recovery group.</p>",
           "locationName": "tags",
-          "documentation": "<p>The tags associated with the recovery group.</p>"
+          "shape": "Tags"
         }
       },
-      "documentation": "<p>A representation of the application, typically containing multiple cells.</p>",
       "required": [
         "RecoveryGroupArn",
         "RecoveryGroupName",
         "Cells"
-      ]
+      ],
+      "type": "structure"
     },
     "Resource": {
-      "type": "structure",
+      "documentation": "<p>The resource element of a resource set.</p>",
       "members": {
         "ComponentId": {
-          "shape": "__string",
+          "documentation": "<p>The component identifier of the resource, generated when DNS target resource is used.</p>",
           "locationName": "componentId",
-          "documentation": "<p>The component identifier of the resource, generated when DNS target resource is used.</p>"
+          "shape": "__string"
         },
         "DnsTargetResource": {
-          "shape": "DNSTargetResource",
+          "documentation": "<p>The DNS target resource.</p>",
           "locationName": "dnsTargetResource",
-          "documentation": "<p>The DNS target resource.</p>"
+          "shape": "DNSTargetResource"
         },
         "ReadinessScopes": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>",
           "locationName": "readinessScopes",
-          "documentation": "<p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>"
+          "shape": "__listOf__string"
         },
         "ResourceArn": {
-          "shape": "__string",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>",
           "locationName": "resourceArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>"
+          "shape": "__string"
         }
       },
-      "documentation": "<p>The resource element of a resource set.</p>"
+      "type": "structure"
     },
     "ResourceNotFoundException": {
-      "type": "structure",
-      "exception": true,
+      "documentation": "The requested resource does not exist.",
       "error": {
         "httpStatusCode": 404
       },
-      "documentation": "The requested resource does not exist.",
+      "exception": true,
       "members": {
         "Message": {
-          "shape": "__string",
-          "locationName": "message"
-        }
-      }
-    },
-    "ResourceResult": {
-      "type": "structure",
-      "members": {
-        "ComponentId": {
-          "shape": "__string",
-          "locationName": "componentId",
-          "documentation": "<p>The component id of the resource.</p>"
-        },
-        "LastCheckedTimestamp": {
-          "shape": "ReadinessCheckTimestamp",
-          "locationName": "lastCheckedTimestamp",
-          "documentation": "<p>The time (UTC) that the resource was last checked for readiness, in ISO-8601 format.</p>"
-        },
-        "Readiness": {
-          "shape": "Readiness",
-          "locationName": "readiness",
-          "documentation": "<p>The readiness of a resource.</p>"
-        },
-        "ResourceArn": {
-          "shape": "__string",
-          "locationName": "resourceArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) of the resource.</p>"
+          "locationName": "message",
+          "shape": "__string"
         }
       },
+      "type": "structure"
+    },
+    "ResourceResult": {
       "documentation": "<p>The result of a successful Resource request, with status for an individual resource.</p>",
+      "members": {
+        "ComponentId": {
+          "documentation": "<p>The component id of the resource.</p>",
+          "locationName": "componentId",
+          "shape": "__string"
+        },
+        "LastCheckedTimestamp": {
+          "documentation": "<p>The time (UTC) that the resource was last checked for readiness, in ISO-8601 format.</p>",
+          "locationName": "lastCheckedTimestamp",
+          "shape": "ReadinessCheckTimestamp"
+        },
+        "Readiness": {
+          "documentation": "<p>The readiness of a resource.</p>",
+          "locationName": "readiness",
+          "shape": "Readiness"
+        },
+        "ResourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "locationName": "resourceArn",
+          "shape": "__string"
+        }
+      },
       "required": [
         "Readiness",
         "LastCheckedTimestamp"
-      ]
+      ],
+      "type": "structure"
     },
     "ResourceSetOutput": {
-      "type": "structure",
+      "documentation": "<p>A collection of resources of the same type.</p>",
       "members": {
         "ResourceSetArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the resource set.</p>",
           "locationName": "resourceSetArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the resource set.</p>"
+          "shape": "__stringMax256"
         },
         "ResourceSetName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the resource set.</p>",
           "locationName": "resourceSetName",
-          "documentation": "<p>The name of the resource set.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "ResourceSetType": {
-          "shape": "__stringPatternAWSAZaZ09AZaZ09",
+          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>",
           "locationName": "resourceSetType",
-          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>"
+          "shape": "__stringPatternAWSAZaZ09AZaZ09"
         },
         "Resources": {
-          "shape": "__listOfResource",
+          "documentation": "<p>A list of resource objects.</p>",
           "locationName": "resources",
-          "documentation": "<p>A list of resource objects.</p>"
+          "shape": "__listOfResource"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
-      "documentation": "<p>A collection of resources of the same type.</p>",
       "required": [
         "ResourceSetType",
         "ResourceSetName",
         "ResourceSetArn",
         "Resources"
-      ]
+      ],
+      "type": "structure"
     },
     "RuleResult": {
-      "type": "structure",
+      "documentation": "<p>The result of a successful Rule request, with status for an individual rule.</p>",
       "members": {
         "LastCheckedTimestamp": {
-          "shape": "ReadinessCheckTimestamp",
+          "documentation": "<p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>",
           "locationName": "lastCheckedTimestamp",
-          "documentation": "<p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>"
+          "shape": "ReadinessCheckTimestamp"
         },
         "Messages": {
-          "shape": "__listOfMessage",
+          "documentation": "<p>Details about the resource's readiness.</p>",
           "locationName": "messages",
-          "documentation": "<p>Details about the resource's readiness.</p>"
+          "shape": "__listOfMessage"
         },
         "Readiness": {
-          "shape": "Readiness",
+          "documentation": "<p>The readiness at rule level.</p>",
           "locationName": "readiness",
-          "documentation": "<p>The readiness at rule level.</p>"
+          "shape": "Readiness"
         },
         "RuleId": {
-          "shape": "__string",
+          "documentation": "<p>The identifier of the rule.</p>",
           "locationName": "ruleId",
-          "documentation": "<p>The identifier of the rule.</p>"
+          "shape": "__string"
         }
       },
-      "documentation": "<p>The result of a successful Rule request, with status for an individual rule.</p>",
       "required": [
         "Messages",
         "Readiness",
         "RuleId",
         "LastCheckedTimestamp"
-      ]
+      ],
+      "type": "structure"
     },
     "TagResourceRequest": {
-      "type": "structure",
       "members": {
         "ResourceArn": {
-          "shape": "__string",
+          "documentation": "<p>The Amazon Resource Name (ARN) for a resource.</p>",
           "location": "uri",
           "locationName": "resource-arn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for a resource.</p>"
+          "shape": "__string"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p></p>",
           "locationName": "tags",
-          "documentation": "<p></p>"
+          "shape": "Tags"
         }
       },
       "required": [
         "ResourceArn",
         "Tags"
-      ]
+      ],
+      "type": "structure"
     },
     "TagResourceResponse": {
-      "type": "structure",
-      "members": {}
+      "members": {},
+      "type": "structure"
     },
     "Tags": {
-      "type": "map",
       "documentation": "<p>A collection of tags associated with a resource.</p>",
       "key": {
         "shape": "__string"
       },
+      "type": "map",
       "value": {
         "shape": "__string"
       }
     },
     "TargetResource": {
-      "type": "structure",
+      "documentation": "<p>The target resource that the Route 53 record points to.</p>",
       "members": {
         "NLBResource": {
-          "shape": "NLBResource",
+          "documentation": "<p>The Network Load Balancer Resource.</p>",
           "locationName": "nLBResource",
-          "documentation": "<p>The Network Load Balancer Resource.</p>"
+          "shape": "NLBResource"
         },
         "R53Resource": {
-          "shape": "R53ResourceRecord",
+          "documentation": "<p>The Route 53 resource.</p>",
           "locationName": "r53Resource",
-          "documentation": "<p>The Route 53 resource.</p>"
+          "shape": "R53ResourceRecord"
         }
       },
-      "documentation": "<p>The target resource that the Route 53 record points to.</p>"
+      "type": "structure"
     },
     "ThrottlingException": {
-      "type": "structure",
-      "exception": true,
+      "documentation": "Request was denied due to request throttling.",
       "error": {
         "httpStatusCode": 429
       },
-      "documentation": "Request was denied due to request throttling.",
+      "exception": true,
       "members": {
         "Message": {
-          "shape": "__string",
-          "locationName": "message"
+          "locationName": "message",
+          "shape": "__string"
         }
-      }
+      },
+      "type": "structure"
     },
     "UntagResourceRequest": {
-      "type": "structure",
       "members": {
         "ResourceArn": {
-          "shape": "__string",
+          "documentation": "<p>The Amazon Resource Name (ARN) for a resource.</p>",
           "location": "uri",
           "locationName": "resource-arn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for a resource.</p>"
+          "shape": "__string"
         },
         "TagKeys": {
-          "shape": "__listOf__string",
+          "documentation": "<p>The keys for tags you add to resources.</p>",
           "location": "querystring",
           "locationName": "tagKeys",
-          "documentation": "<p>The keys for tags you add to resources.</p>"
+          "shape": "__listOf__string"
         }
       },
       "required": [
         "TagKeys",
         "ResourceArn"
-      ]
+      ],
+      "type": "structure"
     },
     "UpdateCellRequest": {
-      "type": "structure",
       "members": {
         "CellName": {
-          "shape": "__string",
+          "documentation": "<p>The name of the cell.</p>",
           "location": "uri",
           "locationName": "cellName",
-          "documentation": "<p>The name of the cell.</p>"
+          "shape": "__string"
         },
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>"
+          "shape": "__listOf__string"
         }
       },
       "required": [
         "CellName",
         "Cells"
-      ]
+      ],
+      "type": "structure"
     },
     "UpdateCellResponse": {
-      "type": "structure",
       "members": {
         "CellArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the cell.</p>",
           "locationName": "cellArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the cell.</p>"
+          "shape": "__stringMax256"
         },
         "CellName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the cell.</p>",
           "locationName": "cellName",
-          "documentation": "<p>The name of the cell.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of cell ARNs.</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of cell ARNs.</p>"
+          "shape": "__listOf__string"
         },
         "ParentReadinessScopes": {
-          "shape": "__listOf__string",
+          "documentation": "<p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>",
           "locationName": "parentReadinessScopes",
-          "documentation": "<p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>"
+          "shape": "__listOf__string"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p>Tags on the resources.</p>",
           "locationName": "tags",
-          "documentation": "<p>Tags on the resources.</p>"
-        }
-      }
-    },
-    "UpdateReadinessCheckRequest": {
-      "type": "structure",
-      "members": {
-        "ReadinessCheckName": {
-          "shape": "__string",
-          "location": "uri",
-          "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
-        },
-        "ResourceSetName": {
-          "shape": "__string",
-          "locationName": "resourceSetName",
-          "documentation": "<p>The name of the resource set to be checked.</p>"
+          "shape": "Tags"
         }
       },
+      "type": "structure"
+    },
+    "UpdateReadinessCheckRequest": {
       "documentation": "<p>Name of a readiness check to describe.</p>",
+      "members": {
+        "ReadinessCheckName": {
+          "documentation": "<p>Name of a readiness check.</p>",
+          "location": "uri",
+          "locationName": "readinessCheckName",
+          "shape": "__string"
+        },
+        "ResourceSetName": {
+          "documentation": "<p>The name of the resource set to be checked.</p>",
+          "locationName": "resourceSetName",
+          "shape": "__string"
+        }
+      },
       "required": [
         "ReadinessCheckName",
         "ResourceSetName"
-      ]
+      ],
+      "type": "structure"
     },
     "UpdateReadinessCheckResponse": {
-      "type": "structure",
       "members": {
         "ReadinessCheckArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) associated with a readiness check.</p>",
           "locationName": "readinessCheckArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) associated with a readiness check.</p>"
+          "shape": "__stringMax256"
         },
         "ReadinessCheckName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>Name of a readiness check.</p>",
           "locationName": "readinessCheckName",
-          "documentation": "<p>Name of a readiness check.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "ResourceSet": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>Name of the resource set to be checked.</p>",
           "locationName": "resourceSet",
-          "documentation": "<p>Name of the resource set to be checked.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
-        }
-      }
-    },
-    "UpdateRecoveryGroupRequest": {
-      "type": "structure",
-      "members": {
-        "Cells": {
-          "shape": "__listOf__string",
-          "locationName": "cells",
-          "documentation": "<p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>"
-        },
-        "RecoveryGroupName": {
-          "shape": "__string",
-          "location": "uri",
-          "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of a recovery group.</p>"
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
+      "type": "structure"
+    },
+    "UpdateRecoveryGroupRequest": {
       "documentation": "<p>Name of a recovery group.</p>",
+      "members": {
+        "Cells": {
+          "documentation": "<p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>",
+          "locationName": "cells",
+          "shape": "__listOf__string"
+        },
+        "RecoveryGroupName": {
+          "documentation": "<p>The name of a recovery group.</p>",
+          "location": "uri",
+          "locationName": "recoveryGroupName",
+          "shape": "__string"
+        }
+      },
       "required": [
         "RecoveryGroupName",
         "Cells"
-      ]
+      ],
+      "type": "structure"
     },
     "UpdateRecoveryGroupResponse": {
-      "type": "structure",
       "members": {
         "Cells": {
-          "shape": "__listOf__string",
+          "documentation": "<p>A list of a cell's Amazon Resource Names (ARNs).</p>",
           "locationName": "cells",
-          "documentation": "<p>A list of a cell's Amazon Resource Names (ARNs).</p>"
+          "shape": "__listOf__string"
         },
         "RecoveryGroupArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the recovery group.</p>",
           "locationName": "recoveryGroupArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the recovery group.</p>"
+          "shape": "__stringMax256"
         },
         "RecoveryGroupName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the recovery group.</p>",
           "locationName": "recoveryGroupName",
-          "documentation": "<p>The name of the recovery group.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "Tags": {
-          "shape": "Tags",
+          "documentation": "<p>The tags associated with the recovery group.</p>",
           "locationName": "tags",
-          "documentation": "<p>The tags associated with the recovery group.</p>"
-        }
-      }
-    },
-    "UpdateResourceSetRequest": {
-      "type": "structure",
-      "members": {
-        "ResourceSetName": {
-          "shape": "__string",
-          "location": "uri",
-          "locationName": "resourceSetName",
-          "documentation": "<p>Name of a resource set.</p>"
-        },
-        "ResourceSetType": {
-          "shape": "__stringPatternAWSAZaZ09AZaZ09",
-          "locationName": "resourceSetType",
-          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>"
-        },
-        "Resources": {
-          "shape": "__listOfResource",
-          "locationName": "resources",
-          "documentation": "<p>A list of resource objects.</p>"
+          "shape": "Tags"
         }
       },
+      "type": "structure"
+    },
+    "UpdateResourceSetRequest": {
       "documentation": "<p>Name of a resource set.</p>",
+      "members": {
+        "ResourceSetName": {
+          "documentation": "<p>Name of a resource set.</p>",
+          "location": "uri",
+          "locationName": "resourceSetName",
+          "shape": "__string"
+        },
+        "ResourceSetType": {
+          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>",
+          "locationName": "resourceSetType",
+          "shape": "__stringPatternAWSAZaZ09AZaZ09"
+        },
+        "Resources": {
+          "documentation": "<p>A list of resource objects.</p>",
+          "locationName": "resources",
+          "shape": "__listOfResource"
+        }
+      },
       "required": [
         "ResourceSetName",
         "ResourceSetType",
         "Resources"
-      ]
+      ],
+      "type": "structure"
     },
     "UpdateResourceSetResponse": {
-      "type": "structure",
       "members": {
         "ResourceSetArn": {
-          "shape": "__stringMax256",
+          "documentation": "<p>The Amazon Resource Name (ARN) for the resource set.</p>",
           "locationName": "resourceSetArn",
-          "documentation": "<p>The Amazon Resource Name (ARN) for the resource set.</p>"
+          "shape": "__stringMax256"
         },
         "ResourceSetName": {
-          "shape": "__stringMax64PatternAAZAZ09Z",
+          "documentation": "<p>The name of the resource set.</p>",
           "locationName": "resourceSetName",
-          "documentation": "<p>The name of the resource set.</p>"
+          "shape": "__stringMax64PatternAAZAZ09Z"
         },
         "ResourceSetType": {
-          "shape": "__stringPatternAWSAZaZ09AZaZ09",
+          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>",
           "locationName": "resourceSetType",
-          "documentation": "<p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>"
+          "shape": "__stringPatternAWSAZaZ09AZaZ09"
         },
         "Resources": {
-          "shape": "__listOfResource",
+          "documentation": "<p>A list of resource objects.</p>",
           "locationName": "resources",
-          "documentation": "<p>A list of resource objects.</p>"
+          "shape": "__listOfResource"
         },
         "Tags": {
-          "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
     "ValidationException": {
-      "type": "structure",
-      "exception": true,
+      "documentation": "The input fails to satisfy the constraints specified by an AWS service.",
       "error": {
         "httpStatusCode": 400
       },
-      "documentation": "The input fails to satisfy the constraints specified by an AWS service.",
+      "exception": true,
       "members": {
         "Message": {
-          "shape": "__string",
-          "locationName": "message"
+          "locationName": "message",
+          "shape": "__string"
         }
-      }
+      },
+      "type": "structure"
     },
     "__listOfCellOutput": {
-      "type": "list",
       "member": {
         "shape": "CellOutput"
-      }
+      },
+      "type": "list"
     },
     "__listOfCrossAccountAuthorization": {
-      "type": "list",
       "member": {
         "shape": "CrossAccountAuthorization"
-      }
+      },
+      "type": "list"
     },
     "__listOfListRulesOutput": {
-      "type": "list",
       "member": {
         "shape": "ListRulesOutput"
-      }
+      },
+      "type": "list"
     },
     "__listOfMessage": {
-      "type": "list",
       "member": {
         "shape": "Message"
-      }
+      },
+      "type": "list"
     },
     "__listOfReadinessCheckOutput": {
-      "type": "list",
       "member": {
         "shape": "ReadinessCheckOutput"
-      }
+      },
+      "type": "list"
     },
     "__listOfReadinessCheckSummary": {
-      "type": "list",
       "member": {
         "shape": "ReadinessCheckSummary"
-      }
+      },
+      "type": "list"
     },
     "__listOfRecommendation": {
-      "type": "list",
       "member": {
         "shape": "Recommendation"
-      }
+      },
+      "type": "list"
     },
     "__listOfRecoveryGroupOutput": {
-      "type": "list",
       "member": {
         "shape": "RecoveryGroupOutput"
-      }
+      },
+      "type": "list"
     },
     "__listOfResource": {
-      "type": "list",
       "member": {
         "shape": "Resource"
-      }
+      },
+      "type": "list"
     },
     "__listOfResourceResult": {
-      "type": "list",
       "member": {
         "shape": "ResourceResult"
-      }
+      },
+      "type": "list"
     },
     "__listOfResourceSetOutput": {
-      "type": "list",
       "member": {
         "shape": "ResourceSetOutput"
-      }
+      },
+      "type": "list"
     },
     "__listOfRuleResult": {
-      "type": "list",
       "member": {
         "shape": "RuleResult"
-      }
+      },
+      "type": "list"
     },
     "__listOf__string": {
-      "type": "list",
       "member": {
         "shape": "__string"
-      }
+      },
+      "type": "list"
     },
     "__string": {
       "type": "string"
     },
     "__stringMax256": {
-      "type": "string",
-      "max": 256
+      "max": 256,
+      "type": "string"
     },
     "__stringMax64": {
-      "type": "string",
-      "max": 64
+      "max": 64,
+      "type": "string"
     },
     "__stringMax64PatternAAZAZ09Z": {
-      "type": "string",
       "max": 64,
-      "pattern": "\\A[a-zA-Z0-9_]+\\z"
+      "pattern": "\\A[a-zA-Z0-9_]+\\z",
+      "type": "string"
     },
     "__stringPatternAWSAZaZ09AZaZ09": {
-      "type": "string",
-      "pattern": "AWS::[A-Za-z0-9]+::[A-Za-z0-9]+"
+      "pattern": "AWS::[A-Za-z0-9]+::[A-Za-z0-9]+",
+      "type": "string"
     }
-  },
-  "documentation": "<p>Recovery readiness</p>"
+  }
 }

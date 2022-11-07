@@ -54,4 +54,3 @@ Output::
 For more information, see `Creating a Role`_ in the *Using IAM* guide.
 
 .. _`Creating a Role`: http://docs.aws.amazon.com/IAM/latest/UserGuide/creating-role.html
-

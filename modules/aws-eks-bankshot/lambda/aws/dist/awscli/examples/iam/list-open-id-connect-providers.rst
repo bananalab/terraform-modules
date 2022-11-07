@@ -2,7 +2,7 @@
 
 This example returns a list of ARNS of all the OpenID Connect providers that are defined in the current AWS account::
 
-  aws iam list-open-id-connect-providers 
+  aws iam list-open-id-connect-providers
 
 Output::
 

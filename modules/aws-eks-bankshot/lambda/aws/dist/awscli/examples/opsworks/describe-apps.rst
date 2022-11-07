@@ -37,4 +37,3 @@ The following ``describe-apps`` command describes the apps in a specified stack.
 For more information, see Apps_ in the *AWS OpsWorks User Guide*.
 
 .. _Apps: http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps.html
-

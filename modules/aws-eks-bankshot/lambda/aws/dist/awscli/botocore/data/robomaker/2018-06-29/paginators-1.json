@@ -30,40 +30,40 @@
       "output_token": "nextToken",
       "result_key": "simulationApplicationSummaries"
     },
+    "ListSimulationJobBatches": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "simulationJobBatchSummaries"
+    },
     "ListSimulationJobs": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
       "output_token": "nextToken",
       "result_key": "simulationJobSummaries"
     },
-    "ListSimulationJobBatches": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "simulationJobBatchSummaries"
-    },
     "ListWorldExportJobs": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "worldExportJobSummaries"
     },
     "ListWorldGenerationJobs": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "worldGenerationJobSummaries"
     },
     "ListWorldTemplates": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "templateSummaries"
     },
     "ListWorlds": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "worldSummaries"
     }
   }

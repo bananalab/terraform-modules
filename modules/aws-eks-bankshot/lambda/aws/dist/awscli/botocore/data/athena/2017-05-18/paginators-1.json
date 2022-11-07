@@ -1,26 +1,14 @@
 {
   "pagination": {
-    "ListNamedQueries": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "MaxResults",
-      "result_key": "NamedQueryIds"
-    },
-    "ListQueryExecutions": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "MaxResults",
-      "result_key": "QueryExecutionIds"
-    },
     "GetQueryResults": {
       "input_token": "NextToken",
-      "output_token": "NextToken",
       "limit_key": "MaxResults",
-      "result_key": "ResultSet.Rows",
       "non_aggregate_keys": [
         "ResultSet.ResultSetMetadata",
         "UpdateCount"
-      ]
+      ],
+      "output_token": "NextToken",
+      "result_key": "ResultSet.Rows"
     },
     "ListDataCatalogs": {
       "input_token": "NextToken",
@@ -33,6 +21,18 @@
       "limit_key": "MaxResults",
       "output_token": "NextToken",
       "result_key": "DatabaseList"
+    },
+    "ListNamedQueries": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "NamedQueryIds"
+    },
+    "ListQueryExecutions": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "QueryExecutionIds"
     },
     "ListTableMetadata": {
       "input_token": "NextToken",

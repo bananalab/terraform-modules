@@ -77,12 +77,12 @@ Output::
 The following ``create-snapshots`` example creates a snapshot of all volumes attached to the specified instance except for the root volume. ::
 
     aws ec2 create-snapshots \
-        --instance-specification InstanceId=i-1234567890abcdef0,ExcludeBootVolume=true 
+        --instance-specification InstanceId=i-1234567890abcdef0,ExcludeBootVolume=true
 
 **Example 4: To create a multi-volume snapshot and add tags**
 
 The following ``create-snapshots`` example creates snapshots of all volumes attached to the specified instance and adds two tags to each snapshot. ::
 
     aws ec2 create-snapshots \
-        --instance-specification InstanceId=i-1234567890abcdef0 
+        --instance-specification InstanceId=i-1234567890abcdef0
         --tag-specifications ResourceType=snapshot,Tags=[{Key=Name,Value=backup},{Key=costcenter,Value=123}]

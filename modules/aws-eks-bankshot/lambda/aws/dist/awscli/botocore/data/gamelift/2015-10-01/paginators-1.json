@@ -24,6 +24,12 @@
       "output_token": "NextToken",
       "result_key": "FleetUtilization"
     },
+    "DescribeGameServerInstances": {
+      "input_token": "NextToken",
+      "limit_key": "Limit",
+      "output_token": "NextToken",
+      "result_key": "GameServerInstances"
+    },
     "DescribeGameSessionDetails": {
       "input_token": "NextToken",
       "limit_key": "Limit",
@@ -90,35 +96,29 @@
       "output_token": "NextToken",
       "result_key": "FleetIds"
     },
+    "ListGameServerGroups": {
+      "input_token": "NextToken",
+      "limit_key": "Limit",
+      "output_token": "NextToken",
+      "result_key": "GameServerGroups"
+    },
+    "ListGameServers": {
+      "input_token": "NextToken",
+      "limit_key": "Limit",
+      "output_token": "NextToken",
+      "result_key": "GameServers"
+    },
+    "ListScripts": {
+      "input_token": "NextToken",
+      "limit_key": "Limit",
+      "output_token": "NextToken",
+      "result_key": "Scripts"
+    },
     "SearchGameSessions": {
       "input_token": "NextToken",
       "limit_key": "Limit",
       "output_token": "NextToken",
       "result_key": "GameSessions"
-    },
-    "DescribeGameServerInstances": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "Limit",
-      "result_key": "GameServerInstances"
-    },
-    "ListGameServerGroups": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "Limit",
-      "result_key": "GameServerGroups"
-    },
-    "ListGameServers": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "Limit",
-      "result_key": "GameServers"
-    },
-    "ListScripts": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "Limit",
-      "result_key": "Scripts"
     }
   }
 }

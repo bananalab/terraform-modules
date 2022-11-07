@@ -1,565 +1,909 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2020-10-19",
-    "endpointPrefix":"wisdom",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"Amazon Connect Wisdom Service",
-    "serviceId":"Wisdom",
-    "signatureVersion":"v4",
-    "signingName":"wisdom",
-    "uid":"wisdom-2020-10-19"
+  "documentation": "<p>Amazon Connect Wisdom delivers agents the information they need to solve customer issues as they're actively speaking with customers. Agents can search across connected repositories from within their agent desktop to find answers quickly. Use the Amazon Connect Wisdom APIs to create an assistant and a knowledge base, for example, or manage content by uploading custom files.</p>",
+  "metadata": {
+    "apiVersion": "2020-10-19",
+    "endpointPrefix": "wisdom",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "Amazon Connect Wisdom Service",
+    "serviceId": "Wisdom",
+    "signatureVersion": "v4",
+    "signingName": "wisdom",
+    "uid": "wisdom-2020-10-19"
   },
-  "operations":{
-    "CreateAssistant":{
-      "name":"CreateAssistant",
-      "http":{
-        "method":"POST",
-        "requestUri":"/assistants",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateAssistantRequest"},
-      "output":{"shape":"CreateAssistantResponse"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"AccessDeniedException"}
+  "operations": {
+    "CreateAssistant": {
+      "documentation": "<p>Creates an Amazon Connect Wisdom assistant.</p>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Creates an Amazon Connect Wisdom assistant.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/assistants",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateAssistantRequest"
+      },
+      "name": "CreateAssistant",
+      "output": {
+        "shape": "CreateAssistantResponse"
+      }
     },
-    "CreateAssistantAssociation":{
-      "name":"CreateAssistantAssociation",
-      "http":{
-        "method":"POST",
-        "requestUri":"/assistants/{assistantId}/associations",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateAssistantAssociationRequest"},
-      "output":{"shape":"CreateAssistantAssociationResponse"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "CreateAssistantAssociation": {
+      "documentation": "<p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association.</p>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/assistants/{assistantId}/associations",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateAssistantAssociationRequest"
+      },
+      "name": "CreateAssistantAssociation",
+      "output": {
+        "shape": "CreateAssistantAssociationResponse"
+      }
     },
-    "CreateContent":{
-      "name":"CreateContent",
-      "http":{
-        "method":"POST",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/contents",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateContentRequest"},
-      "output":{"shape":"CreateContentResponse"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "CreateContent": {
+      "documentation": "<p>Creates Wisdom content. Before to calling this API, use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html\">StartContentUpload</a> to upload an asset.</p>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Creates Wisdom content. Before to calling this API, use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html\">StartContentUpload</a> to upload an asset.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/contents",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateContentRequest"
+      },
+      "name": "CreateContent",
+      "output": {
+        "shape": "CreateContentResponse"
+      }
     },
-    "CreateKnowledgeBase":{
-      "name":"CreateKnowledgeBase",
-      "http":{
-        "method":"POST",
-        "requestUri":"/knowledgeBases",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateKnowledgeBaseRequest"},
-      "output":{"shape":"CreateKnowledgeBaseResponse"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"AccessDeniedException"}
+    "CreateKnowledgeBase": {
+      "documentation": "<p>Creates a knowledge base.</p> <note> <p>When using this API, you cannot reuse <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html\">Amazon AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error. </p> <pre><code> &lt;p&gt;For example, you're programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html&quot;&gt;DeleteKnowledgeBase&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html&quot;&gt;DeleteDataIntegration&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html&quot;&gt;CreateDataIntegration&lt;/a&gt; to recreate the DataIntegration or a create different one.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call CreateKnowledgeBase.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;/note&gt; </code></pre>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Creates a knowledge base.</p> <note> <p>When using this API, you cannot reuse <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html\">Amazon AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error. </p> <pre><code> &lt;p&gt;For example, you're programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html&quot;&gt;DeleteKnowledgeBase&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html&quot;&gt;DeleteDataIntegration&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html&quot;&gt;CreateDataIntegration&lt;/a&gt; to recreate the DataIntegration or a create different one.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call CreateKnowledgeBase.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;/note&gt; </code></pre>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/knowledgeBases",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateKnowledgeBaseRequest"
+      },
+      "name": "CreateKnowledgeBase",
+      "output": {
+        "shape": "CreateKnowledgeBaseResponse"
+      }
     },
-    "CreateSession":{
-      "name":"CreateSession",
-      "http":{
-        "method":"POST",
-        "requestUri":"/assistants/{assistantId}/sessions",
-        "responseCode":200
-      },
-      "input":{"shape":"CreateSessionRequest"},
-      "output":{"shape":"CreateSessionResponse"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"}
+    "CreateSession": {
+      "documentation": "<p>Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is enabled.</p>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is enabled.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/assistants/{assistantId}/sessions",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateSessionRequest"
+      },
+      "name": "CreateSession",
+      "output": {
+        "shape": "CreateSessionResponse"
+      }
     },
-    "DeleteAssistant":{
-      "name":"DeleteAssistant",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/assistants/{assistantId}",
-        "responseCode":204
-      },
-      "input":{"shape":"DeleteAssistantRequest"},
-      "output":{"shape":"DeleteAssistantResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "DeleteAssistant": {
+      "documentation": "<p>Deletes an assistant.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Deletes an assistant.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/assistants/{assistantId}",
+        "responseCode": 204
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteAssistantRequest"
+      },
+      "name": "DeleteAssistant",
+      "output": {
+        "shape": "DeleteAssistantResponse"
+      }
     },
-    "DeleteAssistantAssociation":{
-      "name":"DeleteAssistantAssociation",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/assistants/{assistantId}/associations/{assistantAssociationId}",
-        "responseCode":204
-      },
-      "input":{"shape":"DeleteAssistantAssociationRequest"},
-      "output":{"shape":"DeleteAssistantAssociationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "DeleteAssistantAssociation": {
+      "documentation": "<p>Deletes an assistant association.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Deletes an assistant association.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/assistants/{assistantId}/associations/{assistantAssociationId}",
+        "responseCode": 204
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteAssistantAssociationRequest"
+      },
+      "name": "DeleteAssistantAssociation",
+      "output": {
+        "shape": "DeleteAssistantAssociationResponse"
+      }
     },
-    "DeleteContent":{
-      "name":"DeleteContent",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/contents/{contentId}",
-        "responseCode":204
-      },
-      "input":{"shape":"DeleteContentRequest"},
-      "output":{"shape":"DeleteContentResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "DeleteContent": {
+      "documentation": "<p>Deletes the content.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Deletes the content.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/contents/{contentId}",
+        "responseCode": 204
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteContentRequest"
+      },
+      "name": "DeleteContent",
+      "output": {
+        "shape": "DeleteContentResponse"
+      }
     },
-    "DeleteKnowledgeBase":{
-      "name":"DeleteKnowledgeBase",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}",
-        "responseCode":204
-      },
-      "input":{"shape":"DeleteKnowledgeBaseRequest"},
-      "output":{"shape":"DeleteKnowledgeBaseResponse"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "DeleteKnowledgeBase": {
+      "documentation": "<p>Deletes the knowledge base.</p> <note> <p>When you use this API to delete an external knowledge base such as Salesforce or ServiceNow, you must also delete the <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html\">Amazon AppIntegrations</a> DataIntegration. This is because you can't reuse the DataIntegration after it's been associated with an external knowledge base. However, you can delete and recreate it. See <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html\">DeleteDataIntegration</a> and <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html\">CreateDataIntegration</a> in the <i>Amazon AppIntegrations API Reference</i>.</p> </note>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Deletes the knowledge base.</p> <note> <p>When you use this API to delete an external knowledge base such as Salesforce or ServiceNow, you must also delete the <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html\">Amazon AppIntegrations</a> DataIntegration. This is because you can't reuse the DataIntegration after it's been associated with an external knowledge base. However, you can delete and recreate it. See <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html\">DeleteDataIntegration</a> and <a href=\"https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html\">CreateDataIntegration</a> in the <i>Amazon AppIntegrations API Reference</i>.</p> </note>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}",
+        "responseCode": 204
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteKnowledgeBaseRequest"
+      },
+      "name": "DeleteKnowledgeBase",
+      "output": {
+        "shape": "DeleteKnowledgeBaseResponse"
+      }
     },
-    "GetAssistant":{
-      "name":"GetAssistant",
-      "http":{
-        "method":"GET",
-        "requestUri":"/assistants/{assistantId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetAssistantRequest"},
-      "output":{"shape":"GetAssistantResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetAssistant": {
+      "documentation": "<p>Retrieves information about an assistant.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Retrieves information about an assistant.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/assistants/{assistantId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetAssistantRequest"
+      },
+      "name": "GetAssistant",
+      "output": {
+        "shape": "GetAssistantResponse"
+      }
     },
-    "GetAssistantAssociation":{
-      "name":"GetAssistantAssociation",
-      "http":{
-        "method":"GET",
-        "requestUri":"/assistants/{assistantId}/associations/{assistantAssociationId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetAssistantAssociationRequest"},
-      "output":{"shape":"GetAssistantAssociationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetAssistantAssociation": {
+      "documentation": "<p>Retrieves information about an assistant association.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Retrieves information about an assistant association.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/assistants/{assistantId}/associations/{assistantAssociationId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetAssistantAssociationRequest"
+      },
+      "name": "GetAssistantAssociation",
+      "output": {
+        "shape": "GetAssistantAssociationResponse"
+      }
     },
-    "GetContent":{
-      "name":"GetContent",
-      "http":{
-        "method":"GET",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/contents/{contentId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetContentRequest"},
-      "output":{"shape":"GetContentResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetContent": {
+      "documentation": "<p>Retrieves content, including a pre-signed URL to download the content.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Retrieves content, including a pre-signed URL to download the content.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/contents/{contentId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetContentRequest"
+      },
+      "name": "GetContent",
+      "output": {
+        "shape": "GetContentResponse"
+      }
     },
-    "GetContentSummary":{
-      "name":"GetContentSummary",
-      "http":{
-        "method":"GET",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/contents/{contentId}/summary",
-        "responseCode":200
-      },
-      "input":{"shape":"GetContentSummaryRequest"},
-      "output":{"shape":"GetContentSummaryResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetContentSummary": {
+      "documentation": "<p>Retrieves summary information about the content.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Retrieves summary information about the content.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/contents/{contentId}/summary",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetContentSummaryRequest"
+      },
+      "name": "GetContentSummary",
+      "output": {
+        "shape": "GetContentSummaryResponse"
+      }
     },
-    "GetKnowledgeBase":{
-      "name":"GetKnowledgeBase",
-      "http":{
-        "method":"GET",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetKnowledgeBaseRequest"},
-      "output":{"shape":"GetKnowledgeBaseResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetKnowledgeBase": {
+      "documentation": "<p>Retrieves information about the knowledge base.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Retrieves information about the knowledge base.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetKnowledgeBaseRequest"
+      },
+      "name": "GetKnowledgeBase",
+      "output": {
+        "shape": "GetKnowledgeBaseResponse"
+      }
     },
-    "GetRecommendations":{
-      "name":"GetRecommendations",
-      "http":{
-        "method":"GET",
-        "requestUri":"/assistants/{assistantId}/sessions/{sessionId}/recommendations",
-        "responseCode":200
-      },
-      "input":{"shape":"GetRecommendationsRequest"},
-      "output":{"shape":"GetRecommendationsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetRecommendations": {
+      "documentation": "<p>Retrieves recommendations for the specified session. To avoid retrieving the same recommendations in subsequent calls, use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html\">NotifyRecommendationsReceived</a>. This API supports long-polling behavior with the <code>waitTimeSeconds</code> parameter. Short poll is the default behavior and only returns recommendations already available. To perform a manual query against an assistant, use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html\">QueryAssistant</a>.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Retrieves recommendations for the specified session. To avoid retrieving the same recommendations in subsequent calls, use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html\">NotifyRecommendationsReceived</a>. This API supports long-polling behavior with the <code>waitTimeSeconds</code> parameter. Short poll is the default behavior and only returns recommendations already available. To perform a manual query against an assistant, use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html\">QueryAssistant</a>.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/assistants/{assistantId}/sessions/{sessionId}/recommendations",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetRecommendationsRequest"
+      },
+      "name": "GetRecommendations",
+      "output": {
+        "shape": "GetRecommendationsResponse"
+      }
     },
-    "GetSession":{
-      "name":"GetSession",
-      "http":{
-        "method":"GET",
-        "requestUri":"/assistants/{assistantId}/sessions/{sessionId}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetSessionRequest"},
-      "output":{"shape":"GetSessionResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "GetSession": {
+      "documentation": "<p>Retrieves information for a specified session.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Retrieves information for a specified session.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/assistants/{assistantId}/sessions/{sessionId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetSessionRequest"
+      },
+      "name": "GetSession",
+      "output": {
+        "shape": "GetSessionResponse"
+      }
     },
-    "ListAssistantAssociations":{
-      "name":"ListAssistantAssociations",
-      "http":{
-        "method":"GET",
-        "requestUri":"/assistants/{assistantId}/associations",
-        "responseCode":200
-      },
-      "input":{"shape":"ListAssistantAssociationsRequest"},
-      "output":{"shape":"ListAssistantAssociationsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "ListAssistantAssociations": {
+      "documentation": "<p>Lists information about assistant associations.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Lists information about assistant associations.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/assistants/{assistantId}/associations",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListAssistantAssociationsRequest"
+      },
+      "name": "ListAssistantAssociations",
+      "output": {
+        "shape": "ListAssistantAssociationsResponse"
+      }
     },
-    "ListAssistants":{
-      "name":"ListAssistants",
-      "http":{
-        "method":"GET",
-        "requestUri":"/assistants",
-        "responseCode":200
-      },
-      "input":{"shape":"ListAssistantsRequest"},
-      "output":{"shape":"ListAssistantsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "ListAssistants": {
+      "documentation": "<p>Lists information about assistants.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists information about assistants.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/assistants",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListAssistantsRequest"
+      },
+      "name": "ListAssistants",
+      "output": {
+        "shape": "ListAssistantsResponse"
+      }
     },
-    "ListContents":{
-      "name":"ListContents",
-      "http":{
-        "method":"GET",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/contents",
-        "responseCode":200
-      },
-      "input":{"shape":"ListContentsRequest"},
-      "output":{"shape":"ListContentsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "ListContents": {
+      "documentation": "<p>Lists the content.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Lists the content.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/contents",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListContentsRequest"
+      },
+      "name": "ListContents",
+      "output": {
+        "shape": "ListContentsResponse"
+      }
     },
-    "ListKnowledgeBases":{
-      "name":"ListKnowledgeBases",
-      "http":{
-        "method":"GET",
-        "requestUri":"/knowledgeBases",
-        "responseCode":200
-      },
-      "input":{"shape":"ListKnowledgeBasesRequest"},
-      "output":{"shape":"ListKnowledgeBasesResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"}
+    "ListKnowledgeBases": {
+      "documentation": "<p>Lists the knowledge bases.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists the knowledge bases.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/knowledgeBases",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListKnowledgeBasesRequest"
+      },
+      "name": "ListKnowledgeBases",
+      "output": {
+        "shape": "ListKnowledgeBasesResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Lists the tags for the specified resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Lists the tags for the specified resource.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "NotifyRecommendationsReceived":{
-      "name":"NotifyRecommendationsReceived",
-      "http":{
-        "method":"POST",
-        "requestUri":"/assistants/{assistantId}/sessions/{sessionId}/recommendations/notify",
-        "responseCode":200
-      },
-      "input":{"shape":"NotifyRecommendationsReceivedRequest"},
-      "output":{"shape":"NotifyRecommendationsReceivedResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "NotifyRecommendationsReceived": {
+      "documentation": "<p>Removes the specified recommendations from the specified assistant's queue of newly available recommendations. You can use this API in conjunction with <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html\">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling behavior and avoiding duplicate recommendations.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Removes the specified recommendations from the specified assistant's queue of newly available recommendations. You can use this API in conjunction with <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html\">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling behavior and avoiding duplicate recommendations.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/assistants/{assistantId}/sessions/{sessionId}/recommendations/notify",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "NotifyRecommendationsReceivedRequest"
+      },
+      "name": "NotifyRecommendationsReceived",
+      "output": {
+        "shape": "NotifyRecommendationsReceivedResponse"
+      }
     },
-    "QueryAssistant":{
-      "name":"QueryAssistant",
-      "http":{
-        "method":"POST",
-        "requestUri":"/assistants/{assistantId}/query",
-        "responseCode":200
-      },
-      "input":{"shape":"QueryAssistantRequest"},
-      "output":{"shape":"QueryAssistantResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "QueryAssistant": {
+      "documentation": "<p>Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html\">GetRecommendations</a>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html\">GetRecommendations</a>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/assistants/{assistantId}/query",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "QueryAssistantRequest"
+      },
+      "name": "QueryAssistant",
+      "output": {
+        "shape": "QueryAssistantResponse"
+      }
     },
-    "RemoveKnowledgeBaseTemplateUri":{
-      "name":"RemoveKnowledgeBaseTemplateUri",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/templateUri",
-        "responseCode":204
-      },
-      "input":{"shape":"RemoveKnowledgeBaseTemplateUriRequest"},
-      "output":{"shape":"RemoveKnowledgeBaseTemplateUriResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "RemoveKnowledgeBaseTemplateUri": {
+      "documentation": "<p>Removes a URI template from a knowledge base.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Removes a URI template from a knowledge base.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/templateUri",
+        "responseCode": 204
+      },
+      "input": {
+        "shape": "RemoveKnowledgeBaseTemplateUriRequest"
+      },
+      "name": "RemoveKnowledgeBaseTemplateUri",
+      "output": {
+        "shape": "RemoveKnowledgeBaseTemplateUriResponse"
+      }
     },
-    "SearchContent":{
-      "name":"SearchContent",
-      "http":{
-        "method":"POST",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/search",
-        "responseCode":200
-      },
-      "input":{"shape":"SearchContentRequest"},
-      "output":{"shape":"SearchContentResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "SearchContent": {
+      "documentation": "<p>Searches for content in a specified knowledge base. Can be used to get a specific content resource by its name.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Searches for content in a specified knowledge base. Can be used to get a specific content resource by its name.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/search",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SearchContentRequest"
+      },
+      "name": "SearchContent",
+      "output": {
+        "shape": "SearchContentResponse"
+      }
     },
-    "SearchSessions":{
-      "name":"SearchSessions",
-      "http":{
-        "method":"POST",
-        "requestUri":"/assistants/{assistantId}/searchSessions",
-        "responseCode":200
-      },
-      "input":{"shape":"SearchSessionsRequest"},
-      "output":{"shape":"SearchSessionsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "SearchSessions": {
+      "documentation": "<p>Searches for sessions.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Searches for sessions.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/assistants/{assistantId}/searchSessions",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SearchSessionsRequest"
+      },
+      "name": "SearchSessions",
+      "output": {
+        "shape": "SearchSessionsResponse"
+      }
     },
-    "StartContentUpload":{
-      "name":"StartContentUpload",
-      "http":{
-        "method":"POST",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/upload",
-        "responseCode":200
-      },
-      "input":{"shape":"StartContentUploadRequest"},
-      "output":{"shape":"StartContentUploadResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "StartContentUpload": {
+      "documentation": "<p>Get a URL to upload content to a knowledge base. To upload content, first make a PUT request to the returned URL with your file, making sure to include the required headers. Then use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html\">CreateContent</a> to finalize the content creation process or <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html\">UpdateContent</a> to modify an existing resource. You can only upload content to a knowledge base of type CUSTOM.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Get a URL to upload content to a knowledge base. To upload content, first make a PUT request to the returned URL with your file, making sure to include the required headers. Then use <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html\">CreateContent</a> to finalize the content creation process or <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html\">UpdateContent</a> to modify an existing resource. You can only upload content to a knowledge base of type CUSTOM.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/upload",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StartContentUploadRequest"
+      },
+      "name": "StartContentUpload",
+      "output": {
+        "shape": "StartContentUploadResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"TooManyTagsException"},
-        {"shape":"ResourceNotFoundException"}
+    "TagResource": {
+      "documentation": "<p>Adds the specified tags to the specified resource.</p>",
+      "errors": [
+        {
+          "shape": "TooManyTagsException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Adds the specified tags to the specified resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"}
+    "UntagResource": {
+      "documentation": "<p>Removes the specified tags from the specified resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Removes the specified tags from the specified resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
     },
-    "UpdateContent":{
-      "name":"UpdateContent",
-      "http":{
-        "method":"POST",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/contents/{contentId}",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateContentRequest"},
-      "output":{"shape":"UpdateContentResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"PreconditionFailedException"},
-        {"shape":"ResourceNotFoundException"}
+    "UpdateContent": {
+      "documentation": "<p>Updates information about the content.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "PreconditionFailedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Updates information about the content.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/contents/{contentId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateContentRequest"
+      },
+      "name": "UpdateContent",
+      "output": {
+        "shape": "UpdateContentResponse"
+      }
     },
-    "UpdateKnowledgeBaseTemplateUri":{
-      "name":"UpdateKnowledgeBaseTemplateUri",
-      "http":{
-        "method":"POST",
-        "requestUri":"/knowledgeBases/{knowledgeBaseId}/templateUri",
-        "responseCode":200
-      },
-      "input":{"shape":"UpdateKnowledgeBaseTemplateUriRequest"},
-      "output":{"shape":"UpdateKnowledgeBaseTemplateUriResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"}
+    "UpdateKnowledgeBaseTemplateUri": {
+      "documentation": "<p>Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce article, it has an <code>Id</code> value, and you can set the template URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>. </p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        }
       ],
-      "documentation":"<p>Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce article, it has an <code>Id</code> value, and you can set the template URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>. </p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/knowledgeBases/{knowledgeBaseId}/templateUri",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateKnowledgeBaseTemplateUriRequest"
+      },
+      "name": "UpdateKnowledgeBaseTemplateUri",
+      "output": {
+        "shape": "UpdateKnowledgeBaseTemplateUriResponse"
+      }
     }
   },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>You do not have sufficient access to perform this action.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
       },
-      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
       },
-      "exception":true
+      "type": "structure"
     },
-    "AppIntegrationsConfiguration":{
-      "type":"structure",
-      "required":[
+    "AppIntegrationsConfiguration": {
+      "documentation": "<p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>",
+      "members": {
+        "appIntegrationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>",
+          "shape": "GenericArn"
+        },
+        "objectFields": {
+          "documentation": "<p>The fields from the source that are made available to your agents in Wisdom. </p> <ul> <li> <p> For <a href=\"https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm\"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li> <li> <p>For <a href=\"https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api\"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>",
+          "shape": "ObjectFieldsList"
+        }
+      },
+      "required": [
         "appIntegrationArn",
         "objectFields"
       ],
-      "members":{
-        "appIntegrationArn":{
-          "shape":"GenericArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>"
+      "type": "structure"
+    },
+    "Arn": {
+      "pattern": "^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$",
+      "type": "string"
+    },
+    "AssistantAssociationData": {
+      "documentation": "<p>Information about the assistant association.</p>",
+      "members": {
+        "assistantArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>",
+          "shape": "Arn"
         },
-        "objectFields":{
-          "shape":"ObjectFieldsList",
-          "documentation":"<p>The fields from the source that are made available to your agents in Wisdom. </p> <ul> <li> <p> For <a href=\"https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm\"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li> <li> <p>For <a href=\"https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api\"> ServiceNow</a>, you must include at least <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, and <code>active</code>. </p> </li> </ul> <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>"
+        "assistantAssociationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the assistant association.</p>",
+          "shape": "Arn"
+        },
+        "assistantAssociationId": {
+          "documentation": "<p>The identifier of the assistant association.</p>",
+          "shape": "Uuid"
+        },
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant.</p>",
+          "shape": "Uuid"
+        },
+        "associationData": {
+          "documentation": "<p>A union type that currently has a single argument, the knowledge base ID.</p>",
+          "shape": "AssistantAssociationOutputData"
+        },
+        "associationType": {
+          "documentation": "<p>The type of association.</p>",
+          "shape": "AssociationType"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
         }
       },
-      "documentation":"<p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>"
-    },
-    "Arn":{
-      "type":"string",
-      "pattern":"^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$"
-    },
-    "AssistantAssociationData":{
-      "type":"structure",
-      "required":[
+      "required": [
         "assistantArn",
         "assistantAssociationArn",
         "assistantAssociationId",
@@ -567,63 +911,63 @@
         "associationData",
         "associationType"
       ],
-      "members":{
-        "assistantArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
-        },
-        "assistantAssociationArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the assistant association.</p>"
-        },
-        "assistantAssociationId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the assistant association.</p>"
-        },
-        "assistantId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the Wisdom assistant.</p>"
-        },
-        "associationData":{
-          "shape":"AssistantAssociationOutputData",
-          "documentation":"<p>A union type that currently has a single argument, the knowledge base ID.</p>"
-        },
-        "associationType":{
-          "shape":"AssociationType",
-          "documentation":"<p>The type of association.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+      "type": "structure"
+    },
+    "AssistantAssociationInputData": {
+      "documentation": "<p>The data that is input into Wisdom as a result of the assistant association.</p>",
+      "members": {
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base.</p>",
+          "shape": "Uuid"
         }
       },
-      "documentation":"<p>Information about the assistant association.</p>"
+      "type": "structure",
+      "union": true
     },
-    "AssistantAssociationInputData":{
-      "type":"structure",
-      "members":{
-        "knowledgeBaseId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the knowledge base.</p>"
+    "AssistantAssociationOutputData": {
+      "documentation": "<p>The data that is output as a result of the assistant association.</p>",
+      "members": {
+        "knowledgeBaseAssociation": {
+          "documentation": "<p>The knowledge base where output data is sent.</p>",
+          "shape": "KnowledgeBaseAssociationData"
         }
       },
-      "documentation":"<p>The data that is input into Wisdom as a result of the assistant association.</p>",
-      "union":true
+      "type": "structure",
+      "union": true
     },
-    "AssistantAssociationOutputData":{
-      "type":"structure",
-      "members":{
-        "knowledgeBaseAssociation":{
-          "shape":"KnowledgeBaseAssociationData",
-          "documentation":"<p>The knowledge base where output data is sent.</p>"
+    "AssistantAssociationSummary": {
+      "documentation": "<p>Summary information about the assistant association.</p>",
+      "members": {
+        "assistantArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>",
+          "shape": "Arn"
+        },
+        "assistantAssociationArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the assistant association.</p>",
+          "shape": "Arn"
+        },
+        "assistantAssociationId": {
+          "documentation": "<p>The identifier of the assistant association.</p>",
+          "shape": "Uuid"
+        },
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant.</p>",
+          "shape": "Uuid"
+        },
+        "associationData": {
+          "documentation": "<p>The association data.</p>",
+          "shape": "AssistantAssociationOutputData"
+        },
+        "associationType": {
+          "documentation": "<p>The type of association.</p>",
+          "shape": "AssociationType"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
         }
       },
-      "documentation":"<p>The data that is output as a result of the assistant association.</p>",
-      "union":true
-    },
-    "AssistantAssociationSummary":{
-      "type":"structure",
-      "required":[
+      "required": [
         "assistantArn",
         "assistantAssociationArn",
         "assistantAssociationId",
@@ -631,179 +975,217 @@
         "associationData",
         "associationType"
       ],
-      "members":{
-        "assistantArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
+      "type": "structure"
+    },
+    "AssistantAssociationSummaryList": {
+      "member": {
+        "shape": "AssistantAssociationSummary"
+      },
+      "type": "list"
+    },
+    "AssistantData": {
+      "documentation": "<p>The assistant data.</p>",
+      "members": {
+        "assistantArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>",
+          "shape": "Arn"
         },
-        "assistantAssociationArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the assistant association.</p>"
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant.</p>",
+          "shape": "Uuid"
         },
-        "assistantAssociationId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the assistant association.</p>"
+        "description": {
+          "documentation": "<p>The description.</p>",
+          "shape": "Description"
         },
-        "assistantId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the Wisdom assistant.</p>"
+        "name": {
+          "documentation": "<p>The name.</p>",
+          "shape": "Name"
         },
-        "associationData":{
-          "shape":"AssistantAssociationOutputData",
-          "documentation":"<p>The association data.</p>"
+        "serverSideEncryptionConfiguration": {
+          "documentation": "<p>The KMS key used for encryption.</p>",
+          "shape": "ServerSideEncryptionConfiguration"
         },
-        "associationType":{
-          "shape":"AssociationType",
-          "documentation":"<p>The type of association.</p>"
+        "status": {
+          "documentation": "<p>The status of the assistant.</p>",
+          "shape": "AssistantStatus"
         },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "type": {
+          "documentation": "<p>The type of assistant.</p>",
+          "shape": "AssistantType"
         }
       },
-      "documentation":"<p>Summary information about the assistant association.</p>"
-    },
-    "AssistantAssociationSummaryList":{
-      "type":"list",
-      "member":{"shape":"AssistantAssociationSummary"}
-    },
-    "AssistantData":{
-      "type":"structure",
-      "required":[
+      "required": [
         "assistantArn",
         "assistantId",
         "name",
         "status",
         "type"
       ],
-      "members":{
-        "assistantArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
-        },
-        "assistantId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the Wisdom assistant.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name.</p>"
-        },
-        "serverSideEncryptionConfiguration":{
-          "shape":"ServerSideEncryptionConfiguration",
-          "documentation":"<p>The KMS key used for encryption.</p>"
-        },
-        "status":{
-          "shape":"AssistantStatus",
-          "documentation":"<p>The status of the assistant.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        },
-        "type":{
-          "shape":"AssistantType",
-          "documentation":"<p>The type of assistant.</p>"
-        }
+      "type": "structure"
+    },
+    "AssistantList": {
+      "member": {
+        "shape": "AssistantSummary"
       },
-      "documentation":"<p>The assistant data.</p>"
+      "type": "list"
     },
-    "AssistantList":{
-      "type":"list",
-      "member":{"shape":"AssistantSummary"}
-    },
-    "AssistantStatus":{
-      "type":"string",
-      "enum":[
+    "AssistantStatus": {
+      "enum": [
         "CREATE_IN_PROGRESS",
         "CREATE_FAILED",
         "ACTIVE",
         "DELETE_IN_PROGRESS",
         "DELETE_FAILED",
         "DELETED"
-      ]
+      ],
+      "type": "string"
     },
-    "AssistantSummary":{
-      "type":"structure",
-      "required":[
+    "AssistantSummary": {
+      "documentation": "<p>Summary information about the assistant.</p>",
+      "members": {
+        "assistantArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>",
+          "shape": "Arn"
+        },
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant.</p>",
+          "shape": "Uuid"
+        },
+        "description": {
+          "documentation": "<p>The description of the assistant.</p>",
+          "shape": "Description"
+        },
+        "name": {
+          "documentation": "<p>The name of the assistant.</p>",
+          "shape": "Name"
+        },
+        "serverSideEncryptionConfiguration": {
+          "documentation": "<p>The KMS key used for encryption.</p>",
+          "shape": "ServerSideEncryptionConfiguration"
+        },
+        "status": {
+          "documentation": "<p>The status of the assistant.</p>",
+          "shape": "AssistantStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "type": {
+          "documentation": "<p>The type of the assistant.</p>",
+          "shape": "AssistantType"
+        }
+      },
+      "required": [
         "assistantArn",
         "assistantId",
         "name",
         "status",
         "type"
       ],
-      "members":{
-        "assistantArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
-        },
-        "assistantId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the Wisdom assistant.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the assistant.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the assistant.</p>"
-        },
-        "serverSideEncryptionConfiguration":{
-          "shape":"ServerSideEncryptionConfiguration",
-          "documentation":"<p>The KMS key used for encryption.</p>"
-        },
-        "status":{
-          "shape":"AssistantStatus",
-          "documentation":"<p>The status of the assistant.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        },
-        "type":{
-          "shape":"AssistantType",
-          "documentation":"<p>The type of the assistant.</p>"
+      "type": "structure"
+    },
+    "AssistantType": {
+      "enum": [
+        "AGENT"
+      ],
+      "type": "string"
+    },
+    "AssociationType": {
+      "enum": [
+        "KNOWLEDGE_BASE"
+      ],
+      "type": "string"
+    },
+    "Boolean": {
+      "box": true,
+      "type": "boolean"
+    },
+    "ClientToken": {
+      "max": 4096,
+      "min": 1,
+      "type": "string"
+    },
+    "ConflictException": {
+      "documentation": "<p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>Summary information about the assistant.</p>"
+      "type": "structure"
     },
-    "AssistantType":{
-      "type":"string",
-      "enum":["AGENT"]
-    },
-    "AssociationType":{
-      "type":"string",
-      "enum":["KNOWLEDGE_BASE"]
-    },
-    "Boolean":{
-      "type":"boolean",
-      "box":true
-    },
-    "ClientToken":{
-      "type":"string",
-      "max":4096,
-      "min":1
-    },
-    "ConflictException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "ContentData": {
+      "documentation": "<p>Information about the content.</p>",
+      "members": {
+        "contentArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the content.</p>",
+          "shape": "Arn"
+        },
+        "contentId": {
+          "documentation": "<p>The identifier of the content.</p>",
+          "shape": "Uuid"
+        },
+        "contentType": {
+          "documentation": "<p>The media type of the content.</p>",
+          "shape": "ContentType"
+        },
+        "knowledgeBaseArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the knowledge base.</p>",
+          "shape": "Arn"
+        },
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base.</p>",
+          "shape": "Uuid"
+        },
+        "linkOutUri": {
+          "documentation": "<p>The URI of the content.</p>",
+          "shape": "Uri"
+        },
+        "metadata": {
+          "documentation": "<p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>",
+          "shape": "ContentMetadata"
+        },
+        "name": {
+          "documentation": "<p>The name of the content.</p>",
+          "shape": "Name"
+        },
+        "revisionId": {
+          "documentation": "<p>The identifier of the content revision.</p>",
+          "shape": "NonEmptyString"
+        },
+        "status": {
+          "documentation": "<p>The status of the content.</p>",
+          "shape": "ContentStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "title": {
+          "documentation": "<p>The title of the content.</p>",
+          "shape": "ContentTitle"
+        },
+        "url": {
+          "documentation": "<p>The URL of the content.</p>",
+          "shape": "Url"
+        },
+        "urlExpiry": {
+          "documentation": "<p>The expiration time of the URL as an epoch timestamp.</p>",
+          "shape": "SyntheticTimestamp_epoch_seconds"
+        }
       },
-      "documentation":"<p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "ContentData":{
-      "type":"structure",
-      "required":[
+      "required": [
         "contentArn",
         "contentId",
         "contentType",
@@ -817,98 +1199,43 @@
         "url",
         "urlExpiry"
       ],
-      "members":{
-        "contentArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the content.</p>"
+      "type": "structure"
+    },
+    "ContentMetadata": {
+      "key": {
+        "shape": "NonEmptyString"
+      },
+      "max": 10,
+      "min": 0,
+      "type": "map",
+      "value": {
+        "shape": "NonEmptyString"
+      }
+    },
+    "ContentReference": {
+      "documentation": "<p>Reference information about the content.</p>",
+      "members": {
+        "contentArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the content.</p>",
+          "shape": "Arn"
         },
-        "contentId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the content.</p>"
+        "contentId": {
+          "documentation": "<p>The identifier of the content.</p>",
+          "shape": "Uuid"
         },
-        "contentType":{
-          "shape":"ContentType",
-          "documentation":"<p>The media type of the content.</p>"
+        "knowledgeBaseArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the knowledge base.</p>",
+          "shape": "Arn"
         },
-        "knowledgeBaseArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the knowledge base.</p>"
-        },
-        "knowledgeBaseId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the knowledge base.</p>"
-        },
-        "linkOutUri":{
-          "shape":"Uri",
-          "documentation":"<p>The URI of the content.</p>"
-        },
-        "metadata":{
-          "shape":"ContentMetadata",
-          "documentation":"<p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the content.</p>"
-        },
-        "revisionId":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>The identifier of the content revision.</p>"
-        },
-        "status":{
-          "shape":"ContentStatus",
-          "documentation":"<p>The status of the content.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        },
-        "title":{
-          "shape":"ContentTitle",
-          "documentation":"<p>The title of the content.</p>"
-        },
-        "url":{
-          "shape":"Url",
-          "documentation":"<p>The URL of the content.</p>"
-        },
-        "urlExpiry":{
-          "shape":"SyntheticTimestamp_epoch_seconds",
-          "documentation":"<p>The expiration time of the URL as an epoch timestamp.</p>"
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base.</p>",
+          "shape": "Uuid"
         }
       },
-      "documentation":"<p>Information about the content.</p>"
+      "type": "structure"
     },
-    "ContentMetadata":{
-      "type":"map",
-      "key":{"shape":"NonEmptyString"},
-      "value":{"shape":"NonEmptyString"},
-      "max":10,
-      "min":0
-    },
-    "ContentReference":{
-      "type":"structure",
-      "members":{
-        "contentArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the content.</p>"
-        },
-        "contentId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the content.</p>"
-        },
-        "knowledgeBaseArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the knowledge base.</p>"
-        },
-        "knowledgeBaseId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the knowledge base.</p>"
-        }
-      },
-      "documentation":"<p>Reference information about the content.</p>"
-    },
-    "ContentStatus":{
-      "type":"string",
-      "enum":[
+    "ContentStatus": {
+      "enum": [
         "CREATE_IN_PROGRESS",
         "CREATE_FAILED",
         "ACTIVE",
@@ -916,11 +1243,58 @@
         "DELETE_FAILED",
         "DELETED",
         "UPDATE_FAILED"
-      ]
+      ],
+      "type": "string"
     },
-    "ContentSummary":{
-      "type":"structure",
-      "required":[
+    "ContentSummary": {
+      "documentation": "<p>Summary information about the content.</p>",
+      "members": {
+        "contentArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the content.</p>",
+          "shape": "Arn"
+        },
+        "contentId": {
+          "documentation": "<p>The identifier of the content.</p>",
+          "shape": "Uuid"
+        },
+        "contentType": {
+          "documentation": "<p>The media type of the content.</p>",
+          "shape": "ContentType"
+        },
+        "knowledgeBaseArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the knowledge base.</p>",
+          "shape": "Arn"
+        },
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base.</p>",
+          "shape": "Uuid"
+        },
+        "metadata": {
+          "documentation": "<p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>",
+          "shape": "ContentMetadata"
+        },
+        "name": {
+          "documentation": "<p>The name of the content.</p>",
+          "shape": "Name"
+        },
+        "revisionId": {
+          "documentation": "<p>The identifier of the revision of the content.</p>",
+          "shape": "NonEmptyString"
+        },
+        "status": {
+          "documentation": "<p>The status of the content.</p>",
+          "shape": "ContentStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "title": {
+          "documentation": "<p>The title of the content.</p>",
+          "shape": "ContentTitle"
+        }
+      },
+      "required": [
         "contentArn",
         "contentId",
         "contentType",
@@ -932,1796 +1306,1835 @@
         "status",
         "title"
       ],
-      "members":{
-        "contentArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the content.</p>"
+      "type": "structure"
+    },
+    "ContentSummaryList": {
+      "member": {
+        "shape": "ContentSummary"
+      },
+      "type": "list"
+    },
+    "ContentTitle": {
+      "max": 255,
+      "min": 1,
+      "type": "string"
+    },
+    "ContentType": {
+      "pattern": "^(text/(plain|html))|(application/x\\.wisdom-json;source=(salesforce|servicenow|zendesk))$",
+      "type": "string"
+    },
+    "CreateAssistantAssociationRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
         },
-        "contentId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the content.</p>"
+        "association": {
+          "documentation": "<p>The identifier of the associated resource.</p>",
+          "shape": "AssistantAssociationInputData"
         },
-        "contentType":{
-          "shape":"ContentType",
-          "documentation":"<p>The media type of the content.</p>"
+        "associationType": {
+          "documentation": "<p>The type of association.</p>",
+          "shape": "AssociationType"
         },
-        "knowledgeBaseArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the knowledge base.</p>"
+        "clientToken": {
+          "documentation": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "ClientToken"
         },
-        "knowledgeBaseId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the knowledge base.</p>"
-        },
-        "metadata":{
-          "shape":"ContentMetadata",
-          "documentation":"<p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the content.</p>"
-        },
-        "revisionId":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>The identifier of the revision of the content.</p>"
-        },
-        "status":{
-          "shape":"ContentStatus",
-          "documentation":"<p>The status of the content.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        },
-        "title":{
-          "shape":"ContentTitle",
-          "documentation":"<p>The title of the content.</p>"
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
         }
       },
-      "documentation":"<p>Summary information about the content.</p>"
-    },
-    "ContentSummaryList":{
-      "type":"list",
-      "member":{"shape":"ContentSummary"}
-    },
-    "ContentTitle":{
-      "type":"string",
-      "max":255,
-      "min":1
-    },
-    "ContentType":{
-      "type":"string",
-      "pattern":"^(text/(plain|html))|(application/x\\.wisdom-json;source=(salesforce|servicenow|zendesk))$"
-    },
-    "CreateAssistantAssociationRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "assistantId",
         "association",
         "associationType"
       ],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
-        },
-        "association":{
-          "shape":"AssistantAssociationInputData",
-          "documentation":"<p>The identifier of the associated resource.</p>"
-        },
-        "associationType":{
-          "shape":"AssociationType",
-          "documentation":"<p>The type of association.</p>"
-        },
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateAssistantAssociationResponse":{
-      "type":"structure",
-      "members":{
-        "assistantAssociation":{
-          "shape":"AssistantAssociationData",
-          "documentation":"<p>The assistant association.</p>"
+    "CreateAssistantAssociationResponse": {
+      "members": {
+        "assistantAssociation": {
+          "documentation": "<p>The assistant association.</p>",
+          "shape": "AssistantAssociationData"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateAssistantRequest":{
-      "type":"structure",
-      "required":[
+    "CreateAssistantRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "ClientToken"
+        },
+        "description": {
+          "documentation": "<p>The description of the assistant.</p>",
+          "shape": "Description"
+        },
+        "name": {
+          "documentation": "<p>The name of the assistant.</p>",
+          "shape": "Name"
+        },
+        "serverSideEncryptionConfiguration": {
+          "documentation": "<p>The KMS key used for encryption.</p>",
+          "shape": "ServerSideEncryptionConfiguration"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "type": {
+          "documentation": "<p>The type of assistant.</p>",
+          "shape": "AssistantType"
+        }
+      },
+      "required": [
         "name",
         "type"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the assistant.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the assistant.</p>"
-        },
-        "serverSideEncryptionConfiguration":{
-          "shape":"ServerSideEncryptionConfiguration",
-          "documentation":"<p>The KMS key used for encryption.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        },
-        "type":{
-          "shape":"AssistantType",
-          "documentation":"<p>The type of assistant.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateAssistantResponse":{
-      "type":"structure",
-      "members":{
-        "assistant":{
-          "shape":"AssistantData",
-          "documentation":"<p>Information about the assistant.</p>"
+    "CreateAssistantResponse": {
+      "members": {
+        "assistant": {
+          "documentation": "<p>Information about the assistant.</p>",
+          "shape": "AssistantData"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateContentRequest":{
-      "type":"structure",
-      "required":[
+    "CreateContentRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "NonEmptyString"
+        },
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
+        },
+        "metadata": {
+          "documentation": "<p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>",
+          "shape": "ContentMetadata"
+        },
+        "name": {
+          "documentation": "<p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html\">SearchContent</a> API.</p>",
+          "shape": "Name"
+        },
+        "overrideLinkOutUri": {
+          "documentation": "<p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>",
+          "shape": "Uri"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        },
+        "title": {
+          "documentation": "<p>The title of the content. If not set, the title is equal to the name.</p>",
+          "shape": "ContentTitle"
+        },
+        "uploadId": {
+          "documentation": "<p>A pointer to the uploaded asset. This value is returned by <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html\">StartContentUpload</a>.</p>",
+          "shape": "NonEmptyString"
+        }
+      },
+      "required": [
         "knowledgeBaseId",
         "name",
         "uploadId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        },
-        "metadata":{
-          "shape":"ContentMetadata",
-          "documentation":"<p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html\">SearchContent</a> API.</p>"
-        },
-        "overrideLinkOutUri":{
-          "shape":"Uri",
-          "documentation":"<p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        },
-        "title":{
-          "shape":"ContentTitle",
-          "documentation":"<p>The title of the content. If not set, the title is equal to the name.</p>"
-        },
-        "uploadId":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>A pointer to the uploaded asset. This value is returned by <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html\">StartContentUpload</a>.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateContentResponse":{
-      "type":"structure",
-      "members":{
-        "content":{
-          "shape":"ContentData",
-          "documentation":"<p>The content.</p>"
+    "CreateContentResponse": {
+      "members": {
+        "content": {
+          "documentation": "<p>The content.</p>",
+          "shape": "ContentData"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateKnowledgeBaseRequest":{
-      "type":"structure",
-      "required":[
+    "CreateKnowledgeBaseRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "NonEmptyString"
+        },
+        "description": {
+          "documentation": "<p>The description.</p>",
+          "shape": "Description"
+        },
+        "knowledgeBaseType": {
+          "documentation": "<p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>",
+          "shape": "KnowledgeBaseType"
+        },
+        "name": {
+          "documentation": "<p>The name of the knowledge base.</p>",
+          "shape": "Name"
+        },
+        "renderingConfiguration": {
+          "documentation": "<p>Information about how to render the content.</p>",
+          "shape": "RenderingConfiguration"
+        },
+        "serverSideEncryptionConfiguration": {
+          "documentation": "<p>The KMS key used for encryption.</p>",
+          "shape": "ServerSideEncryptionConfiguration"
+        },
+        "sourceConfiguration": {
+          "documentation": "<p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>",
+          "shape": "SourceConfiguration"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "required": [
         "knowledgeBaseType",
         "name"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description.</p>"
-        },
-        "knowledgeBaseType":{
-          "shape":"KnowledgeBaseType",
-          "documentation":"<p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the knowledge base.</p>"
-        },
-        "renderingConfiguration":{
-          "shape":"RenderingConfiguration",
-          "documentation":"<p>Information about how to render the content.</p>"
-        },
-        "serverSideEncryptionConfiguration":{
-          "shape":"ServerSideEncryptionConfiguration",
-          "documentation":"<p>The KMS key used for encryption.</p>"
-        },
-        "sourceConfiguration":{
-          "shape":"SourceConfiguration",
-          "documentation":"<p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateKnowledgeBaseResponse":{
-      "type":"structure",
-      "members":{
-        "knowledgeBase":{
-          "shape":"KnowledgeBaseData",
-          "documentation":"<p>The knowledge base.</p>"
+    "CreateKnowledgeBaseResponse": {
+      "members": {
+        "knowledgeBase": {
+          "documentation": "<p>The knowledge base.</p>",
+          "shape": "KnowledgeBaseData"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateSessionRequest":{
-      "type":"structure",
-      "required":[
+    "CreateSessionRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
+        },
+        "clientToken": {
+          "documentation": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "ClientToken"
+        },
+        "description": {
+          "documentation": "<p>The description.</p>",
+          "shape": "Description"
+        },
+        "name": {
+          "documentation": "<p>The name of the session.</p>",
+          "shape": "Name"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "required": [
         "assistantId",
         "name"
       ],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
-        },
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the session.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateSessionResponse":{
-      "type":"structure",
-      "members":{
-        "session":{
-          "shape":"SessionData",
-          "documentation":"<p>The session.</p>"
+    "CreateSessionResponse": {
+      "members": {
+        "session": {
+          "documentation": "<p>The session.</p>",
+          "shape": "SessionData"
         }
-      }
+      },
+      "type": "structure"
     },
-    "DeleteAssistantAssociationRequest":{
-      "type":"structure",
-      "required":[
+    "DeleteAssistantAssociationRequest": {
+      "members": {
+        "assistantAssociationId": {
+          "documentation": "<p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantAssociationId",
+          "shape": "UuidOrArn"
+        },
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
+        }
+      },
+      "required": [
         "assistantAssociationId",
         "assistantId"
       ],
-      "members":{
-        "assistantAssociationId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantAssociationId"
+      "type": "structure"
+    },
+    "DeleteAssistantAssociationResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "DeleteAssistantRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
+        }
+      },
+      "required": [
+        "assistantId"
+      ],
+      "type": "structure"
+    },
+    "DeleteAssistantResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "DeleteContentRequest": {
+      "members": {
+        "contentId": {
+          "documentation": "<p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "contentId",
+          "shape": "UuidOrArn"
         },
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
         }
-      }
-    },
-    "DeleteAssistantAssociationResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DeleteAssistantRequest":{
-      "type":"structure",
-      "required":["assistantId"],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
-        }
-      }
-    },
-    "DeleteAssistantResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DeleteContentRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "contentId",
         "knowledgeBaseId"
       ],
-      "members":{
-        "contentId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"contentId"
-        },
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        }
-      }
+      "type": "structure"
     },
-    "DeleteContentResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "DeleteContentResponse": {
+      "members": {},
+      "type": "structure"
     },
-    "DeleteKnowledgeBaseRequest":{
-      "type":"structure",
-      "required":["knowledgeBaseId"],
-      "members":{
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        }
-      }
-    },
-    "DeleteKnowledgeBaseResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "Description":{
-      "type":"string",
-      "max":255,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9\\s_.,-]+"
-    },
-    "Document":{
-      "type":"structure",
-      "required":["contentReference"],
-      "members":{
-        "contentReference":{
-          "shape":"ContentReference",
-          "documentation":"<p>A reference to the content resource.</p>"
-        },
-        "excerpt":{
-          "shape":"DocumentText",
-          "documentation":"<p>The excerpt from the document.</p>"
-        },
-        "title":{
-          "shape":"DocumentText",
-          "documentation":"<p>The title of the document.</p>"
+    "DeleteKnowledgeBaseRequest": {
+      "members": {
+        "knowledgeBaseId": {
+          "documentation": "<p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
         }
       },
-      "documentation":"<p>The document.</p>"
+      "required": [
+        "knowledgeBaseId"
+      ],
+      "type": "structure"
     },
-    "DocumentText":{
-      "type":"structure",
-      "members":{
-        "highlights":{
-          "shape":"Highlights",
-          "documentation":"<p>Highlights in the document text.</p>"
+    "DeleteKnowledgeBaseResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "Description": {
+      "max": 255,
+      "min": 1,
+      "pattern": "^[a-zA-Z0-9\\s_.,-]+",
+      "type": "string"
+    },
+    "Document": {
+      "documentation": "<p>The document.</p>",
+      "members": {
+        "contentReference": {
+          "documentation": "<p>A reference to the content resource.</p>",
+          "shape": "ContentReference"
         },
-        "text":{
-          "shape":"SensitiveString",
-          "documentation":"<p>Text in the document.</p>"
+        "excerpt": {
+          "documentation": "<p>The excerpt from the document.</p>",
+          "shape": "DocumentText"
+        },
+        "title": {
+          "documentation": "<p>The title of the document.</p>",
+          "shape": "DocumentText"
         }
       },
-      "documentation":"<p>The text of the document.</p>"
+      "required": [
+        "contentReference"
+      ],
+      "type": "structure"
     },
-    "Filter":{
-      "type":"structure",
-      "required":[
+    "DocumentText": {
+      "documentation": "<p>The text of the document.</p>",
+      "members": {
+        "highlights": {
+          "documentation": "<p>Highlights in the document text.</p>",
+          "shape": "Highlights"
+        },
+        "text": {
+          "documentation": "<p>Text in the document.</p>",
+          "shape": "SensitiveString"
+        }
+      },
+      "type": "structure"
+    },
+    "Filter": {
+      "documentation": "<p>A search filter.</p>",
+      "members": {
+        "field": {
+          "documentation": "<p>The field on which to filter.</p>",
+          "shape": "FilterField"
+        },
+        "operator": {
+          "documentation": "<p>The operator to use for comparing the field\u2019s value with the provided value.</p>",
+          "shape": "FilterOperator"
+        },
+        "value": {
+          "documentation": "<p>The desired field value on which to filter.</p>",
+          "shape": "NonEmptyString"
+        }
+      },
+      "required": [
         "field",
         "operator",
         "value"
       ],
-      "members":{
-        "field":{
-          "shape":"FilterField",
-          "documentation":"<p>The field on which to filter.</p>"
+      "type": "structure"
+    },
+    "FilterField": {
+      "enum": [
+        "NAME"
+      ],
+      "type": "string"
+    },
+    "FilterList": {
+      "member": {
+        "shape": "Filter"
+      },
+      "type": "list"
+    },
+    "FilterOperator": {
+      "enum": [
+        "EQUALS"
+      ],
+      "type": "string"
+    },
+    "GenericArn": {
+      "max": 2048,
+      "min": 1,
+      "pattern": "^arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+$",
+      "type": "string"
+    },
+    "GetAssistantAssociationRequest": {
+      "members": {
+        "assistantAssociationId": {
+          "documentation": "<p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantAssociationId",
+          "shape": "UuidOrArn"
         },
-        "operator":{
-          "shape":"FilterOperator",
-          "documentation":"<p>The operator to use for comparing the field’s value with the provided value.</p>"
-        },
-        "value":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>The desired field value on which to filter.</p>"
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
         }
       },
-      "documentation":"<p>A search filter.</p>"
-    },
-    "FilterField":{
-      "type":"string",
-      "enum":["NAME"]
-    },
-    "FilterList":{
-      "type":"list",
-      "member":{"shape":"Filter"}
-    },
-    "FilterOperator":{
-      "type":"string",
-      "enum":["EQUALS"]
-    },
-    "GenericArn":{
-      "type":"string",
-      "max":2048,
-      "min":1,
-      "pattern":"^arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+$"
-    },
-    "GetAssistantAssociationRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "assistantAssociationId",
         "assistantId"
       ],
-      "members":{
-        "assistantAssociationId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantAssociationId"
+      "type": "structure"
+    },
+    "GetAssistantAssociationResponse": {
+      "members": {
+        "assistantAssociation": {
+          "documentation": "<p>The assistant association.</p>",
+          "shape": "AssistantAssociationData"
+        }
+      },
+      "type": "structure"
+    },
+    "GetAssistantRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
+        }
+      },
+      "required": [
+        "assistantId"
+      ],
+      "type": "structure"
+    },
+    "GetAssistantResponse": {
+      "members": {
+        "assistant": {
+          "documentation": "<p>Information about the assistant.</p>",
+          "shape": "AssistantData"
+        }
+      },
+      "type": "structure"
+    },
+    "GetContentRequest": {
+      "members": {
+        "contentId": {
+          "documentation": "<p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "contentId",
+          "shape": "UuidOrArn"
         },
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
         }
-      }
-    },
-    "GetAssistantAssociationResponse":{
-      "type":"structure",
-      "members":{
-        "assistantAssociation":{
-          "shape":"AssistantAssociationData",
-          "documentation":"<p>The assistant association.</p>"
-        }
-      }
-    },
-    "GetAssistantRequest":{
-      "type":"structure",
-      "required":["assistantId"],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
-        }
-      }
-    },
-    "GetAssistantResponse":{
-      "type":"structure",
-      "members":{
-        "assistant":{
-          "shape":"AssistantData",
-          "documentation":"<p>Information about the assistant.</p>"
-        }
-      }
-    },
-    "GetContentRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "contentId",
         "knowledgeBaseId"
       ],
-      "members":{
-        "contentId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"contentId"
+      "type": "structure"
+    },
+    "GetContentResponse": {
+      "members": {
+        "content": {
+          "documentation": "<p>The content.</p>",
+          "shape": "ContentData"
+        }
+      },
+      "type": "structure"
+    },
+    "GetContentSummaryRequest": {
+      "members": {
+        "contentId": {
+          "documentation": "<p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "contentId",
+          "shape": "UuidOrArn"
         },
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
         }
-      }
-    },
-    "GetContentResponse":{
-      "type":"structure",
-      "members":{
-        "content":{
-          "shape":"ContentData",
-          "documentation":"<p>The content.</p>"
-        }
-      }
-    },
-    "GetContentSummaryRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "contentId",
         "knowledgeBaseId"
       ],
-      "members":{
-        "contentId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"contentId"
+      "type": "structure"
+    },
+    "GetContentSummaryResponse": {
+      "members": {
+        "contentSummary": {
+          "documentation": "<p>The content summary.</p>",
+          "shape": "ContentSummary"
+        }
+      },
+      "type": "structure"
+    },
+    "GetKnowledgeBaseRequest": {
+      "members": {
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
+        }
+      },
+      "required": [
+        "knowledgeBaseId"
+      ],
+      "type": "structure"
+    },
+    "GetKnowledgeBaseResponse": {
+      "members": {
+        "knowledgeBase": {
+          "documentation": "<p>The knowledge base.</p>",
+          "shape": "KnowledgeBaseData"
+        }
+      },
+      "type": "structure"
+    },
+    "GetRecommendationsRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
         },
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "sessionId": {
+          "documentation": "<p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "sessionId",
+          "shape": "UuidOrArn"
+        },
+        "waitTimeSeconds": {
+          "documentation": "<p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>",
+          "location": "querystring",
+          "locationName": "waitTimeSeconds",
+          "shape": "WaitTimeSeconds"
         }
-      }
-    },
-    "GetContentSummaryResponse":{
-      "type":"structure",
-      "members":{
-        "contentSummary":{
-          "shape":"ContentSummary",
-          "documentation":"<p>The content summary.</p>"
-        }
-      }
-    },
-    "GetKnowledgeBaseRequest":{
-      "type":"structure",
-      "required":["knowledgeBaseId"],
-      "members":{
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        }
-      }
-    },
-    "GetKnowledgeBaseResponse":{
-      "type":"structure",
-      "members":{
-        "knowledgeBase":{
-          "shape":"KnowledgeBaseData",
-          "documentation":"<p>The knowledge base.</p>"
-        }
-      }
-    },
-    "GetRecommendationsRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "assistantId",
         "sessionId"
       ],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "sessionId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"sessionId"
-        },
-        "waitTimeSeconds":{
-          "shape":"WaitTimeSeconds",
-          "documentation":"<p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>",
-          "location":"querystring",
-          "locationName":"waitTimeSeconds"
-        }
-      }
+      "type": "structure"
     },
-    "GetRecommendationsResponse":{
-      "type":"structure",
-      "required":["recommendations"],
-      "members":{
-        "recommendations":{
-          "shape":"RecommendationList",
-          "documentation":"<p>The recommendations.</p>"
+    "GetRecommendationsResponse": {
+      "members": {
+        "recommendations": {
+          "documentation": "<p>The recommendations.</p>",
+          "shape": "RecommendationList"
         },
-        "triggers":{
-          "shape":"RecommendationTriggerList",
-          "documentation":"<p>The triggers corresponding to recommendations.</p>"
+        "triggers": {
+          "documentation": "<p>The triggers corresponding to recommendations.</p>",
+          "shape": "RecommendationTriggerList"
         }
-      }
+      },
+      "required": [
+        "recommendations"
+      ],
+      "type": "structure"
     },
-    "GetSessionRequest":{
-      "type":"structure",
-      "required":[
+    "GetSessionRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
+        },
+        "sessionId": {
+          "documentation": "<p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "sessionId",
+          "shape": "UuidOrArn"
+        }
+      },
+      "required": [
         "assistantId",
         "sessionId"
       ],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
-        },
-        "sessionId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"sessionId"
-        }
-      }
+      "type": "structure"
     },
-    "GetSessionResponse":{
-      "type":"structure",
-      "members":{
-        "session":{
-          "shape":"SessionData",
-          "documentation":"<p>The session.</p>"
-        }
-      }
-    },
-    "Headers":{
-      "type":"map",
-      "key":{"shape":"NonEmptyString"},
-      "value":{"shape":"NonEmptyString"}
-    },
-    "Highlight":{
-      "type":"structure",
-      "members":{
-        "beginOffsetInclusive":{
-          "shape":"HighlightOffset",
-          "documentation":"<p>The offset for the start of the highlight.</p>"
-        },
-        "endOffsetExclusive":{
-          "shape":"HighlightOffset",
-          "documentation":"<p>The offset for the end of the highlight.</p>"
+    "GetSessionResponse": {
+      "members": {
+        "session": {
+          "documentation": "<p>The session.</p>",
+          "shape": "SessionData"
         }
       },
-      "documentation":"<p>Offset specification to describe highlighting of document excerpts for rendering search results and recommendations.</p>"
+      "type": "structure"
     },
-    "HighlightOffset":{"type":"integer"},
-    "Highlights":{
-      "type":"list",
-      "member":{"shape":"Highlight"}
+    "Headers": {
+      "key": {
+        "shape": "NonEmptyString"
+      },
+      "type": "map",
+      "value": {
+        "shape": "NonEmptyString"
+      }
     },
-    "KnowledgeBaseAssociationData":{
-      "type":"structure",
-      "members":{
-        "knowledgeBaseArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the knowledge base.</p>"
+    "Highlight": {
+      "documentation": "<p>Offset specification to describe highlighting of document excerpts for rendering search results and recommendations.</p>",
+      "members": {
+        "beginOffsetInclusive": {
+          "documentation": "<p>The offset for the start of the highlight.</p>",
+          "shape": "HighlightOffset"
         },
-        "knowledgeBaseId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the knowledge base.</p>"
+        "endOffsetExclusive": {
+          "documentation": "<p>The offset for the end of the highlight.</p>",
+          "shape": "HighlightOffset"
         }
       },
-      "documentation":"<p>Association information about the knowledge base.</p>"
+      "type": "structure"
     },
-    "KnowledgeBaseData":{
-      "type":"structure",
-      "required":[
+    "HighlightOffset": {
+      "type": "integer"
+    },
+    "Highlights": {
+      "member": {
+        "shape": "Highlight"
+      },
+      "type": "list"
+    },
+    "KnowledgeBaseAssociationData": {
+      "documentation": "<p>Association information about the knowledge base.</p>",
+      "members": {
+        "knowledgeBaseArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the knowledge base.</p>",
+          "shape": "Arn"
+        },
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base.</p>",
+          "shape": "Uuid"
+        }
+      },
+      "type": "structure"
+    },
+    "KnowledgeBaseData": {
+      "documentation": "<p>Information about the knowledge base.</p>",
+      "members": {
+        "description": {
+          "documentation": "<p>The description.</p>",
+          "shape": "Description"
+        },
+        "knowledgeBaseArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the knowledge base.</p>",
+          "shape": "Arn"
+        },
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base.</p>",
+          "shape": "Uuid"
+        },
+        "knowledgeBaseType": {
+          "documentation": "<p>The type of knowledge base.</p>",
+          "shape": "KnowledgeBaseType"
+        },
+        "lastContentModificationTime": {
+          "documentation": "<p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>",
+          "shape": "SyntheticTimestamp_epoch_seconds"
+        },
+        "name": {
+          "documentation": "<p>The name of the knowledge base.</p>",
+          "shape": "Name"
+        },
+        "renderingConfiguration": {
+          "documentation": "<p>Information about how to render the content.</p>",
+          "shape": "RenderingConfiguration"
+        },
+        "serverSideEncryptionConfiguration": {
+          "documentation": "<p>The KMS key used for encryption.</p>",
+          "shape": "ServerSideEncryptionConfiguration"
+        },
+        "sourceConfiguration": {
+          "documentation": "<p>Source configuration information about the knowledge base.</p>",
+          "shape": "SourceConfiguration"
+        },
+        "status": {
+          "documentation": "<p>The status of the knowledge base.</p>",
+          "shape": "KnowledgeBaseStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "required": [
         "knowledgeBaseArn",
         "knowledgeBaseId",
         "knowledgeBaseType",
         "name",
         "status"
       ],
-      "members":{
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description.</p>"
-        },
-        "knowledgeBaseArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the knowledge base.</p>"
-        },
-        "knowledgeBaseId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the knowledge base.</p>"
-        },
-        "knowledgeBaseType":{
-          "shape":"KnowledgeBaseType",
-          "documentation":"<p>The type of knowledge base.</p>"
-        },
-        "lastContentModificationTime":{
-          "shape":"SyntheticTimestamp_epoch_seconds",
-          "documentation":"<p>An epoch timestamp indicating the most recent content modification inside the knowledge base. If no content exists in a knowledge base, this value is unset.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the knowledge base.</p>"
-        },
-        "renderingConfiguration":{
-          "shape":"RenderingConfiguration",
-          "documentation":"<p>Information about how to render the content.</p>"
-        },
-        "serverSideEncryptionConfiguration":{
-          "shape":"ServerSideEncryptionConfiguration",
-          "documentation":"<p>The KMS key used for encryption.</p>"
-        },
-        "sourceConfiguration":{
-          "shape":"SourceConfiguration",
-          "documentation":"<p>Source configuration information about the knowledge base.</p>"
-        },
-        "status":{
-          "shape":"KnowledgeBaseStatus",
-          "documentation":"<p>The status of the knowledge base.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        }
+      "type": "structure"
+    },
+    "KnowledgeBaseList": {
+      "member": {
+        "shape": "KnowledgeBaseSummary"
       },
-      "documentation":"<p>Information about the knowledge base.</p>"
+      "type": "list"
     },
-    "KnowledgeBaseList":{
-      "type":"list",
-      "member":{"shape":"KnowledgeBaseSummary"}
-    },
-    "KnowledgeBaseStatus":{
-      "type":"string",
-      "enum":[
+    "KnowledgeBaseStatus": {
+      "enum": [
         "CREATE_IN_PROGRESS",
         "CREATE_FAILED",
         "ACTIVE",
         "DELETE_IN_PROGRESS",
         "DELETE_FAILED",
         "DELETED"
-      ]
+      ],
+      "type": "string"
     },
-    "KnowledgeBaseSummary":{
-      "type":"structure",
-      "required":[
+    "KnowledgeBaseSummary": {
+      "documentation": "<p>Summary information about the knowledge base.</p>",
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the knowledge base.</p>",
+          "shape": "Description"
+        },
+        "knowledgeBaseArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the knowledge base.</p>",
+          "shape": "Arn"
+        },
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base.</p>",
+          "shape": "Uuid"
+        },
+        "knowledgeBaseType": {
+          "documentation": "<p>The type of knowledge base.</p>",
+          "shape": "KnowledgeBaseType"
+        },
+        "name": {
+          "documentation": "<p>The name of the knowledge base.</p>",
+          "shape": "Name"
+        },
+        "renderingConfiguration": {
+          "documentation": "<p>Information about how to render the content.</p>",
+          "shape": "RenderingConfiguration"
+        },
+        "serverSideEncryptionConfiguration": {
+          "documentation": "<p>The KMS key used for encryption.</p>",
+          "shape": "ServerSideEncryptionConfiguration"
+        },
+        "sourceConfiguration": {
+          "documentation": "<p>Configuration information about the external data source.</p>",
+          "shape": "SourceConfiguration"
+        },
+        "status": {
+          "documentation": "<p>The status of the knowledge base summary.</p>",
+          "shape": "KnowledgeBaseStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "required": [
         "knowledgeBaseArn",
         "knowledgeBaseId",
         "knowledgeBaseType",
         "name",
         "status"
       ],
-      "members":{
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the knowledge base.</p>"
-        },
-        "knowledgeBaseArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the knowledge base.</p>"
-        },
-        "knowledgeBaseId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the knowledge base.</p>"
-        },
-        "knowledgeBaseType":{
-          "shape":"KnowledgeBaseType",
-          "documentation":"<p>The type of knowledge base.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the knowledge base.</p>"
-        },
-        "renderingConfiguration":{
-          "shape":"RenderingConfiguration",
-          "documentation":"<p>Information about how to render the content.</p>"
-        },
-        "serverSideEncryptionConfiguration":{
-          "shape":"ServerSideEncryptionConfiguration",
-          "documentation":"<p>The KMS key used for encryption.</p>"
-        },
-        "sourceConfiguration":{
-          "shape":"SourceConfiguration",
-          "documentation":"<p>Configuration information about the external data source.</p>"
-        },
-        "status":{
-          "shape":"KnowledgeBaseStatus",
-          "documentation":"<p>The status of the knowledge base summary.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        }
-      },
-      "documentation":"<p>Summary information about the knowledge base.</p>"
+      "type": "structure"
     },
-    "KnowledgeBaseType":{
-      "type":"string",
-      "enum":[
+    "KnowledgeBaseType": {
+      "enum": [
         "EXTERNAL",
         "CUSTOM"
-      ]
+      ],
+      "type": "string"
     },
-    "ListAssistantAssociationsRequest":{
-      "type":"structure",
-      "required":["assistantId"],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
+    "ListAssistantAssociationsRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
         },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        }
-      }
-    },
-    "ListAssistantAssociationsResponse":{
-      "type":"structure",
-      "required":["assistantAssociationSummaries"],
-      "members":{
-        "assistantAssociationSummaries":{
-          "shape":"AssistantAssociationSummaryList",
-          "documentation":"<p>Summary information about assistant associations.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
-        }
-      }
-    },
-    "ListAssistantsRequest":{
-      "type":"structure",
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        }
-      }
-    },
-    "ListAssistantsResponse":{
-      "type":"structure",
-      "required":["assistantSummaries"],
-      "members":{
-        "assistantSummaries":{
-          "shape":"AssistantList",
-          "documentation":"<p>Information about the assistants.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
-        }
-      }
-    },
-    "ListContentsRequest":{
-      "type":"structure",
-      "required":["knowledgeBaseId"],
-      "members":{
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        }
-      }
-    },
-    "ListContentsResponse":{
-      "type":"structure",
-      "required":["contentSummaries"],
-      "members":{
-        "contentSummaries":{
-          "shape":"ContentSummaryList",
-          "documentation":"<p>Information about the content.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
-        }
-      }
-    },
-    "ListKnowledgeBasesRequest":{
-      "type":"structure",
-      "members":{
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        }
-      }
-    },
-    "ListKnowledgeBasesResponse":{
-      "type":"structure",
-      "required":["knowledgeBaseSummaries"],
-      "members":{
-        "knowledgeBaseSummaries":{
-          "shape":"KnowledgeBaseList",
-          "documentation":"<p>Information about the knowledge bases.</p>"
-        },
-        "nextToken":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
-        }
-      }
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["resourceArn"],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        }
-      }
-    },
-    "MaxResults":{
-      "type":"integer",
-      "box":true,
-      "max":100,
-      "min":1
-    },
-    "Name":{
-      "type":"string",
-      "max":255,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9\\s_.,-]+"
-    },
-    "NextToken":{
-      "type":"string",
-      "max":2048,
-      "min":1
-    },
-    "NonEmptyString":{
-      "type":"string",
-      "max":4096,
-      "min":1
-    },
-    "NotifyRecommendationsReceivedError":{
-      "type":"structure",
-      "members":{
-        "message":{
-          "shape":"NotifyRecommendationsReceivedErrorMessage",
-          "documentation":"<p>A recommendation is causing an error.</p>"
-        },
-        "recommendationId":{
-          "shape":"String",
-          "documentation":"<p>The identifier of the recommendation that is in error.</p>"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
         }
       },
-      "documentation":"<p>An error occurred when creating a recommendation.</p>"
+      "required": [
+        "assistantId"
+      ],
+      "type": "structure"
     },
-    "NotifyRecommendationsReceivedErrorList":{
-      "type":"list",
-      "member":{"shape":"NotifyRecommendationsReceivedError"}
+    "ListAssistantAssociationsResponse": {
+      "members": {
+        "assistantAssociationSummaries": {
+          "documentation": "<p>Summary information about assistant associations.</p>",
+          "shape": "AssistantAssociationSummaryList"
+        },
+        "nextToken": {
+          "documentation": "<p>If there are additional results, this is the token for the next set of results.</p>",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "assistantAssociationSummaries"
+      ],
+      "type": "structure"
     },
-    "NotifyRecommendationsReceivedErrorMessage":{"type":"string"},
-    "NotifyRecommendationsReceivedRequest":{
-      "type":"structure",
-      "required":[
+    "ListAssistantsRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListAssistantsResponse": {
+      "members": {
+        "assistantSummaries": {
+          "documentation": "<p>Information about the assistants.</p>",
+          "shape": "AssistantList"
+        },
+        "nextToken": {
+          "documentation": "<p>If there are additional results, this is the token for the next set of results.</p>",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "assistantSummaries"
+      ],
+      "type": "structure"
+    },
+    "ListContentsRequest": {
+      "members": {
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
+        },
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "knowledgeBaseId"
+      ],
+      "type": "structure"
+    },
+    "ListContentsResponse": {
+      "members": {
+        "contentSummaries": {
+          "documentation": "<p>Information about the content.</p>",
+          "shape": "ContentSummaryList"
+        },
+        "nextToken": {
+          "documentation": "<p>If there are additional results, this is the token for the next set of results.</p>",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "contentSummaries"
+      ],
+      "type": "structure"
+    },
+    "ListKnowledgeBasesRequest": {
+      "members": {
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NonEmptyString"
+        }
+      },
+      "type": "structure"
+    },
+    "ListKnowledgeBasesResponse": {
+      "members": {
+        "knowledgeBaseSummaries": {
+          "documentation": "<p>Information about the knowledge bases.</p>",
+          "shape": "KnowledgeBaseList"
+        },
+        "nextToken": {
+          "documentation": "<p>If there are additional results, this is the token for the next set of results.</p>",
+          "shape": "NonEmptyString"
+        }
+      },
+      "required": [
+        "knowledgeBaseSummaries"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
+        }
+      },
+      "required": [
+        "resourceArn"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "type": "structure"
+    },
+    "MaxResults": {
+      "box": true,
+      "max": 100,
+      "min": 1,
+      "type": "integer"
+    },
+    "Name": {
+      "max": 255,
+      "min": 1,
+      "pattern": "^[a-zA-Z0-9\\s_.,-]+",
+      "type": "string"
+    },
+    "NextToken": {
+      "max": 2048,
+      "min": 1,
+      "type": "string"
+    },
+    "NonEmptyString": {
+      "max": 4096,
+      "min": 1,
+      "type": "string"
+    },
+    "NotifyRecommendationsReceivedError": {
+      "documentation": "<p>An error occurred when creating a recommendation.</p>",
+      "members": {
+        "message": {
+          "documentation": "<p>A recommendation is causing an error.</p>",
+          "shape": "NotifyRecommendationsReceivedErrorMessage"
+        },
+        "recommendationId": {
+          "documentation": "<p>The identifier of the recommendation that is in error.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "NotifyRecommendationsReceivedErrorList": {
+      "member": {
+        "shape": "NotifyRecommendationsReceivedError"
+      },
+      "type": "list"
+    },
+    "NotifyRecommendationsReceivedErrorMessage": {
+      "type": "string"
+    },
+    "NotifyRecommendationsReceivedRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
+        },
+        "recommendationIds": {
+          "documentation": "<p>The identifiers of the recommendations.</p>",
+          "shape": "RecommendationIdList"
+        },
+        "sessionId": {
+          "documentation": "<p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "sessionId",
+          "shape": "UuidOrArn"
+        }
+      },
+      "required": [
         "assistantId",
         "recommendationIds",
         "sessionId"
       ],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
+      "type": "structure"
+    },
+    "NotifyRecommendationsReceivedResponse": {
+      "members": {
+        "errors": {
+          "documentation": "<p>The identifiers of recommendations that are causing errors.</p>",
+          "shape": "NotifyRecommendationsReceivedErrorList"
         },
-        "recommendationIds":{
-          "shape":"RecommendationIdList",
-          "documentation":"<p>The identifiers of the recommendations.</p>"
-        },
-        "sessionId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"sessionId"
+        "recommendationIds": {
+          "documentation": "<p>The identifiers of the recommendations.</p>",
+          "shape": "RecommendationIdList"
         }
-      }
+      },
+      "type": "structure"
     },
-    "NotifyRecommendationsReceivedResponse":{
-      "type":"structure",
-      "members":{
-        "errors":{
-          "shape":"NotifyRecommendationsReceivedErrorList",
-          "documentation":"<p>The identifiers of recommendations that are causing errors.</p>"
-        },
-        "recommendationIds":{
-          "shape":"RecommendationIdList",
-          "documentation":"<p>The identifiers of the recommendations.</p>"
+    "ObjectFieldsList": {
+      "max": 100,
+      "member": {
+        "shape": "NonEmptyString"
+      },
+      "min": 1,
+      "type": "list"
+    },
+    "PreconditionFailedException": {
+      "documentation": "<p>The provided <code>revisionId</code> does not match, indicating the content has been modified since it was last read.</p>",
+      "error": {
+        "httpStatusCode": 412,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
-      }
-    },
-    "ObjectFieldsList":{
-      "type":"list",
-      "member":{"shape":"NonEmptyString"},
-      "max":100,
-      "min":1
-    },
-    "PreconditionFailedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The provided <code>revisionId</code> does not match, indicating the content has been modified since it was last read.</p>",
-      "error":{
-        "httpStatusCode":412,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "structure"
     },
-    "QueryAssistantRequest":{
-      "type":"structure",
-      "required":[
+    "QueryAssistantRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
+        },
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "shape": "NextToken"
+        },
+        "queryText": {
+          "documentation": "<p>The text to search for.</p>",
+          "shape": "QueryText"
+        }
+      },
+      "required": [
         "assistantId",
         "queryText"
       ],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>"
-        },
-        "queryText":{
-          "shape":"QueryText",
-          "documentation":"<p>The text to search for.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "QueryAssistantResponse":{
-      "type":"structure",
-      "required":["results"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
+    "QueryAssistantResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>If there are additional results, this is the token for the next set of results.</p>",
+          "shape": "NextToken"
         },
-        "results":{
-          "shape":"QueryResultsList",
-          "documentation":"<p>The results of the query.</p>"
-        }
-      }
-    },
-    "QueryRecommendationTriggerData":{
-      "type":"structure",
-      "members":{
-        "text":{
-          "shape":"QueryText",
-          "documentation":"<p>The text associated with the recommendation trigger.</p>"
+        "results": {
+          "documentation": "<p>The results of the query.</p>",
+          "shape": "QueryResultsList"
         }
       },
-      "documentation":"<p>Data associated with the QUERY RecommendationTriggerType.</p>"
+      "required": [
+        "results"
+      ],
+      "type": "structure"
     },
-    "QueryResultsList":{
-      "type":"list",
-      "member":{"shape":"ResultData"}
+    "QueryRecommendationTriggerData": {
+      "documentation": "<p>Data associated with the QUERY RecommendationTriggerType.</p>",
+      "members": {
+        "text": {
+          "documentation": "<p>The text associated with the recommendation trigger.</p>",
+          "shape": "QueryText"
+        }
+      },
+      "type": "structure"
     },
-    "QueryText":{
-      "type":"string",
-      "sensitive":true
+    "QueryResultsList": {
+      "member": {
+        "shape": "ResultData"
+      },
+      "type": "list"
     },
-    "RecommendationData":{
-      "type":"structure",
-      "required":[
+    "QueryText": {
+      "sensitive": true,
+      "type": "string"
+    },
+    "RecommendationData": {
+      "documentation": "<p>Information about the recommendation.</p>",
+      "members": {
+        "document": {
+          "documentation": "<p>The recommended document.</p>",
+          "shape": "Document"
+        },
+        "recommendationId": {
+          "documentation": "<p>The identifier of the recommendation.</p>",
+          "shape": "String"
+        },
+        "relevanceLevel": {
+          "documentation": "<p>The relevance level of the recommendation.</p>",
+          "shape": "RelevanceLevel"
+        },
+        "relevanceScore": {
+          "documentation": "<p>The relevance score of the recommendation.</p>",
+          "shape": "RelevanceScore"
+        },
+        "type": {
+          "documentation": "<p>The type of recommendation.</p>",
+          "shape": "RecommendationType"
+        }
+      },
+      "required": [
         "document",
         "recommendationId"
       ],
-      "members":{
-        "document":{
-          "shape":"Document",
-          "documentation":"<p>The recommended document.</p>"
-        },
-        "recommendationId":{
-          "shape":"String",
-          "documentation":"<p>The identifier of the recommendation.</p>"
-        },
-        "relevanceLevel":{
-          "shape":"RelevanceLevel",
-          "documentation":"<p>The relevance level of the recommendation.</p>"
-        },
-        "relevanceScore":{
-          "shape":"RelevanceScore",
-          "documentation":"<p>The relevance score of the recommendation.</p>"
-        },
-        "type":{
-          "shape":"RecommendationType",
-          "documentation":"<p>The type of recommendation.</p>"
-        }
+      "type": "structure"
+    },
+    "RecommendationIdList": {
+      "member": {
+        "shape": "String"
       },
-      "documentation":"<p>Information about the recommendation.</p>"
+      "type": "list"
     },
-    "RecommendationIdList":{
-      "type":"list",
-      "member":{"shape":"String"}
+    "RecommendationList": {
+      "member": {
+        "shape": "RecommendationData"
+      },
+      "type": "list"
     },
-    "RecommendationList":{
-      "type":"list",
-      "member":{"shape":"RecommendationData"}
-    },
-    "RecommendationSourceType":{
-      "type":"string",
-      "enum":[
+    "RecommendationSourceType": {
+      "enum": [
         "ISSUE_DETECTION",
         "RULE_EVALUATION",
         "OTHER"
-      ]
+      ],
+      "type": "string"
     },
-    "RecommendationTrigger":{
-      "type":"structure",
-      "required":[
+    "RecommendationTrigger": {
+      "documentation": "<p>A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.</p>",
+      "members": {
+        "data": {
+          "documentation": "<p>A union type containing information related to the trigger.</p>",
+          "shape": "RecommendationTriggerData"
+        },
+        "id": {
+          "documentation": "<p>The identifier of the recommendation trigger.</p>",
+          "shape": "Uuid"
+        },
+        "recommendationIds": {
+          "documentation": "<p>The identifiers of the recommendations.</p>",
+          "shape": "RecommendationIdList"
+        },
+        "source": {
+          "documentation": "<p>The source of the recommendation trigger.</p> <ul> <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> </ul>",
+          "shape": "RecommendationSourceType"
+        },
+        "type": {
+          "documentation": "<p>The type of recommendation trigger.</p>",
+          "shape": "RecommendationTriggerType"
+        }
+      },
+      "required": [
         "data",
         "id",
         "recommendationIds",
         "source",
         "type"
       ],
-      "members":{
-        "data":{
-          "shape":"RecommendationTriggerData",
-          "documentation":"<p>A union type containing information related to the trigger.</p>"
-        },
-        "id":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the recommendation trigger.</p>"
-        },
-        "recommendationIds":{
-          "shape":"RecommendationIdList",
-          "documentation":"<p>The identifiers of the recommendations.</p>"
-        },
-        "source":{
-          "shape":"RecommendationSourceType",
-          "documentation":"<p>The source of the recommendation trigger.</p> <ul> <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li> <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li> </ul>"
-        },
-        "type":{
-          "shape":"RecommendationTriggerType",
-          "documentation":"<p>The type of recommendation trigger.</p>"
+      "type": "structure"
+    },
+    "RecommendationTriggerData": {
+      "documentation": "<p>A union type containing information related to the trigger.</p>",
+      "members": {
+        "query": {
+          "documentation": "<p>Data associated with the QUERY RecommendationTriggerType.</p>",
+          "shape": "QueryRecommendationTriggerData"
         }
       },
-      "documentation":"<p>A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.</p>"
+      "type": "structure",
+      "union": true
     },
-    "RecommendationTriggerData":{
-      "type":"structure",
-      "members":{
-        "query":{
-          "shape":"QueryRecommendationTriggerData",
-          "documentation":"<p>Data associated with the QUERY RecommendationTriggerType.</p>"
-        }
+    "RecommendationTriggerList": {
+      "member": {
+        "shape": "RecommendationTrigger"
       },
-      "documentation":"<p>A union type containing information related to the trigger.</p>",
-      "union":true
+      "type": "list"
     },
-    "RecommendationTriggerList":{
-      "type":"list",
-      "member":{"shape":"RecommendationTrigger"}
+    "RecommendationTriggerType": {
+      "enum": [
+        "QUERY"
+      ],
+      "type": "string"
     },
-    "RecommendationTriggerType":{
-      "type":"string",
-      "enum":["QUERY"]
+    "RecommendationType": {
+      "enum": [
+        "KNOWLEDGE_CONTENT"
+      ],
+      "type": "string"
     },
-    "RecommendationType":{
-      "type":"string",
-      "enum":["KNOWLEDGE_CONTENT"]
-    },
-    "RelevanceLevel":{
-      "type":"string",
-      "enum":[
+    "RelevanceLevel": {
+      "enum": [
         "HIGH",
         "MEDIUM",
         "LOW"
-      ]
+      ],
+      "type": "string"
     },
-    "RelevanceScore":{
-      "type":"double",
-      "min":0.0
+    "RelevanceScore": {
+      "min": 0.0,
+      "type": "double"
     },
-    "RemoveKnowledgeBaseTemplateUriRequest":{
-      "type":"structure",
-      "required":["knowledgeBaseId"],
-      "members":{
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        }
-      }
-    },
-    "RemoveKnowledgeBaseTemplateUriResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "RenderingConfiguration":{
-      "type":"structure",
-      "members":{
-        "templateUri":{
-          "shape":"Uri",
-          "documentation":"<p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p> <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code></pre>"
+    "RemoveKnowledgeBaseTemplateUriRequest": {
+      "members": {
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
         }
       },
-      "documentation":"<p>Information about how to render the content.</p>"
+      "required": [
+        "knowledgeBaseId"
+      ],
+      "type": "structure"
     },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"},
-        "resourceName":{
-          "shape":"String",
-          "documentation":"<p>The specified resource name.</p>"
+    "RemoveKnowledgeBaseTemplateUriResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "RenderingConfiguration": {
+      "documentation": "<p>Information about how to render the content.</p>",
+      "members": {
+        "templateUri": {
+          "documentation": "<p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p> <ul> <li> <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> </p> </li> <li> <p>ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code> </p> </li> </ul> <pre><code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code></pre>",
+          "shape": "Uri"
         }
       },
-      "documentation":"<p>The specified resource does not exist.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "structure"
     },
-    "ResultData":{
-      "type":"structure",
-      "required":[
+    "ResourceNotFoundException": {
+      "documentation": "<p>The specified resource does not exist.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        },
+        "resourceName": {
+          "documentation": "<p>The specified resource name.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "ResultData": {
+      "documentation": "<p>Information about the result.</p>",
+      "members": {
+        "document": {
+          "documentation": "<p>The document.</p>",
+          "shape": "Document"
+        },
+        "relevanceScore": {
+          "documentation": "<p>The relevance score of the results.</p>",
+          "shape": "RelevanceScore"
+        },
+        "resultId": {
+          "documentation": "<p>The identifier of the result data.</p>",
+          "shape": "Uuid"
+        }
+      },
+      "required": [
         "document",
         "resultId"
       ],
-      "members":{
-        "document":{
-          "shape":"Document",
-          "documentation":"<p>The document.</p>"
+      "type": "structure"
+    },
+    "SearchContentRequest": {
+      "members": {
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
         },
-        "relevanceScore":{
-          "shape":"RelevanceScore",
-          "documentation":"<p>The relevance score of the results.</p>"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
         },
-        "resultId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the result data.</p>"
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "searchExpression": {
+          "documentation": "<p>The search expression to filter results.</p>",
+          "shape": "SearchExpression"
         }
       },
-      "documentation":"<p>Information about the result.</p>"
-    },
-    "SearchContentRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "knowledgeBaseId",
         "searchExpression"
       ],
-      "members":{
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "searchExpression":{
-          "shape":"SearchExpression",
-          "documentation":"<p>The search expression to filter results.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "SearchContentResponse":{
-      "type":"structure",
-      "required":["contentSummaries"],
-      "members":{
-        "contentSummaries":{
-          "shape":"ContentSummaryList",
-          "documentation":"<p>Summary information about the content.</p>"
+    "SearchContentResponse": {
+      "members": {
+        "contentSummaries": {
+          "documentation": "<p>Summary information about the content.</p>",
+          "shape": "ContentSummaryList"
         },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
-        }
-      }
-    },
-    "SearchExpression":{
-      "type":"structure",
-      "required":["filters"],
-      "members":{
-        "filters":{
-          "shape":"FilterList",
-          "documentation":"<p>The search expression filters.</p>"
+        "nextToken": {
+          "documentation": "<p>If there are additional results, this is the token for the next set of results.</p>",
+          "shape": "NextToken"
         }
       },
-      "documentation":"<p>The search expression.</p>"
+      "required": [
+        "contentSummaries"
+      ],
+      "type": "structure"
     },
-    "SearchSessionsRequest":{
-      "type":"structure",
-      "required":[
+    "SearchExpression": {
+      "documentation": "<p>The search expression.</p>",
+      "members": {
+        "filters": {
+          "documentation": "<p>The search expression filters.</p>",
+          "shape": "FilterList"
+        }
+      },
+      "required": [
+        "filters"
+      ],
+      "type": "structure"
+    },
+    "SearchSessionsRequest": {
+      "members": {
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "assistantId",
+          "shape": "UuidOrArn"
+        },
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return per page.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        },
+        "searchExpression": {
+          "documentation": "<p>The search expression to filter results.</p>",
+          "shape": "SearchExpression"
+        }
+      },
+      "required": [
         "assistantId",
         "searchExpression"
       ],
-      "members":{
-        "assistantId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"assistantId"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per page.</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "searchExpression":{
-          "shape":"SearchExpression",
-          "documentation":"<p>The search expression to filter results.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "SearchSessionsResponse":{
-      "type":"structure",
-      "required":["sessionSummaries"],
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>If there are additional results, this is the token for the next set of results.</p>"
+    "SearchSessionsResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>If there are additional results, this is the token for the next set of results.</p>",
+          "shape": "NextToken"
         },
-        "sessionSummaries":{
-          "shape":"SessionSummaries",
-          "documentation":"<p>Summary information about the sessions.</p>"
-        }
-      }
-    },
-    "SensitiveString":{
-      "type":"string",
-      "sensitive":true
-    },
-    "ServerSideEncryptionConfiguration":{
-      "type":"structure",
-      "members":{
-        "kmsKeyId":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>The KMS key. For information about valid ID values, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id\">Key identifiers (KeyId)</a>.</p>"
+        "sessionSummaries": {
+          "documentation": "<p>Summary information about the sessions.</p>",
+          "shape": "SessionSummaries"
         }
       },
-      "documentation":"<p>The KMS key used for encryption.</p>"
+      "required": [
+        "sessionSummaries"
+      ],
+      "type": "structure"
     },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>",
-      "error":{
-        "httpStatusCode":402,
-        "senderFault":true
-      },
-      "exception":true
+    "SensitiveString": {
+      "sensitive": true,
+      "type": "string"
     },
-    "SessionData":{
-      "type":"structure",
-      "required":[
+    "ServerSideEncryptionConfiguration": {
+      "documentation": "<p>The KMS key used for encryption.</p>",
+      "members": {
+        "kmsKeyId": {
+          "documentation": "<p>The KMS key. For information about valid ID values, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id\">Key identifiers (KeyId)</a>.</p>",
+          "shape": "NonEmptyString"
+        }
+      },
+      "type": "structure"
+    },
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>",
+      "error": {
+        "httpStatusCode": 402,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "SessionData": {
+      "documentation": "<p>Information about the session.</p>",
+      "members": {
+        "description": {
+          "documentation": "<p>The description of the session.</p>",
+          "shape": "Description"
+        },
+        "name": {
+          "documentation": "<p>The name of the session.</p>",
+          "shape": "Name"
+        },
+        "sessionArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the session.</p>",
+          "shape": "Arn"
+        },
+        "sessionId": {
+          "documentation": "<p>The identifier of the session.</p>",
+          "shape": "Uuid"
+        },
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "required": [
         "name",
         "sessionArn",
         "sessionId"
       ],
-      "members":{
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the session.</p>"
+      "type": "structure"
+    },
+    "SessionSummaries": {
+      "member": {
+        "shape": "SessionSummary"
+      },
+      "type": "list"
+    },
+    "SessionSummary": {
+      "documentation": "<p>Summary information about the session.</p>",
+      "members": {
+        "assistantArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>",
+          "shape": "Arn"
         },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the session.</p>"
+        "assistantId": {
+          "documentation": "<p>The identifier of the Wisdom assistant.</p>",
+          "shape": "Uuid"
         },
-        "sessionArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the session.</p>"
+        "sessionArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the session.</p>",
+          "shape": "Arn"
         },
-        "sessionId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the session.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
+        "sessionId": {
+          "documentation": "<p>The identifier of the session.</p>",
+          "shape": "Uuid"
         }
       },
-      "documentation":"<p>Information about the session.</p>"
-    },
-    "SessionSummaries":{
-      "type":"list",
-      "member":{"shape":"SessionSummary"}
-    },
-    "SessionSummary":{
-      "type":"structure",
-      "required":[
+      "required": [
         "assistantArn",
         "assistantId",
         "sessionArn",
         "sessionId"
       ],
-      "members":{
-        "assistantArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>"
-        },
-        "assistantId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the Wisdom assistant.</p>"
-        },
-        "sessionArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the session.</p>"
-        },
-        "sessionId":{
-          "shape":"Uuid",
-          "documentation":"<p>The identifier of the session.</p>"
+      "type": "structure"
+    },
+    "SourceConfiguration": {
+      "documentation": "<p>Configuration information about the external data source.</p>",
+      "members": {
+        "appIntegrations": {
+          "documentation": "<p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>",
+          "shape": "AppIntegrationsConfiguration"
         }
       },
-      "documentation":"<p>Summary information about the session.</p>"
+      "type": "structure",
+      "union": true
     },
-    "SourceConfiguration":{
-      "type":"structure",
-      "members":{
-        "appIntegrations":{
-          "shape":"AppIntegrationsConfiguration",
-          "documentation":"<p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>"
+    "StartContentUploadRequest": {
+      "members": {
+        "contentType": {
+          "documentation": "<p>The type of content to upload.</p>",
+          "shape": "ContentType"
+        },
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
         }
       },
-      "documentation":"<p>Configuration information about the external data source.</p>",
-      "union":true
-    },
-    "StartContentUploadRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "contentType",
         "knowledgeBaseId"
       ],
-      "members":{
-        "contentType":{
-          "shape":"ContentType",
-          "documentation":"<p>The type of content to upload.</p>"
-        },
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        }
-      }
+      "type": "structure"
     },
-    "StartContentUploadResponse":{
-      "type":"structure",
-      "required":[
+    "StartContentUploadResponse": {
+      "members": {
+        "headersToInclude": {
+          "documentation": "<p>The headers to include in the upload.</p>",
+          "shape": "Headers"
+        },
+        "uploadId": {
+          "documentation": "<p>The identifier of the upload.</p>",
+          "shape": "NonEmptyString"
+        },
+        "url": {
+          "documentation": "<p>The URL of the upload.</p>",
+          "shape": "Url"
+        },
+        "urlExpiry": {
+          "documentation": "<p>The expiration time of the URL as an epoch timestamp.</p>",
+          "shape": "SyntheticTimestamp_epoch_seconds"
+        }
+      },
+      "required": [
         "headersToInclude",
         "uploadId",
         "url",
         "urlExpiry"
       ],
-      "members":{
-        "headersToInclude":{
-          "shape":"Headers",
-          "documentation":"<p>The headers to include in the upload.</p>"
+      "type": "structure"
+    },
+    "String": {
+      "type": "string"
+    },
+    "SyntheticTimestamp_epoch_seconds": {
+      "timestampFormat": "unixTimestamp",
+      "type": "timestamp"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "^(?!aws:)[a-zA-Z+-=._:/]+$",
+      "type": "string"
+    },
+    "TagKeyList": {
+      "max": 50,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 1,
+      "type": "list"
+    },
+    "TagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
         },
-        "uploadId":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>The identifier of the upload.</p>"
-        },
-        "url":{
-          "shape":"Url",
-          "documentation":"<p>The URL of the upload.</p>"
-        },
-        "urlExpiry":{
-          "shape":"SyntheticTimestamp_epoch_seconds",
-          "documentation":"<p>The expiration time of the URL as an epoch timestamp.</p>"
+        "tags": {
+          "documentation": "<p>The tags used to organize, track, or control access for this resource.</p>",
+          "shape": "Tags"
         }
-      }
-    },
-    "String":{"type":"string"},
-    "SyntheticTimestamp_epoch_seconds":{
-      "type":"timestamp",
-      "timestampFormat":"unixTimestamp"
-    },
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"^(?!aws:)[a-zA-Z+-=._:/]+$"
-    },
-    "TagKeyList":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "max":50,
-      "min":1
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "resourceArn",
         "tags"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "TagValue": {
+      "max": 256,
+      "min": 1,
+      "type": "string"
+    },
+    "Tags": {
+      "key": {
+        "shape": "TagKey"
+      },
+      "type": "map",
+      "value": {
+        "shape": "TagValue"
+      }
+    },
+    "TooManyTagsException": {
+      "documentation": "<p>Amazon Connect Wisdom throws this exception if you have too many tags in your tag set.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags used to organize, track, or control access for this resource.</p>"
-        }
-      }
-    },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "min":1
-    },
-    "Tags":{
-      "type":"map",
-      "key":{"shape":"TagKey"},
-      "value":{"shape":"TagValue"}
-    },
-    "TooManyTagsException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"},
-        "resourceName":{
-          "shape":"String",
-          "documentation":"<p>The specified resource name.</p>"
+        "resourceName": {
+          "documentation": "<p>The specified resource name.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Amazon Connect Wisdom throws this exception if you have too many tags in your tag set.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "structure"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "UntagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
+        },
+        "tagKeys": {
+          "documentation": "<p>The tag keys.</p>",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeyList"
+        }
+      },
+      "required": [
         "resourceArn",
         "tagKeys"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateContentRequest": {
+      "members": {
+        "contentId": {
+          "documentation": "<p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "contentId",
+          "shape": "UuidOrArn"
         },
-        "tagKeys":{
-          "shape":"TagKeyList",
-          "documentation":"<p>The tag keys.</p>",
-          "location":"querystring",
-          "locationName":"tagKeys"
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
+        },
+        "metadata": {
+          "documentation": "<p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>",
+          "shape": "ContentMetadata"
+        },
+        "overrideLinkOutUri": {
+          "documentation": "<p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>",
+          "shape": "Uri"
+        },
+        "removeOverrideLinkOutUri": {
+          "documentation": "<p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>",
+          "shape": "Boolean"
+        },
+        "revisionId": {
+          "documentation": "<p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>",
+          "shape": "NonEmptyString"
+        },
+        "title": {
+          "documentation": "<p>The title of the content.</p>",
+          "shape": "ContentTitle"
+        },
+        "uploadId": {
+          "documentation": "<p>A pointer to the uploaded asset. This value is returned by <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html\">StartContentUpload</a>. </p>",
+          "shape": "NonEmptyString"
         }
-      }
-    },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateContentRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "contentId",
         "knowledgeBaseId"
       ],
-      "members":{
-        "contentId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"contentId"
-        },
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        },
-        "metadata":{
-          "shape":"ContentMetadata",
-          "documentation":"<p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>"
-        },
-        "overrideLinkOutUri":{
-          "shape":"Uri",
-          "documentation":"<p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>"
-        },
-        "removeOverrideLinkOutUri":{
-          "shape":"Boolean",
-          "documentation":"<p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>"
-        },
-        "revisionId":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>"
-        },
-        "title":{
-          "shape":"ContentTitle",
-          "documentation":"<p>The title of the content.</p>"
-        },
-        "uploadId":{
-          "shape":"NonEmptyString",
-          "documentation":"<p>A pointer to the uploaded asset. This value is returned by <a href=\"https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html\">StartContentUpload</a>. </p>"
-        }
-      }
+      "type": "structure"
     },
-    "UpdateContentResponse":{
-      "type":"structure",
-      "members":{
-        "content":{
-          "shape":"ContentData",
-          "documentation":"<p>The content.</p>"
+    "UpdateContentResponse": {
+      "members": {
+        "content": {
+          "documentation": "<p>The content.</p>",
+          "shape": "ContentData"
         }
-      }
+      },
+      "type": "structure"
     },
-    "UpdateKnowledgeBaseTemplateUriRequest":{
-      "type":"structure",
-      "required":[
+    "UpdateKnowledgeBaseTemplateUriRequest": {
+      "members": {
+        "knowledgeBaseId": {
+          "documentation": "<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
+          "location": "uri",
+          "locationName": "knowledgeBaseId",
+          "shape": "UuidOrArn"
+        },
+        "templateUri": {
+          "documentation": "<p>The template URI to update.</p>",
+          "shape": "Uri"
+        }
+      },
+      "required": [
         "knowledgeBaseId",
         "templateUri"
       ],
-      "members":{
-        "knowledgeBaseId":{
-          "shape":"UuidOrArn",
-          "documentation":"<p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>",
-          "location":"uri",
-          "locationName":"knowledgeBaseId"
-        },
-        "templateUri":{
-          "shape":"Uri",
-          "documentation":"<p>The template URI to update.</p>"
+      "type": "structure"
+    },
+    "UpdateKnowledgeBaseTemplateUriResponse": {
+      "members": {
+        "knowledgeBase": {
+          "documentation": "<p>The knowledge base to update.</p>",
+          "shape": "KnowledgeBaseData"
         }
-      }
+      },
+      "type": "structure"
     },
-    "UpdateKnowledgeBaseTemplateUriResponse":{
-      "type":"structure",
-      "members":{
-        "knowledgeBase":{
-          "shape":"KnowledgeBaseData",
-          "documentation":"<p>The knowledge base to update.</p>"
+    "Uri": {
+      "max": 4096,
+      "min": 1,
+      "type": "string"
+    },
+    "Url": {
+      "max": 4096,
+      "min": 1,
+      "sensitive": true,
+      "type": "string"
+    },
+    "Uuid": {
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+      "type": "string"
+    },
+    "UuidOrArn": {
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$",
+      "type": "string"
+    },
+    "ValidationException": {
+      "documentation": "<p>The input fails to satisfy the constraints specified by a service.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
-      }
-    },
-    "Uri":{
-      "type":"string",
-      "max":4096,
-      "min":1
-    },
-    "Url":{
-      "type":"string",
-      "max":4096,
-      "min":1,
-      "sensitive":true
-    },
-    "Uuid":{
-      "type":"string",
-      "pattern":"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
-    },
-    "UuidOrArn":{
-      "type":"string",
-      "pattern":"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})?$"
-    },
-    "ValidationException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by a service.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "structure"
     },
-    "WaitTimeSeconds":{
-      "type":"integer",
-      "max":20,
-      "min":0
+    "WaitTimeSeconds": {
+      "max": 20,
+      "min": 0,
+      "type": "integer"
     }
   },
-  "documentation":"<p>Amazon Connect Wisdom delivers agents the information they need to solve customer issues as they're actively speaking with customers. Agents can search across connected repositories from within their agent desktop to find answers quickly. Use the Amazon Connect Wisdom APIs to create an assistant and a knowledge base, for example, or manage content by uploading custom files.</p>"
+  "version": "2.0"
 }

@@ -40,4 +40,3 @@ The following ``describe-commands`` commmand describes the commands in a specifi
 For more information, see `AWS OpsWorks Lifecycle Events`_ in the *AWS OpsWorks User Guide*.
 
 .. _`AWS OpsWorks Lifecycle Events`: http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-events.html
-

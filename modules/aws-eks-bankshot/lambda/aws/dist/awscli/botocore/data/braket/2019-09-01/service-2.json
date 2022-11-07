@@ -1,385 +1,619 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2019-09-01",
-    "endpointPrefix":"braket",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"Braket",
-    "serviceId":"Braket",
-    "signatureVersion":"v4",
-    "signingName":"braket",
-    "uid":"braket-2019-09-01"
+  "documentation": "<p>The Amazon Braket API Reference provides information about the operations and structures supported in Amazon Braket.</p> <p>Additional Resources:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html\">Amazon Braket Developer Guide</a> </p> </li> </ul>",
+  "metadata": {
+    "apiVersion": "2019-09-01",
+    "endpointPrefix": "braket",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "Braket",
+    "serviceId": "Braket",
+    "signatureVersion": "v4",
+    "signingName": "braket",
+    "uid": "braket-2019-09-01"
   },
-  "operations":{
-    "CancelJob":{
-      "name":"CancelJob",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/job/{jobArn}/cancel",
-        "responseCode":200
-      },
-      "input":{"shape":"CancelJobRequest"},
-      "output":{"shape":"CancelJobResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Cancels an Amazon Braket job.</p>",
-      "idempotent":true
-    },
-    "CancelQuantumTask":{
-      "name":"CancelQuantumTask",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/quantum-task/{quantumTaskArn}/cancel",
-        "responseCode":200
-      },
-      "input":{"shape":"CancelQuantumTaskRequest"},
-      "output":{"shape":"CancelQuantumTaskResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Cancels the specified task.</p>",
-      "idempotent":true
-    },
-    "CreateJob":{
-      "name":"CreateJob",
-      "http":{
-        "method":"POST",
-        "requestUri":"/job",
-        "responseCode":201
-      },
-      "input":{"shape":"CreateJobRequest"},
-      "output":{"shape":"CreateJobResponse"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"DeviceRetiredException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Creates an Amazon Braket job.</p>"
-    },
-    "CreateQuantumTask":{
-      "name":"CreateQuantumTask",
-      "http":{
-        "method":"POST",
-        "requestUri":"/quantum-task",
-        "responseCode":201
-      },
-      "input":{"shape":"CreateQuantumTaskRequest"},
-      "output":{"shape":"CreateQuantumTaskResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"DeviceOfflineException"},
-        {"shape":"DeviceRetiredException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Creates a quantum task.</p>"
-    },
-    "GetDevice":{
-      "name":"GetDevice",
-      "http":{
-        "method":"GET",
-        "requestUri":"/device/{deviceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetDeviceRequest"},
-      "output":{"shape":"GetDeviceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Retrieves the devices available in Amazon Braket.</p> <note> <p>For backwards compatibility with older versions of BraketSchemas, OpenQASM information is omitted from GetDevice API calls. To get this information the user-agent needs to present a recent version of the BraketSchemas (1.8.0 or later). The Braket SDK automatically reports this for you. If you do not see OpenQASM results in the GetDevice response when using a Braket SDK, you may need to set AWS_EXECUTION_ENV environment variable to configure user-agent. See the code examples provided below for how to do this for the AWS CLI, Boto3, and the Go, Java, and JavaScript/TypeScript SDKs.</p> </note>"
-    },
-    "GetJob":{
-      "name":"GetJob",
-      "http":{
-        "method":"GET",
-        "requestUri":"/job/{jobArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetJobRequest"},
-      "output":{"shape":"GetJobResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Retrieves the specified Amazon Braket job.</p>"
-    },
-    "GetQuantumTask":{
-      "name":"GetQuantumTask",
-      "http":{
-        "method":"GET",
-        "requestUri":"/quantum-task/{quantumTaskArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"GetQuantumTaskRequest"},
-      "output":{"shape":"GetQuantumTaskResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Retrieves the specified quantum task.</p>"
-    },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Shows the tags associated with this resource.</p>"
-    },
-    "SearchDevices":{
-      "name":"SearchDevices",
-      "http":{
-        "method":"POST",
-        "requestUri":"/devices",
-        "responseCode":200
-      },
-      "input":{"shape":"SearchDevicesRequest"},
-      "output":{"shape":"SearchDevicesResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Searches for devices using the specified filters.</p>"
-    },
-    "SearchJobs":{
-      "name":"SearchJobs",
-      "http":{
-        "method":"POST",
-        "requestUri":"/jobs",
-        "responseCode":200
-      },
-      "input":{"shape":"SearchJobsRequest"},
-      "output":{"shape":"SearchJobsResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Searches for Amazon Braket jobs that match the specified filter values.</p>"
-    },
-    "SearchQuantumTasks":{
-      "name":"SearchQuantumTasks",
-      "http":{
-        "method":"POST",
-        "requestUri":"/quantum-tasks",
-        "responseCode":200
-      },
-      "input":{"shape":"SearchQuantumTasksRequest"},
-      "output":{"shape":"SearchQuantumTasksResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Searches for tasks that match the specified filter values.</p>"
-    },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Add a tag to the specified resource.</p>"
-    },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServiceException"},
-        {"shape":"ValidationException"}
-      ],
-      "documentation":"<p>Remove tags from a resource.</p>",
-      "idempotent":true
-    }
-  },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "AlgorithmSpecification":{
-      "type":"structure",
-      "members":{
-        "containerImage":{
-          "shape":"ContainerImage",
-          "documentation":"<p>The container image used to create an Amazon Braket job.</p>"
+  "operations": {
+    "CancelJob": {
+      "documentation": "<p>Cancels an Amazon Braket job.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
         },
-        "scriptModeConfig":{
-          "shape":"ScriptModeConfig",
-          "documentation":"<p>Configures the paths to the Python scripts used for entry and training.</p>"
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
         }
+      ],
+      "http": {
+        "method": "PUT",
+        "requestUri": "/job/{jobArn}/cancel",
+        "responseCode": 200
       },
-      "documentation":"<p>Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to the Python scripts used for entry and training.</p>"
-    },
-    "CancelJobRequest":{
-      "type":"structure",
-      "required":["jobArn"],
-      "members":{
-        "jobArn":{
-          "shape":"JobArn",
-          "documentation":"<p>The ARN of the Amazon Braket job to cancel.</p>",
-          "location":"uri",
-          "locationName":"jobArn"
-        }
+      "idempotent": true,
+      "input": {
+        "shape": "CancelJobRequest"
+      },
+      "name": "CancelJob",
+      "output": {
+        "shape": "CancelJobResponse"
       }
     },
-    "CancelJobResponse":{
-      "type":"structure",
-      "required":[
+    "CancelQuantumTask": {
+      "documentation": "<p>Cancels the specified task.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "PUT",
+        "requestUri": "/quantum-task/{quantumTaskArn}/cancel",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CancelQuantumTaskRequest"
+      },
+      "name": "CancelQuantumTask",
+      "output": {
+        "shape": "CancelQuantumTaskResponse"
+      }
+    },
+    "CreateJob": {
+      "documentation": "<p>Creates an Amazon Braket job.</p>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "DeviceRetiredException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "POST",
+        "requestUri": "/job",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateJobRequest"
+      },
+      "name": "CreateJob",
+      "output": {
+        "shape": "CreateJobResponse"
+      }
+    },
+    "CreateQuantumTask": {
+      "documentation": "<p>Creates a quantum task.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "DeviceOfflineException"
+        },
+        {
+          "shape": "DeviceRetiredException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "POST",
+        "requestUri": "/quantum-task",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateQuantumTaskRequest"
+      },
+      "name": "CreateQuantumTask",
+      "output": {
+        "shape": "CreateQuantumTaskResponse"
+      }
+    },
+    "GetDevice": {
+      "documentation": "<p>Retrieves the devices available in Amazon Braket.</p> <note> <p>For backwards compatibility with older versions of BraketSchemas, OpenQASM information is omitted from GetDevice API calls. To get this information the user-agent needs to present a recent version of the BraketSchemas (1.8.0 or later). The Braket SDK automatically reports this for you. If you do not see OpenQASM results in the GetDevice response when using a Braket SDK, you may need to set AWS_EXECUTION_ENV environment variable to configure user-agent. See the code examples provided below for how to do this for the AWS CLI, Boto3, and the Go, Java, and JavaScript/TypeScript SDKs.</p> </note>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "GET",
+        "requestUri": "/device/{deviceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetDeviceRequest"
+      },
+      "name": "GetDevice",
+      "output": {
+        "shape": "GetDeviceResponse"
+      }
+    },
+    "GetJob": {
+      "documentation": "<p>Retrieves the specified Amazon Braket job.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "GET",
+        "requestUri": "/job/{jobArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetJobRequest"
+      },
+      "name": "GetJob",
+      "output": {
+        "shape": "GetJobResponse"
+      }
+    },
+    "GetQuantumTask": {
+      "documentation": "<p>Retrieves the specified quantum task.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "GET",
+        "requestUri": "/quantum-task/{quantumTaskArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetQuantumTaskRequest"
+      },
+      "name": "GetQuantumTask",
+      "output": {
+        "shape": "GetQuantumTaskResponse"
+      }
+    },
+    "ListTagsForResource": {
+      "documentation": "<p>Shows the tags associated with this resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
+    },
+    "SearchDevices": {
+      "documentation": "<p>Searches for devices using the specified filters.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "POST",
+        "requestUri": "/devices",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SearchDevicesRequest"
+      },
+      "name": "SearchDevices",
+      "output": {
+        "shape": "SearchDevicesResponse"
+      }
+    },
+    "SearchJobs": {
+      "documentation": "<p>Searches for Amazon Braket jobs that match the specified filter values.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "POST",
+        "requestUri": "/jobs",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SearchJobsRequest"
+      },
+      "name": "SearchJobs",
+      "output": {
+        "shape": "SearchJobsResponse"
+      }
+    },
+    "SearchQuantumTasks": {
+      "documentation": "<p>Searches for tasks that match the specified filter values.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "POST",
+        "requestUri": "/quantum-tasks",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "SearchQuantumTasksRequest"
+      },
+      "name": "SearchQuantumTasks",
+      "output": {
+        "shape": "SearchQuantumTasksResponse"
+      }
+    },
+    "TagResource": {
+      "documentation": "<p>Add a tag to the specified resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
+    },
+    "UntagResource": {
+      "documentation": "<p>Remove tags from a resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServiceException"
+        },
+        {
+          "shape": "ValidationException"
+        }
+      ],
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
+    }
+  },
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>You do not have sufficient access to perform this action.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "AlgorithmSpecification": {
+      "documentation": "<p>Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to the Python scripts used for entry and training.</p>",
+      "members": {
+        "containerImage": {
+          "documentation": "<p>The container image used to create an Amazon Braket job.</p>",
+          "shape": "ContainerImage"
+        },
+        "scriptModeConfig": {
+          "documentation": "<p>Configures the paths to the Python scripts used for entry and training.</p>",
+          "shape": "ScriptModeConfig"
+        }
+      },
+      "type": "structure"
+    },
+    "CancelJobRequest": {
+      "members": {
+        "jobArn": {
+          "documentation": "<p>The ARN of the Amazon Braket job to cancel.</p>",
+          "location": "uri",
+          "locationName": "jobArn",
+          "shape": "JobArn"
+        }
+      },
+      "required": [
+        "jobArn"
+      ],
+      "type": "structure"
+    },
+    "CancelJobResponse": {
+      "members": {
+        "cancellationStatus": {
+          "documentation": "<p>The status of the job cancellation request.</p>",
+          "shape": "CancellationStatus"
+        },
+        "jobArn": {
+          "documentation": "<p>The ARN of the Amazon Braket job.</p>",
+          "shape": "JobArn"
+        }
+      },
+      "required": [
         "cancellationStatus",
         "jobArn"
       ],
-      "members":{
-        "cancellationStatus":{
-          "shape":"CancellationStatus",
-          "documentation":"<p>The status of the job cancellation request.</p>"
-        },
-        "jobArn":{
-          "shape":"JobArn",
-          "documentation":"<p>The ARN of the Amazon Braket job.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CancelQuantumTaskRequest":{
-      "type":"structure",
-      "required":[
+    "CancelQuantumTaskRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>The client token associated with the request.</p>",
+          "idempotencyToken": true,
+          "shape": "String64"
+        },
+        "quantumTaskArn": {
+          "documentation": "<p>The ARN of the task to cancel.</p>",
+          "location": "uri",
+          "locationName": "quantumTaskArn",
+          "shape": "QuantumTaskArn"
+        }
+      },
+      "required": [
         "clientToken",
         "quantumTaskArn"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"String64",
-          "documentation":"<p>The client token associated with the request.</p>",
-          "idempotencyToken":true
-        },
-        "quantumTaskArn":{
-          "shape":"QuantumTaskArn",
-          "documentation":"<p>The ARN of the task to cancel.</p>",
-          "location":"uri",
-          "locationName":"quantumTaskArn"
-        }
-      }
+      "type": "structure"
     },
-    "CancelQuantumTaskResponse":{
-      "type":"structure",
-      "required":[
+    "CancelQuantumTaskResponse": {
+      "members": {
+        "cancellationStatus": {
+          "documentation": "<p>The status of the cancellation request.</p>",
+          "shape": "CancellationStatus"
+        },
+        "quantumTaskArn": {
+          "documentation": "<p>The ARN of the task.</p>",
+          "shape": "QuantumTaskArn"
+        }
+      },
+      "required": [
         "cancellationStatus",
         "quantumTaskArn"
       ],
-      "members":{
-        "cancellationStatus":{
-          "shape":"CancellationStatus",
-          "documentation":"<p>The status of the cancellation request.</p>"
-        },
-        "quantumTaskArn":{
-          "shape":"QuantumTaskArn",
-          "documentation":"<p>The ARN of the task.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CancellationStatus":{
-      "type":"string",
-      "enum":[
+    "CancellationStatus": {
+      "enum": [
         "CANCELLING",
         "CANCELLED"
-      ]
+      ],
+      "type": "string"
     },
-    "CompressionType":{
-      "type":"string",
-      "enum":[
+    "CompressionType": {
+      "enum": [
         "NONE",
         "GZIP"
-      ]
+      ],
+      "type": "string"
     },
-    "ConflictException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "ConflictException": {
+      "documentation": "<p>An error occurred due to a conflict.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
       },
-      "documentation":"<p>An error occurred due to a conflict.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "ContainerImage":{
-      "type":"structure",
-      "required":["uri"],
-      "members":{
-        "uri":{
-          "shape":"Uri",
-          "documentation":"<p>The URI locating the container image.</p>"
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>The container image used to create an Amazon Braket job.</p>"
+      "type": "structure"
     },
-    "CreateJobRequest":{
-      "type":"structure",
-      "required":[
+    "ContainerImage": {
+      "documentation": "<p>The container image used to create an Amazon Braket job.</p>",
+      "members": {
+        "uri": {
+          "documentation": "<p>The URI locating the container image.</p>",
+          "shape": "Uri"
+        }
+      },
+      "required": [
+        "uri"
+      ],
+      "type": "structure"
+    },
+    "CreateJobRequest": {
+      "members": {
+        "algorithmSpecification": {
+          "documentation": "<p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>",
+          "shape": "AlgorithmSpecification"
+        },
+        "checkpointConfig": {
+          "documentation": "<p>Information about the output locations for job checkpoint data.</p>",
+          "shape": "JobCheckpointConfig"
+        },
+        "clientToken": {
+          "documentation": "<p>A unique token that guarantees that the call to this API is idempotent.</p>",
+          "idempotencyToken": true,
+          "shape": "String64"
+        },
+        "deviceConfig": {
+          "documentation": "<p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>",
+          "shape": "DeviceConfig"
+        },
+        "hyperParameters": {
+          "documentation": "<p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>",
+          "shape": "HyperParameters"
+        },
+        "inputDataConfig": {
+          "documentation": "<p>A list of parameters that specify the name and type of input data and where it is located.</p>",
+          "shape": "CreateJobRequestInputDataConfigList"
+        },
+        "instanceConfig": {
+          "documentation": "<p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>",
+          "shape": "InstanceConfig"
+        },
+        "jobName": {
+          "documentation": "<p>The name of the Amazon Braket job.</p>",
+          "shape": "CreateJobRequestJobNameString"
+        },
+        "outputDataConfig": {
+          "documentation": "<p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>",
+          "shape": "JobOutputDataConfig"
+        },
+        "roleArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>",
+          "shape": "RoleArn"
+        },
+        "stoppingCondition": {
+          "documentation": "<p> The user-defined criteria that specifies when a job stops running.</p>",
+          "shape": "JobStoppingCondition"
+        },
+        "tags": {
+          "documentation": "<p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>",
+          "shape": "TagsMap"
+        }
+      },
+      "required": [
         "algorithmSpecification",
         "clientToken",
         "deviceConfig",
@@ -388,83 +622,77 @@
         "outputDataConfig",
         "roleArn"
       ],
-      "members":{
-        "algorithmSpecification":{
-          "shape":"AlgorithmSpecification",
-          "documentation":"<p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>"
-        },
-        "checkpointConfig":{
-          "shape":"JobCheckpointConfig",
-          "documentation":"<p>Information about the output locations for job checkpoint data.</p>"
-        },
-        "clientToken":{
-          "shape":"String64",
-          "documentation":"<p>A unique token that guarantees that the call to this API is idempotent.</p>",
-          "idempotencyToken":true
-        },
-        "deviceConfig":{
-          "shape":"DeviceConfig",
-          "documentation":"<p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>"
-        },
-        "hyperParameters":{
-          "shape":"HyperParameters",
-          "documentation":"<p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>"
-        },
-        "inputDataConfig":{
-          "shape":"CreateJobRequestInputDataConfigList",
-          "documentation":"<p>A list of parameters that specify the name and type of input data and where it is located.</p>"
-        },
-        "instanceConfig":{
-          "shape":"InstanceConfig",
-          "documentation":"<p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>"
-        },
-        "jobName":{
-          "shape":"CreateJobRequestJobNameString",
-          "documentation":"<p>The name of the Amazon Braket job.</p>"
-        },
-        "outputDataConfig":{
-          "shape":"JobOutputDataConfig",
-          "documentation":"<p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>"
-        },
-        "roleArn":{
-          "shape":"RoleArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>"
-        },
-        "stoppingCondition":{
-          "shape":"JobStoppingCondition",
-          "documentation":"<p> The user-defined criteria that specifies when a job stops running.</p>"
-        },
-        "tags":{
-          "shape":"TagsMap",
-          "documentation":"<p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>"
+      "type": "structure"
+    },
+    "CreateJobRequestInputDataConfigList": {
+      "max": 20,
+      "member": {
+        "shape": "InputFileConfig"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "CreateJobRequestJobNameString": {
+      "max": 50,
+      "min": 1,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$",
+      "type": "string"
+    },
+    "CreateJobResponse": {
+      "members": {
+        "jobArn": {
+          "documentation": "<p>The ARN of the Amazon Braket job created.</p>",
+          "shape": "JobArn"
         }
-      }
+      },
+      "required": [
+        "jobArn"
+      ],
+      "type": "structure"
     },
-    "CreateJobRequestInputDataConfigList":{
-      "type":"list",
-      "member":{"shape":"InputFileConfig"},
-      "max":20,
-      "min":0
-    },
-    "CreateJobRequestJobNameString":{
-      "type":"string",
-      "max":50,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$"
-    },
-    "CreateJobResponse":{
-      "type":"structure",
-      "required":["jobArn"],
-      "members":{
-        "jobArn":{
-          "shape":"JobArn",
-          "documentation":"<p>The ARN of the Amazon Braket job created.</p>"
+    "CreateQuantumTaskRequest": {
+      "members": {
+        "action": {
+          "documentation": "<p>The action associated with the task.</p>",
+          "jsonvalue": true,
+          "shape": "JsonValue"
+        },
+        "clientToken": {
+          "documentation": "<p>The client token associated with the request.</p>",
+          "idempotencyToken": true,
+          "shape": "String64"
+        },
+        "deviceArn": {
+          "documentation": "<p>The ARN of the device to run the task on.</p>",
+          "shape": "DeviceArn"
+        },
+        "deviceParameters": {
+          "documentation": "<p>The parameters for the device to run the task on.</p>",
+          "jsonvalue": true,
+          "shape": "CreateQuantumTaskRequestDeviceParametersString"
+        },
+        "jobToken": {
+          "documentation": "<p>The token for an Amazon Braket job that associates it with the quantum task.</p>",
+          "shape": "JobToken"
+        },
+        "outputS3Bucket": {
+          "documentation": "<p>The S3 bucket to store task result files in.</p>",
+          "shape": "CreateQuantumTaskRequestOutputS3BucketString"
+        },
+        "outputS3KeyPrefix": {
+          "documentation": "<p>The key prefix for the location in the S3 bucket to store task results in.</p>",
+          "shape": "CreateQuantumTaskRequestOutputS3KeyPrefixString"
+        },
+        "shots": {
+          "documentation": "<p>The number of shots to use for the task.</p>",
+          "shape": "CreateQuantumTaskRequestShotsLong"
+        },
+        "tags": {
+          "documentation": "<p>Tags to be added to the quantum task you're creating.</p>",
+          "shape": "TagsMap"
         }
-      }
-    },
-    "CreateQuantumTaskRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "action",
         "clientToken",
         "deviceArn",
@@ -472,196 +700,196 @@
         "outputS3KeyPrefix",
         "shots"
       ],
-      "members":{
-        "action":{
-          "shape":"JsonValue",
-          "documentation":"<p>The action associated with the task.</p>",
-          "jsonvalue":true
-        },
-        "clientToken":{
-          "shape":"String64",
-          "documentation":"<p>The client token associated with the request.</p>",
-          "idempotencyToken":true
-        },
-        "deviceArn":{
-          "shape":"DeviceArn",
-          "documentation":"<p>The ARN of the device to run the task on.</p>"
-        },
-        "deviceParameters":{
-          "shape":"CreateQuantumTaskRequestDeviceParametersString",
-          "documentation":"<p>The parameters for the device to run the task on.</p>",
-          "jsonvalue":true
-        },
-        "jobToken":{
-          "shape":"JobToken",
-          "documentation":"<p>The token for an Amazon Braket job that associates it with the quantum task.</p>"
-        },
-        "outputS3Bucket":{
-          "shape":"CreateQuantumTaskRequestOutputS3BucketString",
-          "documentation":"<p>The S3 bucket to store task result files in.</p>"
-        },
-        "outputS3KeyPrefix":{
-          "shape":"CreateQuantumTaskRequestOutputS3KeyPrefixString",
-          "documentation":"<p>The key prefix for the location in the S3 bucket to store task results in.</p>"
-        },
-        "shots":{
-          "shape":"CreateQuantumTaskRequestShotsLong",
-          "documentation":"<p>The number of shots to use for the task.</p>"
-        },
-        "tags":{
-          "shape":"TagsMap",
-          "documentation":"<p>Tags to be added to the quantum task you're creating.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "CreateQuantumTaskRequestDeviceParametersString":{
-      "type":"string",
-      "max":48000,
-      "min":1
+    "CreateQuantumTaskRequestDeviceParametersString": {
+      "max": 48000,
+      "min": 1,
+      "type": "string"
     },
-    "CreateQuantumTaskRequestOutputS3BucketString":{
-      "type":"string",
-      "max":63,
-      "min":3
+    "CreateQuantumTaskRequestOutputS3BucketString": {
+      "max": 63,
+      "min": 3,
+      "type": "string"
     },
-    "CreateQuantumTaskRequestOutputS3KeyPrefixString":{
-      "type":"string",
-      "max":1024,
-      "min":1
+    "CreateQuantumTaskRequestOutputS3KeyPrefixString": {
+      "max": 1024,
+      "min": 1,
+      "type": "string"
     },
-    "CreateQuantumTaskRequestShotsLong":{
-      "type":"long",
-      "box":true,
-      "min":0
+    "CreateQuantumTaskRequestShotsLong": {
+      "box": true,
+      "min": 0,
+      "type": "long"
     },
-    "CreateQuantumTaskResponse":{
-      "type":"structure",
-      "required":["quantumTaskArn"],
-      "members":{
-        "quantumTaskArn":{
-          "shape":"QuantumTaskArn",
-          "documentation":"<p>The ARN of the task created by the request.</p>"
-        }
-      }
-    },
-    "DataSource":{
-      "type":"structure",
-      "required":["s3DataSource"],
-      "members":{
-        "s3DataSource":{
-          "shape":"S3DataSource",
-          "documentation":"<p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>"
+    "CreateQuantumTaskResponse": {
+      "members": {
+        "quantumTaskArn": {
+          "documentation": "<p>The ARN of the task created by the request.</p>",
+          "shape": "QuantumTaskArn"
         }
       },
-      "documentation":"<p>Information about the source of the data used by the Amazon Braket job.</p>"
+      "required": [
+        "quantumTaskArn"
+      ],
+      "type": "structure"
     },
-    "DeviceArn":{
-      "type":"string",
-      "max":256,
-      "min":1
-    },
-    "DeviceConfig":{
-      "type":"structure",
-      "required":["device"],
-      "members":{
-        "device":{
-          "shape":"String256",
-          "documentation":"<p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>"
+    "DataSource": {
+      "documentation": "<p>Information about the source of the data used by the Amazon Braket job.</p>",
+      "members": {
+        "s3DataSource": {
+          "documentation": "<p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>",
+          "shape": "S3DataSource"
         }
       },
-      "documentation":"<p>Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.</p>"
+      "required": [
+        "s3DataSource"
+      ],
+      "type": "structure"
     },
-    "DeviceOfflineException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>The specified device is currently offline.</p>",
-      "error":{
-        "httpStatusCode":424,
-        "senderFault":true
-      },
-      "exception":true
+    "DeviceArn": {
+      "max": 256,
+      "min": 1,
+      "type": "string"
     },
-    "DeviceRetiredException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "DeviceConfig": {
+      "documentation": "<p>Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.</p>",
+      "members": {
+        "device": {
+          "documentation": "<p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>",
+          "shape": "String256"
+        }
       },
-      "documentation":"<p>The specified device has been retired.</p>",
-      "error":{
-        "httpStatusCode":410,
-        "senderFault":true
-      },
-      "exception":true
+      "required": [
+        "device"
+      ],
+      "type": "structure"
     },
-    "DeviceStatus":{
-      "type":"string",
-      "enum":[
+    "DeviceOfflineException": {
+      "documentation": "<p>The specified device is currently offline.</p>",
+      "error": {
+        "httpStatusCode": 424,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "DeviceRetiredException": {
+      "documentation": "<p>The specified device has been retired.</p>",
+      "error": {
+        "httpStatusCode": 410,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "DeviceStatus": {
+      "enum": [
         "ONLINE",
         "OFFLINE",
         "RETIRED"
-      ]
+      ],
+      "type": "string"
     },
-    "DeviceSummary":{
-      "type":"structure",
-      "required":[
+    "DeviceSummary": {
+      "documentation": "<p>Includes information about the device.</p>",
+      "members": {
+        "deviceArn": {
+          "documentation": "<p>The ARN of the device.</p>",
+          "shape": "DeviceArn"
+        },
+        "deviceName": {
+          "documentation": "<p>The name of the device.</p>",
+          "shape": "String"
+        },
+        "deviceStatus": {
+          "documentation": "<p>The status of the device.</p>",
+          "shape": "DeviceStatus"
+        },
+        "deviceType": {
+          "documentation": "<p>The type of the device.</p>",
+          "shape": "DeviceType"
+        },
+        "providerName": {
+          "documentation": "<p>The provider of the device.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "deviceArn",
         "deviceName",
         "deviceStatus",
         "deviceType",
         "providerName"
       ],
-      "members":{
-        "deviceArn":{
-          "shape":"DeviceArn",
-          "documentation":"<p>The ARN of the device.</p>"
-        },
-        "deviceName":{
-          "shape":"String",
-          "documentation":"<p>The name of the device.</p>"
-        },
-        "deviceStatus":{
-          "shape":"DeviceStatus",
-          "documentation":"<p>The status of the device.</p>"
-        },
-        "deviceType":{
-          "shape":"DeviceType",
-          "documentation":"<p>The type of the device.</p>"
-        },
-        "providerName":{
-          "shape":"String",
-          "documentation":"<p>The provider of the device.</p>"
-        }
+      "type": "structure"
+    },
+    "DeviceSummaryList": {
+      "member": {
+        "shape": "DeviceSummary"
       },
-      "documentation":"<p>Includes information about the device.</p>"
+      "type": "list"
     },
-    "DeviceSummaryList":{
-      "type":"list",
-      "member":{"shape":"DeviceSummary"}
-    },
-    "DeviceType":{
-      "type":"string",
-      "enum":[
+    "DeviceType": {
+      "enum": [
         "QPU",
         "SIMULATOR"
-      ]
+      ],
+      "type": "string"
     },
-    "GetDeviceRequest":{
-      "type":"structure",
-      "required":["deviceArn"],
-      "members":{
-        "deviceArn":{
-          "shape":"DeviceArn",
-          "documentation":"<p>The ARN of the device to retrieve.</p>",
-          "location":"uri",
-          "locationName":"deviceArn"
+    "GetDeviceRequest": {
+      "members": {
+        "deviceArn": {
+          "documentation": "<p>The ARN of the device to retrieve.</p>",
+          "location": "uri",
+          "locationName": "deviceArn",
+          "shape": "DeviceArn"
         }
-      }
+      },
+      "required": [
+        "deviceArn"
+      ],
+      "type": "structure"
     },
-    "GetDeviceResponse":{
-      "type":"structure",
-      "required":[
+    "GetDeviceResponse": {
+      "members": {
+        "deviceArn": {
+          "documentation": "<p>The ARN of the device.</p>",
+          "shape": "DeviceArn"
+        },
+        "deviceCapabilities": {
+          "documentation": "<p>Details about the capabilities of the device.</p>",
+          "jsonvalue": true,
+          "shape": "JsonValue"
+        },
+        "deviceName": {
+          "documentation": "<p>The name of the device.</p>",
+          "shape": "String"
+        },
+        "deviceStatus": {
+          "documentation": "<p>The status of the device.</p>",
+          "shape": "DeviceStatus"
+        },
+        "deviceType": {
+          "documentation": "<p>The type of the device.</p>",
+          "shape": "DeviceType"
+        },
+        "providerName": {
+          "documentation": "<p>The name of the partner company for the device.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "deviceArn",
         "deviceCapabilities",
         "deviceName",
@@ -669,49 +897,102 @@
         "deviceType",
         "providerName"
       ],
-      "members":{
-        "deviceArn":{
-          "shape":"DeviceArn",
-          "documentation":"<p>The ARN of the device.</p>"
-        },
-        "deviceCapabilities":{
-          "shape":"JsonValue",
-          "documentation":"<p>Details about the capabilities of the device.</p>",
-          "jsonvalue":true
-        },
-        "deviceName":{
-          "shape":"String",
-          "documentation":"<p>The name of the device.</p>"
-        },
-        "deviceStatus":{
-          "shape":"DeviceStatus",
-          "documentation":"<p>The status of the device.</p>"
-        },
-        "deviceType":{
-          "shape":"DeviceType",
-          "documentation":"<p>The type of the device.</p>"
-        },
-        "providerName":{
-          "shape":"String",
-          "documentation":"<p>The name of the partner company for the device.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "GetJobRequest":{
-      "type":"structure",
-      "required":["jobArn"],
-      "members":{
-        "jobArn":{
-          "shape":"JobArn",
-          "documentation":"<p>The ARN of the job to retrieve.</p>",
-          "location":"uri",
-          "locationName":"jobArn"
+    "GetJobRequest": {
+      "members": {
+        "jobArn": {
+          "documentation": "<p>The ARN of the job to retrieve.</p>",
+          "location": "uri",
+          "locationName": "jobArn",
+          "shape": "JobArn"
         }
-      }
+      },
+      "required": [
+        "jobArn"
+      ],
+      "type": "structure"
     },
-    "GetJobResponse":{
-      "type":"structure",
-      "required":[
+    "GetJobResponse": {
+      "members": {
+        "algorithmSpecification": {
+          "documentation": "<p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>",
+          "shape": "AlgorithmSpecification"
+        },
+        "billableDuration": {
+          "documentation": "<p>The billable time the Amazon Braket job used to complete.</p>",
+          "shape": "Integer"
+        },
+        "checkpointConfig": {
+          "documentation": "<p>Information about the output locations for job checkpoint data.</p>",
+          "shape": "JobCheckpointConfig"
+        },
+        "createdAt": {
+          "documentation": "<p>The date and time that the Amazon Braket job was created.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "deviceConfig": {
+          "documentation": "<p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>",
+          "shape": "DeviceConfig"
+        },
+        "endedAt": {
+          "documentation": "<p>The date and time that the Amazon Braket job ended.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "events": {
+          "documentation": "<p>Details about the type and time events occurred related to the Amazon Braket job.</p>",
+          "shape": "JobEvents"
+        },
+        "failureReason": {
+          "documentation": "<p>A description of the reason why an Amazon Braket job failed, if it failed.</p>",
+          "shape": "String1024"
+        },
+        "hyperParameters": {
+          "documentation": "<p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>",
+          "shape": "HyperParameters"
+        },
+        "inputDataConfig": {
+          "documentation": "<p>A list of parameters that specify the name and type of input data and where it is located.</p>",
+          "shape": "InputConfigList"
+        },
+        "instanceConfig": {
+          "documentation": "<p>The resource instances to use while running the hybrid job on Amazon Braket.</p>",
+          "shape": "InstanceConfig"
+        },
+        "jobArn": {
+          "documentation": "<p>The ARN of the Amazon Braket job.</p>",
+          "shape": "JobArn"
+        },
+        "jobName": {
+          "documentation": "<p>The name of the Amazon Braket job.</p>",
+          "shape": "GetJobResponseJobNameString"
+        },
+        "outputDataConfig": {
+          "documentation": "<p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>",
+          "shape": "JobOutputDataConfig"
+        },
+        "roleArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>",
+          "shape": "RoleArn"
+        },
+        "startedAt": {
+          "documentation": "<p>The date and time that the Amazon Braket job was started.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "status": {
+          "documentation": "<p>The status of the Amazon Braket job.</p>",
+          "shape": "JobPrimaryStatus"
+        },
+        "stoppingCondition": {
+          "documentation": "<p>The user-defined criteria that specifies when to stop a job running.</p>",
+          "shape": "JobStoppingCondition"
+        },
+        "tags": {
+          "documentation": "<p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>",
+          "shape": "TagsMap"
+        }
+      },
+      "required": [
         "algorithmSpecification",
         "createdAt",
         "instanceConfig",
@@ -721,106 +1002,81 @@
         "roleArn",
         "status"
       ],
-      "members":{
-        "algorithmSpecification":{
-          "shape":"AlgorithmSpecification",
-          "documentation":"<p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>"
-        },
-        "billableDuration":{
-          "shape":"Integer",
-          "documentation":"<p>The billable time the Amazon Braket job used to complete.</p>"
-        },
-        "checkpointConfig":{
-          "shape":"JobCheckpointConfig",
-          "documentation":"<p>Information about the output locations for job checkpoint data.</p>"
-        },
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The date and time that the Amazon Braket job was created.</p>"
-        },
-        "deviceConfig":{
-          "shape":"DeviceConfig",
-          "documentation":"<p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>"
-        },
-        "endedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The date and time that the Amazon Braket job ended.</p>"
-        },
-        "events":{
-          "shape":"JobEvents",
-          "documentation":"<p>Details about the type and time events occurred related to the Amazon Braket job.</p>"
-        },
-        "failureReason":{
-          "shape":"String1024",
-          "documentation":"<p>A description of the reason why an Amazon Braket job failed, if it failed.</p>"
-        },
-        "hyperParameters":{
-          "shape":"HyperParameters",
-          "documentation":"<p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>"
-        },
-        "inputDataConfig":{
-          "shape":"InputConfigList",
-          "documentation":"<p>A list of parameters that specify the name and type of input data and where it is located.</p>"
-        },
-        "instanceConfig":{
-          "shape":"InstanceConfig",
-          "documentation":"<p>The resource instances to use while running the hybrid job on Amazon Braket.</p>"
-        },
-        "jobArn":{
-          "shape":"JobArn",
-          "documentation":"<p>The ARN of the Amazon Braket job.</p>"
-        },
-        "jobName":{
-          "shape":"GetJobResponseJobNameString",
-          "documentation":"<p>The name of the Amazon Braket job.</p>"
-        },
-        "outputDataConfig":{
-          "shape":"JobOutputDataConfig",
-          "documentation":"<p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>"
-        },
-        "roleArn":{
-          "shape":"RoleArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>"
-        },
-        "startedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The date and time that the Amazon Braket job was started.</p>"
-        },
-        "status":{
-          "shape":"JobPrimaryStatus",
-          "documentation":"<p>The status of the Amazon Braket job.</p>"
-        },
-        "stoppingCondition":{
-          "shape":"JobStoppingCondition",
-          "documentation":"<p>The user-defined criteria that specifies when to stop a job running.</p>"
-        },
-        "tags":{
-          "shape":"TagsMap",
-          "documentation":"<p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>"
+      "type": "structure"
+    },
+    "GetJobResponseJobNameString": {
+      "max": 50,
+      "min": 1,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$",
+      "type": "string"
+    },
+    "GetQuantumTaskRequest": {
+      "members": {
+        "quantumTaskArn": {
+          "documentation": "<p>the ARN of the task to retrieve.</p>",
+          "location": "uri",
+          "locationName": "quantumTaskArn",
+          "shape": "QuantumTaskArn"
         }
-      }
+      },
+      "required": [
+        "quantumTaskArn"
+      ],
+      "type": "structure"
     },
-    "GetJobResponseJobNameString":{
-      "type":"string",
-      "max":50,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$"
-    },
-    "GetQuantumTaskRequest":{
-      "type":"structure",
-      "required":["quantumTaskArn"],
-      "members":{
-        "quantumTaskArn":{
-          "shape":"QuantumTaskArn",
-          "documentation":"<p>the ARN of the task to retrieve.</p>",
-          "location":"uri",
-          "locationName":"quantumTaskArn"
+    "GetQuantumTaskResponse": {
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The time at which the task was created.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "deviceArn": {
+          "documentation": "<p>The ARN of the device the task was run on.</p>",
+          "shape": "DeviceArn"
+        },
+        "deviceParameters": {
+          "documentation": "<p>The parameters for the device on which the task ran.</p>",
+          "jsonvalue": true,
+          "shape": "JsonValue"
+        },
+        "endedAt": {
+          "documentation": "<p>The time at which the task ended.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "failureReason": {
+          "documentation": "<p>The reason that a task failed.</p>",
+          "shape": "String"
+        },
+        "jobArn": {
+          "documentation": "<p>The ARN of the Amazon Braket job associated with the quantum task.</p>",
+          "shape": "JobArn"
+        },
+        "outputS3Bucket": {
+          "documentation": "<p>The S3 bucket where task results are stored.</p>",
+          "shape": "String"
+        },
+        "outputS3Directory": {
+          "documentation": "<p>The folder in the S3 bucket where task results are stored.</p>",
+          "shape": "String"
+        },
+        "quantumTaskArn": {
+          "documentation": "<p>The ARN of the task.</p>",
+          "shape": "QuantumTaskArn"
+        },
+        "shots": {
+          "documentation": "<p>The number of shots used in the task.</p>",
+          "shape": "Long"
+        },
+        "status": {
+          "documentation": "<p>The status of the task.</p>",
+          "shape": "QuantumTaskStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags that belong to this task.</p>",
+          "shape": "TagsMap"
         }
-      }
-    },
-    "GetQuantumTaskResponse":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "createdAt",
         "deviceArn",
         "deviceParameters",
@@ -830,137 +1086,92 @@
         "shots",
         "status"
       ],
-      "members":{
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The time at which the task was created.</p>"
-        },
-        "deviceArn":{
-          "shape":"DeviceArn",
-          "documentation":"<p>The ARN of the device the task was run on.</p>"
-        },
-        "deviceParameters":{
-          "shape":"JsonValue",
-          "documentation":"<p>The parameters for the device on which the task ran.</p>",
-          "jsonvalue":true
-        },
-        "endedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The time at which the task ended.</p>"
-        },
-        "failureReason":{
-          "shape":"String",
-          "documentation":"<p>The reason that a task failed.</p>"
-        },
-        "jobArn":{
-          "shape":"JobArn",
-          "documentation":"<p>The ARN of the Amazon Braket job associated with the quantum task.</p>"
-        },
-        "outputS3Bucket":{
-          "shape":"String",
-          "documentation":"<p>The S3 bucket where task results are stored.</p>"
-        },
-        "outputS3Directory":{
-          "shape":"String",
-          "documentation":"<p>The folder in the S3 bucket where task results are stored.</p>"
-        },
-        "quantumTaskArn":{
-          "shape":"QuantumTaskArn",
-          "documentation":"<p>The ARN of the task.</p>"
-        },
-        "shots":{
-          "shape":"Long",
-          "documentation":"<p>The number of shots used in the task.</p>"
-        },
-        "status":{
-          "shape":"QuantumTaskStatus",
-          "documentation":"<p>The status of the task.</p>"
-        },
-        "tags":{
-          "shape":"TagsMap",
-          "documentation":"<p>The tags that belong to this task.</p>"
-        }
+      "type": "structure"
+    },
+    "HyperParameters": {
+      "key": {
+        "shape": "String256"
+      },
+      "max": 100,
+      "min": 0,
+      "type": "map",
+      "value": {
+        "shape": "HyperParametersValueString"
       }
     },
-    "HyperParameters":{
-      "type":"map",
-      "key":{"shape":"String256"},
-      "value":{"shape":"HyperParametersValueString"},
-      "max":100,
-      "min":0
+    "HyperParametersValueString": {
+      "max": 2500,
+      "min": 1,
+      "type": "string"
     },
-    "HyperParametersValueString":{
-      "type":"string",
-      "max":2500,
-      "min":1
+    "InputConfigList": {
+      "member": {
+        "shape": "InputFileConfig"
+      },
+      "type": "list"
     },
-    "InputConfigList":{
-      "type":"list",
-      "member":{"shape":"InputFileConfig"}
-    },
-    "InputFileConfig":{
-      "type":"structure",
-      "required":[
+    "InputFileConfig": {
+      "documentation": "<p>A list of parameters that specify the input channels, type of input data, and where it is located.</p>",
+      "members": {
+        "channelName": {
+          "documentation": "<p>A named input source that an Amazon Braket job can consume.</p>",
+          "shape": "InputFileConfigChannelNameString"
+        },
+        "contentType": {
+          "documentation": "<p>The MIME type of the data.</p>",
+          "shape": "String256"
+        },
+        "dataSource": {
+          "documentation": "<p>The location of the channel data.</p>",
+          "shape": "DataSource"
+        }
+      },
+      "required": [
         "channelName",
         "dataSource"
       ],
-      "members":{
-        "channelName":{
-          "shape":"InputFileConfigChannelNameString",
-          "documentation":"<p>A named input source that an Amazon Braket job can consume.</p>"
+      "type": "structure"
+    },
+    "InputFileConfigChannelNameString": {
+      "max": 64,
+      "min": 1,
+      "pattern": "^[A-Za-z0-9\\.\\-_]+$",
+      "type": "string"
+    },
+    "InstanceConfig": {
+      "documentation": "<p>Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon Braket.</p>",
+      "members": {
+        "instanceCount": {
+          "documentation": "<p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>",
+          "shape": "InstanceConfigInstanceCountInteger"
         },
-        "contentType":{
-          "shape":"String256",
-          "documentation":"<p>The MIME type of the data.</p>"
+        "instanceType": {
+          "documentation": "<p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>",
+          "shape": "InstanceType"
         },
-        "dataSource":{
-          "shape":"DataSource",
-          "documentation":"<p>The location of the channel data.</p>"
+        "volumeSizeInGb": {
+          "documentation": "<p>The size of the storage volume, in GB, that user wants to provision.</p>",
+          "shape": "InstanceConfigVolumeSizeInGbInteger"
         }
       },
-      "documentation":"<p>A list of parameters that specify the input channels, type of input data, and where it is located.</p>"
-    },
-    "InputFileConfigChannelNameString":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"^[A-Za-z0-9\\.\\-_]+$"
-    },
-    "InstanceConfig":{
-      "type":"structure",
-      "required":[
+      "required": [
         "instanceType",
         "volumeSizeInGb"
       ],
-      "members":{
-        "instanceCount":{
-          "shape":"InstanceConfigInstanceCountInteger",
-          "documentation":"<p>Configures the number of resource instances to use while running an Amazon Braket job on Amazon Braket. The default value is 1.</p>"
-        },
-        "instanceType":{
-          "shape":"InstanceType",
-          "documentation":"<p>Configures the type resource instances to use while running an Amazon Braket hybrid job.</p>"
-        },
-        "volumeSizeInGb":{
-          "shape":"InstanceConfigVolumeSizeInGbInteger",
-          "documentation":"<p>The size of the storage volume, in GB, that user wants to provision.</p>"
-        }
-      },
-      "documentation":"<p>Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon Braket.</p>"
+      "type": "structure"
     },
-    "InstanceConfigInstanceCountInteger":{
-      "type":"integer",
-      "box":true,
-      "min":1
+    "InstanceConfigInstanceCountInteger": {
+      "box": true,
+      "min": 1,
+      "type": "integer"
     },
-    "InstanceConfigVolumeSizeInGbInteger":{
-      "type":"integer",
-      "box":true,
-      "min":1
+    "InstanceConfigVolumeSizeInGbInteger": {
+      "box": true,
+      "min": 1,
+      "type": "integer"
     },
-    "InstanceType":{
-      "type":"string",
-      "enum":[
+    "InstanceType": {
+      "enum": [
         "ml.m4.xlarge",
         "ml.m4.2xlarge",
         "ml.m4.4xlarge",
@@ -1000,67 +1211,73 @@
         "ml.c5n.4xlarge",
         "ml.c5n.9xlarge",
         "ml.c5n.18xlarge"
-      ]
+      ],
+      "type": "string"
     },
-    "Integer":{
-      "type":"integer",
-      "box":true
+    "Integer": {
+      "box": true,
+      "type": "integer"
     },
-    "InternalServiceException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "InternalServiceException": {
+      "documentation": "<p>The request processing has failed because of an unknown error, exception, or failure.</p>",
+      "error": {
+        "httpStatusCode": 500
       },
-      "documentation":"<p>The request processing has failed because of an unknown error, exception, or failure.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true
-    },
-    "JobArn":{
-      "type":"string",
-      "pattern":"^arn:aws[a-z\\-]*:braket:[a-z0-9\\-]*:[0-9]{12}:job/.*$"
-    },
-    "JobCheckpointConfig":{
-      "type":"structure",
-      "required":["s3Uri"],
-      "members":{
-        "localPath":{
-          "shape":"String4096",
-          "documentation":"<p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>"
-        },
-        "s3Uri":{
-          "shape":"S3Path",
-          "documentation":"<p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>"
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>Contains information about the output locations for job checkpoint data.</p>"
+      "type": "structure"
     },
-    "JobEventDetails":{
-      "type":"structure",
-      "members":{
-        "eventType":{
-          "shape":"JobEventType",
-          "documentation":"<p>The type of event that occurred related to the Amazon Braket job.</p>"
+    "JobArn": {
+      "pattern": "^arn:aws[a-z\\-]*:braket:[a-z0-9\\-]*:[0-9]{12}:job/.*$",
+      "type": "string"
+    },
+    "JobCheckpointConfig": {
+      "documentation": "<p>Contains information about the output locations for job checkpoint data.</p>",
+      "members": {
+        "localPath": {
+          "documentation": "<p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>",
+          "shape": "String4096"
         },
-        "message":{
-          "shape":"JobEventDetailsMessageString",
-          "documentation":"<p>A message describing the event that occurred related to the Amazon Braket job.</p>"
-        },
-        "timeOfEvent":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>TThe type of event that occurred related to the Amazon Braket job.</p>"
+        "s3Uri": {
+          "documentation": "<p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>",
+          "shape": "S3Path"
         }
       },
-      "documentation":"<p>Details about the type and time events occurred related to the Amazon Braket job.</p>"
+      "required": [
+        "s3Uri"
+      ],
+      "type": "structure"
     },
-    "JobEventDetailsMessageString":{
-      "type":"string",
-      "max":2500,
-      "min":0
+    "JobEventDetails": {
+      "documentation": "<p>Details about the type and time events occurred related to the Amazon Braket job.</p>",
+      "members": {
+        "eventType": {
+          "documentation": "<p>The type of event that occurred related to the Amazon Braket job.</p>",
+          "shape": "JobEventType"
+        },
+        "message": {
+          "documentation": "<p>A message describing the event that occurred related to the Amazon Braket job.</p>",
+          "shape": "JobEventDetailsMessageString"
+        },
+        "timeOfEvent": {
+          "documentation": "<p>TThe type of event that occurred related to the Amazon Braket job.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        }
+      },
+      "type": "structure"
     },
-    "JobEventType":{
-      "type":"string",
-      "enum":[
+    "JobEventDetailsMessageString": {
+      "max": 2500,
+      "min": 0,
+      "type": "string"
+    },
+    "JobEventType": {
+      "enum": [
         "WAITING_FOR_PRIORITY",
         "QUEUED_FOR_EXECUTION",
         "STARTING_INSTANCE",
@@ -1072,144 +1289,154 @@
         "FAILED",
         "MAX_RUNTIME_EXCEEDED",
         "CANCELLED"
-      ]
+      ],
+      "type": "string"
     },
-    "JobEvents":{
-      "type":"list",
-      "member":{"shape":"JobEventDetails"},
-      "max":20,
-      "min":0
+    "JobEvents": {
+      "max": 20,
+      "member": {
+        "shape": "JobEventDetails"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "JobOutputDataConfig":{
-      "type":"structure",
-      "required":["s3Path"],
-      "members":{
-        "kmsKeyId":{
-          "shape":"String2048",
-          "documentation":"<p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>"
+    "JobOutputDataConfig": {
+      "documentation": "<p>Specifies the path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>",
+      "members": {
+        "kmsKeyId": {
+          "documentation": "<p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>",
+          "shape": "String2048"
         },
-        "s3Path":{
-          "shape":"S3Path",
-          "documentation":"<p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>"
+        "s3Path": {
+          "documentation": "<p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>",
+          "shape": "S3Path"
         }
       },
-      "documentation":"<p>Specifies the path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>"
+      "required": [
+        "s3Path"
+      ],
+      "type": "structure"
     },
-    "JobPrimaryStatus":{
-      "type":"string",
-      "enum":[
+    "JobPrimaryStatus": {
+      "enum": [
         "QUEUED",
         "RUNNING",
         "COMPLETED",
         "FAILED",
         "CANCELLING",
         "CANCELLED"
-      ]
+      ],
+      "type": "string"
     },
-    "JobStoppingCondition":{
-      "type":"structure",
-      "members":{
-        "maxRuntimeInSeconds":{
-          "shape":"JobStoppingConditionMaxRuntimeInSecondsInteger",
-          "documentation":"<p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>"
+    "JobStoppingCondition": {
+      "documentation": "<p>Specifies limits for how long an Amazon Braket job can run. </p>",
+      "members": {
+        "maxRuntimeInSeconds": {
+          "documentation": "<p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>",
+          "shape": "JobStoppingConditionMaxRuntimeInSecondsInteger"
         }
       },
-      "documentation":"<p>Specifies limits for how long an Amazon Braket job can run. </p>"
+      "type": "structure"
     },
-    "JobStoppingConditionMaxRuntimeInSecondsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":432000,
-      "min":1
+    "JobStoppingConditionMaxRuntimeInSecondsInteger": {
+      "box": true,
+      "max": 432000,
+      "min": 1,
+      "type": "integer"
     },
-    "JobSummary":{
-      "type":"structure",
-      "required":[
+    "JobSummary": {
+      "documentation": "<p>Provides summary information about an Amazon Braket job.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The date and time that the Amazon Braket job was created.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "device": {
+          "documentation": "<p>Provides summary information about the primary device used by an Amazon Braket job.</p>",
+          "shape": "String256"
+        },
+        "endedAt": {
+          "documentation": "<p>The date and time that the Amazon Braket job ended.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "jobArn": {
+          "documentation": "<p>The ARN of the Amazon Braket job.</p>",
+          "shape": "JobArn"
+        },
+        "jobName": {
+          "documentation": "<p>The name of the Amazon Braket job.</p>",
+          "shape": "String"
+        },
+        "startedAt": {
+          "documentation": "<p>The date and time that the Amazon Braket job was started.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "status": {
+          "documentation": "<p>The status of the Amazon Braket job.</p>",
+          "shape": "JobPrimaryStatus"
+        },
+        "tags": {
+          "documentation": "<p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>",
+          "shape": "TagsMap"
+        }
+      },
+      "required": [
         "createdAt",
         "device",
         "jobArn",
         "jobName",
         "status"
       ],
-      "members":{
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The date and time that the Amazon Braket job was created.</p>"
-        },
-        "device":{
-          "shape":"String256",
-          "documentation":"<p>Provides summary information about the primary device used by an Amazon Braket job.</p>"
-        },
-        "endedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The date and time that the Amazon Braket job ended.</p>"
-        },
-        "jobArn":{
-          "shape":"JobArn",
-          "documentation":"<p>The ARN of the Amazon Braket job.</p>"
-        },
-        "jobName":{
-          "shape":"String",
-          "documentation":"<p>The name of the Amazon Braket job.</p>"
-        },
-        "startedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The date and time that the Amazon Braket job was started.</p>"
-        },
-        "status":{
-          "shape":"JobPrimaryStatus",
-          "documentation":"<p>The status of the Amazon Braket job.</p>"
-        },
-        "tags":{
-          "shape":"TagsMap",
-          "documentation":"<p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>"
+      "type": "structure"
+    },
+    "JobSummaryList": {
+      "member": {
+        "shape": "JobSummary"
+      },
+      "type": "list"
+    },
+    "JobToken": {
+      "max": 128,
+      "min": 1,
+      "type": "string"
+    },
+    "JsonValue": {
+      "type": "string"
+    },
+    "ListTagsForResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Provides summary information about an Amazon Braket job.</p>"
+      "required": [
+        "resourceArn"
+      ],
+      "type": "structure"
     },
-    "JobSummaryList":{
-      "type":"list",
-      "member":{"shape":"JobSummary"}
-    },
-    "JobToken":{
-      "type":"string",
-      "max":128,
-      "min":1
-    },
-    "JsonValue":{"type":"string"},
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["resourceArn"],
-      "members":{
-        "resourceArn":{
-          "shape":"String",
-          "documentation":"<p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "documentation": "<p>Displays the key, value pairs of tags associated with this resource.</p>",
+          "shape": "TagsMap"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{
-          "shape":"TagsMap",
-          "documentation":"<p>Displays the key, value pairs of tags associated with this resource.</p>"
-        }
-      }
+    "Long": {
+      "box": true,
+      "type": "long"
     },
-    "Long":{
-      "type":"long",
-      "box":true
+    "QuantumTaskArn": {
+      "max": 256,
+      "min": 1,
+      "type": "string"
     },
-    "QuantumTaskArn":{
-      "type":"string",
-      "max":256,
-      "min":1
-    },
-    "QuantumTaskStatus":{
-      "type":"string",
-      "enum":[
+    "QuantumTaskStatus": {
+      "enum": [
         "CREATED",
         "QUEUED",
         "RUNNING",
@@ -1217,11 +1444,50 @@
         "FAILED",
         "CANCELLING",
         "CANCELLED"
-      ]
+      ],
+      "type": "string"
     },
-    "QuantumTaskSummary":{
-      "type":"structure",
-      "required":[
+    "QuantumTaskSummary": {
+      "documentation": "<p>Includes information about a quantum task.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The time at which the task was created.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "deviceArn": {
+          "documentation": "<p>The ARN of the device the task ran on.</p>",
+          "shape": "DeviceArn"
+        },
+        "endedAt": {
+          "documentation": "<p>The time at which the task finished.</p>",
+          "shape": "SyntheticTimestamp_date_time"
+        },
+        "outputS3Bucket": {
+          "documentation": "<p>The S3 bucket where the task result file is stored..</p>",
+          "shape": "String"
+        },
+        "outputS3Directory": {
+          "documentation": "<p>The folder in the S3 bucket where the task result file is stored.</p>",
+          "shape": "String"
+        },
+        "quantumTaskArn": {
+          "documentation": "<p>The ARN of the task.</p>",
+          "shape": "QuantumTaskArn"
+        },
+        "shots": {
+          "documentation": "<p>The shots used for the task.</p>",
+          "shape": "Long"
+        },
+        "status": {
+          "documentation": "<p>The status of the task.</p>",
+          "shape": "QuantumTaskStatus"
+        },
+        "tags": {
+          "documentation": "<p>Displays the key, value pairs of tags associated with this quantum task.</p>",
+          "shape": "TagsMap"
+        }
+      },
+      "required": [
         "createdAt",
         "deviceArn",
         "outputS3Bucket",
@@ -1230,204 +1496,179 @@
         "shots",
         "status"
       ],
-      "members":{
-        "createdAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The time at which the task was created.</p>"
-        },
-        "deviceArn":{
-          "shape":"DeviceArn",
-          "documentation":"<p>The ARN of the device the task ran on.</p>"
-        },
-        "endedAt":{
-          "shape":"SyntheticTimestamp_date_time",
-          "documentation":"<p>The time at which the task finished.</p>"
-        },
-        "outputS3Bucket":{
-          "shape":"String",
-          "documentation":"<p>The S3 bucket where the task result file is stored..</p>"
-        },
-        "outputS3Directory":{
-          "shape":"String",
-          "documentation":"<p>The folder in the S3 bucket where the task result file is stored.</p>"
-        },
-        "quantumTaskArn":{
-          "shape":"QuantumTaskArn",
-          "documentation":"<p>The ARN of the task.</p>"
-        },
-        "shots":{
-          "shape":"Long",
-          "documentation":"<p>The shots used for the task.</p>"
-        },
-        "status":{
-          "shape":"QuantumTaskStatus",
-          "documentation":"<p>The status of the task.</p>"
-        },
-        "tags":{
-          "shape":"TagsMap",
-          "documentation":"<p>Displays the key, value pairs of tags associated with this quantum task.</p>"
+      "type": "structure"
+    },
+    "QuantumTaskSummaryList": {
+      "member": {
+        "shape": "QuantumTaskSummary"
+      },
+      "type": "list"
+    },
+    "ResourceNotFoundException": {
+      "documentation": "<p>The specified resource was not found.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>Includes information about a quantum task.</p>"
+      "type": "structure"
     },
-    "QuantumTaskSummaryList":{
-      "type":"list",
-      "member":{"shape":"QuantumTaskSummary"}
+    "RoleArn": {
+      "pattern": "^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$",
+      "type": "string"
     },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>The specified resource was not found.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "RoleArn":{
-      "type":"string",
-      "pattern":"^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$"
-    },
-    "S3DataSource":{
-      "type":"structure",
-      "required":["s3Uri"],
-      "members":{
-        "s3Uri":{
-          "shape":"S3Path",
-          "documentation":"<p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>"
+    "S3DataSource": {
+      "documentation": "<p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>",
+      "members": {
+        "s3Uri": {
+          "documentation": "<p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>",
+          "shape": "S3Path"
         }
       },
-      "documentation":"<p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>"
+      "required": [
+        "s3Uri"
+      ],
+      "type": "structure"
     },
-    "S3Path":{
-      "type":"string",
-      "max":1024,
-      "min":0,
-      "pattern":"^(https|s3)://([^/]+)/?(.*)$"
+    "S3Path": {
+      "max": 1024,
+      "min": 0,
+      "pattern": "^(https|s3)://([^/]+)/?(.*)$",
+      "type": "string"
     },
-    "ScriptModeConfig":{
-      "type":"structure",
-      "required":[
+    "ScriptModeConfig": {
+      "documentation": "<p>Contains information about the Python scripts used for entry and by an Amazon Braket job.</p>",
+      "members": {
+        "compressionType": {
+          "documentation": "<p>The type of compression used by the Python scripts for an Amazon Braket job.</p>",
+          "shape": "CompressionType"
+        },
+        "entryPoint": {
+          "documentation": "<p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>",
+          "shape": "String"
+        },
+        "s3Uri": {
+          "documentation": "<p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>",
+          "shape": "S3Path"
+        }
+      },
+      "required": [
         "entryPoint",
         "s3Uri"
       ],
-      "members":{
-        "compressionType":{
-          "shape":"CompressionType",
-          "documentation":"<p>The type of compression used by the Python scripts for an Amazon Braket job.</p>"
+      "type": "structure"
+    },
+    "SearchDevicesFilter": {
+      "documentation": "<p>The filter to use for searching devices.</p>",
+      "members": {
+        "name": {
+          "documentation": "<p>The name to use to filter results.</p>",
+          "shape": "SearchDevicesFilterNameString"
         },
-        "entryPoint":{
-          "shape":"String",
-          "documentation":"<p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>"
-        },
-        "s3Uri":{
-          "shape":"S3Path",
-          "documentation":"<p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>"
+        "values": {
+          "documentation": "<p>The values to use to filter results.</p>",
+          "shape": "SearchDevicesFilterValuesList"
         }
       },
-      "documentation":"<p>Contains information about the Python scripts used for entry and by an Amazon Braket job.</p>"
-    },
-    "SearchDevicesFilter":{
-      "type":"structure",
-      "required":[
+      "required": [
         "name",
         "values"
       ],
-      "members":{
-        "name":{
-          "shape":"SearchDevicesFilterNameString",
-          "documentation":"<p>The name to use to filter results.</p>"
+      "type": "structure"
+    },
+    "SearchDevicesFilterNameString": {
+      "max": 64,
+      "min": 1,
+      "type": "string"
+    },
+    "SearchDevicesFilterValuesList": {
+      "max": 10,
+      "member": {
+        "shape": "String256"
+      },
+      "min": 1,
+      "type": "list"
+    },
+    "SearchDevicesRequest": {
+      "members": {
+        "filters": {
+          "documentation": "<p>The filter values to use to search for a device.</p>",
+          "shape": "SearchDevicesRequestFiltersList"
         },
-        "values":{
-          "shape":"SearchDevicesFilterValuesList",
-          "documentation":"<p>The values to use to filter results.</p>"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return in the response.</p>",
+          "shape": "SearchDevicesRequestMaxResultsInteger"
+        },
+        "nextToken": {
+          "documentation": "<p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The filter to use for searching devices.</p>"
+      "required": [
+        "filters"
+      ],
+      "type": "structure"
     },
-    "SearchDevicesFilterNameString":{
-      "type":"string",
-      "max":64,
-      "min":1
+    "SearchDevicesRequestFiltersList": {
+      "max": 10,
+      "member": {
+        "shape": "SearchDevicesFilter"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "SearchDevicesFilterValuesList":{
-      "type":"list",
-      "member":{"shape":"String256"},
-      "max":10,
-      "min":1
+    "SearchDevicesRequestMaxResultsInteger": {
+      "box": true,
+      "max": 100,
+      "min": 1,
+      "type": "integer"
     },
-    "SearchDevicesRequest":{
-      "type":"structure",
-      "required":["filters"],
-      "members":{
-        "filters":{
-          "shape":"SearchDevicesRequestFiltersList",
-          "documentation":"<p>The filter values to use to search for a device.</p>"
+    "SearchDevicesResponse": {
+      "members": {
+        "devices": {
+          "documentation": "<p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>",
+          "shape": "DeviceSummaryList"
         },
-        "maxResults":{
-          "shape":"SearchDevicesRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return in the response.</p>"
-        },
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>"
+        "nextToken": {
+          "documentation": "<p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "required": [
+        "devices"
+      ],
+      "type": "structure"
     },
-    "SearchDevicesRequestFiltersList":{
-      "type":"list",
-      "member":{"shape":"SearchDevicesFilter"},
-      "max":10,
-      "min":0
-    },
-    "SearchDevicesRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":100,
-      "min":1
-    },
-    "SearchDevicesResponse":{
-      "type":"structure",
-      "required":["devices"],
-      "members":{
-        "devices":{
-          "shape":"DeviceSummaryList",
-          "documentation":"<p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>"
+    "SearchJobsFilter": {
+      "documentation": "<p>A filter used to search for Amazon Braket jobs.</p>",
+      "members": {
+        "name": {
+          "documentation": "<p>The name to use for the jobs filter.</p>",
+          "shape": "String64"
         },
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>"
+        "operator": {
+          "documentation": "<p>An operator to use for the jobs filter.</p>",
+          "shape": "SearchJobsFilterOperator"
+        },
+        "values": {
+          "documentation": "<p>The values to use for the jobs filter.</p>",
+          "shape": "SearchJobsFilterValuesList"
         }
-      }
-    },
-    "SearchJobsFilter":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "name",
         "operator",
         "values"
       ],
-      "members":{
-        "name":{
-          "shape":"String64",
-          "documentation":"<p>The name to use for the jobs filter.</p>"
-        },
-        "operator":{
-          "shape":"SearchJobsFilterOperator",
-          "documentation":"<p>An operator to use for the jobs filter.</p>"
-        },
-        "values":{
-          "shape":"SearchJobsFilterValuesList",
-          "documentation":"<p>The values to use for the jobs filter.</p>"
-        }
-      },
-      "documentation":"<p>A filter used to search for Amazon Braket jobs.</p>"
+      "type": "structure"
     },
-    "SearchJobsFilterOperator":{
-      "type":"string",
-      "enum":[
+    "SearchJobsFilterOperator": {
+      "enum": [
         "LT",
         "LTE",
         "EQUAL",
@@ -1435,273 +1676,302 @@
         "GTE",
         "BETWEEN",
         "CONTAINS"
-      ]
+      ],
+      "type": "string"
     },
-    "SearchJobsFilterValuesList":{
-      "type":"list",
-      "member":{"shape":"String256"},
-      "max":10,
-      "min":1
+    "SearchJobsFilterValuesList": {
+      "max": 10,
+      "member": {
+        "shape": "String256"
+      },
+      "min": 1,
+      "type": "list"
     },
-    "SearchJobsRequest":{
-      "type":"structure",
-      "required":["filters"],
-      "members":{
-        "filters":{
-          "shape":"SearchJobsRequestFiltersList",
-          "documentation":"<p>The filter values to use when searching for a job.</p>"
+    "SearchJobsRequest": {
+      "members": {
+        "filters": {
+          "documentation": "<p>The filter values to use when searching for a job.</p>",
+          "shape": "SearchJobsRequestFiltersList"
         },
-        "maxResults":{
-          "shape":"SearchJobsRequestMaxResultsInteger",
-          "documentation":"<p>The maximum number of results to return in the response.</p>"
+        "maxResults": {
+          "documentation": "<p>The maximum number of results to return in the response.</p>",
+          "shape": "SearchJobsRequestMaxResultsInteger"
         },
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>"
+        "nextToken": {
+          "documentation": "<p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "required": [
+        "filters"
+      ],
+      "type": "structure"
     },
-    "SearchJobsRequestFiltersList":{
-      "type":"list",
-      "member":{"shape":"SearchJobsFilter"},
-      "max":10,
-      "min":0
+    "SearchJobsRequestFiltersList": {
+      "max": 10,
+      "member": {
+        "shape": "SearchJobsFilter"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "SearchJobsRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":100,
-      "min":1
+    "SearchJobsRequestMaxResultsInteger": {
+      "box": true,
+      "max": 100,
+      "min": 1,
+      "type": "integer"
     },
-    "SearchJobsResponse":{
-      "type":"structure",
-      "required":["jobs"],
-      "members":{
-        "jobs":{
-          "shape":"JobSummaryList",
-          "documentation":"<p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>"
+    "SearchJobsResponse": {
+      "members": {
+        "jobs": {
+          "documentation": "<p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>",
+          "shape": "JobSummaryList"
         },
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>"
+        "nextToken": {
+          "documentation": "<p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "required": [
+        "jobs"
+      ],
+      "type": "structure"
     },
-    "SearchQuantumTasksFilter":{
-      "type":"structure",
-      "required":[
+    "SearchQuantumTasksFilter": {
+      "documentation": "<p>A filter to use to search for tasks.</p>",
+      "members": {
+        "name": {
+          "documentation": "<p>The name of the device used for the task.</p>",
+          "shape": "String64"
+        },
+        "operator": {
+          "documentation": "<p>An operator to use in the filter.</p>",
+          "shape": "SearchQuantumTasksFilterOperator"
+        },
+        "values": {
+          "documentation": "<p>The values to use for the filter.</p>",
+          "shape": "SearchQuantumTasksFilterValuesList"
+        }
+      },
+      "required": [
         "name",
         "operator",
         "values"
       ],
-      "members":{
-        "name":{
-          "shape":"String64",
-          "documentation":"<p>The name of the device used for the task.</p>"
-        },
-        "operator":{
-          "shape":"SearchQuantumTasksFilterOperator",
-          "documentation":"<p>An operator to use in the filter.</p>"
-        },
-        "values":{
-          "shape":"SearchQuantumTasksFilterValuesList",
-          "documentation":"<p>The values to use for the filter.</p>"
-        }
-      },
-      "documentation":"<p>A filter to use to search for tasks.</p>"
+      "type": "structure"
     },
-    "SearchQuantumTasksFilterOperator":{
-      "type":"string",
-      "enum":[
+    "SearchQuantumTasksFilterOperator": {
+      "enum": [
         "LT",
         "LTE",
         "EQUAL",
         "GT",
         "GTE",
         "BETWEEN"
-      ]
+      ],
+      "type": "string"
     },
-    "SearchQuantumTasksFilterValuesList":{
-      "type":"list",
-      "member":{"shape":"String256"},
-      "max":10,
-      "min":1
-    },
-    "SearchQuantumTasksRequest":{
-      "type":"structure",
-      "required":["filters"],
-      "members":{
-        "filters":{
-          "shape":"SearchQuantumTasksRequestFiltersList",
-          "documentation":"<p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>"
-        },
-        "maxResults":{
-          "shape":"SearchQuantumTasksRequestMaxResultsInteger",
-          "documentation":"<p>Maximum number of results to return in the response.</p>"
-        },
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>"
-        }
-      }
-    },
-    "SearchQuantumTasksRequestFiltersList":{
-      "type":"list",
-      "member":{"shape":"SearchQuantumTasksFilter"},
-      "max":10,
-      "min":0
-    },
-    "SearchQuantumTasksRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":100,
-      "min":1
-    },
-    "SearchQuantumTasksResponse":{
-      "type":"structure",
-      "required":["quantumTasks"],
-      "members":{
-        "nextToken":{
-          "shape":"String",
-          "documentation":"<p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>"
-        },
-        "quantumTasks":{
-          "shape":"QuantumTaskSummaryList",
-          "documentation":"<p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>"
-        }
-      }
-    },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "SearchQuantumTasksFilterValuesList": {
+      "max": 10,
+      "member": {
+        "shape": "String256"
       },
-      "documentation":"<p>The request failed because a service quota is exceeded.</p>",
-      "error":{
-        "httpStatusCode":402,
-        "senderFault":true
+      "min": 1,
+      "type": "list"
+    },
+    "SearchQuantumTasksRequest": {
+      "members": {
+        "filters": {
+          "documentation": "<p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>",
+          "shape": "SearchQuantumTasksRequestFiltersList"
+        },
+        "maxResults": {
+          "documentation": "<p>Maximum number of results to return in the response.</p>",
+          "shape": "SearchQuantumTasksRequestMaxResultsInteger"
+        },
+        "nextToken": {
+          "documentation": "<p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>",
+          "shape": "String"
+        }
       },
-      "exception":true
+      "required": [
+        "filters"
+      ],
+      "type": "structure"
     },
-    "String":{"type":"string"},
-    "String1024":{
-      "type":"string",
-      "max":1024,
-      "min":1
+    "SearchQuantumTasksRequestFiltersList": {
+      "max": 10,
+      "member": {
+        "shape": "SearchQuantumTasksFilter"
+      },
+      "min": 0,
+      "type": "list"
     },
-    "String2048":{
-      "type":"string",
-      "max":2048,
-      "min":1
+    "SearchQuantumTasksRequestMaxResultsInteger": {
+      "box": true,
+      "max": 100,
+      "min": 1,
+      "type": "integer"
     },
-    "String256":{
-      "type":"string",
-      "max":256,
-      "min":1
+    "SearchQuantumTasksResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>",
+          "shape": "String"
+        },
+        "quantumTasks": {
+          "documentation": "<p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>",
+          "shape": "QuantumTaskSummaryList"
+        }
+      },
+      "required": [
+        "quantumTasks"
+      ],
+      "type": "structure"
     },
-    "String4096":{
-      "type":"string",
-      "max":4096,
-      "min":1
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>The request failed because a service quota is exceeded.</p>",
+      "error": {
+        "httpStatusCode": 402,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
     },
-    "String64":{
-      "type":"string",
-      "max":64,
-      "min":1
+    "String": {
+      "type": "string"
     },
-    "SyntheticTimestamp_date_time":{
-      "type":"timestamp",
-      "timestampFormat":"iso8601"
+    "String1024": {
+      "max": 1024,
+      "min": 1,
+      "type": "string"
     },
-    "TagKeys":{
-      "type":"list",
-      "member":{"shape":"String"}
+    "String2048": {
+      "max": 2048,
+      "min": 1,
+      "type": "string"
     },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "String256": {
+      "max": 256,
+      "min": 1,
+      "type": "string"
+    },
+    "String4096": {
+      "max": 4096,
+      "min": 1,
+      "type": "string"
+    },
+    "String64": {
+      "max": 64,
+      "min": 1,
+      "type": "string"
+    },
+    "SyntheticTimestamp_date_time": {
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
+    },
+    "TagKeys": {
+      "member": {
+        "shape": "String"
+      },
+      "type": "list"
+    },
+    "TagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "String"
+        },
+        "tags": {
+          "documentation": "<p>Specify the tags to add to the resource.</p>",
+          "shape": "TagsMap"
+        }
+      },
+      "required": [
         "resourceArn",
         "tags"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"String",
-          "documentation":"<p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        },
-        "tags":{
-          "shape":"TagsMap",
-          "documentation":"<p>Specify the tags to add to the resource.</p>"
+      "type": "structure"
+    },
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "TagsMap": {
+      "key": {
+        "shape": "String"
+      },
+      "type": "map",
+      "value": {
+        "shape": "String"
+      }
+    },
+    "ThrottlingException": {
+      "documentation": "<p>The throttling rate limit is met.</p>",
+      "error": {
+        "httpStatusCode": 429,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
-      }
-    },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "TagsMap":{
-      "type":"map",
-      "key":{"shape":"String"},
-      "value":{"shape":"String"}
-    },
-    "ThrottlingException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The throttling rate limit is met.</p>",
-      "error":{
-        "httpStatusCode":429,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "structure"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "UntagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "String"
+        },
+        "tagKeys": {
+          "documentation": "<p>Specify the keys for the tags to remove from the resource.</p>",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeys"
+        }
+      },
+      "required": [
         "resourceArn",
         "tagKeys"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"String",
-          "documentation":"<p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        },
-        "tagKeys":{
-          "shape":"TagKeys",
-          "documentation":"<p>Specify the keys for the tags to remove from the resource.</p>",
-          "location":"querystring",
-          "locationName":"tagKeys"
+      "type": "structure"
+    },
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "Uri": {
+      "max": 255,
+      "min": 1,
+      "pattern": "\\d{10,14}\\.dkr\\.ecr.[a-z0-9-]+\\.amazonaws\\.com\\/.+(@sha256)?:.+",
+      "type": "string"
+    },
+    "ValidationException": {
+      "documentation": "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
-      }
-    },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "Uri":{
-      "type":"string",
-      "max":255,
-      "min":1,
-      "pattern":"\\d{10,14}\\.dkr\\.ecr.[a-z0-9-]+\\.amazonaws\\.com\\/.+(@sha256)?:.+"
-    },
-    "ValidationException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true
+      "type": "structure"
     }
   },
-  "documentation":"<p>The Amazon Braket API Reference provides information about the operations and structures supported in Amazon Braket.</p> <p>Additional Resources:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html\">Amazon Braket Developer Guide</a> </p> </li> </ul>"
+  "version": "2.0"
 }

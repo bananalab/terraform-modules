@@ -1,5 +1,148 @@
 {
-  "version": "1.0",
+  "operations": {
+    "AssociateTeamMember": {
+      "projectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "projectId",
+            "resourceName": "Project"
+          }
+        ]
+      },
+      "userArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userArn",
+            "resourceName": "UserProfile"
+          }
+        ]
+      }
+    },
+    "DeleteUserProfile": {
+      "userArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userArn",
+            "resourceName": "UserProfile"
+          }
+        ]
+      }
+    },
+    "DescribeUserProfile": {
+      "userArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userArn",
+            "resourceName": "UserProfile"
+          }
+        ]
+      }
+    },
+    "DisassociateTeamMember": {
+      "projectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "projectId",
+            "resourceName": "Project"
+          }
+        ]
+      },
+      "userArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userArn",
+            "resourceName": "UserProfile"
+          }
+        ]
+      }
+    },
+    "ListResources": {
+      "projectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "projectId",
+            "resourceName": "Project"
+          }
+        ]
+      }
+    },
+    "ListTeamMembers": {
+      "projectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "projectId",
+            "resourceName": "Project"
+          }
+        ]
+      }
+    },
+    "UpdateTeamMember": {
+      "projectId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "projectId",
+            "resourceName": "Project"
+          }
+        ]
+      },
+      "userArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userArn",
+            "resourceName": "UserProfile"
+          }
+        ]
+      }
+    },
+    "UpdateUserProfile": {
+      "displayName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "displayName",
+            "resourceName": "UserProfile"
+          }
+        ]
+      },
+      "emailAddress": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "emailAddress",
+            "resourceName": "UserProfile"
+          }
+        ]
+      },
+      "sshPublicKey": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "sshPublicKey",
+            "resourceName": "UserProfile"
+          }
+        ]
+      },
+      "userArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "userArn",
+            "resourceName": "UserProfile"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Project": {
       "operation": "ListProjects",
@@ -10,155 +153,12 @@
     "UserProfile": {
       "operation": "ListUserProfiles",
       "resourceIdentifier": {
-        "userArn": "userProfiles[].userArn",
         "displayName": "userProfiles[].displayName",
         "emailAddress": "userProfiles[].emailAddress",
-        "sshPublicKey": "userProfiles[].sshPublicKey"
+        "sshPublicKey": "userProfiles[].sshPublicKey",
+        "userArn": "userProfiles[].userArn"
       }
     }
   },
-  "operations": {
-    "AssociateTeamMember": {
-      "projectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Project",
-            "resourceIdentifier": "projectId"
-          }
-        ]
-      },
-      "userArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "userArn"
-          }
-        ]
-      }
-    },
-    "DeleteUserProfile": {
-      "userArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "userArn"
-          }
-        ]
-      }
-    },
-    "DescribeUserProfile": {
-      "userArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "userArn"
-          }
-        ]
-      }
-    },
-    "DisassociateTeamMember": {
-      "projectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Project",
-            "resourceIdentifier": "projectId"
-          }
-        ]
-      },
-      "userArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "userArn"
-          }
-        ]
-      }
-    },
-    "ListResources": {
-      "projectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Project",
-            "resourceIdentifier": "projectId"
-          }
-        ]
-      }
-    },
-    "ListTeamMembers": {
-      "projectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Project",
-            "resourceIdentifier": "projectId"
-          }
-        ]
-      }
-    },
-    "UpdateTeamMember": {
-      "projectId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Project",
-            "resourceIdentifier": "projectId"
-          }
-        ]
-      },
-      "userArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "userArn"
-          }
-        ]
-      }
-    },
-    "UpdateUserProfile": {
-      "userArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "userArn"
-          }
-        ]
-      },
-      "displayName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "displayName"
-          }
-        ]
-      },
-      "emailAddress": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "emailAddress"
-          }
-        ]
-      },
-      "sshPublicKey": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "UserProfile",
-            "resourceIdentifier": "sshPublicKey"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

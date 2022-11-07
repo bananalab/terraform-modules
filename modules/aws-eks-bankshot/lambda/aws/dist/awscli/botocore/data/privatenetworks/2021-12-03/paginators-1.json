@@ -2,32 +2,32 @@
   "pagination": {
     "ListDeviceIdentifiers": {
       "input_token": "startToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "deviceIdentifiers"
     },
     "ListNetworkResources": {
       "input_token": "startToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "networkResources"
     },
     "ListNetworkSites": {
       "input_token": "startToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "networkSites"
     },
     "ListNetworks": {
       "input_token": "startToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "networks"
     },
     "ListOrders": {
       "input_token": "startToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "orders"
     }
   }

@@ -1,838 +1,1060 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2018-05-10",
-    "endpointPrefix":"license-manager-user-subscriptions",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"AWS License Manager User Subscriptions",
-    "serviceId":"License Manager User Subscriptions",
-    "signatureVersion":"v4",
-    "signingName":"license-manager-user-subscriptions",
-    "uid":"license-manager-user-subscriptions-2018-05-10"
+  "documentation": "<p>With License Manager, you can create user-based subscriptions to utilize licensed software with a per user subscription fee on Amazon EC2 instances.</p>",
+  "metadata": {
+    "apiVersion": "2018-05-10",
+    "endpointPrefix": "license-manager-user-subscriptions",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "AWS License Manager User Subscriptions",
+    "serviceId": "License Manager User Subscriptions",
+    "signatureVersion": "v4",
+    "signingName": "license-manager-user-subscriptions",
+    "uid": "license-manager-user-subscriptions-2018-05-10"
   },
-  "operations":{
-    "AssociateUser":{
-      "name":"AssociateUser",
-      "http":{
-        "method":"POST",
-        "requestUri":"/user/AssociateUser",
-        "responseCode":200
-      },
-      "input":{"shape":"AssociateUserRequest"},
-      "output":{"shape":"AssociateUserResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+  "operations": {
+    "AssociateUser": {
+      "documentation": "<p>Associates the user to an EC2 instance to utilize user-based subscriptions.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Associates the user to an EC2 instance to utilize user-based subscriptions.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/user/AssociateUser",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "AssociateUserRequest"
+      },
+      "name": "AssociateUser",
+      "output": {
+        "shape": "AssociateUserResponse"
+      }
     },
-    "DeregisterIdentityProvider":{
-      "name":"DeregisterIdentityProvider",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identity-provider/DeregisterIdentityProvider",
-        "responseCode":200
-      },
-      "input":{"shape":"DeregisterIdentityProviderRequest"},
-      "output":{"shape":"DeregisterIdentityProviderResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "DeregisterIdentityProvider": {
+      "documentation": "<p>Deregisters the identity provider from providing user-based subscriptions.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Deregisters the identity provider from providing user-based subscriptions.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/identity-provider/DeregisterIdentityProvider",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeregisterIdentityProviderRequest"
+      },
+      "name": "DeregisterIdentityProvider",
+      "output": {
+        "shape": "DeregisterIdentityProviderResponse"
+      }
     },
-    "DisassociateUser":{
-      "name":"DisassociateUser",
-      "http":{
-        "method":"POST",
-        "requestUri":"/user/DisassociateUser",
-        "responseCode":200
-      },
-      "input":{"shape":"DisassociateUserRequest"},
-      "output":{"shape":"DisassociateUserResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "DisassociateUser": {
+      "documentation": "<p>Disassociates the user from an EC2 instance providing user-based subscriptions.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Disassociates the user from an EC2 instance providing user-based subscriptions.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/user/DisassociateUser",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DisassociateUserRequest"
+      },
+      "name": "DisassociateUser",
+      "output": {
+        "shape": "DisassociateUserResponse"
+      }
     },
-    "ListIdentityProviders":{
-      "name":"ListIdentityProviders",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identity-provider/ListIdentityProviders",
-        "responseCode":200
-      },
-      "input":{"shape":"ListIdentityProvidersRequest"},
-      "output":{"shape":"ListIdentityProvidersResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "ListIdentityProviders": {
+      "documentation": "<p>Lists the identity providers for user-based subscriptions.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists the identity providers for user-based subscriptions.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/identity-provider/ListIdentityProviders",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListIdentityProvidersRequest"
+      },
+      "name": "ListIdentityProviders",
+      "output": {
+        "shape": "ListIdentityProvidersResponse"
+      }
     },
-    "ListInstances":{
-      "name":"ListInstances",
-      "http":{
-        "method":"POST",
-        "requestUri":"/instance/ListInstances",
-        "responseCode":200
-      },
-      "input":{"shape":"ListInstancesRequest"},
-      "output":{"shape":"ListInstancesResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "ListInstances": {
+      "documentation": "<p>Lists the EC2 instances providing user-based subscriptions.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists the EC2 instances providing user-based subscriptions.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/instance/ListInstances",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListInstancesRequest"
+      },
+      "name": "ListInstances",
+      "output": {
+        "shape": "ListInstancesResponse"
+      }
     },
-    "ListProductSubscriptions":{
-      "name":"ListProductSubscriptions",
-      "http":{
-        "method":"POST",
-        "requestUri":"/user/ListProductSubscriptions",
-        "responseCode":200
-      },
-      "input":{"shape":"ListProductSubscriptionsRequest"},
-      "output":{"shape":"ListProductSubscriptionsResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "ListProductSubscriptions": {
+      "documentation": "<p>Lists the user-based subscription products available from an identity provider.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists the user-based subscription products available from an identity provider.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/user/ListProductSubscriptions",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListProductSubscriptionsRequest"
+      },
+      "name": "ListProductSubscriptions",
+      "output": {
+        "shape": "ListProductSubscriptionsResponse"
+      }
     },
-    "ListUserAssociations":{
-      "name":"ListUserAssociations",
-      "http":{
-        "method":"POST",
-        "requestUri":"/user/ListUserAssociations",
-        "responseCode":200
-      },
-      "input":{"shape":"ListUserAssociationsRequest"},
-      "output":{"shape":"ListUserAssociationsResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "ListUserAssociations": {
+      "documentation": "<p>Lists user associations for an identity provider.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Lists user associations for an identity provider.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/user/ListUserAssociations",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListUserAssociationsRequest"
+      },
+      "name": "ListUserAssociations",
+      "output": {
+        "shape": "ListUserAssociationsResponse"
+      }
     },
-    "RegisterIdentityProvider":{
-      "name":"RegisterIdentityProvider",
-      "http":{
-        "method":"POST",
-        "requestUri":"/identity-provider/RegisterIdentityProvider",
-        "responseCode":200
-      },
-      "input":{"shape":"RegisterIdentityProviderRequest"},
-      "output":{"shape":"RegisterIdentityProviderResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "RegisterIdentityProvider": {
+      "documentation": "<p>Registers an identity provider for user-based subscriptions.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Registers an identity provider for user-based subscriptions.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/identity-provider/RegisterIdentityProvider",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "RegisterIdentityProviderRequest"
+      },
+      "name": "RegisterIdentityProvider",
+      "output": {
+        "shape": "RegisterIdentityProviderResponse"
+      }
     },
-    "StartProductSubscription":{
-      "name":"StartProductSubscription",
-      "http":{
-        "method":"POST",
-        "requestUri":"/user/StartProductSubscription",
-        "responseCode":200
-      },
-      "input":{"shape":"StartProductSubscriptionRequest"},
-      "output":{"shape":"StartProductSubscriptionResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "StartProductSubscription": {
+      "documentation": "<p>Starts a product subscription for a user with the specified identity provider.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Starts a product subscription for a user with the specified identity provider.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/user/StartProductSubscription",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StartProductSubscriptionRequest"
+      },
+      "name": "StartProductSubscription",
+      "output": {
+        "shape": "StartProductSubscriptionResponse"
+      }
     },
-    "StopProductSubscription":{
-      "name":"StopProductSubscription",
-      "http":{
-        "method":"POST",
-        "requestUri":"/user/StopProductSubscription",
-        "responseCode":200
-      },
-      "input":{"shape":"StopProductSubscriptionRequest"},
-      "output":{"shape":"StopProductSubscriptionResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"}
+    "StopProductSubscription": {
+      "documentation": "<p>Stops a product subscription for a user with the specified identity provider.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        }
       ],
-      "documentation":"<p>Stops a product subscription for a user with the specified identity provider.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/user/StopProductSubscription",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "StopProductSubscriptionRequest"
+      },
+      "name": "StopProductSubscription",
+      "output": {
+        "shape": "StopProductSubscriptionResponse"
+      }
     }
   },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>You don't have sufficient access to perform this action.</p>",
-      "exception":true
-    },
-    "ActiveDirectoryIdentityProvider":{
-      "type":"structure",
-      "members":{
-        "DirectoryId":{
-          "shape":"String",
-          "documentation":"<p>The directory ID for an Active Directory identity provider.</p>"
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>You don't have sufficient access to perform this action.</p>",
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>Details about an Active Directory identity provider.</p>"
+      "type": "structure"
     },
-    "AssociateUserRequest":{
-      "type":"structure",
-      "required":[
+    "ActiveDirectoryIdentityProvider": {
+      "documentation": "<p>Details about an Active Directory identity provider.</p>",
+      "members": {
+        "DirectoryId": {
+          "documentation": "<p>The directory ID for an Active Directory identity provider.</p>",
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "AssociateUserRequest": {
+      "members": {
+        "Domain": {
+          "documentation": "<p>The domain name of the user.</p>",
+          "shape": "String"
+        },
+        "IdentityProvider": {
+          "documentation": "<p>The identity provider of the user.</p>",
+          "shape": "IdentityProvider"
+        },
+        "InstanceId": {
+          "documentation": "<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>",
+          "shape": "String"
+        },
+        "Username": {
+          "documentation": "<p>The user name from the identity provider for the user.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "IdentityProvider",
         "InstanceId",
         "Username"
       ],
-      "members":{
-        "Domain":{
-          "shape":"String",
-          "documentation":"<p>The domain name of the user.</p>"
-        },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>The identity provider of the user.</p>"
-        },
-        "InstanceId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>"
-        },
-        "Username":{
-          "shape":"String",
-          "documentation":"<p>The user name from the identity provider for the user.</p>"
+      "type": "structure"
+    },
+    "AssociateUserResponse": {
+      "members": {
+        "InstanceUserSummary": {
+          "documentation": "<p>Metadata that describes the associate user operation.</p>",
+          "shape": "InstanceUserSummary"
         }
-      }
-    },
-    "AssociateUserResponse":{
-      "type":"structure",
-      "required":["InstanceUserSummary"],
-      "members":{
-        "InstanceUserSummary":{
-          "shape":"InstanceUserSummary",
-          "documentation":"<p>Metadata that describes the associate user operation.</p>"
-        }
-      }
-    },
-    "BoxInteger":{
-      "type":"integer",
-      "box":true
-    },
-    "ConflictException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The request couldn't be completed because it conflicted with the current state of the resource.</p>",
-      "exception":true,
-      "fault":true
+      "required": [
+        "InstanceUserSummary"
+      ],
+      "type": "structure"
     },
-    "DeregisterIdentityProviderRequest":{
-      "type":"structure",
-      "required":[
+    "BoxInteger": {
+      "box": true,
+      "type": "integer"
+    },
+    "ConflictException": {
+      "documentation": "<p>The request couldn't be completed because it conflicted with the current state of the resource.</p>",
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "DeregisterIdentityProviderRequest": {
+      "members": {
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
+        },
+        "Product": {
+          "documentation": "<p>The name of the user-based subscription product.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "IdentityProvider",
         "Product"
       ],
-      "members":{
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
+      "type": "structure"
+    },
+    "DeregisterIdentityProviderResponse": {
+      "members": {
+        "IdentityProviderSummary": {
+          "documentation": "<p>Metadata that describes the results of an identity provider operation.</p>",
+          "shape": "IdentityProviderSummary"
+        }
+      },
+      "required": [
+        "IdentityProviderSummary"
+      ],
+      "type": "structure"
+    },
+    "DisassociateUserRequest": {
+      "members": {
+        "Domain": {
+          "documentation": "<p>The domain name of the user.</p>",
+          "shape": "String"
         },
-        "Product":{
-          "shape":"String",
-          "documentation":"<p>The name of the user-based subscription product.</p>"
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
+        },
+        "InstanceId": {
+          "documentation": "<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>",
+          "shape": "String"
+        },
+        "Username": {
+          "documentation": "<p>The user name from the identity provider for the user.</p>",
+          "shape": "String"
         }
-      }
-    },
-    "DeregisterIdentityProviderResponse":{
-      "type":"structure",
-      "required":["IdentityProviderSummary"],
-      "members":{
-        "IdentityProviderSummary":{
-          "shape":"IdentityProviderSummary",
-          "documentation":"<p>Metadata that describes the results of an identity provider operation.</p>"
-        }
-      }
-    },
-    "DisassociateUserRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "IdentityProvider",
         "InstanceId",
         "Username"
       ],
-      "members":{
-        "Domain":{
-          "shape":"String",
-          "documentation":"<p>The domain name of the user.</p>"
-        },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
-        },
-        "InstanceId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>"
-        },
-        "Username":{
-          "shape":"String",
-          "documentation":"<p>The user name from the identity provider for the user.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "DisassociateUserResponse":{
-      "type":"structure",
-      "required":["InstanceUserSummary"],
-      "members":{
-        "InstanceUserSummary":{
-          "shape":"InstanceUserSummary",
-          "documentation":"<p>Metadata that describes the associate user operation.</p>"
-        }
-      }
-    },
-    "Filter":{
-      "type":"structure",
-      "members":{
-        "Attribute":{
-          "shape":"String",
-          "documentation":"<p>The name of an attribute to use as a filter.</p>"
-        },
-        "Operation":{
-          "shape":"String",
-          "documentation":"<p>The type of search (For example, eq, geq, leq)</p>"
-        },
-        "Value":{
-          "shape":"String",
-          "documentation":"<p>Value of the filter.</p>"
+    "DisassociateUserResponse": {
+      "members": {
+        "InstanceUserSummary": {
+          "documentation": "<p>Metadata that describes the associate user operation.</p>",
+          "shape": "InstanceUserSummary"
         }
       },
-      "documentation":"<p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>"
+      "required": [
+        "InstanceUserSummary"
+      ],
+      "type": "structure"
     },
-    "FilterList":{
-      "type":"list",
-      "member":{"shape":"Filter"}
-    },
-    "IdentityProvider":{
-      "type":"structure",
-      "members":{
-        "ActiveDirectoryIdentityProvider":{
-          "shape":"ActiveDirectoryIdentityProvider",
-          "documentation":"<p>An object that details an Active Directory identity provider.</p>"
+    "Filter": {
+      "documentation": "<p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>",
+      "members": {
+        "Attribute": {
+          "documentation": "<p>The name of an attribute to use as a filter.</p>",
+          "shape": "String"
+        },
+        "Operation": {
+          "documentation": "<p>The type of search (For example, eq, geq, leq)</p>",
+          "shape": "String"
+        },
+        "Value": {
+          "documentation": "<p>Value of the filter.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Details about an identity provider.</p>",
-      "union":true
+      "type": "structure"
     },
-    "IdentityProviderSummary":{
-      "type":"structure",
-      "required":[
+    "FilterList": {
+      "member": {
+        "shape": "Filter"
+      },
+      "type": "list"
+    },
+    "IdentityProvider": {
+      "documentation": "<p>Details about an identity provider.</p>",
+      "members": {
+        "ActiveDirectoryIdentityProvider": {
+          "documentation": "<p>An object that details an Active Directory identity provider.</p>",
+          "shape": "ActiveDirectoryIdentityProvider"
+        }
+      },
+      "type": "structure",
+      "union": true
+    },
+    "IdentityProviderSummary": {
+      "documentation": "<p>Describes an identity provider.</p>",
+      "members": {
+        "FailureMessage": {
+          "documentation": "<p>The failure message associated with an identity provider.</p>",
+          "shape": "String"
+        },
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
+        },
+        "Product": {
+          "documentation": "<p>The name of the user-based subscription product.</p>",
+          "shape": "String"
+        },
+        "Status": {
+          "documentation": "<p>The status of an identity provider.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "IdentityProvider",
         "Product",
         "Status"
       ],
-      "members":{
-        "FailureMessage":{
-          "shape":"String",
-          "documentation":"<p>The failure message associated with an identity provider.</p>"
+      "type": "structure"
+    },
+    "IdentityProviderSummaryList": {
+      "member": {
+        "shape": "IdentityProviderSummary"
+      },
+      "type": "list"
+    },
+    "InstanceSummary": {
+      "documentation": "<p>Describes an EC2 instance providing user-based subscriptions.</p>",
+      "members": {
+        "InstanceId": {
+          "documentation": "<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>",
+          "shape": "String"
         },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
+        "LastStatusCheckDate": {
+          "documentation": "<p>The date of the last status check.</p>",
+          "shape": "String"
         },
-        "Product":{
-          "shape":"String",
-          "documentation":"<p>The name of the user-based subscription product.</p>"
+        "Products": {
+          "documentation": "<p>A list of provided user-based subscription products.</p>",
+          "shape": "StringList"
         },
-        "Status":{
-          "shape":"String",
-          "documentation":"<p>The status of an identity provider.</p>"
+        "Status": {
+          "documentation": "<p>The status of an EC2 instance resource.</p>",
+          "shape": "String"
+        },
+        "StatusMessage": {
+          "documentation": "<p>The status message for an EC2 instance.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Describes an identity provider.</p>"
-    },
-    "IdentityProviderSummaryList":{
-      "type":"list",
-      "member":{"shape":"IdentityProviderSummary"}
-    },
-    "InstanceSummary":{
-      "type":"structure",
-      "required":[
+      "required": [
         "InstanceId",
         "Products",
         "Status"
       ],
-      "members":{
-        "InstanceId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>"
+      "type": "structure"
+    },
+    "InstanceSummaryList": {
+      "member": {
+        "shape": "InstanceSummary"
+      },
+      "type": "list"
+    },
+    "InstanceUserSummary": {
+      "documentation": "<p>Describes users of an EC2 instance providing user-based subscriptions.</p>",
+      "members": {
+        "AssociationDate": {
+          "documentation": "<p>The date a user was associated with an EC2 instance.</p>",
+          "shape": "String"
         },
-        "LastStatusCheckDate":{
-          "shape":"String",
-          "documentation":"<p>The date of the last status check.</p>"
+        "DisassociationDate": {
+          "documentation": "<p>The date a user was disassociated from an EC2 instance.</p>",
+          "shape": "String"
         },
-        "Products":{
-          "shape":"StringList",
-          "documentation":"<p>A list of provided user-based subscription products.</p>"
+        "Domain": {
+          "documentation": "<p>The domain name of the user.</p>",
+          "shape": "String"
         },
-        "Status":{
-          "shape":"String",
-          "documentation":"<p>The status of an EC2 instance resource.</p>"
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
         },
-        "StatusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message for an EC2 instance.</p>"
+        "InstanceId": {
+          "documentation": "<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>",
+          "shape": "String"
+        },
+        "Status": {
+          "documentation": "<p>The status of a user associated with an EC2 instance.</p>",
+          "shape": "String"
+        },
+        "StatusMessage": {
+          "documentation": "<p>The status message for users of an EC2 instance.</p>",
+          "shape": "String"
+        },
+        "Username": {
+          "documentation": "<p>The user name from the identity provider for the user.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Describes an EC2 instance providing user-based subscriptions.</p>"
-    },
-    "InstanceSummaryList":{
-      "type":"list",
-      "member":{"shape":"InstanceSummary"}
-    },
-    "InstanceUserSummary":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityProvider",
         "InstanceId",
         "Status",
         "Username"
       ],
-      "members":{
-        "AssociationDate":{
-          "shape":"String",
-          "documentation":"<p>The date a user was associated with an EC2 instance.</p>"
-        },
-        "DisassociationDate":{
-          "shape":"String",
-          "documentation":"<p>The date a user was disassociated from an EC2 instance.</p>"
-        },
-        "Domain":{
-          "shape":"String",
-          "documentation":"<p>The domain name of the user.</p>"
-        },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
-        },
-        "InstanceId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>"
-        },
-        "Status":{
-          "shape":"String",
-          "documentation":"<p>The status of a user associated with an EC2 instance.</p>"
-        },
-        "StatusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message for users of an EC2 instance.</p>"
-        },
-        "Username":{
-          "shape":"String",
-          "documentation":"<p>The user name from the identity provider for the user.</p>"
+      "type": "structure"
+    },
+    "InstanceUserSummaryList": {
+      "member": {
+        "shape": "InstanceUserSummary"
+      },
+      "type": "list"
+    },
+    "InternalServerException": {
+      "documentation": "<p>An exception occurred with the service.</p>",
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
       },
-      "documentation":"<p>Describes users of an EC2 instance providing user-based subscriptions.</p>"
+      "type": "structure"
     },
-    "InstanceUserSummaryList":{
-      "type":"list",
-      "member":{"shape":"InstanceUserSummary"}
-    },
-    "InternalServerException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "ListIdentityProvidersRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>Maximum number of results to return in a single call.</p>",
+          "shape": "BoxInteger"
+        },
+        "NextToken": {
+          "documentation": "<p>Token for the next set of results.</p>",
+          "shape": "String"
+        }
       },
-      "documentation":"<p>An exception occurred with the service.</p>",
-      "exception":true,
-      "fault":true
+      "type": "structure"
     },
-    "ListIdentityProvidersRequest":{
-      "type":"structure",
-      "members":{
-        "MaxResults":{
-          "shape":"BoxInteger",
-          "documentation":"<p>Maximum number of results to return in a single call.</p>"
+    "ListIdentityProvidersResponse": {
+      "members": {
+        "IdentityProviderSummaries": {
+          "documentation": "<p>Metadata that describes the list identity providers operation.</p>",
+          "shape": "IdentityProviderSummaryList"
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>Token for the next set of results.</p>"
+        "NextToken": {
+          "documentation": "<p>Token for the next set of results.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "required": [
+        "IdentityProviderSummaries"
+      ],
+      "type": "structure"
     },
-    "ListIdentityProvidersResponse":{
-      "type":"structure",
-      "required":["IdentityProviderSummaries"],
-      "members":{
-        "IdentityProviderSummaries":{
-          "shape":"IdentityProviderSummaryList",
-          "documentation":"<p>Metadata that describes the list identity providers operation.</p>"
+    "ListInstancesRequest": {
+      "members": {
+        "Filters": {
+          "documentation": "<p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>",
+          "shape": "FilterList"
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>Token for the next set of results.</p>"
+        "MaxResults": {
+          "documentation": "<p>Maximum number of results to return in a single call.</p>",
+          "shape": "BoxInteger"
+        },
+        "NextToken": {
+          "documentation": "<p>Token for the next set of results.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListInstancesRequest":{
-      "type":"structure",
-      "members":{
-        "Filters":{
-          "shape":"FilterList",
-          "documentation":"<p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>"
+    "ListInstancesResponse": {
+      "members": {
+        "InstanceSummaries": {
+          "documentation": "<p>Metadata that describes the list instances operation.</p>",
+          "shape": "InstanceSummaryList"
         },
-        "MaxResults":{
-          "shape":"BoxInteger",
-          "documentation":"<p>Maximum number of results to return in a single call.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>Token for the next set of results.</p>"
+        "NextToken": {
+          "documentation": "<p>Token for the next set of results.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListInstancesResponse":{
-      "type":"structure",
-      "members":{
-        "InstanceSummaries":{
-          "shape":"InstanceSummaryList",
-          "documentation":"<p>Metadata that describes the list instances operation.</p>"
+    "ListProductSubscriptionsRequest": {
+      "members": {
+        "Filters": {
+          "documentation": "<p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>",
+          "shape": "FilterList"
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>Token for the next set of results.</p>"
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
+        },
+        "MaxResults": {
+          "documentation": "<p>Maximum number of results to return in a single call.</p>",
+          "shape": "BoxInteger"
+        },
+        "NextToken": {
+          "documentation": "<p>Token for the next set of results.</p>",
+          "shape": "String"
+        },
+        "Product": {
+          "documentation": "<p>The name of the user-based subscription product.</p>",
+          "shape": "String"
         }
-      }
-    },
-    "ListProductSubscriptionsRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "IdentityProvider",
         "Product"
       ],
-      "members":{
-        "Filters":{
-          "shape":"FilterList",
-          "documentation":"<p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>"
-        },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
-        },
-        "MaxResults":{
-          "shape":"BoxInteger",
-          "documentation":"<p>Maximum number of results to return in a single call.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>Token for the next set of results.</p>"
-        },
-        "Product":{
-          "shape":"String",
-          "documentation":"<p>The name of the user-based subscription product.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "ListProductSubscriptionsResponse":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>Token for the next set of results.</p>"
+    "ListProductSubscriptionsResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>Token for the next set of results.</p>",
+          "shape": "String"
         },
-        "ProductUserSummaries":{
-          "shape":"ProductUserSummaryList",
-          "documentation":"<p>Metadata that describes the list product subscriptions operation.</p>"
+        "ProductUserSummaries": {
+          "documentation": "<p>Metadata that describes the list product subscriptions operation.</p>",
+          "shape": "ProductUserSummaryList"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListUserAssociationsRequest":{
-      "type":"structure",
-      "required":[
+    "ListUserAssociationsRequest": {
+      "members": {
+        "Filters": {
+          "documentation": "<p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>",
+          "shape": "FilterList"
+        },
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
+        },
+        "InstanceId": {
+          "documentation": "<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>",
+          "shape": "String"
+        },
+        "MaxResults": {
+          "documentation": "<p>Maximum number of results to return in a single call.</p>",
+          "shape": "BoxInteger"
+        },
+        "NextToken": {
+          "documentation": "<p>Token for the next set of results.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "IdentityProvider",
         "InstanceId"
       ],
-      "members":{
-        "Filters":{
-          "shape":"FilterList",
-          "documentation":"<p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>"
-        },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
-        },
-        "InstanceId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the EC2 instance, which provides user-based subscriptions.</p>"
-        },
-        "MaxResults":{
-          "shape":"BoxInteger",
-          "documentation":"<p>Maximum number of results to return in a single call.</p>"
-        },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>Token for the next set of results.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "ListUserAssociationsResponse":{
-      "type":"structure",
-      "members":{
-        "InstanceUserSummaries":{
-          "shape":"InstanceUserSummaryList",
-          "documentation":"<p>Metadata that describes the list user association operation.</p>"
+    "ListUserAssociationsResponse": {
+      "members": {
+        "InstanceUserSummaries": {
+          "documentation": "<p>Metadata that describes the list user association operation.</p>",
+          "shape": "InstanceUserSummaryList"
         },
-        "NextToken":{
-          "shape":"String",
-          "documentation":"<p>Token for the next set of results.</p>"
+        "NextToken": {
+          "documentation": "<p>Token for the next set of results.</p>",
+          "shape": "String"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ProductUserSummary":{
-      "type":"structure",
-      "required":[
+    "ProductUserSummary": {
+      "documentation": "<p>The summary of the user-based subscription products for a user.</p>",
+      "members": {
+        "Domain": {
+          "documentation": "<p>The domain name of the user.</p>",
+          "shape": "String"
+        },
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
+        },
+        "Product": {
+          "documentation": "<p>The name of the user-based subscription product.</p>",
+          "shape": "String"
+        },
+        "Status": {
+          "documentation": "<p>The status of a product for a user.</p>",
+          "shape": "String"
+        },
+        "StatusMessage": {
+          "documentation": "<p>The status message for a product for a user.</p>",
+          "shape": "String"
+        },
+        "SubscriptionEndDate": {
+          "documentation": "<p>The end date of a subscription.</p>",
+          "shape": "String"
+        },
+        "SubscriptionStartDate": {
+          "documentation": "<p>The start date of a subscription.</p>",
+          "shape": "String"
+        },
+        "Username": {
+          "documentation": "<p>The user name from the identity provider of the user.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "IdentityProvider",
         "Product",
         "Status",
         "Username"
       ],
-      "members":{
-        "Domain":{
-          "shape":"String",
-          "documentation":"<p>The domain name of the user.</p>"
+      "type": "structure"
+    },
+    "ProductUserSummaryList": {
+      "member": {
+        "shape": "ProductUserSummary"
+      },
+      "type": "list"
+    },
+    "RegisterIdentityProviderRequest": {
+      "members": {
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
         },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
-        },
-        "Product":{
-          "shape":"String",
-          "documentation":"<p>The name of the user-based subscription product.</p>"
-        },
-        "Status":{
-          "shape":"String",
-          "documentation":"<p>The status of a product for a user.</p>"
-        },
-        "StatusMessage":{
-          "shape":"String",
-          "documentation":"<p>The status message for a product for a user.</p>"
-        },
-        "SubscriptionEndDate":{
-          "shape":"String",
-          "documentation":"<p>The end date of a subscription.</p>"
-        },
-        "SubscriptionStartDate":{
-          "shape":"String",
-          "documentation":"<p>The start date of a subscription.</p>"
-        },
-        "Username":{
-          "shape":"String",
-          "documentation":"<p>The user name from the identity provider of the user.</p>"
+        "Product": {
+          "documentation": "<p>The name of the user-based subscription product.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The summary of the user-based subscription products for a user.</p>"
-    },
-    "ProductUserSummaryList":{
-      "type":"list",
-      "member":{"shape":"ProductUserSummary"}
-    },
-    "RegisterIdentityProviderRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityProvider",
         "Product"
       ],
-      "members":{
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
+      "type": "structure"
+    },
+    "RegisterIdentityProviderResponse": {
+      "members": {
+        "IdentityProviderSummary": {
+          "documentation": "<p>Metadata that describes the results of an identity provider operation.</p>",
+          "shape": "IdentityProviderSummary"
+        }
+      },
+      "required": [
+        "IdentityProviderSummary"
+      ],
+      "type": "structure"
+    },
+    "ResourceNotFoundException": {
+      "documentation": "<p>The resource couldn't be found.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>The request failed because a service quota is exceeded.</p>",
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "StartProductSubscriptionRequest": {
+      "members": {
+        "Domain": {
+          "documentation": "<p>The domain name of the user.</p>",
+          "shape": "String"
         },
-        "Product":{
-          "shape":"String",
-          "documentation":"<p>The name of the user-based subscription product.</p>"
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
+        },
+        "Product": {
+          "documentation": "<p>The name of the user-based subscription product.</p>",
+          "shape": "String"
+        },
+        "Username": {
+          "documentation": "<p>The user name from the identity provider of the user.</p>",
+          "shape": "String"
         }
-      }
-    },
-    "RegisterIdentityProviderResponse":{
-      "type":"structure",
-      "required":["IdentityProviderSummary"],
-      "members":{
-        "IdentityProviderSummary":{
-          "shape":"IdentityProviderSummary",
-          "documentation":"<p>Metadata that describes the results of an identity provider operation.</p>"
-        }
-      }
-    },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The resource couldn't be found.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>The request failed because a service quota is exceeded.</p>",
-      "exception":true
-    },
-    "StartProductSubscriptionRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "IdentityProvider",
         "Product",
         "Username"
       ],
-      "members":{
-        "Domain":{
-          "shape":"String",
-          "documentation":"<p>The domain name of the user.</p>"
-        },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
-        },
-        "Product":{
-          "shape":"String",
-          "documentation":"<p>The name of the user-based subscription product.</p>"
-        },
-        "Username":{
-          "shape":"String",
-          "documentation":"<p>The user name from the identity provider of the user.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "StartProductSubscriptionResponse":{
-      "type":"structure",
-      "required":["ProductUserSummary"],
-      "members":{
-        "ProductUserSummary":{
-          "shape":"ProductUserSummary",
-          "documentation":"<p>Metadata that describes the start product subscription operation.</p>"
+    "StartProductSubscriptionResponse": {
+      "members": {
+        "ProductUserSummary": {
+          "documentation": "<p>Metadata that describes the start product subscription operation.</p>",
+          "shape": "ProductUserSummary"
         }
-      }
+      },
+      "required": [
+        "ProductUserSummary"
+      ],
+      "type": "structure"
     },
-    "StopProductSubscriptionRequest":{
-      "type":"structure",
-      "required":[
+    "StopProductSubscriptionRequest": {
+      "members": {
+        "Domain": {
+          "documentation": "<p>The domain name of the user.</p>",
+          "shape": "String"
+        },
+        "IdentityProvider": {
+          "documentation": "<p>An object that specifies details for the identity provider.</p>",
+          "shape": "IdentityProvider"
+        },
+        "Product": {
+          "documentation": "<p>The name of the user-based subscription product.</p>",
+          "shape": "String"
+        },
+        "Username": {
+          "documentation": "<p>The user name from the identity provider for the user.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "IdentityProvider",
         "Product",
         "Username"
       ],
-      "members":{
-        "Domain":{
-          "shape":"String",
-          "documentation":"<p>The domain name of the user.</p>"
-        },
-        "IdentityProvider":{
-          "shape":"IdentityProvider",
-          "documentation":"<p>An object that specifies details for the identity provider.</p>"
-        },
-        "Product":{
-          "shape":"String",
-          "documentation":"<p>The name of the user-based subscription product.</p>"
-        },
-        "Username":{
-          "shape":"String",
-          "documentation":"<p>The user name from the identity provider for the user.</p>"
+      "type": "structure"
+    },
+    "StopProductSubscriptionResponse": {
+      "members": {
+        "ProductUserSummary": {
+          "documentation": "<p>Metadata that describes the start product subscription operation.</p>",
+          "shape": "ProductUserSummary"
         }
-      }
+      },
+      "required": [
+        "ProductUserSummary"
+      ],
+      "type": "structure"
     },
-    "StopProductSubscriptionResponse":{
-      "type":"structure",
-      "required":["ProductUserSummary"],
-      "members":{
-        "ProductUserSummary":{
-          "shape":"ProductUserSummary",
-          "documentation":"<p>Metadata that describes the start product subscription operation.</p>"
+    "String": {
+      "type": "string"
+    },
+    "StringList": {
+      "member": {
+        "shape": "String"
+      },
+      "type": "list"
+    },
+    "ThrottlingException": {
+      "documentation": "<p>The request was denied because of request throttling. Retry the request.</p>",
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
         }
-      }
-    },
-    "String":{"type":"string"},
-    "StringList":{
-      "type":"list",
-      "member":{"shape":"String"}
-    },
-    "ThrottlingException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The request was denied because of request throttling. Retry the request.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "ValidationException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "ValidationException": {
+      "documentation": "<p>A parameter is not valid.</p>",
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
       },
-      "documentation":"<p>A parameter is not valid.</p>",
-      "exception":true
+      "type": "structure"
     }
   },
-  "documentation":"<p>With License Manager, you can create user-based subscriptions to utilize licensed software with a per user subscription fee on Amazon EC2 instances.</p>"
+  "version": "2.0"
 }

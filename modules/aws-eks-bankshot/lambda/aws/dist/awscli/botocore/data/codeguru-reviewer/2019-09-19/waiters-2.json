@@ -1,58 +1,57 @@
 {
-    "version": 2,
-    "waiters":
-    {
-        "RepositoryAssociationSucceeded":
+  "version": 2,
+  "waiters": {
+    "CodeReviewCompleted": {
+      "acceptors": [
         {
-            "description": "Wait until a repository association is complete.",
-            "operation": "DescribeRepositoryAssociation",
-            "delay": 10,
-            "maxAttempts": 30,
-            "acceptors": [
-            {
-                "state": "success",
-                "matcher": "path",
-                "argument": "RepositoryAssociation.State",
-                "expected": "Associated"
-            },
-            {
-                "state": "failure",
-                "matcher": "path",
-                "argument": "RepositoryAssociation.State",
-                "expected": "Failed"
-            },
-            {
-                "state": "retry",
-                "matcher": "path",
-                "argument": "RepositoryAssociation.State",
-                "expected": "Associating"
-            }]
+          "argument": "CodeReview.State",
+          "expected": "Completed",
+          "matcher": "path",
+          "state": "success"
         },
-        "CodeReviewCompleted":
         {
-            "description": "Wait until a code review is complete.",
-            "operation": "DescribeCodeReview",
-            "delay": 10,
-            "maxAttempts": 180,
-            "acceptors": [
-            {
-                "state": "success",
-                "matcher": "path",
-                "argument": "CodeReview.State",
-                "expected": "Completed"
-            },
-            {
-                "state": "failure",
-                "matcher": "path",
-                "argument": "CodeReview.State",
-                "expected": "Failed"
-            },
-            {
-                "state": "retry",
-                "matcher": "path",
-                "argument": "CodeReview.State",
-                "expected": "Pending"
-            }]
+          "argument": "CodeReview.State",
+          "expected": "Failed",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "argument": "CodeReview.State",
+          "expected": "Pending",
+          "matcher": "path",
+          "state": "retry"
         }
+      ],
+      "delay": 10,
+      "description": "Wait until a code review is complete.",
+      "maxAttempts": 180,
+      "operation": "DescribeCodeReview"
+    },
+    "RepositoryAssociationSucceeded": {
+      "acceptors": [
+        {
+          "argument": "RepositoryAssociation.State",
+          "expected": "Associated",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "RepositoryAssociation.State",
+          "expected": "Failed",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "argument": "RepositoryAssociation.State",
+          "expected": "Associating",
+          "matcher": "path",
+          "state": "retry"
+        }
+      ],
+      "delay": 10,
+      "description": "Wait until a repository association is complete.",
+      "maxAttempts": 30,
+      "operation": "DescribeRepositoryAssociation"
     }
+  }
 }

@@ -2,14 +2,14 @@
   "pagination": {
     "ListApplications": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "applications"
     },
     "ListJobRuns": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "jobRuns"
     }
   }

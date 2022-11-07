@@ -1,42 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "EventSourceMapping": {
-      "operation": "ListEventSourceMappings",
-      "resourceIdentifier": {
-        "UUID": "EventSourceMappings[].UUID",
-        "BatchSize": "EventSourceMappings[].BatchSize",
-        "EventSourceArn": "EventSourceMappings[].EventSourceArn"
-      }
-    },
-    "Function": {
-      "operation": "ListFunctions",
-      "resourceIdentifier": {
-        "FunctionName": "Functions[].FunctionName",
-        "Runtime": "Functions[].Runtime",
-        "Role": "Functions[].Role",
-        "Handler": "Functions[].Handler",
-        "Description": "Functions[].Description",
-        "Timeout": "Functions[].Timeout",
-        "MemorySize": "Functions[].MemorySize",
-        "CodeSha256": "Functions[].CodeSha256",
-        "VpcConfig": "Functions[].VpcConfig",
-        "DeadLetterConfig": "Functions[].DeadLetterConfig",
-        "Environment": "Functions[].Environment",
-        "KMSKeyArn": "Functions[].KMSKeyArn",
-        "TracingConfig": "Functions[].TracingConfig",
-        "RevisionId": "Functions[].RevisionId"
-      }
-    }
-  },
   "operations": {
     "AddPermission": {
       "FunctionName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       },
@@ -44,8 +14,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "RevisionId"
+            "resourceIdentifier": "RevisionId",
+            "resourceName": "Function"
           }
         ]
       }
@@ -55,8 +25,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -66,8 +36,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSourceMapping",
-            "resourceIdentifier": "UUID"
+            "resourceIdentifier": "UUID",
+            "resourceName": "EventSourceMapping"
           }
         ]
       }
@@ -77,8 +47,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -88,8 +58,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -99,8 +69,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -110,8 +80,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSourceMapping",
-            "resourceIdentifier": "UUID"
+            "resourceIdentifier": "UUID",
+            "resourceName": "EventSourceMapping"
           }
         ]
       }
@@ -121,8 +91,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -132,8 +102,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -143,8 +113,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -154,8 +124,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -165,8 +135,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -176,8 +146,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -187,8 +157,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSourceMapping",
-            "resourceIdentifier": "EventSourceArn"
+            "resourceIdentifier": "EventSourceArn",
+            "resourceName": "EventSourceMapping"
           }
         ]
       },
@@ -196,8 +166,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -207,28 +177,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
     },
     "PublishVersion": {
-      "FunctionName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
-          }
-        ]
-      },
       "CodeSha256": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "CodeSha256"
+            "resourceIdentifier": "CodeSha256",
+            "resourceName": "Function"
           }
         ]
       },
@@ -236,8 +197,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Function"
+          }
+        ]
+      },
+      "FunctionName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       },
@@ -245,8 +215,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "RevisionId"
+            "resourceIdentifier": "RevisionId",
+            "resourceName": "Function"
           }
         ]
       }
@@ -256,8 +226,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       }
@@ -267,8 +237,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       },
@@ -276,28 +246,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "RevisionId"
+            "resourceIdentifier": "RevisionId",
+            "resourceName": "Function"
           }
         ]
       }
     },
     "UpdateAlias": {
-      "FunctionName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
-          }
-        ]
-      },
       "Description": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Description",
+            "resourceName": "Function"
+          }
+        ]
+      },
+      "FunctionName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       },
@@ -305,19 +275,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "RevisionId"
+            "resourceIdentifier": "RevisionId",
+            "resourceName": "Function"
           }
         ]
       }
     },
     "UpdateEventSourceMapping": {
-      "UUID": {
+      "BatchSize": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSourceMapping",
-            "resourceIdentifier": "UUID"
+            "resourceIdentifier": "BatchSize",
+            "resourceName": "EventSourceMapping"
           }
         ]
       },
@@ -325,17 +295,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       },
-      "BatchSize": {
+      "UUID": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "EventSourceMapping",
-            "resourceIdentifier": "BatchSize"
+            "resourceIdentifier": "UUID",
+            "resourceName": "EventSourceMapping"
           }
         ]
       }
@@ -345,8 +315,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       },
@@ -354,37 +324,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "RevisionId"
+            "resourceIdentifier": "RevisionId",
+            "resourceName": "Function"
           }
         ]
       }
     },
     "UpdateFunctionConfiguration": {
-      "FunctionName": {
+      "DeadLetterConfig": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "FunctionName"
-          }
-        ]
-      },
-      "Role": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "Role"
-          }
-        ]
-      },
-      "Handler": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "Handler"
+            "resourceIdentifier": "DeadLetterConfig",
+            "resourceName": "Function"
           }
         ]
       },
@@ -392,35 +344,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "Description"
-          }
-        ]
-      },
-      "Timeout": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "Timeout"
-          }
-        ]
-      },
-      "MemorySize": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "MemorySize"
-          }
-        ]
-      },
-      "VpcConfig": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "VpcConfig"
+            "resourceIdentifier": "Description",
+            "resourceName": "Function"
           }
         ]
       },
@@ -428,26 +353,26 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "Environment"
+            "resourceIdentifier": "Environment",
+            "resourceName": "Function"
           }
         ]
       },
-      "Runtime": {
+      "FunctionName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "Runtime"
+            "resourceIdentifier": "FunctionName",
+            "resourceName": "Function"
           }
         ]
       },
-      "DeadLetterConfig": {
+      "Handler": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "DeadLetterConfig"
+            "resourceIdentifier": "Handler",
+            "resourceName": "Function"
           }
         ]
       },
@@ -455,17 +380,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "KMSKeyArn"
+            "resourceIdentifier": "KMSKeyArn",
+            "resourceName": "Function"
           }
         ]
       },
-      "TracingConfig": {
+      "MemorySize": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "TracingConfig"
+            "resourceIdentifier": "MemorySize",
+            "resourceName": "Function"
           }
         ]
       },
@@ -473,11 +398,86 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Function",
-            "resourceIdentifier": "RevisionId"
+            "resourceIdentifier": "RevisionId",
+            "resourceName": "Function"
+          }
+        ]
+      },
+      "Role": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Role",
+            "resourceName": "Function"
+          }
+        ]
+      },
+      "Runtime": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Runtime",
+            "resourceName": "Function"
+          }
+        ]
+      },
+      "Timeout": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Timeout",
+            "resourceName": "Function"
+          }
+        ]
+      },
+      "TracingConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TracingConfig",
+            "resourceName": "Function"
+          }
+        ]
+      },
+      "VpcConfig": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VpcConfig",
+            "resourceName": "Function"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "EventSourceMapping": {
+      "operation": "ListEventSourceMappings",
+      "resourceIdentifier": {
+        "BatchSize": "EventSourceMappings[].BatchSize",
+        "EventSourceArn": "EventSourceMappings[].EventSourceArn",
+        "UUID": "EventSourceMappings[].UUID"
+      }
+    },
+    "Function": {
+      "operation": "ListFunctions",
+      "resourceIdentifier": {
+        "CodeSha256": "Functions[].CodeSha256",
+        "DeadLetterConfig": "Functions[].DeadLetterConfig",
+        "Description": "Functions[].Description",
+        "Environment": "Functions[].Environment",
+        "FunctionName": "Functions[].FunctionName",
+        "Handler": "Functions[].Handler",
+        "KMSKeyArn": "Functions[].KMSKeyArn",
+        "MemorySize": "Functions[].MemorySize",
+        "RevisionId": "Functions[].RevisionId",
+        "Role": "Functions[].Role",
+        "Runtime": "Functions[].Runtime",
+        "Timeout": "Functions[].Timeout",
+        "TracingConfig": "Functions[].TracingConfig",
+        "VpcConfig": "Functions[].VpcConfig"
+      }
+    }
+  },
+  "version": "1.0"
 }

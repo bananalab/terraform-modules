@@ -1,5 +1,271 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteCustomVerificationEmailTemplate": {
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      }
+    },
+    "DeleteIdentity": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "DeleteIdentityPolicy": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "DeleteTemplate": {
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      }
+    },
+    "GetCustomVerificationEmailTemplate": {
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      }
+    },
+    "GetIdentityPolicies": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "GetTemplate": {
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      }
+    },
+    "ListIdentityPolicies": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "PutIdentityPolicy": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "SendCustomVerificationEmail": {
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      }
+    },
+    "SetIdentityDkimEnabled": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "SetIdentityFeedbackForwardingEnabled": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "SetIdentityHeadersInNotificationsEnabled": {
+      "Enabled": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Enabled",
+            "resourceName": "ActiveReceiptRuleSet"
+          }
+        ]
+      },
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "SetIdentityMailFromDomain": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "SetIdentityNotificationTopic": {
+      "Identity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Identity",
+            "resourceName": "Identity"
+          }
+        ]
+      }
+    },
+    "TestRenderTemplate": {
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      }
+    },
+    "UpdateAccountSendingEnabled": {
+      "Enabled": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Enabled",
+            "resourceName": "ActiveReceiptRuleSet"
+          }
+        ]
+      }
+    },
+    "UpdateConfigurationSetReputationMetricsEnabled": {
+      "Enabled": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Enabled",
+            "resourceName": "ActiveReceiptRuleSet"
+          }
+        ]
+      }
+    },
+    "UpdateConfigurationSetSendingEnabled": {
+      "Enabled": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Enabled",
+            "resourceName": "ActiveReceiptRuleSet"
+          }
+        ]
+      }
+    },
+    "UpdateCustomVerificationEmailTemplate": {
+      "FailureRedirectionURL": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "FailureRedirectionURL",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      },
+      "FromEmailAddress": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "FromEmailAddress",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      },
+      "SuccessRedirectionURL": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SuccessRedirectionURL",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      },
+      "TemplateName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateName",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      },
+      "TemplateSubject": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TemplateSubject",
+            "resourceName": "CustomVerificationEmailTemplate"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "ActiveReceiptRuleSet": {
       "operation": "DescribeActiveReceiptRuleSet",
@@ -10,11 +276,11 @@
     "CustomVerificationEmailTemplate": {
       "operation": "ListCustomVerificationEmailTemplates",
       "resourceIdentifier": {
-        "TemplateName": "CustomVerificationEmailTemplates[].TemplateName",
+        "FailureRedirectionURL": "CustomVerificationEmailTemplates[].FailureRedirectionURL",
         "FromEmailAddress": "CustomVerificationEmailTemplates[].FromEmailAddress",
-        "TemplateSubject": "CustomVerificationEmailTemplates[].TemplateSubject",
         "SuccessRedirectionURL": "CustomVerificationEmailTemplates[].SuccessRedirectionURL",
-        "FailureRedirectionURL": "CustomVerificationEmailTemplates[].FailureRedirectionURL"
+        "TemplateName": "CustomVerificationEmailTemplates[].TemplateName",
+        "TemplateSubject": "CustomVerificationEmailTemplates[].TemplateSubject"
       }
     },
     "Identity": {
@@ -24,271 +290,5 @@
       }
     }
   },
-  "operations": {
-    "DeleteCustomVerificationEmailTemplate": {
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      }
-    },
-    "DeleteIdentity": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "DeleteIdentityPolicy": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "DeleteTemplate": {
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      }
-    },
-    "GetCustomVerificationEmailTemplate": {
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      }
-    },
-    "GetIdentityPolicies": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "GetTemplate": {
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      }
-    },
-    "ListIdentityPolicies": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "PutIdentityPolicy": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "SendCustomVerificationEmail": {
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      }
-    },
-    "SetIdentityDkimEnabled": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "SetIdentityFeedbackForwardingEnabled": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "SetIdentityHeadersInNotificationsEnabled": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      },
-      "Enabled": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveReceiptRuleSet",
-            "resourceIdentifier": "Enabled"
-          }
-        ]
-      }
-    },
-    "SetIdentityMailFromDomain": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "SetIdentityNotificationTopic": {
-      "Identity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Identity",
-            "resourceIdentifier": "Identity"
-          }
-        ]
-      }
-    },
-    "TestRenderTemplate": {
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      }
-    },
-    "UpdateAccountSendingEnabled": {
-      "Enabled": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveReceiptRuleSet",
-            "resourceIdentifier": "Enabled"
-          }
-        ]
-      }
-    },
-    "UpdateConfigurationSetReputationMetricsEnabled": {
-      "Enabled": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveReceiptRuleSet",
-            "resourceIdentifier": "Enabled"
-          }
-        ]
-      }
-    },
-    "UpdateConfigurationSetSendingEnabled": {
-      "Enabled": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ActiveReceiptRuleSet",
-            "resourceIdentifier": "Enabled"
-          }
-        ]
-      }
-    },
-    "UpdateCustomVerificationEmailTemplate": {
-      "TemplateName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "TemplateName"
-          }
-        ]
-      },
-      "FromEmailAddress": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "FromEmailAddress"
-          }
-        ]
-      },
-      "TemplateSubject": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "TemplateSubject"
-          }
-        ]
-      },
-      "SuccessRedirectionURL": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "SuccessRedirectionURL"
-          }
-        ]
-      },
-      "FailureRedirectionURL": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CustomVerificationEmailTemplate",
-            "resourceIdentifier": "FailureRedirectionURL"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

@@ -73,5 +73,5 @@ Output::
             ]
         }
     }
-    
+
 For more information, see `Create a Channel <https://docs.aws.amazon.com/ivs/latest/userguide/GSIVS-create-channel.html>`__ in the *Amazon Interactive Video Service User Guide*.

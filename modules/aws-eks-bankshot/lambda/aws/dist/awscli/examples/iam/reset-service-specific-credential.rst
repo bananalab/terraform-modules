@@ -3,7 +3,7 @@
 The following ``reset-service-specific-credential`` example generates a new cryptographically strong password for the specified service-specific credential attached to the user making the request. ::
 
     aws iam reset-service-specific-credential --service-specific-credential-id ACCAEXAMPLE123EXAMPLE
-    
+
 Output::
 
   {
@@ -23,7 +23,7 @@ Output::
 The following ``reset-service-specific-credential`` example generates a new cryptographically strong password for a service-specific credential attached to the specified user. ::
 
     aws iam reset-service-specific-credential --user-name sofia --service-specific-credential-id ACCAEXAMPLE123EXAMPLE
-    
+
 Output::
 
   {

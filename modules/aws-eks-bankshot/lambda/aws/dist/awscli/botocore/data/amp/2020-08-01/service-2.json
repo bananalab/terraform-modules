@@ -1,1241 +1,1625 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2020-08-01",
-    "endpointPrefix":"aps",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"Amazon Prometheus Service",
-    "serviceId":"amp",
-    "signatureVersion":"v4",
-    "signingName":"aps",
-    "uid":"amp-2020-08-01"
+  "documentation": "<p>Amazon Managed Service for Prometheus</p>",
+  "metadata": {
+    "apiVersion": "2020-08-01",
+    "endpointPrefix": "aps",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "Amazon Prometheus Service",
+    "serviceId": "amp",
+    "signatureVersion": "v4",
+    "signingName": "aps",
+    "uid": "amp-2020-08-01"
   },
-  "operations":{
-    "CreateAlertManagerDefinition":{
-      "name":"CreateAlertManagerDefinition",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workspaces/{workspaceId}/alertmanager/definition",
-        "responseCode":202
-      },
-      "input":{"shape":"CreateAlertManagerDefinitionRequest"},
-      "output":{"shape":"CreateAlertManagerDefinitionResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"}
+  "operations": {
+    "CreateAlertManagerDefinition": {
+      "documentation": "<p>Create an alert manager definition.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Create an alert manager definition.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/workspaces/{workspaceId}/alertmanager/definition",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateAlertManagerDefinitionRequest"
+      },
+      "name": "CreateAlertManagerDefinition",
+      "output": {
+        "shape": "CreateAlertManagerDefinitionResponse"
+      }
     },
-    "CreateLoggingConfiguration":{
-      "name":"CreateLoggingConfiguration",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workspaces/{workspaceId}/logging",
-        "responseCode":202
-      },
-      "input":{"shape":"CreateLoggingConfigurationRequest"},
-      "output":{"shape":"CreateLoggingConfigurationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "CreateLoggingConfiguration": {
+      "documentation": "<p>Create logging configuration.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Create logging configuration.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/workspaces/{workspaceId}/logging",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateLoggingConfigurationRequest"
+      },
+      "name": "CreateLoggingConfiguration",
+      "output": {
+        "shape": "CreateLoggingConfigurationResponse"
+      }
     },
-    "CreateRuleGroupsNamespace":{
-      "name":"CreateRuleGroupsNamespace",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workspaces/{workspaceId}/rulegroupsnamespaces",
-        "responseCode":202
-      },
-      "input":{"shape":"CreateRuleGroupsNamespaceRequest"},
-      "output":{"shape":"CreateRuleGroupsNamespaceResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "CreateRuleGroupsNamespace": {
+      "documentation": "<p>Create a rule group namespace.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Create a rule group namespace.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/workspaces/{workspaceId}/rulegroupsnamespaces",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateRuleGroupsNamespaceRequest"
+      },
+      "name": "CreateRuleGroupsNamespace",
+      "output": {
+        "shape": "CreateRuleGroupsNamespaceResponse"
+      }
     },
-    "CreateWorkspace":{
-      "name":"CreateWorkspace",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workspaces",
-        "responseCode":202
-      },
-      "input":{"shape":"CreateWorkspaceRequest"},
-      "output":{"shape":"CreateWorkspaceResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "CreateWorkspace": {
+      "documentation": "<p>Creates a new AMP workspace.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Creates a new AMP workspace.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/workspaces",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "CreateWorkspaceRequest"
+      },
+      "name": "CreateWorkspace",
+      "output": {
+        "shape": "CreateWorkspaceResponse"
+      }
     },
-    "DeleteAlertManagerDefinition":{
-      "name":"DeleteAlertManagerDefinition",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/workspaces/{workspaceId}/alertmanager/definition",
-        "responseCode":202
-      },
-      "input":{"shape":"DeleteAlertManagerDefinitionRequest"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "DeleteAlertManagerDefinition": {
+      "documentation": "<p>Deletes an alert manager definition.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deletes an alert manager definition.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/workspaces/{workspaceId}/alertmanager/definition",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteAlertManagerDefinitionRequest"
+      },
+      "name": "DeleteAlertManagerDefinition"
     },
-    "DeleteLoggingConfiguration":{
-      "name":"DeleteLoggingConfiguration",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/workspaces/{workspaceId}/logging",
-        "responseCode":202
-      },
-      "input":{"shape":"DeleteLoggingConfigurationRequest"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "DeleteLoggingConfiguration": {
+      "documentation": "<p>Delete logging configuration.</p>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Delete logging configuration.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/workspaces/{workspaceId}/logging",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteLoggingConfigurationRequest"
+      },
+      "name": "DeleteLoggingConfiguration"
     },
-    "DeleteRuleGroupsNamespace":{
-      "name":"DeleteRuleGroupsNamespace",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/workspaces/{workspaceId}/rulegroupsnamespaces/{name}",
-        "responseCode":202
-      },
-      "input":{"shape":"DeleteRuleGroupsNamespaceRequest"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "DeleteRuleGroupsNamespace": {
+      "documentation": "<p>Delete a rule groups namespace.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Delete a rule groups namespace.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/workspaces/{workspaceId}/rulegroupsnamespaces/{name}",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteRuleGroupsNamespaceRequest"
+      },
+      "name": "DeleteRuleGroupsNamespace"
     },
-    "DeleteWorkspace":{
-      "name":"DeleteWorkspace",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/workspaces/{workspaceId}",
-        "responseCode":202
-      },
-      "input":{"shape":"DeleteWorkspaceRequest"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "DeleteWorkspace": {
+      "documentation": "<p>Deletes an AMP workspace.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deletes an AMP workspace.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/workspaces/{workspaceId}",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "DeleteWorkspaceRequest"
+      },
+      "name": "DeleteWorkspace"
     },
-    "DescribeAlertManagerDefinition":{
-      "name":"DescribeAlertManagerDefinition",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workspaces/{workspaceId}/alertmanager/definition",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeAlertManagerDefinitionRequest"},
-      "output":{"shape":"DescribeAlertManagerDefinitionResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "DescribeAlertManagerDefinition": {
+      "documentation": "<p>Describes an alert manager definition.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Describes an alert manager definition.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workspaces/{workspaceId}/alertmanager/definition",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeAlertManagerDefinitionRequest"
+      },
+      "name": "DescribeAlertManagerDefinition",
+      "output": {
+        "shape": "DescribeAlertManagerDefinitionResponse"
+      }
     },
-    "DescribeLoggingConfiguration":{
-      "name":"DescribeLoggingConfiguration",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workspaces/{workspaceId}/logging",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeLoggingConfigurationRequest"},
-      "output":{"shape":"DescribeLoggingConfigurationResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "DescribeLoggingConfiguration": {
+      "documentation": "<p>Describes logging configuration.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Describes logging configuration.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workspaces/{workspaceId}/logging",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeLoggingConfigurationRequest"
+      },
+      "name": "DescribeLoggingConfiguration",
+      "output": {
+        "shape": "DescribeLoggingConfigurationResponse"
+      }
     },
-    "DescribeRuleGroupsNamespace":{
-      "name":"DescribeRuleGroupsNamespace",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workspaces/{workspaceId}/rulegroupsnamespaces/{name}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeRuleGroupsNamespaceRequest"},
-      "output":{"shape":"DescribeRuleGroupsNamespaceResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "DescribeRuleGroupsNamespace": {
+      "documentation": "<p>Describe a rule groups namespace.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Describe a rule groups namespace.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workspaces/{workspaceId}/rulegroupsnamespaces/{name}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeRuleGroupsNamespaceRequest"
+      },
+      "name": "DescribeRuleGroupsNamespace",
+      "output": {
+        "shape": "DescribeRuleGroupsNamespaceResponse"
+      }
     },
-    "DescribeWorkspace":{
-      "name":"DescribeWorkspace",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workspaces/{workspaceId}",
-        "responseCode":200
-      },
-      "input":{"shape":"DescribeWorkspaceRequest"},
-      "output":{"shape":"DescribeWorkspaceResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "DescribeWorkspace": {
+      "documentation": "<p>Describes an existing AMP workspace.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Describes an existing AMP workspace.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workspaces/{workspaceId}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeWorkspaceRequest"
+      },
+      "name": "DescribeWorkspace",
+      "output": {
+        "shape": "DescribeWorkspaceResponse"
+      }
     },
-    "ListRuleGroupsNamespaces":{
-      "name":"ListRuleGroupsNamespaces",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workspaces/{workspaceId}/rulegroupsnamespaces",
-        "responseCode":200
-      },
-      "input":{"shape":"ListRuleGroupsNamespacesRequest"},
-      "output":{"shape":"ListRuleGroupsNamespacesResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "ListRuleGroupsNamespaces": {
+      "documentation": "<p>Lists rule groups namespaces.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists rule groups namespaces.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workspaces/{workspaceId}/rulegroupsnamespaces",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListRuleGroupsNamespacesRequest"
+      },
+      "name": "ListRuleGroupsNamespaces",
+      "output": {
+        "shape": "ListRuleGroupsNamespacesResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Lists the tags you have assigned to the resource.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists the tags you have assigned to the resource.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "ListWorkspaces":{
-      "name":"ListWorkspaces",
-      "http":{
-        "method":"GET",
-        "requestUri":"/workspaces",
-        "responseCode":200
-      },
-      "input":{"shape":"ListWorkspacesRequest"},
-      "output":{"shape":"ListWorkspacesResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "ListWorkspaces": {
+      "documentation": "<p>Lists all AMP workspaces, including workspaces being created or deleted.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists all AMP workspaces, including workspaces being created or deleted.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/workspaces",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListWorkspacesRequest"
+      },
+      "name": "ListWorkspaces",
+      "output": {
+        "shape": "ListWorkspacesResponse"
+      }
     },
-    "PutAlertManagerDefinition":{
-      "name":"PutAlertManagerDefinition",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/workspaces/{workspaceId}/alertmanager/definition",
-        "responseCode":202
-      },
-      "input":{"shape":"PutAlertManagerDefinitionRequest"},
-      "output":{"shape":"PutAlertManagerDefinitionResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "PutAlertManagerDefinition": {
+      "documentation": "<p>Update an alert manager definition.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Update an alert manager definition.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/workspaces/{workspaceId}/alertmanager/definition",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "PutAlertManagerDefinitionRequest"
+      },
+      "name": "PutAlertManagerDefinition",
+      "output": {
+        "shape": "PutAlertManagerDefinitionResponse"
+      }
     },
-    "PutRuleGroupsNamespace":{
-      "name":"PutRuleGroupsNamespace",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/workspaces/{workspaceId}/rulegroupsnamespaces/{name}",
-        "responseCode":202
-      },
-      "input":{"shape":"PutRuleGroupsNamespaceRequest"},
-      "output":{"shape":"PutRuleGroupsNamespaceResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "PutRuleGroupsNamespace": {
+      "documentation": "<p>Update a rule groups namespace.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Update a rule groups namespace.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/workspaces/{workspaceId}/rulegroupsnamespaces/{name}",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "PutRuleGroupsNamespaceRequest"
+      },
+      "name": "PutRuleGroupsNamespace",
+      "output": {
+        "shape": "PutRuleGroupsNamespaceResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "TagResource": {
+      "documentation": "<p>Creates tags for the specified resource.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Creates tags for the specified resource.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{resourceArn}",
-        "responseCode":200
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "UntagResource": {
+      "documentation": "<p>Deletes tags from the specified resource.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deletes tags from the specified resource.</p>",
-      "idempotent":true
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{resourceArn}",
+        "responseCode": 200
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
     },
-    "UpdateLoggingConfiguration":{
-      "name":"UpdateLoggingConfiguration",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/workspaces/{workspaceId}/logging",
-        "responseCode":202
-      },
-      "input":{"shape":"UpdateLoggingConfigurationRequest"},
-      "output":{"shape":"UpdateLoggingConfigurationResponse"},
-      "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"}
+    "UpdateLoggingConfiguration": {
+      "documentation": "<p>Update logging configuration.</p>",
+      "errors": [
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Update logging configuration.</p>",
-      "idempotent":true
+      "http": {
+        "method": "PUT",
+        "requestUri": "/workspaces/{workspaceId}/logging",
+        "responseCode": 202
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateLoggingConfigurationRequest"
+      },
+      "name": "UpdateLoggingConfiguration",
+      "output": {
+        "shape": "UpdateLoggingConfigurationResponse"
+      }
     },
-    "UpdateWorkspaceAlias":{
-      "name":"UpdateWorkspaceAlias",
-      "http":{
-        "method":"POST",
-        "requestUri":"/workspaces/{workspaceId}/alias",
-        "responseCode":204
-      },
-      "input":{"shape":"UpdateWorkspaceAliasRequest"},
-      "errors":[
-        {"shape":"ThrottlingException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"}
+    "UpdateWorkspaceAlias": {
+      "documentation": "<p>Updates an AMP workspace alias.</p>",
+      "errors": [
+        {
+          "shape": "ThrottlingException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        }
       ],
-      "documentation":"<p>Updates an AMP workspace alias.</p>",
-      "idempotent":true
+      "http": {
+        "method": "POST",
+        "requestUri": "/workspaces/{workspaceId}/alias",
+        "responseCode": 204
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "UpdateWorkspaceAliasRequest"
+      },
+      "name": "UpdateWorkspaceAlias"
     }
   },
-  "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
+  "shapes": {
+    "AccessDeniedException": {
+      "documentation": "<p>User does not have sufficient access to perform this action.</p>",
+      "error": {
+        "httpStatusCode": 403,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>User does not have sufficient access to perform this action.</p>",
-      "error":{
-        "httpStatusCode":403,
-        "senderFault":true
+      "required": [
+        "message"
+      ],
+      "type": "structure"
+    },
+    "AlertManagerDefinitionData": {
+      "documentation": "<p>The alert manager definition data.</p>",
+      "type": "blob"
+    },
+    "AlertManagerDefinitionDescription": {
+      "documentation": "<p>Represents the properties of an alert manager definition.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The time when the alert manager definition was created.</p>",
+          "shape": "Timestamp"
+        },
+        "data": {
+          "documentation": "<p>The alert manager definition.</p>",
+          "shape": "AlertManagerDefinitionData"
+        },
+        "modifiedAt": {
+          "documentation": "<p>The time when the alert manager definition was modified.</p>",
+          "shape": "Timestamp"
+        },
+        "status": {
+          "documentation": "<p>The status of alert manager definition.</p>",
+          "shape": "AlertManagerDefinitionStatus"
+        }
       },
-      "exception":true
-    },
-    "AlertManagerDefinitionData":{
-      "type":"blob",
-      "documentation":"<p>The alert manager definition data.</p>"
-    },
-    "AlertManagerDefinitionDescription":{
-      "type":"structure",
-      "required":[
+      "required": [
         "createdAt",
         "data",
         "modifiedAt",
         "status"
       ],
-      "members":{
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the alert manager definition was created.</p>"
+      "type": "structure"
+    },
+    "AlertManagerDefinitionStatus": {
+      "documentation": "<p>Represents the status of a definition.</p>",
+      "members": {
+        "statusCode": {
+          "documentation": "<p>Status code of this definition.</p>",
+          "shape": "AlertManagerDefinitionStatusCode"
         },
-        "data":{
-          "shape":"AlertManagerDefinitionData",
-          "documentation":"<p>The alert manager definition.</p>"
-        },
-        "modifiedAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the alert manager definition was modified.</p>"
-        },
-        "status":{
-          "shape":"AlertManagerDefinitionStatus",
-          "documentation":"<p>The status of alert manager definition.</p>"
+        "statusReason": {
+          "documentation": "<p>The reason for failure if any.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Represents the properties of an alert manager definition.</p>"
+      "required": [
+        "statusCode"
+      ],
+      "type": "structure"
     },
-    "AlertManagerDefinitionStatus":{
-      "type":"structure",
-      "required":["statusCode"],
-      "members":{
-        "statusCode":{
-          "shape":"AlertManagerDefinitionStatusCode",
-          "documentation":"<p>Status code of this definition.</p>"
-        },
-        "statusReason":{
-          "shape":"String",
-          "documentation":"<p>The reason for failure if any.</p>"
-        }
-      },
-      "documentation":"<p>Represents the status of a definition.</p>"
-    },
-    "AlertManagerDefinitionStatusCode":{
-      "type":"string",
-      "documentation":"<p>State of an alert manager definition.</p>",
-      "enum":[
+    "AlertManagerDefinitionStatusCode": {
+      "documentation": "<p>State of an alert manager definition.</p>",
+      "enum": [
         "CREATING",
         "ACTIVE",
         "UPDATING",
         "DELETING",
         "CREATION_FAILED",
         "UPDATE_FAILED"
-      ]
+      ],
+      "type": "string"
     },
-    "ConflictException":{
-      "type":"structure",
-      "required":[
+    "ConflictException": {
+      "documentation": "<p>Updating or deleting a resource can cause an inconsistent state.</p>",
+      "error": {
+        "httpStatusCode": 409,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
+        },
+        "resourceId": {
+          "documentation": "<p>Identifier of the resource affected.</p>",
+          "shape": "String"
+        },
+        "resourceType": {
+          "documentation": "<p>Type of the resource affected.</p>",
+          "shape": "String"
+        }
+      },
+      "required": [
         "message",
         "resourceId",
         "resourceType"
       ],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
+      "type": "structure"
+    },
+    "CreateAlertManagerDefinitionRequest": {
+      "documentation": "<p>Represents the input of a CreateAlertManagerDefinition operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
         },
-        "resourceId":{
-          "shape":"String",
-          "documentation":"<p>Identifier of the resource affected.</p>"
+        "data": {
+          "documentation": "<p>The alert manager definition data.</p>",
+          "shape": "AlertManagerDefinitionData"
         },
-        "resourceType":{
-          "shape":"String",
-          "documentation":"<p>Type of the resource affected.</p>"
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace in which to create the alert manager definition.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Updating or deleting a resource can cause an inconsistent state.</p>",
-      "error":{
-        "httpStatusCode":409,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "CreateAlertManagerDefinitionRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "data",
         "workspaceId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "data":{
-          "shape":"AlertManagerDefinitionData",
-          "documentation":"<p>The alert manager definition data.</p>"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace in which to create the alert manager definition.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+      "type": "structure"
+    },
+    "CreateAlertManagerDefinitionResponse": {
+      "documentation": "<p>Represents the output of a CreateAlertManagerDefinition operation.</p>",
+      "members": {
+        "status": {
+          "documentation": "<p>The status of alert manager definition.</p>",
+          "shape": "AlertManagerDefinitionStatus"
         }
       },
-      "documentation":"<p>Represents the input of a CreateAlertManagerDefinition operation.</p>"
+      "required": [
+        "status"
+      ],
+      "type": "structure"
     },
-    "CreateAlertManagerDefinitionResponse":{
-      "type":"structure",
-      "required":["status"],
-      "members":{
-        "status":{
-          "shape":"AlertManagerDefinitionStatus",
-          "documentation":"<p>The status of alert manager definition.</p>"
+    "CreateLoggingConfigurationRequest": {
+      "documentation": "<p>Represents the input of a CreateLoggingConfiguration operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
+        },
+        "logGroupArn": {
+          "documentation": "<p>The ARN of the CW log group to which the vended log data will be published.</p>",
+          "shape": "LogGroupArn"
+        },
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to vend logs to.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the output of a CreateAlertManagerDefinition operation.</p>"
-    },
-    "CreateLoggingConfigurationRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "logGroupArn",
         "workspaceId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "logGroupArn":{
-          "shape":"LogGroupArn",
-          "documentation":"<p>The ARN of the CW log group to which the vended log data will be published.</p>"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to vend logs to.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+      "type": "structure"
+    },
+    "CreateLoggingConfigurationResponse": {
+      "documentation": "<p>Represents the output of a CreateLoggingConfiguration operation.</p>",
+      "members": {
+        "status": {
+          "documentation": "<p>The status of the logging configuration.</p>",
+          "shape": "LoggingConfigurationStatus"
         }
       },
-      "documentation":"<p>Represents the input of a CreateLoggingConfiguration operation.</p>"
+      "required": [
+        "status"
+      ],
+      "type": "structure"
     },
-    "CreateLoggingConfigurationResponse":{
-      "type":"structure",
-      "required":["status"],
-      "members":{
-        "status":{
-          "shape":"LoggingConfigurationStatus",
-          "documentation":"<p>The status of the logging configuration.</p>"
+    "CreateRuleGroupsNamespaceRequest": {
+      "documentation": "<p>Represents the input of a CreateRuleGroupsNamespace operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
+        },
+        "data": {
+          "documentation": "<p>The namespace data that define the rule groups.</p>",
+          "shape": "RuleGroupsNamespaceData"
+        },
+        "name": {
+          "documentation": "<p>The rule groups namespace name.</p>",
+          "shape": "RuleGroupsNamespaceName"
+        },
+        "tags": {
+          "documentation": "<p>Optional, user-provided tags for this rule groups namespace.</p>",
+          "shape": "TagMap"
+        },
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace in which to create the rule group namespace.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the output of a CreateLoggingConfiguration operation.</p>"
-    },
-    "CreateRuleGroupsNamespaceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "data",
         "name",
         "workspaceId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
+      "type": "structure"
+    },
+    "CreateRuleGroupsNamespaceResponse": {
+      "documentation": "<p>Represents the output of a CreateRuleGroupsNamespace operation.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceArn"
         },
-        "data":{
-          "shape":"RuleGroupsNamespaceData",
-          "documentation":"<p>The namespace data that define the rule groups.</p>"
+        "name": {
+          "documentation": "<p>The rule groups namespace name.</p>",
+          "shape": "RuleGroupsNamespaceName"
         },
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>The rule groups namespace name.</p>"
+        "status": {
+          "documentation": "<p>The status of rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceStatus"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>Optional, user-provided tags for this rule groups namespace.</p>"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace in which to create the rule group namespace.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+        "tags": {
+          "documentation": "<p>The tags of this rule groups namespace.</p>",
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>Represents the input of a CreateRuleGroupsNamespace operation.</p>"
-    },
-    "CreateRuleGroupsNamespaceResponse":{
-      "type":"structure",
-      "required":[
+      "required": [
         "arn",
         "name",
         "status"
       ],
-      "members":{
-        "arn":{
-          "shape":"RuleGroupsNamespaceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>"
+      "type": "structure"
+    },
+    "CreateWorkspaceRequest": {
+      "documentation": "<p>Represents the input of a CreateWorkspace operation.</p>",
+      "members": {
+        "alias": {
+          "documentation": "<p>An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.</p>",
+          "shape": "WorkspaceAlias"
         },
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>The rule groups namespace name.</p>"
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
         },
-        "status":{
-          "shape":"RuleGroupsNamespaceStatus",
-          "documentation":"<p>The status of rule groups namespace.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags of this rule groups namespace.</p>"
+        "tags": {
+          "documentation": "<p>Optional, user-provided tags for this workspace.</p>",
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>Represents the output of a CreateRuleGroupsNamespace operation.</p>"
+      "type": "structure"
     },
-    "CreateWorkspaceRequest":{
-      "type":"structure",
-      "members":{
-        "alias":{
-          "shape":"WorkspaceAlias",
-          "documentation":"<p>An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.</p>"
+    "CreateWorkspaceResponse": {
+      "documentation": "<p>Represents the output of a CreateWorkspace operation.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The ARN of the workspace that was just created.</p>",
+          "shape": "WorkspaceArn"
         },
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
+        "status": {
+          "documentation": "<p>The status of the workspace that was just created (usually CREATING).</p>",
+          "shape": "WorkspaceStatus"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>Optional, user-provided tags for this workspace.</p>"
+        "tags": {
+          "documentation": "<p>The tags of this workspace.</p>",
+          "shape": "TagMap"
+        },
+        "workspaceId": {
+          "documentation": "<p>The generated ID of the workspace that was just created.</p>",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the input of a CreateWorkspace operation.</p>"
-    },
-    "CreateWorkspaceResponse":{
-      "type":"structure",
-      "required":[
+      "required": [
         "arn",
         "status",
         "workspaceId"
       ],
-      "members":{
-        "arn":{
-          "shape":"WorkspaceArn",
-          "documentation":"<p>The ARN of the workspace that was just created.</p>"
+      "type": "structure"
+    },
+    "DeleteAlertManagerDefinitionRequest": {
+      "documentation": "<p>Represents the input of a DeleteAlertManagerDefinition operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "location": "querystring",
+          "locationName": "clientToken",
+          "shape": "IdempotencyToken"
         },
-        "status":{
-          "shape":"WorkspaceStatus",
-          "documentation":"<p>The status of the workspace that was just created (usually CREATING).</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags of this workspace.</p>"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The generated ID of the workspace that was just created.</p>"
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace in which to delete the alert manager definition.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the output of a CreateWorkspace operation.</p>"
+      "required": [
+        "workspaceId"
+      ],
+      "type": "structure"
     },
-    "DeleteAlertManagerDefinitionRequest":{
-      "type":"structure",
-      "required":["workspaceId"],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true,
-          "location":"querystring",
-          "locationName":"clientToken"
+    "DeleteLoggingConfigurationRequest": {
+      "documentation": "<p>Represents the input of a DeleteLoggingConfiguration operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "location": "querystring",
+          "locationName": "clientToken",
+          "shape": "IdempotencyToken"
         },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace in which to delete the alert manager definition.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to vend logs to.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the input of a DeleteAlertManagerDefinition operation.</p>"
+      "required": [
+        "workspaceId"
+      ],
+      "type": "structure"
     },
-    "DeleteLoggingConfigurationRequest":{
-      "type":"structure",
-      "required":["workspaceId"],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true,
-          "location":"querystring",
-          "locationName":"clientToken"
+    "DeleteRuleGroupsNamespaceRequest": {
+      "documentation": "<p>Represents the input of a DeleteRuleGroupsNamespace operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "location": "querystring",
+          "locationName": "clientToken",
+          "shape": "IdempotencyToken"
         },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to vend logs to.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+        "name": {
+          "documentation": "<p>The rule groups namespace name.</p>",
+          "location": "uri",
+          "locationName": "name",
+          "shape": "RuleGroupsNamespaceName"
+        },
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to delete rule group definition.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the input of a DeleteLoggingConfiguration operation.</p>"
-    },
-    "DeleteRuleGroupsNamespaceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "name",
         "workspaceId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true,
-          "location":"querystring",
-          "locationName":"clientToken"
+      "type": "structure"
+    },
+    "DeleteWorkspaceRequest": {
+      "documentation": "<p>Represents the input of a DeleteWorkspace operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "location": "querystring",
+          "locationName": "clientToken",
+          "shape": "IdempotencyToken"
         },
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>The rule groups namespace name.</p>",
-          "location":"uri",
-          "locationName":"name"
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to delete.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
+        }
+      },
+      "required": [
+        "workspaceId"
+      ],
+      "type": "structure"
+    },
+    "DescribeAlertManagerDefinitionRequest": {
+      "documentation": "<p>Represents the input of a DescribeAlertManagerDefinition operation.</p>",
+      "members": {
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to describe.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
+        }
+      },
+      "required": [
+        "workspaceId"
+      ],
+      "type": "structure"
+    },
+    "DescribeAlertManagerDefinitionResponse": {
+      "documentation": "<p>Represents the output of a DescribeAlertManagerDefinition operation.</p>",
+      "members": {
+        "alertManagerDefinition": {
+          "documentation": "<p>The properties of the selected workspace's alert manager definition.</p>",
+          "shape": "AlertManagerDefinitionDescription"
+        }
+      },
+      "required": [
+        "alertManagerDefinition"
+      ],
+      "type": "structure"
+    },
+    "DescribeLoggingConfigurationRequest": {
+      "documentation": "<p>Represents the input of a DescribeLoggingConfiguration operation.</p>",
+      "members": {
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to vend logs to.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
+        }
+      },
+      "required": [
+        "workspaceId"
+      ],
+      "type": "structure"
+    },
+    "DescribeLoggingConfigurationResponse": {
+      "documentation": "<p>Represents the output of a DescribeLoggingConfiguration operation.</p>",
+      "members": {
+        "loggingConfiguration": {
+          "documentation": "<p>Metadata object containing information about the logging configuration of a workspace.</p>",
+          "shape": "LoggingConfigurationMetadata"
+        }
+      },
+      "required": [
+        "loggingConfiguration"
+      ],
+      "type": "structure"
+    },
+    "DescribeRuleGroupsNamespaceRequest": {
+      "documentation": "<p>Represents the input of a DescribeRuleGroupsNamespace operation.</p>",
+      "members": {
+        "name": {
+          "documentation": "<p>The rule groups namespace.</p>",
+          "location": "uri",
+          "locationName": "name",
+          "shape": "RuleGroupsNamespaceName"
         },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to delete rule group definition.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to describe.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the input of a DeleteRuleGroupsNamespace operation.</p>"
-    },
-    "DeleteWorkspaceRequest":{
-      "type":"structure",
-      "required":["workspaceId"],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true,
-          "location":"querystring",
-          "locationName":"clientToken"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to delete.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
-        }
-      },
-      "documentation":"<p>Represents the input of a DeleteWorkspace operation.</p>"
-    },
-    "DescribeAlertManagerDefinitionRequest":{
-      "type":"structure",
-      "required":["workspaceId"],
-      "members":{
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to describe.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
-        }
-      },
-      "documentation":"<p>Represents the input of a DescribeAlertManagerDefinition operation.</p>"
-    },
-    "DescribeAlertManagerDefinitionResponse":{
-      "type":"structure",
-      "required":["alertManagerDefinition"],
-      "members":{
-        "alertManagerDefinition":{
-          "shape":"AlertManagerDefinitionDescription",
-          "documentation":"<p>The properties of the selected workspace's alert manager definition.</p>"
-        }
-      },
-      "documentation":"<p>Represents the output of a DescribeAlertManagerDefinition operation.</p>"
-    },
-    "DescribeLoggingConfigurationRequest":{
-      "type":"structure",
-      "required":["workspaceId"],
-      "members":{
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to vend logs to.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
-        }
-      },
-      "documentation":"<p>Represents the input of a DescribeLoggingConfiguration operation.</p>"
-    },
-    "DescribeLoggingConfigurationResponse":{
-      "type":"structure",
-      "required":["loggingConfiguration"],
-      "members":{
-        "loggingConfiguration":{
-          "shape":"LoggingConfigurationMetadata",
-          "documentation":"<p>Metadata object containing information about the logging configuration of a workspace.</p>"
-        }
-      },
-      "documentation":"<p>Represents the output of a DescribeLoggingConfiguration operation.</p>"
-    },
-    "DescribeRuleGroupsNamespaceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "name",
         "workspaceId"
       ],
-      "members":{
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>The rule groups namespace.</p>",
-          "location":"uri",
-          "locationName":"name"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to describe.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+      "type": "structure"
+    },
+    "DescribeRuleGroupsNamespaceResponse": {
+      "documentation": "<p>Represents the output of a DescribeRuleGroupsNamespace operation.</p>",
+      "members": {
+        "ruleGroupsNamespace": {
+          "documentation": "<p>The selected rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceDescription"
         }
       },
-      "documentation":"<p>Represents the input of a DescribeRuleGroupsNamespace operation.</p>"
+      "required": [
+        "ruleGroupsNamespace"
+      ],
+      "type": "structure"
     },
-    "DescribeRuleGroupsNamespaceResponse":{
-      "type":"structure",
-      "required":["ruleGroupsNamespace"],
-      "members":{
-        "ruleGroupsNamespace":{
-          "shape":"RuleGroupsNamespaceDescription",
-          "documentation":"<p>The selected rule groups namespace.</p>"
+    "DescribeWorkspaceRequest": {
+      "documentation": "<p>Represents the input of a DescribeWorkspace operation.</p>",
+      "members": {
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to describe.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the output of a DescribeRuleGroupsNamespace operation.</p>"
+      "required": [
+        "workspaceId"
+      ],
+      "type": "structure"
     },
-    "DescribeWorkspaceRequest":{
-      "type":"structure",
-      "required":["workspaceId"],
-      "members":{
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to describe.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+    "DescribeWorkspaceResponse": {
+      "documentation": "<p>Represents the output of a DescribeWorkspace operation.</p>",
+      "members": {
+        "workspace": {
+          "documentation": "<p>The properties of the selected workspace.</p>",
+          "shape": "WorkspaceDescription"
         }
       },
-      "documentation":"<p>Represents the input of a DescribeWorkspace operation.</p>"
+      "required": [
+        "workspace"
+      ],
+      "type": "structure"
     },
-    "DescribeWorkspaceResponse":{
-      "type":"structure",
-      "required":["workspace"],
-      "members":{
-        "workspace":{
-          "shape":"WorkspaceDescription",
-          "documentation":"<p>The properties of the selected workspace.</p>"
+    "IdempotencyToken": {
+      "documentation": "<p>An identifier used to ensure the idempotency of a write request.</p>",
+      "max": 64,
+      "min": 1,
+      "pattern": "[!-~]+",
+      "type": "string"
+    },
+    "Integer": {
+      "box": true,
+      "type": "integer"
+    },
+    "InternalServerException": {
+      "documentation": "<p>Unexpected error during processing of request.</p>",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
+        },
+        "retryAfterSeconds": {
+          "documentation": "<p>Advice to clients on when the call can be safely retried.</p>",
+          "location": "header",
+          "locationName": "Retry-After",
+          "shape": "Integer"
         }
       },
-      "documentation":"<p>Represents the output of a DescribeWorkspace operation.</p>"
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
+      },
+      "type": "structure"
     },
-    "IdempotencyToken":{
-      "type":"string",
-      "documentation":"<p>An identifier used to ensure the idempotency of a write request.</p>",
-      "max":64,
-      "min":1,
-      "pattern":"[!-~]+"
-    },
-    "Integer":{
-      "type":"integer",
-      "box":true
-    },
-    "InternalServerException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
+    "ListRuleGroupsNamespacesRequest": {
+      "documentation": "<p>Represents the input of a ListRuleGroupsNamespaces operation.</p>",
+      "members": {
+        "maxResults": {
+          "documentation": "<p>Maximum results to return in response (default=100, maximum=1000).</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "ListRuleGroupsNamespacesRequestMaxResultsInteger"
         },
-        "retryAfterSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>Advice to clients on when the call can be safely retried.</p>",
-          "location":"header",
-          "locationName":"Retry-After"
+        "name": {
+          "documentation": "<p>Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.</p>",
+          "location": "querystring",
+          "locationName": "name",
+          "shape": "RuleGroupsNamespaceName"
+        },
+        "nextToken": {
+          "documentation": "<p>Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "PaginationToken"
+        },
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Unexpected error during processing of request.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true,
-      "retryable":{"throttling":false}
+      "required": [
+        "workspaceId"
+      ],
+      "type": "structure"
     },
-    "ListRuleGroupsNamespacesRequest":{
-      "type":"structure",
-      "required":["workspaceId"],
-      "members":{
-        "maxResults":{
-          "shape":"ListRuleGroupsNamespacesRequestMaxResultsInteger",
-          "documentation":"<p>Maximum results to return in response (default=100, maximum=1000).</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
+    "ListRuleGroupsNamespacesRequestMaxResultsInteger": {
+      "box": true,
+      "max": 1000,
+      "min": 1,
+      "type": "integer"
+    },
+    "ListRuleGroupsNamespacesResponse": {
+      "documentation": "<p>Represents the output of a ListRuleGroupsNamespaces operation.</p>",
+      "members": {
+        "nextToken": {
+          "documentation": "<p>Pagination token to use when requesting the next page in this list.</p>",
+          "shape": "PaginationToken"
         },
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.</p>",
-          "location":"querystring",
-          "locationName":"name"
-        },
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+        "ruleGroupsNamespaces": {
+          "documentation": "<p>The list of the selected rule groups namespaces.</p>",
+          "shape": "RuleGroupsNamespaceSummaryList"
         }
       },
-      "documentation":"<p>Represents the input of a ListRuleGroupsNamespaces operation.</p>"
+      "required": [
+        "ruleGroupsNamespaces"
+      ],
+      "type": "structure"
     },
-    "ListRuleGroupsNamespacesRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":1000,
-      "min":1
-    },
-    "ListRuleGroupsNamespacesResponse":{
-      "type":"structure",
-      "required":["ruleGroupsNamespaces"],
-      "members":{
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>Pagination token to use when requesting the next page in this list.</p>"
-        },
-        "ruleGroupsNamespaces":{
-          "shape":"RuleGroupsNamespaceSummaryList",
-          "documentation":"<p>The list of the selected rule groups namespaces.</p>"
+    "ListTagsForResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The ARN of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Represents the output of a ListRuleGroupsNamespaces operation.</p>"
+      "required": [
+        "resourceArn"
+      ],
+      "type": "structure"
     },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["resourceArn"],
-      "members":{
-        "resourceArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{"shape":"TagMap"}
-      }
-    },
-    "ListWorkspacesRequest":{
-      "type":"structure",
-      "members":{
-        "alias":{
-          "shape":"WorkspaceAlias",
-          "documentation":"<p>Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.</p>",
-          "location":"querystring",
-          "locationName":"alias"
-        },
-        "maxResults":{
-          "shape":"ListWorkspacesRequestMaxResultsInteger",
-          "documentation":"<p>Maximum results to return in response (default=100, maximum=1000).</p>",
-          "location":"querystring",
-          "locationName":"maxResults"
-        },
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>Represents the input of a ListWorkspaces operation.</p>"
+      "type": "structure"
     },
-    "ListWorkspacesRequestMaxResultsInteger":{
-      "type":"integer",
-      "box":true,
-      "max":1000,
-      "min":1
-    },
-    "ListWorkspacesResponse":{
-      "type":"structure",
-      "required":["workspaces"],
-      "members":{
-        "nextToken":{
-          "shape":"PaginationToken",
-          "documentation":"<p>Pagination token to use when requesting the next page in this list.</p>"
+    "ListWorkspacesRequest": {
+      "documentation": "<p>Represents the input of a ListWorkspaces operation.</p>",
+      "members": {
+        "alias": {
+          "documentation": "<p>Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.</p>",
+          "location": "querystring",
+          "locationName": "alias",
+          "shape": "WorkspaceAlias"
         },
-        "workspaces":{
-          "shape":"WorkspaceSummaryList",
-          "documentation":"<p>The list of existing workspaces, including those undergoing creation or deletion.</p>"
+        "maxResults": {
+          "documentation": "<p>Maximum results to return in response (default=100, maximum=1000).</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "ListWorkspacesRequestMaxResultsInteger"
+        },
+        "nextToken": {
+          "documentation": "<p>Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "PaginationToken"
         }
       },
-      "documentation":"<p>Represents the output of a ListWorkspaces operation.</p>"
+      "type": "structure"
     },
-    "LogGroupArn":{
-      "type":"string",
-      "pattern":"^arn:aws[a-z0-9-]*:logs:[a-z0-9-]+:\\d{12}:log-group:[A-Za-z0-9\\.\\-\\_\\#/]{1,512}\\:\\*$"
+    "ListWorkspacesRequestMaxResultsInteger": {
+      "box": true,
+      "max": 1000,
+      "min": 1,
+      "type": "integer"
     },
-    "LoggingConfigurationMetadata":{
-      "type":"structure",
-      "required":[
+    "ListWorkspacesResponse": {
+      "documentation": "<p>Represents the output of a ListWorkspaces operation.</p>",
+      "members": {
+        "nextToken": {
+          "documentation": "<p>Pagination token to use when requesting the next page in this list.</p>",
+          "shape": "PaginationToken"
+        },
+        "workspaces": {
+          "documentation": "<p>The list of existing workspaces, including those undergoing creation or deletion.</p>",
+          "shape": "WorkspaceSummaryList"
+        }
+      },
+      "required": [
+        "workspaces"
+      ],
+      "type": "structure"
+    },
+    "LogGroupArn": {
+      "pattern": "^arn:aws[a-z0-9-]*:logs:[a-z0-9-]+:\\d{12}:log-group:[A-Za-z0-9\\.\\-\\_\\#/]{1,512}\\:\\*$",
+      "type": "string"
+    },
+    "LoggingConfigurationMetadata": {
+      "documentation": "<p>Represents the properties of a logging configuration metadata.</p>",
+      "members": {
+        "createdAt": {
+          "documentation": "<p>The time when the logging configuration was created.</p>",
+          "shape": "Timestamp"
+        },
+        "logGroupArn": {
+          "documentation": "<p>The ARN of the CW log group to which the vended log data will be published.</p>",
+          "shape": "LogGroupArn"
+        },
+        "modifiedAt": {
+          "documentation": "<p>The time when the logging configuration was modified.</p>",
+          "shape": "Timestamp"
+        },
+        "status": {
+          "documentation": "<p>The status of the logging configuration.</p>",
+          "shape": "LoggingConfigurationStatus"
+        },
+        "workspace": {
+          "documentation": "<p>The workspace where the logging configuration exists.</p>",
+          "shape": "WorkspaceId"
+        }
+      },
+      "required": [
         "createdAt",
         "logGroupArn",
         "modifiedAt",
         "status",
         "workspace"
       ],
-      "members":{
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the logging configuration was created.</p>"
+      "type": "structure"
+    },
+    "LoggingConfigurationStatus": {
+      "documentation": "<p>Represents the status of a logging configuration.</p>",
+      "members": {
+        "statusCode": {
+          "documentation": "<p>Status code of the logging configuration.</p>",
+          "shape": "LoggingConfigurationStatusCode"
         },
-        "logGroupArn":{
-          "shape":"LogGroupArn",
-          "documentation":"<p>The ARN of the CW log group to which the vended log data will be published.</p>"
-        },
-        "modifiedAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the logging configuration was modified.</p>"
-        },
-        "status":{
-          "shape":"LoggingConfigurationStatus",
-          "documentation":"<p>The status of the logging configuration.</p>"
-        },
-        "workspace":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The workspace where the logging configuration exists.</p>"
+        "statusReason": {
+          "documentation": "<p>The reason for failure if any.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Represents the properties of a logging configuration metadata.</p>"
+      "required": [
+        "statusCode"
+      ],
+      "type": "structure"
     },
-    "LoggingConfigurationStatus":{
-      "type":"structure",
-      "required":["statusCode"],
-      "members":{
-        "statusCode":{
-          "shape":"LoggingConfigurationStatusCode",
-          "documentation":"<p>Status code of the logging configuration.</p>"
-        },
-        "statusReason":{
-          "shape":"String",
-          "documentation":"<p>The reason for failure if any.</p>"
-        }
-      },
-      "documentation":"<p>Represents the status of a logging configuration.</p>"
-    },
-    "LoggingConfigurationStatusCode":{
-      "type":"string",
-      "documentation":"<p>State of a logging configuration.</p>",
-      "enum":[
+    "LoggingConfigurationStatusCode": {
+      "documentation": "<p>State of a logging configuration.</p>",
+      "enum": [
         "CREATING",
         "ACTIVE",
         "UPDATING",
         "DELETING",
         "CREATION_FAILED",
         "UPDATE_FAILED"
-      ]
+      ],
+      "type": "string"
     },
-    "PaginationToken":{
-      "type":"string",
-      "documentation":"<p>A token used to access the next page in a paginated result set.</p>"
+    "PaginationToken": {
+      "documentation": "<p>A token used to access the next page in a paginated result set.</p>",
+      "type": "string"
     },
-    "PutAlertManagerDefinitionRequest":{
-      "type":"structure",
-      "required":[
+    "PutAlertManagerDefinitionRequest": {
+      "documentation": "<p>Represents the input of a PutAlertManagerDefinition operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
+        },
+        "data": {
+          "documentation": "<p>The alert manager definition data.</p>",
+          "shape": "AlertManagerDefinitionData"
+        },
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace in which to update the alert manager definition.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
+        }
+      },
+      "required": [
         "data",
         "workspaceId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "data":{
-          "shape":"AlertManagerDefinitionData",
-          "documentation":"<p>The alert manager definition data.</p>"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace in which to update the alert manager definition.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+      "type": "structure"
+    },
+    "PutAlertManagerDefinitionResponse": {
+      "documentation": "<p>Represents the output of a PutAlertManagerDefinition operation.</p>",
+      "members": {
+        "status": {
+          "documentation": "<p>The status of alert manager definition.</p>",
+          "shape": "AlertManagerDefinitionStatus"
         }
       },
-      "documentation":"<p>Represents the input of a PutAlertManagerDefinition operation.</p>"
+      "required": [
+        "status"
+      ],
+      "type": "structure"
     },
-    "PutAlertManagerDefinitionResponse":{
-      "type":"structure",
-      "required":["status"],
-      "members":{
-        "status":{
-          "shape":"AlertManagerDefinitionStatus",
-          "documentation":"<p>The status of alert manager definition.</p>"
+    "PutRuleGroupsNamespaceRequest": {
+      "documentation": "<p>Represents the input of a PutRuleGroupsNamespace operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
+        },
+        "data": {
+          "documentation": "<p>The namespace data that define the rule groups.</p>",
+          "shape": "RuleGroupsNamespaceData"
+        },
+        "name": {
+          "documentation": "<p>The rule groups namespace name.</p>",
+          "location": "uri",
+          "locationName": "name",
+          "shape": "RuleGroupsNamespaceName"
+        },
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace in which to update the rule group namespace.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the output of a PutAlertManagerDefinition operation.</p>"
-    },
-    "PutRuleGroupsNamespaceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "data",
         "name",
         "workspaceId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
+      "type": "structure"
+    },
+    "PutRuleGroupsNamespaceResponse": {
+      "documentation": "<p>Represents the output of a PutRuleGroupsNamespace operation.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceArn"
         },
-        "data":{
-          "shape":"RuleGroupsNamespaceData",
-          "documentation":"<p>The namespace data that define the rule groups.</p>"
+        "name": {
+          "documentation": "<p>The rule groups namespace name.</p>",
+          "shape": "RuleGroupsNamespaceName"
         },
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>The rule groups namespace name.</p>",
-          "location":"uri",
-          "locationName":"name"
+        "status": {
+          "documentation": "<p>The status of rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceStatus"
         },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace in which to update the rule group namespace.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+        "tags": {
+          "documentation": "<p>The tags of this rule groups namespace.</p>",
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>Represents the input of a PutRuleGroupsNamespace operation.</p>"
-    },
-    "PutRuleGroupsNamespaceResponse":{
-      "type":"structure",
-      "required":[
+      "required": [
         "arn",
         "name",
         "status"
       ],
-      "members":{
-        "arn":{
-          "shape":"RuleGroupsNamespaceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>"
+      "type": "structure"
+    },
+    "ResourceNotFoundException": {
+      "documentation": "<p>Request references a resource which does not exist.</p>",
+      "error": {
+        "httpStatusCode": 404,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>The rule groups namespace name.</p>"
+        "resourceId": {
+          "documentation": "<p>Identifier of the resource affected.</p>",
+          "shape": "String"
         },
-        "status":{
-          "shape":"RuleGroupsNamespaceStatus",
-          "documentation":"<p>The status of rule groups namespace.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags of this rule groups namespace.</p>"
+        "resourceType": {
+          "documentation": "<p>Type of the resource affected.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Represents the output of a PutRuleGroupsNamespace operation.</p>"
-    },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "required":[
+      "required": [
         "message",
         "resourceId",
         "resourceType"
       ],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
+      "type": "structure"
+    },
+    "RuleGroupsNamespaceArn": {
+      "documentation": "<p>An ARN identifying a rule groups namespace.</p>",
+      "type": "string"
+    },
+    "RuleGroupsNamespaceData": {
+      "documentation": "<p>The rule groups namespace data.</p>",
+      "type": "blob"
+    },
+    "RuleGroupsNamespaceDescription": {
+      "documentation": "<p>Represents a description of the rule groups namespace.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceArn"
         },
-        "resourceId":{
-          "shape":"String",
-          "documentation":"<p>Identifier of the resource affected.</p>"
+        "createdAt": {
+          "documentation": "<p>The time when the rule groups namespace was created.</p>",
+          "shape": "Timestamp"
         },
-        "resourceType":{
-          "shape":"String",
-          "documentation":"<p>Type of the resource affected.</p>"
+        "data": {
+          "documentation": "<p>The rule groups namespace data.</p>",
+          "shape": "RuleGroupsNamespaceData"
+        },
+        "modifiedAt": {
+          "documentation": "<p>The time when the rule groups namespace was modified.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The rule groups namespace name.</p>",
+          "shape": "RuleGroupsNamespaceName"
+        },
+        "status": {
+          "documentation": "<p>The status of rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags of this rule groups namespace.</p>",
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>Request references a resource which does not exist.</p>",
-      "error":{
-        "httpStatusCode":404,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "RuleGroupsNamespaceArn":{
-      "type":"string",
-      "documentation":"<p>An ARN identifying a rule groups namespace.</p>"
-    },
-    "RuleGroupsNamespaceData":{
-      "type":"blob",
-      "documentation":"<p>The rule groups namespace data.</p>"
-    },
-    "RuleGroupsNamespaceDescription":{
-      "type":"structure",
-      "required":[
+      "required": [
         "arn",
         "createdAt",
         "data",
@@ -1243,505 +1627,499 @@
         "name",
         "status"
       ],
-      "members":{
-        "arn":{
-          "shape":"RuleGroupsNamespaceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>"
+      "type": "structure"
+    },
+    "RuleGroupsNamespaceName": {
+      "documentation": "<p>The namespace name that the rule group belong to.</p>",
+      "max": 64,
+      "min": 1,
+      "pattern": "[0-9A-Za-z][-.0-9A-Z_a-z]*",
+      "type": "string"
+    },
+    "RuleGroupsNamespaceStatus": {
+      "documentation": "<p>Represents the status of a namespace.</p>",
+      "members": {
+        "statusCode": {
+          "documentation": "<p>Status code of this namespace.</p>",
+          "shape": "RuleGroupsNamespaceStatusCode"
         },
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the rule groups namespace was created.</p>"
-        },
-        "data":{
-          "shape":"RuleGroupsNamespaceData",
-          "documentation":"<p>The rule groups namespace data.</p>"
-        },
-        "modifiedAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the rule groups namespace was modified.</p>"
-        },
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>The rule groups namespace name.</p>"
-        },
-        "status":{
-          "shape":"RuleGroupsNamespaceStatus",
-          "documentation":"<p>The status of rule groups namespace.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags of this rule groups namespace.</p>"
+        "statusReason": {
+          "documentation": "<p>The reason for failure if any.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Represents a description of the rule groups namespace.</p>"
+      "required": [
+        "statusCode"
+      ],
+      "type": "structure"
     },
-    "RuleGroupsNamespaceName":{
-      "type":"string",
-      "documentation":"<p>The namespace name that the rule group belong to.</p>",
-      "max":64,
-      "min":1,
-      "pattern":"[0-9A-Za-z][-.0-9A-Z_a-z]*"
-    },
-    "RuleGroupsNamespaceStatus":{
-      "type":"structure",
-      "required":["statusCode"],
-      "members":{
-        "statusCode":{
-          "shape":"RuleGroupsNamespaceStatusCode",
-          "documentation":"<p>Status code of this namespace.</p>"
-        },
-        "statusReason":{
-          "shape":"String",
-          "documentation":"<p>The reason for failure if any.</p>"
-        }
-      },
-      "documentation":"<p>Represents the status of a namespace.</p>"
-    },
-    "RuleGroupsNamespaceStatusCode":{
-      "type":"string",
-      "documentation":"<p>State of a namespace.</p>",
-      "enum":[
+    "RuleGroupsNamespaceStatusCode": {
+      "documentation": "<p>State of a namespace.</p>",
+      "enum": [
         "CREATING",
         "ACTIVE",
         "UPDATING",
         "DELETING",
         "CREATION_FAILED",
         "UPDATE_FAILED"
-      ]
+      ],
+      "type": "string"
     },
-    "RuleGroupsNamespaceSummary":{
-      "type":"structure",
-      "required":[
+    "RuleGroupsNamespaceSummary": {
+      "documentation": "<p>Represents a summary of the rule groups namespace.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceArn"
+        },
+        "createdAt": {
+          "documentation": "<p>The time when the rule groups namespace was created.</p>",
+          "shape": "Timestamp"
+        },
+        "modifiedAt": {
+          "documentation": "<p>The time when the rule groups namespace was modified.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The rule groups namespace name.</p>",
+          "shape": "RuleGroupsNamespaceName"
+        },
+        "status": {
+          "documentation": "<p>The status of rule groups namespace.</p>",
+          "shape": "RuleGroupsNamespaceStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags of this rule groups namespace.</p>",
+          "shape": "TagMap"
+        }
+      },
+      "required": [
         "arn",
         "createdAt",
         "modifiedAt",
         "name",
         "status"
       ],
-      "members":{
-        "arn":{
-          "shape":"RuleGroupsNamespaceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>"
+      "type": "structure"
+    },
+    "RuleGroupsNamespaceSummaryList": {
+      "documentation": "<p>A list of rule groups namespace summary.</p>",
+      "member": {
+        "shape": "RuleGroupsNamespaceSummary"
+      },
+      "type": "list"
+    },
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>Request would cause a service quota to be exceeded.</p>",
+      "error": {
+        "httpStatusCode": 402,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
         },
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the rule groups namespace was created.</p>"
+        "quotaCode": {
+          "documentation": "<p>Service Quotas requirement to identify originating quota.</p>",
+          "shape": "String"
         },
-        "modifiedAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the rule groups namespace was modified.</p>"
+        "resourceId": {
+          "documentation": "<p>Identifier of the resource affected.</p>",
+          "shape": "String"
         },
-        "name":{
-          "shape":"RuleGroupsNamespaceName",
-          "documentation":"<p>The rule groups namespace name.</p>"
+        "resourceType": {
+          "documentation": "<p>Type of the resource affected.</p>",
+          "shape": "String"
         },
-        "status":{
-          "shape":"RuleGroupsNamespaceStatus",
-          "documentation":"<p>The status of rule groups namespace.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags of this rule groups namespace.</p>"
+        "serviceCode": {
+          "documentation": "<p>Service Quotas requirement to identify originating service.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Represents a summary of the rule groups namespace.</p>"
-    },
-    "RuleGroupsNamespaceSummaryList":{
-      "type":"list",
-      "member":{"shape":"RuleGroupsNamespaceSummary"},
-      "documentation":"<p>A list of rule groups namespace summary.</p>"
-    },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "required":[
+      "required": [
         "message",
         "quotaCode",
         "resourceId",
         "resourceType",
         "serviceCode"
       ],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
+      "type": "structure"
+    },
+    "String": {
+      "type": "string"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+      "type": "string"
+    },
+    "TagKeys": {
+      "member": {
+        "shape": "TagKey"
+      },
+      "type": "list"
+    },
+    "TagMap": {
+      "documentation": "<p>The list of tags assigned to the resource.</p>",
+      "key": {
+        "documentation": "<p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 128 Unicode characters. Valid characters are Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @ May not begin with <code>aws:</code>.</p>",
+        "shape": "TagKey"
+      },
+      "max": 50,
+      "min": 0,
+      "type": "map",
+      "value": {
+        "documentation": "<p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters. Valid characters are Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @</p>",
+        "shape": "TagValue"
+      }
+    },
+    "TagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The ARN of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "String"
         },
-        "quotaCode":{
-          "shape":"String",
-          "documentation":"<p>Service Quotas requirement to identify originating quota.</p>"
-        },
-        "resourceId":{
-          "shape":"String",
-          "documentation":"<p>Identifier of the resource affected.</p>"
-        },
-        "resourceType":{
-          "shape":"String",
-          "documentation":"<p>Type of the resource affected.</p>"
-        },
-        "serviceCode":{
-          "shape":"String",
-          "documentation":"<p>Service Quotas requirement to identify originating service.</p>"
+        "tags": {
+          "shape": "TagMap"
         }
       },
-      "documentation":"<p>Request would cause a service quota to be exceeded.</p>",
-      "error":{
-        "httpStatusCode":402,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "String":{"type":"string"},
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
-    },
-    "TagKeys":{
-      "type":"list",
-      "member":{"shape":"TagKey"}
-    },
-    "TagMap":{
-      "type":"map",
-      "key":{
-        "shape":"TagKey",
-        "documentation":"<p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and accept a maximum of 128 Unicode characters. Valid characters are Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @ May not begin with <code>aws:</code>.</p>"
-      },
-      "value":{
-        "shape":"TagValue",
-        "documentation":"<p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters. Valid characters are Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @</p>"
-      },
-      "documentation":"<p>The list of tags assigned to the resource.</p>",
-      "max":50,
-      "min":0
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "resourceArn",
         "tags"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        },
-        "tags":{"shape":"TagMap"}
-      }
+      "type": "structure"
     },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
     },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "min":0,
-      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
+    "TagValue": {
+      "max": 256,
+      "min": 0,
+      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+      "type": "string"
     },
-    "ThrottlingException":{
-      "type":"structure",
-      "required":["message"],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
+    "ThrottlingException": {
+      "documentation": "<p>Request was denied due to request throttling.</p>",
+      "error": {
+        "httpStatusCode": 429,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
         },
-        "quotaCode":{
-          "shape":"String",
-          "documentation":"<p>Service Quotas requirement to identify originating quota.</p>"
+        "quotaCode": {
+          "documentation": "<p>Service Quotas requirement to identify originating quota.</p>",
+          "shape": "String"
         },
-        "retryAfterSeconds":{
-          "shape":"Integer",
-          "documentation":"<p>Advice to clients on when the call can be safely retried.</p>",
-          "location":"header",
-          "locationName":"Retry-After"
+        "retryAfterSeconds": {
+          "documentation": "<p>Advice to clients on when the call can be safely retried.</p>",
+          "location": "header",
+          "locationName": "Retry-After",
+          "shape": "Integer"
         },
-        "serviceCode":{
-          "shape":"String",
-          "documentation":"<p>Service Quotas requirement to identify originating service.</p>"
+        "serviceCode": {
+          "documentation": "<p>Service Quotas requirement to identify originating service.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Request was denied due to request throttling.</p>",
-      "error":{
-        "httpStatusCode":429,
-        "senderFault":true
+      "required": [
+        "message"
+      ],
+      "retryable": {
+        "throttling": false
       },
-      "exception":true,
-      "retryable":{"throttling":false}
+      "type": "structure"
     },
-    "Timestamp":{"type":"timestamp"},
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "Timestamp": {
+      "type": "timestamp"
+    },
+    "UntagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The ARN of the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "String"
+        },
+        "tagKeys": {
+          "documentation": "<p>One or more tag keys</p>",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeys"
+        }
+      },
+      "required": [
         "resourceArn",
         "tagKeys"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"String",
-          "documentation":"<p>The ARN of the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateLoggingConfigurationRequest": {
+      "documentation": "<p>Represents the input of an UpdateLoggingConfiguration operation.</p>",
+      "members": {
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
         },
-        "tagKeys":{
-          "shape":"TagKeys",
-          "documentation":"<p>One or more tag keys</p>",
-          "location":"querystring",
-          "locationName":"tagKeys"
+        "logGroupArn": {
+          "documentation": "<p>The ARN of the CW log group to which the vended log data will be published.</p>",
+          "shape": "LogGroupArn"
+        },
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace to vend logs to.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
-      }
-    },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateLoggingConfigurationRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "logGroupArn",
         "workspaceId"
       ],
-      "members":{
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
-        },
-        "logGroupArn":{
-          "shape":"LogGroupArn",
-          "documentation":"<p>The ARN of the CW log group to which the vended log data will be published.</p>"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace to vend logs to.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+      "type": "structure"
+    },
+    "UpdateLoggingConfigurationResponse": {
+      "documentation": "<p>Represents the output of an UpdateLoggingConfiguration operation.</p>",
+      "members": {
+        "status": {
+          "documentation": "<p>The status of the logging configuration.</p>",
+          "shape": "LoggingConfigurationStatus"
         }
       },
-      "documentation":"<p>Represents the input of an UpdateLoggingConfiguration operation.</p>"
+      "required": [
+        "status"
+      ],
+      "type": "structure"
     },
-    "UpdateLoggingConfigurationResponse":{
-      "type":"structure",
-      "required":["status"],
-      "members":{
-        "status":{
-          "shape":"LoggingConfigurationStatus",
-          "documentation":"<p>The status of the logging configuration.</p>"
+    "UpdateWorkspaceAliasRequest": {
+      "documentation": "<p>Represents the input of an UpdateWorkspaceAlias operation.</p>",
+      "members": {
+        "alias": {
+          "documentation": "<p>The new alias of the workspace.</p>",
+          "shape": "WorkspaceAlias"
+        },
+        "clientToken": {
+          "documentation": "<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
+          "idempotencyToken": true,
+          "shape": "IdempotencyToken"
+        },
+        "workspaceId": {
+          "documentation": "<p>The ID of the workspace being updated.</p>",
+          "location": "uri",
+          "locationName": "workspaceId",
+          "shape": "WorkspaceId"
         }
       },
-      "documentation":"<p>Represents the output of an UpdateLoggingConfiguration operation.</p>"
+      "required": [
+        "workspaceId"
+      ],
+      "type": "structure"
     },
-    "UpdateWorkspaceAliasRequest":{
-      "type":"structure",
-      "required":["workspaceId"],
-      "members":{
-        "alias":{
-          "shape":"WorkspaceAlias",
-          "documentation":"<p>The new alias of the workspace.</p>"
+    "Uri": {
+      "max": 1024,
+      "min": 1,
+      "type": "string"
+    },
+    "ValidationException": {
+      "documentation": "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+      "error": {
+        "httpStatusCode": 400,
+        "senderFault": true
+      },
+      "exception": true,
+      "members": {
+        "fieldList": {
+          "documentation": "<p>The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate in the message.</p>",
+          "shape": "ValidationExceptionFieldList"
         },
-        "clientToken":{
-          "shape":"IdempotencyToken",
-          "documentation":"<p>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>",
-          "idempotencyToken":true
+        "message": {
+          "documentation": "<p>Description of the error.</p>",
+          "shape": "String"
         },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>The ID of the workspace being updated.</p>",
-          "location":"uri",
-          "locationName":"workspaceId"
+        "reason": {
+          "documentation": "<p>Reason the request failed validation.</p>",
+          "shape": "ValidationExceptionReason"
         }
       },
-      "documentation":"<p>Represents the input of an UpdateWorkspaceAlias operation.</p>"
-    },
-    "Uri":{
-      "type":"string",
-      "max":1024,
-      "min":1
-    },
-    "ValidationException":{
-      "type":"structure",
-      "required":[
+      "required": [
         "message",
         "reason"
       ],
-      "members":{
-        "fieldList":{
-          "shape":"ValidationExceptionFieldList",
-          "documentation":"<p>The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate in the message.</p>"
+      "type": "structure"
+    },
+    "ValidationExceptionField": {
+      "documentation": "<p>Stores information about a field passed inside a request that resulted in an exception.</p>",
+      "members": {
+        "message": {
+          "documentation": "<p>Message describing why the field failed validation.</p>",
+          "shape": "String"
         },
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error.</p>"
-        },
-        "reason":{
-          "shape":"ValidationExceptionReason",
-          "documentation":"<p>Reason the request failed validation.</p>"
+        "name": {
+          "documentation": "<p>The field name.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
-      "error":{
-        "httpStatusCode":400,
-        "senderFault":true
-      },
-      "exception":true
-    },
-    "ValidationExceptionField":{
-      "type":"structure",
-      "required":[
+      "required": [
         "message",
         "name"
       ],
-      "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Message describing why the field failed validation.</p>"
-        },
-        "name":{
-          "shape":"String",
-          "documentation":"<p>The field name.</p>"
-        }
+      "type": "structure"
+    },
+    "ValidationExceptionFieldList": {
+      "documentation": "<p>A list of fields.</p>",
+      "member": {
+        "shape": "ValidationExceptionField"
       },
-      "documentation":"<p>Stores information about a field passed inside a request that resulted in an exception.</p>"
+      "type": "list"
     },
-    "ValidationExceptionFieldList":{
-      "type":"list",
-      "member":{"shape":"ValidationExceptionField"},
-      "documentation":"<p>A list of fields.</p>"
-    },
-    "ValidationExceptionReason":{
-      "type":"string",
-      "documentation":"<p>Possible reasons a request failed validation.</p>",
-      "enum":[
+    "ValidationExceptionReason": {
+      "documentation": "<p>Possible reasons a request failed validation.</p>",
+      "enum": [
         "UNKNOWN_OPERATION",
         "CANNOT_PARSE",
         "FIELD_VALIDATION_FAILED",
         "OTHER"
-      ]
+      ],
+      "type": "string"
     },
-    "WorkspaceAlias":{
-      "type":"string",
-      "documentation":"<p>A user-assigned workspace alias.</p>",
-      "max":100,
-      "min":1
+    "WorkspaceAlias": {
+      "documentation": "<p>A user-assigned workspace alias.</p>",
+      "max": 100,
+      "min": 1,
+      "type": "string"
     },
-    "WorkspaceArn":{
-      "type":"string",
-      "documentation":"<p>An ARN identifying a Workspace.</p>"
+    "WorkspaceArn": {
+      "documentation": "<p>An ARN identifying a Workspace.</p>",
+      "type": "string"
     },
-    "WorkspaceDescription":{
-      "type":"structure",
-      "required":[
+    "WorkspaceDescription": {
+      "documentation": "<p>Represents the properties of a workspace.</p>",
+      "members": {
+        "alias": {
+          "documentation": "<p>Alias of this workspace.</p>",
+          "shape": "WorkspaceAlias"
+        },
+        "arn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of this workspace.</p>",
+          "shape": "WorkspaceArn"
+        },
+        "createdAt": {
+          "documentation": "<p>The time when the workspace was created.</p>",
+          "shape": "Timestamp"
+        },
+        "prometheusEndpoint": {
+          "documentation": "<p>Prometheus endpoint URI.</p>",
+          "shape": "Uri"
+        },
+        "status": {
+          "documentation": "<p>The status of this workspace.</p>",
+          "shape": "WorkspaceStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags of this workspace.</p>",
+          "shape": "TagMap"
+        },
+        "workspaceId": {
+          "documentation": "<p>Unique string identifying this workspace.</p>",
+          "shape": "WorkspaceId"
+        }
+      },
+      "required": [
         "arn",
         "createdAt",
         "status",
         "workspaceId"
       ],
-      "members":{
-        "alias":{
-          "shape":"WorkspaceAlias",
-          "documentation":"<p>Alias of this workspace.</p>"
-        },
-        "arn":{
-          "shape":"WorkspaceArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of this workspace.</p>"
-        },
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the workspace was created.</p>"
-        },
-        "prometheusEndpoint":{
-          "shape":"Uri",
-          "documentation":"<p>Prometheus endpoint URI.</p>"
-        },
-        "status":{
-          "shape":"WorkspaceStatus",
-          "documentation":"<p>The status of this workspace.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags of this workspace.</p>"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>Unique string identifying this workspace.</p>"
+      "type": "structure"
+    },
+    "WorkspaceId": {
+      "documentation": "<p>A workspace ID.</p>",
+      "max": 64,
+      "min": 1,
+      "pattern": "[0-9A-Za-z][-.0-9A-Z_a-z]*",
+      "type": "string"
+    },
+    "WorkspaceStatus": {
+      "documentation": "<p>Represents the status of a workspace.</p>",
+      "members": {
+        "statusCode": {
+          "documentation": "<p>Status code of this workspace.</p>",
+          "shape": "WorkspaceStatusCode"
         }
       },
-      "documentation":"<p>Represents the properties of a workspace.</p>"
+      "required": [
+        "statusCode"
+      ],
+      "type": "structure"
     },
-    "WorkspaceId":{
-      "type":"string",
-      "documentation":"<p>A workspace ID.</p>",
-      "max":64,
-      "min":1,
-      "pattern":"[0-9A-Za-z][-.0-9A-Z_a-z]*"
-    },
-    "WorkspaceStatus":{
-      "type":"structure",
-      "required":["statusCode"],
-      "members":{
-        "statusCode":{
-          "shape":"WorkspaceStatusCode",
-          "documentation":"<p>Status code of this workspace.</p>"
-        }
-      },
-      "documentation":"<p>Represents the status of a workspace.</p>"
-    },
-    "WorkspaceStatusCode":{
-      "type":"string",
-      "documentation":"<p>State of a workspace.</p>",
-      "enum":[
+    "WorkspaceStatusCode": {
+      "documentation": "<p>State of a workspace.</p>",
+      "enum": [
         "CREATING",
         "ACTIVE",
         "UPDATING",
         "DELETING",
         "CREATION_FAILED"
-      ]
+      ],
+      "type": "string"
     },
-    "WorkspaceSummary":{
-      "type":"structure",
-      "required":[
+    "WorkspaceSummary": {
+      "documentation": "<p>Represents a summary of the properties of a workspace.</p>",
+      "members": {
+        "alias": {
+          "documentation": "<p>Alias of this workspace.</p>",
+          "shape": "WorkspaceAlias"
+        },
+        "arn": {
+          "documentation": "<p>The AmazonResourceName of this workspace.</p>",
+          "shape": "WorkspaceArn"
+        },
+        "createdAt": {
+          "documentation": "<p>The time when the workspace was created.</p>",
+          "shape": "Timestamp"
+        },
+        "status": {
+          "documentation": "<p>The status of this workspace.</p>",
+          "shape": "WorkspaceStatus"
+        },
+        "tags": {
+          "documentation": "<p>The tags of this workspace.</p>",
+          "shape": "TagMap"
+        },
+        "workspaceId": {
+          "documentation": "<p>Unique string identifying this workspace.</p>",
+          "shape": "WorkspaceId"
+        }
+      },
+      "required": [
         "arn",
         "createdAt",
         "status",
         "workspaceId"
       ],
-      "members":{
-        "alias":{
-          "shape":"WorkspaceAlias",
-          "documentation":"<p>Alias of this workspace.</p>"
-        },
-        "arn":{
-          "shape":"WorkspaceArn",
-          "documentation":"<p>The AmazonResourceName of this workspace.</p>"
-        },
-        "createdAt":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time when the workspace was created.</p>"
-        },
-        "status":{
-          "shape":"WorkspaceStatus",
-          "documentation":"<p>The status of this workspace.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags of this workspace.</p>"
-        },
-        "workspaceId":{
-          "shape":"WorkspaceId",
-          "documentation":"<p>Unique string identifying this workspace.</p>"
-        }
-      },
-      "documentation":"<p>Represents a summary of the properties of a workspace.</p>"
+      "type": "structure"
     },
-    "WorkspaceSummaryList":{
-      "type":"list",
-      "member":{"shape":"WorkspaceSummary"},
-      "documentation":"<p>A list of workspace summaries.</p>"
+    "WorkspaceSummaryList": {
+      "documentation": "<p>A list of workspace summaries.</p>",
+      "member": {
+        "shape": "WorkspaceSummary"
+      },
+      "type": "list"
     }
   },
-  "documentation":"<p>Amazon Managed Service for Prometheus</p>"
+  "version": "2.0"
 }

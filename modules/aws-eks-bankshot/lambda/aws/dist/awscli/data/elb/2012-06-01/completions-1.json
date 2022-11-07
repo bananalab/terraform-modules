@@ -1,6 +1,388 @@
 {
-  "version": "1.0",
+  "operations": {
+    "AddTags": {
+      "LoadBalancerNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "ApplySecurityGroupsToLoadBalancer": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "SecurityGroups": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SecurityGroups",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "AttachLoadBalancerToSubnets": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "Subnets": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Subnets",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "ConfigureHealthCheck": {
+      "HealthCheck": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HealthCheck",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DeleteLoadBalancer": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DeleteLoadBalancerListeners": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DeleteLoadBalancerPolicy": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "PolicyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyName",
+            "resourceName": "LoadBalancerPolicy"
+          }
+        ]
+      }
+    },
+    "DeregisterInstancesFromLoadBalancer": {
+      "Instances": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Instances",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DescribeInstanceHealth": {
+      "Instances": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Instances",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DescribeLoadBalancerAttributes": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DescribeLoadBalancerPolicies": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "PolicyNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyName",
+            "resourceName": "LoadBalancerPolicy"
+          }
+        ]
+      }
+    },
+    "DescribeLoadBalancerPolicyTypes": {
+      "PolicyTypeNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyTypeName",
+            "resourceName": "LoadBalancerPolicyType"
+          }
+        ]
+      }
+    },
+    "DescribeLoadBalancers": {
+      "LoadBalancerNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DescribeTags": {
+      "LoadBalancerNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DetachLoadBalancerFromSubnets": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "Subnets": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Subnets",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "DisableAvailabilityZonesForLoadBalancer": {
+      "AvailabilityZones": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AvailabilityZones",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "EnableAvailabilityZonesForLoadBalancer": {
+      "AvailabilityZones": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AvailabilityZones",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "ModifyLoadBalancerAttributes": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "RegisterInstancesWithLoadBalancer": {
+      "Instances": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Instances",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "RemoveTags": {
+      "LoadBalancerNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "SetLoadBalancerListenerSSLCertificate": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      }
+    },
+    "SetLoadBalancerPoliciesForBackendServer": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "PolicyNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyName",
+            "resourceName": "LoadBalancerPolicy"
+          }
+        ]
+      }
+    },
+    "SetLoadBalancerPoliciesOfListener": {
+      "LoadBalancerName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerName",
+            "resourceName": "LoadBalancer"
+          }
+        ]
+      },
+      "PolicyNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyName",
+            "resourceName": "LoadBalancerPolicy"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
+    "LoadBalancer": {
+      "operation": "DescribeLoadBalancers",
+      "resourceIdentifier": {
+        "AvailabilityZones": "LoadBalancerDescriptions[].AvailabilityZones",
+        "HealthCheck": "LoadBalancerDescriptions[].HealthCheck",
+        "Instances": "LoadBalancerDescriptions[].Instances",
+        "LoadBalancerName": "LoadBalancerDescriptions[].LoadBalancerName",
+        "SecurityGroups": "LoadBalancerDescriptions[].SecurityGroups",
+        "Subnets": "LoadBalancerDescriptions[].Subnets"
+      }
+    },
     "LoadBalancerPolicy": {
       "operation": "DescribeLoadBalancerPolicies",
       "resourceIdentifier": {
@@ -12,389 +394,7 @@
       "resourceIdentifier": {
         "PolicyTypeName": "PolicyTypeDescriptions[].PolicyTypeName"
       }
-    },
-    "LoadBalancer": {
-      "operation": "DescribeLoadBalancers",
-      "resourceIdentifier": {
-        "LoadBalancerName": "LoadBalancerDescriptions[].LoadBalancerName",
-        "AvailabilityZones": "LoadBalancerDescriptions[].AvailabilityZones",
-        "Subnets": "LoadBalancerDescriptions[].Subnets",
-        "Instances": "LoadBalancerDescriptions[].Instances",
-        "HealthCheck": "LoadBalancerDescriptions[].HealthCheck",
-        "SecurityGroups": "LoadBalancerDescriptions[].SecurityGroups"
-      }
     }
   },
-  "operations": {
-    "AddTags": {
-      "LoadBalancerNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "ApplySecurityGroupsToLoadBalancer": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "SecurityGroups": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "SecurityGroups"
-          }
-        ]
-      }
-    },
-    "AttachLoadBalancerToSubnets": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "Subnets": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "Subnets"
-          }
-        ]
-      }
-    },
-    "ConfigureHealthCheck": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "HealthCheck": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "HealthCheck"
-          }
-        ]
-      }
-    },
-    "DeleteLoadBalancer": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "DeleteLoadBalancerListeners": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "DeleteLoadBalancerPolicy": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "PolicyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancerPolicy",
-            "resourceIdentifier": "PolicyName"
-          }
-        ]
-      }
-    },
-    "DeregisterInstancesFromLoadBalancer": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "Instances": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "Instances"
-          }
-        ]
-      }
-    },
-    "DescribeInstanceHealth": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "Instances": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "Instances"
-          }
-        ]
-      }
-    },
-    "DescribeLoadBalancerAttributes": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "DescribeLoadBalancerPolicies": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "PolicyNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancerPolicy",
-            "resourceIdentifier": "PolicyName"
-          }
-        ]
-      }
-    },
-    "DescribeLoadBalancerPolicyTypes": {
-      "PolicyTypeNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancerPolicyType",
-            "resourceIdentifier": "PolicyTypeName"
-          }
-        ]
-      }
-    },
-    "DescribeLoadBalancers": {
-      "LoadBalancerNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "DescribeTags": {
-      "LoadBalancerNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "DetachLoadBalancerFromSubnets": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "Subnets": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "Subnets"
-          }
-        ]
-      }
-    },
-    "DisableAvailabilityZonesForLoadBalancer": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "AvailabilityZones": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "AvailabilityZones"
-          }
-        ]
-      }
-    },
-    "EnableAvailabilityZonesForLoadBalancer": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "AvailabilityZones": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "AvailabilityZones"
-          }
-        ]
-      }
-    },
-    "ModifyLoadBalancerAttributes": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "RegisterInstancesWithLoadBalancer": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "Instances": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "Instances"
-          }
-        ]
-      }
-    },
-    "RemoveTags": {
-      "LoadBalancerNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "SetLoadBalancerListenerSSLCertificate": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      }
-    },
-    "SetLoadBalancerPoliciesForBackendServer": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "PolicyNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancerPolicy",
-            "resourceIdentifier": "PolicyName"
-          }
-        ]
-      }
-    },
-    "SetLoadBalancerPoliciesOfListener": {
-      "LoadBalancerName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancer",
-            "resourceIdentifier": "LoadBalancerName"
-          }
-        ]
-      },
-      "PolicyNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LoadBalancerPolicy",
-            "resourceIdentifier": "PolicyName"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

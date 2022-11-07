@@ -2,20 +2,20 @@
   "pagination": {
     "ListConnectors": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "connectors"
     },
     "ListCustomPlugins": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "customPlugins"
     },
     "ListWorkerConfigurations": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "workerConfigurations"
     }
   }

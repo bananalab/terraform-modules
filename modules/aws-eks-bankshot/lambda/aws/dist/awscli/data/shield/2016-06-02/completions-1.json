@@ -1,12 +1,53 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DescribeAttack": {
+      "AttackId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AttackId",
+            "resourceName": "Attack"
+          }
+        ]
+      }
+    },
+    "ListAttacks": {
+      "EndTime": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EndTime",
+            "resourceName": "Attack"
+          }
+        ]
+      },
+      "ResourceArns": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ResourceArn",
+            "resourceName": "Protection"
+          }
+        ]
+      },
+      "StartTime": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StartTime",
+            "resourceName": "Attack"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Attack": {
       "operation": "ListAttacks",
       "resourceIdentifier": {
         "AttackId": "AttackSummaries[].AttackId",
-        "StartTime": "AttackSummaries[].StartTime",
-        "EndTime": "AttackSummaries[].EndTime"
+        "EndTime": "AttackSummaries[].EndTime",
+        "StartTime": "AttackSummaries[].StartTime"
       }
     },
     "Protection": {
@@ -16,46 +57,5 @@
       }
     }
   },
-  "operations": {
-    "DescribeAttack": {
-      "AttackId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Attack",
-            "resourceIdentifier": "AttackId"
-          }
-        ]
-      }
-    },
-    "ListAttacks": {
-      "ResourceArns": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Protection",
-            "resourceIdentifier": "ResourceArn"
-          }
-        ]
-      },
-      "StartTime": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Attack",
-            "resourceIdentifier": "StartTime"
-          }
-        ]
-      },
-      "EndTime": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Attack",
-            "resourceIdentifier": "EndTime"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

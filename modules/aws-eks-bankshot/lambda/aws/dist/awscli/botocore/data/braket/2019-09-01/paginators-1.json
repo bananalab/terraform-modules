@@ -2,21 +2,21 @@
   "pagination": {
     "SearchDevices": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "devices"
-    },
-    "SearchQuantumTasks": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "quantumTasks"
     },
     "SearchJobs": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "jobs"
+    },
+    "SearchQuantumTasks": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "quantumTasks"
     }
   }
 }

@@ -1,5 +1,17 @@
 {
-  "version": "1.0",
+  "operations": {
+    "GetConfig": {
+      "HapgList": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HapgList",
+            "resourceName": "Hapg"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Hapg": {
       "operation": "ListHapgs",
@@ -8,17 +20,5 @@
       }
     }
   },
-  "operations": {
-    "GetConfig": {
-      "HapgList": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Hapg",
-            "resourceIdentifier": "HapgList"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

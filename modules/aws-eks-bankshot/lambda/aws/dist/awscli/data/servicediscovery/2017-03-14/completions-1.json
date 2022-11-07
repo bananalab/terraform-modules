@@ -1,5 +1,72 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteNamespace": {
+      "Id": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Id",
+            "resourceName": "Service"
+          }
+        ]
+      }
+    },
+    "DeleteService": {
+      "Id": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Id",
+            "resourceName": "Service"
+          }
+        ]
+      }
+    },
+    "GetNamespace": {
+      "Id": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Id",
+            "resourceName": "Service"
+          }
+        ]
+      }
+    },
+    "GetService": {
+      "Id": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Id",
+            "resourceName": "Service"
+          }
+        ]
+      }
+    },
+    "UpdateInstanceCustomHealthStatus": {
+      "Status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Status",
+            "resourceName": "Operation"
+          }
+        ]
+      }
+    },
+    "UpdateService": {
+      "Id": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Id",
+            "resourceName": "Service"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Operation": {
       "operation": "ListOperations",
@@ -14,72 +81,5 @@
       }
     }
   },
-  "operations": {
-    "DeleteNamespace": {
-      "Id": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "Id"
-          }
-        ]
-      }
-    },
-    "DeleteService": {
-      "Id": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "Id"
-          }
-        ]
-      }
-    },
-    "GetNamespace": {
-      "Id": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "Id"
-          }
-        ]
-      }
-    },
-    "GetService": {
-      "Id": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "Id"
-          }
-        ]
-      }
-    },
-    "UpdateInstanceCustomHealthStatus": {
-      "Status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Operation",
-            "resourceIdentifier": "Status"
-          }
-        ]
-      }
-    },
-    "UpdateService": {
-      "Id": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "Id"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

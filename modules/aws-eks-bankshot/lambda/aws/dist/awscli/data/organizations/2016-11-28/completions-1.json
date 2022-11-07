@@ -1,5 +1,116 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DescribeAccount": {
+      "AccountId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AccountId",
+            "resourceName": "CreateAccountStatu"
+          }
+        ]
+      }
+    },
+    "DisableAWSServiceAccess": {
+      "ServicePrincipal": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServicePrincipal",
+            "resourceName": "AWSServiceAccessForOrganization"
+          }
+        ]
+      }
+    },
+    "DisablePolicyType": {
+      "PolicyType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyTypes",
+            "resourceName": "Root"
+          }
+        ]
+      }
+    },
+    "EnableAWSServiceAccess": {
+      "ServicePrincipal": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServicePrincipal",
+            "resourceName": "AWSServiceAccessForOrganization"
+          }
+        ]
+      }
+    },
+    "EnablePolicyType": {
+      "PolicyType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyTypes",
+            "resourceName": "Root"
+          }
+        ]
+      }
+    },
+    "ListCreateAccountStatus": {
+      "States": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "State",
+            "resourceName": "HandshakesForOrganization"
+          }
+        ]
+      }
+    },
+    "MoveAccount": {
+      "AccountId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AccountId",
+            "resourceName": "CreateAccountStatu"
+          }
+        ]
+      }
+    },
+    "RemoveAccountFromOrganization": {
+      "AccountId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AccountId",
+            "resourceName": "CreateAccountStatu"
+          }
+        ]
+      }
+    },
+    "UpdateOrganizationalUnit": {
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "Root"
+          }
+        ]
+      }
+    },
+    "UpdatePolicy": {
+      "Name": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Name",
+            "resourceName": "Root"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "AWSServiceAccessForOrganization": {
       "operation": "ListAWSServiceAccessForOrganization",
@@ -27,116 +138,5 @@
       }
     }
   },
-  "operations": {
-    "DescribeAccount": {
-      "AccountId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CreateAccountStatu",
-            "resourceIdentifier": "AccountId"
-          }
-        ]
-      }
-    },
-    "DisableAWSServiceAccess": {
-      "ServicePrincipal": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AWSServiceAccessForOrganization",
-            "resourceIdentifier": "ServicePrincipal"
-          }
-        ]
-      }
-    },
-    "DisablePolicyType": {
-      "PolicyType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Root",
-            "resourceIdentifier": "PolicyTypes"
-          }
-        ]
-      }
-    },
-    "EnableAWSServiceAccess": {
-      "ServicePrincipal": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AWSServiceAccessForOrganization",
-            "resourceIdentifier": "ServicePrincipal"
-          }
-        ]
-      }
-    },
-    "EnablePolicyType": {
-      "PolicyType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Root",
-            "resourceIdentifier": "PolicyTypes"
-          }
-        ]
-      }
-    },
-    "ListCreateAccountStatus": {
-      "States": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "HandshakesForOrganization",
-            "resourceIdentifier": "State"
-          }
-        ]
-      }
-    },
-    "MoveAccount": {
-      "AccountId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CreateAccountStatu",
-            "resourceIdentifier": "AccountId"
-          }
-        ]
-      }
-    },
-    "RemoveAccountFromOrganization": {
-      "AccountId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "CreateAccountStatu",
-            "resourceIdentifier": "AccountId"
-          }
-        ]
-      }
-    },
-    "UpdateOrganizationalUnit": {
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Root",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      }
-    },
-    "UpdatePolicy": {
-      "Name": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Root",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

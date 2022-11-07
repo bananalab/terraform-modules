@@ -1,21 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Domain": {
-      "operation": "ListDomains",
-      "resourceIdentifier": {
-        "DomainName": "DomainNames[]"
-      }
-    }
-  },
   "operations": {
     "BatchDeleteAttributes": {
       "DomainName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -25,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -36,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -47,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -58,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -69,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -80,11 +71,20 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Domain": {
+      "operation": "ListDomains",
+      "resourceIdentifier": {
+        "DomainName": "DomainNames[]"
+      }
+    }
+  },
+  "version": "1.0"
 }

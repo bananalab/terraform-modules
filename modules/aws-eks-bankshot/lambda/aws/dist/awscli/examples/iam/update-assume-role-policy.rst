@@ -12,5 +12,3 @@ To update the permissions policy for a role, use the ``put-role-policy`` command
 For more information, see `Creating a Role`_ in the *Using IAM* guide.
 
 .. _`Creating a Role`: http://docs.aws.amazon.com/IAM/latest/UserGuide/creating-role.html
-
-

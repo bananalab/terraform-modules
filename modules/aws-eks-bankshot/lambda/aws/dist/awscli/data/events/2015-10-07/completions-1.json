@@ -1,26 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Rule": {
-      "operation": "ListRules",
-      "resourceIdentifier": {
-        "Name": "Rules[].Name",
-        "EventPattern": "Rules[].EventPattern",
-        "State": "Rules[].State",
-        "Description": "Rules[].Description",
-        "ScheduleExpression": "Rules[].ScheduleExpression",
-        "RoleArn": "Rules[].RoleArn"
-      }
-    }
-  },
   "operations": {
     "DeleteRule": {
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Rule"
           }
         ]
       }
@@ -30,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Rule"
           }
         ]
       }
@@ -41,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Rule"
           }
         ]
       }
@@ -52,28 +38,19 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Rule"
           }
         ]
       }
     },
     "PutRule": {
-      "Name": {
+      "Description": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "Name"
-          }
-        ]
-      },
-      "ScheduleExpression": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "ScheduleExpression"
+            "resourceIdentifier": "Description",
+            "resourceName": "Rule"
           }
         ]
       },
@@ -81,26 +58,17 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "EventPattern"
+            "resourceIdentifier": "EventPattern",
+            "resourceName": "Rule"
           }
         ]
       },
-      "State": {
+      "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "State"
-          }
-        ]
-      },
-      "Description": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "Description"
+            "resourceIdentifier": "Name",
+            "resourceName": "Rule"
           }
         ]
       },
@@ -108,8 +76,26 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "RoleArn"
+            "resourceIdentifier": "RoleArn",
+            "resourceName": "Rule"
+          }
+        ]
+      },
+      "ScheduleExpression": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ScheduleExpression",
+            "resourceName": "Rule"
+          }
+        ]
+      },
+      "State": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "State",
+            "resourceName": "Rule"
           }
         ]
       }
@@ -119,11 +105,25 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Rule",
-            "resourceIdentifier": "EventPattern"
+            "resourceIdentifier": "EventPattern",
+            "resourceName": "Rule"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Rule": {
+      "operation": "ListRules",
+      "resourceIdentifier": {
+        "Description": "Rules[].Description",
+        "EventPattern": "Rules[].EventPattern",
+        "Name": "Rules[].Name",
+        "RoleArn": "Rules[].RoleArn",
+        "ScheduleExpression": "Rules[].ScheduleExpression",
+        "State": "Rules[].State"
+      }
+    }
+  },
+  "version": "1.0"
 }

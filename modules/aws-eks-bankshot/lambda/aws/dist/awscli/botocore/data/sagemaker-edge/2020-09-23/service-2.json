@@ -1,445 +1,485 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2020-09-23",
-    "endpointPrefix":"edge.sagemaker",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceFullName":"Amazon Sagemaker Edge Manager",
-    "serviceId":"Sagemaker Edge",
-    "signatureVersion":"v4",
-    "signingName":"sagemaker",
-    "uid":"sagemaker-edge-2020-09-23"
+  "documentation": "<p>SageMaker Edge Manager dataplane service for communicating with active agents.</p>",
+  "metadata": {
+    "apiVersion": "2020-09-23",
+    "endpointPrefix": "edge.sagemaker",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceFullName": "Amazon Sagemaker Edge Manager",
+    "serviceId": "Sagemaker Edge",
+    "signatureVersion": "v4",
+    "signingName": "sagemaker",
+    "uid": "sagemaker-edge-2020-09-23"
   },
-  "operations":{
-    "GetDeployments":{
-      "name":"GetDeployments",
-      "http":{
-        "method":"POST",
-        "requestUri":"/GetDeployments"
-      },
-      "input":{"shape":"GetDeploymentsRequest"},
-      "output":{"shape":"GetDeploymentsResult"},
-      "errors":[
-        {"shape":"InternalServiceException"}
+  "operations": {
+    "GetDeployments": {
+      "documentation": "<p>Use to get the active deployments from a device.</p>",
+      "errors": [
+        {
+          "shape": "InternalServiceException"
+        }
       ],
-      "documentation":"<p>Use to get the active deployments from a device.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/GetDeployments"
+      },
+      "input": {
+        "shape": "GetDeploymentsRequest"
+      },
+      "name": "GetDeployments",
+      "output": {
+        "shape": "GetDeploymentsResult"
+      }
     },
-    "GetDeviceRegistration":{
-      "name":"GetDeviceRegistration",
-      "http":{
-        "method":"POST",
-        "requestUri":"/GetDeviceRegistration"
-      },
-      "input":{"shape":"GetDeviceRegistrationRequest"},
-      "output":{"shape":"GetDeviceRegistrationResult"},
-      "errors":[
-        {"shape":"InternalServiceException"}
+    "GetDeviceRegistration": {
+      "documentation": "<p>Use to check if a device is registered with SageMaker Edge Manager.</p>",
+      "errors": [
+        {
+          "shape": "InternalServiceException"
+        }
       ],
-      "documentation":"<p>Use to check if a device is registered with SageMaker Edge Manager.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/GetDeviceRegistration"
+      },
+      "input": {
+        "shape": "GetDeviceRegistrationRequest"
+      },
+      "name": "GetDeviceRegistration",
+      "output": {
+        "shape": "GetDeviceRegistrationResult"
+      }
     },
-    "SendHeartbeat":{
-      "name":"SendHeartbeat",
-      "http":{
-        "method":"POST",
-        "requestUri":"/SendHeartbeat"
-      },
-      "input":{"shape":"SendHeartbeatRequest"},
-      "errors":[
-        {"shape":"InternalServiceException"}
+    "SendHeartbeat": {
+      "documentation": "<p>Use to get the current status of devices registered on SageMaker Edge Manager.</p>",
+      "errors": [
+        {
+          "shape": "InternalServiceException"
+        }
       ],
-      "documentation":"<p>Use to get the current status of devices registered on SageMaker Edge Manager.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/SendHeartbeat"
+      },
+      "input": {
+        "shape": "SendHeartbeatRequest"
+      },
+      "name": "SendHeartbeat"
     }
   },
-  "shapes":{
-    "CacheTTLSeconds":{
-      "type":"string",
-      "max":1000,
-      "min":1
+  "shapes": {
+    "CacheTTLSeconds": {
+      "max": 1000,
+      "min": 1,
+      "type": "string"
     },
-    "Checksum":{
-      "type":"structure",
-      "members":{
-        "Type":{
-          "shape":"ChecksumType",
-          "documentation":"<p>The type of the checksum.</p>"
+    "Checksum": {
+      "documentation": "<p>Information about the checksum of a model deployed on a device.</p>",
+      "members": {
+        "Sum": {
+          "documentation": "<p>The checksum of the model.</p>",
+          "shape": "ChecksumString"
         },
-        "Sum":{
-          "shape":"ChecksumString",
-          "documentation":"<p>The checksum of the model.</p>"
+        "Type": {
+          "documentation": "<p>The type of the checksum.</p>",
+          "shape": "ChecksumType"
         }
       },
-      "documentation":"<p>Information about the checksum of a model deployed on a device.</p>"
+      "type": "structure"
     },
-    "ChecksumString":{
-      "type":"string",
-      "max":63,
-      "min":1,
-      "pattern":"^[a-z0-9](-*[a-z0-9])*$"
+    "ChecksumString": {
+      "max": 63,
+      "min": 1,
+      "pattern": "^[a-z0-9](-*[a-z0-9])*$",
+      "type": "string"
     },
-    "ChecksumType":{
-      "type":"string",
-      "enum":["SHA1"]
+    "ChecksumType": {
+      "enum": [
+        "SHA1"
+      ],
+      "type": "string"
     },
-    "Definition":{
-      "type":"structure",
-      "members":{
-        "ModelHandle":{
-          "shape":"EntityName",
-          "documentation":"<p>The unique model handle.</p>"
+    "Definition": {
+      "documentation": "<p/>",
+      "members": {
+        "Checksum": {
+          "documentation": "<p>The checksum information of the model.</p>",
+          "shape": "Checksum"
         },
-        "S3Url":{
-          "shape":"S3Uri",
-          "documentation":"<p>The absolute S3 location of the model.</p>"
+        "ModelHandle": {
+          "documentation": "<p>The unique model handle.</p>",
+          "shape": "EntityName"
         },
-        "Checksum":{
-          "shape":"Checksum",
-          "documentation":"<p>The checksum information of the model.</p>"
+        "S3Url": {
+          "documentation": "<p>The absolute S3 location of the model.</p>",
+          "shape": "S3Uri"
         },
-        "State":{
-          "shape":"ModelState",
-          "documentation":"<p>The desired state of the model.</p>"
+        "State": {
+          "documentation": "<p>The desired state of the model.</p>",
+          "shape": "ModelState"
         }
       },
-      "documentation":"<p/>"
+      "type": "structure"
     },
-    "Definitions":{
-      "type":"list",
-      "member":{"shape":"Definition"}
+    "Definitions": {
+      "member": {
+        "shape": "Definition"
+      },
+      "type": "list"
     },
-    "DeploymentModel":{
-      "type":"structure",
-      "members":{
-        "ModelHandle":{
-          "shape":"EntityName",
-          "documentation":"<p>The unique handle of the model.</p>"
+    "DeploymentModel": {
+      "documentation": "<p/>",
+      "members": {
+        "DesiredState": {
+          "documentation": "<p>The desired state of the model.</p>",
+          "shape": "ModelState"
         },
-        "ModelName":{
-          "shape":"ModelName",
-          "documentation":"<p>The name of the model.</p>"
+        "ModelHandle": {
+          "documentation": "<p>The unique handle of the model.</p>",
+          "shape": "EntityName"
         },
-        "ModelVersion":{
-          "shape":"Version",
-          "documentation":"<p>The version of the model.</p>"
+        "ModelName": {
+          "documentation": "<p>The name of the model.</p>",
+          "shape": "ModelName"
         },
-        "DesiredState":{
-          "shape":"ModelState",
-          "documentation":"<p>The desired state of the model.</p>"
+        "ModelVersion": {
+          "documentation": "<p>The version of the model.</p>",
+          "shape": "Version"
         },
-        "State":{
-          "shape":"ModelState",
-          "documentation":"<p>Returns the current state of the model.</p>"
+        "RollbackFailureReason": {
+          "documentation": "<p>Returns the error message if there is a rollback.</p>",
+          "shape": "String"
         },
-        "Status":{
-          "shape":"DeploymentStatus",
-          "documentation":"<p>Returns the deployment status of the model.</p>"
+        "State": {
+          "documentation": "<p>Returns the current state of the model.</p>",
+          "shape": "ModelState"
         },
-        "StatusReason":{
-          "shape":"String",
-          "documentation":"<p>Returns the error message for the deployment status result.</p>"
+        "Status": {
+          "documentation": "<p>Returns the deployment status of the model.</p>",
+          "shape": "DeploymentStatus"
         },
-        "RollbackFailureReason":{
-          "shape":"String",
-          "documentation":"<p>Returns the error message if there is a rollback.</p>"
+        "StatusReason": {
+          "documentation": "<p>Returns the error message for the deployment status result.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p/>"
+      "type": "structure"
     },
-    "DeploymentModels":{
-      "type":"list",
-      "member":{"shape":"DeploymentModel"}
+    "DeploymentModels": {
+      "member": {
+        "shape": "DeploymentModel"
+      },
+      "type": "list"
     },
-    "DeploymentResult":{
-      "type":"structure",
-      "members":{
-        "DeploymentName":{
-          "shape":"EntityName",
-          "documentation":"<p>The name and unique ID of the deployment.</p>"
+    "DeploymentResult": {
+      "documentation": "<p>Information about the result of a deployment on an edge device that is registered with SageMaker Edge Manager.</p>",
+      "members": {
+        "DeploymentEndTime": {
+          "documentation": "<p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>",
+          "shape": "Timestamp"
         },
-        "DeploymentStatus":{
-          "shape":"EntityName",
-          "documentation":"<p>Returns the bucket error code.</p>"
+        "DeploymentModels": {
+          "documentation": "<p>Returns a list of models deployed on the agent.</p>",
+          "shape": "DeploymentModels"
         },
-        "DeploymentStatusMessage":{
-          "shape":"String",
-          "documentation":"<p>Returns the detailed error message.</p>"
+        "DeploymentName": {
+          "documentation": "<p>The name and unique ID of the deployment.</p>",
+          "shape": "EntityName"
         },
-        "DeploymentStartTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The timestamp of when the deployment was started on the agent.</p>"
+        "DeploymentStartTime": {
+          "documentation": "<p>The timestamp of when the deployment was started on the agent.</p>",
+          "shape": "Timestamp"
         },
-        "DeploymentEndTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>"
+        "DeploymentStatus": {
+          "documentation": "<p>Returns the bucket error code.</p>",
+          "shape": "EntityName"
         },
-        "DeploymentModels":{
-          "shape":"DeploymentModels",
-          "documentation":"<p>Returns a list of models deployed on the agent.</p>"
+        "DeploymentStatusMessage": {
+          "documentation": "<p>Returns the detailed error message.</p>",
+          "shape": "String"
         }
       },
-      "documentation":"<p>Information about the result of a deployment on an edge device that is registered with SageMaker Edge Manager.</p>"
+      "type": "structure"
     },
-    "DeploymentStatus":{
-      "type":"string",
-      "enum":[
+    "DeploymentStatus": {
+      "enum": [
         "SUCCESS",
         "FAIL"
-      ]
+      ],
+      "type": "string"
     },
-    "DeploymentType":{
-      "type":"string",
-      "enum":["Model"]
+    "DeploymentType": {
+      "enum": [
+        "Model"
+      ],
+      "type": "string"
     },
-    "DeviceFleetName":{
-      "type":"string",
-      "max":63,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$"
+    "DeviceFleetName": {
+      "max": 63,
+      "min": 1,
+      "pattern": "^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$",
+      "type": "string"
     },
-    "DeviceName":{
-      "type":"string",
-      "max":63,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$"
+    "DeviceName": {
+      "max": 63,
+      "min": 1,
+      "pattern": "^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$",
+      "type": "string"
     },
-    "DeviceRegistration":{
-      "type":"string",
-      "max":1000,
-      "min":1
+    "DeviceRegistration": {
+      "max": 1000,
+      "min": 1,
+      "type": "string"
     },
-    "Dimension":{
-      "type":"string",
-      "max":1000,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9](-*[a-zA-Z0-9\\/])*$"
+    "Dimension": {
+      "max": 1000,
+      "min": 1,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9\\/])*$",
+      "type": "string"
     },
-    "EdgeDeployment":{
-      "type":"structure",
-      "members":{
-        "DeploymentName":{
-          "shape":"EntityName",
-          "documentation":"<p>The name and unique ID of the deployment.</p>"
+    "EdgeDeployment": {
+      "documentation": "<p>Information about a deployment on an edge device that is registered with SageMaker Edge Manager.</p>",
+      "members": {
+        "Definitions": {
+          "documentation": "<p>Returns a list of Definition objects.</p>",
+          "shape": "Definitions"
         },
-        "Type":{
-          "shape":"DeploymentType",
-          "documentation":"<p>The type of the deployment.</p>"
+        "DeploymentName": {
+          "documentation": "<p>The name and unique ID of the deployment.</p>",
+          "shape": "EntityName"
         },
-        "FailureHandlingPolicy":{
-          "shape":"FailureHandlingPolicy",
-          "documentation":"<p>Determines whether to rollback to previous configuration if deployment fails.</p>"
+        "FailureHandlingPolicy": {
+          "documentation": "<p>Determines whether to rollback to previous configuration if deployment fails.</p>",
+          "shape": "FailureHandlingPolicy"
         },
-        "Definitions":{
-          "shape":"Definitions",
-          "documentation":"<p>Returns a list of Definition objects.</p>"
+        "Type": {
+          "documentation": "<p>The type of the deployment.</p>",
+          "shape": "DeploymentType"
         }
       },
-      "documentation":"<p>Information about a deployment on an edge device that is registered with SageMaker Edge Manager.</p>"
+      "type": "structure"
     },
-    "EdgeDeployments":{
-      "type":"list",
-      "member":{"shape":"EdgeDeployment"}
+    "EdgeDeployments": {
+      "member": {
+        "shape": "EdgeDeployment"
+      },
+      "type": "list"
     },
-    "EdgeMetric":{
-      "type":"structure",
-      "members":{
-        "Dimension":{
-          "shape":"Dimension",
-          "documentation":"<p>The dimension of metrics published.</p>"
+    "EdgeMetric": {
+      "documentation": "<p>Information required for edge device metrics.</p>",
+      "members": {
+        "Dimension": {
+          "documentation": "<p>The dimension of metrics published.</p>",
+          "shape": "Dimension"
         },
-        "MetricName":{
-          "shape":"Metric",
-          "documentation":"<p>Returns the name of the metric.</p>"
+        "MetricName": {
+          "documentation": "<p>Returns the name of the metric.</p>",
+          "shape": "Metric"
         },
-        "Value":{
-          "shape":"Value",
-          "documentation":"<p>Returns the value of the metric.</p>"
+        "Timestamp": {
+          "documentation": "<p>Timestamp of when the metric was requested.</p>",
+          "shape": "Timestamp"
         },
-        "Timestamp":{
-          "shape":"Timestamp",
-          "documentation":"<p>Timestamp of when the metric was requested.</p>"
+        "Value": {
+          "documentation": "<p>Returns the value of the metric.</p>",
+          "shape": "Value"
         }
       },
-      "documentation":"<p>Information required for edge device metrics.</p>"
+      "type": "structure"
     },
-    "EdgeMetrics":{
-      "type":"list",
-      "member":{"shape":"EdgeMetric"}
+    "EdgeMetrics": {
+      "member": {
+        "shape": "EdgeMetric"
+      },
+      "type": "list"
     },
-    "EntityName":{
-      "type":"string",
-      "max":63,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
+    "EntityName": {
+      "max": 63,
+      "min": 1,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*$",
+      "type": "string"
     },
-    "ErrorMessage":{"type":"string"},
-    "FailureHandlingPolicy":{
-      "type":"string",
-      "enum":[
+    "ErrorMessage": {
+      "type": "string"
+    },
+    "FailureHandlingPolicy": {
+      "enum": [
         "ROLLBACK_ON_FAILURE",
         "DO_NOTHING"
-      ]
+      ],
+      "type": "string"
     },
-    "GetDeploymentsRequest":{
-      "type":"structure",
-      "required":[
+    "GetDeploymentsRequest": {
+      "members": {
+        "DeviceFleetName": {
+          "documentation": "<p>The name of the fleet that the device belongs to.</p>",
+          "shape": "DeviceFleetName"
+        },
+        "DeviceName": {
+          "documentation": "<p>The unique name of the device you want to get the configuration of active deployments from.</p>",
+          "shape": "DeviceName"
+        }
+      },
+      "required": [
         "DeviceName",
         "DeviceFleetName"
       ],
-      "members":{
-        "DeviceName":{
-          "shape":"DeviceName",
-          "documentation":"<p>The unique name of the device you want to get the configuration of active deployments from.</p>"
+      "type": "structure"
+    },
+    "GetDeploymentsResult": {
+      "members": {
+        "Deployments": {
+          "documentation": "<p>Returns a list of the configurations of the active deployments on the device.</p>",
+          "shape": "EdgeDeployments"
+        }
+      },
+      "type": "structure"
+    },
+    "GetDeviceRegistrationRequest": {
+      "members": {
+        "DeviceFleetName": {
+          "documentation": "<p>The name of the fleet that the device belongs to.</p>",
+          "shape": "DeviceFleetName"
         },
-        "DeviceFleetName":{
-          "shape":"DeviceFleetName",
-          "documentation":"<p>The name of the fleet that the device belongs to.</p>"
+        "DeviceName": {
+          "documentation": "<p>The unique name of the device you want to get the registration status from.</p>",
+          "shape": "DeviceName"
         }
-      }
-    },
-    "GetDeploymentsResult":{
-      "type":"structure",
-      "members":{
-        "Deployments":{
-          "shape":"EdgeDeployments",
-          "documentation":"<p>Returns a list of the configurations of the active deployments on the device.</p>"
-        }
-      }
-    },
-    "GetDeviceRegistrationRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "DeviceName",
         "DeviceFleetName"
       ],
-      "members":{
-        "DeviceName":{
-          "shape":"DeviceName",
-          "documentation":"<p>The unique name of the device you want to get the registration status from.</p>"
-        },
-        "DeviceFleetName":{
-          "shape":"DeviceFleetName",
-          "documentation":"<p>The name of the fleet that the device belongs to.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "GetDeviceRegistrationResult":{
-      "type":"structure",
-      "members":{
-        "DeviceRegistration":{
-          "shape":"DeviceRegistration",
-          "documentation":"<p>Describes if the device is currently registered with SageMaker Edge Manager.</p>"
+    "GetDeviceRegistrationResult": {
+      "members": {
+        "CacheTTL": {
+          "documentation": "<p>The amount of time, in seconds, that the registration status is stored on the device\u2019s cache before it is refreshed.</p>",
+          "shape": "CacheTTLSeconds"
         },
-        "CacheTTL":{
-          "shape":"CacheTTLSeconds",
-          "documentation":"<p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>"
-        }
-      }
-    },
-    "InternalServiceException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ErrorMessage"}
-      },
-      "documentation":"<p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>",
-      "exception":true
-    },
-    "Metric":{
-      "type":"string",
-      "max":100,
-      "min":4,
-      "pattern":"^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
-    },
-    "Model":{
-      "type":"structure",
-      "members":{
-        "ModelName":{
-          "shape":"ModelName",
-          "documentation":"<p>The name of the model.</p>"
-        },
-        "ModelVersion":{
-          "shape":"Version",
-          "documentation":"<p>The version of the model.</p>"
-        },
-        "LatestSampleTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The timestamp of the last data sample taken.</p>"
-        },
-        "LatestInference":{
-          "shape":"Timestamp",
-          "documentation":"<p>The timestamp of the last inference that was made.</p>"
-        },
-        "ModelMetrics":{
-          "shape":"EdgeMetrics",
-          "documentation":"<p>Information required for model metrics.</p>"
+        "DeviceRegistration": {
+          "documentation": "<p>Describes if the device is currently registered with SageMaker Edge Manager.</p>",
+          "shape": "DeviceRegistration"
         }
       },
-      "documentation":"<p>Information about a model deployed on an edge device that is registered with SageMaker Edge Manager.</p>"
+      "type": "structure"
     },
-    "ModelName":{
-      "type":"string",
-      "max":255,
-      "min":4,
-      "pattern":"^[a-zA-Z0-9](-*[a-zA-Z0-9])*$"
+    "InternalServiceException": {
+      "documentation": "<p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ErrorMessage"
+        }
+      },
+      "type": "structure"
     },
-    "ModelState":{
-      "type":"string",
-      "enum":[
+    "Metric": {
+      "max": 100,
+      "min": 4,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*$",
+      "type": "string"
+    },
+    "Model": {
+      "documentation": "<p>Information about a model deployed on an edge device that is registered with SageMaker Edge Manager.</p>",
+      "members": {
+        "LatestInference": {
+          "documentation": "<p>The timestamp of the last inference that was made.</p>",
+          "shape": "Timestamp"
+        },
+        "LatestSampleTime": {
+          "documentation": "<p>The timestamp of the last data sample taken.</p>",
+          "shape": "Timestamp"
+        },
+        "ModelMetrics": {
+          "documentation": "<p>Information required for model metrics.</p>",
+          "shape": "EdgeMetrics"
+        },
+        "ModelName": {
+          "documentation": "<p>The name of the model.</p>",
+          "shape": "ModelName"
+        },
+        "ModelVersion": {
+          "documentation": "<p>The version of the model.</p>",
+          "shape": "Version"
+        }
+      },
+      "type": "structure"
+    },
+    "ModelName": {
+      "max": 255,
+      "min": 4,
+      "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*$",
+      "type": "string"
+    },
+    "ModelState": {
+      "enum": [
         "DEPLOY",
         "UNDEPLOY"
-      ]
+      ],
+      "type": "string"
     },
-    "Models":{
-      "type":"list",
-      "member":{"shape":"Model"}
+    "Models": {
+      "member": {
+        "shape": "Model"
+      },
+      "type": "list"
     },
-    "S3Uri":{
-      "type":"string",
-      "max":1024,
-      "pattern":"^s3://([^/]+)/?(.*)$"
+    "S3Uri": {
+      "max": 1024,
+      "pattern": "^s3://([^/]+)/?(.*)$",
+      "type": "string"
     },
-    "SendHeartbeatRequest":{
-      "type":"structure",
-      "required":[
+    "SendHeartbeatRequest": {
+      "members": {
+        "AgentMetrics": {
+          "documentation": "<p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>",
+          "shape": "EdgeMetrics"
+        },
+        "AgentVersion": {
+          "documentation": "<p>Returns the version of the agent.</p>",
+          "shape": "Version"
+        },
+        "DeploymentResult": {
+          "documentation": "<p>Returns the result of a deployment on the device.</p>",
+          "shape": "DeploymentResult"
+        },
+        "DeviceFleetName": {
+          "documentation": "<p>The name of the fleet that the device belongs to.</p>",
+          "shape": "DeviceFleetName"
+        },
+        "DeviceName": {
+          "documentation": "<p>The unique name of the device.</p>",
+          "shape": "DeviceName"
+        },
+        "Models": {
+          "documentation": "<p>Returns a list of models deployed on the the device.</p>",
+          "shape": "Models"
+        }
+      },
+      "required": [
         "AgentVersion",
         "DeviceName",
         "DeviceFleetName"
       ],
-      "members":{
-        "AgentMetrics":{
-          "shape":"EdgeMetrics",
-          "documentation":"<p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>"
-        },
-        "Models":{
-          "shape":"Models",
-          "documentation":"<p>Returns a list of models deployed on the the device.</p>"
-        },
-        "AgentVersion":{
-          "shape":"Version",
-          "documentation":"<p>Returns the version of the agent.</p>"
-        },
-        "DeviceName":{
-          "shape":"DeviceName",
-          "documentation":"<p>The unique name of the device.</p>"
-        },
-        "DeviceFleetName":{
-          "shape":"DeviceFleetName",
-          "documentation":"<p>The name of the fleet that the device belongs to.</p>"
-        },
-        "DeploymentResult":{
-          "shape":"DeploymentResult",
-          "documentation":"<p>Returns the result of a deployment on the device.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "String":{"type":"string"},
-    "Timestamp":{"type":"timestamp"},
-    "Value":{"type":"double"},
-    "Version":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"[a-zA-Z0-9\\ \\_\\.]+"
+    "String": {
+      "type": "string"
+    },
+    "Timestamp": {
+      "type": "timestamp"
+    },
+    "Value": {
+      "type": "double"
+    },
+    "Version": {
+      "max": 64,
+      "min": 1,
+      "pattern": "[a-zA-Z0-9\\ \\_\\.]+",
+      "type": "string"
     }
   },
-  "documentation":"<p>SageMaker Edge Manager dataplane service for communicating with active agents.</p>"
+  "version": "2.0"
 }

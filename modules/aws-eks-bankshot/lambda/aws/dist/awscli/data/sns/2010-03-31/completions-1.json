@@ -1,5 +1,260 @@
 {
-  "version": "1.0",
+  "operations": {
+    "AddPermission": {
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "CheckIfPhoneNumberIsOptedOut": {
+      "phoneNumber": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "phoneNumber",
+            "resourceName": "PhoneNumbersOptedOut"
+          }
+        ]
+      }
+    },
+    "ConfirmSubscription": {
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "DeletePlatformApplication": {
+      "PlatformApplicationArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PlatformApplicationArn",
+            "resourceName": "PlatformApplication"
+          }
+        ]
+      }
+    },
+    "DeleteTopic": {
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "GetPlatformApplicationAttributes": {
+      "PlatformApplicationArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PlatformApplicationArn",
+            "resourceName": "PlatformApplication"
+          }
+        ]
+      }
+    },
+    "GetSubscriptionAttributes": {
+      "SubscriptionArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SubscriptionArn",
+            "resourceName": "Subscription"
+          }
+        ]
+      }
+    },
+    "GetTopicAttributes": {
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "ListEndpointsByPlatformApplication": {
+      "PlatformApplicationArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PlatformApplicationArn",
+            "resourceName": "PlatformApplication"
+          }
+        ]
+      }
+    },
+    "ListSubscriptionsByTopic": {
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "OptInPhoneNumber": {
+      "phoneNumber": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "phoneNumber",
+            "resourceName": "PhoneNumbersOptedOut"
+          }
+        ]
+      }
+    },
+    "Publish": {
+      "PhoneNumber": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "phoneNumber",
+            "resourceName": "PhoneNumbersOptedOut"
+          }
+        ]
+      },
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "RemovePermission": {
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "SetEndpointAttributes": {
+      "Attributes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Attributes",
+            "resourceName": "PlatformApplication"
+          }
+        ]
+      }
+    },
+    "SetPlatformApplicationAttributes": {
+      "Attributes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Attributes",
+            "resourceName": "PlatformApplication"
+          }
+        ]
+      },
+      "PlatformApplicationArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PlatformApplicationArn",
+            "resourceName": "PlatformApplication"
+          }
+        ]
+      }
+    },
+    "SetSubscriptionAttributes": {
+      "SubscriptionArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SubscriptionArn",
+            "resourceName": "Subscription"
+          }
+        ]
+      }
+    },
+    "SetTopicAttributes": {
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "Subscribe": {
+      "Attributes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Attributes",
+            "resourceName": "PlatformApplication"
+          }
+        ]
+      },
+      "Endpoint": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Endpoint",
+            "resourceName": "Subscription"
+          }
+        ]
+      },
+      "Protocol": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Protocol",
+            "resourceName": "Subscription"
+          }
+        ]
+      },
+      "TopicArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicArn",
+            "resourceName": "Topic"
+          }
+        ]
+      }
+    },
+    "Unsubscribe": {
+      "SubscriptionArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SubscriptionArn",
+            "resourceName": "Subscription"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "PhoneNumbersOptedOut": {
       "operation": "ListPhoneNumbersOptedOut",
@@ -10,16 +265,16 @@
     "PlatformApplication": {
       "operation": "ListPlatformApplications",
       "resourceIdentifier": {
-        "PlatformApplicationArn": "PlatformApplications[].PlatformApplicationArn",
-        "Attributes": "PlatformApplications[].Attributes"
+        "Attributes": "PlatformApplications[].Attributes",
+        "PlatformApplicationArn": "PlatformApplications[].PlatformApplicationArn"
       }
     },
     "Subscription": {
       "operation": "ListSubscriptions",
       "resourceIdentifier": {
-        "SubscriptionArn": "Subscriptions[].SubscriptionArn",
+        "Endpoint": "Subscriptions[].Endpoint",
         "Protocol": "Subscriptions[].Protocol",
-        "Endpoint": "Subscriptions[].Endpoint"
+        "SubscriptionArn": "Subscriptions[].SubscriptionArn"
       }
     },
     "Topic": {
@@ -29,260 +284,5 @@
       }
     }
   },
-  "operations": {
-    "AddPermission": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      }
-    },
-    "CheckIfPhoneNumberIsOptedOut": {
-      "phoneNumber": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PhoneNumbersOptedOut",
-            "resourceIdentifier": "phoneNumber"
-          }
-        ]
-      }
-    },
-    "ConfirmSubscription": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      }
-    },
-    "DeletePlatformApplication": {
-      "PlatformApplicationArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlatformApplication",
-            "resourceIdentifier": "PlatformApplicationArn"
-          }
-        ]
-      }
-    },
-    "DeleteTopic": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      }
-    },
-    "GetPlatformApplicationAttributes": {
-      "PlatformApplicationArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlatformApplication",
-            "resourceIdentifier": "PlatformApplicationArn"
-          }
-        ]
-      }
-    },
-    "GetSubscriptionAttributes": {
-      "SubscriptionArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Subscription",
-            "resourceIdentifier": "SubscriptionArn"
-          }
-        ]
-      }
-    },
-    "GetTopicAttributes": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      }
-    },
-    "ListEndpointsByPlatformApplication": {
-      "PlatformApplicationArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlatformApplication",
-            "resourceIdentifier": "PlatformApplicationArn"
-          }
-        ]
-      }
-    },
-    "ListSubscriptionsByTopic": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      }
-    },
-    "OptInPhoneNumber": {
-      "phoneNumber": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PhoneNumbersOptedOut",
-            "resourceIdentifier": "phoneNumber"
-          }
-        ]
-      }
-    },
-    "Publish": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      },
-      "PhoneNumber": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PhoneNumbersOptedOut",
-            "resourceIdentifier": "phoneNumber"
-          }
-        ]
-      }
-    },
-    "RemovePermission": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      }
-    },
-    "SetEndpointAttributes": {
-      "Attributes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlatformApplication",
-            "resourceIdentifier": "Attributes"
-          }
-        ]
-      }
-    },
-    "SetPlatformApplicationAttributes": {
-      "PlatformApplicationArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlatformApplication",
-            "resourceIdentifier": "PlatformApplicationArn"
-          }
-        ]
-      },
-      "Attributes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlatformApplication",
-            "resourceIdentifier": "Attributes"
-          }
-        ]
-      }
-    },
-    "SetSubscriptionAttributes": {
-      "SubscriptionArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Subscription",
-            "resourceIdentifier": "SubscriptionArn"
-          }
-        ]
-      }
-    },
-    "SetTopicAttributes": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      }
-    },
-    "Subscribe": {
-      "TopicArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Topic",
-            "resourceIdentifier": "TopicArn"
-          }
-        ]
-      },
-      "Protocol": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Subscription",
-            "resourceIdentifier": "Protocol"
-          }
-        ]
-      },
-      "Endpoint": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Subscription",
-            "resourceIdentifier": "Endpoint"
-          }
-        ]
-      },
-      "Attributes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PlatformApplication",
-            "resourceIdentifier": "Attributes"
-          }
-        ]
-      }
-    },
-    "Unsubscribe": {
-      "SubscriptionArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Subscription",
-            "resourceIdentifier": "SubscriptionArn"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

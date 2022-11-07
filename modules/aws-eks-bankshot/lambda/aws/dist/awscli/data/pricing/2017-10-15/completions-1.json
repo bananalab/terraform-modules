@@ -1,42 +1,32 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Service": {
-      "operation": "DescribeServices",
-      "resourceIdentifier": {
-        "ServiceCode": "Services[].ServiceCode",
-        "AttributeNames": "Services[].AttributeNames"
-      }
-    }
-  },
   "operations": {
     "DescribeServices": {
       "ServiceCode": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "ServiceCode"
+            "resourceIdentifier": "ServiceCode",
+            "resourceName": "Service"
           }
         ]
       }
     },
     "GetAttributeValues": {
-      "ServiceCode": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "ServiceCode"
-          }
-        ]
-      },
       "AttributeName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "AttributeNames"
+            "resourceIdentifier": "AttributeNames",
+            "resourceName": "Service"
+          }
+        ]
+      },
+      "ServiceCode": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServiceCode",
+            "resourceName": "Service"
           }
         ]
       }
@@ -46,11 +36,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Service",
-            "resourceIdentifier": "ServiceCode"
+            "resourceIdentifier": "ServiceCode",
+            "resourceName": "Service"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Service": {
+      "operation": "DescribeServices",
+      "resourceIdentifier": {
+        "AttributeNames": "Services[].AttributeNames",
+        "ServiceCode": "Services[].ServiceCode"
+      }
+    }
+  },
+  "version": "1.0"
 }

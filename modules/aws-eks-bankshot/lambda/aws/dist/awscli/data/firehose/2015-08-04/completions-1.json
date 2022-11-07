@@ -1,21 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "DeliveryStream": {
-      "operation": "ListDeliveryStreams",
-      "resourceIdentifier": {
-        "DeliveryStreamName": "DeliveryStreamNames[]"
-      }
-    }
-  },
   "operations": {
     "DeleteDeliveryStream": {
       "DeliveryStreamName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "DeliveryStream",
-            "resourceIdentifier": "DeliveryStreamName"
+            "resourceIdentifier": "DeliveryStreamName",
+            "resourceName": "DeliveryStream"
           }
         ]
       }
@@ -25,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "DeliveryStream",
-            "resourceIdentifier": "DeliveryStreamName"
+            "resourceIdentifier": "DeliveryStreamName",
+            "resourceName": "DeliveryStream"
           }
         ]
       }
@@ -36,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "DeliveryStream",
-            "resourceIdentifier": "DeliveryStreamName"
+            "resourceIdentifier": "DeliveryStreamName",
+            "resourceName": "DeliveryStream"
           }
         ]
       }
@@ -47,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "DeliveryStream",
-            "resourceIdentifier": "DeliveryStreamName"
+            "resourceIdentifier": "DeliveryStreamName",
+            "resourceName": "DeliveryStream"
           }
         ]
       }
@@ -58,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "DeliveryStream",
-            "resourceIdentifier": "DeliveryStreamName"
+            "resourceIdentifier": "DeliveryStreamName",
+            "resourceName": "DeliveryStream"
           }
         ]
       }
@@ -69,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "DeliveryStream",
-            "resourceIdentifier": "DeliveryStreamName"
+            "resourceIdentifier": "DeliveryStreamName",
+            "resourceName": "DeliveryStream"
           }
         ]
       }
@@ -80,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "DeliveryStream",
-            "resourceIdentifier": "DeliveryStreamName"
+            "resourceIdentifier": "DeliveryStreamName",
+            "resourceName": "DeliveryStream"
           }
         ]
       }
@@ -91,11 +82,20 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "DeliveryStream",
-            "resourceIdentifier": "DeliveryStreamName"
+            "resourceIdentifier": "DeliveryStreamName",
+            "resourceName": "DeliveryStream"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "DeliveryStream": {
+      "operation": "ListDeliveryStreams",
+      "resourceIdentifier": {
+        "DeliveryStreamName": "DeliveryStreamNames[]"
+      }
+    }
+  },
+  "version": "1.0"
 }

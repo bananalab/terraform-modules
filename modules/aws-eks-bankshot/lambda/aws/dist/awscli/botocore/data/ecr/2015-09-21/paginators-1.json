@@ -1,23 +1,5 @@
 {
   "pagination": {
-    "ListImages": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "imageIds"
-    },
-    "DescribeImages": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "imageDetails"
-    },
-    "DescribeRepositories": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "repositories"
-    },
     "DescribeImageScanFindings": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
@@ -34,6 +16,24 @@
         "imageScanFindings.enhancedFindings"
       ]
     },
+    "DescribeImages": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "imageDetails"
+    },
+    "DescribePullThroughCacheRules": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "pullThroughCacheRules"
+    },
+    "DescribeRepositories": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "repositories"
+    },
     "GetLifecyclePolicyPreview": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
@@ -47,11 +47,11 @@
       "output_token": "nextToken",
       "result_key": "previewResults"
     },
-    "DescribePullThroughCacheRules": {
+    "ListImages": {
       "input_token": "nextToken",
       "limit_key": "maxResults",
       "output_token": "nextToken",
-      "result_key": "pullThroughCacheRules"
+      "result_key": "imageIds"
     }
   }
 }

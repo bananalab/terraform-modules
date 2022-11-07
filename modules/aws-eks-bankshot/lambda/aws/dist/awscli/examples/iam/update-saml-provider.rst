@@ -2,7 +2,7 @@
 
 This example updates the SAML provider in IAM whose ARN is ``arn:aws:iam::123456789012:saml-provider/SAMLADFS`` with a new SAML metadata document from the file ``SAMLMetaData.xml``::
 
-  aws iam update-saml-provider --saml-metadata-document file://SAMLMetaData.xml --saml-provider-arn arn:aws:iam::123456789012:saml-provider/SAMLADFS 
+  aws iam update-saml-provider --saml-metadata-document file://SAMLMetaData.xml --saml-provider-arn arn:aws:iam::123456789012:saml-provider/SAMLADFS
 
 Output::
 

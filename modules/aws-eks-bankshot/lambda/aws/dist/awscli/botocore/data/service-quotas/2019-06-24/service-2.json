@@ -1,926 +1,1305 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2019-06-24",
-    "endpointPrefix":"servicequotas",
-    "jsonVersion":"1.1",
-    "protocol":"json",
-    "serviceFullName":"Service Quotas",
-    "serviceId":"Service Quotas",
-    "signatureVersion":"v4",
-    "targetPrefix":"ServiceQuotasV20190624",
-    "uid":"service-quotas-2019-06-24"
+  "documentation": "<p>With Service Quotas, you can view and manage your quotas easily as your AWS workloads grow. Quotas, also referred to as limits, are the maximum number of resources that you can create in your AWS account. For more information, see the <a href=\"https://docs.aws.amazon.com/servicequotas/latest/userguide/\">Service Quotas User Guide</a>.</p>",
+  "metadata": {
+    "apiVersion": "2019-06-24",
+    "endpointPrefix": "servicequotas",
+    "jsonVersion": "1.1",
+    "protocol": "json",
+    "serviceFullName": "Service Quotas",
+    "serviceId": "Service Quotas",
+    "signatureVersion": "v4",
+    "targetPrefix": "ServiceQuotasV20190624",
+    "uid": "service-quotas-2019-06-24"
   },
-  "operations":{
-    "AssociateServiceQuotaTemplate":{
-      "name":"AssociateServiceQuotaTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"AssociateServiceQuotaTemplateRequest"},
-      "output":{"shape":"AssociateServiceQuotaTemplateResponse"},
-      "errors":[
-        {"shape":"DependencyAccessDeniedException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"AWSServiceAccessNotEnabledException"},
-        {"shape":"OrganizationNotInAllFeaturesModeException"},
-        {"shape":"TemplatesNotAvailableInRegionException"},
-        {"shape":"NoAvailableOrganizationException"}
+  "operations": {
+    "AssociateServiceQuotaTemplate": {
+      "documentation": "<p>Associates your quota request template with your organization. When a new account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>",
+      "errors": [
+        {
+          "shape": "DependencyAccessDeniedException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "AWSServiceAccessNotEnabledException"
+        },
+        {
+          "shape": "OrganizationNotInAllFeaturesModeException"
+        },
+        {
+          "shape": "TemplatesNotAvailableInRegionException"
+        },
+        {
+          "shape": "NoAvailableOrganizationException"
+        }
       ],
-      "documentation":"<p>Associates your quota request template with your organization. When a new account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "AssociateServiceQuotaTemplateRequest"
+      },
+      "name": "AssociateServiceQuotaTemplate",
+      "output": {
+        "shape": "AssociateServiceQuotaTemplateResponse"
+      }
     },
-    "DeleteServiceQuotaIncreaseRequestFromTemplate":{
-      "name":"DeleteServiceQuotaIncreaseRequestFromTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DeleteServiceQuotaIncreaseRequestFromTemplateRequest"},
-      "output":{"shape":"DeleteServiceQuotaIncreaseRequestFromTemplateResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceException"},
-        {"shape":"DependencyAccessDeniedException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"AWSServiceAccessNotEnabledException"},
-        {"shape":"TemplatesNotAvailableInRegionException"},
-        {"shape":"NoAvailableOrganizationException"}
+    "DeleteServiceQuotaIncreaseRequestFromTemplate": {
+      "documentation": "<p>Deletes the quota increase request for the specified quota from your quota request template.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "DependencyAccessDeniedException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "AWSServiceAccessNotEnabledException"
+        },
+        {
+          "shape": "TemplatesNotAvailableInRegionException"
+        },
+        {
+          "shape": "NoAvailableOrganizationException"
+        }
       ],
-      "documentation":"<p>Deletes the quota increase request for the specified quota from your quota request template.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DeleteServiceQuotaIncreaseRequestFromTemplateRequest"
+      },
+      "name": "DeleteServiceQuotaIncreaseRequestFromTemplate",
+      "output": {
+        "shape": "DeleteServiceQuotaIncreaseRequestFromTemplateResponse"
+      }
     },
-    "DisassociateServiceQuotaTemplate":{
-      "name":"DisassociateServiceQuotaTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"DisassociateServiceQuotaTemplateRequest"},
-      "output":{"shape":"DisassociateServiceQuotaTemplateResponse"},
-      "errors":[
-        {"shape":"DependencyAccessDeniedException"},
-        {"shape":"ServiceQuotaTemplateNotInUseException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"AWSServiceAccessNotEnabledException"},
-        {"shape":"TemplatesNotAvailableInRegionException"},
-        {"shape":"NoAvailableOrganizationException"}
+    "DisassociateServiceQuotaTemplate": {
+      "documentation": "<p>Disables your quota request template. After a template is disabled, the quota increase requests in the template are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota increase requests.</p>",
+      "errors": [
+        {
+          "shape": "DependencyAccessDeniedException"
+        },
+        {
+          "shape": "ServiceQuotaTemplateNotInUseException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "AWSServiceAccessNotEnabledException"
+        },
+        {
+          "shape": "TemplatesNotAvailableInRegionException"
+        },
+        {
+          "shape": "NoAvailableOrganizationException"
+        }
       ],
-      "documentation":"<p>Disables your quota request template. After a template is disabled, the quota increase requests in the template are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota increase requests.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DisassociateServiceQuotaTemplateRequest"
+      },
+      "name": "DisassociateServiceQuotaTemplate",
+      "output": {
+        "shape": "DisassociateServiceQuotaTemplateResponse"
+      }
     },
-    "GetAWSDefaultServiceQuota":{
-      "name":"GetAWSDefaultServiceQuota",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"GetAWSDefaultServiceQuotaRequest"},
-      "output":{"shape":"GetAWSDefaultServiceQuotaResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "GetAWSDefaultServiceQuota": {
+      "documentation": "<p>Retrieves the default value for the specified quota. The default value does not reflect any quota increases.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Retrieves the default value for the specified quota. The default value does not reflect any quota increases.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetAWSDefaultServiceQuotaRequest"
+      },
+      "name": "GetAWSDefaultServiceQuota",
+      "output": {
+        "shape": "GetAWSDefaultServiceQuotaResponse"
+      }
     },
-    "GetAssociationForServiceQuotaTemplate":{
-      "name":"GetAssociationForServiceQuotaTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"GetAssociationForServiceQuotaTemplateRequest"},
-      "output":{"shape":"GetAssociationForServiceQuotaTemplateResponse"},
-      "errors":[
-        {"shape":"DependencyAccessDeniedException"},
-        {"shape":"ServiceQuotaTemplateNotInUseException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"AWSServiceAccessNotEnabledException"},
-        {"shape":"TemplatesNotAvailableInRegionException"},
-        {"shape":"NoAvailableOrganizationException"}
+    "GetAssociationForServiceQuotaTemplate": {
+      "documentation": "<p>Retrieves the status of the association for the quota request template.</p>",
+      "errors": [
+        {
+          "shape": "DependencyAccessDeniedException"
+        },
+        {
+          "shape": "ServiceQuotaTemplateNotInUseException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "AWSServiceAccessNotEnabledException"
+        },
+        {
+          "shape": "TemplatesNotAvailableInRegionException"
+        },
+        {
+          "shape": "NoAvailableOrganizationException"
+        }
       ],
-      "documentation":"<p>Retrieves the status of the association for the quota request template.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetAssociationForServiceQuotaTemplateRequest"
+      },
+      "name": "GetAssociationForServiceQuotaTemplate",
+      "output": {
+        "shape": "GetAssociationForServiceQuotaTemplateResponse"
+      }
     },
-    "GetRequestedServiceQuotaChange":{
-      "name":"GetRequestedServiceQuotaChange",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"GetRequestedServiceQuotaChangeRequest"},
-      "output":{"shape":"GetRequestedServiceQuotaChangeResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "GetRequestedServiceQuotaChange": {
+      "documentation": "<p>Retrieves information about the specified quota increase request.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Retrieves information about the specified quota increase request.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetRequestedServiceQuotaChangeRequest"
+      },
+      "name": "GetRequestedServiceQuotaChange",
+      "output": {
+        "shape": "GetRequestedServiceQuotaChangeResponse"
+      }
     },
-    "GetServiceQuota":{
-      "name":"GetServiceQuota",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"GetServiceQuotaRequest"},
-      "output":{"shape":"GetServiceQuotaResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "GetServiceQuota": {
+      "documentation": "<p>Retrieves the applied quota value for the specified quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Retrieves the applied quota value for the specified quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetServiceQuotaRequest"
+      },
+      "name": "GetServiceQuota",
+      "output": {
+        "shape": "GetServiceQuotaResponse"
+      }
     },
-    "GetServiceQuotaIncreaseRequestFromTemplate":{
-      "name":"GetServiceQuotaIncreaseRequestFromTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"GetServiceQuotaIncreaseRequestFromTemplateRequest"},
-      "output":{"shape":"GetServiceQuotaIncreaseRequestFromTemplateResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DependencyAccessDeniedException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"AWSServiceAccessNotEnabledException"},
-        {"shape":"TemplatesNotAvailableInRegionException"},
-        {"shape":"NoAvailableOrganizationException"}
+    "GetServiceQuotaIncreaseRequestFromTemplate": {
+      "documentation": "<p>Retrieves information about the specified quota increase request in your quota request template.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DependencyAccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "AWSServiceAccessNotEnabledException"
+        },
+        {
+          "shape": "TemplatesNotAvailableInRegionException"
+        },
+        {
+          "shape": "NoAvailableOrganizationException"
+        }
       ],
-      "documentation":"<p>Retrieves information about the specified quota increase request in your quota request template.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetServiceQuotaIncreaseRequestFromTemplateRequest"
+      },
+      "name": "GetServiceQuotaIncreaseRequestFromTemplate",
+      "output": {
+        "shape": "GetServiceQuotaIncreaseRequestFromTemplateResponse"
+      }
     },
-    "ListAWSDefaultServiceQuotas":{
-      "name":"ListAWSDefaultServiceQuotas",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListAWSDefaultServiceQuotasRequest"},
-      "output":{"shape":"ListAWSDefaultServiceQuotasResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"InvalidPaginationTokenException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "ListAWSDefaultServiceQuotas": {
+      "documentation": "<p>Lists the default values for the quotas for the specified AWS service. A default value does not reflect any quota increases.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "InvalidPaginationTokenException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Lists the default values for the quotas for the specified AWS service. A default value does not reflect any quota increases.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListAWSDefaultServiceQuotasRequest"
+      },
+      "name": "ListAWSDefaultServiceQuotas",
+      "output": {
+        "shape": "ListAWSDefaultServiceQuotasResponse"
+      }
     },
-    "ListRequestedServiceQuotaChangeHistory":{
-      "name":"ListRequestedServiceQuotaChangeHistory",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListRequestedServiceQuotaChangeHistoryRequest"},
-      "output":{"shape":"ListRequestedServiceQuotaChangeHistoryResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"InvalidPaginationTokenException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "ListRequestedServiceQuotaChangeHistory": {
+      "documentation": "<p>Retrieves the quota increase requests for the specified service.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "InvalidPaginationTokenException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Retrieves the quota increase requests for the specified service.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListRequestedServiceQuotaChangeHistoryRequest"
+      },
+      "name": "ListRequestedServiceQuotaChangeHistory",
+      "output": {
+        "shape": "ListRequestedServiceQuotaChangeHistoryResponse"
+      }
     },
-    "ListRequestedServiceQuotaChangeHistoryByQuota":{
-      "name":"ListRequestedServiceQuotaChangeHistoryByQuota",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListRequestedServiceQuotaChangeHistoryByQuotaRequest"},
-      "output":{"shape":"ListRequestedServiceQuotaChangeHistoryByQuotaResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"InvalidPaginationTokenException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "ListRequestedServiceQuotaChangeHistoryByQuota": {
+      "documentation": "<p>Retrieves the quota increase requests for the specified quota.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "InvalidPaginationTokenException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Retrieves the quota increase requests for the specified quota.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListRequestedServiceQuotaChangeHistoryByQuotaRequest"
+      },
+      "name": "ListRequestedServiceQuotaChangeHistoryByQuota",
+      "output": {
+        "shape": "ListRequestedServiceQuotaChangeHistoryByQuotaResponse"
+      }
     },
-    "ListServiceQuotaIncreaseRequestsInTemplate":{
-      "name":"ListServiceQuotaIncreaseRequestsInTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListServiceQuotaIncreaseRequestsInTemplateRequest"},
-      "output":{"shape":"ListServiceQuotaIncreaseRequestsInTemplateResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DependencyAccessDeniedException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"AWSServiceAccessNotEnabledException"},
-        {"shape":"TemplatesNotAvailableInRegionException"},
-        {"shape":"NoAvailableOrganizationException"}
+    "ListServiceQuotaIncreaseRequestsInTemplate": {
+      "documentation": "<p>Lists the quota increase requests in the specified quota request template.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DependencyAccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "AWSServiceAccessNotEnabledException"
+        },
+        {
+          "shape": "TemplatesNotAvailableInRegionException"
+        },
+        {
+          "shape": "NoAvailableOrganizationException"
+        }
       ],
-      "documentation":"<p>Lists the quota increase requests in the specified quota request template.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListServiceQuotaIncreaseRequestsInTemplateRequest"
+      },
+      "name": "ListServiceQuotaIncreaseRequestsInTemplate",
+      "output": {
+        "shape": "ListServiceQuotaIncreaseRequestsInTemplateResponse"
+      }
     },
-    "ListServiceQuotas":{
-      "name":"ListServiceQuotas",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListServiceQuotasRequest"},
-      "output":{"shape":"ListServiceQuotasResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"InvalidPaginationTokenException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "ListServiceQuotas": {
+      "documentation": "<p>Lists the applied quota values for the specified AWS service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "InvalidPaginationTokenException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Lists the applied quota values for the specified AWS service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListServiceQuotasRequest"
+      },
+      "name": "ListServiceQuotas",
+      "output": {
+        "shape": "ListServiceQuotasResponse"
+      }
     },
-    "ListServices":{
-      "name":"ListServices",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListServicesRequest"},
-      "output":{"shape":"ListServicesResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"InvalidPaginationTokenException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "ListServices": {
+      "documentation": "<p>Lists the names and codes for the services integrated with Service Quotas.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "InvalidPaginationTokenException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Lists the names and codes for the services integrated with Service Quotas.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListServicesRequest"
+      },
+      "name": "ListServices",
+      "output": {
+        "shape": "ListServicesResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"TooManyRequestsException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Returns a list of the tags assigned to the specified applied quota.</p>",
+      "errors": [
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        }
       ],
-      "documentation":"<p>Returns a list of the tags assigned to the specified applied quota.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "PutServiceQuotaIncreaseRequestIntoTemplate":{
-      "name":"PutServiceQuotaIncreaseRequestIntoTemplate",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"PutServiceQuotaIncreaseRequestIntoTemplateRequest"},
-      "output":{"shape":"PutServiceQuotaIncreaseRequestIntoTemplateResponse"},
-      "errors":[
-        {"shape":"AccessDeniedException"},
-        {"shape":"DependencyAccessDeniedException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"QuotaExceededException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"AWSServiceAccessNotEnabledException"},
-        {"shape":"TemplatesNotAvailableInRegionException"},
-        {"shape":"NoAvailableOrganizationException"}
+    "PutServiceQuotaIncreaseRequestIntoTemplate": {
+      "documentation": "<p>Adds a quota increase request to your quota request template.</p>",
+      "errors": [
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "DependencyAccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "QuotaExceededException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "AWSServiceAccessNotEnabledException"
+        },
+        {
+          "shape": "TemplatesNotAvailableInRegionException"
+        },
+        {
+          "shape": "NoAvailableOrganizationException"
+        }
       ],
-      "documentation":"<p>Adds a quota increase request to your quota request template.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "PutServiceQuotaIncreaseRequestIntoTemplateRequest"
+      },
+      "name": "PutServiceQuotaIncreaseRequestIntoTemplate",
+      "output": {
+        "shape": "PutServiceQuotaIncreaseRequestIntoTemplateResponse"
+      }
     },
-    "RequestServiceQuotaIncrease":{
-      "name":"RequestServiceQuotaIncrease",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"RequestServiceQuotaIncreaseRequest"},
-      "output":{"shape":"RequestServiceQuotaIncreaseResponse"},
-      "errors":[
-        {"shape":"DependencyAccessDeniedException"},
-        {"shape":"QuotaExceededException"},
-        {"shape":"ResourceAlreadyExistsException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"InvalidResourceStateException"},
-        {"shape":"ServiceException"},
-        {"shape":"TooManyRequestsException"}
+    "RequestServiceQuotaIncrease": {
+      "documentation": "<p>Submits a quota increase request for the specified quota.</p>",
+      "errors": [
+        {
+          "shape": "DependencyAccessDeniedException"
+        },
+        {
+          "shape": "QuotaExceededException"
+        },
+        {
+          "shape": "ResourceAlreadyExistsException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "InvalidResourceStateException"
+        },
+        {
+          "shape": "ServiceException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
       ],
-      "documentation":"<p>Submits a quota increase request for the specified quota.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "RequestServiceQuotaIncreaseRequest"
+      },
+      "name": "RequestServiceQuotaIncrease",
+      "output": {
+        "shape": "RequestServiceQuotaIncreaseResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"TooManyRequestsException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"TooManyTagsException"},
-        {"shape":"TagPolicyViolationException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceException"}
+    "TagResource": {
+      "documentation": "<p>Adds tags to the specified applied quota. You can include one or more tags to add to the quota.</p>",
+      "errors": [
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "TooManyTagsException"
+        },
+        {
+          "shape": "TagPolicyViolationException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        }
       ],
-      "documentation":"<p>Adds tags to the specified applied quota. You can include one or more tags to add to the quota.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/"
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"TooManyRequestsException"},
-        {"shape":"NoSuchResourceException"},
-        {"shape":"IllegalArgumentException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ServiceException"}
+    "UntagResource": {
+      "documentation": "<p>Removes tags from the specified applied quota. You can specify one or more tags to remove.</p>",
+      "errors": [
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "NoSuchResourceException"
+        },
+        {
+          "shape": "IllegalArgumentException"
+        },
+        {
+          "shape": "AccessDeniedException"
+        },
+        {
+          "shape": "ServiceException"
+        }
       ],
-      "documentation":"<p>Removes tags from the specified applied quota. You can specify one or more tags to remove.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
     }
   },
-  "shapes":{
-    "AWSServiceAccessNotEnabledException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+  "shapes": {
+    "AWSServiceAccessNotEnabledException": {
+      "documentation": "<p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
       },
-      "documentation":"<p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "AccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "AccessDeniedException": {
+      "documentation": "<p>You do not have sufficient permission to perform this action.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
       },
-      "documentation":"<p>You do not have sufficient permission to perform this action.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "AmazonResourceName":{
-      "type":"string",
-      "max":1011,
-      "min":1,
-      "pattern":"arn:aws(-[\\w]+)*:*:.+:[0-9]{12}:.+"
+    "AmazonResourceName": {
+      "max": 1011,
+      "min": 1,
+      "pattern": "arn:aws(-[\\w]+)*:*:.+:[0-9]{12}:.+",
+      "type": "string"
     },
-    "AssociateServiceQuotaTemplateRequest":{
-      "type":"structure",
-      "members":{
-      }
+    "AssociateServiceQuotaTemplateRequest": {
+      "members": {},
+      "type": "structure"
     },
-    "AssociateServiceQuotaTemplateResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "AssociateServiceQuotaTemplateResponse": {
+      "members": {},
+      "type": "structure"
     },
-    "AwsRegion":{
-      "type":"string",
-      "max":64,
-      "min":1,
-      "pattern":"[a-zA-Z][a-zA-Z0-9-]{1,128}"
+    "AwsRegion": {
+      "max": 64,
+      "min": 1,
+      "pattern": "[a-zA-Z][a-zA-Z0-9-]{1,128}",
+      "type": "string"
     },
-    "CustomerServiceEngagementId":{"type":"string"},
-    "DateTime":{"type":"timestamp"},
-    "DeleteServiceQuotaIncreaseRequestFromTemplateRequest":{
-      "type":"structure",
-      "required":[
+    "CustomerServiceEngagementId": {
+      "type": "string"
+    },
+    "DateTime": {
+      "type": "timestamp"
+    },
+    "DeleteServiceQuotaIncreaseRequestFromTemplateRequest": {
+      "members": {
+        "AwsRegion": {
+          "documentation": "<p>The AWS Region.</p>",
+          "shape": "AwsRegion"
+        },
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        }
+      },
+      "required": [
         "ServiceCode",
         "QuotaCode",
         "AwsRegion"
       ],
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
-        },
-        "AwsRegion":{
-          "shape":"AwsRegion",
-          "documentation":"<p>The AWS Region.</p>"
+      "type": "structure"
+    },
+    "DeleteServiceQuotaIncreaseRequestFromTemplateResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "DependencyAccessDeniedException": {
+      "documentation": "<p>You can't perform this action because a dependency does not have access.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
         }
-      }
-    },
-    "DeleteServiceQuotaIncreaseRequestFromTemplateResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "DependencyAccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>You can't perform this action because a dependency does not have access.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "DisassociateServiceQuotaTemplateRequest":{
-      "type":"structure",
-      "members":{
-      }
+    "DisassociateServiceQuotaTemplateRequest": {
+      "members": {},
+      "type": "structure"
     },
-    "DisassociateServiceQuotaTemplateResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "DisassociateServiceQuotaTemplateResponse": {
+      "members": {},
+      "type": "structure"
     },
-    "ErrorCode":{
-      "type":"string",
-      "enum":[
+    "ErrorCode": {
+      "enum": [
         "DEPENDENCY_ACCESS_DENIED_ERROR",
         "DEPENDENCY_THROTTLING_ERROR",
         "DEPENDENCY_SERVICE_ERROR",
         "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"
-      ]
+      ],
+      "type": "string"
     },
-    "ErrorMessage":{"type":"string"},
-    "ErrorReason":{
-      "type":"structure",
-      "members":{
-        "ErrorCode":{
-          "shape":"ErrorCode",
-          "documentation":"<p>Service Quotas returns the following error values:</p> <ul> <li> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the service or quota.</p> </li> <li> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.</p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li> <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li> </ul>"
+    "ErrorMessage": {
+      "type": "string"
+    },
+    "ErrorReason": {
+      "documentation": "<p>An error that explains why an action did not succeed.</p>",
+      "members": {
+        "ErrorCode": {
+          "documentation": "<p>Service Quotas returns the following error values:</p> <ul> <li> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the service or quota.</p> </li> <li> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.</p> </li> <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li> <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li> </ul>",
+          "shape": "ErrorCode"
         },
-        "ErrorMessage":{
-          "shape":"ErrorMessage",
-          "documentation":"<p>The error message.</p>"
+        "ErrorMessage": {
+          "documentation": "<p>The error message.</p>",
+          "shape": "ErrorMessage"
         }
       },
-      "documentation":"<p>An error that explains why an action did not succeed.</p>"
+      "type": "structure"
     },
-    "ExceptionMessage":{"type":"string"},
-    "GetAWSDefaultServiceQuotaRequest":{
-      "type":"structure",
-      "required":[
+    "ExceptionMessage": {
+      "type": "string"
+    },
+    "GetAWSDefaultServiceQuotaRequest": {
+      "members": {
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        }
+      },
+      "required": [
         "ServiceCode",
         "QuotaCode"
       ],
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
+      "type": "structure"
+    },
+    "GetAWSDefaultServiceQuotaResponse": {
+      "members": {
+        "Quota": {
+          "documentation": "<p>Information about the quota.</p>",
+          "shape": "ServiceQuota"
+        }
+      },
+      "type": "structure"
+    },
+    "GetAssociationForServiceQuotaTemplateRequest": {
+      "members": {},
+      "type": "structure"
+    },
+    "GetAssociationForServiceQuotaTemplateResponse": {
+      "members": {
+        "ServiceQuotaTemplateAssociationStatus": {
+          "documentation": "<p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>",
+          "shape": "ServiceQuotaTemplateAssociationStatus"
+        }
+      },
+      "type": "structure"
+    },
+    "GetRequestedServiceQuotaChangeRequest": {
+      "members": {
+        "RequestId": {
+          "documentation": "<p>The ID of the quota increase request.</p>",
+          "shape": "RequestId"
+        }
+      },
+      "required": [
+        "RequestId"
+      ],
+      "type": "structure"
+    },
+    "GetRequestedServiceQuotaChangeResponse": {
+      "members": {
+        "RequestedQuota": {
+          "documentation": "<p>Information about the quota increase request.</p>",
+          "shape": "RequestedServiceQuotaChange"
+        }
+      },
+      "type": "structure"
+    },
+    "GetServiceQuotaIncreaseRequestFromTemplateRequest": {
+      "members": {
+        "AwsRegion": {
+          "documentation": "<p>The AWS Region.</p>",
+          "shape": "AwsRegion"
         },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
         }
-      }
-    },
-    "GetAWSDefaultServiceQuotaResponse":{
-      "type":"structure",
-      "members":{
-        "Quota":{
-          "shape":"ServiceQuota",
-          "documentation":"<p>Information about the quota.</p>"
-        }
-      }
-    },
-    "GetAssociationForServiceQuotaTemplateRequest":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "GetAssociationForServiceQuotaTemplateResponse":{
-      "type":"structure",
-      "members":{
-        "ServiceQuotaTemplateAssociationStatus":{
-          "shape":"ServiceQuotaTemplateAssociationStatus",
-          "documentation":"<p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>"
-        }
-      }
-    },
-    "GetRequestedServiceQuotaChangeRequest":{
-      "type":"structure",
-      "required":["RequestId"],
-      "members":{
-        "RequestId":{
-          "shape":"RequestId",
-          "documentation":"<p>The ID of the quota increase request.</p>"
-        }
-      }
-    },
-    "GetRequestedServiceQuotaChangeResponse":{
-      "type":"structure",
-      "members":{
-        "RequestedQuota":{
-          "shape":"RequestedServiceQuotaChange",
-          "documentation":"<p>Information about the quota increase request.</p>"
-        }
-      }
-    },
-    "GetServiceQuotaIncreaseRequestFromTemplateRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "ServiceCode",
         "QuotaCode",
         "AwsRegion"
       ],
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
-        },
-        "AwsRegion":{
-          "shape":"AwsRegion",
-          "documentation":"<p>The AWS Region.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "GetServiceQuotaIncreaseRequestFromTemplateResponse":{
-      "type":"structure",
-      "members":{
-        "ServiceQuotaIncreaseRequestInTemplate":{
-          "shape":"ServiceQuotaIncreaseRequestInTemplate",
-          "documentation":"<p>Information about the quota increase request.</p>"
+    "GetServiceQuotaIncreaseRequestFromTemplateResponse": {
+      "members": {
+        "ServiceQuotaIncreaseRequestInTemplate": {
+          "documentation": "<p>Information about the quota increase request.</p>",
+          "shape": "ServiceQuotaIncreaseRequestInTemplate"
         }
-      }
+      },
+      "type": "structure"
     },
-    "GetServiceQuotaRequest":{
-      "type":"structure",
-      "required":[
+    "GetServiceQuotaRequest": {
+      "members": {
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        }
+      },
+      "required": [
         "ServiceCode",
         "QuotaCode"
       ],
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "GetServiceQuotaResponse":{
-      "type":"structure",
-      "members":{
-        "Quota":{
-          "shape":"ServiceQuota",
-          "documentation":"<p>Information about the quota.</p>"
+    "GetServiceQuotaResponse": {
+      "members": {
+        "Quota": {
+          "documentation": "<p>Information about the quota.</p>",
+          "shape": "ServiceQuota"
         }
-      }
-    },
-    "GlobalQuota":{"type":"boolean"},
-    "IllegalArgumentException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>Invalid input was provided.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "InputTagKeys":{
-      "type":"list",
-      "member":{"shape":"TagKey"}
+    "GlobalQuota": {
+      "type": "boolean"
     },
-    "InputTags":{
-      "type":"list",
-      "member":{"shape":"Tag"},
-      "min":1
-    },
-    "InvalidPaginationTokenException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>Invalid input was provided.</p>",
-      "exception":true
-    },
-    "InvalidResourceStateException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>The resource is in an invalid state.</p>",
-      "exception":true
-    },
-    "ListAWSDefaultServiceQuotasRequest":{
-      "type":"structure",
-      "required":["ServiceCode"],
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>"
+    "IllegalArgumentException": {
+      "documentation": "<p>Invalid input was provided.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListAWSDefaultServiceQuotasResponse":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>"
-        },
-        "Quotas":{
-          "shape":"ServiceQuotaListDefinition",
-          "documentation":"<p>Information about the quotas.</p>"
+    "InputTagKeys": {
+      "member": {
+        "shape": "TagKey"
+      },
+      "type": "list"
+    },
+    "InputTags": {
+      "member": {
+        "shape": "Tag"
+      },
+      "min": 1,
+      "type": "list"
+    },
+    "InvalidPaginationTokenException": {
+      "documentation": "<p>Invalid input was provided.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
         }
-      }
+      },
+      "type": "structure"
     },
-    "ListRequestedServiceQuotaChangeHistoryByQuotaRequest":{
-      "type":"structure",
-      "required":[
+    "InvalidResourceStateException": {
+      "documentation": "<p>The resource is in an invalid state.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
+      },
+      "type": "structure"
+    },
+    "ListAWSDefaultServiceQuotasRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "NextToken"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        }
+      },
+      "required": [
+        "ServiceCode"
+      ],
+      "type": "structure"
+    },
+    "ListAWSDefaultServiceQuotasResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>",
+          "shape": "NextToken"
+        },
+        "Quotas": {
+          "documentation": "<p>Information about the quotas.</p>",
+          "shape": "ServiceQuotaListDefinition"
+        }
+      },
+      "type": "structure"
+    },
+    "ListRequestedServiceQuotaChangeHistoryByQuotaRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "NextToken"
+        },
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        },
+        "Status": {
+          "documentation": "<p>The status value of the quota increase request.</p>",
+          "shape": "RequestStatus"
+        }
+      },
+      "required": [
         "ServiceCode",
         "QuotaCode"
       ],
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
-        },
-        "Status":{
-          "shape":"RequestStatus",
-          "documentation":"<p>The status value of the quota increase request.</p>"
-        },
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "ListRequestedServiceQuotaChangeHistoryByQuotaResponse":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>"
+    "ListRequestedServiceQuotaChangeHistoryByQuotaResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>",
+          "shape": "NextToken"
         },
-        "RequestedQuotas":{
-          "shape":"RequestedServiceQuotaChangeHistoryListDefinition",
-          "documentation":"<p>Information about the quota increase requests.</p>"
-        }
-      }
-    },
-    "ListRequestedServiceQuotaChangeHistoryRequest":{
-      "type":"structure",
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "Status":{
-          "shape":"RequestStatus",
-          "documentation":"<p>The status of the quota increase request.</p>"
-        },
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>"
-        }
-      }
-    },
-    "ListRequestedServiceQuotaChangeHistoryResponse":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>"
-        },
-        "RequestedQuotas":{
-          "shape":"RequestedServiceQuotaChangeHistoryListDefinition",
-          "documentation":"<p>Information about the quota increase requests.</p>"
-        }
-      }
-    },
-    "ListServiceQuotaIncreaseRequestsInTemplateRequest":{
-      "type":"structure",
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "AwsRegion":{
-          "shape":"AwsRegion",
-          "documentation":"<p>The AWS Region.</p>"
-        },
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>"
-        }
-      }
-    },
-    "ListServiceQuotaIncreaseRequestsInTemplateResponse":{
-      "type":"structure",
-      "members":{
-        "ServiceQuotaIncreaseRequestInTemplateList":{
-          "shape":"ServiceQuotaIncreaseRequestInTemplateList",
-          "documentation":"<p>Information about the quota increase requests.</p>"
-        },
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>"
-        }
-      }
-    },
-    "ListServiceQuotasRequest":{
-      "type":"structure",
-      "required":["ServiceCode"],
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>"
-        }
-      }
-    },
-    "ListServiceQuotasResponse":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>"
-        },
-        "Quotas":{
-          "shape":"ServiceQuotaListDefinition",
-          "documentation":"<p>Information about the quotas.</p>"
-        }
-      }
-    },
-    "ListServicesRequest":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token for the next page of results.</p>"
-        },
-        "MaxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>"
-        }
-      }
-    },
-    "ListServicesResponse":{
-      "type":"structure",
-      "members":{
-        "NextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>"
-        },
-        "Services":{
-          "shape":"ServiceInfoListDefinition",
-          "documentation":"<p>Information about the services.</p>"
-        }
-      }
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["ResourceARN"],
-      "members":{
-        "ResourceARN":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href=\"https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html\">list-service-quotas</a> AWS CLI command or the <a href=\"https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html\">ListServiceQuotas</a> AWS API operation.</p>"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "Tags":{
-          "shape":"OutputTags",
-          "documentation":"<p>A complex data type that contains zero or more tag elements.</p>"
-        }
-      }
-    },
-    "MaxResults":{
-      "type":"integer",
-      "max":100,
-      "min":1
-    },
-    "MetricDimensionName":{"type":"string"},
-    "MetricDimensionValue":{"type":"string"},
-    "MetricDimensionsMapDefinition":{
-      "type":"map",
-      "key":{"shape":"MetricDimensionName"},
-      "value":{"shape":"MetricDimensionValue"},
-      "max":10
-    },
-    "MetricInfo":{
-      "type":"structure",
-      "members":{
-        "MetricNamespace":{
-          "shape":"QuotaMetricNamespace",
-          "documentation":"<p>The namespace of the metric.</p>"
-        },
-        "MetricName":{
-          "shape":"QuotaMetricName",
-          "documentation":"<p>The name of the metric.</p>"
-        },
-        "MetricDimensions":{
-          "shape":"MetricDimensionsMapDefinition",
-          "documentation":"<p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>"
-        },
-        "MetricStatisticRecommendation":{
-          "shape":"Statistic",
-          "documentation":"<p>The metric statistic that we recommend you use when determining quota usage.</p>"
+        "RequestedQuotas": {
+          "documentation": "<p>Information about the quota increase requests.</p>",
+          "shape": "RequestedServiceQuotaChangeHistoryListDefinition"
         }
       },
-      "documentation":"<p>Information about the CloudWatch metric that reflects quota usage.</p>"
+      "type": "structure"
     },
-    "NextToken":{
-      "type":"string",
-      "max":2048,
-      "pattern":"^[a-zA-Z0-9/+]*={0,2}$"
-    },
-    "NoAvailableOrganizationException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "ListRequestedServiceQuotaChangeHistoryRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "NextToken"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        },
+        "Status": {
+          "documentation": "<p>The status of the quota increase request.</p>",
+          "shape": "RequestStatus"
+        }
       },
-      "documentation":"<p>The account making this call is not a member of an organization.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "NoSuchResourceException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "ListRequestedServiceQuotaChangeHistoryResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>",
+          "shape": "NextToken"
+        },
+        "RequestedQuotas": {
+          "documentation": "<p>Information about the quota increase requests.</p>",
+          "shape": "RequestedServiceQuotaChangeHistoryListDefinition"
+        }
       },
-      "documentation":"<p>The specified resource does not exist.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "OrganizationNotInAllFeaturesModeException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "ListServiceQuotaIncreaseRequestsInTemplateRequest": {
+      "members": {
+        "AwsRegion": {
+          "documentation": "<p>The AWS Region.</p>",
+          "shape": "AwsRegion"
+        },
+        "MaxResults": {
+          "documentation": "<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "NextToken"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        }
       },
-      "documentation":"<p>The organization that your account belongs to is not in All Features mode.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "OutputTags":{
-      "type":"list",
-      "member":{"shape":"Tag"},
-      "max":200
+    "ListServiceQuotaIncreaseRequestsInTemplateResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>",
+          "shape": "NextToken"
+        },
+        "ServiceQuotaIncreaseRequestInTemplateList": {
+          "documentation": "<p>Information about the quota increase requests.</p>",
+          "shape": "ServiceQuotaIncreaseRequestInTemplateList"
+        }
+      },
+      "type": "structure"
     },
-    "PeriodUnit":{
-      "type":"string",
-      "enum":[
+    "ListServiceQuotasRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "NextToken"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        }
+      },
+      "required": [
+        "ServiceCode"
+      ],
+      "type": "structure"
+    },
+    "ListServiceQuotasResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>",
+          "shape": "NextToken"
+        },
+        "Quotas": {
+          "documentation": "<p>Information about the quotas.</p>",
+          "shape": "ServiceQuotaListDefinition"
+        }
+      },
+      "type": "structure"
+    },
+    "ListServicesRequest": {
+      "members": {
+        "MaxResults": {
+          "documentation": "<p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>",
+          "shape": "MaxResults"
+        },
+        "NextToken": {
+          "documentation": "<p>The token for the next page of results.</p>",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListServicesResponse": {
+      "members": {
+        "NextToken": {
+          "documentation": "<p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>",
+          "shape": "NextToken"
+        },
+        "Services": {
+          "documentation": "<p>Information about the services.</p>",
+          "shape": "ServiceInfoListDefinition"
+        }
+      },
+      "type": "structure"
+    },
+    "ListTagsForResourceRequest": {
+      "members": {
+        "ResourceARN": {
+          "documentation": "<p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href=\"https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html\">list-service-quotas</a> AWS CLI command or the <a href=\"https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html\">ListServiceQuotas</a> AWS API operation.</p>",
+          "shape": "AmazonResourceName"
+        }
+      },
+      "required": [
+        "ResourceARN"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceResponse": {
+      "members": {
+        "Tags": {
+          "documentation": "<p>A complex data type that contains zero or more tag elements.</p>",
+          "shape": "OutputTags"
+        }
+      },
+      "type": "structure"
+    },
+    "MaxResults": {
+      "max": 100,
+      "min": 1,
+      "type": "integer"
+    },
+    "MetricDimensionName": {
+      "type": "string"
+    },
+    "MetricDimensionValue": {
+      "type": "string"
+    },
+    "MetricDimensionsMapDefinition": {
+      "key": {
+        "shape": "MetricDimensionName"
+      },
+      "max": 10,
+      "type": "map",
+      "value": {
+        "shape": "MetricDimensionValue"
+      }
+    },
+    "MetricInfo": {
+      "documentation": "<p>Information about the CloudWatch metric that reflects quota usage.</p>",
+      "members": {
+        "MetricDimensions": {
+          "documentation": "<p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>",
+          "shape": "MetricDimensionsMapDefinition"
+        },
+        "MetricName": {
+          "documentation": "<p>The name of the metric.</p>",
+          "shape": "QuotaMetricName"
+        },
+        "MetricNamespace": {
+          "documentation": "<p>The namespace of the metric.</p>",
+          "shape": "QuotaMetricNamespace"
+        },
+        "MetricStatisticRecommendation": {
+          "documentation": "<p>The metric statistic that we recommend you use when determining quota usage.</p>",
+          "shape": "Statistic"
+        }
+      },
+      "type": "structure"
+    },
+    "NextToken": {
+      "max": 2048,
+      "pattern": "^[a-zA-Z0-9/+]*={0,2}$",
+      "type": "string"
+    },
+    "NoAvailableOrganizationException": {
+      "documentation": "<p>The account making this call is not a member of an organization.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
+      },
+      "type": "structure"
+    },
+    "NoSuchResourceException": {
+      "documentation": "<p>The specified resource does not exist.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
+      },
+      "type": "structure"
+    },
+    "OrganizationNotInAllFeaturesModeException": {
+      "documentation": "<p>The organization that your account belongs to is not in All Features mode.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
+      },
+      "type": "structure"
+    },
+    "OutputTags": {
+      "max": 200,
+      "member": {
+        "shape": "Tag"
+      },
+      "type": "list"
+    },
+    "PeriodUnit": {
+      "enum": [
         "MICROSECOND",
         "MILLISECOND",
         "SECOND",
@@ -928,467 +1307,508 @@
         "HOUR",
         "DAY",
         "WEEK"
-      ]
+      ],
+      "type": "string"
     },
-    "PeriodValue":{"type":"integer"},
-    "PutServiceQuotaIncreaseRequestIntoTemplateRequest":{
-      "type":"structure",
-      "required":[
+    "PeriodValue": {
+      "type": "integer"
+    },
+    "PutServiceQuotaIncreaseRequestIntoTemplateRequest": {
+      "members": {
+        "AwsRegion": {
+          "documentation": "<p>The AWS Region.</p>",
+          "shape": "AwsRegion"
+        },
+        "DesiredValue": {
+          "documentation": "<p>The new, increased value for the quota.</p>",
+          "shape": "QuotaValue"
+        },
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        }
+      },
+      "required": [
         "QuotaCode",
         "ServiceCode",
         "AwsRegion",
         "DesiredValue"
       ],
-      "members":{
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
-        },
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "AwsRegion":{
-          "shape":"AwsRegion",
-          "documentation":"<p>The AWS Region.</p>"
-        },
-        "DesiredValue":{
-          "shape":"QuotaValue",
-          "documentation":"<p>The new, increased value for the quota.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "PutServiceQuotaIncreaseRequestIntoTemplateResponse":{
-      "type":"structure",
-      "members":{
-        "ServiceQuotaIncreaseRequestInTemplate":{
-          "shape":"ServiceQuotaIncreaseRequestInTemplate",
-          "documentation":"<p>Information about the quota increase request.</p>"
-        }
-      }
-    },
-    "QuotaAdjustable":{"type":"boolean"},
-    "QuotaArn":{"type":"string"},
-    "QuotaCode":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"[a-zA-Z][a-zA-Z0-9-]{1,128}"
-    },
-    "QuotaExceededException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>",
-      "exception":true
-    },
-    "QuotaMetricName":{"type":"string"},
-    "QuotaMetricNamespace":{"type":"string"},
-    "QuotaName":{"type":"string"},
-    "QuotaPeriod":{
-      "type":"structure",
-      "members":{
-        "PeriodValue":{
-          "shape":"PeriodValue",
-          "documentation":"<p>The value.</p>"
-        },
-        "PeriodUnit":{
-          "shape":"PeriodUnit",
-          "documentation":"<p>The time unit.</p>"
+    "PutServiceQuotaIncreaseRequestIntoTemplateResponse": {
+      "members": {
+        "ServiceQuotaIncreaseRequestInTemplate": {
+          "documentation": "<p>Information about the quota increase request.</p>",
+          "shape": "ServiceQuotaIncreaseRequestInTemplate"
         }
       },
-      "documentation":"<p>Information about the quota period.</p>"
+      "type": "structure"
     },
-    "QuotaUnit":{"type":"string"},
-    "QuotaValue":{
-      "type":"double",
-      "max":10000000000,
-      "min":0
+    "QuotaAdjustable": {
+      "type": "boolean"
     },
-    "RequestId":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"[0-9a-zA-Z][a-zA-Z0-9-]{1,128}"
+    "QuotaArn": {
+      "type": "string"
     },
-    "RequestServiceQuotaIncreaseRequest":{
-      "type":"structure",
-      "required":[
+    "QuotaCode": {
+      "max": 128,
+      "min": 1,
+      "pattern": "[a-zA-Z][a-zA-Z0-9-]{1,128}",
+      "type": "string"
+    },
+    "QuotaExceededException": {
+      "documentation": "<p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
+      },
+      "type": "structure"
+    },
+    "QuotaMetricName": {
+      "type": "string"
+    },
+    "QuotaMetricNamespace": {
+      "type": "string"
+    },
+    "QuotaName": {
+      "type": "string"
+    },
+    "QuotaPeriod": {
+      "documentation": "<p>Information about the quota period.</p>",
+      "members": {
+        "PeriodUnit": {
+          "documentation": "<p>The time unit.</p>",
+          "shape": "PeriodUnit"
+        },
+        "PeriodValue": {
+          "documentation": "<p>The value.</p>",
+          "shape": "PeriodValue"
+        }
+      },
+      "type": "structure"
+    },
+    "QuotaUnit": {
+      "type": "string"
+    },
+    "QuotaValue": {
+      "max": 10000000000,
+      "min": 0,
+      "type": "double"
+    },
+    "RequestId": {
+      "max": 128,
+      "min": 1,
+      "pattern": "[0-9a-zA-Z][a-zA-Z0-9-]{1,128}",
+      "type": "string"
+    },
+    "RequestServiceQuotaIncreaseRequest": {
+      "members": {
+        "DesiredValue": {
+          "documentation": "<p>The new, increased value for the quota.</p>",
+          "shape": "QuotaValue"
+        },
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        }
+      },
+      "required": [
         "ServiceCode",
         "QuotaCode",
         "DesiredValue"
       ],
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
-        },
-        "DesiredValue":{
-          "shape":"QuotaValue",
-          "documentation":"<p>The new, increased value for the quota.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "RequestServiceQuotaIncreaseResponse":{
-      "type":"structure",
-      "members":{
-        "RequestedQuota":{
-          "shape":"RequestedServiceQuotaChange",
-          "documentation":"<p>Information about the quota increase request.</p>"
+    "RequestServiceQuotaIncreaseResponse": {
+      "members": {
+        "RequestedQuota": {
+          "documentation": "<p>Information about the quota increase request.</p>",
+          "shape": "RequestedServiceQuotaChange"
         }
-      }
+      },
+      "type": "structure"
     },
-    "RequestStatus":{
-      "type":"string",
-      "enum":[
+    "RequestStatus": {
+      "enum": [
         "PENDING",
         "CASE_OPENED",
         "APPROVED",
         "DENIED",
         "CASE_CLOSED"
-      ]
+      ],
+      "type": "string"
     },
-    "RequestedServiceQuotaChange":{
-      "type":"structure",
-      "members":{
-        "Id":{
-          "shape":"RequestId",
-          "documentation":"<p>The unique identifier.</p>"
+    "RequestedServiceQuotaChange": {
+      "documentation": "<p>Information about a quota increase request.</p>",
+      "members": {
+        "CaseId": {
+          "documentation": "<p>The case ID.</p>",
+          "shape": "CustomerServiceEngagementId"
         },
-        "CaseId":{
-          "shape":"CustomerServiceEngagementId",
-          "documentation":"<p>The case ID.</p>"
+        "Created": {
+          "documentation": "<p>The date and time when the quota increase request was received and the case ID was created.</p>",
+          "shape": "DateTime"
         },
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
+        "DesiredValue": {
+          "documentation": "<p>The new, increased value for the quota.</p>",
+          "shape": "QuotaValue"
         },
-        "ServiceName":{
-          "shape":"ServiceName",
-          "documentation":"<p>The service name.</p>"
+        "GlobalQuota": {
+          "documentation": "<p>Indicates whether the quota is global.</p>",
+          "shape": "GlobalQuota"
         },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
+        "Id": {
+          "documentation": "<p>The unique identifier.</p>",
+          "shape": "RequestId"
         },
-        "QuotaName":{
-          "shape":"QuotaName",
-          "documentation":"<p>The quota name.</p>"
+        "LastUpdated": {
+          "documentation": "<p>The date and time of the most recent change.</p>",
+          "shape": "DateTime"
         },
-        "DesiredValue":{
-          "shape":"QuotaValue",
-          "documentation":"<p>The new, increased value for the quota.</p>"
+        "QuotaArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the quota.</p>",
+          "shape": "QuotaArn"
         },
-        "Status":{
-          "shape":"RequestStatus",
-          "documentation":"<p>The state of the quota increase request.</p>"
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
         },
-        "Created":{
-          "shape":"DateTime",
-          "documentation":"<p>The date and time when the quota increase request was received and the case ID was created.</p>"
+        "QuotaName": {
+          "documentation": "<p>The quota name.</p>",
+          "shape": "QuotaName"
         },
-        "LastUpdated":{
-          "shape":"DateTime",
-          "documentation":"<p>The date and time of the most recent change.</p>"
+        "Requester": {
+          "documentation": "<p>The IAM identity of the requester.</p>",
+          "shape": "Requester"
         },
-        "Requester":{
-          "shape":"Requester",
-          "documentation":"<p>The IAM identity of the requester.</p>"
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
         },
-        "QuotaArn":{
-          "shape":"QuotaArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the quota.</p>"
+        "ServiceName": {
+          "documentation": "<p>The service name.</p>",
+          "shape": "ServiceName"
         },
-        "GlobalQuota":{
-          "shape":"GlobalQuota",
-          "documentation":"<p>Indicates whether the quota is global.</p>"
+        "Status": {
+          "documentation": "<p>The state of the quota increase request.</p>",
+          "shape": "RequestStatus"
         },
-        "Unit":{
-          "shape":"QuotaUnit",
-          "documentation":"<p>The unit of measurement.</p>"
+        "Unit": {
+          "documentation": "<p>The unit of measurement.</p>",
+          "shape": "QuotaUnit"
         }
       },
-      "documentation":"<p>Information about a quota increase request.</p>"
+      "type": "structure"
     },
-    "RequestedServiceQuotaChangeHistoryListDefinition":{
-      "type":"list",
-      "member":{"shape":"RequestedServiceQuotaChange"}
-    },
-    "Requester":{"type":"string"},
-    "ResourceAlreadyExistsException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "RequestedServiceQuotaChangeHistoryListDefinition": {
+      "member": {
+        "shape": "RequestedServiceQuotaChange"
       },
-      "documentation":"<p>The specified resource already exists.</p>",
-      "exception":true
+      "type": "list"
     },
-    "ServiceCode":{
-      "type":"string",
-      "max":63,
-      "min":1,
-      "pattern":"[a-zA-Z][a-zA-Z0-9-]{1,63}"
+    "Requester": {
+      "type": "string"
     },
-    "ServiceException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>Something went wrong.</p>",
-      "exception":true,
-      "fault":true
-    },
-    "ServiceInfo":{
-      "type":"structure",
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "ServiceName":{
-          "shape":"ServiceName",
-          "documentation":"<p>The service name.</p>"
+    "ResourceAlreadyExistsException": {
+      "documentation": "<p>The specified resource already exists.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
         }
       },
-      "documentation":"<p>Information about a service.</p>"
+      "type": "structure"
     },
-    "ServiceInfoListDefinition":{
-      "type":"list",
-      "member":{"shape":"ServiceInfo"}
+    "ServiceCode": {
+      "max": 63,
+      "min": 1,
+      "pattern": "[a-zA-Z][a-zA-Z0-9-]{1,63}",
+      "type": "string"
     },
-    "ServiceName":{"type":"string"},
-    "ServiceQuota":{
-      "type":"structure",
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
-        },
-        "ServiceName":{
-          "shape":"ServiceName",
-          "documentation":"<p>The service name.</p>"
-        },
-        "QuotaArn":{
-          "shape":"QuotaArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the quota.</p>"
-        },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
-        },
-        "QuotaName":{
-          "shape":"QuotaName",
-          "documentation":"<p>The quota name.</p>"
-        },
-        "Value":{
-          "shape":"QuotaValue",
-          "documentation":"<p>The quota value.</p>"
-        },
-        "Unit":{
-          "shape":"QuotaUnit",
-          "documentation":"<p>The unit of measurement.</p>"
-        },
-        "Adjustable":{
-          "shape":"QuotaAdjustable",
-          "documentation":"<p>Indicates whether the quota value can be increased.</p>"
-        },
-        "GlobalQuota":{
-          "shape":"GlobalQuota",
-          "documentation":"<p>Indicates whether the quota is global.</p>"
-        },
-        "UsageMetric":{
-          "shape":"MetricInfo",
-          "documentation":"<p>Information about the measurement.</p>"
-        },
-        "Period":{
-          "shape":"QuotaPeriod",
-          "documentation":"<p>The period of time.</p>"
-        },
-        "ErrorReason":{
-          "shape":"ErrorReason",
-          "documentation":"<p>The error code and error reason.</p>"
+    "ServiceException": {
+      "documentation": "<p>Something went wrong.</p>",
+      "exception": true,
+      "fault": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
         }
       },
-      "documentation":"<p>Information about a quota.</p>"
+      "type": "structure"
     },
-    "ServiceQuotaIncreaseRequestInTemplate":{
-      "type":"structure",
-      "members":{
-        "ServiceCode":{
-          "shape":"ServiceCode",
-          "documentation":"<p>The service identifier.</p>"
+    "ServiceInfo": {
+      "documentation": "<p>Information about a service.</p>",
+      "members": {
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
         },
-        "ServiceName":{
-          "shape":"ServiceName",
-          "documentation":"<p>The service name.</p>"
-        },
-        "QuotaCode":{
-          "shape":"QuotaCode",
-          "documentation":"<p>The quota identifier.</p>"
-        },
-        "QuotaName":{
-          "shape":"QuotaName",
-          "documentation":"<p>The quota name.</p>"
-        },
-        "DesiredValue":{
-          "shape":"QuotaValue",
-          "documentation":"<p>The new, increased value of the quota.</p>"
-        },
-        "AwsRegion":{
-          "shape":"AwsRegion",
-          "documentation":"<p>The AWS Region.</p>"
-        },
-        "Unit":{
-          "shape":"QuotaUnit",
-          "documentation":"<p>The unit of measurement.</p>"
-        },
-        "GlobalQuota":{
-          "shape":"GlobalQuota",
-          "documentation":"<p>Indicates whether the quota is global.</p>"
+        "ServiceName": {
+          "documentation": "<p>The service name.</p>",
+          "shape": "ServiceName"
         }
       },
-      "documentation":"<p>Information about a quota increase request.</p>"
+      "type": "structure"
     },
-    "ServiceQuotaIncreaseRequestInTemplateList":{
-      "type":"list",
-      "member":{"shape":"ServiceQuotaIncreaseRequestInTemplate"}
+    "ServiceInfoListDefinition": {
+      "member": {
+        "shape": "ServiceInfo"
+      },
+      "type": "list"
     },
-    "ServiceQuotaListDefinition":{
-      "type":"list",
-      "member":{"shape":"ServiceQuota"}
+    "ServiceName": {
+      "type": "string"
     },
-    "ServiceQuotaTemplateAssociationStatus":{
-      "type":"string",
-      "enum":[
+    "ServiceQuota": {
+      "documentation": "<p>Information about a quota.</p>",
+      "members": {
+        "Adjustable": {
+          "documentation": "<p>Indicates whether the quota value can be increased.</p>",
+          "shape": "QuotaAdjustable"
+        },
+        "ErrorReason": {
+          "documentation": "<p>The error code and error reason.</p>",
+          "shape": "ErrorReason"
+        },
+        "GlobalQuota": {
+          "documentation": "<p>Indicates whether the quota is global.</p>",
+          "shape": "GlobalQuota"
+        },
+        "Period": {
+          "documentation": "<p>The period of time.</p>",
+          "shape": "QuotaPeriod"
+        },
+        "QuotaArn": {
+          "documentation": "<p>The Amazon Resource Name (ARN) of the quota.</p>",
+          "shape": "QuotaArn"
+        },
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "QuotaName": {
+          "documentation": "<p>The quota name.</p>",
+          "shape": "QuotaName"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        },
+        "ServiceName": {
+          "documentation": "<p>The service name.</p>",
+          "shape": "ServiceName"
+        },
+        "Unit": {
+          "documentation": "<p>The unit of measurement.</p>",
+          "shape": "QuotaUnit"
+        },
+        "UsageMetric": {
+          "documentation": "<p>Information about the measurement.</p>",
+          "shape": "MetricInfo"
+        },
+        "Value": {
+          "documentation": "<p>The quota value.</p>",
+          "shape": "QuotaValue"
+        }
+      },
+      "type": "structure"
+    },
+    "ServiceQuotaIncreaseRequestInTemplate": {
+      "documentation": "<p>Information about a quota increase request.</p>",
+      "members": {
+        "AwsRegion": {
+          "documentation": "<p>The AWS Region.</p>",
+          "shape": "AwsRegion"
+        },
+        "DesiredValue": {
+          "documentation": "<p>The new, increased value of the quota.</p>",
+          "shape": "QuotaValue"
+        },
+        "GlobalQuota": {
+          "documentation": "<p>Indicates whether the quota is global.</p>",
+          "shape": "GlobalQuota"
+        },
+        "QuotaCode": {
+          "documentation": "<p>The quota identifier.</p>",
+          "shape": "QuotaCode"
+        },
+        "QuotaName": {
+          "documentation": "<p>The quota name.</p>",
+          "shape": "QuotaName"
+        },
+        "ServiceCode": {
+          "documentation": "<p>The service identifier.</p>",
+          "shape": "ServiceCode"
+        },
+        "ServiceName": {
+          "documentation": "<p>The service name.</p>",
+          "shape": "ServiceName"
+        },
+        "Unit": {
+          "documentation": "<p>The unit of measurement.</p>",
+          "shape": "QuotaUnit"
+        }
+      },
+      "type": "structure"
+    },
+    "ServiceQuotaIncreaseRequestInTemplateList": {
+      "member": {
+        "shape": "ServiceQuotaIncreaseRequestInTemplate"
+      },
+      "type": "list"
+    },
+    "ServiceQuotaListDefinition": {
+      "member": {
+        "shape": "ServiceQuota"
+      },
+      "type": "list"
+    },
+    "ServiceQuotaTemplateAssociationStatus": {
+      "enum": [
         "ASSOCIATED",
         "DISASSOCIATED"
-      ]
+      ],
+      "type": "string"
     },
-    "ServiceQuotaTemplateNotInUseException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "ServiceQuotaTemplateNotInUseException": {
+      "documentation": "<p>The quota request template is not associated with your organization.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
       },
-      "documentation":"<p>The quota request template is not associated with your organization.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "Statistic":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":"(Sum|Maximum)"
+    "Statistic": {
+      "max": 256,
+      "min": 1,
+      "pattern": "(Sum|Maximum)",
+      "type": "string"
     },
-    "Tag":{
-      "type":"structure",
-      "required":[
+    "Tag": {
+      "documentation": "<p>A complex data type that contains a tag key and tag value.</p>",
+      "members": {
+        "Key": {
+          "documentation": "<p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>",
+          "shape": "TagKey"
+        },
+        "Value": {
+          "documentation": "<p>A string that contains an optional tag value. The string length should be between 0 and 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>",
+          "shape": "TagValue"
+        }
+      },
+      "required": [
         "Key",
         "Value"
       ],
-      "members":{
-        "Key":{
-          "shape":"TagKey",
-          "documentation":"<p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>"
-        },
-        "Value":{
-          "shape":"TagValue",
-          "documentation":"<p>A string that contains an optional tag value. The string length should be between 0 and 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>"
+      "type": "structure"
+    },
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+      "type": "string"
+    },
+    "TagPolicyViolationException": {
+      "documentation": "<p>The specified tag is a reserved word and cannot be used.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
         }
       },
-      "documentation":"<p>A complex data type that contains a tag key and tag value.</p>"
+      "type": "structure"
     },
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
-    },
-    "TagPolicyViolationException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "TagResourceRequest": {
+      "members": {
+        "ResourceARN": {
+          "documentation": "<p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href=\"https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html\">list-service-quotas</a> AWS CLI command or the <a href=\"https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html\">ListServiceQuotas</a> AWS API operation.</p>",
+          "shape": "AmazonResourceName"
+        },
+        "Tags": {
+          "documentation": "<p>The tags that you want to add to the resource.</p>",
+          "shape": "InputTags"
+        }
       },
-      "documentation":"<p>The specified tag is a reserved word and cannot be used.</p>",
-      "exception":true
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+      "required": [
         "ResourceARN",
         "Tags"
       ],
-      "members":{
-        "ResourceARN":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href=\"https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html\">list-service-quotas</a> AWS CLI command or the <a href=\"https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html\">ListServiceQuotas</a> AWS API operation.</p>"
-        },
-        "Tags":{
-          "shape":"InputTags",
-          "documentation":"<p>The tags that you want to add to the resource.</p>"
+      "type": "structure"
+    },
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "TagValue": {
+      "max": 256,
+      "min": 0,
+      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+      "type": "string"
+    },
+    "TemplatesNotAvailableInRegionException": {
+      "documentation": "<p>The Service Quotas template is not available in this AWS Region.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
         }
-      }
-    },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "min":0,
-      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
-    },
-    "TemplatesNotAvailableInRegionException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>The Service Quotas template is not available in this AWS Region.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "TooManyRequestsException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "TooManyRequestsException": {
+      "documentation": "<p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
       },
-      "documentation":"<p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "TooManyTagsException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
+    "TooManyTagsException": {
+      "documentation": "<p>You've exceeded the number of tags allowed for a resource. For more information, see <a href=\"https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions\">Tag restrictions</a> in the <i>Service Quotas User Guide</i>.</p>",
+      "exception": true,
+      "members": {
+        "Message": {
+          "shape": "ExceptionMessage"
+        }
       },
-      "documentation":"<p>You've exceeded the number of tags allowed for a resource. For more information, see <a href=\"https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions\">Tag restrictions</a> in the <i>Service Quotas User Guide</i>.</p>",
-      "exception":true
+      "type": "structure"
     },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+    "UntagResourceRequest": {
+      "members": {
+        "ResourceARN": {
+          "documentation": "<p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href=\"https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html\">list-service-quotas</a> AWS CLI command or the <a href=\"https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html\">ListServiceQuotas</a> AWS API operation.</p>",
+          "shape": "AmazonResourceName"
+        },
+        "TagKeys": {
+          "documentation": "<p>The keys of the tags that you want to remove from the resource.</p>",
+          "shape": "InputTagKeys"
+        }
+      },
+      "required": [
         "ResourceARN",
         "TagKeys"
       ],
-      "members":{
-        "ResourceARN":{
-          "shape":"AmazonResourceName",
-          "documentation":"<p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href=\"https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html\">list-service-quotas</a> AWS CLI command or the <a href=\"https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html\">ListServiceQuotas</a> AWS API operation.</p>"
-        },
-        "TagKeys":{
-          "shape":"InputTagKeys",
-          "documentation":"<p>The keys of the tags that you want to remove from the resource.</p>"
-        }
-      }
+      "type": "structure"
     },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
     }
   },
-  "documentation":"<p>With Service Quotas, you can view and manage your quotas easily as your AWS workloads grow. Quotas, also referred to as limits, are the maximum number of resources that you can create in your AWS account. For more information, see the <a href=\"https://docs.aws.amazon.com/servicequotas/latest/userguide/\">Service Quotas User Guide</a>.</p>"
+  "version": "2.0"
 }

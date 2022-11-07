@@ -2,7 +2,7 @@
 
 The following ``list-secrets`` example gets a list of the secrets in your account. ::
 
-    aws secretsmanager list-secrets 
+    aws secretsmanager list-secrets
 
 Output::
 
@@ -30,7 +30,7 @@ Output::
             }
         ]
     }
-    
+
 For more information, see `Find a secret <https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html>`__ in the *Secrets Manager User Guide*.
 
 **Example 2: To filter the list of secrets in your account**
@@ -38,7 +38,7 @@ For more information, see `Find a secret <https://docs.aws.amazon.com/secretsman
 The following ``list-secrets`` example gets a list of the secrets in your account that have ``Test`` in the name. Filtering by name is case sensitive. ::
 
     aws secretsmanager list-secrets \
-        --filter Key="name",Values="Test" 
+        --filter Key="name",Values="Test"
 
 Output::
 

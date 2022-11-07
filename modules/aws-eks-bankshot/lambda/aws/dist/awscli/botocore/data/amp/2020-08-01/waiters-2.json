@@ -1,43 +1,50 @@
 {
-  "version" : 2,
-  "waiters" : {
-    "WorkspaceActive" : {
-      "description" : "Wait until a workspace reaches ACTIVE status",
-      "delay" : 2,
-      "maxAttempts" : 60,
-      "operation" : "DescribeWorkspace",
-      "acceptors" : [ {
-        "matcher" : "path",
-        "argument" : "workspace.status.statusCode",
-        "state" : "success",
-        "expected" : "ACTIVE"
-      }, {
-        "matcher" : "path",
-        "argument" : "workspace.status.statusCode",
-        "state" : "retry",
-        "expected" : "UPDATING"
-      }, {
-        "matcher" : "path",
-        "argument" : "workspace.status.statusCode",
-        "state" : "retry",
-        "expected" : "CREATING"
-      } ]
+  "version": 2,
+  "waiters": {
+    "WorkspaceActive": {
+      "acceptors": [
+        {
+          "argument": "workspace.status.statusCode",
+          "expected": "ACTIVE",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "workspace.status.statusCode",
+          "expected": "UPDATING",
+          "matcher": "path",
+          "state": "retry"
+        },
+        {
+          "argument": "workspace.status.statusCode",
+          "expected": "CREATING",
+          "matcher": "path",
+          "state": "retry"
+        }
+      ],
+      "delay": 2,
+      "description": "Wait until a workspace reaches ACTIVE status",
+      "maxAttempts": 60,
+      "operation": "DescribeWorkspace"
     },
-    "WorkspaceDeleted" : {
-      "description" : "Wait until a workspace reaches DELETED status",
-      "delay" : 2,
-      "maxAttempts" : 60,
-      "operation" : "DescribeWorkspace",
-      "acceptors" : [ {
-        "matcher" : "error",
-        "state" : "success",
-        "expected" : "ResourceNotFoundException"
-      }, {
-        "matcher" : "path",
-        "argument" : "workspace.status.statusCode",
-        "state" : "retry",
-        "expected" : "DELETING"
-      } ]
+    "WorkspaceDeleted": {
+      "acceptors": [
+        {
+          "expected": "ResourceNotFoundException",
+          "matcher": "error",
+          "state": "success"
+        },
+        {
+          "argument": "workspace.status.statusCode",
+          "expected": "DELETING",
+          "matcher": "path",
+          "state": "retry"
+        }
+      ],
+      "delay": 2,
+      "description": "Wait until a workspace reaches DELETED status",
+      "maxAttempts": 60,
+      "operation": "DescribeWorkspace"
     }
   }
 }

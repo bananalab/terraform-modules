@@ -26,4 +26,3 @@ Output::
 For more information, see `Creating and Listing Groups`_ in the *Using IAM* guide.
 
 .. _`Creating and Listing Groups`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_CreatingAndListingGroups.html
-

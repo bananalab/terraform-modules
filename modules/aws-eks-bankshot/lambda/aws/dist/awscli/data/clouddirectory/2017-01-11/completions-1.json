@@ -1,28 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Directory": {
-      "operation": "ListDirectories",
-      "resourceIdentifier": {
-        "Name": "Directories[].Name",
-        "DirectoryArn": "Directories[].DirectoryArn"
-      }
-    },
-    "PublishedSchemaArn": {
-      "operation": "ListPublishedSchemaArns",
-      "resourceIdentifier": {
-        "SchemaArn": "SchemaArns[]"
-      }
-    }
-  },
   "operations": {
     "AddFacetToObject": {
       "DirectoryArn": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -32,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -43,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -54,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -65,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -76,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -87,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -98,8 +82,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -109,28 +93,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
     },
     "DeleteFacet": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -140,8 +124,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -151,28 +135,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
     },
     "DeleteTypedLinkFacet": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -182,8 +166,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -193,8 +177,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -204,8 +188,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -215,8 +199,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -226,8 +210,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -237,8 +221,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -248,8 +232,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -259,28 +243,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
     },
     "GetFacet": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -290,8 +274,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -301,8 +285,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -312,8 +296,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -323,28 +307,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
     },
     "GetTypedLinkFacetInformation": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -354,8 +338,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       },
@@ -363,8 +347,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -374,28 +358,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
     },
     "ListFacetAttributes": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -405,8 +389,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -416,8 +400,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -427,8 +411,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -438,8 +422,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -449,8 +433,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -460,8 +444,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -471,8 +455,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -482,8 +466,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -493,8 +477,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -504,8 +488,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -515,8 +499,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -526,28 +510,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
     },
     "ListTypedLinkFacetAttributes": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -557,8 +541,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -568,8 +552,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -579,8 +563,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -590,8 +574,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -601,28 +585,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
     },
     "UpdateFacet": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -632,8 +616,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
@@ -643,48 +627,48 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
     },
     "UpdateSchema": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
     },
     "UpdateTypedLinkFacet": {
-      "SchemaArn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "PublishedSchemaArn",
-            "resourceIdentifier": "SchemaArn"
-          }
-        ]
-      },
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "Directory"
+          }
+        ]
+      },
+      "SchemaArn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "SchemaArn",
+            "resourceName": "PublishedSchemaArn"
           }
         ]
       }
@@ -694,11 +678,27 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Directory",
-            "resourceIdentifier": "DirectoryArn"
+            "resourceIdentifier": "DirectoryArn",
+            "resourceName": "Directory"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Directory": {
+      "operation": "ListDirectories",
+      "resourceIdentifier": {
+        "DirectoryArn": "Directories[].DirectoryArn",
+        "Name": "Directories[].Name"
+      }
+    },
+    "PublishedSchemaArn": {
+      "operation": "ListPublishedSchemaArns",
+      "resourceIdentifier": {
+        "SchemaArn": "SchemaArns[]"
+      }
+    }
+  },
+  "version": "1.0"
 }

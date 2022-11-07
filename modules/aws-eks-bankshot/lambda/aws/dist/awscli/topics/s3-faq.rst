@@ -13,7 +13,7 @@ Below are common questions regarding the use of Amazon S3 in the AWS CLI.
 Q: Does the AWS CLI validate checksums?
 ---------------------------------------
 
-The AWS CLI will perform checksum validation for uploading files in 
+The AWS CLI will perform checksum validation for uploading files in
 specific scenarios.
 
 Upload

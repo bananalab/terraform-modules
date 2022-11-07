@@ -2,27 +2,27 @@
   "pagination": {
     "ListDatasetEntries": {
       "input_token": "NextToken",
-      "output_token": "NextToken",
       "limit_key": "MaxResults",
+      "output_token": "NextToken",
       "result_key": "DatasetEntries"
+    },
+    "ListModelPackagingJobs": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "ModelPackagingJobs"
     },
     "ListModels": {
       "input_token": "NextToken",
-      "output_token": "NextToken",
       "limit_key": "MaxResults",
+      "output_token": "NextToken",
       "result_key": "Models"
     },
     "ListProjects": {
       "input_token": "NextToken",
-      "output_token": "NextToken",
       "limit_key": "MaxResults",
+      "output_token": "NextToken",
       "result_key": "Projects"
-    },
-    "ListModelPackagingJobs": {
-      "input_token": "NextToken",
-      "output_token": "NextToken",
-      "limit_key": "MaxResults",
-      "result_key": "ModelPackagingJobs"
     }
   }
 }

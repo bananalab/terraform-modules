@@ -1,246 +1,73 @@
 {
   "version": 2,
   "waiters": {
-    "NotebookInstanceInService": {
-      "delay": 30,
-      "maxAttempts": 60,
-      "operation": "DescribeNotebookInstance",
-      "acceptors": [
-        {
-          "expected": "InService",
-          "matcher": "path",
-          "state": "success",
-          "argument": "NotebookInstanceStatus"
-        },
-        {
-          "expected": "Failed",
-          "matcher": "path",
-          "state": "failure",
-          "argument": "NotebookInstanceStatus"
-        }
-      ]
-    },
-    "NotebookInstanceStopped": {
-      "delay": 30,     
-      "operation": "DescribeNotebookInstance",
-      "maxAttempts": 60,
-      "acceptors": [
-        {
-          "expected": "Stopped",
-          "matcher": "path",
-          "state": "success",
-          "argument": "NotebookInstanceStatus"
-        },
-        {
-          "expected": "Failed",
-          "matcher": "path",
-          "state": "failure",
-          "argument": "NotebookInstanceStatus"
-        }
-      ]
-    }, 
-    "NotebookInstanceDeleted": {
-      "delay": 30,
-      "maxAttempts": 60,
-      "operation": "DescribeNotebookInstance",
+    "EndpointDeleted": {
       "acceptors": [
         {
           "expected": "ValidationException",
           "matcher": "error",
           "state": "success"
-        },    
+        },
         {
+          "argument": "EndpointStatus",
           "expected": "Failed",
           "matcher": "path",
-          "state": "failure",
-          "argument": "NotebookInstanceStatus"
-        }
-      ]
-    },
-    "TrainingJobCompletedOrStopped": {
-      "delay": 120,
-      "maxAttempts": 180,
-      "operation": "DescribeTrainingJob",
-      "acceptors": [
-        {
-          "expected": "Completed",
-          "matcher": "path",
-          "state": "success",
-          "argument": "TrainingJobStatus"
-        },
-        {
-          "expected": "Stopped",
-          "matcher": "path",
-          "state": "success",
-          "argument": "TrainingJobStatus"
-        },
-        {
-          "expected": "Failed",
-          "matcher": "path",
-          "state": "failure",
-          "argument": "TrainingJobStatus"
-        },
-        {
-          "expected": "ValidationException",
-          "matcher": "error",
           "state": "failure"
         }
-      ]
+      ],
+      "delay": 30,
+      "maxAttempts": 60,
+      "operation": "DescribeEndpoint"
     },
     "EndpointInService": {
-      "delay": 30,
-      "maxAttempts": 120,
-      "operation": "DescribeEndpoint",
       "acceptors": [
         {
+          "argument": "EndpointStatus",
           "expected": "InService",
           "matcher": "path",
-          "state": "success",
-          "argument": "EndpointStatus"
-        },
-        {
-          "expected": "Failed",
-          "matcher": "path",
-          "state": "failure",
-          "argument": "EndpointStatus"
-        },
-        {
-          "expected": "ValidationException",
-          "matcher": "error",
-          "state": "failure"
-        }
-      ]
-    },
-    "EndpointDeleted": {
-      "delay": 30,
-      "maxAttempts": 60,
-      "operation": "DescribeEndpoint",
-      "acceptors": [
-        {
-          "expected": "ValidationException",
-          "matcher": "error",
           "state": "success"
         },
         {
+          "argument": "EndpointStatus",
           "expected": "Failed",
           "matcher": "path",
-          "state": "failure",
-          "argument": "EndpointStatus"
-        }
-      ]
-    },
-    "TransformJobCompletedOrStopped": {
-      "delay": 60,
-      "maxAttempts": 60,
-      "operation": "DescribeTransformJob",
-      "acceptors": [
-        {
-          "expected": "Completed",
-          "matcher": "path",
-          "state": "success",
-          "argument": "TransformJobStatus"
-        },
-        {
-          "expected": "Stopped",
-          "matcher": "path",
-          "state": "success",
-          "argument": "TransformJobStatus"
-        },
-        {
-          "expected": "Failed",
-          "matcher": "path",
-          "state": "failure",
-          "argument": "TransformJobStatus"
+          "state": "failure"
         },
         {
           "expected": "ValidationException",
           "matcher": "error",
           "state": "failure"
         }
-      ]
-    },
-    "ProcessingJobCompletedOrStopped": {
-      "delay": 60,
-      "maxAttempts": 60,
-      "operation": "DescribeProcessingJob",
-      "acceptors": [
-        {
-          "expected": "Completed",
-          "matcher": "path",
-          "state": "success",
-          "argument": "ProcessingJobStatus"
-        },
-        {
-          "expected": "Stopped",
-          "matcher": "path",
-          "state": "success",
-          "argument": "ProcessingJobStatus"
-        },
-        {
-          "expected": "Failed",
-          "matcher": "path",
-          "state": "failure",
-          "argument": "ProcessingJobStatus"
-        },
-        {
-          "expected": "ValidationException",
-          "matcher": "error",
-          "state": "failure"
-        }
-      ]
+      ],
+      "delay": 30,
+      "maxAttempts": 120,
+      "operation": "DescribeEndpoint"
     },
     "ImageCreated": {
-      "delay": 60,
-      "maxAttempts": 60,
-      "operation": "DescribeImage",
       "acceptors": [
         {
+          "argument": "ImageStatus",
           "expected": "CREATED",
           "matcher": "path",
-          "state": "success",
-          "argument": "ImageStatus"
+          "state": "success"
         },
         {
+          "argument": "ImageStatus",
           "expected": "CREATE_FAILED",
           "matcher": "path",
-          "state": "failure",
-          "argument": "ImageStatus"
+          "state": "failure"
         },
         {
           "expected": "ValidationException",
           "matcher": "error",
           "state": "failure"
         }
-      ]
-    },
-    "ImageUpdated": {
+      ],
       "delay": 60,
       "maxAttempts": 60,
-      "operation": "DescribeImage",
-      "acceptors": [
-        {
-          "expected": "CREATED",
-          "matcher": "path",
-          "state": "success",
-          "argument": "ImageStatus"
-        },
-        {
-          "expected": "UPDATE_FAILED",
-          "matcher": "path",
-          "state": "failure",
-          "argument": "ImageStatus"
-        },
-        {
-          "expected": "ValidationException",
-          "matcher": "error",
-          "state": "failure"
-        }
-      ]
+      "operation": "DescribeImage"
     },
     "ImageDeleted": {
-      "delay": 60,
-      "maxAttempts": 60,
-      "operation": "DescribeImage",
       "acceptors": [
         {
           "expected": "ResourceNotFoundException",
@@ -248,46 +75,70 @@
           "state": "success"
         },
         {
+          "argument": "ImageStatus",
           "expected": "DELETE_FAILED",
           "matcher": "path",
-          "state": "failure",
-          "argument": "ImageStatus"
+          "state": "failure"
         },
         {
           "expected": "ValidationException",
           "matcher": "error",
           "state": "failure"
         }
-      ]
-    },
-    "ImageVersionCreated": {
+      ],
       "delay": 60,
       "maxAttempts": 60,
-      "operation": "DescribeImageVersion",
+      "operation": "DescribeImage"
+    },
+    "ImageUpdated": {
       "acceptors": [
         {
+          "argument": "ImageStatus",
           "expected": "CREATED",
           "matcher": "path",
-          "state": "success",
-          "argument": "ImageVersionStatus"
+          "state": "success"
         },
         {
-          "expected": "CREATE_FAILED",
+          "argument": "ImageStatus",
+          "expected": "UPDATE_FAILED",
           "matcher": "path",
-          "state": "failure",
-          "argument": "ImageVersionStatus"
+          "state": "failure"
         },
         {
           "expected": "ValidationException",
           "matcher": "error",
           "state": "failure"
         }
-      ]
-    },
-    "ImageVersionDeleted": {
+      ],
       "delay": 60,
       "maxAttempts": 60,
-      "operation": "DescribeImageVersion",
+      "operation": "DescribeImage"
+    },
+    "ImageVersionCreated": {
+      "acceptors": [
+        {
+          "argument": "ImageVersionStatus",
+          "expected": "CREATED",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "ImageVersionStatus",
+          "expected": "CREATE_FAILED",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "expected": "ValidationException",
+          "matcher": "error",
+          "state": "failure"
+        }
+      ],
+      "delay": 60,
+      "maxAttempts": 60,
+      "operation": "DescribeImageVersion"
+    },
+    "ImageVersionDeleted": {
       "acceptors": [
         {
           "expected": "ResourceNotFoundException",
@@ -295,17 +146,166 @@
           "state": "success"
         },
         {
+          "argument": "ImageVersionStatus",
           "expected": "DELETE_FAILED",
           "matcher": "path",
-          "state": "failure",
-          "argument": "ImageVersionStatus"
+          "state": "failure"
         },
         {
           "expected": "ValidationException",
           "matcher": "error",
           "state": "failure"
         }
-      ]
+      ],
+      "delay": 60,
+      "maxAttempts": 60,
+      "operation": "DescribeImageVersion"
+    },
+    "NotebookInstanceDeleted": {
+      "acceptors": [
+        {
+          "expected": "ValidationException",
+          "matcher": "error",
+          "state": "success"
+        },
+        {
+          "argument": "NotebookInstanceStatus",
+          "expected": "Failed",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 30,
+      "maxAttempts": 60,
+      "operation": "DescribeNotebookInstance"
+    },
+    "NotebookInstanceInService": {
+      "acceptors": [
+        {
+          "argument": "NotebookInstanceStatus",
+          "expected": "InService",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "NotebookInstanceStatus",
+          "expected": "Failed",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 30,
+      "maxAttempts": 60,
+      "operation": "DescribeNotebookInstance"
+    },
+    "NotebookInstanceStopped": {
+      "acceptors": [
+        {
+          "argument": "NotebookInstanceStatus",
+          "expected": "Stopped",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "NotebookInstanceStatus",
+          "expected": "Failed",
+          "matcher": "path",
+          "state": "failure"
+        }
+      ],
+      "delay": 30,
+      "maxAttempts": 60,
+      "operation": "DescribeNotebookInstance"
+    },
+    "ProcessingJobCompletedOrStopped": {
+      "acceptors": [
+        {
+          "argument": "ProcessingJobStatus",
+          "expected": "Completed",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "ProcessingJobStatus",
+          "expected": "Stopped",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "ProcessingJobStatus",
+          "expected": "Failed",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "expected": "ValidationException",
+          "matcher": "error",
+          "state": "failure"
+        }
+      ],
+      "delay": 60,
+      "maxAttempts": 60,
+      "operation": "DescribeProcessingJob"
+    },
+    "TrainingJobCompletedOrStopped": {
+      "acceptors": [
+        {
+          "argument": "TrainingJobStatus",
+          "expected": "Completed",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "TrainingJobStatus",
+          "expected": "Stopped",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "TrainingJobStatus",
+          "expected": "Failed",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "expected": "ValidationException",
+          "matcher": "error",
+          "state": "failure"
+        }
+      ],
+      "delay": 120,
+      "maxAttempts": 180,
+      "operation": "DescribeTrainingJob"
+    },
+    "TransformJobCompletedOrStopped": {
+      "acceptors": [
+        {
+          "argument": "TransformJobStatus",
+          "expected": "Completed",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "TransformJobStatus",
+          "expected": "Stopped",
+          "matcher": "path",
+          "state": "success"
+        },
+        {
+          "argument": "TransformJobStatus",
+          "expected": "Failed",
+          "matcher": "path",
+          "state": "failure"
+        },
+        {
+          "expected": "ValidationException",
+          "matcher": "error",
+          "state": "failure"
+        }
+      ],
+      "delay": 60,
+      "maxAttempts": 60,
+      "operation": "DescribeTransformJob"
     }
   }
 }

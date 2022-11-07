@@ -1,29 +1,5 @@
 {
   "pagination": {
-    "DescribeBudgets": {
-      "input_token": "NextToken",
-      "limit_key": "MaxResults",
-      "output_token": "NextToken",
-      "result_key": "Budgets"
-    },
-    "DescribeNotificationsForBudget": {
-      "input_token": "NextToken",
-      "limit_key": "MaxResults",
-      "output_token": "NextToken",
-      "result_key": "Notifications"
-    },
-    "DescribeSubscribersForNotification": {
-      "input_token": "NextToken",
-      "limit_key": "MaxResults",
-      "output_token": "NextToken",
-      "result_key": "Subscribers"
-    },
-    "DescribeBudgetPerformanceHistory": {
-      "input_token": "NextToken",
-      "limit_key": "MaxResults",
-      "output_token": "NextToken",
-      "result_key": "BudgetPerformanceHistory"
-    },
     "DescribeBudgetActionHistories": {
       "input_token": "NextToken",
       "limit_key": "MaxResults",
@@ -47,6 +23,30 @@
       "limit_key": "MaxResults",
       "output_token": "NextToken",
       "result_key": "BudgetNotificationsForAccount"
+    },
+    "DescribeBudgetPerformanceHistory": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "BudgetPerformanceHistory"
+    },
+    "DescribeBudgets": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Budgets"
+    },
+    "DescribeNotificationsForBudget": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Notifications"
+    },
+    "DescribeSubscribersForNotification": {
+      "input_token": "NextToken",
+      "limit_key": "MaxResults",
+      "output_token": "NextToken",
+      "result_key": "Subscribers"
     }
   }
 }

@@ -1,28 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "Domain": {
-      "operation": "ListDomains",
-      "resourceIdentifier": {
-        "DomainName": "Domains[].DomainName",
-        "AutoRenew": "Domains[].AutoRenew"
-      }
-    },
-    "Operation": {
-      "operation": "ListOperations",
-      "resourceIdentifier": {
-        "OperationId": "Operations[].OperationId"
-      }
-    }
-  },
   "operations": {
     "CheckDomainAvailability": {
       "DomainName": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -32,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -43,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -54,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -65,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -76,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -87,8 +71,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -98,8 +82,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -109,8 +93,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -120,8 +104,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Operation",
-            "resourceIdentifier": "OperationId"
+            "resourceIdentifier": "OperationId",
+            "resourceName": "Operation"
           }
         ]
       }
@@ -131,28 +115,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
     },
     "RegisterDomain": {
-      "DomainName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
-          }
-        ]
-      },
       "AutoRenew": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "AutoRenew"
+            "resourceIdentifier": "AutoRenew",
+            "resourceName": "Domain"
+          }
+        ]
+      },
+      "DomainName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -162,8 +146,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -173,28 +157,28 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
     },
     "TransferDomain": {
-      "DomainName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
-          }
-        ]
-      },
       "AutoRenew": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "AutoRenew"
+            "resourceIdentifier": "AutoRenew",
+            "resourceName": "Domain"
+          }
+        ]
+      },
+      "DomainName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -204,8 +188,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -215,8 +199,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -226,8 +210,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
@@ -237,11 +221,27 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "Domain",
-            "resourceIdentifier": "DomainName"
+            "resourceIdentifier": "DomainName",
+            "resourceName": "Domain"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "Domain": {
+      "operation": "ListDomains",
+      "resourceIdentifier": {
+        "AutoRenew": "Domains[].AutoRenew",
+        "DomainName": "Domains[].DomainName"
+      }
+    },
+    "Operation": {
+      "operation": "ListOperations",
+      "resourceIdentifier": {
+        "OperationId": "Operations[].OperationId"
+      }
+    }
+  },
+  "version": "1.0"
 }

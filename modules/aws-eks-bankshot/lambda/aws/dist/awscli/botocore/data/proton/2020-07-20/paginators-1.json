@@ -1,58 +1,26 @@
 {
   "pagination": {
+    "ListComponentOutputs": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "result_key": "outputs"
+    },
+    "ListComponentProvisionedResources": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "result_key": "provisionedResources"
+    },
+    "ListComponents": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "components"
+    },
     "ListEnvironmentAccountConnections": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "environmentAccountConnections"
-    },
-    "ListEnvironmentTemplateVersions": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "templateVersions"
-    },
-    "ListEnvironmentTemplates": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "templates"
-    },
-    "ListEnvironments": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "environments"
-    },
-    "ListServiceInstances": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "serviceInstances"
-    },
-    "ListServiceTemplateVersions": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "templateVersions"
-    },
-    "ListServiceTemplates": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "templates"
-    },
-    "ListServices": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "services"
-    },
-    "ListTagsForResource": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "limit_key": "maxResults",
-      "result_key": "tags"
     },
     "ListEnvironmentOutputs": {
       "input_token": "nextToken",
@@ -64,10 +32,28 @@
       "output_token": "nextToken",
       "result_key": "provisionedResources"
     },
+    "ListEnvironmentTemplateVersions": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "templateVersions"
+    },
+    "ListEnvironmentTemplates": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "templates"
+    },
+    "ListEnvironments": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "environments"
+    },
     "ListRepositories": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
+      "output_token": "nextToken",
       "result_key": "repositories"
     },
     "ListRepositorySyncDefinitions": {
@@ -85,6 +71,12 @@
       "output_token": "nextToken",
       "result_key": "provisionedResources"
     },
+    "ListServiceInstances": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "serviceInstances"
+    },
     "ListServicePipelineOutputs": {
       "input_token": "nextToken",
       "output_token": "nextToken",
@@ -95,21 +87,29 @@
       "output_token": "nextToken",
       "result_key": "provisionedResources"
     },
-    "ListComponentOutputs": {
+    "ListServiceTemplateVersions": {
       "input_token": "nextToken",
-      "output_token": "nextToken",
-      "result_key": "outputs"
-    },
-    "ListComponentProvisionedResources": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
-      "result_key": "provisionedResources"
-    },
-    "ListComponents": {
-      "input_token": "nextToken",
-      "output_token": "nextToken",
       "limit_key": "maxResults",
-      "result_key": "components"
+      "output_token": "nextToken",
+      "result_key": "templateVersions"
+    },
+    "ListServiceTemplates": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "templates"
+    },
+    "ListServices": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "services"
+    },
+    "ListTagsForResource": {
+      "input_token": "nextToken",
+      "limit_key": "maxResults",
+      "output_token": "nextToken",
+      "result_key": "tags"
     }
   }
 }

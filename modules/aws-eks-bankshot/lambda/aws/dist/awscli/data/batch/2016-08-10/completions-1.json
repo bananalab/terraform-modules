@@ -1,5 +1,189 @@
 {
-  "version": "1.0",
+  "operations": {
+    "DeleteComputeEnvironment": {
+      "computeEnvironment": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "computeEnvironmentArn",
+            "resourceName": "ComputeEnvironment"
+          }
+        ]
+      }
+    },
+    "DescribeJobDefinitions": {
+      "jobDefinitionName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobDefinitionName",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      },
+      "status": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "status",
+            "resourceName": "JobQueue"
+          }
+        ]
+      }
+    },
+    "RegisterJobDefinition": {
+      "containerProperties": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "containerProperties",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      },
+      "jobDefinitionName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "jobDefinitionName",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      },
+      "parameters": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "parameters",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      },
+      "retryStrategy": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "retryStrategy",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      },
+      "timeout": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "timeout",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      },
+      "type": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "type",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      }
+    },
+    "SubmitJob": {
+      "parameters": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "parameters",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      },
+      "retryStrategy": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "retryStrategy",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      },
+      "timeout": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "timeout",
+            "resourceName": "JobDefinition"
+          }
+        ]
+      }
+    },
+    "UpdateComputeEnvironment": {
+      "computeEnvironment": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "computeEnvironmentArn",
+            "resourceName": "ComputeEnvironment"
+          }
+        ]
+      },
+      "computeResources": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "computeResources",
+            "resourceName": "ComputeEnvironment"
+          }
+        ]
+      },
+      "serviceRole": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "serviceRole",
+            "resourceName": "ComputeEnvironment"
+          }
+        ]
+      },
+      "state": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "state",
+            "resourceName": "JobQueue"
+          }
+        ]
+      }
+    },
+    "UpdateJobQueue": {
+      "computeEnvironmentOrder": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "computeEnvironmentOrder",
+            "resourceName": "JobQueue"
+          }
+        ]
+      },
+      "priority": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "priority",
+            "resourceName": "JobQueue"
+          }
+        ]
+      },
+      "state": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "state",
+            "resourceName": "JobQueue"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "ComputeEnvironment": {
       "operation": "DescribeComputeEnvironments",
@@ -12,207 +196,23 @@
     "JobDefinition": {
       "operation": "DescribeJobDefinitions",
       "resourceIdentifier": {
+        "containerProperties": "jobDefinitions[].containerProperties",
         "jobDefinitionName": "jobDefinitions[].jobDefinitionName",
-        "type": "jobDefinitions[].type",
         "parameters": "jobDefinitions[].parameters",
         "retryStrategy": "jobDefinitions[].retryStrategy",
-        "containerProperties": "jobDefinitions[].containerProperties",
-        "timeout": "jobDefinitions[].timeout"
+        "timeout": "jobDefinitions[].timeout",
+        "type": "jobDefinitions[].type"
       }
     },
     "JobQueue": {
       "operation": "DescribeJobQueues",
       "resourceIdentifier": {
-        "state": "jobQueues[].state",
-        "status": "jobQueues[].status",
+        "computeEnvironmentOrder": "jobQueues[].computeEnvironmentOrder",
         "priority": "jobQueues[].priority",
-        "computeEnvironmentOrder": "jobQueues[].computeEnvironmentOrder"
+        "state": "jobQueues[].state",
+        "status": "jobQueues[].status"
       }
     }
   },
-  "operations": {
-    "DeleteComputeEnvironment": {
-      "computeEnvironment": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ComputeEnvironment",
-            "resourceIdentifier": "computeEnvironmentArn"
-          }
-        ]
-      }
-    },
-    "DescribeJobDefinitions": {
-      "jobDefinitionName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "jobDefinitionName"
-          }
-        ]
-      },
-      "status": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobQueue",
-            "resourceIdentifier": "status"
-          }
-        ]
-      }
-    },
-    "RegisterJobDefinition": {
-      "jobDefinitionName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "jobDefinitionName"
-          }
-        ]
-      },
-      "type": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "type"
-          }
-        ]
-      },
-      "parameters": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "parameters"
-          }
-        ]
-      },
-      "containerProperties": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "containerProperties"
-          }
-        ]
-      },
-      "retryStrategy": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "retryStrategy"
-          }
-        ]
-      },
-      "timeout": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "timeout"
-          }
-        ]
-      }
-    },
-    "SubmitJob": {
-      "parameters": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "parameters"
-          }
-        ]
-      },
-      "retryStrategy": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "retryStrategy"
-          }
-        ]
-      },
-      "timeout": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobDefinition",
-            "resourceIdentifier": "timeout"
-          }
-        ]
-      }
-    },
-    "UpdateComputeEnvironment": {
-      "computeEnvironment": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ComputeEnvironment",
-            "resourceIdentifier": "computeEnvironmentArn"
-          }
-        ]
-      },
-      "state": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobQueue",
-            "resourceIdentifier": "state"
-          }
-        ]
-      },
-      "computeResources": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ComputeEnvironment",
-            "resourceIdentifier": "computeResources"
-          }
-        ]
-      },
-      "serviceRole": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ComputeEnvironment",
-            "resourceIdentifier": "serviceRole"
-          }
-        ]
-      }
-    },
-    "UpdateJobQueue": {
-      "state": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobQueue",
-            "resourceIdentifier": "state"
-          }
-        ]
-      },
-      "priority": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobQueue",
-            "resourceIdentifier": "priority"
-          }
-        ]
-      },
-      "computeEnvironmentOrder": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "JobQueue",
-            "resourceIdentifier": "computeEnvironmentOrder"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

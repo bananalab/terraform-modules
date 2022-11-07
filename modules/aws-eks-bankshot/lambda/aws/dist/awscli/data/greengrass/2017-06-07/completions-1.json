@@ -1,21 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "SubscriptionDefinition": {
-      "operation": "ListSubscriptionDefinitions",
-      "resourceIdentifier": {
-        "Name": "Definitions[].Name"
-      }
-    }
-  },
   "operations": {
     "UpdateCoreDefinition": {
       "Name": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SubscriptionDefinition",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SubscriptionDefinition"
           }
         ]
       }
@@ -25,8 +16,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SubscriptionDefinition",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SubscriptionDefinition"
           }
         ]
       }
@@ -36,8 +27,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SubscriptionDefinition",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SubscriptionDefinition"
           }
         ]
       }
@@ -47,8 +38,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SubscriptionDefinition",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SubscriptionDefinition"
           }
         ]
       }
@@ -58,8 +49,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SubscriptionDefinition",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SubscriptionDefinition"
           }
         ]
       }
@@ -69,8 +60,8 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SubscriptionDefinition",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SubscriptionDefinition"
           }
         ]
       }
@@ -80,11 +71,20 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "SubscriptionDefinition",
-            "resourceIdentifier": "Name"
+            "resourceIdentifier": "Name",
+            "resourceName": "SubscriptionDefinition"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "SubscriptionDefinition": {
+      "operation": "ListSubscriptionDefinitions",
+      "resourceIdentifier": {
+        "Name": "Definitions[].Name"
+      }
+    }
+  },
+  "version": "1.0"
 }

@@ -17,4 +17,3 @@ Output::
     delete: s3://mybucket/test1.txt
     delete: s3://mybucket/test2.txt
     remove_bucket: mybucket
-

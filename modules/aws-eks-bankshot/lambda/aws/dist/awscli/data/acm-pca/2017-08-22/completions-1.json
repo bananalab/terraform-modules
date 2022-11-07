@@ -1,22 +1,12 @@
 {
-  "version": "1.0",
-  "resources": {
-    "CertificateAuthority": {
-      "operation": "ListCertificateAuthorities",
-      "resourceIdentifier": {
-        "Status": "CertificateAuthorities[].Status",
-        "RevocationConfiguration": "CertificateAuthorities[].RevocationConfiguration"
-      }
-    }
-  },
   "operations": {
     "UpdateCertificateAuthority": {
       "RevocationConfiguration": {
         "completions": [
           {
             "parameters": {},
-            "resourceName": "CertificateAuthority",
-            "resourceIdentifier": "RevocationConfiguration"
+            "resourceIdentifier": "RevocationConfiguration",
+            "resourceName": "CertificateAuthority"
           }
         ]
       },
@@ -24,11 +14,21 @@
         "completions": [
           {
             "parameters": {},
-            "resourceName": "CertificateAuthority",
-            "resourceIdentifier": "Status"
+            "resourceIdentifier": "Status",
+            "resourceName": "CertificateAuthority"
           }
         ]
       }
     }
-  }
+  },
+  "resources": {
+    "CertificateAuthority": {
+      "operation": "ListCertificateAuthorities",
+      "resourceIdentifier": {
+        "RevocationConfiguration": "CertificateAuthorities[].RevocationConfiguration",
+        "Status": "CertificateAuthorities[].Status"
+      }
+    }
+  },
+  "version": "1.0"
 }

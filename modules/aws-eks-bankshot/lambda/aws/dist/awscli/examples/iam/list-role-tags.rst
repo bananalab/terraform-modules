@@ -18,7 +18,7 @@ The following ``list-role-tags`` command retrieves the list of tags associated w
       ],
       "IsTruncated": false
   }
-               
+
 
 For more information, see `Tagging IAM Entities`_ in the *AWS IAM User Guide*
 

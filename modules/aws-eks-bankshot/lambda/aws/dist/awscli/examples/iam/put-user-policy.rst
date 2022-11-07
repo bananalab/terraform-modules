@@ -9,8 +9,3 @@ The policy is defined as a JSON document in the *AdminPolicy.json* file. (The fi
 For more information, see `Adding a New User to Your AWS Account`_ in the *Using IAM* guide.
 
 .. _`Adding a New User to Your AWS Account`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_SettingUpUser.html
-
-
-
-
-

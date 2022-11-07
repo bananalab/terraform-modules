@@ -1,28 +1,1042 @@
 {
-  "version": "1.0",
+  "operations": {
+    "AttachInstances": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "InstanceIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "AttachLoadBalancerTargetGroups": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "TargetGroupARNs": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TargetGroupARNs",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      }
+    },
+    "AttachLoadBalancers": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "LoadBalancerNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerNames",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      }
+    },
+    "BatchDeleteScheduledAction": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "ScheduledActionNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ScheduledActionName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "BatchPutScheduledUpdateGroupAction": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "CompleteLifecycleAction": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "InstanceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "DeleteAutoScalingGroup": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DeleteLaunchConfiguration": {
+      "LaunchConfigurationName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LaunchConfigurationName",
+            "resourceName": "LaunchConfiguration"
+          }
+        ]
+      }
+    },
+    "DeleteLifecycleHook": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DeleteNotificationConfiguration": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "TopicARN": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicARN",
+            "resourceName": "NotificationConfiguration"
+          }
+        ]
+      }
+    },
+    "DeletePolicy": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "PolicyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "DeleteScheduledAction": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "ScheduledActionName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ScheduledActionName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DeleteTags": {
+      "Tags": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Tags",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      }
+    },
+    "DescribeAutoScalingGroups": {
+      "AutoScalingGroupNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DescribeAutoScalingInstances": {
+      "InstanceIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "DescribeLaunchConfigurations": {
+      "LaunchConfigurationNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LaunchConfigurationName",
+            "resourceName": "LaunchConfiguration"
+          }
+        ]
+      }
+    },
+    "DescribeLifecycleHooks": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DescribeLoadBalancerTargetGroups": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DescribeLoadBalancers": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DescribeNotificationConfigurations": {
+      "AutoScalingGroupNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DescribePolicies": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "PolicyNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyName",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "PolicyTypes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyType",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "DescribeScalingActivities": {
+      "ActivityIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ActivityId",
+            "resourceName": "ScalingActivity"
+          }
+        ]
+      },
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DescribeScheduledActions": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "EndTime": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EndTime",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "ScheduledActionNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ScheduledActionName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "StartTime": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StartTime",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "DetachInstances": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "InstanceIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "DetachLoadBalancerTargetGroups": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "TargetGroupARNs": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TargetGroupARNs",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      }
+    },
+    "DetachLoadBalancers": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "LoadBalancerNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LoadBalancerNames",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      }
+    },
+    "DisableMetricsCollection": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "EnableMetricsCollection": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "EnterStandby": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "InstanceIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "ExecutePolicy": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "PolicyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyName",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "ExitStandby": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "InstanceIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "PutLifecycleHook": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "PutNotificationConfiguration": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "NotificationTypes": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NotificationType",
+            "resourceName": "NotificationConfiguration"
+          }
+        ]
+      },
+      "TopicARN": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TopicARN",
+            "resourceName": "NotificationConfiguration"
+          }
+        ]
+      }
+    },
+    "PutScalingPolicy": {
+      "AdjustmentType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AdjustmentType",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "Cooldown": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Cooldown",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "EstimatedInstanceWarmup": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EstimatedInstanceWarmup",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "MetricAggregationType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MetricAggregationType",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "MinAdjustmentMagnitude": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MinAdjustmentMagnitude",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "MinAdjustmentStep": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MinAdjustmentStep",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "PolicyName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyName",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "PolicyType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PolicyType",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "ScalingAdjustment": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ScalingAdjustment",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "StepAdjustments": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StepAdjustments",
+            "resourceName": "Policy"
+          }
+        ]
+      },
+      "TargetTrackingConfiguration": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TargetTrackingConfiguration",
+            "resourceName": "Policy"
+          }
+        ]
+      }
+    },
+    "PutScheduledUpdateGroupAction": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "DesiredCapacity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DesiredCapacity",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "EndTime": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "EndTime",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "MaxSize": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MaxSize",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "MinSize": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MinSize",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "Recurrence": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Recurrence",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "ScheduledActionName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ScheduledActionName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "StartTime": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "StartTime",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "Time": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "Time",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "RecordLifecycleActionHeartbeat": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "InstanceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "ResumeProcesses": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "SetDesiredCapacity": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "DesiredCapacity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DesiredCapacity",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "SetInstanceHealth": {
+      "HealthStatus": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HealthStatus",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      },
+      "InstanceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "SetInstanceProtection": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "InstanceIds": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      },
+      "ProtectedFromScaleIn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ProtectedFromScaleIn",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "SuspendProcesses": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      }
+    },
+    "TerminateInstanceInAutoScalingGroup": {
+      "InstanceId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "InstanceId",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      }
+    },
+    "UpdateAutoScalingGroup": {
+      "AutoScalingGroupName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AutoScalingGroupName",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "AvailabilityZones": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "AvailabilityZones",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      },
+      "DefaultCooldown": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DefaultCooldown",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      },
+      "DesiredCapacity": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "DesiredCapacity",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "HealthCheckGracePeriod": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HealthCheckGracePeriod",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      },
+      "HealthCheckType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "HealthCheckType",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      },
+      "LaunchConfigurationName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LaunchConfigurationName",
+            "resourceName": "LaunchConfiguration"
+          }
+        ]
+      },
+      "LaunchTemplate": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "LaunchTemplate",
+            "resourceName": "AutoScalingInstance"
+          }
+        ]
+      },
+      "MaxSize": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MaxSize",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "MinSize": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "MinSize",
+            "resourceName": "ScheduledAction"
+          }
+        ]
+      },
+      "NewInstancesProtectedFromScaleIn": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "NewInstancesProtectedFromScaleIn",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      },
+      "PlacementGroup": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "PlacementGroup",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      },
+      "ServiceLinkedRoleARN": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ServiceLinkedRoleARN",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      },
+      "TerminationPolicies": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "TerminationPolicies",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      },
+      "VPCZoneIdentifier": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "VPCZoneIdentifier",
+            "resourceName": "AutoScalingGroup"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "AutoScalingGroup": {
       "operation": "DescribeAutoScalingGroups",
       "resourceIdentifier": {
-        "DefaultCooldown": "AutoScalingGroups[].DefaultCooldown",
         "AvailabilityZones": "AutoScalingGroups[].AvailabilityZones",
-        "LoadBalancerNames": "AutoScalingGroups[].LoadBalancerNames",
-        "TargetGroupARNs": "AutoScalingGroups[].TargetGroupARNs",
-        "HealthCheckType": "AutoScalingGroups[].HealthCheckType",
+        "DefaultCooldown": "AutoScalingGroups[].DefaultCooldown",
         "HealthCheckGracePeriod": "AutoScalingGroups[].HealthCheckGracePeriod",
-        "PlacementGroup": "AutoScalingGroups[].PlacementGroup",
-        "VPCZoneIdentifier": "AutoScalingGroups[].VPCZoneIdentifier",
-        "Tags": "AutoScalingGroups[].Tags",
-        "TerminationPolicies": "AutoScalingGroups[].TerminationPolicies",
+        "HealthCheckType": "AutoScalingGroups[].HealthCheckType",
+        "LoadBalancerNames": "AutoScalingGroups[].LoadBalancerNames",
         "NewInstancesProtectedFromScaleIn": "AutoScalingGroups[].NewInstancesProtectedFromScaleIn",
-        "ServiceLinkedRoleARN": "AutoScalingGroups[].ServiceLinkedRoleARN"
+        "PlacementGroup": "AutoScalingGroups[].PlacementGroup",
+        "ServiceLinkedRoleARN": "AutoScalingGroups[].ServiceLinkedRoleARN",
+        "Tags": "AutoScalingGroups[].Tags",
+        "TargetGroupARNs": "AutoScalingGroups[].TargetGroupARNs",
+        "TerminationPolicies": "AutoScalingGroups[].TerminationPolicies",
+        "VPCZoneIdentifier": "AutoScalingGroups[].VPCZoneIdentifier"
       }
     },
     "AutoScalingInstance": {
       "operation": "DescribeAutoScalingInstances",
       "resourceIdentifier": {
-        "InstanceId": "AutoScalingInstances[].InstanceId",
         "HealthStatus": "AutoScalingInstances[].HealthStatus",
+        "InstanceId": "AutoScalingInstances[].InstanceId",
         "LaunchTemplate": "AutoScalingInstances[].LaunchTemplate",
         "ProtectedFromScaleIn": "AutoScalingInstances[].ProtectedFromScaleIn"
       }
@@ -36,23 +1050,23 @@
     "NotificationConfiguration": {
       "operation": "DescribeNotificationConfigurations",
       "resourceIdentifier": {
-        "TopicARN": "NotificationConfigurations[].TopicARN",
-        "NotificationType": "NotificationConfigurations[].NotificationType"
+        "NotificationType": "NotificationConfigurations[].NotificationType",
+        "TopicARN": "NotificationConfigurations[].TopicARN"
       }
     },
     "Policy": {
       "operation": "DescribePolicies",
       "resourceIdentifier": {
+        "AdjustmentType": "ScalingPolicies[].AdjustmentType",
+        "Cooldown": "ScalingPolicies[].Cooldown",
+        "EstimatedInstanceWarmup": "ScalingPolicies[].EstimatedInstanceWarmup",
+        "MetricAggregationType": "ScalingPolicies[].MetricAggregationType",
+        "MinAdjustmentMagnitude": "ScalingPolicies[].MinAdjustmentMagnitude",
+        "MinAdjustmentStep": "ScalingPolicies[].MinAdjustmentStep",
         "PolicyName": "ScalingPolicies[].PolicyName",
         "PolicyType": "ScalingPolicies[].PolicyType",
-        "AdjustmentType": "ScalingPolicies[].AdjustmentType",
-        "MinAdjustmentStep": "ScalingPolicies[].MinAdjustmentStep",
-        "MinAdjustmentMagnitude": "ScalingPolicies[].MinAdjustmentMagnitude",
         "ScalingAdjustment": "ScalingPolicies[].ScalingAdjustment",
-        "Cooldown": "ScalingPolicies[].Cooldown",
         "StepAdjustments": "ScalingPolicies[].StepAdjustments",
-        "MetricAggregationType": "ScalingPolicies[].MetricAggregationType",
-        "EstimatedInstanceWarmup": "ScalingPolicies[].EstimatedInstanceWarmup",
         "TargetTrackingConfiguration": "ScalingPolicies[].TargetTrackingConfiguration"
       }
     },
@@ -66,1030 +1080,16 @@
       "operation": "DescribeScheduledActions",
       "resourceIdentifier": {
         "AutoScalingGroupName": "ScheduledUpdateGroupActions[].AutoScalingGroupName",
-        "ScheduledActionName": "ScheduledUpdateGroupActions[].ScheduledActionName",
-        "Time": "ScheduledUpdateGroupActions[].Time",
-        "StartTime": "ScheduledUpdateGroupActions[].StartTime",
+        "DesiredCapacity": "ScheduledUpdateGroupActions[].DesiredCapacity",
         "EndTime": "ScheduledUpdateGroupActions[].EndTime",
-        "Recurrence": "ScheduledUpdateGroupActions[].Recurrence",
-        "MinSize": "ScheduledUpdateGroupActions[].MinSize",
         "MaxSize": "ScheduledUpdateGroupActions[].MaxSize",
-        "DesiredCapacity": "ScheduledUpdateGroupActions[].DesiredCapacity"
+        "MinSize": "ScheduledUpdateGroupActions[].MinSize",
+        "Recurrence": "ScheduledUpdateGroupActions[].Recurrence",
+        "ScheduledActionName": "ScheduledUpdateGroupActions[].ScheduledActionName",
+        "StartTime": "ScheduledUpdateGroupActions[].StartTime",
+        "Time": "ScheduledUpdateGroupActions[].Time"
       }
     }
   },
-  "operations": {
-    "AttachInstances": {
-      "InstanceIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      },
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "AttachLoadBalancerTargetGroups": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "TargetGroupARNs": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "TargetGroupARNs"
-          }
-        ]
-      }
-    },
-    "AttachLoadBalancers": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "LoadBalancerNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "LoadBalancerNames"
-          }
-        ]
-      }
-    },
-    "BatchDeleteScheduledAction": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "ScheduledActionNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "ScheduledActionName"
-          }
-        ]
-      }
-    },
-    "BatchPutScheduledUpdateGroupAction": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "CompleteLifecycleAction": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "InstanceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      }
-    },
-    "DeleteAutoScalingGroup": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DeleteLaunchConfiguration": {
-      "LaunchConfigurationName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LaunchConfiguration",
-            "resourceIdentifier": "LaunchConfigurationName"
-          }
-        ]
-      }
-    },
-    "DeleteLifecycleHook": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DeleteNotificationConfiguration": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "TopicARN": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NotificationConfiguration",
-            "resourceIdentifier": "TopicARN"
-          }
-        ]
-      }
-    },
-    "DeletePolicy": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "PolicyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "PolicyName"
-          }
-        ]
-      }
-    },
-    "DeleteScheduledAction": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "ScheduledActionName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "ScheduledActionName"
-          }
-        ]
-      }
-    },
-    "DeleteTags": {
-      "Tags": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "Tags"
-          }
-        ]
-      }
-    },
-    "DescribeAutoScalingGroups": {
-      "AutoScalingGroupNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DescribeAutoScalingInstances": {
-      "InstanceIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      }
-    },
-    "DescribeLaunchConfigurations": {
-      "LaunchConfigurationNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LaunchConfiguration",
-            "resourceIdentifier": "LaunchConfigurationName"
-          }
-        ]
-      }
-    },
-    "DescribeLifecycleHooks": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DescribeLoadBalancerTargetGroups": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DescribeLoadBalancers": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DescribeNotificationConfigurations": {
-      "AutoScalingGroupNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DescribePolicies": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "PolicyNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "PolicyName"
-          }
-        ]
-      },
-      "PolicyTypes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "PolicyType"
-          }
-        ]
-      }
-    },
-    "DescribeScalingActivities": {
-      "ActivityIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScalingActivity",
-            "resourceIdentifier": "ActivityId"
-          }
-        ]
-      },
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DescribeScheduledActions": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "ScheduledActionNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "ScheduledActionName"
-          }
-        ]
-      },
-      "StartTime": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "StartTime"
-          }
-        ]
-      },
-      "EndTime": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "EndTime"
-          }
-        ]
-      }
-    },
-    "DetachInstances": {
-      "InstanceIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      },
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "DetachLoadBalancerTargetGroups": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "TargetGroupARNs": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "TargetGroupARNs"
-          }
-        ]
-      }
-    },
-    "DetachLoadBalancers": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "LoadBalancerNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "LoadBalancerNames"
-          }
-        ]
-      }
-    },
-    "DisableMetricsCollection": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "EnableMetricsCollection": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "EnterStandby": {
-      "InstanceIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      },
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "ExecutePolicy": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "PolicyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "PolicyName"
-          }
-        ]
-      }
-    },
-    "ExitStandby": {
-      "InstanceIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      },
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "PutLifecycleHook": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "PutNotificationConfiguration": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "TopicARN": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NotificationConfiguration",
-            "resourceIdentifier": "TopicARN"
-          }
-        ]
-      },
-      "NotificationTypes": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "NotificationConfiguration",
-            "resourceIdentifier": "NotificationType"
-          }
-        ]
-      }
-    },
-    "PutScalingPolicy": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "PolicyName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "PolicyName"
-          }
-        ]
-      },
-      "PolicyType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "PolicyType"
-          }
-        ]
-      },
-      "AdjustmentType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "AdjustmentType"
-          }
-        ]
-      },
-      "MinAdjustmentStep": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "MinAdjustmentStep"
-          }
-        ]
-      },
-      "MinAdjustmentMagnitude": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "MinAdjustmentMagnitude"
-          }
-        ]
-      },
-      "ScalingAdjustment": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "ScalingAdjustment"
-          }
-        ]
-      },
-      "Cooldown": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "Cooldown"
-          }
-        ]
-      },
-      "MetricAggregationType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "MetricAggregationType"
-          }
-        ]
-      },
-      "StepAdjustments": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "StepAdjustments"
-          }
-        ]
-      },
-      "EstimatedInstanceWarmup": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "EstimatedInstanceWarmup"
-          }
-        ]
-      },
-      "TargetTrackingConfiguration": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Policy",
-            "resourceIdentifier": "TargetTrackingConfiguration"
-          }
-        ]
-      }
-    },
-    "PutScheduledUpdateGroupAction": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "ScheduledActionName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "ScheduledActionName"
-          }
-        ]
-      },
-      "Time": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "Time"
-          }
-        ]
-      },
-      "StartTime": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "StartTime"
-          }
-        ]
-      },
-      "EndTime": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "EndTime"
-          }
-        ]
-      },
-      "Recurrence": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "Recurrence"
-          }
-        ]
-      },
-      "MinSize": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "MinSize"
-          }
-        ]
-      },
-      "MaxSize": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "MaxSize"
-          }
-        ]
-      },
-      "DesiredCapacity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "DesiredCapacity"
-          }
-        ]
-      }
-    },
-    "RecordLifecycleActionHeartbeat": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "InstanceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      }
-    },
-    "ResumeProcesses": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "SetDesiredCapacity": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "DesiredCapacity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "DesiredCapacity"
-          }
-        ]
-      }
-    },
-    "SetInstanceHealth": {
-      "InstanceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      },
-      "HealthStatus": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "HealthStatus"
-          }
-        ]
-      }
-    },
-    "SetInstanceProtection": {
-      "InstanceIds": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      },
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "ProtectedFromScaleIn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "ProtectedFromScaleIn"
-          }
-        ]
-      }
-    },
-    "SuspendProcesses": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      }
-    },
-    "TerminateInstanceInAutoScalingGroup": {
-      "InstanceId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "InstanceId"
-          }
-        ]
-      }
-    },
-    "UpdateAutoScalingGroup": {
-      "AutoScalingGroupName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "AutoScalingGroupName"
-          }
-        ]
-      },
-      "LaunchConfigurationName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "LaunchConfiguration",
-            "resourceIdentifier": "LaunchConfigurationName"
-          }
-        ]
-      },
-      "LaunchTemplate": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingInstance",
-            "resourceIdentifier": "LaunchTemplate"
-          }
-        ]
-      },
-      "MinSize": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "MinSize"
-          }
-        ]
-      },
-      "MaxSize": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "MaxSize"
-          }
-        ]
-      },
-      "DesiredCapacity": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "ScheduledAction",
-            "resourceIdentifier": "DesiredCapacity"
-          }
-        ]
-      },
-      "DefaultCooldown": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "DefaultCooldown"
-          }
-        ]
-      },
-      "AvailabilityZones": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "AvailabilityZones"
-          }
-        ]
-      },
-      "HealthCheckType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "HealthCheckType"
-          }
-        ]
-      },
-      "HealthCheckGracePeriod": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "HealthCheckGracePeriod"
-          }
-        ]
-      },
-      "PlacementGroup": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "PlacementGroup"
-          }
-        ]
-      },
-      "VPCZoneIdentifier": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "VPCZoneIdentifier"
-          }
-        ]
-      },
-      "TerminationPolicies": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "TerminationPolicies"
-          }
-        ]
-      },
-      "NewInstancesProtectedFromScaleIn": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "NewInstancesProtectedFromScaleIn"
-          }
-        ]
-      },
-      "ServiceLinkedRoleARN": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "AutoScalingGroup",
-            "resourceIdentifier": "ServiceLinkedRoleARN"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

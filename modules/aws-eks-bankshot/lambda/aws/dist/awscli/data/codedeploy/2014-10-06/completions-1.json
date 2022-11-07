@@ -1,5 +1,160 @@
 {
-  "version": "1.0",
+  "operations": {
+    "AddTagsToOnPremisesInstances": {
+      "instanceNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "instanceName",
+            "resourceName": "OnPremisesInstance"
+          }
+        ]
+      }
+    },
+    "BatchGetDeploymentInstances": {
+      "deploymentId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "deployment",
+            "resourceName": "Deployment"
+          }
+        ]
+      }
+    },
+    "BatchGetOnPremisesInstances": {
+      "instanceNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "instanceName",
+            "resourceName": "OnPremisesInstance"
+          }
+        ]
+      }
+    },
+    "ContinueDeployment": {
+      "deploymentId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "deployment",
+            "resourceName": "Deployment"
+          }
+        ]
+      }
+    },
+    "DeregisterOnPremisesInstance": {
+      "instanceName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "instanceName",
+            "resourceName": "OnPremisesInstance"
+          }
+        ]
+      }
+    },
+    "GetDeployment": {
+      "deploymentId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "deployment",
+            "resourceName": "Deployment"
+          }
+        ]
+      }
+    },
+    "GetDeploymentInstance": {
+      "deploymentId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "deployment",
+            "resourceName": "Deployment"
+          }
+        ]
+      }
+    },
+    "GetOnPremisesInstance": {
+      "instanceName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "instanceName",
+            "resourceName": "OnPremisesInstance"
+          }
+        ]
+      }
+    },
+    "ListDeploymentInstances": {
+      "deploymentId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "deployment",
+            "resourceName": "Deployment"
+          }
+        ]
+      }
+    },
+    "PutLifecycleEventHookExecutionStatus": {
+      "deploymentId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "deployment",
+            "resourceName": "Deployment"
+          }
+        ]
+      }
+    },
+    "RegisterOnPremisesInstance": {
+      "instanceName": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "instanceName",
+            "resourceName": "OnPremisesInstance"
+          }
+        ]
+      }
+    },
+    "RemoveTagsFromOnPremisesInstances": {
+      "instanceNames": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "instanceName",
+            "resourceName": "OnPremisesInstance"
+          }
+        ]
+      }
+    },
+    "SkipWaitTimeForInstanceTermination": {
+      "deploymentId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "deployment",
+            "resourceName": "Deployment"
+          }
+        ]
+      }
+    },
+    "StopDeployment": {
+      "deploymentId": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "deployment",
+            "resourceName": "Deployment"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Deployment": {
       "operation": "ListDeployments",
@@ -14,160 +169,5 @@
       }
     }
   },
-  "operations": {
-    "AddTagsToOnPremisesInstances": {
-      "instanceNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OnPremisesInstance",
-            "resourceIdentifier": "instanceName"
-          }
-        ]
-      }
-    },
-    "BatchGetDeploymentInstances": {
-      "deploymentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Deployment",
-            "resourceIdentifier": "deployment"
-          }
-        ]
-      }
-    },
-    "BatchGetOnPremisesInstances": {
-      "instanceNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OnPremisesInstance",
-            "resourceIdentifier": "instanceName"
-          }
-        ]
-      }
-    },
-    "ContinueDeployment": {
-      "deploymentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Deployment",
-            "resourceIdentifier": "deployment"
-          }
-        ]
-      }
-    },
-    "DeregisterOnPremisesInstance": {
-      "instanceName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OnPremisesInstance",
-            "resourceIdentifier": "instanceName"
-          }
-        ]
-      }
-    },
-    "GetDeployment": {
-      "deploymentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Deployment",
-            "resourceIdentifier": "deployment"
-          }
-        ]
-      }
-    },
-    "GetDeploymentInstance": {
-      "deploymentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Deployment",
-            "resourceIdentifier": "deployment"
-          }
-        ]
-      }
-    },
-    "GetOnPremisesInstance": {
-      "instanceName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OnPremisesInstance",
-            "resourceIdentifier": "instanceName"
-          }
-        ]
-      }
-    },
-    "ListDeploymentInstances": {
-      "deploymentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Deployment",
-            "resourceIdentifier": "deployment"
-          }
-        ]
-      }
-    },
-    "PutLifecycleEventHookExecutionStatus": {
-      "deploymentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Deployment",
-            "resourceIdentifier": "deployment"
-          }
-        ]
-      }
-    },
-    "RegisterOnPremisesInstance": {
-      "instanceName": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OnPremisesInstance",
-            "resourceIdentifier": "instanceName"
-          }
-        ]
-      }
-    },
-    "RemoveTagsFromOnPremisesInstances": {
-      "instanceNames": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "OnPremisesInstance",
-            "resourceIdentifier": "instanceName"
-          }
-        ]
-      }
-    },
-    "SkipWaitTimeForInstanceTermination": {
-      "deploymentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Deployment",
-            "resourceIdentifier": "deployment"
-          }
-        ]
-      }
-    },
-    "StopDeployment": {
-      "deploymentId": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Deployment",
-            "resourceIdentifier": "deployment"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }

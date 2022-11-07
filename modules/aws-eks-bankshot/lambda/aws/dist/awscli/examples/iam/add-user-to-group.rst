@@ -7,4 +7,3 @@ The following ``add-user-to-group`` command adds an IAM user named ``Bob`` to th
 For more information, see `Adding and Removing Users in an IAM Group`_ in the *Using IAM* guide.
 
 .. _`Adding and Removing Users in an IAM Group`: http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_AddOrRemoveUsersFromGroup.html
-

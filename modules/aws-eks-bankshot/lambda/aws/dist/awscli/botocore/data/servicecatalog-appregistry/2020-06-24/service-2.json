@@ -1,1545 +1,1839 @@
 {
-  "version":"2.0",
-  "metadata":{
-    "apiVersion":"2020-06-24",
-    "endpointPrefix":"servicecatalog-appregistry",
-    "jsonVersion":"1.1",
-    "protocol":"rest-json",
-    "serviceAbbreviation":"AppRegistry",
-    "serviceFullName":"AWS Service Catalog App Registry",
-    "serviceId":"Service Catalog AppRegistry",
-    "signatureVersion":"v4",
-    "signingName":"servicecatalog",
-    "uid":"AWS242AppRegistry-2020-06-24"
+  "documentation": "<p> Amazon Web Services Service Catalog AppRegistry enables organizations to understand the application context of their Amazon Web Services resources. AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise.</p>",
+  "metadata": {
+    "apiVersion": "2020-06-24",
+    "endpointPrefix": "servicecatalog-appregistry",
+    "jsonVersion": "1.1",
+    "protocol": "rest-json",
+    "serviceAbbreviation": "AppRegistry",
+    "serviceFullName": "AWS Service Catalog App Registry",
+    "serviceId": "Service Catalog AppRegistry",
+    "signatureVersion": "v4",
+    "signingName": "servicecatalog",
+    "uid": "AWS242AppRegistry-2020-06-24"
   },
-  "operations":{
-    "AssociateAttributeGroup":{
-      "name":"AssociateAttributeGroup",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/applications/{application}/attribute-groups/{attributeGroup}"
-      },
-      "input":{"shape":"AssociateAttributeGroupRequest"},
-      "output":{"shape":"AssociateAttributeGroupResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"}
+  "operations": {
+    "AssociateAttributeGroup": {
+      "documentation": "<p>Associates an attribute group with an application to augment the application's metadata with the group's attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Associates an attribute group with an application to augment the application's metadata with the group's attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations.</p>"
+      "http": {
+        "method": "PUT",
+        "requestUri": "/applications/{application}/attribute-groups/{attributeGroup}"
+      },
+      "input": {
+        "shape": "AssociateAttributeGroupRequest"
+      },
+      "name": "AssociateAttributeGroup",
+      "output": {
+        "shape": "AssociateAttributeGroupResponse"
+      }
     },
-    "AssociateResource":{
-      "name":"AssociateResource",
-      "http":{
-        "method":"PUT",
-        "requestUri":"/applications/{application}/resources/{resourceType}/{resource}"
-      },
-      "input":{"shape":"AssociateResourceRequest"},
-      "output":{"shape":"AssociateResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"}
+    "AssociateResource": {
+      "documentation": "<p>Associates a resource with an application. Both the resource and the application can be specified either by ID or name.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Associates a resource with an application. Both the resource and the application can be specified either by ID or name.</p>"
+      "http": {
+        "method": "PUT",
+        "requestUri": "/applications/{application}/resources/{resourceType}/{resource}"
+      },
+      "input": {
+        "shape": "AssociateResourceRequest"
+      },
+      "name": "AssociateResource",
+      "output": {
+        "shape": "AssociateResourceResponse"
+      }
     },
-    "CreateApplication":{
-      "name":"CreateApplication",
-      "http":{
-        "method":"POST",
-        "requestUri":"/applications",
-        "responseCode":201
-      },
-      "input":{"shape":"CreateApplicationRequest"},
-      "output":{"shape":"CreateApplicationResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+    "CreateApplication": {
+      "documentation": "<p>Creates a new application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Creates a new application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/applications",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateApplicationRequest"
+      },
+      "name": "CreateApplication",
+      "output": {
+        "shape": "CreateApplicationResponse"
+      }
     },
-    "CreateAttributeGroup":{
-      "name":"CreateAttributeGroup",
-      "http":{
-        "method":"POST",
-        "requestUri":"/attribute-groups",
-        "responseCode":201
-      },
-      "input":{"shape":"CreateAttributeGroupRequest"},
-      "output":{"shape":"CreateAttributeGroupResponse"},
-      "errors":[
-        {"shape":"ServiceQuotaExceededException"},
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "CreateAttributeGroup": {
+      "documentation": "<p>Creates a new attribute group as a container for user-defined attributes. This feature enables users to have full control over their cloud application's metadata in a rich machine-readable format to facilitate integration with automated workflows and third-party tools.</p>",
+      "errors": [
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Creates a new attribute group as a container for user-defined attributes. This feature enables users to have full control over their cloud application's metadata in a rich machine-readable format to facilitate integration with automated workflows and third-party tools.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/attribute-groups",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateAttributeGroupRequest"
+      },
+      "name": "CreateAttributeGroup",
+      "output": {
+        "shape": "CreateAttributeGroupResponse"
+      }
     },
-    "DeleteApplication":{
-      "name":"DeleteApplication",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/applications/{application}"
-      },
-      "input":{"shape":"DeleteApplicationRequest"},
-      "output":{"shape":"DeleteApplicationResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "DeleteApplication": {
+      "documentation": "<p>Deletes an application that is specified either by its application ID or name. All associated attribute groups and resources must be disassociated from it before deleting an application.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deletes an application that is specified either by its application ID or name. All associated attribute groups and resources must be disassociated from it before deleting an application.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/applications/{application}"
+      },
+      "input": {
+        "shape": "DeleteApplicationRequest"
+      },
+      "name": "DeleteApplication",
+      "output": {
+        "shape": "DeleteApplicationResponse"
+      }
     },
-    "DeleteAttributeGroup":{
-      "name":"DeleteAttributeGroup",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/attribute-groups/{attributeGroup}"
-      },
-      "input":{"shape":"DeleteAttributeGroupRequest"},
-      "output":{"shape":"DeleteAttributeGroupResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "DeleteAttributeGroup": {
+      "documentation": "<p>Deletes an attribute group, specified either by its attribute group ID or name.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Deletes an attribute group, specified either by its attribute group ID or name.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/attribute-groups/{attributeGroup}"
+      },
+      "input": {
+        "shape": "DeleteAttributeGroupRequest"
+      },
+      "name": "DeleteAttributeGroup",
+      "output": {
+        "shape": "DeleteAttributeGroupResponse"
+      }
     },
-    "DisassociateAttributeGroup":{
-      "name":"DisassociateAttributeGroup",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/applications/{application}/attribute-groups/{attributeGroup}"
-      },
-      "input":{"shape":"DisassociateAttributeGroupRequest"},
-      "output":{"shape":"DisassociateAttributeGroupResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "DisassociateAttributeGroup": {
+      "documentation": "<p>Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application's metadata. This operation reverts <code>AssociateAttributeGroup</code>.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application's metadata. This operation reverts <code>AssociateAttributeGroup</code>.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/applications/{application}/attribute-groups/{attributeGroup}"
+      },
+      "input": {
+        "shape": "DisassociateAttributeGroupRequest"
+      },
+      "name": "DisassociateAttributeGroup",
+      "output": {
+        "shape": "DisassociateAttributeGroupResponse"
+      }
     },
-    "DisassociateResource":{
-      "name":"DisassociateResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/applications/{application}/resources/{resourceType}/{resource}"
-      },
-      "input":{"shape":"DisassociateResourceRequest"},
-      "output":{"shape":"DisassociateResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+    "DisassociateResource": {
+      "documentation": "<p>Disassociates a resource from application. Both the resource and the application can be specified either by ID or name.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Disassociates a resource from application. Both the resource and the application can be specified either by ID or name.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/applications/{application}/resources/{resourceType}/{resource}"
+      },
+      "input": {
+        "shape": "DisassociateResourceRequest"
+      },
+      "name": "DisassociateResource",
+      "output": {
+        "shape": "DisassociateResourceResponse"
+      }
     },
-    "GetApplication":{
-      "name":"GetApplication",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{application}"
-      },
-      "input":{"shape":"GetApplicationRequest"},
-      "output":{"shape":"GetApplicationResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ConflictException"}
+    "GetApplication": {
+      "documentation": "<p>Retrieves metadata information about one of your applications. The application can be specified either by its unique ID or by its name (which is unique within one account in one region at a given point in time). Specify by ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Retrieves metadata information about one of your applications. The application can be specified either by its unique ID or by its name (which is unique within one account in one region at a given point in time). Specify by ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{application}"
+      },
+      "input": {
+        "shape": "GetApplicationRequest"
+      },
+      "name": "GetApplication",
+      "output": {
+        "shape": "GetApplicationResponse"
+      }
     },
-    "GetAssociatedResource":{
-      "name":"GetAssociatedResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{application}/resources/{resourceType}/{resource}"
-      },
-      "input":{"shape":"GetAssociatedResourceRequest"},
-      "output":{"shape":"GetAssociatedResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "GetAssociatedResource": {
+      "documentation": "<p>Gets the resource associated with the application.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Gets the resource associated with the application.</p>",
-      "idempotent":true
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{application}/resources/{resourceType}/{resource}"
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "GetAssociatedResourceRequest"
+      },
+      "name": "GetAssociatedResource",
+      "output": {
+        "shape": "GetAssociatedResourceResponse"
+      }
     },
-    "GetAttributeGroup":{
-      "name":"GetAttributeGroup",
-      "http":{
-        "method":"GET",
-        "requestUri":"/attribute-groups/{attributeGroup}"
-      },
-      "input":{"shape":"GetAttributeGroupRequest"},
-      "output":{"shape":"GetAttributeGroupResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ConflictException"}
+    "GetAttributeGroup": {
+      "documentation": "<p>Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its unique ID or by its name.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its unique ID or by its name.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/attribute-groups/{attributeGroup}"
+      },
+      "input": {
+        "shape": "GetAttributeGroupRequest"
+      },
+      "name": "GetAttributeGroup",
+      "output": {
+        "shape": "GetAttributeGroupResponse"
+      }
     },
-    "ListApplications":{
-      "name":"ListApplications",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications"
-      },
-      "input":{"shape":"ListApplicationsRequest"},
-      "output":{"shape":"ListApplicationsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListApplications": {
+      "documentation": "<p>Retrieves a list of all of your applications. Results are paginated.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Retrieves a list of all of your applications. Results are paginated.</p>",
-      "idempotent":true
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications"
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ListApplicationsRequest"
+      },
+      "name": "ListApplications",
+      "output": {
+        "shape": "ListApplicationsResponse"
+      }
     },
-    "ListAssociatedAttributeGroups":{
-      "name":"ListAssociatedAttributeGroups",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{application}/attribute-groups"
-      },
-      "input":{"shape":"ListAssociatedAttributeGroupsRequest"},
-      "output":{"shape":"ListAssociatedAttributeGroupsResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListAssociatedAttributeGroups": {
+      "documentation": "<p>Lists all attribute groups that are associated with specified application. Results are paginated.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists all attribute groups that are associated with specified application. Results are paginated.</p>",
-      "idempotent":true
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{application}/attribute-groups"
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ListAssociatedAttributeGroupsRequest"
+      },
+      "name": "ListAssociatedAttributeGroups",
+      "output": {
+        "shape": "ListAssociatedAttributeGroupsResponse"
+      }
     },
-    "ListAssociatedResources":{
-      "name":"ListAssociatedResources",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{application}/resources"
-      },
-      "input":{"shape":"ListAssociatedResourcesRequest"},
-      "output":{"shape":"ListAssociatedResourcesResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListAssociatedResources": {
+      "documentation": "<p>Lists all resources that are associated with specified application. Results are paginated.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists all resources that are associated with specified application. Results are paginated.</p>",
-      "idempotent":true
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{application}/resources"
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ListAssociatedResourcesRequest"
+      },
+      "name": "ListAssociatedResources",
+      "output": {
+        "shape": "ListAssociatedResourcesResponse"
+      }
     },
-    "ListAttributeGroups":{
-      "name":"ListAttributeGroups",
-      "http":{
-        "method":"GET",
-        "requestUri":"/attribute-groups"
-      },
-      "input":{"shape":"ListAttributeGroupsRequest"},
-      "output":{"shape":"ListAttributeGroupsResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListAttributeGroups": {
+      "documentation": "<p>Lists all attribute groups which you have access to. Results are paginated.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists all attribute groups which you have access to. Results are paginated.</p>",
-      "idempotent":true
+      "http": {
+        "method": "GET",
+        "requestUri": "/attribute-groups"
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ListAttributeGroupsRequest"
+      },
+      "name": "ListAttributeGroups",
+      "output": {
+        "shape": "ListAttributeGroupsResponse"
+      }
     },
-    "ListAttributeGroupsForApplication":{
-      "name":"ListAttributeGroupsForApplication",
-      "http":{
-        "method":"GET",
-        "requestUri":"/applications/{application}/attribute-group-details"
-      },
-      "input":{"shape":"ListAttributeGroupsForApplicationRequest"},
-      "output":{"shape":"ListAttributeGroupsForApplicationResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"InternalServerException"}
+    "ListAttributeGroupsForApplication": {
+      "documentation": "<p>Lists the details of all attribute groups associated with a specific application. The results display in pages.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists the details of all attribute groups associated with a specific application. The results display in pages.</p>",
-      "idempotent":true
+      "http": {
+        "method": "GET",
+        "requestUri": "/applications/{application}/attribute-group-details"
+      },
+      "idempotent": true,
+      "input": {
+        "shape": "ListAttributeGroupsForApplicationRequest"
+      },
+      "name": "ListAttributeGroupsForApplication",
+      "output": {
+        "shape": "ListAttributeGroupsForApplicationResponse"
+      }
     },
-    "ListTagsForResource":{
-      "name":"ListTagsForResource",
-      "http":{
-        "method":"GET",
-        "requestUri":"/tags/{resourceArn}"
-      },
-      "input":{"shape":"ListTagsForResourceRequest"},
-      "output":{"shape":"ListTagsForResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "ListTagsForResource": {
+      "documentation": "<p>Lists all of the tags on the resource.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Lists all of the tags on the resource.</p>"
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{resourceArn}"
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "shape": "ListTagsForResourceResponse"
+      }
     },
-    "SyncResource":{
-      "name":"SyncResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/sync/{resourceType}/{resource}"
-      },
-      "input":{"shape":"SyncResourceRequest"},
-      "output":{"shape":"SyncResourceResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ConflictException"}
+    "SyncResource": {
+      "documentation": "<p>Syncs the resource with current AppRegistry records.</p> <p>Specifically, the resource\u2019s AppRegistry system tags sync with its associated application. We remove the resource's AppRegistry system tags if it does not associate with the application. The caller must have permissions to read and update the resource.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ConflictException"
+        }
       ],
-      "documentation":"<p>Syncs the resource with current AppRegistry records.</p> <p>Specifically, the resource’s AppRegistry system tags sync with its associated application. We remove the resource's AppRegistry system tags if it does not associate with the application. The caller must have permissions to read and update the resource.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/sync/{resourceType}/{resource}"
+      },
+      "input": {
+        "shape": "SyncResourceRequest"
+      },
+      "name": "SyncResource",
+      "output": {
+        "shape": "SyncResourceResponse"
+      }
     },
-    "TagResource":{
-      "name":"TagResource",
-      "http":{
-        "method":"POST",
-        "requestUri":"/tags/{resourceArn}"
-      },
-      "input":{"shape":"TagResourceRequest"},
-      "output":{"shape":"TagResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "TagResource": {
+      "documentation": "<p>Assigns one or more tags (key-value pairs) to the specified resource.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the resource, this action updates its value.</p> <p>This operation returns an empty response if the call was successful.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Assigns one or more tags (key-value pairs) to the specified resource.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the resource, this action updates its value.</p> <p>This operation returns an empty response if the call was successful.</p>"
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{resourceArn}"
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource",
+      "output": {
+        "shape": "TagResourceResponse"
+      }
     },
-    "UntagResource":{
-      "name":"UntagResource",
-      "http":{
-        "method":"DELETE",
-        "requestUri":"/tags/{resourceArn}"
-      },
-      "input":{"shape":"UntagResourceRequest"},
-      "output":{"shape":"UntagResourceResponse"},
-      "errors":[
-        {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"InternalServerException"}
+    "UntagResource": {
+      "documentation": "<p>Removes tags from a resource.</p> <p>This operation returns an empty response if the call was successful.</p>",
+      "errors": [
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Removes tags from a resource.</p> <p>This operation returns an empty response if the call was successful.</p>"
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{resourceArn}"
+      },
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource",
+      "output": {
+        "shape": "UntagResourceResponse"
+      }
     },
-    "UpdateApplication":{
-      "name":"UpdateApplication",
-      "http":{
-        "method":"PATCH",
-        "requestUri":"/applications/{application}"
-      },
-      "input":{"shape":"UpdateApplicationRequest"},
-      "output":{"shape":"UpdateApplicationResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ConflictException"},
-        {"shape":"InternalServerException"},
-        {"shape":"ValidationException"}
+    "UpdateApplication": {
+      "documentation": "<p>Updates an existing application with new attributes.</p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InternalServerException"
+        },
+        {
+          "shape": "ValidationException"
+        }
       ],
-      "documentation":"<p>Updates an existing application with new attributes.</p>"
+      "http": {
+        "method": "PATCH",
+        "requestUri": "/applications/{application}"
+      },
+      "input": {
+        "shape": "UpdateApplicationRequest"
+      },
+      "name": "UpdateApplication",
+      "output": {
+        "shape": "UpdateApplicationResponse"
+      }
     },
-    "UpdateAttributeGroup":{
-      "name":"UpdateAttributeGroup",
-      "http":{
-        "method":"PATCH",
-        "requestUri":"/attribute-groups/{attributeGroup}"
-      },
-      "input":{"shape":"UpdateAttributeGroupRequest"},
-      "output":{"shape":"UpdateAttributeGroupResponse"},
-      "errors":[
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"},
-        {"shape":"ConflictException"},
-        {"shape":"InternalServerException"}
+    "UpdateAttributeGroup": {
+      "documentation": "<p>Updates an existing attribute group with new details. </p>",
+      "errors": [
+        {
+          "shape": "ResourceNotFoundException"
+        },
+        {
+          "shape": "ValidationException"
+        },
+        {
+          "shape": "ConflictException"
+        },
+        {
+          "shape": "InternalServerException"
+        }
       ],
-      "documentation":"<p>Updates an existing attribute group with new details. </p>"
+      "http": {
+        "method": "PATCH",
+        "requestUri": "/attribute-groups/{attributeGroup}"
+      },
+      "input": {
+        "shape": "UpdateAttributeGroupRequest"
+      },
+      "name": "UpdateAttributeGroup",
+      "output": {
+        "shape": "UpdateAttributeGroupResponse"
+      }
     }
   },
-  "shapes":{
-    "Application":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The identifier of the application.</p>"
+  "shapes": {
+    "Application": {
+      "documentation": "<p>Represents a Amazon Web Services Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the application across services.</p>",
+          "shape": "ApplicationArn"
         },
-        "arn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the application across services.</p>"
+        "creationTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>",
+          "shape": "Timestamp"
         },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>"
+        "description": {
+          "documentation": "<p>The description of the application.</p>",
+          "shape": "Description"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the application.</p>"
+        "id": {
+          "documentation": "<p>The identifier of the application.</p>",
+          "shape": "ApplicationId"
         },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>"
+        "lastUpdateTime": {
+          "documentation": "<p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>",
+          "shape": "Timestamp"
         },
-        "lastUpdateTime":{
-          "shape":"Timestamp",
-          "documentation":"<p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>"
+        "name": {
+          "documentation": "<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>",
+          "shape": "Name"
         },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>Key-value pairs you can use to associate with the application.</p>"
+        "tags": {
+          "documentation": "<p>Key-value pairs you can use to associate with the application.</p>",
+          "shape": "Tags"
         }
       },
-      "documentation":"<p>Represents a Amazon Web Services Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>"
+      "type": "structure"
     },
-    "ApplicationArn":{
-      "type":"string",
-      "pattern":"arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/applications/[a-z0-9]+"
+    "ApplicationArn": {
+      "pattern": "arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/applications/[a-z0-9]+",
+      "type": "string"
     },
-    "ApplicationId":{
-      "type":"string",
-      "max":26,
-      "min":26,
-      "pattern":"[a-z0-9]+"
+    "ApplicationId": {
+      "max": 26,
+      "min": 26,
+      "pattern": "[a-z0-9]+",
+      "type": "string"
     },
-    "ApplicationSpecifier":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":"[-.\\w]+"
+    "ApplicationSpecifier": {
+      "max": 256,
+      "min": 1,
+      "pattern": "[-.\\w]+",
+      "type": "string"
     },
-    "ApplicationSummaries":{
-      "type":"list",
-      "member":{"shape":"ApplicationSummary"}
+    "ApplicationSummaries": {
+      "member": {
+        "shape": "ApplicationSummary"
+      },
+      "type": "list"
     },
-    "ApplicationSummary":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The identifier of the application.</p>"
+    "ApplicationSummary": {
+      "documentation": "<p>Summary of a Amazon Web Services Service Catalog AppRegistry application.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the application across services.</p>",
+          "shape": "ApplicationArn"
         },
-        "arn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the application across services.</p>"
+        "creationTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>",
+          "shape": "Timestamp"
         },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>"
+        "description": {
+          "documentation": "<p>The description of the application.</p>",
+          "shape": "Description"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the application.</p>"
+        "id": {
+          "documentation": "<p>The identifier of the application.</p>",
+          "shape": "ApplicationId"
         },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>"
+        "lastUpdateTime": {
+          "documentation": "<p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>",
+          "shape": "Timestamp"
         },
-        "lastUpdateTime":{
-          "shape":"Timestamp",
-          "documentation":"<p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>"
+        "name": {
+          "documentation": "<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>",
+          "shape": "Name"
         }
       },
-      "documentation":"<p>Summary of a Amazon Web Services Service Catalog AppRegistry application.</p>"
+      "type": "structure"
     },
-    "Arn":{
-      "type":"string",
-      "max":1600,
-      "min":1,
-      "pattern":"arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)"
+    "Arn": {
+      "max": 1600,
+      "min": 1,
+      "pattern": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)",
+      "type": "string"
     },
-    "AssociateAttributeGroupRequest":{
-      "type":"structure",
-      "required":[
+    "AssociateAttributeGroupRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
+        },
+        "attributeGroup": {
+          "documentation": "<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
+          "location": "uri",
+          "locationName": "attributeGroup",
+          "shape": "AttributeGroupSpecifier"
+        }
+      },
+      "required": [
         "application",
         "attributeGroup"
       ],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "attributeGroup":{
-          "shape":"AttributeGroupSpecifier",
-          "documentation":"<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
-          "location":"uri",
-          "locationName":"attributeGroup"
-        }
-      }
+      "type": "structure"
     },
-    "AssociateAttributeGroupResponse":{
-      "type":"structure",
-      "members":{
-        "applicationArn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>"
+    "AssociateAttributeGroupResponse": {
+      "members": {
+        "applicationArn": {
+          "documentation": "<p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>",
+          "shape": "ApplicationArn"
         },
-        "attributeGroupArn":{
-          "shape":"AttributeGroupArn",
-          "documentation":"<p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>"
+        "attributeGroupArn": {
+          "documentation": "<p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>",
+          "shape": "AttributeGroupArn"
         }
-      }
+      },
+      "type": "structure"
     },
-    "AssociateResourceRequest":{
-      "type":"structure",
-      "required":[
+    "AssociateResourceRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
+        },
+        "resource": {
+          "documentation": "<p>The name or ID of the resource of which the application will be associated.</p>",
+          "location": "uri",
+          "locationName": "resource",
+          "shape": "ResourceSpecifier"
+        },
+        "resourceType": {
+          "documentation": "<p>The type of resource of which the application will be associated.</p>",
+          "location": "uri",
+          "locationName": "resourceType",
+          "shape": "ResourceType"
+        }
+      },
+      "required": [
         "application",
         "resourceType",
         "resource"
       ],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "resourceType":{
-          "shape":"ResourceType",
-          "documentation":"<p>The type of resource of which the application will be associated.</p>",
-          "location":"uri",
-          "locationName":"resourceType"
-        },
-        "resource":{
-          "shape":"ResourceSpecifier",
-          "documentation":"<p>The name or ID of the resource of which the application will be associated.</p>",
-          "location":"uri",
-          "locationName":"resource"
-        }
-      }
+      "type": "structure"
     },
-    "AssociateResourceResponse":{
-      "type":"structure",
-      "members":{
-        "applicationArn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>"
+    "AssociateResourceResponse": {
+      "members": {
+        "applicationArn": {
+          "documentation": "<p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>",
+          "shape": "ApplicationArn"
         },
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the resource.</p>"
-        }
-      }
-    },
-    "AssociationCount":{
-      "type":"integer",
-      "min":0
-    },
-    "AttributeGroup":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"AttributeGroupId",
-          "documentation":"<p>The globally unique attribute group identifier of the attribute group.</p>"
-        },
-        "arn":{
-          "shape":"AttributeGroupArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the attribute group.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the attribute group that the user provides.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>"
-        },
-        "lastUpdateTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>Key-value pairs you can use to associate with the attribute group.</p>"
+        "resourceArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the resource.</p>",
+          "shape": "Arn"
         }
       },
-      "documentation":"<p>Represents a Amazon Web Services Service Catalog AppRegistry attribute group that is rich metadata which describes an application and its components.</p>"
+      "type": "structure"
     },
-    "AttributeGroupArn":{
-      "type":"string",
-      "pattern":"arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/attribute-groups/[a-z0-9]+"
+    "AssociationCount": {
+      "min": 0,
+      "type": "integer"
     },
-    "AttributeGroupDetails":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"AttributeGroupId",
-          "documentation":"<p>The unique identifier of the attribute group.</p>"
+    "AttributeGroup": {
+      "documentation": "<p>Represents a Amazon Web Services Service Catalog AppRegistry attribute group that is rich metadata which describes an application and its components.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>",
+          "shape": "AttributeGroupArn"
         },
-        "arn":{
-          "shape":"AttributeGroupArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the attribute group.</p>"
+        "creationTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>",
+          "shape": "Timestamp"
         },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the attribute group. </p>"
+        "description": {
+          "documentation": "<p>The description of the attribute group that the user provides.</p>",
+          "shape": "Description"
+        },
+        "id": {
+          "documentation": "<p>The globally unique attribute group identifier of the attribute group.</p>",
+          "shape": "AttributeGroupId"
+        },
+        "lastUpdateTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The name of the attribute group.</p>",
+          "shape": "Name"
+        },
+        "tags": {
+          "documentation": "<p>Key-value pairs you can use to associate with the attribute group.</p>",
+          "shape": "Tags"
         }
       },
-      "documentation":"<p> The details related to a specific AttributeGroup. </p>"
+      "type": "structure"
     },
-    "AttributeGroupDetailsList":{
-      "type":"list",
-      "member":{"shape":"AttributeGroupDetails"}
+    "AttributeGroupArn": {
+      "pattern": "arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/attribute-groups/[a-z0-9]+",
+      "type": "string"
     },
-    "AttributeGroupId":{
-      "type":"string",
-      "max":26,
-      "min":26,
-      "pattern":"[a-z0-9]+"
-    },
-    "AttributeGroupIds":{
-      "type":"list",
-      "member":{"shape":"AttributeGroupId"}
-    },
-    "AttributeGroupSpecifier":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":"[-.\\w]+"
-    },
-    "AttributeGroupSummaries":{
-      "type":"list",
-      "member":{"shape":"AttributeGroupSummary"}
-    },
-    "AttributeGroupSummary":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"AttributeGroupId",
-          "documentation":"<p>The globally unique attribute group identifier of the attribute group.</p>"
+    "AttributeGroupDetails": {
+      "documentation": "<p> The details related to a specific AttributeGroup. </p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the attribute group.</p>",
+          "shape": "AttributeGroupArn"
         },
-        "arn":{
-          "shape":"AttributeGroupArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>"
+        "id": {
+          "documentation": "<p>The unique identifier of the attribute group.</p>",
+          "shape": "AttributeGroupId"
         },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the attribute group.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the attribute group that the user provides.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>"
-        },
-        "lastUpdateTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>"
+        "name": {
+          "documentation": "<p>The name of the attribute group. </p>",
+          "shape": "Name"
         }
       },
-      "documentation":"<p>Summary of a Amazon Web Services Service Catalog AppRegistry attribute group.</p>"
+      "type": "structure"
     },
-    "Attributes":{
-      "type":"string",
-      "max":8000,
-      "min":1,
-      "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+"
-    },
-    "ClientToken":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"[a-zA-Z0-9][a-zA-Z0-9_-]*"
-    },
-    "ConflictException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "AttributeGroupDetailsList": {
+      "member": {
+        "shape": "AttributeGroupDetails"
       },
-      "documentation":"<p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>",
-      "error":{"httpStatusCode":409},
-      "exception":true
+      "type": "list"
     },
-    "CreateApplicationRequest":{
-      "type":"structure",
-      "required":[
+    "AttributeGroupId": {
+      "max": 26,
+      "min": 26,
+      "pattern": "[a-z0-9]+",
+      "type": "string"
+    },
+    "AttributeGroupIds": {
+      "member": {
+        "shape": "AttributeGroupId"
+      },
+      "type": "list"
+    },
+    "AttributeGroupSpecifier": {
+      "max": 256,
+      "min": 1,
+      "pattern": "[-.\\w]+",
+      "type": "string"
+    },
+    "AttributeGroupSummaries": {
+      "member": {
+        "shape": "AttributeGroupSummary"
+      },
+      "type": "list"
+    },
+    "AttributeGroupSummary": {
+      "documentation": "<p>Summary of a Amazon Web Services Service Catalog AppRegistry attribute group.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>",
+          "shape": "AttributeGroupArn"
+        },
+        "creationTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>",
+          "shape": "Timestamp"
+        },
+        "description": {
+          "documentation": "<p>The description of the attribute group that the user provides.</p>",
+          "shape": "Description"
+        },
+        "id": {
+          "documentation": "<p>The globally unique attribute group identifier of the attribute group.</p>",
+          "shape": "AttributeGroupId"
+        },
+        "lastUpdateTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The name of the attribute group.</p>",
+          "shape": "Name"
+        }
+      },
+      "type": "structure"
+    },
+    "Attributes": {
+      "max": 8000,
+      "min": 1,
+      "pattern": "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+",
+      "type": "string"
+    },
+    "ClientToken": {
+      "max": 128,
+      "min": 1,
+      "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+      "type": "string"
+    },
+    "ConflictException": {
+      "documentation": "<p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>",
+      "error": {
+        "httpStatusCode": 409
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "CreateApplicationRequest": {
+      "members": {
+        "clientToken": {
+          "documentation": "<p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>",
+          "idempotencyToken": true,
+          "shape": "ClientToken"
+        },
+        "description": {
+          "documentation": "<p>The description of the application.</p>",
+          "shape": "Description"
+        },
+        "name": {
+          "documentation": "<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>",
+          "shape": "Name"
+        },
+        "tags": {
+          "documentation": "<p>Key-value pairs you can use to associate with the application.</p>",
+          "shape": "Tags"
+        }
+      },
+      "required": [
         "name",
         "clientToken"
       ],
-      "members":{
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the application.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>Key-value pairs you can use to associate with the application.</p>"
-        },
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>",
-          "idempotencyToken":true
-        }
-      }
+      "type": "structure"
     },
-    "CreateApplicationResponse":{
-      "type":"structure",
-      "members":{
-        "application":{
-          "shape":"Application",
-          "documentation":"<p>Information about the application.</p>"
+    "CreateApplicationResponse": {
+      "members": {
+        "application": {
+          "documentation": "<p>Information about the application.</p>",
+          "shape": "Application"
         }
-      }
+      },
+      "type": "structure"
     },
-    "CreateAttributeGroupRequest":{
-      "type":"structure",
-      "required":[
+    "CreateAttributeGroupRequest": {
+      "members": {
+        "attributes": {
+          "documentation": "<p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>",
+          "shape": "Attributes"
+        },
+        "clientToken": {
+          "documentation": "<p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>",
+          "idempotencyToken": true,
+          "shape": "ClientToken"
+        },
+        "description": {
+          "documentation": "<p>The description of the attribute group that the user provides.</p>",
+          "shape": "Description"
+        },
+        "name": {
+          "documentation": "<p>The name of the attribute group.</p>",
+          "shape": "Name"
+        },
+        "tags": {
+          "documentation": "<p>Key-value pairs you can use to associate with the attribute group.</p>",
+          "shape": "Tags"
+        }
+      },
+      "required": [
         "name",
         "attributes",
         "clientToken"
       ],
-      "members":{
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the attribute group.</p>"
+      "type": "structure"
+    },
+    "CreateAttributeGroupResponse": {
+      "members": {
+        "attributeGroup": {
+          "documentation": "<p>Information about the attribute group.</p>",
+          "shape": "AttributeGroup"
+        }
+      },
+      "type": "structure"
+    },
+    "DeleteApplicationRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
+        }
+      },
+      "required": [
+        "application"
+      ],
+      "type": "structure"
+    },
+    "DeleteApplicationResponse": {
+      "members": {
+        "application": {
+          "documentation": "<p>Information about the deleted application.</p>",
+          "shape": "ApplicationSummary"
+        }
+      },
+      "type": "structure"
+    },
+    "DeleteAttributeGroupRequest": {
+      "members": {
+        "attributeGroup": {
+          "documentation": "<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
+          "location": "uri",
+          "locationName": "attributeGroup",
+          "shape": "AttributeGroupSpecifier"
+        }
+      },
+      "required": [
+        "attributeGroup"
+      ],
+      "type": "structure"
+    },
+    "DeleteAttributeGroupResponse": {
+      "members": {
+        "attributeGroup": {
+          "documentation": "<p>Information about the deleted attribute group.</p>",
+          "shape": "AttributeGroupSummary"
+        }
+      },
+      "type": "structure"
+    },
+    "Description": {
+      "max": 1024,
+      "type": "string"
+    },
+    "DisassociateAttributeGroupRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the attribute group that the user provides.</p>"
-        },
-        "attributes":{
-          "shape":"Attributes",
-          "documentation":"<p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>Key-value pairs you can use to associate with the attribute group.</p>"
-        },
-        "clientToken":{
-          "shape":"ClientToken",
-          "documentation":"<p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>",
-          "idempotencyToken":true
+        "attributeGroup": {
+          "documentation": "<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
+          "location": "uri",
+          "locationName": "attributeGroup",
+          "shape": "AttributeGroupSpecifier"
         }
-      }
-    },
-    "CreateAttributeGroupResponse":{
-      "type":"structure",
-      "members":{
-        "attributeGroup":{
-          "shape":"AttributeGroup",
-          "documentation":"<p>Information about the attribute group.</p>"
-        }
-      }
-    },
-    "DeleteApplicationRequest":{
-      "type":"structure",
-      "required":["application"],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        }
-      }
-    },
-    "DeleteApplicationResponse":{
-      "type":"structure",
-      "members":{
-        "application":{
-          "shape":"ApplicationSummary",
-          "documentation":"<p>Information about the deleted application.</p>"
-        }
-      }
-    },
-    "DeleteAttributeGroupRequest":{
-      "type":"structure",
-      "required":["attributeGroup"],
-      "members":{
-        "attributeGroup":{
-          "shape":"AttributeGroupSpecifier",
-          "documentation":"<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
-          "location":"uri",
-          "locationName":"attributeGroup"
-        }
-      }
-    },
-    "DeleteAttributeGroupResponse":{
-      "type":"structure",
-      "members":{
-        "attributeGroup":{
-          "shape":"AttributeGroupSummary",
-          "documentation":"<p>Information about the deleted attribute group.</p>"
-        }
-      }
-    },
-    "Description":{
-      "type":"string",
-      "max":1024
-    },
-    "DisassociateAttributeGroupRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "application",
         "attributeGroup"
       ],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "attributeGroup":{
-          "shape":"AttributeGroupSpecifier",
-          "documentation":"<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
-          "location":"uri",
-          "locationName":"attributeGroup"
-        }
-      }
+      "type": "structure"
     },
-    "DisassociateAttributeGroupResponse":{
-      "type":"structure",
-      "members":{
-        "applicationArn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the application.</p>"
+    "DisassociateAttributeGroupResponse": {
+      "members": {
+        "applicationArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the application.</p>",
+          "shape": "ApplicationArn"
         },
-        "attributeGroupArn":{
-          "shape":"AttributeGroupArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the attribute group.</p>"
+        "attributeGroupArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the attribute group.</p>",
+          "shape": "AttributeGroupArn"
         }
-      }
+      },
+      "type": "structure"
     },
-    "DisassociateResourceRequest":{
-      "type":"structure",
-      "required":[
+    "DisassociateResourceRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
+        },
+        "resource": {
+          "documentation": "<p>The name or ID of the resource.</p>",
+          "location": "uri",
+          "locationName": "resource",
+          "shape": "ResourceSpecifier"
+        },
+        "resourceType": {
+          "documentation": "<p>The type of the resource that is being disassociated.</p>",
+          "location": "uri",
+          "locationName": "resourceType",
+          "shape": "ResourceType"
+        }
+      },
+      "required": [
         "application",
         "resourceType",
         "resource"
       ],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "resourceType":{
-          "shape":"ResourceType",
-          "documentation":"<p>The type of the resource that is being disassociated.</p>",
-          "location":"uri",
-          "locationName":"resourceType"
-        },
-        "resource":{
-          "shape":"ResourceSpecifier",
-          "documentation":"<p>The name or ID of the resource.</p>",
-          "location":"uri",
-          "locationName":"resource"
-        }
-      }
+      "type": "structure"
     },
-    "DisassociateResourceResponse":{
-      "type":"structure",
-      "members":{
-        "applicationArn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the application.</p>"
+    "DisassociateResourceResponse": {
+      "members": {
+        "applicationArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the application.</p>",
+          "shape": "ApplicationArn"
         },
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the resource.</p>"
+        "resourceArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the resource.</p>",
+          "shape": "Arn"
         }
-      }
+      },
+      "type": "structure"
     },
-    "GetApplicationRequest":{
-      "type":"structure",
-      "required":["application"],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
+    "GetApplicationRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
         }
-      }
+      },
+      "required": [
+        "application"
+      ],
+      "type": "structure"
     },
-    "GetApplicationResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"ApplicationId",
-          "documentation":"<p>The identifier of the application.</p>"
+    "GetApplicationResponse": {
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the application across services.</p>",
+          "shape": "ApplicationArn"
         },
-        "arn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the application across services.</p>"
+        "associatedResourceCount": {
+          "documentation": "<p>The number of top-level resources that were registered as part of this application.</p>",
+          "shape": "AssociationCount"
         },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>"
+        "creationTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>",
+          "shape": "Timestamp"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the application.</p>"
+        "description": {
+          "documentation": "<p>The description of the application.</p>",
+          "shape": "Description"
         },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>"
+        "id": {
+          "documentation": "<p>The identifier of the application.</p>",
+          "shape": "ApplicationId"
         },
-        "lastUpdateTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>"
+        "integrations": {
+          "documentation": "<p>The information about the integration of the application with other services, such as Resource Groups.</p>",
+          "shape": "Integrations"
         },
-        "associatedResourceCount":{
-          "shape":"AssociationCount",
-          "documentation":"<p>The number of top-level resources that were registered as part of this application.</p>"
+        "lastUpdateTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>",
+          "shape": "Timestamp"
         },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>Key-value pairs associated with the application.</p>"
+        "name": {
+          "documentation": "<p>The name of the application. The name must be unique in the region in which you are creating the application.</p>",
+          "shape": "Name"
         },
-        "integrations":{
-          "shape":"Integrations",
-          "documentation":"<p>The information about the integration of the application with other services, such as Resource Groups.</p>"
+        "tags": {
+          "documentation": "<p>Key-value pairs associated with the application.</p>",
+          "shape": "Tags"
         }
-      }
+      },
+      "type": "structure"
     },
-    "GetAssociatedResourceRequest":{
-      "type":"structure",
-      "required":[
+    "GetAssociatedResourceRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
+        },
+        "resource": {
+          "documentation": "<p>The name or ID of the resource associated with the application.</p>",
+          "location": "uri",
+          "locationName": "resource",
+          "shape": "ResourceSpecifier"
+        },
+        "resourceType": {
+          "documentation": "<p>The type of resource associated with the application.</p>",
+          "location": "uri",
+          "locationName": "resourceType",
+          "shape": "ResourceType"
+        }
+      },
+      "required": [
         "application",
         "resourceType",
         "resource"
       ],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "resourceType":{
-          "shape":"ResourceType",
-          "documentation":"<p>The type of resource associated with the application.</p>",
-          "location":"uri",
-          "locationName":"resourceType"
-        },
-        "resource":{
-          "shape":"ResourceSpecifier",
-          "documentation":"<p>The name or ID of the resource associated with the application.</p>",
-          "location":"uri",
-          "locationName":"resource"
-        }
-      }
+      "type": "structure"
     },
-    "GetAssociatedResourceResponse":{
-      "type":"structure",
-      "members":{
-        "resource":{
-          "shape":"Resource",
-          "documentation":"<p>The resource associated with the application.</p>"
-        }
-      }
-    },
-    "GetAttributeGroupRequest":{
-      "type":"structure",
-      "required":["attributeGroup"],
-      "members":{
-        "attributeGroup":{
-          "shape":"AttributeGroupSpecifier",
-          "documentation":"<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
-          "location":"uri",
-          "locationName":"attributeGroup"
-        }
-      }
-    },
-    "GetAttributeGroupResponse":{
-      "type":"structure",
-      "members":{
-        "id":{
-          "shape":"AttributeGroupId",
-          "documentation":"<p>The identifier of the attribute group.</p>"
-        },
-        "arn":{
-          "shape":"AttributeGroupArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>The name of the attribute group.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the attribute group that the user provides.</p>"
-        },
-        "attributes":{
-          "shape":"Attributes",
-          "documentation":"<p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>"
-        },
-        "creationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>"
-        },
-        "lastUpdateTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>"
-        },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>Key-value pairs associated with the attribute group.</p>"
-        }
-      }
-    },
-    "Integrations":{
-      "type":"structure",
-      "members":{
-        "resourceGroup":{
-          "shape":"ResourceGroup",
-          "documentation":"<p> The information about the resource group integration.</p>"
+    "GetAssociatedResourceResponse": {
+      "members": {
+        "resource": {
+          "documentation": "<p>The resource associated with the application.</p>",
+          "shape": "Resource"
         }
       },
-      "documentation":"<p> The information about the service integration.</p>"
+      "type": "structure"
     },
-    "InternalServerException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "documentation":"<p>The service is experiencing internal problems.</p>",
-      "error":{"httpStatusCode":500},
-      "exception":true,
-      "fault":true
-    },
-    "ListApplicationsRequest":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call. </p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>",
-          "box":true,
-          "location":"querystring",
-          "locationName":"maxResults"
-        }
-      }
-    },
-    "ListApplicationsResponse":{
-      "type":"structure",
-      "members":{
-        "applications":{
-          "shape":"ApplicationSummaries",
-          "documentation":"<p>This list of applications.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call. </p>"
-        }
-      }
-    },
-    "ListAssociatedAttributeGroupsRequest":{
-      "type":"structure",
-      "required":["application"],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call. </p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>",
-          "box":true,
-          "location":"querystring",
-          "locationName":"maxResults"
-        }
-      }
-    },
-    "ListAssociatedAttributeGroupsResponse":{
-      "type":"structure",
-      "members":{
-        "attributeGroups":{
-          "shape":"AttributeGroupIds",
-          "documentation":"<p>A list of attribute group IDs.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call. </p>"
-        }
-      }
-    },
-    "ListAssociatedResourcesRequest":{
-      "type":"structure",
-      "required":["application"],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call. </p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>",
-          "box":true,
-          "location":"querystring",
-          "locationName":"maxResults"
-        }
-      }
-    },
-    "ListAssociatedResourcesResponse":{
-      "type":"structure",
-      "members":{
-        "resources":{
-          "shape":"Resources",
-          "documentation":"<p>Information about the resources.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call. </p>"
-        }
-      }
-    },
-    "ListAttributeGroupsForApplicationRequest":{
-      "type":"structure",
-      "required":["application"],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>This token retrieves the next page of results after a previous API call.</p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>",
-          "box":true,
-          "location":"querystring",
-          "locationName":"maxResults"
-        }
-      }
-    },
-    "ListAttributeGroupsForApplicationResponse":{
-      "type":"structure",
-      "members":{
-        "attributeGroupsDetails":{
-          "shape":"AttributeGroupDetailsList",
-          "documentation":"<p> The details related to a specific AttributeGroup. </p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call.</p>"
-        }
-      }
-    },
-    "ListAttributeGroupsRequest":{
-      "type":"structure",
-      "members":{
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call. </p>",
-          "location":"querystring",
-          "locationName":"nextToken"
-        },
-        "maxResults":{
-          "shape":"MaxResults",
-          "documentation":"<p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>",
-          "box":true,
-          "location":"querystring",
-          "locationName":"maxResults"
-        }
-      }
-    },
-    "ListAttributeGroupsResponse":{
-      "type":"structure",
-      "members":{
-        "attributeGroups":{
-          "shape":"AttributeGroupSummaries",
-          "documentation":"<p>This list of attribute groups.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token to use to get the next page of results after a previous API call. </p>"
-        }
-      }
-    },
-    "ListTagsForResourceRequest":{
-      "type":"structure",
-      "required":["resourceArn"],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
-        }
-      }
-    },
-    "ListTagsForResourceResponse":{
-      "type":"structure",
-      "members":{
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The tags on the resource.</p>"
-        }
-      }
-    },
-    "MaxResults":{
-      "type":"integer",
-      "max":25,
-      "min":1
-    },
-    "Name":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":"[-.\\w]+"
-    },
-    "NextToken":{
-      "type":"string",
-      "max":2024,
-      "min":1,
-      "pattern":"[A-Za-z0-9+/=]+"
-    },
-    "Resource":{
-      "type":"structure",
-      "members":{
-        "name":{
-          "shape":"ResourceSpecifier",
-          "documentation":"<p>The name of the resource.</p>"
-        },
-        "arn":{
-          "shape":"StackArn",
-          "documentation":"<p>The Amazon resource name (ARN) of the resource.</p>"
-        },
-        "associationTime":{
-          "shape":"Timestamp",
-          "documentation":"<p>The time the resource was associated with the application.</p>"
-        },
-        "integrations":{
-          "shape":"ResourceIntegrations",
-          "documentation":"<p>The service integration information about the resource. </p>"
+    "GetAttributeGroupRequest": {
+      "members": {
+        "attributeGroup": {
+          "documentation": "<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
+          "location": "uri",
+          "locationName": "attributeGroup",
+          "shape": "AttributeGroupSpecifier"
         }
       },
-      "documentation":"<p> The information about the resource.</p>"
+      "required": [
+        "attributeGroup"
+      ],
+      "type": "structure"
     },
-    "ResourceGroup":{
-      "type":"structure",
-      "members":{
-        "state":{
-          "shape":"ResourceGroupState",
-          "documentation":"<p>The state of the propagation process for the resource group. The states includes:</p> <p> <code>CREATING </code>if the resource group is in the process of being created.</p> <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p> <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p> <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p> <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p> <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>"
+    "GetAttributeGroupResponse": {
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>",
+          "shape": "AttributeGroupArn"
         },
-        "arn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon resource name (ARN) of the resource group.</p>"
+        "attributes": {
+          "documentation": "<p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>",
+          "shape": "Attributes"
         },
-        "errorMessage":{
-          "shape":"String",
-          "documentation":"<p>The error message that generates when the propagation process for the resource group fails.</p>"
+        "creationTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>",
+          "shape": "Timestamp"
+        },
+        "description": {
+          "documentation": "<p>The description of the attribute group that the user provides.</p>",
+          "shape": "Description"
+        },
+        "id": {
+          "documentation": "<p>The identifier of the attribute group.</p>",
+          "shape": "AttributeGroupId"
+        },
+        "lastUpdateTime": {
+          "documentation": "<p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>",
+          "shape": "Timestamp"
+        },
+        "name": {
+          "documentation": "<p>The name of the attribute group.</p>",
+          "shape": "Name"
+        },
+        "tags": {
+          "documentation": "<p>Key-value pairs associated with the attribute group.</p>",
+          "shape": "Tags"
         }
       },
-      "documentation":"<p>The information about the resource group integration.</p>"
+      "type": "structure"
     },
-    "ResourceGroupState":{
-      "type":"string",
-      "enum":[
+    "Integrations": {
+      "documentation": "<p> The information about the service integration.</p>",
+      "members": {
+        "resourceGroup": {
+          "documentation": "<p> The information about the resource group integration.</p>",
+          "shape": "ResourceGroup"
+        }
+      },
+      "type": "structure"
+    },
+    "InternalServerException": {
+      "documentation": "<p>The service is experiencing internal problems.</p>",
+      "error": {
+        "httpStatusCode": 500
+      },
+      "exception": true,
+      "fault": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "ListApplicationsRequest": {
+      "members": {
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call. </p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListApplicationsResponse": {
+      "members": {
+        "applications": {
+          "documentation": "<p>This list of applications.</p>",
+          "shape": "ApplicationSummaries"
+        },
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call. </p>",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListAssociatedAttributeGroupsRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
+        },
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call. </p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "application"
+      ],
+      "type": "structure"
+    },
+    "ListAssociatedAttributeGroupsResponse": {
+      "members": {
+        "attributeGroups": {
+          "documentation": "<p>A list of attribute group IDs.</p>",
+          "shape": "AttributeGroupIds"
+        },
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call. </p>",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListAssociatedResourcesRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
+        },
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call. </p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "application"
+      ],
+      "type": "structure"
+    },
+    "ListAssociatedResourcesResponse": {
+      "members": {
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call. </p>",
+          "shape": "NextToken"
+        },
+        "resources": {
+          "documentation": "<p>Information about the resources.</p>",
+          "shape": "Resources"
+        }
+      },
+      "type": "structure"
+    },
+    "ListAttributeGroupsForApplicationRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
+        },
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>This token retrieves the next page of results after a previous API call.</p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "required": [
+        "application"
+      ],
+      "type": "structure"
+    },
+    "ListAttributeGroupsForApplicationResponse": {
+      "members": {
+        "attributeGroupsDetails": {
+          "documentation": "<p> The details related to a specific AttributeGroup. </p>",
+          "shape": "AttributeGroupDetailsList"
+        },
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call.</p>",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListAttributeGroupsRequest": {
+      "members": {
+        "maxResults": {
+          "box": true,
+          "documentation": "<p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "shape": "MaxResults"
+        },
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call. </p>",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListAttributeGroupsResponse": {
+      "members": {
+        "attributeGroups": {
+          "documentation": "<p>This list of attribute groups.</p>",
+          "shape": "AttributeGroupSummaries"
+        },
+        "nextToken": {
+          "documentation": "<p>The token to use to get the next page of results after a previous API call. </p>",
+          "shape": "NextToken"
+        }
+      },
+      "type": "structure"
+    },
+    "ListTagsForResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
+        }
+      },
+      "required": [
+        "resourceArn"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceResponse": {
+      "members": {
+        "tags": {
+          "documentation": "<p>The tags on the resource.</p>",
+          "shape": "Tags"
+        }
+      },
+      "type": "structure"
+    },
+    "MaxResults": {
+      "max": 25,
+      "min": 1,
+      "type": "integer"
+    },
+    "Name": {
+      "max": 256,
+      "min": 1,
+      "pattern": "[-.\\w]+",
+      "type": "string"
+    },
+    "NextToken": {
+      "max": 2024,
+      "min": 1,
+      "pattern": "[A-Za-z0-9+/=]+",
+      "type": "string"
+    },
+    "Resource": {
+      "documentation": "<p> The information about the resource.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) of the resource.</p>",
+          "shape": "StackArn"
+        },
+        "associationTime": {
+          "documentation": "<p>The time the resource was associated with the application.</p>",
+          "shape": "Timestamp"
+        },
+        "integrations": {
+          "documentation": "<p>The service integration information about the resource. </p>",
+          "shape": "ResourceIntegrations"
+        },
+        "name": {
+          "documentation": "<p>The name of the resource.</p>",
+          "shape": "ResourceSpecifier"
+        }
+      },
+      "type": "structure"
+    },
+    "ResourceGroup": {
+      "documentation": "<p>The information about the resource group integration.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) of the resource group.</p>",
+          "shape": "Arn"
+        },
+        "errorMessage": {
+          "documentation": "<p>The error message that generates when the propagation process for the resource group fails.</p>",
+          "shape": "String"
+        },
+        "state": {
+          "documentation": "<p>The state of the propagation process for the resource group. The states includes:</p> <p> <code>CREATING </code>if the resource group is in the process of being created.</p> <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p> <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p> <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p> <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p> <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>",
+          "shape": "ResourceGroupState"
+        }
+      },
+      "type": "structure"
+    },
+    "ResourceGroupState": {
+      "enum": [
         "CREATING",
         "CREATE_COMPLETE",
         "CREATE_FAILED",
         "UPDATING",
         "UPDATE_COMPLETE",
         "UPDATE_FAILED"
-      ]
+      ],
+      "type": "string"
     },
-    "ResourceInfo":{
-      "type":"structure",
-      "members":{
-        "name":{
-          "shape":"ResourceSpecifier",
-          "documentation":"<p>The name of the resource.</p>"
+    "ResourceInfo": {
+      "documentation": "<p>The information about the resource.</p>",
+      "members": {
+        "arn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the resource across services.</p>",
+          "shape": "StackArn"
         },
-        "arn":{
-          "shape":"StackArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the resource across services.</p>"
+        "name": {
+          "documentation": "<p>The name of the resource.</p>",
+          "shape": "ResourceSpecifier"
         }
       },
-      "documentation":"<p>The information about the resource.</p>"
+      "type": "structure"
     },
-    "ResourceIntegrations":{
-      "type":"structure",
-      "members":{
-        "resourceGroup":{
-          "shape":"ResourceGroup",
-          "documentation":"<p>The information about the integration of Resource Groups.</p>"
+    "ResourceIntegrations": {
+      "documentation": "<p>The service integration information about the resource.</p>",
+      "members": {
+        "resourceGroup": {
+          "documentation": "<p>The information about the integration of Resource Groups.</p>",
+          "shape": "ResourceGroup"
         }
       },
-      "documentation":"<p>The service integration information about the resource.</p>"
+      "type": "structure"
     },
-    "ResourceNotFoundException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+    "ResourceNotFoundException": {
+      "documentation": "<p>The specified resource does not exist.</p>",
+      "error": {
+        "httpStatusCode": 404
       },
-      "documentation":"<p>The specified resource does not exist.</p>",
-      "error":{"httpStatusCode":404},
-      "exception":true
-    },
-    "ResourceSpecifier":{
-      "type":"string",
-      "max":256,
-      "min":1,
-      "pattern":"\\S+"
-    },
-    "ResourceType":{
-      "type":"string",
-      "enum":["CFN_STACK"]
-    },
-    "Resources":{
-      "type":"list",
-      "member":{"shape":"ResourceInfo"}
-    },
-    "ServiceQuotaExceededException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
       },
-      "documentation":"<p>The maximum number of resources per account has been reached.</p>",
-      "error":{"httpStatusCode":402},
-      "exception":true
+      "type": "structure"
     },
-    "StackArn":{
-      "type":"string",
-      "pattern":"arn:aws[-a-z]*:cloudformation:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:stack/[a-zA-Z][-A-Za-z0-9]{0,127}/[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}"
+    "ResourceSpecifier": {
+      "max": 256,
+      "min": 1,
+      "pattern": "\\S+",
+      "type": "string"
     },
-    "String":{"type":"string"},
-    "SyncAction":{
-      "type":"string",
-      "enum":[
+    "ResourceType": {
+      "enum": [
+        "CFN_STACK"
+      ],
+      "type": "string"
+    },
+    "Resources": {
+      "member": {
+        "shape": "ResourceInfo"
+      },
+      "type": "list"
+    },
+    "ServiceQuotaExceededException": {
+      "documentation": "<p>The maximum number of resources per account has been reached.</p>",
+      "error": {
+        "httpStatusCode": 402
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
+    },
+    "StackArn": {
+      "pattern": "arn:aws[-a-z]*:cloudformation:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:stack/[a-zA-Z][-A-Za-z0-9]{0,127}/[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}",
+      "type": "string"
+    },
+    "String": {
+      "type": "string"
+    },
+    "SyncAction": {
+      "enum": [
         "START_SYNC",
         "NO_ACTION"
-      ]
+      ],
+      "type": "string"
     },
-    "SyncResourceRequest":{
-      "type":"structure",
-      "required":[
+    "SyncResourceRequest": {
+      "members": {
+        "resource": {
+          "documentation": "<p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>",
+          "location": "uri",
+          "locationName": "resource",
+          "shape": "ResourceSpecifier"
+        },
+        "resourceType": {
+          "documentation": "<p>The type of resource of which the application will be associated.</p>",
+          "location": "uri",
+          "locationName": "resourceType",
+          "shape": "ResourceType"
+        }
+      },
+      "required": [
         "resourceType",
         "resource"
       ],
-      "members":{
-        "resourceType":{
-          "shape":"ResourceType",
-          "documentation":"<p>The type of resource of which the application will be associated.</p>",
-          "location":"uri",
-          "locationName":"resourceType"
+      "type": "structure"
+    },
+    "SyncResourceResponse": {
+      "members": {
+        "actionTaken": {
+          "documentation": "<p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>",
+          "shape": "SyncAction"
         },
-        "resource":{
-          "shape":"ResourceSpecifier",
-          "documentation":"<p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>",
-          "location":"uri",
-          "locationName":"resource"
+        "applicationArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the application.</p>",
+          "shape": "ApplicationArn"
+        },
+        "resourceArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the resource.</p>",
+          "shape": "Arn"
         }
-      }
+      },
+      "type": "structure"
     },
-    "SyncResourceResponse":{
-      "type":"structure",
-      "members":{
-        "applicationArn":{
-          "shape":"ApplicationArn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the application.</p>"
+    "TagKey": {
+      "max": 128,
+      "min": 1,
+      "pattern": "(?!aws:)[a-zA-Z+-=._:/]+",
+      "type": "string"
+    },
+    "TagKeys": {
+      "max": 50,
+      "member": {
+        "shape": "TagKey"
+      },
+      "min": 0,
+      "type": "list"
+    },
+    "TagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
         },
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the resource.</p>"
-        },
-        "actionTaken":{
-          "shape":"SyncAction",
-          "documentation":"<p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>"
+        "tags": {
+          "documentation": "<p>The new or modified tags for the resource.</p>",
+          "shape": "Tags"
         }
-      }
-    },
-    "TagKey":{
-      "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"(?!aws:)[a-zA-Z+-=._:/]+"
-    },
-    "TagKeys":{
-      "type":"list",
-      "member":{"shape":"TagKey"},
-      "max":50,
-      "min":0
-    },
-    "TagResourceRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "resourceArn",
         "tags"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "TagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "TagValue": {
+      "max": 256,
+      "pattern": "[\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*",
+      "type": "string"
+    },
+    "Tags": {
+      "key": {
+        "shape": "TagKey"
+      },
+      "max": 50,
+      "min": 0,
+      "type": "map",
+      "value": {
+        "shape": "TagValue"
+      }
+    },
+    "Timestamp": {
+      "timestampFormat": "iso8601",
+      "type": "timestamp"
+    },
+    "UntagResourceRequest": {
+      "members": {
+        "resourceArn": {
+          "documentation": "<p>The Amazon resource name (ARN) that specifies the resource.</p>",
+          "location": "uri",
+          "locationName": "resourceArn",
+          "shape": "Arn"
         },
-        "tags":{
-          "shape":"Tags",
-          "documentation":"<p>The new or modified tags for the resource.</p>"
+        "tagKeys": {
+          "documentation": "<p>A list of the tag keys to remove from the specified resource.</p>",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "TagKeys"
         }
-      }
-    },
-    "TagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "TagValue":{
-      "type":"string",
-      "max":256,
-      "pattern":"[\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*"
-    },
-    "Tags":{
-      "type":"map",
-      "key":{"shape":"TagKey"},
-      "value":{"shape":"TagValue"},
-      "max":50,
-      "min":0
-    },
-    "Timestamp":{
-      "type":"timestamp",
-      "timestampFormat":"iso8601"
-    },
-    "UntagResourceRequest":{
-      "type":"structure",
-      "required":[
+      },
+      "required": [
         "resourceArn",
         "tagKeys"
       ],
-      "members":{
-        "resourceArn":{
-          "shape":"Arn",
-          "documentation":"<p>The Amazon resource name (ARN) that specifies the resource.</p>",
-          "location":"uri",
-          "locationName":"resourceArn"
+      "type": "structure"
+    },
+    "UntagResourceResponse": {
+      "members": {},
+      "type": "structure"
+    },
+    "UpdateApplicationRequest": {
+      "members": {
+        "application": {
+          "documentation": "<p>The name or ID of the application that will be updated.</p>",
+          "location": "uri",
+          "locationName": "application",
+          "shape": "ApplicationSpecifier"
         },
-        "tagKeys":{
-          "shape":"TagKeys",
-          "documentation":"<p>A list of the tag keys to remove from the specified resource.</p>",
-          "location":"querystring",
-          "locationName":"tagKeys"
+        "description": {
+          "documentation": "<p>The new description of the application.</p>",
+          "shape": "Description"
+        },
+        "name": {
+          "deprecated": true,
+          "deprecatedMessage": "Name update for application is deprecated.",
+          "documentation": "<p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>",
+          "shape": "Name"
         }
-      }
-    },
-    "UntagResourceResponse":{
-      "type":"structure",
-      "members":{
-      }
-    },
-    "UpdateApplicationRequest":{
-      "type":"structure",
-      "required":["application"],
-      "members":{
-        "application":{
-          "shape":"ApplicationSpecifier",
-          "documentation":"<p>The name or ID of the application that will be updated.</p>",
-          "location":"uri",
-          "locationName":"application"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.</p>",
-          "deprecated":true,
-          "deprecatedMessage":"Name update for application is deprecated."
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The new description of the application.</p>"
-        }
-      }
-    },
-    "UpdateApplicationResponse":{
-      "type":"structure",
-      "members":{
-        "application":{
-          "shape":"Application",
-          "documentation":"<p>The updated information of the application.</p>"
-        }
-      }
-    },
-    "UpdateAttributeGroupRequest":{
-      "type":"structure",
-      "required":["attributeGroup"],
-      "members":{
-        "attributeGroup":{
-          "shape":"AttributeGroupSpecifier",
-          "documentation":"<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
-          "location":"uri",
-          "locationName":"attributeGroup"
-        },
-        "name":{
-          "shape":"Name",
-          "documentation":"<p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>",
-          "deprecated":true,
-          "deprecatedMessage":"Name update for attribute group is deprecated."
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the attribute group that the user provides.</p>"
-        },
-        "attributes":{
-          "shape":"Attributes",
-          "documentation":"<p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>"
-        }
-      }
-    },
-    "UpdateAttributeGroupResponse":{
-      "type":"structure",
-      "members":{
-        "attributeGroup":{
-          "shape":"AttributeGroup",
-          "documentation":"<p>The updated information of the attribute group.</p>"
-        }
-      }
-    },
-    "ValidationException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
       },
-      "documentation":"<p>The request has invalid or missing parameters.</p>",
-      "error":{"httpStatusCode":400},
-      "exception":true
+      "required": [
+        "application"
+      ],
+      "type": "structure"
+    },
+    "UpdateApplicationResponse": {
+      "members": {
+        "application": {
+          "documentation": "<p>The updated information of the application.</p>",
+          "shape": "Application"
+        }
+      },
+      "type": "structure"
+    },
+    "UpdateAttributeGroupRequest": {
+      "members": {
+        "attributeGroup": {
+          "documentation": "<p>The name or ID of the attribute group that holds the attributes to describe the application.</p>",
+          "location": "uri",
+          "locationName": "attributeGroup",
+          "shape": "AttributeGroupSpecifier"
+        },
+        "attributes": {
+          "documentation": "<p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>",
+          "shape": "Attributes"
+        },
+        "description": {
+          "documentation": "<p>The description of the attribute group that the user provides.</p>",
+          "shape": "Description"
+        },
+        "name": {
+          "deprecated": true,
+          "deprecatedMessage": "Name update for attribute group is deprecated.",
+          "documentation": "<p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>",
+          "shape": "Name"
+        }
+      },
+      "required": [
+        "attributeGroup"
+      ],
+      "type": "structure"
+    },
+    "UpdateAttributeGroupResponse": {
+      "members": {
+        "attributeGroup": {
+          "documentation": "<p>The updated information of the attribute group.</p>",
+          "shape": "AttributeGroup"
+        }
+      },
+      "type": "structure"
+    },
+    "ValidationException": {
+      "documentation": "<p>The request has invalid or missing parameters.</p>",
+      "error": {
+        "httpStatusCode": 400
+      },
+      "exception": true,
+      "members": {
+        "message": {
+          "shape": "String"
+        }
+      },
+      "type": "structure"
     }
   },
-  "documentation":"<p> Amazon Web Services Service Catalog AppRegistry enables organizations to understand the application context of their Amazon Web Services resources. AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise.</p>"
+  "version": "2.0"
 }

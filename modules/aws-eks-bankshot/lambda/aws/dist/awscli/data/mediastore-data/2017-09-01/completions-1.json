@@ -1,5 +1,17 @@
 {
-  "version": "1.0",
+  "operations": {
+    "PutObject": {
+      "ContentType": {
+        "completions": [
+          {
+            "parameters": {},
+            "resourceIdentifier": "ContentType",
+            "resourceName": "Item"
+          }
+        ]
+      }
+    }
+  },
   "resources": {
     "Item": {
       "operation": "ListItems",
@@ -8,17 +20,5 @@
       }
     }
   },
-  "operations": {
-    "PutObject": {
-      "ContentType": {
-        "completions": [
-          {
-            "parameters": {},
-            "resourceName": "Item",
-            "resourceIdentifier": "ContentType"
-          }
-        ]
-      }
-    }
-  }
+  "version": "1.0"
 }
