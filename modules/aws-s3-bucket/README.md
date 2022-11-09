@@ -89,7 +89,7 @@ No modules.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~>4 |
 
 ## Resources
@@ -119,7 +119,6 @@ No modules.
 | <a name="input_kms_master_key_id"></a> [kms\_master\_key\_id](#input\_kms\_master\_key\_id) | The KMS key id to use for encryption | `string` | `null` | no |
 | <a name="input_logging_enabled"></a> [logging\_enabled](#input\_logging\_enabled) | Enable logging for the bucket | `bool` | `true` | no |
 | <a name="input_logging_target_bucket"></a> [logging\_target\_bucket](#input\_logging\_target\_bucket) | The target bucket for the logging configuration | `string` | `null` | no |
-| <a name="input_logging_target_grant"></a> [logging\_target\_grant](#input\_logging\_target\_grant) | The target grant for the logging configuration | <pre>list(object({<br>    grantee = optional(object({<br>      type          = string<br>      id            = optional(string)<br>      uri           = optional(string)<br>      email_address = optional(string)<br>    }))<br>    permission = optional(string)<br>  }))</pre> | `null` | no |
 | <a name="input_logging_target_prefix"></a> [logging\_target\_prefix](#input\_logging\_target\_prefix) | The target prefix for the logging configuration | `string` | `null` | no |
 | <a name="input_object_lock_enabled"></a> [object\_lock\_enabled](#input\_object\_lock\_enabled) | Enable object lock for the bucket | `bool` | `false` | no |
 | <a name="input_replication_role"></a> [replication\_role](#input\_replication\_role) | The role ARN to use for replication | `string` | `null` | no |
