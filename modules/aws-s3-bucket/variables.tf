@@ -114,22 +114,6 @@ variable "logging_target_prefix" {
   default     = null
 }
 
-variable "logging_target_grant" {
-  type = list(object({
-    grantee = optional(object({
-      type          = string
-      id            = optional(string)
-      uri           = optional(string)
-      email_address = optional(string)
-    }))
-    permission = optional(string)
-  }))
-  description = <<-EOT
-    The target grant for the logging configuration
-  EOT
-  default     = null
-}
-
 variable "enable_server_side_encryption" {
   type        = bool
   description = <<-EOT
