@@ -16,7 +16,7 @@ terraform {
     # provider to use (hasicorp/github or integrations/github).
     github = {
       source  = "integrations/github"
-      version = "~> 5.0"
+      version = "~> 0.3"
     }
   }
 }

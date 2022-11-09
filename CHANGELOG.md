@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/bananalab/terraform-modules/compare/v0.3.0...v0.3.1) (2022-11-09)
+
+
+### Bug Fixes
+
+* **aws-eks-cluster:** Fix Makefile. ([341ebe9](https://github.com/bananalab/terraform-modules/commit/341ebe911e06e0f217fd2703ef42c6b9ef613c3c))
+* **aws-s3-bucket:** remove experimental feature. ([8333fd7](https://github.com/bananalab/terraform-modules/commit/8333fd7ad0248f197f9e6b70dc1773f1ee5ba488))
+
 ## [0.3.0](https://github.com/bananalab/terraform-modules/compare/v0.2.0...v0.3.0) (2022-09-19)
 
 
