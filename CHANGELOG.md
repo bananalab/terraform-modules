@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/bananalab/terraform-modules/compare/v0.3.1...v0.4.0) (2022-11-11)
+
+
+### Features
+
+* **aws-vpc:** New module. ([e8e75d3](https://github.com/bananalab/terraform-modules/commit/e8e75d3f0572651a1a3e1f4cd51823291a8949cc))
+
 ## [0.3.1](https://github.com/bananalab/terraform-modules/compare/v0.3.0...v0.3.1) (2022-11-09)
 
 
