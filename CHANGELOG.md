@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/bananalab/terraform-modules/compare/v0.4.0...v0.4.1) (2022-11-11)
+
+
+### Bug Fixes
+
+* **aws-vpc:** Move nat gateways to public subnet. ([ee6d99a](https://github.com/bananalab/terraform-modules/commit/ee6d99abbf1a107c5ec143b69447da7f7918c712))
+
 ## [0.4.0](https://github.com/bananalab/terraform-modules/compare/v0.3.1...v0.4.0) (2022-11-11)
 
 
