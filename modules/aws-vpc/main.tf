@@ -57,7 +57,7 @@ resource "aws_subnet" "private" {
 }
 
 resource "aws_nat_gateway" "this" {
-  for_each      = aws_subnet.private
+  for_each      = aws_subnet.public
   allocation_id = aws_eip.nat[each.key].id
   subnet_id     = each.value.id
   depends_on    = [aws_internet_gateway.this]
