@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/bananalab/terraform-modules/compare/v0.4.1...v0.5.0) (2022-11-15)
+
+
+### Features
+
+* **aws-ec2-instance:** New module. ([b02ec36](https://github.com/bananalab/terraform-modules/commit/b02ec36c34faf4f95b10e7454d6310ebbc7bec24))
+
 ## [0.4.1](https://github.com/bananalab/terraform-modules/compare/v0.4.0...v0.4.1) (2022-11-11)
 
 
