@@ -3,7 +3,7 @@ SHELL := $(shell which bash)
 
 test:
 	pushd test; \
-	go mod init "{{ .Env.MODULENAME }}"; \
+	go mod init "aws-ec2-instance"; \
 	go mod tidy; \
 	go test -v -tags integration -timeout 3600s; \
 	popd
