@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/bananalab/terraform-modules/compare/v0.5.0...v0.5.1) (2022-11-18)
+
+
+### Bug Fixes
+
+* **aws-vpc:** Nat gateway fix. ([fa78275](https://github.com/bananalab/terraform-modules/commit/fa78275c055d93022967dccea56512ad4a927ea5))
+
 ## [0.5.0](https://github.com/bananalab/terraform-modules/compare/v0.4.1...v0.5.0) (2022-11-15)
 
 
