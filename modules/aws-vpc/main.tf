@@ -44,6 +44,18 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
+resource "aws_nat_gateway" "this" {
+  for_each      = aws_subnet.public
+  allocation_id = aws_eip.nat[each.key].id
+  subnet_id     = each.value.id
+  depends_on    = [aws_internet_gateway.this]
+}
+
+resource "aws_eip" "nat" {
+  for_each = aws_subnet.public
+  vpc      = true
+}
+
 # Private subnet config
 locals {
   private_subnets = zipmap(var.availability_zones, var.private_subnets)
@@ -54,18 +66,6 @@ resource "aws_subnet" "private" {
   vpc_id            = aws_vpc.this.id
   cidr_block        = each.value
   availability_zone = each.key
-}
-
-resource "aws_nat_gateway" "this" {
-  for_each      = aws_subnet.public
-  allocation_id = aws_eip.nat[each.key].id
-  subnet_id     = each.value.id
-  depends_on    = [aws_internet_gateway.this]
-}
-
-resource "aws_eip" "nat" {
-  for_each = aws_subnet.private
-  vpc      = true
 }
 
 resource "aws_route_table" "private" {
